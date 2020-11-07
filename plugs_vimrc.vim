@@ -6,7 +6,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'connorholyday/vim-snazzy'
  Plug 'NLKNguyen/papercolor-theme'
  Plug 'ayu-theme/ayu-vim'
- Plug 'bling/vim-bufferline'
 
 " File navigation
  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
