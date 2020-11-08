@@ -27,7 +27,18 @@ set autochdir "自动切换工作目录
 
 "****************************************基本设置区************************************************
 "编码设置
-set encoding=UTF-8
+set encoding=utf-8
+set fileencodings=utf-8,chinese,latin-1
+
+" windows平台
+if has("win32")
+    source $VIMRUNTIME/delmenu.vim "解决菜单乱码
+    source $VIMRUNTIME/menu.vim    "解决菜单乱码
+    language messages zh_CN.utf-8  "解决consle输出乱码
+    set termguicolors
+    set guifont=JetBrainsMono_NF:h12:W500:cANSI:qDRAFT
+endif
+
 
 "显示设置
 syntax on             " 设置高亮
@@ -49,7 +60,6 @@ set lazyredraw        " same as above
 set visualbell
 set ttyfast           " should make scrolling faster
 set t_Co=256          " 256颜色
-
 if has('nvim')
     set termguicolors     " 使用gui，不和终端混合
 endif
