@@ -89,7 +89,7 @@ set listchars=tab:\-\ ,trail:▫
 let &showbreak='↳  '
 
 "共享设置
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 "设置拼写检查
 noremap <LEADER>sc :set spell!<CR>

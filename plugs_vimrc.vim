@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
  Plug 'jdkanani/vim-material-theme'
  Plug 'dracula/vim'
  Plug 'ryanoasis/vim-devicons'
+ Plug 'connorholyday/vim-snazzy'
 
 " File navigation
  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
