@@ -20,7 +20,7 @@
 "===
 
 set background=dark
-colorscheme snazzy
+colorscheme deus
 let g:SnazzyTransparent = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -47,3 +47,22 @@ let g:NERDTreeIndicatorMapCustom = {
             \ "Unknown"   : "?"
             \ }
 
+"===
+"===rainbow
+"===
+let g:rainbow_active = 1
+
+" ===
+" === indentLine
+" ===
+let g:indentLine_setColors = 0
+let g:indentLine_enabled = 0
+
+
+"===
+"===indent_guides
+"===
+let g:indent_guides_enable_on_vim_startup = 0
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * hi IndentGuidesOdd  ctermbg=black
+"autocmd VimEnter,Colorscheme * hi IndentGuidesEven ctermbg=darkgrey

@@ -19,12 +19,9 @@ call plug#begin('~/.vim/plugged')
 " Pretty Dress
  Plug 'vim-airline/vim-airline'
  Plug 'vim-airline/vim-airline-themes'
- Plug 'NLKNguyen/papercolor-theme'
- Plug 'ayu-theme/ayu-vim'
- Plug 'jdkanani/vim-material-theme'
- Plug 'dracula/vim'
  Plug 'ryanoasis/vim-devicons'
  Plug 'connorholyday/vim-snazzy'
+ Plug 'ajmwagar/vim-deus'
 
 " File navigation
  Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -40,5 +37,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
 Plug 'tpope/vim-commentary'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
