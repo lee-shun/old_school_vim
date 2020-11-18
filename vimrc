@@ -5,8 +5,8 @@
 "   | |  | | |_| |   \ V /  | || |  | |  _ <| |___
 "   |_|  |_|\__, |    \_/  |___|_|  |_|_| \_\\____|
 "           |___/
-"  
-"  
+"
+"
 "File   : vimrc
 "
 "Author : lee-shun
@@ -23,6 +23,14 @@
        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
          autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
          endif
+
+
+"===
+"=== python_path
+""===
+let g:python_host_prog='/usr/bin/python'
+let g:python3_host_prog='/usr/bin/python3'
+
 
 "===
 "=== basic_vimrc
