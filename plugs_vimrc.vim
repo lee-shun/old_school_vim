@@ -39,5 +39,9 @@ Plug 'gcmt/wildfire.vim'
 Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
+Plug 'godlygeek/tabular'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-signify'
 
 call plug#end()
