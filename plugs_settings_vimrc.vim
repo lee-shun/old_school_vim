@@ -21,6 +21,7 @@
 
 set background=dark
 colorscheme deus
+let g:deus_termcolors=256
 let g:SnazzyTransparent = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
