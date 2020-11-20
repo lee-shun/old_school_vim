@@ -25,6 +25,7 @@ let g:deus_termcolors=256
 let g:SnazzyTransparent = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_x = '%{ScrollStatus()}'
 
 
 " ===
@@ -67,3 +68,5 @@ let g:indent_guides_enable_on_vim_startup = 0
 "let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * hi IndentGuidesOdd  ctermbg=black
 "autocmd VimEnter,Colorscheme * hi IndentGuidesEven ctermbg=darkgrey
+"
+let vim_markdown_preview_github=1
