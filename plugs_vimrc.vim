@@ -36,7 +36,8 @@ Plug 'RRethy/vim-illuminate'
  "general enhancement
 Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'Raimondi/delimitMate'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
@@ -49,12 +50,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
 "Markdown
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for': ['text', 'markdown', 'vim-plug']  }
-Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown', 'vim-plug']  }
 Plug 'dkarter/bullets.vim'
-Plug 'plasticboy/vim-markdown'
-" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  } "for vim8
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
+Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
+Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown']  }
+" Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+" Plug 'vimwiki/vimwiki'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'gabrielelana/vim-markdown'
+"!!it will change .md to .pandoc file
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+
 
 "C++
 " (The latter must be installed before it can be used.)

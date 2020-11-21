@@ -289,6 +289,8 @@ func! CompileRunGcc()
 		silent! exec "!".g:mkdp_browser." % &"
 	elseif &filetype == 'vimwiki'
 		exec "MarkdownPreview"
+	elseif &filetype == 'pandoc'
+		exec "MarkdownPreview"
 	elseif &filetype == 'markdown'
 		exec "MarkdownPreview"
 	elseif &filetype == 'tex'
