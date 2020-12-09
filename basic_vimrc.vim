@@ -118,9 +118,9 @@ noremap L 5l
 "**************************************共享剪切板**************************************************
 
 "共享剪切板
-"vnoremap <Leader>y "+y
-"vnoremap <Leader>yy "+yy
-"nmap <Leader>p "+p
+vnoremap <Leader>y "+y
+vnoremap <Leader>yy "+yy
+nmap <Leader>p "+p
 
 "**************************************行号设置**************************************************
 
@@ -178,8 +178,8 @@ noremap <LEADER>b8 :buffer 8<CR>
 noremap <LEADER>b9 :buffer 9<CR>
 
 "**************************************编辑neovimrc********************************************
-noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 
+noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 
 "**************************************文件关闭光标记忆********************************************
 
@@ -198,6 +198,56 @@ noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 noremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
 
+"**************************************编辑neovimrc********************************************
+
+noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
+
+"**************************************文件关闭光标记忆********************************************
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+"****************************************外部程序启动**********************************************
+
+" Open up lazygit
+noremap <c-g>  :term lazygit<CR>
+
+"************************************双击查找下一个占位符******************************************
+
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+"************************************C++单行注释方式改变******************************************
+
+noremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
+
+"****************************************快速移动行************************************************
+
+nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
+nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
+
+"****************************************快速添加空行**********************************************
+
+nnoremap [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
+"****************************************快速选中查找**********************************************
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+"****************************************存储历史记录**************************************************
+silent !mkdir -p ~/.config/nvim/tmp/backup
+silent !mkdir -p ~/.config/nvim/tmp/undo
+silent !mkdir -p ~/.config/nvim/tmp/sessions
+
+set undofile
+set swapfile
+set nobackup
+set undodir=~/.config/nvim/tmp/undo
+set backupdir=~/.config/nvim/tmp/backup
+set directory=~/.config/nvim/tmp/backup
+
+"****************************************内置终端**************************************************
 "****************************************快速移动行************************************************
 
 nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
@@ -326,3 +376,106 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+"===
+"=== 自动文件
+"===
+autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh exec ":call SetTitle()"
+" 加入注释
+func SetComment()
+    call setline(1,"/*******************************************************************************")
+    call append(line(".")    , "*   Copyright (C) ".strftime("%Y")." Lee Ltd. All rights reserved.")
+    call append(line(".")+1  , "*")
+    call append(line(".")+2  , "*   @Filename: ".expand("%:t"))
+    call append(line(".")+3  , "*")
+    call append(line(".")+4  , "*   @Author: lee-shun")
+    call append(line(".")+5  , "*")
+    call append(line(".")+6  , "*   @Email: 2015097272@qq,com")
+    call append(line(".")+7  , "*")
+    call append(line(".")+8  , "*   @Date: ".strftime("%Y-%m-%d"))
+    call append(line(".")+9  , "*")
+    call append(line(".")+10  , "*   @Description: ")
+    call append(line(".")+11  , "*")
+    call append(line(".")+12 , "******************************************************************************/")
+    call append(line(".")+13 , "")
+    call append(line(".")+14 , "")
+endfunc
+" 加入shell,Makefile注释
+func SetComment_sh()
+    call setline(3, "################################################################################")
+    call setline(4  , "#   Copyright (C) ".strftime("%Y")." Lee Ltd. All rights reserved.")
+    call setline(5  , "#")
+    call setline(6  , "#   @Filename: ".expand("%:t"))
+    call setline(7  , "#")
+    call setline(8  , "#   @Author: lee-shun")
+    call setline(9  , "#")
+    call setline(10 , "#   @Date: ".strftime("%Y-%m-%d"))
+    call setline(11  , "#")
+    call setline(12 , "#   @Email: 2015097272@qq.com")
+    call setline(13 , "#")
+    call setline(14 , "#   @Description: ")
+    call setline(15 , "#")
+    call setline(16, "###############################################################################")
+    call setline(17, "")
+    call setline(18, "")
+endfunc
+" 定义函数SetTitle，自动插入文件头
+func SetTitle()
+    if expand("%:e") == 'make'
+        call setline(1,"")
+        call setline(2,"")
+        call SetComment_sh()
+
+    elseif expand("%:e") == 'txt'
+        call setline(1,"")
+        call setline(2,"")
+        call SetComment_sh()
+
+    elseif expand("%:e") == 'sh'
+        call setline(1,"#!/system/bin/sh")
+        call setline(2,"")
+        call SetComment_sh()
+
+    elseif expand("%:e") == 'zsh'
+        call setline(1,"#!/system/bin/zsh")
+        call setline(2,"")
+        call SetComment_sh()
+    else
+        call SetComment()
+        if expand("%:e") == 'hpp'
+            call append(line(".")+15, "#ifndef _".toupper(expand("%:t:r"))."_HPP")
+            call append(line(".")+16, "#define _".toupper(expand("%:t:r"))."_HPP")
+            call append(line(".")+17, "")
+            call append(line(".")+18, "")
+            call append(line(".")+19, "#include<iostream>")
+            call append(line(".")+20, "class ".expand("%:t:r")."{};")
+            call append(line(".")+21, "")
+            call append(line(".")+22, "")
+            call append(line(".")+23, "")
+            call append(line(".")+24, "")
+            call append(line(".")+25, "#endif /* ".toupper(expand("%:t:r"))."_HPP */")
+        elseif expand("%:e") == 'h'
+            call append(line(".")+15, "#pragma once")
+        elseif expand("%:e") == 'c'
+            call append(line(".")+15,"#include \"".expand("%:t:r").".h\"")
+            call append(line(".")+16, "int main(int argc, char** argv){")
+            call append(line(".")+17, "return 0;")
+            call append(line(".")+18, "}")
+        elseif expand("%:e") == 'cpp'
+            call append(line(".")+15,"#include \"".expand("%:t:r").".hpp\"")
+            call append(line(".")+16, "int main(int argc, char** argv){")
+            call append(line(".")+17, "return 0;")
+            call append(line(".")+18, "}")
+        elseif expand("%:e") == 'cc'
+            call append(line(".")+15,"#include \"".expand("%:t:r").".hpp\"")
+            call append(line(".")+16, "int main(int argc, char** argv){")
+            call append(line(".")+17, "return 0;")
+            call append(line(".")+18, "}")
+        elseif expand("%:e") == 'cxx'
+            call append(line(".")+15,"#include \"".expand("%:t:r").".hpp\"")
+            call append(line(".")+16, "int main(int argc, char** argv){")
+            call append(line(".")+17, "return 0;")
+            call append(line(".")+18, "}")
+        endif
+    endif
+endfunc
