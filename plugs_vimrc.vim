@@ -23,6 +23,7 @@ Plug 'ojroques/vim-scrollstatus'
 Plug 'ryanoasis/vim-devicons'
 Plug 'connorholyday/vim-snazzy'
 Plug 'ajmwagar/vim-deus'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " File navigation
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

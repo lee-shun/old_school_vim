@@ -20,12 +20,13 @@
 "===
 
 set background=dark
-colorscheme deus
+colorscheme dracula
 let g:deus_termcolors=256
 let g:SnazzyTransparent = 1
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_x = '%{ScrollStatus()}'
+let g:airline_theme = 'dracula'
 
 
 " ===
