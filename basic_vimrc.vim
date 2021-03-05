@@ -172,7 +172,7 @@ noremap <LEADER>bd :bd<CR>
 
 "**************************************编辑neovimrc********************************************
 
-noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
+noremap <LEADER>rc :e ~/.vim/init.vim<CR>
 
 "**************************************文件关闭光标记忆********************************************
 
@@ -208,16 +208,16 @@ nnoremap ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 "****************************************存储历史记录**************************************************
-silent !mkdir -p ~/.config/nvim/tmp/backup
-silent !mkdir -p ~/.config/nvim/tmp/undo
-" silent !mkdir -p ~/.config/nvim/tmp/sessions
+silent !mkdir -p ~/.vim/tmp/backup
+silent !mkdir -p ~/.vim/tmp/undo
+" silent !mkdir -p ~/.vim/tmp/sessions
 
 set undofile
 set swapfile
 set nobackup
-set undodir=~/.config/nvim/tmp/undo
-set backupdir=~/.config/nvim/tmp/backup
-set directory=~/.config/nvim/tmp/backup
+set undodir=~/.vim/tmp/undo
+set backupdir=~/.vim/tmp/backup
+set directory=~/.vim/tmp/backup
 
 "****************************************内置终端**************************************************
 " ===

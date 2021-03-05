@@ -16,6 +16,7 @@
 "**************************************************************************************************
 
 call plug#begin('~/.vim/plugged')
+
 "===
 "===Pretty Dress
 "===
@@ -23,22 +24,19 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'ryanoasis/vim-devicons'
-Plug 'connorholyday/vim-snazzy'
-Plug 'ajmwagar/vim-deus'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'kaicataldo/material.vim', { 'branch': 'main'  }
 
-" 
 "===
 "===File navigation
 "===
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
-" Plug 'lambdalisue/fern.vim'
 
- "general Highlight
-" Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase'  }
-Plug 'RRethy/vim-illuminate'
+"===
+"===general Highlight
+"===
+Plug 'sheerun/vim-polyglot'
 
 "===
 "===general enhancement
@@ -46,7 +44,6 @@ Plug 'RRethy/vim-illuminate'
 Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'Raimondi/delimitMate'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
@@ -66,17 +63,10 @@ Plug 'mhinz/vim-signify'
 "===
 "===Markdown
 "===
-" Plug 'dkarter/bullets.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown']  }
-" Plug 'vimwiki/vimwiki'
-" Plug 'plasticboy/vim-markdown'
-" Plug 'gabrielelana/vim-markdown'
-"!!it will change .md to .pandoc file
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 
-
-"C++
 call plug#end()
