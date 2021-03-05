@@ -35,6 +35,11 @@ let g:airline_theme = 'dracula'
 map tt :NERDTreeToggle<CR>
 
 
+" ===
+" === Fern.vim
+" ===
+" map tt :Fern . -drawer -toggle <CR>
+
 "===
 "=== NERDTree-git
 "===

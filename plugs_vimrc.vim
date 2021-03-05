@@ -16,7 +16,9 @@
 "**************************************************************************************************
 
 call plug#begin('~/.vim/plugged')
-" Pretty Dress
+"===
+"===Pretty Dress
+"===
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ojroques/vim-scrollstatus'
@@ -25,20 +27,26 @@ Plug 'connorholyday/vim-snazzy'
 Plug 'ajmwagar/vim-deus'
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" File navigation
+" 
+"===
+"===File navigation
+"===
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
+" Plug 'lambdalisue/fern.vim'
 
  "general Highlight
 " Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase'  }
 Plug 'RRethy/vim-illuminate'
 
- "general enhancement
+"===
+"===general enhancement
+"===
 Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
-" Plug 'jiangmiao/auto-pairs'
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'Raimondi/delimitMate'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'gcmt/wildfire.vim'
@@ -46,16 +54,22 @@ Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
+
+
+"===
+"===git
+"===
 Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-"Markdown
-Plug 'dkarter/bullets.vim'
+"===
+"===Markdown
+"===
+" Plug 'dkarter/bullets.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown']  }
-" Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 " Plug 'vimwiki/vimwiki'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'gabrielelana/vim-markdown'
@@ -65,10 +79,4 @@ Plug 'vim-pandoc/vim-pandoc'
 
 
 "C++
-" (The latter must be installed before it can be used.)
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-" Also add Glaive, which is used to configure codefmt's maktaba flags. See
-" `:help :Glaive` for usage.
-Plug 'google/vim-glaive'
 call plug#end()
