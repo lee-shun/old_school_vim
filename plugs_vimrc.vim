@@ -25,6 +25,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kaicataldo/material.vim', { 'branch': 'main'  }
+Plug 'sainnhe/sonokai'
 
 "===
 "===File navigation
@@ -51,6 +52,7 @@ Plug 'tpope/vim-commentary'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
+Plug 'machakann/vim-highlightedyank'
 
 
 "===
