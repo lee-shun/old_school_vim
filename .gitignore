@@ -1,7 +1,7 @@
 .netrwhist
-/plugged
-/tmp
-/sessions
+plugged/
+tmp/
+sessions/
 
 dein/*
 !dein/installer.sh
