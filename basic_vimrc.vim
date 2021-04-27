@@ -28,13 +28,12 @@ set encoding=UTF-8
 syntax on             " 设置高亮
 set scrolloff=5       " 设置滚动余量
 "set mouse=a           " 打开鼠标
-"colorscheme evening   "设置默认颜色
 set number            " 打开行号
 set relativenumber    " 相对行号
 set cursorline        " 打开光标提示线
 set cursorcolumn      " 打开光标提示线
 set colorcolumn=121   " 设置80列提示
-set noshowmode        " 不要显示模式
+" set noshowmode        " 不要显示模式
 set nowrap            " 显示行折叠
 set linebreak         " 不在单词内部折行
 set ttimeoutlen=0     " 单字符命令等待时间

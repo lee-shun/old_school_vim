@@ -36,7 +36,6 @@ source ~/.vim/function_vimrc.vim
 "===
 source ~/.vim/plugs_vimrc.vim
 
-
 "===
 "=== plugs_settings_vimrc
 "===

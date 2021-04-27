@@ -20,12 +20,9 @@ call plug#begin('~/.vim/plugged')
 "===
 "===Pretty Dress
 "===
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ojroques/vim-scrollstatus'
 Plug 'ryanoasis/vim-devicons'
-Plug 'kaicataldo/material.vim', { 'branch': 'main'  }
 Plug 'sainnhe/sonokai'
+Plug 'bling/vim-bufferline'
 
 "===
 "===File navigation
@@ -71,7 +68,6 @@ Plug 'mhinz/vim-signify'
 "===
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
-Plug 'vimwiki/vimwiki'
 Plug 'dkarter/bullets.vim'
 
 call plug#end()

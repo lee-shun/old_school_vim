@@ -20,16 +20,7 @@
 "===
 
 set background=dark
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'palenight'
 colorscheme sonokai
-
-let g:deus_termcolors=256
-let g:SnazzyTransparent = 1
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_x = '%{ScrollStatus()}'
-let g:airline_theme = 'sonokai'
 
 
 " ===
@@ -37,11 +28,6 @@ let g:airline_theme = 'sonokai'
 " ===
 map tt :NERDTreeToggle<CR>
 
-
-" ===
-" === Fern.vim
-" ===
-" map tt :Fern . -drawer -toggle <CR>
 
 "===
 "=== NERDTree-git
@@ -74,8 +60,9 @@ let g:indentLine_enabled = 0
 "===indent_guides
 "===
 let g:indent_guides_enable_on_vim_startup = 0
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * hi IndentGuidesOdd  ctermbg=black
-"autocmd VimEnter,Colorscheme * hi IndentGuidesEven ctermbg=darkgrey
-"
+
+
+"===
+"===markdown_preview
+"===
 let vim_markdown_preview_github=1
