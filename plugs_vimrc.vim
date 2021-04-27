@@ -67,8 +67,7 @@ Plug 'mhinz/vim-signify'
 "===
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
-Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown']  }
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc'
+Plug 'vimwiki/vimwiki'
+Plug 'dkarter/bullets.vim'
 
 call plug#end()

@@ -21,7 +21,6 @@ let g:mapleader = ' '
 set autochdir "自动切换工作目录
 filetype plugin indent on
 
-"****************************************基本设置区************************************************
 "编码设置
 set encoding=UTF-8
 
@@ -65,7 +64,7 @@ set foldenable
 
 "显示非可见字符
 set list
-set listchars=tab:\•\ ,trail:▫
+set listchars=tab:»·,nbsp:+,trail:·,extends:→,precedes:←
 let &showbreak='↳'
 
 "共享设置
@@ -74,6 +73,16 @@ set clipboard=unnamedplus
 "vnoremap <Leader>y "+y
 "vnoremap <Leader>yy "+yy
 "nmap <Leader>p "+p
+
+"**************************************内部补全**************************************************
+
+set complete+=k
+set completeopt=menuone,noselect,noinsert,preview,popup
+set dictionary=/usr/share/dict/words
+
+" 使用Tab作为导航键
+inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 "**************************************行号设置**************************************************
 
@@ -106,8 +115,6 @@ noremap <LEADER>rc :e ~/.vim/vimrc<CR>
 "**************************************文件关闭光标记忆********************************************
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-"****************************************外部程序启动**********************************************
 
 "************************************双击查找下一个占位符******************************************
 
