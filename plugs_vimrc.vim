@@ -54,6 +54,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'machakann/vim-highlightedyank'
 
+"===
+"===Complete
+"===
+Plug 'vim-scripts/AutoComplPop'
 
 "===
 "===git

@@ -21,28 +21,23 @@
 let g:python_host_prog='/usr/bin/python'
 let g:python3_host_prog='/usr/bin/python3'
 
-
 "===
 "=== basic_vimrc
 "===
-
 source ~/.vim/basic_vimrc.vim
 
 "===
 "=== function_vimrc
 "===
-
 source ~/.vim/function_vimrc.vim
 
 "===
 "=== plugs_vimrc
 "===
-
 source ~/.vim/plugs_vimrc.vim
 
 
 "===
 "=== plugs_settings_vimrc
 "===
-
 source ~/.vim/plugs_settings_vimrc.vim
