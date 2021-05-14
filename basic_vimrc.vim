@@ -76,7 +76,7 @@ set clipboard=unnamedplus
 "**************************************内部补全**************************************************
 
 set complete+=k
-set completeopt=menuone,noselect,noinsert,popup
+set completeopt=menuone,noselect,noinsert,preview
 set dictionary=/usr/share/dict/words
 
 " 使用Tab作为导航键
