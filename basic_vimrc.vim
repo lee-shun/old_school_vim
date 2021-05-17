@@ -32,14 +32,14 @@ set number            " 打开行号
 set relativenumber    " 相对行号
 set cursorline        " 打开光标提示线
 set cursorcolumn      " 打开光标提示线
-set colorcolumn=121   " 设置80列提示
+set colorcolumn=80   " 设置80列提示
 " set noshowmode        " 不要显示模式
 set nowrap            " 显示行折叠
 set linebreak         " 不在单词内部折行
 set ttimeoutlen=0     " 单字符命令等待时间
 set wildmenu          " vim命令自动补全
 set lazyredraw        " same as above
-set visualbell
+" set visualbell
 set ttyfast           " should make scrolling faster
 set t_Co=256          " 256颜色
 
