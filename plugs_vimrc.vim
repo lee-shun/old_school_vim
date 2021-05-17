@@ -69,5 +69,6 @@ Plug 'mhinz/vim-signify'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'dkarter/bullets.vim'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()

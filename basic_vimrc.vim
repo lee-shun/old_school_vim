@@ -96,6 +96,7 @@ nnoremap <up> :res +5<CR>
 nnoremap <down> :res -5<CR>
 nnoremap <left> :vertical resize-5<CR>
 nnoremap <right> :vertical resize+5<CR>
+
 "**************************************ctrl-alt工作区冲突******************************************
 
 nnoremap <C-A-up> <nop>
