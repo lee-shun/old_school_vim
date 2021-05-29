@@ -33,6 +33,8 @@ Plug 'bling/vim-bufferline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 "===
 "===general Highlight
@@ -71,7 +73,6 @@ Plug 'mhinz/vim-signify'
 "===
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
-Plug 'dkarter/bullets.vim'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
