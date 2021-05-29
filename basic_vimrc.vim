@@ -76,10 +76,11 @@ set clipboard=unnamedplus
 "**************************************内部补全**************************************************
 
 set complete+=k
-set completeopt=menuone,noselect,noinsert,preview
+set completeopt=menuone,noselect,noinsert
 set dictionary=/usr/share/dict/words
 
 " 使用Tab作为导航键
+inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 

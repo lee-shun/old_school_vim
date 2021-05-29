@@ -23,6 +23,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 Plug 'joshdick/onedark.vim'
+Plug 'connorholyday/vim-snazzy'
+Plug 'glepnir/oceanic-material'
 Plug 'bling/vim-bufferline'
 
 "===
