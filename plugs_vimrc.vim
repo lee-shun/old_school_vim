@@ -22,7 +22,8 @@ call plug#begin('~/.vim/plugged')
 "===
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
-Plug 'bling/vim-bufferline'
+Plug 'ajmwagar/vim-deus'
+Plug 'itchyny/lightline.vim'
 
 "===
 "===File navigation
@@ -30,6 +31,11 @@ Plug 'bling/vim-bufferline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
+
+"===
+"=== File Finder
+"===
+Plug 'ctrlpvim/ctrlp.vim'
 
 "===
 "===general Highlight
@@ -68,7 +74,6 @@ Plug 'mhinz/vim-signify'
 "===
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
-Plug 'dkarter/bullets.vim'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()

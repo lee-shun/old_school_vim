@@ -22,11 +22,25 @@
 set background=dark
 colorscheme sonokai
 
+"===
+"=== lightline
+"===
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 " ===
 " === NERDTree
 " ===
-map tt :NERDTreeToggle<CR>
+map <LEADER>t :NERDTreeToggle<CR>
 
 
 "===
@@ -54,7 +68,6 @@ let g:rainbow_active = 1
 " ===
 let g:indentLine_setColors = 0
 let g:indentLine_enabled = 0
-
 
 "===
 "===indent_guides
