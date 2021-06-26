@@ -74,10 +74,11 @@ set clipboard=unnamedplus
 "**************************************内部补全**************************************************
 
 set complete+=k
-set completeopt=menuone,noselect,noinsert,preview
+set completeopt=menuone,noselect,noinsert
 set dictionary=/usr/share/dict/words
 
 " 使用Tab作为导航键
+inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
@@ -152,4 +153,13 @@ set undodir=~/.vim/tmp/undo
 set backupdir=~/.vim/tmp/backup
 set directory=~/.vim/tmp/backup
 
-set statusline=\ %F%m%r%h\ %w\ \%l:\%c\ \%p%%
+"****************************************文件列表******************************
+let g:netrw_hide = 1
+let g:netrw_liststyle = 1
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 24
+let g:netrw_altv = 1
+let g:netrw_chgwin = 2
+let g:netrw_list_hide = '.*\.swp$'
+let g:netrw_localrmdir = 'rm -rf'

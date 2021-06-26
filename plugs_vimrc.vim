@@ -24,6 +24,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 Plug 'ajmwagar/vim-deus'
 Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'connorholyday/vim-snazzy'
+Plug 'glepnir/oceanic-material'
 
 "===
 "===File navigation

@@ -18,7 +18,6 @@
 "===
 "===Pretty Dress
 "===
-
 set background=dark
 colorscheme sonokai
 
@@ -40,8 +39,16 @@ let g:lightline = {
 " ===
 " === NERDTree
 " ===
-map <LEADER>t :NERDTreeToggle<CR>
-
+noremap <leader>t :NERDTreeToggle<CR>
+let g:NERDTreeWinSize = 25              " 设定 NERDTree 视窗大小
+let NERDTreeShowBookmarks=1             " 开启Nerdtree时自动显示Bookmarks
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeHidden=0                  " 不显示隐藏文件
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+" let NERDTreeIgnore = ['\.pyc$']  " 过滤所有.pyc文件不显示
+" let g:NERDTreeShowLineNumbers=1  " 是否显示行号
 
 "===
 "=== NERDTree-git
