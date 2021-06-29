@@ -75,7 +75,7 @@ set clipboard=unnamedplus
 
 set complete+=k
 set completeopt=menuone,noselect,noinsert
-set dictionary=/usr/share/dict/words
+set dictionary+=~/.vim/20k
 
 " 使用Tab作为导航键
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))

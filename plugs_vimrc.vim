@@ -63,7 +63,9 @@ Plug 'machakann/vim-highlightedyank'
 "===
 "===Complete
 "===
-Plug 'vim-scripts/AutoComplPop'
+" Plug 'vim-scripts/AutoComplPop'
+Plug 'skywind3000/vim-dict'
+
 
 "===
 "===git
@@ -71,6 +73,7 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+
 
 "===
 "===Markdown
