@@ -64,7 +64,7 @@ Plug 'machakann/vim-highlightedyank'
 "===Complete
 "===
 " Plug 'vim-scripts/AutoComplPop'
-Plug 'skywind3000/vim-dict'
+Plug 'lee-shun/vim-dict'
 
 
 "===
