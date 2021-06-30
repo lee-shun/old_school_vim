@@ -1,4 +1,4 @@
-inoremap $$ $$<left>
+inoremap ,e $$<++><Esc>F$i
 inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
 inoremap ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 inoremap ,n ---<Enter><Enter>
