@@ -31,9 +31,12 @@ Plug 'glepnir/oceanic-material'
 "===
 "===File navigation
 "===
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
+Plug 'csch0/vim-startify-renderer-nerdfont'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
 "===
 "=== File Finder
@@ -63,7 +66,6 @@ Plug 'machakann/vim-highlightedyank'
 "===
 "===Complete
 "===
-" Plug 'vim-scripts/AutoComplPop'
 Plug 'lee-shun/vim-dict'
 
 
