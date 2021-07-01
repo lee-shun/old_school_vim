@@ -24,7 +24,6 @@ colorscheme sonokai
 "===
 "=== lightline
 "===
-
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
