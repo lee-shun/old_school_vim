@@ -62,6 +62,13 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'machakann/vim-highlightedyank'
+Plug 'itchyny/vim-cursorword'
+
+
+"===
+"===Undo
+"===
+Plug 'mbbill/undotree'
 
 "===
 "===Complete
