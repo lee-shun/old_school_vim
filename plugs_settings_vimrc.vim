@@ -16,16 +16,23 @@
 "**************************************************************************************************
 
 "===
-"===Pretty Dress
+"===UI
 "===
 set background=dark
-colorscheme sonokai
+colorscheme everforest
+let g:everforest_background = 'hard'
+let g:everforest_enable_italic = 1
+let g:everforest_disable_italic_comment = 1
+
+let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_enable_italic = 1
+let g:gruvbox_material_disable_italic_comment = 1
 
 "===
 "=== lightline
 "===
 let g:lightline = {
-      \ 'colorscheme': 'sonokai',
+      \ 'colorscheme': 'everforest',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]

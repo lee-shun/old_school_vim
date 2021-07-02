@@ -18,15 +18,14 @@
 call plug#begin('~/.vim/plugged')
 
 "===
-"===Pretty Dress
+"===UI
 "===
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
-Plug 'ajmwagar/vim-deus'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/edge'
+Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'connorholyday/vim-snazzy'
-Plug 'glepnir/oceanic-material'
 
 "===
 "===File navigation
