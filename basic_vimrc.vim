@@ -21,7 +21,7 @@ let g:mapleader = ' '
 set autochdir
 filetype plugin indent on
 
-"basic
+"display
 syntax on
 set scrolloff=5
 set number
@@ -39,6 +39,7 @@ set lazyredraw
 set ttyfast
 set t_Co=256
 set termguicolors
+set laststatus=2
 
 " search
 set hlsearch
