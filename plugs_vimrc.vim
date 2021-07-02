@@ -61,7 +61,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'machakann/vim-highlightedyank'
-Plug 'itchyny/vim-cursorword'
+Plug 'RRethy/vim-illuminate'
 
 "===
 "===Undo
