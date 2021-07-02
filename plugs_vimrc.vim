@@ -64,7 +64,6 @@ Plug 'godlygeek/tabular'
 Plug 'machakann/vim-highlightedyank'
 Plug 'itchyny/vim-cursorword'
 
-
 "===
 "===Undo
 "===
