@@ -6,7 +6,6 @@ sessions/
 dein/*
 !dein/installer.sh
 
-# create by https://github.com/iamcco/coc-gitignore (Wed Aug 19 2020 15:08:31 GMT+0800 (GMT+08:00))
 # Vim.gitignore:
 # Swap
 [._]*.s[a-v][a-z]
