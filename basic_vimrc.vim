@@ -28,10 +28,12 @@ set number
 set relativenumber
 set cursorline
 set cursorcolumn
-set colorcolumn=80
+set colorcolumn=121
+set noshowmode
 set nowrap
 set linebreak
 set ttimeoutlen=0
+set conceallevel=0
 set wildmenu
 set lazyredraw
 set ttyfast
@@ -128,7 +130,6 @@ if empty(glob("~/.vim/tmp/"))
     echo "Making the tmp dir!"
     silent !mkdir -p ~/.vim/tmp/backup
     silent !mkdir -p ~/.vim/tmp/undo
-    " silent !mkdir -p ~/.vim/tmp/sessions
 endif
 
 set undofile
