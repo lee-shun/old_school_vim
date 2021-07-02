@@ -1,4 +1,6 @@
-inoremap ,e $$<++><Esc>F$i
+" ===
+" === for greneral writting
+" ===
 inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
 inoremap ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 inoremap ,n ---<Enter><Enter>
@@ -15,3 +17,27 @@ inoremap ,2 ##<Space><Enter><++><Esc>kA
 inoremap ,3 ###<Space><Enter><++><Esc>kA
 inoremap ,4 ####<Space><Enter><++><Esc>kA
 inoremap ,l --------<Enter>
+
+" ===
+" === for equations
+" ===
+inoremap ,e $$<++><Esc>F$i
+
+" for speed up \
+inoremap \\ \\
+
+" for symbol
+inoremap \fr \frac{}{<++>}<++><Esc>0f{a
+inoremap \ha \hat{}<++><Esc>0f{a
+inoremap \do \dot{}<++><Esc>0f{a
+inoremap \dd \ddot{}<++><Esc>0f{a
+inoremap \sq \sqrt{}<++><Esc>0f{a
+inoremap \ve \vec{}<++><Esc>0f{a
+inoremap \ol \overline{}<++><Esc>0f{a
+inoremap \wt \widetilde{}<++><Esc>0f{a
+inoremap \pr ^{\prime}
+
+" for environment
+inoremap \en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
+inoremap \al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
+inoremap \ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
