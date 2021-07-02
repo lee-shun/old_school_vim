@@ -126,3 +126,11 @@ let vim_markdown_preview_github=1
 "===
 "===word complete
 "===
+
+
+"===
+"===ctrl-p
+"===
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm|plugged)$',
+    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$' }

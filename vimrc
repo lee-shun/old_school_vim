@@ -16,12 +16,6 @@
 "**************************************************************************************************
 
 "===
-"=== python_path
-"===
-let g:python_host_prog='/usr/bin/python'
-let g:python3_host_prog='/usr/bin/python3'
-
-"===
 "=== basic_vimrc
 "===
 source ~/.vim/basic_vimrc.vim
