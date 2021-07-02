@@ -15,79 +15,77 @@
 "
 "**************************************************************************************************
 
-"****************************************基本设置区************************************************
-
+"basic
+set encoding=UTF-8
 let g:mapleader = ' '
-set autochdir "自动切换工作目录
+set autochdir
 filetype plugin indent on
 
-"编码设置
-set encoding=UTF-8
+"basic
+syntax on
+set scrolloff=5
+set number
+set relativenumber
+set cursorline
+set cursorcolumn
+set colorcolumn=80
+set nowrap
+set linebreak
+set ttimeoutlen=0
+set wildmenu
+set lazyredraw
+set ttyfast
+set t_Co=256
+set termguicolors
 
-"显示设置
-syntax on             " 设置高亮
-set scrolloff=5       " 设置滚动余量
-set number            " 打开行号
-set relativenumber    " 相对行号
-set cursorline        " 打开光标提示线
-set cursorcolumn      " 打开光标提示线
-set colorcolumn=80   " 设置80列提示
-set nowrap            " 显示行折叠
-set linebreak         " 不在单词内部折行
-set ttimeoutlen=0     " 单字符命令等待时间
-set wildmenu          " vim命令自动补全
-set lazyredraw        " same as above
-set ttyfast           " should make scrolling faster
-set t_Co=256          " 256颜色
-set termguicolors     "不与终端混合
-
-"搜索设置
+" search
 set hlsearch
 exec "nohlsearch"
 set incsearch
 set ignorecase
 set smartcase
 
-"缩进与折叠
+" indent
 set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-set foldmethod=manual " 手动折叠
-set foldlevel=99      " 折叠文件打开展开
+" folding
+set foldmethod=manual
+set foldlevel=99
 set foldenable
 
-"显示非可见字符
+" invisible symbol
 set list
 set listchars=tab:»·,nbsp:+,trail:·,extends:→,precedes:←
 let &showbreak='↳'
 
-"共享设置
+" share clipboard
 set clipboard=unnamedplus
-"共享剪切板
-"vnoremap <Leader>y "+y
-"vnoremap <Leader>yy "+yy
-"nmap <Leader>p "+p
 
-"**************************************内部补全**************************************************
-
+"===
+"===built-in completion
+"===
 set complete+=k
 set completeopt=menuone,noselect,noinsert
 set dictionary+=~/.vim/20k
 
-" 使用Tab作为导航键
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
-"**************************************行号设置**************************************************
-
+"===
+"===quick mapping
+"===
+noremap <LEADER>rc :e ~/.vim/vimrc<CR>
+nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 nnoremap <F2> :set relativenumber! number!<CR>
 
-"**************************************分屏设置区**************************************************
-
+"===
+"===window split
+"===
 set splitright
 set splitbelow
 
@@ -95,8 +93,6 @@ nnoremap <up> :res +5<CR>
 nnoremap <down> :res -5<CR>
 nnoremap <left> :vertical resize-5<CR>
 nnoremap <right> :vertical resize+5<CR>
-
-"**************************************ctrl-alt工作区冲突******************************************
 
 nnoremap <C-A-up> <nop>
 nnoremap <C-A-down> <nop>
@@ -107,44 +103,33 @@ inoremap <C-A-down> <nop>
 inoremap <C-A-left> <nop>
 inoremap <C-A-right> <nop>
 
-"**************************************编辑neovimrc********************************************
-
-noremap <LEADER>rc :e ~/.vim/vimrc<CR>
-
-"**************************************文件关闭光标记忆********************************************
-
+"===
+"===save the cursor line position
+"===
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-"************************************双击查找下一个占位符******************************************
-
-nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-
-"************************************C++单行注释方式改变******************************************
-
-nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
-
-"************************************C++注释更改******************************************
-
-nnoremap cic <Esc>0f*2lvt*hc
-
-"****************************************快速移动行************************************************
-
+"===
+"===add and move line
+"===
 nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
-
-"****************************************快速添加空行**********************************************
-
 nnoremap [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-"****************************************快速选中查找**********************************************
-
+"===
+"===search the chosen
+"===
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-"****************************************存储历史记录**************************************************
-silent !mkdir -p ~/.vim/tmp/backup
-silent !mkdir -p ~/.vim/tmp/undo
-" silent !mkdir -p ~/.vim/tmp/sessions
+"===
+"===modify history
+"===
+if empty(glob("~/.vim/tmp/"))
+    echo "Making the tmp dir!"
+    silent !mkdir -p ~/.vim/tmp/backup
+    silent !mkdir -p ~/.vim/tmp/undo
+    " silent !mkdir -p ~/.vim/tmp/sessions
+endif
 
 set undofile
 set swapfile
@@ -153,7 +138,20 @@ set undodir=~/.vim/tmp/undo
 set backupdir=~/.vim/tmp/backup
 set directory=~/.vim/tmp/backup
 
-"****************************************文件列表******************************
+"===
+"===ignore some file types
+"===
+if has('win32')
+    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+elseif has('mac')
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
+elseif has('unix')
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
+endif
+
+"===
+"===build-in netrw
+"===
 let g:netrw_hide = 1
 let g:netrw_liststyle = 1
 let g:netrw_banner = 0
