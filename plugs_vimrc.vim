@@ -46,6 +46,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 "===general Highlight
 "===
 Plug 'sheerun/vim-polyglot'
+Plug 'chrisbra/Colorizer'
 
 "===
 "===general enhancement
