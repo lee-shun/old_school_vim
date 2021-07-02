@@ -28,7 +28,7 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead'
@@ -121,12 +121,6 @@ let g:vim_markdown_new_list_item_indent = 2
 "===markdown_preview
 "===
 let vim_markdown_preview_github=1
-
-
-"===
-"===word complete
-"===
-
 
 "===
 "===ctrl-p
