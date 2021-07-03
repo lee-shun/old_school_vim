@@ -18,19 +18,19 @@
 "===
 "=== basic_vimrc
 "===
-source ~/.vim/basic_vimrc.vim
+source ~/Appdata/Local/nvim/basic_vimrc.vim
 
 "===
 "=== function_vimrc
 "===
-source ~/.vim/function_vimrc.vim
+source ~/Appdata/Local/nvim/function_vimrc.vim
 
 "===
 "=== plugs_vimrc
 "===
-source ~/.vim/plugs_vimrc.vim
+source ~/Appdata/Local/nvim/plugs_vimrc.vim
 
 "===
 "=== plugs_settings_vimrc
 "===
-source ~/.vim/plugs_settings_vimrc.vim
+source ~/Appdata/Local/nvim/plugs_settings_vimrc.vim
