@@ -15,10 +15,13 @@
 "
 "**************************************************************************************************
 
+"===
+"=== environment
+"===
 let $CONF_PATH = $HOME.'/.vim'
 if has('nvim')
     if has('win32')
-        let $CONF_PATH = $HOME.'\AppData\Local\nvim'
+        let $CONF_PATH = $HOME.'/AppData/Local/nvim'
     else
         let $CONF_PATH = $HOME.'/.config/nvim'
     endif
