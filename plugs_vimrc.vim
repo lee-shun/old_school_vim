@@ -15,7 +15,7 @@
 "
 "**************************************************************************************************
 
-call plug#begin('~/Appdata/Local/nvim/plugged')
+call plug#begin($CONF_PATH.'/plugged')
 
 "===
 "===UI

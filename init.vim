@@ -7,7 +7,7 @@
 "           |___/
 "
 "
-"File   : vimrc
+"File   : init.vim
 "
 "Author : lee-shun
 "
@@ -15,22 +15,31 @@
 "
 "**************************************************************************************************
 
+let $CONF_PATH = $HOME.'/.vim'
+if has('nvim')
+    if has('win32')
+        let $CONF_PATH = $HOME.'\AppData\Local\nvim'
+    else
+        let $CONF_PATH = $HOME.'/.config/nvim'
+    endif
+endif
+
 "===
 "=== basic_vimrc
 "===
-source ~/Appdata/Local/nvim/basic_vimrc.vim
+source $CONF_PATH/basic_vimrc.vim
 
 "===
 "=== function_vimrc
 "===
-source ~/Appdata/Local/nvim/function_vimrc.vim
+source $CONF_PATH/function_vimrc.vim
 
 "===
 "=== plugs_vimrc
 "===
-source ~/Appdata/Local/nvim/plugs_vimrc.vim
+source $CONF_PATH/plugs_vimrc.vim
 
 "===
 "=== plugs_settings_vimrc
 "===
-source ~/Appdata/Local/nvim/plugs_settings_vimrc.vim
+source $CONF_PATH/plugs_settings_vimrc.vim
