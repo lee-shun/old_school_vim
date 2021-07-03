@@ -83,8 +83,8 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 "===quick mapping
 "===
 noremap <LEADER>rc :e ~/.vim/vimrc<CR>
-nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 nnoremap <F2> :set relativenumber! number!<CR>
+nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 "===
 "===window split

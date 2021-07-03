@@ -74,7 +74,6 @@ Plug 'mbbill/undotree'
 "===
 Plug 'lee-shun/vim-dict'
 
-
 "===
 "===git
 "===
@@ -82,12 +81,12 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-
 "===
 "===Markdown
 "===
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'plasticboy/vim-markdown'
+Plug 'lee-shun/vim-markdown-wiki'
 
 call plug#end()
