@@ -73,7 +73,7 @@ set clipboard=unnamedplus
 "===
 set complete+=k
 set completeopt=menuone,noselect,noinsert
-set dictionary+=~/.vim/20k
+set dictionary+=~/Appdata/Local/nvim/20k
 
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -82,7 +82,7 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 "===
 "===quick mapping
 "===
-noremap <LEADER>rc :e ~/.vim/vimrc<CR>
+noremap <LEADER>rc :e ~/Appdata/Local/nvim/init.vim<CR>
 nnoremap <F2> :set relativenumber! number!<CR>
 nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
@@ -127,18 +127,18 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 "===
 "===modify history
 "===
-if empty(glob("~/.vim/tmp/"))
+if empty(glob("~/Appdata/Local/nvim/tmp/"))
     echo "Making the tmp dir!"
-    silent !mkdir -p ~/.vim/tmp/backup
-    silent !mkdir -p ~/.vim/tmp/undo
+    silent !mkdir -p ~/Appdata/Local/nvim/tmp/backup
+    silent !mkdir -p ~/Appdata/Local/nvim/tmp/undo
 endif
 
 set undofile
 set swapfile
 set nobackup
-set undodir=~/.vim/tmp/undo
-set backupdir=~/.vim/tmp/backup
-set directory=~/.vim/tmp/backup
+set undodir=~/Appdata/Local/nvim/tmp/undo
+set backupdir=~/Appdata/Local/nvim/tmp/backup
+set directory=~/Appdata/Local/nvim/tmp/backup
 
 "===
 "===ignore some file types
