@@ -4,9 +4,9 @@
 
 ## features:
 
-1. dependence-free 
+1. Dependence-free
 
-    All the plugins used in this configuration  is pure vim script.
+    All of the plugins used in this configuration  is pure vim script, no lua-based plugins needed.
 
 2. Completion
 
@@ -20,7 +20,11 @@
 
 3. All platform and Portable
 
-    - Fully platforms support.
+    - Fully platforms support(Linux/Windows/MacOS).
     - Clone and Use without any pain.
+
+4. Especially designed for Markdown
+
+    - Use markdown-wiki to arrange the notes.
 
 ![image](./snap1.png)
