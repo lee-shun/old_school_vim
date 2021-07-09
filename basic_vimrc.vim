@@ -132,8 +132,8 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 "===
 if empty(glob($CONF_PATH."/tmp/"))
     echo "Creating the tmp dir!"
-    silent exec "!mkdir -p" . $CONF_PATH . "/tmp/backup"
-    silent exec "!mkdir -p" . $CONF_PATH . "/tmp/undo"
+    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
+    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
 endif
 
 set undofile
