@@ -24,6 +24,7 @@
 let $CONF_PATH = $HOME.'/.vim'
 if has('nvim')
     if has('win32')
+        " TODO: the // , \ and /
         let $CONF_PATH = $HOME.'/AppData/Local/nvim'
     else
         let $CONF_PATH = $HOME.'/.config/nvim'
