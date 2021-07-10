@@ -24,4 +24,4 @@ nnoremap cic <Esc>0f*2lvt*hc
 set colorcolumn=81   " 设置80列提示
 set foldmethod=syntax
 
-source $CONF_PATH/mysnippet/cpp_hpp_snippet.vim
+source $CONF_PATH/after/mysnippet/c_h_sinppet.vim

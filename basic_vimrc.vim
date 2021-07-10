@@ -88,7 +88,7 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 noremap <LEADER>rc :e $CONF_PATH/init.vim<CR>
 nnoremap <F2> :set relativenumber! number!<CR>
 nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-nnoremap <LEADER>h :set hlsearch!<CR>
+nnoremap <C-h> :set hlsearch!<CR>
 
 "===
 "===window split
@@ -167,3 +167,8 @@ let g:netrw_altv = 1
 let g:netrw_chgwin = 2
 let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
+
+"===
+"=== better file type
+"===
+au BufNewFile,BufRead *.launch set filetype=xml
