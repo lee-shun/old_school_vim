@@ -18,6 +18,10 @@
 "
 "**************************************************************************************************
 
-set colorcolumn=81
+nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
+nnoremap cic <Esc>0f*2lvt*hc
 
-source $CONF_PATH/mysnippet/markdown_snippet.vim
+set colorcolumn=81   " 设置80列提示
+set foldmethod=syntax
+
+source $CONF_PATH/after/mysnippet/cpp_hpp_snippet.vim
