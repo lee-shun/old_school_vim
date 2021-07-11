@@ -148,11 +148,11 @@ set directory=$CONF_PATH/tmp/backup
 "===ignore some file types
 "===
 if has('win32')
-    set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+    set wildignore+=*\\plugged\\*,*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 elseif has('mac')
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
+    set wildignore+=*/plugged/*,*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
 elseif has('unix')
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
+    set wildignore+=*/plugged/*,*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
 endif
 
 "===
