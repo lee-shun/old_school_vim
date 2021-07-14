@@ -46,13 +46,13 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 "===
-"===general Highlight
+"===General Highlight
 "===
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 
 "===
-"===general enhancement
+"===General Enhancement
 "===
 Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
@@ -78,7 +78,7 @@ Plug 'mbbill/undotree'
 Plug 'lee-shun/vim-dict'
 
 "===
-"===git
+"===Git
 "===
 Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
