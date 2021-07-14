@@ -134,8 +134,9 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "===
 "=== change the cursor shape(works on alacritty,but change the fonts in git bash)
 "===
-if empty($ALACRITTY_LOG)
-else
+if empty($ALACRITTY_LOG) || has('nvim')
+  " if terminal is not alacritty or nvim running, don't use
+  else
   if empty($TMUX)
     let &t_SI = "\<Esc>]50;CursorShape=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
