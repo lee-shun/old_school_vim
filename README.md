@@ -13,7 +13,7 @@
                    \/__/        \|__|        \/__/                                      \/__/
 ```
 
-> I always want to use my Vim configuration on different machines, but various
+> I just want to use my Vim configuration on different machines, but various
 > Plugins and their dependences always drive me crazy, especially under different
 > environment! Some of them require `python`, some require `nodejs`. 
 > But most of the time, they requires the *DEPENDENCES* that I never heard about!
