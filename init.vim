@@ -18,6 +18,8 @@
 "
 "**************************************************************************************************
 
+let g:pure_vim_mini = 0
+
 "===
 "=== environment
 "===
@@ -36,17 +38,20 @@ endif
 "===
 source $CONF_PATH/basic_vimrc.vim
 
+
 "===
 "=== function_vimrc
 "===
 source $CONF_PATH/function_vimrc.vim
 
-"===
-"=== plugs_vimrc
-"===
-source $CONF_PATH/plugs_vimrc.vim
+if g:pure_vim_mini == 0
+    "===
+    "=== plugs_vimrc
+    "===
+    source $CONF_PATH/plugs_vimrc.vim
 
-"===
-"=== plugs_settings_vimrc
-"===
-source $CONF_PATH/plugs_settings_vimrc.vim
+    "===
+    "=== plugs_settings_vimrc
+    "===
+    source $CONF_PATH/plugs_settings_vimrc.vim
+endif

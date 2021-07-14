@@ -30,7 +30,7 @@ fun! Tab2Sapce()
     exec "set expandtab"
     exec "%retab!"
 endfun
- 
+
 "===
 "=== 空格替换为TAB：
 "===
