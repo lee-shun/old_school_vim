@@ -18,21 +18,23 @@
 "
 "**************************************************************************************************
 
-" basic
+"===
+"=== basic
+"===
 set encoding=utf-8                                                      " 设置新文件的编码为 UTF-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 " 自动判断编码时，依次尝试以下编码：
 set helplang=cn
 " set langmenu=zh_CN.UTF-8
 " set enc=2byte-gb18030
 set termencoding=utf-8                                                  " 下面这句只影响普通模式 (非图形界面) 下的 Vim
-
 set ffs=unix,dos,mac                                                    " Use Unix as the standard file type
-
 set formatoptions+=m                                                    " 如遇Unicode值大于255的文本，不必等到空格再折行
 set formatoptions+=B                                                    " 合并两行中文时，不在中间加空格
 
+set nocompatible
 let g:mapleader = ' '
 set autochdir
+set autoread
 filetype plugin indent on
 
 " display
@@ -43,7 +45,10 @@ set relativenumber
 set cursorline
 set cursorcolumn
 set colorcolumn=121
-set noshowmode
+set textwidth=120
+set hidden
+set showmode
+set showcmd
 set nowrap
 set linebreak
 set timeout           " for mappings
@@ -57,6 +62,19 @@ set ttyfast
 set t_Co=256
 set termguicolors
 set laststatus=2
+set cmdheight=1
+set spelllang=en,cjk  " Spell languages
+" Align indent to next multiple value of shiftwidth. For its meaning,
+" see http://vim.1045645.n5.nabble.com/shiftround-option-td5712100.html
+set shiftround
+" Virtual edit is useful for visual block edit
+set virtualedit=block
+
+" keyword match
+set showmatch               " 显示括号配对情况
+set iskeyword+=_,$,@,%,#,-  " 带有如下符号的单词不要被换行分割
+set matchpairs=(:),{:},[:],<:>
+set whichwrap=b,s,<,>,[,]
 
 " search
 set hlsearch
@@ -82,10 +100,11 @@ set foldenable
 " invisible symbol
 set list
 set listchars=tab:»·,nbsp:+,trail:·,extends:→,precedes:←
-let &showbreak='↳'
+set showbreak=↪
 
 " share clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 "===
 "=== built-in completion
@@ -134,18 +153,15 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "===
 "=== change the cursor shape(works on alacritty,but change the fonts in git bash)
 "===
-if empty($ALACRITTY_LOG) || has('nvim')
-  " if terminal is not alacritty or nvim running, don't use
-  else
-  if empty($TMUX)
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  else
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-    let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  endif
+if !has('nvim')
+    " Change cursor shapes based on whether we are in insert mode,
+    " see https://vi.stackexchange.com/questions/9131/i-cant-switch-to-cursor-in-insert-mode
+    let &t_SI = "\<esc>[6 q"
+    let &t_EI = "\<esc>[2 q"
+    if exists('&t_SR')
+        let &t_SR = "\<esc>[4 q"
+    endif
+
 endif
 
 "===
@@ -184,19 +200,26 @@ set directory=$CONF_PATH/tmp/backup
 "===
 "=== ignore some file types
 "===
-if has('win32')
-  set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-elseif has('mac')
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
-elseif has('unix')
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOS/Linux
-endif
+set wildignore+=*.o,*.obj,*.bin,*.dll,*.exe
+set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
+set wildignore+=*.pyc
+set wildignore+=*.DS_Store
+set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
+
+"===
+"=== better file type
+"===
+au BufNewFile,BufRead *.launch set filetype=xml
 
 "===
 "=== build-in netrw
 "===
+
+if g:pure_vim_mini==1
+    nnoremap <LEADER>t :Vex<CR>
+endif
 let g:netrw_hide = 1
-let g:netrw_liststyle = 1
+let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 24
@@ -206,6 +229,58 @@ let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
 
 "===
-"=== better file type
+"=== status line
 "===
-au BufNewFile,BufRead *.launch set filetype=xml
+if g:pure_vim_mini==1
+    source $CONF_PATH/statusline.vim
+endif
+
+"===
+"=== themes
+"===
+if g:pure_vim_mini==1
+    source $CONF_PATH/themes.vim
+endif
+
+"===
+"=== auto setting command
+"===
+if exists('##CmdLineEnter')
+    augroup dynamic_smartcase
+        autocmd!
+        autocmd CmdLineEnter : set nosmartcase
+        autocmd CmdLineLeave : set smartcase
+    augroup END
+endif
+
+if exists('##TermOpen')
+    augroup term_settings
+        autocmd!
+        " Do not use number and relative number for terminal inside nvim
+        autocmd TermOpen * setlocal norelativenumber nonumber
+        " Go to insert mode by default to start typing command
+        autocmd TermOpen * startinsert
+    augroup END
+endif
+
+" More accurate syntax highlighting? (see `:h syn-sync`)
+augroup accurate_syn_highlight
+    autocmd!
+    autocmd BufEnter * :syntax sync fromstart
+augroup END
+
+" Display a message when the current file is not in utf-8 format.
+" Note that we need to use `unsilent` command here because of this issue:
+" https://github.com/vim/vim/issues/4379. For older Vim (version 7.4), the
+" help file are in gzip format, do not warn this.
+augroup non_utf8_file_warn
+    autocmd!
+    autocmd BufRead * if &fileencoding != 'utf-8' && expand('%:e') != 'gz'
+                \ | unsilent echomsg 'File not in UTF-8 format!' | endif
+augroup END
+
+augroup number_toggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number | set relativenumber | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
+augroup END
