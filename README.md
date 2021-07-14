@@ -1,5 +1,3 @@
-# Pure Vim
-
 ```
 
        ___          ___          ___          ___                  ___                   ___
@@ -15,9 +13,15 @@
                    \/__/        \|__|        \/__/                                      \/__/
 ```
 
-This is a totally dependence-free vim/neovim configuration And it has the
-*Mini-Mode* and *Ulti-Mode*, which is controled by the `g:pure_vim_mini`
-variable defined in [init.vim](./init.vim).
+> I always want to use my Vim configuration on different machines, but various
+> Plugins and their dependences always drive me crazy, especially under different
+> environment! Some of them require `python`, some require `nodejs`. 
+> But most of the time, they requires the *DEPENDENCES* that I never heard about!
+> I am NOT almighty, you got be kidding me!
+
+- This is a totally dependence-free vim/neovim configuration. (Yes, even `python`)
+- It has the **Mini-Mode** and **Ulti-Mode**, which is controlled by the 
+ `g:pure_vim_mini` variable defined in [init.vim](./init.vim).
 
 ## Features:
 
@@ -28,7 +32,6 @@ variable defined in [init.vim](./init.vim).
 
     - **Mini-Mode**
         - Not Plugins at all.
-
     - **Ulti-Mode**
         - Some dependence-free Plugins written in Vimscripts.
 
@@ -56,12 +59,18 @@ variable defined in [init.vim](./init.vim).
         - Fully platforms supporting(Linux/Windows/MacOS).
     - **Ulti-Mode**
         - Set `g:pure_vim_mini` to `0`
-        - use [vim-plug](https://github.com/junegunn/vim-plug), all
+        - Use [vim-plug](https://github.com/junegunn/vim-plug), all
         the plugins are also dependence-free.
-        - Run `PlugInstall` after cloning the repo.
+        - Run `:PlugInstall` in (neo)vim after cloning the repo.
+        - Fully platforms supporting(Linux/Windows/MacOS).
 ---
 
-## Mini-Mode on Windos 10 with Git Bash
+## Screen Shots
+
+### Mini-Mode on Windows 10 with Git Bash
+
 ![image](./snap2.png)
-## Ulti-Mode on Linux with Gnome-Terminal
+
+### Ulti-Mode on Linux with Alacritty
+
 ![image](./snap1.png)

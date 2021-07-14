@@ -21,7 +21,7 @@
 "===
 "=== control the mini and ulti mode
 "===
-let g:pure_vim_mini = 1
+let g:pure_vim_mini = 0
 
 "===
 "=== environment
