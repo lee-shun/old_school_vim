@@ -66,13 +66,13 @@
 
 ### Mini-Mode
 
-- [x] Ubuntu 18.04 + Vim 8.2 + Xfce4-terminal
+- [x] <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd>
 
 ![image](./img/mini_linux.png)
 
 ---
 
-- [x] Windows 10 + Neovim 5.0 + Alacritty
+- [x] <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>
 
 ![image](./img/mini_win.png)
 
@@ -80,13 +80,13 @@
 
 ### Ulti-Mode 
 
-- [x] Ubuntu 18.04 + Vim 8.2 + Xfce4-terminal
+- [x] <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd>
 
 ![image](./img/linux_vim.png)
 
 ---
 
-- [x] Windows 10 + Vim 8.2 + Git Bash
+- [x] <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>
 
 ![image](./img/win_vim_git_bash.png)
 ---
