@@ -28,8 +28,14 @@ set helplang=cn
 " set enc=2byte-gb18030
 set termencoding=utf-8                                                  " 下面这句只影响普通模式 (非图形界面) 下的 Vim
 set ffs=unix,dos,mac                                                    " Use Unix as the standard file type
-set formatoptions+=m                                                    " 如遇Unicode值大于255的文本，不必等到空格再折行
-set formatoptions+=B                                                    " 合并两行中文时，不在中间加空格
+
+" NOTE: if directly use 'set ..', it will be reset by the buildin vimscripts.
+augroup Format-Options
+    autocmd!
+    autocmd BufEnter * setlocal formatoptions+=m formatoptions+=B formatoptions-=o
+    " This can be done as well instead of the previous line, for setting formatoptions as you choose:
+    " autocmd BufEnter * setlocal formatoptions=crqn2l1j
+augroup END
 
 set nocompatible
 let g:mapleader = ' '
@@ -69,6 +75,7 @@ set spelllang=en,cjk  " Spell languages
 set shiftround
 " Virtual edit is useful for visual block edit
 set virtualedit=block
+
 
 " keyword match
 set showmatch               " 显示括号配对情况
