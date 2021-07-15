@@ -63,7 +63,6 @@
         the plugins are also dependence-free.
         - Run `:PlugInstall` in (neo)vim after cloning the repo.
         - Fully platforms supporting(Linux/Windows/MacOS).
----
 
 ## Screen Shots
 
