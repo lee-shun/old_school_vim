@@ -82,13 +82,13 @@
 
 - [x] Ubuntu 18.04 + Vim 8.2 + Xfce4-terminal
 
-![image](./img/win_vim_git_bash.png)
+![image](./img/linux_vim.png)
 
 ---
 
 - [x] Windows 10 + Vim 8.2 + Git Bash
 
-![image](./img/linux_vim.png)
+![image](./img/win_vim_git_bash.png)
 ---
 
 ## TODO
