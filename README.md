@@ -1,4 +1,4 @@
-![title](./img/pure_vim.png)
+# <p align="center">![title](./img/pure_vim.png)</p>
 
 > I just want to use my Vim configuration on different machines😹, but various
 > Plugins and their dependencies always drive me crazy, especially under
