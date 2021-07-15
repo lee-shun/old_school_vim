@@ -37,7 +37,7 @@
     - Use [markdown-wiki](https://github.com/mmai/vim-markdown-wiki)
     to arrange the notes.
     - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)(it
-    need download a binary markdown software, but don't worry it is automatic.)
+    needs to download a binary markdown software, but don't worry, it is automatic.)
 
 6. **Automatically Configuration Path Setting**
     - This configuration is designed for vim and neovim both on windows and
