@@ -91,3 +91,6 @@
 ![image](./img/linux_vim.png)
 ---
 
+## TODO
+
+- [ ] For Gvim on Windows
