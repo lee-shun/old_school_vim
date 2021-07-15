@@ -26,14 +26,23 @@ let g:pure_vim_mini = 0
 "===
 "=== environment
 "===
-let $CONF_PATH = $HOME.'/.vim'
 if has('nvim')
-    if has('win32')
-        " TODO: the // , \ and /
+    if has('win32') " nvim on windows
         let $CONF_PATH = $HOME.'/AppData/Local/nvim'
-    else
+    else " nvim on linux
         let $CONF_PATH = $HOME.'/.config/nvim'
     endif
+else
+    if has('win32')  " vim on windows
+        if has('gui_running') " gvim on windows
+            let $CONF_PATH = $HOME.'/vimfiles'
+        else " vim in Git Bash
+            let $CONF_PATH = $HOME.'/.vim'
+        endif
+    else " vim on linux
+        let $CONF_PATH = $HOME.'/.vim'
+    endif
+
 endif
 
 "===
