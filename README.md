@@ -3,7 +3,7 @@
 > I just want to use my Vim configuration on different machines😹, but various
 > Plugins and their dependencies always drive me crazy, especially under
 > different environment! Some of them require `python`, some require `nodejs`.
-> But most of the time, they requires the **DEPENDENCIES**❌ that I never heard
+> But most of times, they requires the so-called **DEPENDENCIES**❌ that I never heard
 > about! I am **NOT almighty**, you got be kidding me!😠
 
 - This is a totally dependence-free vim/neovim configuration. (Yes, even `python`)
