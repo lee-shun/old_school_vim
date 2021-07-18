@@ -86,6 +86,8 @@
 
 ---
 
+**NOTE:** Please notice that the Gvim on Windows will confuse the Git Bash with
+its own vim.
 - [x] <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>
 
 ![image](./img/win_vim_git_bash.png)
