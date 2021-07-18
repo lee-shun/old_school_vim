@@ -66,36 +66,21 @@
 
 ### Mini-Mode
 
-- [x] <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd>
-
-![image](./img/mini_linux.png)
-
----
-
-- [x] <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>
-
-![image](./img/mini_win.png)
-
----
+| **Environment**                                                          | **Screen Shots**               |
+|--------------------------------------------------------------------------|--------------------------------|
+| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
+| <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
 
 ### Ulti-Mode 
 
-- [x] <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd>
-
-![image](./img/linux_vim.png)
-
----
-
 **NOTE:** Please notice that the Gvim on Windows will confuse the Git Bash with
 its own vim.
-- [x] <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>
 
-![image](./img/win_vim_git_bash.png)
----
-
-- [x] <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>
-
-![image](./img/win_gvim.png)
+| **Environment**                                                          | **Screen Shots**                     |
+|--------------------------------------------------------------------------|--------------------------------------|
+| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/linux_vim.png)        |
+| <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png) |
+| <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)         |
 
 ## TODO
 
