@@ -91,6 +91,10 @@
 ![image](./img/win_vim_git_bash.png)
 ---
 
+- [x] <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>
+
+![image](./img/win_gvim.png)
+
 ## TODO
 
-- [ ] For Gvim on Windows
+- [x] For Gvim on Windows
