@@ -43,6 +43,19 @@ set autochdir
 set autoread
 filetype plugin indent on
 
+" for gvim
+if has('gui_running')
+    set shell=powershell
+    set guifont=SauceCodePro\ NF:h12:cANSI
+    set guifontwide=SauceCodePro\ NF:h12
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=L
+    set guioptions-=r
+    set lines=30
+    set columns=120
+endif
+
 " display
 syntax on
 set scrolloff=5
@@ -55,6 +68,7 @@ set textwidth=120
 set hidden
 set showmode
 set showcmd
+set mouse=
 set nowrap
 set linebreak
 set timeout           " for mappings
