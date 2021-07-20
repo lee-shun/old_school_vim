@@ -34,7 +34,7 @@ autocmd Filetype markdown inoremap <expr> <localLeader><F12> eval(Count('\[\^\d\
 
 function! Findtitle()
     for i in range(line('.'))
-        if matchstr(getline(line('.')-i),'^# \+')!=#''
+        if matchstr(getline(line('.')-i),'^## \+')!=#''
             let l:latesttitleline=line('.')-i
             break
         else
@@ -44,7 +44,7 @@ function! Findtitle()
     return l:latesttitleline
 endfunction
 
-autocmd Filetype markdown inoremap <expr> <localLeader><F11> Count('^# \+',1)
+autocmd Filetype markdown inoremap <expr> <localLeader><F11> Count('^## \+',1)
 autocmd Filetype markdown inoremap <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
 
 " ===
