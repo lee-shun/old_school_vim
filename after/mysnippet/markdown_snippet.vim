@@ -19,18 +19,19 @@
 "**************************************************************************************************
 
 let maplocalleader = ","
+let g:localvimrc_sandbox = 0
 
 " ===
 " === additional functions
 " ===
-" 计算某个pattern从startline到光标处出现的次数
 function! Count(pattern,startline)
-  let l:cnt = 0
-  silent! exe a:startline . ',.s/' . a:pattern . '/\=execute(''let l:cnt += 1'')/gn'
-  return l:cnt
+  let l:matches = []
+  silent! exe a:startline . ',.s/' . a:pattern . '/\=add(l:matches, submatch(0))/gn'
+  return len(l:matches)
 endfunction
 
-"计算markdown中一级标题出现的次数，用来给公式自动编号
+autocmd Filetype markdown inoremap <expr> <localLeader><F12> eval(Count('\[\^\d\+\]',1)+1)
+
 function! Findtitle()
     for i in range(line('.'))
         if matchstr(getline(line('.')-i),'^# \+')!=#''
@@ -42,10 +43,9 @@ function! Findtitle()
     endfor
     return l:latesttitleline
 endfunction
+
 autocmd Filetype markdown inoremap <expr> <localLeader><F11> Count('^# \+',1)
 autocmd Filetype markdown inoremap <expr> <Leader><localLeader><F11> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
-autocmd Filetype markdown inoremap <expr> <localLeader><F12> eval(Count('\[\^\d\+\]',1)+1)
-
 
 " ===
 " === for greneral writting
