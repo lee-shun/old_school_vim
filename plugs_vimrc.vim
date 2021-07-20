@@ -69,6 +69,11 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
 
 "===
+"=== Text object
+"===
+Plug 'wellle/targets.vim'
+
+"===
 "=== Undo
 "===
 Plug 'mbbill/undotree'
