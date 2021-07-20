@@ -45,7 +45,7 @@ function! Findtitle()
 endfunction
 
 autocmd Filetype markdown inoremap <expr> <localLeader><F11> Count('^# \+',1)
-autocmd Filetype markdown inoremap <expr> <Leader><localLeader><F11> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
+autocmd Filetype markdown inoremap <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
 
 " ===
 " === for greneral writting
@@ -78,7 +78,7 @@ autocmd Filetype markdown imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-
 " === for equations
 " ===
 autocmd Filetype markdown inoremap <localLeader>e $$<++><Esc>F$i
-autocmd Filetype markdown imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<Leader><localLeader><F11>}$$<Enter><BS><++><Esc>2kA
+autocmd Filetype markdown imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<localLeader><F10>}$$<Enter><BS><++><Esc>2kA
 
 " for speed up \
 autocmd Filetype markdown inoremap \\ \\
