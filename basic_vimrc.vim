@@ -232,7 +232,6 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 "===
 "=== build-in netrw
 "===
-
 if g:pure_vim_mini==1
     nnoremap <LEADER>t :Vex<CR>
 endif
