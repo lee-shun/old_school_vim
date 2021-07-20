@@ -225,7 +225,9 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 "===
 "=== better file type
 "===
-au BufNewFile,BufRead *.launch set filetype=xml
+autocmd BufNewFile,BufRead *.launch set filetype=xml
+autocmd BufNewFile,BufRead *.Md set filetype=markdown
+autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 "===
 "=== build-in netrw
