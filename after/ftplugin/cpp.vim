@@ -18,7 +18,11 @@
 "
 "**************************************************************************************************
 
+" ===
+" === for commet coverting
+" ===
 nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
+nnoremap <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
 
 " ===
 " === for /**/
