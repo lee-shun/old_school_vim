@@ -20,7 +20,7 @@
 
 nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
 
-set colorcolumn=81   " 设置80列提示
+set colorcolumn=81
 set foldmethod=syntax
 
 source $CONF_PATH/after/mysnippet/c_h_sinppet.vim

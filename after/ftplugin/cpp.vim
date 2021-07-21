@@ -35,13 +35,12 @@ function! s:aroundCodeFence()
     call search("\*\/", 'ceW')
     normal! $
 endfunction
-
 xnoremap <silent> ic :<c-u>call <sid>inComment()<cr>
 onoremap <silent> ic :<c-u>call <sid>inComment()<cr>
 xnoremap <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
 onoremap <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
 
-set colorcolumn=81   " 设置80列提示
+set colorcolumn=81
 set foldmethod=syntax
 
 source $CONF_PATH/after/mysnippet/cpp_hpp_snippet.vim
