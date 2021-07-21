@@ -19,7 +19,6 @@
 "**************************************************************************************************
 
 let maplocalleader = ","
-let g:localvimrc_sandbox = 0
 
 " ===
 " === additional functions
@@ -30,71 +29,71 @@ function! Count(pattern,startline)
   return len(l:matches)
 endfunction
 
-autocmd Filetype markdown inoremap <expr> <localLeader><F12> eval(Count('\[\^\d\+\]',1)+1)
+inoremap <expr> <localLeader><F12> eval(Count('\[\^\d\+\]',1)+1)
 
 function! Findtitle()
-    for i in range(line('.'))
-        if matchstr(getline(line('.')-i),'^## \+')!=#''
-            let l:latesttitleline=line('.')-i
-            break
-        else
-            let l:latesttitleline=line('.')
-        endif
-    endfor
-    return l:latesttitleline
+  for i in range(line('.'))
+    if matchstr(getline(line('.')-i),'^## \+')!=#''
+      let l:latesttitleline=line('.')-i
+      break
+    else
+      let l:latesttitleline=line('.')
+    endif
+  endfor
+  return l:latesttitleline
 endfunction
 
-autocmd Filetype markdown inoremap <expr> <localLeader><F11> Count('^## \+',1)
-autocmd Filetype markdown inoremap <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
+inoremap <expr> <localLeader><F11> Count('^## \+',1)
+inoremap <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
 
 " ===
 " === for greneral writting
 " ===
-autocmd Filetype markdown inoremap <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
+inoremap <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
 
-autocmd FileType markdown inoremap <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
-autocmd FileType markdown inoremap <localLeader>m - [ ] 
-autocmd Filetype markdown inoremap <localLeader>p ![](<C-R>+ "<++>")<++><Esc>F]i
-autocmd Filetype markdown inoremap <localLeader>a [](<C-R>+ "<++>")<++><Esc>F]i
-autocmd FileType markdown inoremap <localLeader>l --------<Enter>
-autocmd Filetype markdown inoremap <localLeader>b ****<++><Esc>F*hi
-autocmd Filetype markdown inoremap <localLeader>u <u></u><++><Esc>F/i<Left>
-autocmd Filetype markdown inoremap <localLeader>i **<++><Esc>F*i
-autocmd Filetype markdown inoremap <localLeader>d ~~~~<++><Esc>F~hi
-autocmd Filetype markdown inoremap <localLeader>s ``<++><Esc>F`i
-autocmd Filetype markdown inoremap <localLeader>t <br><br><Esc>o> *Last Modified at <C-R>=strftime('%Y-%m-%d %H:%M:%S')<C-M>*<Down><Esc>o<CR>
+inoremap <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
+inoremap <localLeader>m - [ ] 
+inoremap <localLeader>p ![](<C-R>+ "<++>")<++><Esc>F]i
+inoremap <localLeader>a [](<C-R>+ "<++>")<++><Esc>F]i
+inoremap <localLeader>l --------<Enter>
+inoremap <localLeader>b ****<++><Esc>F*hi
+inoremap <localLeader>u <u></u><++><Esc>F/i<Left>
+inoremap <localLeader>i **<++><Esc>F*i
+inoremap <localLeader>d ~~~~<++><Esc>F~hi
+inoremap <localLeader>s ``<++><Esc>F`i
+inoremap <localLeader>t <br><br><Esc>o> *Last Modified at <C-R>=strftime('%Y-%m-%d %H:%M:%S')<C-M>*<Down><Esc>o<CR>
 
-autocmd Filetype markdown inoremap <localLeader>1 #<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap <localLeader>2 ##<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap <localLeader>3 ###<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap <localLeader>4 ####<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap <localLeader>5 #####<Space><Enter><++><Esc>kA
+inoremap <localLeader>1 #<Space><Enter><++><Esc>kA
+inoremap <localLeader>2 ##<Space><Enter><++><Esc>kA
+inoremap <localLeader>3 ###<Space><Enter><++><Esc>kA
+inoremap <localLeader>4 ####<Space><Enter><++><Esc>kA
+inoremap <localLeader>5 #####<Space><Enter><++><Esc>kA
 
 " foot notes
-autocmd Filetype markdown imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-r>": <++><Esc><C-o>f]a
+imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-r>": <++><Esc><C-o>f]a
 
 
 " ===
 " === for equations
 " ===
-autocmd Filetype markdown inoremap <localLeader>e $$<++><Esc>F$i
-autocmd Filetype markdown imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<localLeader><F10>}$$<Enter><BS><++><Esc>2kA
+inoremap <localLeader>e $$<++><Esc>F$i
+imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<localLeader><F10>}$$<Enter><BS><++><Esc>2kA
 
 " for speed up \
-autocmd Filetype markdown inoremap \\ \\
+inoremap \\ \\
 
 " for symbol
- autocmd Filetype markdown inoremap \fr \frac{}{<++>}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \ha \hat{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \do \dot{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \dd \ddot{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \sq \sqrt{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \ve \vec{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \ol \overline{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \wt \widetilde{}<++><Esc>0f{a
- autocmd Filetype markdown inoremap \pr ^{\prime}
+inoremap \fr \frac{}{<++>}<++><Esc>0f{a
+inoremap \ha \hat{}<++><Esc>0f{a
+inoremap \do \dot{}<++><Esc>0f{a
+inoremap \dd \ddot{}<++><Esc>0f{a
+inoremap \sq \sqrt{}<++><Esc>0f{a
+inoremap \ve \vec{}<++><Esc>0f{a
+inoremap \ol \overline{}<++><Esc>0f{a
+inoremap \wt \widetilde{}<++><Esc>0f{a
+inoremap \pr ^{\prime}
 
- " for environment
- autocmd Filetype markdown inoremap \en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
- autocmd Filetype markdown inoremap \al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
- autocmd Filetype markdown inoremap \ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
+" for environment
+inoremap \en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
+inoremap \al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
+inoremap \ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
