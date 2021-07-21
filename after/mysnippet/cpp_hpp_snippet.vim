@@ -18,7 +18,7 @@
 "
 "**************************************************************************************************
 
-inoremap /* /*  */ <++><Esc>F*hi
-inoremap */ /***/<ESc>F*i
-inoremap ,fun <++> <++>::<++>(<++>){<++>}<Esc>
-inoremap ,cla class <++>{<++>}<Esc>
+let maplocalleader=','
+
+inoremap <localLeader>/ /*  */ <++><Esc>F*hi
+inoremap <localLeader>* /***/<ESc>F*i

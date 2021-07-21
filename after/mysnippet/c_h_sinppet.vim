@@ -18,5 +18,7 @@
 "
 "**************************************************************************************************
 
-inoremap /* /*  */ <++><Esc>F*hi
-inoremap */ /**  */<ESc>F*hi
+let maplocalleader=','
+
+inoremap <localLeader>/ /*  */ <++><Esc>F*hi
+inoremap <localLeader>* /***/<ESc>F*i
