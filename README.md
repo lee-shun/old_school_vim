@@ -31,7 +31,7 @@
   - Automatically commonly used words completion with google-20k words.
   - The commonly used programming languages like `python` and `c++` etc.
     key-words completion.
-  - Unicode complettion by [unicode.vim](https://github.com/chrisbra/unicode.vim)
+  - Unicode completion by [unicode.vim](https://github.com/chrisbra/unicode.vim)
 
 3. **All Platform Supporting and Portable**
   - Clone and Use without any pain.
