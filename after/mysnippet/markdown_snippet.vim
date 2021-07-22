@@ -53,8 +53,8 @@ inoremap <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
 
 inoremap <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
 inoremap <localLeader>m - [ ] 
-inoremap <localLeader>p ![](<C-R>+ "<++>")<++><Esc>F]i
-inoremap <localLeader>a [](<C-R>+ "<++>")<++><Esc>F]i
+inoremap <localLeader>p ![](<++>)<++><Esc>F]i
+inoremap <localLeader>a [](<++>)<++><Esc>F]i
 inoremap <localLeader>l --------<Enter>
 inoremap <localLeader>b ****<++><Esc>F*hi
 inoremap <localLeader>u <u></u><++><Esc>F/i<Left>
