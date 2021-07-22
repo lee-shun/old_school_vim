@@ -69,7 +69,7 @@
     - Set `g:pure_vim_mini` to `0` in [init.vim](./init.vim).
     - Use [vim-plug](https://github.com/junegunn/vim-plug), all
       the plugins are also dependence-free.
-    - Run `:PlugInstall` in (neo)vim after cloning the repo.
+    - Automatically Plugins installing when first enter vim.
     - Fully platforms supporting(Linux/Windows/MacOS).
 
 ## Screen Shots
