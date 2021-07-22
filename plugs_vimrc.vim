@@ -66,6 +66,7 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "===
 "=== Text object
@@ -81,6 +82,7 @@ Plug 'mbbill/undotree'
 "=== Complete
 "===
 Plug 'lee-shun/vim-dict'
+Plug 'chrisbra/unicode.vim'
 
 "===
 "=== Git
