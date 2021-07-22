@@ -82,6 +82,7 @@ Plug 'mbbill/undotree'
 "=== Complete
 "===
 Plug 'lee-shun/vim-dict'
+Plug 'chrisbra/unicode.vim'
 
 "===
 "=== Git
