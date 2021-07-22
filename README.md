@@ -81,7 +81,7 @@
 | <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
 | <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
 
-### Ulti-Mode 
+### Ulti-Mode
 
 **NOTE:** Please notice that the Gvim on Windows will confuse the Git Bash with
 its own vim.

@@ -256,7 +256,7 @@ endif
 "=== themes
 "===
 if g:pure_vim_mini==1
-    source $CONF_PATH/themes.vim
+    colorscheme pure_theme
 endif
 
 "===
