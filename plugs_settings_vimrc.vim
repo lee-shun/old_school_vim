@@ -107,8 +107,9 @@ let vim_markdown_preview_github=1
 "===ctrl-p
 "===
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm|)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$' }
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>fb :CtrlPBuffer<CR>
 nnoremap <leader>fm :CtrlPMRUFiles<CR>
