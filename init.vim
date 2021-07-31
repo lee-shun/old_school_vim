@@ -33,7 +33,6 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 "===
 source $CONF_PATH/basic_vimrc.vim
 
-
 "===
 "=== function_vimrc
 "===
