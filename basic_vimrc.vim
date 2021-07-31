@@ -180,17 +180,31 @@ if !has('nvim')
 
 endif
 
-"===
-"=== add and move line
-"===
+" ===
+" === some useful remaps
+" ===
+
+" change indent and select in v-mode
+xnoremap <  <gv
+xnoremap >  >gv
+
+" add blank line
 nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
 nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
 nnoremap [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
-" change indent and select in v-mode
-xnoremap <  <gv
-xnoremap >  >gv
+" add and move line
+nnoremap Y y$
+
+" move the chosen zone
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" place the cursor in the middle
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ'z
 
 "===
 "=== search the chosen
