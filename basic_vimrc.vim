@@ -18,9 +18,9 @@
 "
 "**************************************************************************************************
 
-"===
-"=== basic
-"===
+" ===
+" === basic
+" ===
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
@@ -122,9 +122,9 @@ set showbreak=↪
 set clipboard+=unnamed
 set clipboard+=unnamedplus
 
-"===
-"=== built-in completion
-"===
+" ===
+" === built-in completion
+" ===
 set complete+=k
 set completeopt=menuone,noselect,noinsert
 set dictionary+=$CONF_PATH/20k
@@ -133,17 +133,17 @@ inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
-"===
-"=== quick mapping
-"===
+" ===
+" === quick mapping
+" ===
 noremap <LEADER>rc :e $CONF_PATH/init.vim<CR>
 nnoremap <F2> :set relativenumber! number!<CR>
 nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 nnoremap <C-h> :set hlsearch!<CR>
 
-"===
-"=== window split
-"===
+" ===
+" === window split
+" ===
 set splitright
 set splitbelow
 
@@ -161,14 +161,14 @@ inoremap <C-A-down> <nop>
 inoremap <C-A-left> <nop>
 inoremap <C-A-right> <nop>
 
-"===
-"=== save the cursor line position
-"===
+" ===
+" === save the cursor line position
+" ===
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-"===
-"=== change the cursor shape(works on alacritty,but change the fonts in git bash)
-"===
+" ===
+" === change the cursor shape(works on alacritty,but change the fonts in git bash)
+" ===
 if !has('nvim')
     " Change cursor shapes based on whether we are in insert mode,
     " see https://vi.stackexchange.com/questions/9131/i-cant-switch-to-cursor-in-insert-mode
@@ -206,14 +206,14 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ'z
 
-"===
-"=== search the chosen
-"===
+" ===
+" === search the chosen
+" ===
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-"===
-"=== modify history
-"===
+" ===
+" === modify history
+" ===
 if empty(glob($CONF_PATH."/tmp/"))
   echo "Creating the tmp dir!"
   silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
@@ -227,25 +227,25 @@ set undodir=$CONF_PATH/tmp/undo
 set backupdir=$CONF_PATH/tmp/backup
 set directory=$CONF_PATH/tmp/backup
 
-"===
-"=== ignore some file types
-"===
+" ===
+" === ignore some file types
+" ===
 set wildignore+=*.o,*.obj,*.bin,*.dll,*.exe
 set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
 set wildignore+=*.pyc
 set wildignore+=*.DS_Store
 set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 
-"===
-"=== better file type
-"===
+" ===
+" === better file type
+" ===
 autocmd BufNewFile,BufRead *.launch set filetype=xml
 autocmd BufNewFile,BufRead *.Md set filetype=markdown
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
-"===
-"=== build-in netrw
-"===
+" ===
+" === build-in netrw
+" ===
 if g:pure_vim_mini==1
     nnoremap <LEADER>t :Vex<CR>
 endif
@@ -259,23 +259,23 @@ let g:netrw_chgwin = 2
 let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
 
-"===
-"=== status line
-"===
+" ===
+" === status line
+" ===
 if g:pure_vim_mini==1
     source $CONF_PATH/statusline.vim
 endif
 
-"===
-"=== themes
-"===
+" ===
+" === themes
+" ===
 if g:pure_vim_mini==1
     colorscheme pure_theme
 endif
 
-"===
-"=== auto setting command
-"===
+" ===
+" === auto setting command
+" ===
 if exists('##CmdLineEnter')
     augroup dynamic_smartcase
         autocmd!

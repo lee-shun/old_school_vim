@@ -18,24 +18,24 @@
 "
 "**************************************************************************************************
 
-"===
-"=== control the mini and ulti mode
-"===
+" ===
+" === control the mini and ulti mode
+" ===
 let g:pure_vim_mini = 0
 
-"===
-"=== environment
-"===
+" ===
+" === environment
+" ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
 
-"===
-"=== basic_vimrc
-"===
+" ===
+" === basic_vimrc
+" ===
 source $CONF_PATH/basic_vimrc.vim
 
-"===
-"=== function_vimrc
-"===
+" ===
+" === function_vimrc
+" ===
 source $CONF_PATH/function_vimrc.vim
 
 if g:pure_vim_mini == 0
@@ -47,14 +47,14 @@ if g:pure_vim_mini == 0
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 
-  "===
-  "=== plugs_vimrc
-  "===
+  " ===
+  " === plugs_vimrc
+  " ===
   source $CONF_PATH/plugs_vimrc.vim
 
-  "===
-  "=== plugs_settings_vimrc
-  "===
+  " ===
+  " === plugs_settings_vimrc
+  " ===
   source $CONF_PATH/plugs_settings_vimrc.vim
 
 endif

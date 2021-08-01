@@ -22,27 +22,27 @@
 
 "****************************************有用函数**************************************************
 
-"===
-"=== 转换tab为空格
-"===
+" ===
+" === 转换tab为空格
+" ===
 fun! Tab2Sapce()
     exec "set tabstop=4"
     exec "set expandtab"
     exec "%retab!"
 endfun
 
-"===
-"=== 空格替换为TAB：
-"===
+" ===
+" === 空格替换为TAB：
+" ===
 fun! Sapce2Tab()
     exec "set tabstop=4"
     exec "set noexpandtab"
     exec "%retab!"
 endfun
 
-"===
-"=== 清理空格
-"===
+" ===
+" === 清理空格
+" ===
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
@@ -51,9 +51,9 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-"===
-"=== 编译运行
-"===
+" ===
+" === 编译运行
+" ===
 noremap r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
@@ -100,9 +100,9 @@ func! CompileRunGcc()
     endif
 endfunc
 
-"===
-"=== 选择查找
-"===
+" ===
+" === 选择查找
+" ===
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
     execute "normal! vgvy"
@@ -121,9 +121,9 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 
-"===
-"=== 自动文件
-"===
+" ===
+" === 自动文件
+" ===
 autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":call SetTitle()"
 " 加入注释
 func SetComment()
