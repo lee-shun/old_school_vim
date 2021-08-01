@@ -20,9 +20,9 @@
 
 call plug#begin($CONF_PATH.'/plugged')
 
-"===
-"=== UI
-"===
+" ===
+" === UI
+" ===
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
@@ -30,9 +30,9 @@ Plug 'sainnhe/edge'
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
 
-"===
-"=== File navigation
-"===
+" ===
+" === File navigation
+" ===
 Plug 'mhinz/vim-startify'
 Plug 'csch0/vim-startify-renderer-nerdfont'
 Plug 'lambdalisue/nerdfont.vim'
@@ -40,20 +40,20 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
-"===
-"===  File Finder
-"===
+" ===
+" === File Finder
+" ===
 Plug 'ctrlpvim/ctrlp.vim'
 
-"===
-"=== General Highlight
-"===
+" ===
+" === General Highlight
+" ===
 Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 
-"===
-"=== General Enhancement
-"===
+" ===
+" === General Enhancement
+" ===
 Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
 Plug 'jiangmiao/auto-pairs'
@@ -68,32 +68,32 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-"===
-"=== Text object
-"===
+" ===
+" === Text object
+" ===
 Plug 'wellle/targets.vim'
 
-"===
-"=== Undo
-"===
+" ===
+" === Undo
+" ===
 Plug 'mbbill/undotree'
 
-"===
-"=== Complete
-"===
+" ===
+" === Complete
+" ===
 Plug 'lee-shun/vim-dict'
 Plug 'chrisbra/unicode.vim'
 
-"===
-"=== Git
-"===
+" ===
+" === Git
+" ===
 Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 
-"===
-"=== Markdown
-"===
+" ===
+" === Markdown
+" ===
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'

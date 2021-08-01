@@ -18,24 +18,23 @@
 "
 "**************************************************************************************************
 
-"===
-"=== UI
-"===
+" ===
+" === UI
+" ===
 set background=dark
 colorscheme everforest
 let g:everforest_background = 'hard'
 let g:everforest_enable_italic = 0
 let g:everforest_disable_italic_comment = 0
-let g:everforest_cursor = 'orange'
 let g:everforest_diagnostic_text_highlight = 1
 let g:everforest_lightline_disable_bold = 1
 let g:everforest_better_performance = 1
 
 
 
-"===
-"=== lightline
-"===
+" ===
+" === lightline
+" ===
 let g:lightline = {
       \ 'colorscheme': 'everforest',
       \ 'active': {
@@ -47,9 +46,9 @@ let g:lightline = {
       \ }
       \ }
 
-"===
-"===Fern.vim
-"===
+" ===
+" === Fern.vim
+" ===
 let g:fern#drawer_width = 30
 let g:fern#default_hidden = 1
 let g:fern#disable_drawer_smart_quit = 1
@@ -77,9 +76,9 @@ augroup END
 
 let g:fern#renderer = "nerdfont"
 
-"===
-"===rainbow
-"===
+" ===
+" === rainbow
+" ===
 let g:rainbow_active = 1
 
 " ===
@@ -88,26 +87,26 @@ let g:rainbow_active = 1
 let g:indentLine_setColors = 0
 let g:indentLine_enabled = 0
 
-"===
-"===indent_guides
-"===
+" ===
+" === indent_guides
+" ===
 let g:indent_guides_enable_on_vim_startup = 0
 
-"===
-"===markdown
-"===
+" ===
+" === markdown
+" ===
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 let g:vim_markdown_new_list_item_indent = 2
 
-"===
-"===markdown_preview
-"===
+" ===
+" === markdown_preview
+" ===
 let vim_markdown_preview_github=1
 
-"===
-"===ctrl-p
-"===
+" ===
+" === ctrl-p
+" ===
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
