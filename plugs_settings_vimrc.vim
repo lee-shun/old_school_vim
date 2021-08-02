@@ -24,10 +24,10 @@
 set background=dark
 colorscheme everforest
 let g:everforest_background = 'hard'
-let g:everforest_enable_italic = 0
-let g:everforest_disable_italic_comment = 0
+let g:everforest_enable_italic = 1
+let g:everforest_disable_italic_comment = 1
 let g:everforest_diagnostic_text_highlight = 1
-let g:everforest_lightline_disable_bold = 1
+let g:everforest_lightline_disable_bold = 0
 let g:everforest_better_performance = 1
 
 

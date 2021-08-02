@@ -98,4 +98,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, '
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
+" ===
+" === Translate
+" ===
+Plug 'skanehira/translate.vim'
+
 call plug#end()
