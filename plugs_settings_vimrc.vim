@@ -118,10 +118,11 @@ nnoremap <leader>fl :CtrlPLine<CR>
 " === TODO: translate requires PYTHON
 " ===
 if has('nvim')
-  let g:translator_window_type='preview'
+      let g:translator_window_type='preview'
 else
-  let g:translator_window_type='popup'
+      let g:translator_window_type='popup'
 endif
-let g:translator_default_engines=[ 'bing','google', 'haici', 'youdao']
-nnoremap ts :Translate<CR>
-vnoremap ts :Translate<CR>
+
+let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
+nnoremap ts :TranslateW<CR>
+vnoremap ts :TranslateW<CR>
