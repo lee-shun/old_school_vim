@@ -60,6 +60,36 @@ xnoremap <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
 onoremap <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
 
 " ===
+" === For checkbox
+" ===
+function! ToggleComplete()
+    " Get current line:
+    let l:line = getline('.')
+
+    " Get the char to test with the help of a pattern, ' ' or 'X':
+    " \zs and \ze lets you retrieve only the part between themselves:
+    let l:char = matchstr(l:line, '\[\zs.\ze]')
+
+    " Invert the value:
+    if l:char == 'x'
+        let l:char = ' '
+    else
+        let l:char = 'x'
+    endif
+
+    " Replace the current line with a new one, with the right
+    " char substituted:
+    call setline(line('.'), substitute(l:line, '\[\zs.\ze]', l:char, ''))
+
+    " Please note that this last line is doing the desired job. There is
+    " no need to return anything
+endfunction
+
+nnoremap <LEADER>c :call ToggleComplete()<CR>
+
+
+
+" ===
 " === snippets
 " ===
 source $CONF_PATH/after/mysnippet/markdown_snippet.vim
