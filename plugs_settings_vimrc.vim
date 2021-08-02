@@ -30,8 +30,6 @@ let g:everforest_diagnostic_text_highlight = 1
 let g:everforest_lightline_disable_bold = 0
 let g:everforest_better_performance = 1
 
-
-
 " ===
 " === lightline
 " ===
@@ -115,3 +113,15 @@ nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>fb :CtrlPBuffer<CR>
 nnoremap <leader>fm :CtrlPMRUFiles<CR>
 nnoremap <leader>fl :CtrlPLine<CR>
+
+" ===
+" === TODO: translate requires PYTHON
+" ===
+if has('nvim')
+  let g:translator_window_type='preview'
+else
+  let g:translator_window_type='popup'
+endif
+let g:translator_default_engines=[ 'bing','google', 'haici', 'youdao']
+nnoremap ts :Translate<CR>
+vnoremap ts :Translate<CR>

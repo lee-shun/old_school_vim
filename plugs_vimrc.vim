@@ -101,6 +101,6 @@ Plug 'lee-shun/vim-markdown-wiki'
 " ===
 " === Translate
 " ===
-Plug 'skanehira/translate.vim'
+Plug 'voldikss/vim-translator'
 
 call plug#end()
