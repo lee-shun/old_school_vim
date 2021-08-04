@@ -105,12 +105,17 @@ let vim_markdown_preview_github=1
 " ===
 " === ctrl-p
 " ===
+let g:ctrlp_map = '<leader>ff'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
-nnoremap <leader>ff :CtrlP<CR>
+let g:ctrlp_extensions = ['autoignore', 'funky']
+
+nnoremap <leader>fc :CtrlPChange<CR>
 nnoremap <leader>fb :CtrlPBuffer<CR>
+nnoremap <leader>fk :CtrlPFunky<CR>
 nnoremap <leader>fm :CtrlPMRUFiles<CR>
 nnoremap <leader>fl :CtrlPLine<CR>
 
