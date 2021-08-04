@@ -44,6 +44,8 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " === File Finder
 " ===
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'ludovicchabant/vim-ctrlp-autoignore'
 
 " ===
 " === General Highlight
