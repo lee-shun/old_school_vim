@@ -92,6 +92,7 @@ Plug 'chrisbra/unicode.vim'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'APZelos/blamer.nvim'
 
 " ===
 " === Markdown
