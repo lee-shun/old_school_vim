@@ -98,6 +98,14 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, '
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
+" === Covert Markdown to Slides
+" === It needs the asyncrun.vim
+" === And marp-cli (https://github.com/marp-team/marp-cli)
+" === On win10, use SumatraPDF (https://www.sumatrapdfreader.org/free-pdf-reader)
+" === On Linux, use Zathura(maybe...)
+Plug 'skywind3000/asyncrun.vim'
+Plug 'mattf1n/VimMarp' 
+
 " ===
 " === Translate
 " ===
