@@ -21,7 +21,7 @@
 " ===
 " === control the mini and ulti mode
 " ===
-let g:pure_vim_mini = 0
+let g:pure_vim_ulti = 1
 
 " ===
 " === environment
@@ -38,7 +38,12 @@ source $CONF_PATH/basic_vimrc.vim
 " ===
 source $CONF_PATH/function_vimrc.vim
 
-if g:pure_vim_mini == 0
+" ===
+" === pure vim ulti mode
+" ===
+if g:pure_vim_ulti == 1
+
+  let g:compile_md_tex = 1
 
   " ===
   " === Automatic install
