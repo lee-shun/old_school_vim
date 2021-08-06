@@ -137,20 +137,12 @@ if g:compile_md_tex == 1
       " ===
       " === vimtex
       " ===
+      let g:vimtex_mappings_enabled=0
+      let g:vimtex_text_obj_enabled=0
       let g:tex_flavor='latex'
-      " let g:vimtex_view_method='zathura'
+      let g:vimtex_view_general_viewer = 'SumatraPDF'
       let g:vimtex_quickfix_mode=1
       let g:tex_conceal='abdmg'
-      silent! au BufEnter,BufRead,BufNewFile * silent! unmap <c-r>
       let g:vimtex_compiler_progname = 'nvr'
-      let g:vimtex_compiler_latexmk_engines = {
-                        \ '_'                : '-xelatex',
-                        \ 'pdflatex'         : '-pdf',
-                        \ 'dvipdfex'         : '-pdfdvi',
-                        \ 'lualatex'         : '-lualatex',
-                        \ 'xelatex'          : '-xelatex',
-                        \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
-                        \ 'context (luatex)' : '-pdf -pdflatex=context',
-                        \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
-                        \}
+      let g:vimtex_format_enabled=1
 endif
