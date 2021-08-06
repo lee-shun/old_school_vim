@@ -246,7 +246,7 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 " ===
 " === build-in netrw
 " ===
-if g:pure_vim_mini==1
+if g:pure_vim_ulti==0
     nnoremap <LEADER>t :Vex<CR>
 endif
 let g:netrw_hide = 1
@@ -262,14 +262,14 @@ let g:netrw_localrmdir = 'rm -rf'
 " ===
 " === status line
 " ===
-if g:pure_vim_mini==1
+if g:pure_vim_ulti==0
     source $CONF_PATH/statusline.vim
 endif
 
 " ===
 " === themes
 " ===
-if g:pure_vim_mini==1
+if g:pure_vim_ulti==0
     colorscheme pure_theme
 endif
 
