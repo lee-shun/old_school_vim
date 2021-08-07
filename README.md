@@ -7,9 +7,9 @@
 > heard about! I am **NOT almighty** 🤖 , you got be kidding me!😠
 
 - This is a totally dependence-free vim/neovim configuration. (
-- ~~Yes, even `python`~~, the translate plugin needs **PYTHON!!!**)
+~~Yes, even `python`~~, the translate plugin needs **PYTHON!!!**)
 - It has the **Mini-Mode** and **Ulti-Mode**, which is controlled by the
- `g:pure_vim_mini` variable defined in [init.vim](./init.vim).
+ `g:pure_vim_ulti` variable defined in [init.vim](./init.vim).
 
 ## Requirements
 
@@ -65,10 +65,10 @@
 
 2.  **Choose your mode:**
   - **Mini-Mode**
-    - Set `g:pure_vim_mini` to `1` in [init.vim](./init.vim).
+    - Set `g:pure_vim_ulti` to `0` in [init.vim](./init.vim).
     - Fully platforms supporting(Linux/Windows/MacOS).
   - **Ulti-Mode**
-    - Set `g:pure_vim_mini` to `0` in [init.vim](./init.vim).
+    - Set `g:pure_vim_ulti` to `1` in [init.vim](./init.vim).
     - Use [vim-plug](https://github.com/junegunn/vim-plug), all
       the plugins are also dependence-free.
     - Automatically Plugins installing when first enter vim.
