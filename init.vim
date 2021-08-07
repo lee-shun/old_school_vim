@@ -43,10 +43,8 @@ source $CONF_PATH/function_vimrc.vim
 " ===
 if g:pure_vim_ulti == 1
 
-  let g:compile_md_tex = 1
-
   " ===
-  " === Automatic install
+  " === Automatic install plugins
   " ===
   if empty(glob($CONF_PATH."/plugged/"))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
