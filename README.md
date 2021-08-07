@@ -3,10 +3,11 @@
 > I just want to use my Vim configuration on different machines😹, but various
 > Plugins and their dependencies always drive me crazy, especially under
 > different environment! Some of them require `python`, some require `nodejs`.
-> But most of times, they requires the so-called **DEPENDENCIES**❌ that I never heard
-> about! I am **NOT almighty** 🤖 , you got be kidding me!😠
+> But most of times, they requires the so-called **DEPENDENCIES**❌ that I never
+> heard about! I am **NOT almighty** 🤖 , you got be kidding me!😠
 
-- This is a totally dependence-free vim/neovim configuration. (Yes, even `python`)
+- This is a totally dependence-free vim/neovim configuration. (
+- ~~Yes, even `python`~~, the translate plugin needs **PYTHON!!!**)
 - It has the **Mini-Mode** and **Ulti-Mode**, which is controlled by the
  `g:pure_vim_mini` variable defined in [init.vim](./init.vim).
 
@@ -43,7 +44,8 @@
   - Use [markdown-wiki](https://github.com/mmai/vim-markdown-wiki)
     to arrange the notes.
   - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)(it
-    needs to download a binary markdown software, but don't worry, it is automatic.)
+    needs to download a binary markdown software, but don't worry, it is
+    automatic.)
 
 6. **Automatically Configuration Path Setting**
   - This configuration is designed for vim and neovim both on windows and
@@ -95,3 +97,4 @@ its own vim.
 ## TODO
 
 - [ ] Think about what is pure vim!
+- [ ] Translate plugin needs python! FIX IT!
