@@ -44,13 +44,6 @@ source $CONF_PATH/function_vimrc.vim
 if g:pure_vim_ulti == 1
 
   " ===
-  " === Automatic install plugins
-  " ===
-  if empty(glob($CONF_PATH."/plugged/"))
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-  endif
-
-  " ===
   " === plugs_vimrc
   " ===
   source $CONF_PATH/plugs_vimrc.vim
@@ -59,5 +52,12 @@ if g:pure_vim_ulti == 1
   " === plugs_settings_vimrc
   " ===
   source $CONF_PATH/plugs_settings_vimrc.vim
+
+  " ===
+  " === Automatic install plugins
+  " ===
+  if empty(glob($CONF_PATH."/plugged/"))
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 
 endif
