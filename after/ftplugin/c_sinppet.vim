@@ -20,5 +20,7 @@
 
 let maplocalleader=','
 
-inoremap <buffer> <localLeader>/ /*  */ <++><Esc>F*hi
-inoremap <buffer> <localLeader>* /***/<ESc>F*i
+inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
+
+inoremap <buffer> <localLeader>/ /*  */<Enter><++><Esc>k$F*hi
+inoremap <buffer> <localLeader>* /***/<Enter><++><ESc>k$F*i<Enter>
