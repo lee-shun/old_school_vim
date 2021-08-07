@@ -276,6 +276,10 @@ endif
 " ===
 " === auto setting command
 " ===
+
+" autosave the buffers on the events
+autocmd InsertLeave,TermChanged <buffer> silent write
+
 if exists('##CmdLineEnter')
     augroup dynamic_smartcase
         autocmd!
