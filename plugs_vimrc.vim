@@ -99,26 +99,20 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 Plug 'docunext/closetag.vim'
 
+" It needs the asyncrun.vim And marp-cli (https://github.com/marp-team/marp-cli)
+" On win10, use SumatraPDF (https://www.sumatrapdfreader.org/free-pdf-reader)
+" On Linux, use Zathura(maybe...)
+" Plug 'skywind3000/asyncrun.vim'
+" Plug 'mattf1n/VimMarp' 
+
+" ===
+" === Latex
+" ===
+Plug 'lervag/vimtex'
+
 " ===
 " === Translate
 " ===
 Plug 'voldikss/vim-translator'
-
-if g:compile_md_tex == 1
-    " ===
-    " === Markdown
-    " ===
-    " It needs the asyncrun.vim And marp-cli (https://github.com/marp-team/marp-cli)
-    " On win10, use SumatraPDF (https://www.sumatrapdfreader.org/free-pdf-reader)
-    " On Linux, use Zathura(maybe...)
-    Plug 'skywind3000/asyncrun.vim'
-    Plug 'mattf1n/VimMarp' 
-
-    " ===
-    " === Latex
-    " ===
-    Plug 'lervag/vimtex'
-endif
-
 
 call plug#end()

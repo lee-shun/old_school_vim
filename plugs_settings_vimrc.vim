@@ -124,27 +124,18 @@ nnoremap <leader>fl :CtrlPLine<CR>
 " ===
 " === TODO: translate requires PYTHON
 " ===
-if has('nvim')
-      let g:translator_window_type='preview'
-else
-      let g:translator_window_type='popup'
-endif
-
 let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
 nnoremap ts :TranslateW<CR>
 vnoremap ts :TranslateW<CR>
 
-if g:compile_md_tex == 1
-      " ===
-      " === vimtex
-      " ===
-      let g:vimtex_mappings_enabled=0
-      " let g:vimtex_text_obj_enabled=0
-      let g:tex_flavor='latex'
-      let g:vimtex_view_general_viewer = 'SumatraPDF'
-      let g:vimtex_quickfix_mode=0
-      let g:tex_conceal='abdmg'
-      let g:vimtex_compiler_progname = 'nvr'
-      let g:vimtex_format_enabled=1
-
-endif
+" ===
+" === vimtex
+" ===
+let g:vimtex_mappings_enabled=0
+" let g:vimtex_text_obj_enabled=0
+let g:tex_flavor='latex'
+let g:vimtex_view_general_viewer = 'SumatraPDF'
+let g:vimtex_quickfix_mode=0
+let g:tex_conceal='abdmg'
+let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_format_enabled=1
