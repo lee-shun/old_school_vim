@@ -132,7 +132,6 @@ let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
 nnoremap ts :TranslateW<CR>
 vnoremap ts :TranslateW<CR>
 
-
 if g:compile_md_tex == 1
       " ===
       " === vimtex

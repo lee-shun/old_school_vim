@@ -94,6 +94,6 @@ inoremap \wt \widetilde{}<++><Esc>0f{a
 inoremap \pr ^{\prime}
 
 " for environment
-inoremap \en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
-inoremap \al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
-inoremap \ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
+inoremap <LocalLeader>en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
+inoremap <LocalLeader>al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
+inoremap <LocalLeader>ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc

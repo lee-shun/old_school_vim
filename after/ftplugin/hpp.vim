@@ -26,5 +26,3 @@ nnoremap <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
 
 set colorcolumn=81
 set foldmethod=syntax
-
-source $CONF_PATH/after/mysnippet/cpp_hpp_snippet.vim
