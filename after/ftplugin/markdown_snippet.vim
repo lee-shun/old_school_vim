@@ -29,7 +29,7 @@ function! Count(pattern,startline)
   return len(l:matches)
 endfunction
 
-inoremap <expr> <localLeader><F12> eval(Count('\[\^\d\+\]',1)+1)
+inoremap <buffer> <expr> <localLeader><F12> eval(Count('\[\^\d\+\]',1)+1)
 
 function! Findtitle()
   for i in range(line('.'))
@@ -43,31 +43,31 @@ function! Findtitle()
   return l:latesttitleline
 endfunction
 
-inoremap <expr> <localLeader><F11> Count('^## \+',1)
-inoremap <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
+inoremap <buffer> <expr> <localLeader><F11> Count('^## \+',1)
+inoremap <buffer> <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle())+1
 
 " ===
 " === for greneral writting
 " ===
-inoremap <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
+inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
 
-inoremap <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
-inoremap <localLeader>m - [ ] 
-inoremap <localLeader>p ![](<++>)<++><Esc>F]i
-inoremap <localLeader>a [](<++>)<++><Esc>F]i
-inoremap <localLeader>l --------<Enter>
-inoremap <localLeader>b ****<++><Esc>F*hi
-inoremap <localLeader>u <u></u><++><Esc>F/i<Left>
-inoremap <localLeader>i **<++><Esc>F*i
-inoremap <localLeader>d ~~~~<++><Esc>F~hi
-inoremap <localLeader>s ``<++><Esc>F`i
-inoremap <localLeader>t <br><br><Esc>o> *Last Modified at <C-R>=strftime('%Y-%m-%d %H:%M:%S')<C-M>*<Down><Esc>o<CR>
+inoremap <buffer> <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
+inoremap <buffer> <localLeader>m - [ ] 
+inoremap <buffer> <localLeader>p ![](<++>)<++><Esc>F]i
+inoremap <buffer> <localLeader>a [](<++>)<++><Esc>F]i
+inoremap <buffer> <localLeader>l --------<Enter>
+inoremap <buffer> <localLeader>b ****<++><Esc>F*hi
+inoremap <buffer> <localLeader>u <u></u><++><Esc>F/i<Left>
+inoremap <buffer> <localLeader>i **<++><Esc>F*i
+inoremap <buffer> <localLeader>d ~~~~<++><Esc>F~hi
+inoremap <buffer> <localLeader>s ``<++><Esc>F`i
+inoremap <buffer> <localLeader>t <br><br><Esc>o> *Last Modified at <C-R>=strftime('%Y-%m-%d %H:%M:%S')<C-M>*<Down><Esc>o<CR>
 
-inoremap <localLeader>1 #<Space><Enter><++><Esc>kA
-inoremap <localLeader>2 ##<Space><Enter><++><Esc>kA
-inoremap <localLeader>3 ###<Space><Enter><++><Esc>kA
-inoremap <localLeader>4 ####<Space><Enter><++><Esc>kA
-inoremap <localLeader>5 #####<Space><Enter><++><Esc>kA
+inoremap <buffer> <localLeader>1 #<Space><Enter><++><Esc>kA
+inoremap <buffer> <localLeader>2 ##<Space><Enter><++><Esc>kA
+inoremap <buffer> <localLeader>3 ###<Space><Enter><++><Esc>kA
+inoremap <buffer> <localLeader>4 ####<Space><Enter><++><Esc>kA
+inoremap <buffer> <localLeader>5 #####<Space><Enter><++><Esc>kA
 
 " foot notes
 imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-r>": <++><Esc><C-o>f]a
@@ -76,24 +76,24 @@ imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-r>": <++><Esc><C-o>f]a
 " ===
 " === for equations
 " ===
-inoremap <localLeader>e $$<++><Esc>F$i
+inoremap <buffer> <localLeader>eq $$<++><Esc>F$i
 imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<localLeader><F10>}$$<Enter><BS><++><Esc>2kA
 
+" for general environment ==> 'e' for environment
+inoremap <buffer> <LocalLeader>en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
+inoremap <buffer> <LocalLeader>ea \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
+inoremap <buffer> <LocalLeader>em \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
+
 " for speed up \
-inoremap \\ \\
+inoremap <buffer> \\ \\
 
 " for symbol
-inoremap \fr \frac{}{<++>}<++><Esc>0f{a
-inoremap \ha \hat{}<++><Esc>0f{a
-inoremap \do \dot{}<++><Esc>0f{a
-inoremap \dd \ddot{}<++><Esc>0f{a
-inoremap \sq \sqrt{}<++><Esc>0f{a
-inoremap \ve \vec{}<++><Esc>0f{a
-inoremap \ol \overline{}<++><Esc>0f{a
-inoremap \wt \widetilde{}<++><Esc>0f{a
-inoremap \pr ^{\prime}
-
-" for environment
-inoremap <LocalLeader>en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
-inoremap <LocalLeader>al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
-inoremap <LocalLeader>ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
+inoremap <buffer> \fr \frac{}{<++>}<++><Esc>0f{a
+inoremap <buffer> \ha \hat{}<++><Esc>0f{a
+inoremap <buffer> \do \dot{}<++><Esc>0f{a
+inoremap <buffer> \dd \ddot{}<++><Esc>0f{a
+inoremap <buffer> \sq \sqrt{}<++><Esc>0f{a
+inoremap <buffer> \ve \vec{}<++><Esc>0f{a
+inoremap <buffer> \ol \overline{}<++><Esc>0f{a
+inoremap <buffer> \wt \widetilde{}<++><Esc>0f{a
+inoremap <buffer> \pr ^{\prime}

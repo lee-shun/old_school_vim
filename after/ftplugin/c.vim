@@ -21,8 +21,8 @@
 " ===
 " === for commet coverting
 " ===
-nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
-nnoremap <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
+nnoremap <buffer> <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
+nnoremap <buffer> <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
 
-set colorcolumn=81
-set foldmethod=syntax
+setlocal colorcolumn=81
+setlocal foldmethod=syntax

@@ -18,7 +18,7 @@
 "
 "**************************************************************************************************
 
-let maplocalleader = ","
+let maplocalleader=','
 
-inoremap <localLeader>= " ===<Enter>=== <Enter>===<Esc>o<++><Esc>2kA
-
+inoremap <buffer> <localLeader>/ /*  */ <++><Esc>F*hi
+inoremap <buffer> <localLeader>* /***/<ESc>F*i

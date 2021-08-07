@@ -18,11 +18,7 @@
 "
 "**************************************************************************************************
 
-" ===
-" === for commet coverting
-" ===
-nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
-nnoremap <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
+let maplocalleader=','
 
-set colorcolumn=81
-set foldmethod=syntax
+inoremap <buffer> <localLeader>/ /*  */ <++><Esc>F*hi
+inoremap <buffer> <localLeader>* /***/<ESc>F*i

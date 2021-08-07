@@ -21,8 +21,8 @@
 " ===
 " === for commet coverting
 " ===
-nnoremap <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
-nnoremap <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
+nnoremap <buffer> <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
+nnoremap <buffer> <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
 
 " ===
 " === for /**/
@@ -42,10 +42,10 @@ function! s:aroundComment()
     call search("\*\/", 'ceW')
     normal! $
 endfunction
-xnoremap <silent> ic :<c-u>call <sid>inComment()<cr>
-onoremap <silent> ic :<c-u>call <sid>inComment()<cr>
-xnoremap <silent> ac :<c-u>call <sid>aroundComment()<cr>
-onoremap <silent> ac :<c-u>call <sid>aroundComment()<cr>
+xnoremap <buffer> <silent> ic :<c-u>call <sid>inComment()<cr>
+onoremap <buffer> <silent> ic :<c-u>call <sid>inComment()<cr>
+xnoremap <buffer> <silent> ac :<c-u>call <sid>aroundComment()<cr>
+onoremap <buffer> <silent> ac :<c-u>call <sid>aroundComment()<cr>
 
 " ===
 " === for //
@@ -55,8 +55,8 @@ function! s:inComment2()
     normal! 3l
     normal! vg_
 endfunction
-xnoremap <silent> b/ :<c-u>call <sid>inComment2()<cr>
-onoremap <silent> b/ :<c-u>call <sid>inComment2()<cr>
+xnoremap <buffer> <silent> b/ :<c-u>call <sid>inComment2()<cr>
+onoremap <buffer> <silent> b/ :<c-u>call <sid>inComment2()<cr>
 
-set colorcolumn=81
-set foldmethod=syntax
+setlocal colorcolumn=81
+setlocal foldmethod=syntax
