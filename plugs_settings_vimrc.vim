@@ -96,6 +96,8 @@ let g:indent_guides_enable_on_vim_startup = 0
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 let g:vim_markdown_new_list_item_indent = 2
+" close tag
+let g:closetag_html_style=1
 
 " ===
 " === markdown_preview
@@ -136,7 +138,7 @@ if g:compile_md_tex == 1
       " ===
       " === vimtex
       " ===
-      " let g:vimtex_mappings_enabled=0
+      let g:vimtex_mappings_enabled=0
       " let g:vimtex_text_obj_enabled=0
       let g:tex_flavor='latex'
       let g:vimtex_view_general_viewer = 'SumatraPDF'

@@ -58,8 +58,8 @@ set number
 set relativenumber
 set cursorline
 set cursorcolumn
-set colorcolumn=121
-set textwidth=120
+set colorcolumn=81
+set textwidth=80
 set hidden
 set showmode
 set showcmd

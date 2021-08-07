@@ -25,4 +25,5 @@ nnoremap <buffer> <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearc
 nnoremap <buffer> <LEADER>b <Esc>0f*ldt*<Esc>$p0f*2x$x
 
 setlocal colorcolumn=81
+setlocal textwidth=81
 setlocal foldmethod=syntax
