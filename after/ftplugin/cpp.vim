@@ -60,5 +60,3 @@ onoremap <silent> b/ :<c-u>call <sid>inComment2()<cr>
 
 set colorcolumn=81
 set foldmethod=syntax
-
-source $CONF_PATH/after/mysnippet/cpp_hpp_snippet.vim

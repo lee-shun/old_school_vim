@@ -94,4 +94,4 @@ its own vim.
 
 ## TODO
 
-- [x] For Gvim on Windows
+- [ ] Think about what is pure vim!

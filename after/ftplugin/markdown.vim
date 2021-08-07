@@ -86,10 +86,3 @@ function! ToggleComplete()
 endfunction
 
 nnoremap <LEADER>c :call ToggleComplete()<CR>
-
-
-
-" ===
-" === snippets
-" ===
-source $CONF_PATH/after/mysnippet/markdown_snippet.vim
