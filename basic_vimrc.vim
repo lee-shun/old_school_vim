@@ -315,8 +315,3 @@ augroup number_toggle
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number | set relativenumber | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
 augroup END
-
-" ===
-" === Snippets
-" ===
-source $CONF_PATH/mysnippet/snippet.vim

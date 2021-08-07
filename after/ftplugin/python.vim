@@ -18,5 +18,5 @@
 "
 "**************************************************************************************************
 
-set colorcolumn=81
-set foldmethod=indent
+setlocal colorcolumn=81
+setlocal foldmethod=indent

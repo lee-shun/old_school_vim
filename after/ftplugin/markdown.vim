@@ -18,8 +18,8 @@
 "
 "**************************************************************************************************
 
-set colorcolumn=81
-set textwidth=80
+setlocal colorcolumn=81
+setlocal textwidth=80
 
 " NOTE:
 " 1. cancle the markdown indent, use the smart indent instead
@@ -29,9 +29,9 @@ set textwidth=80
 " set indentexpr=
 
 " the indent is 2 for md.
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
 
 function! s:inCodeFence()
     " Search backwards for the opening of the code fence.
@@ -54,10 +54,10 @@ function! s:aroundCodeFence()
     call search('```', 'eW')
 endfunction
 
-xnoremap <silent> ic :<c-u>call <sid>inCodeFence()<cr>
-onoremap <silent> ic :<c-u>call <sid>inCodeFence()<cr>
-xnoremap <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
-onoremap <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
+xnoremap <buffer> <silent> ic :<c-u>call <sid>inCodeFence()<cr>
+onoremap <buffer> <silent> ic :<c-u>call <sid>inCodeFence()<cr>
+xnoremap <buffer> <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
+onoremap <buffer> <silent> ac :<c-u>call <sid>aroundCodeFence()<cr>
 
 " ===
 " === For checkbox
@@ -85,4 +85,4 @@ function! ToggleComplete()
     " no need to return anything
 endfunction
 
-nnoremap <LEADER>c :call ToggleComplete()<CR>
+nnoremap <buffer> <LEADER>c :call ToggleComplete()<CR>
