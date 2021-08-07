@@ -97,6 +97,7 @@ Plug 'APZelos/blamer.nvim' " very recent plugin, use it with new version of (neo
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
+Plug 'docunext/closetag.vim'
 
 " ===
 " === Translate
