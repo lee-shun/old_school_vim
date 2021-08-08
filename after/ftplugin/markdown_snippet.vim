@@ -97,3 +97,4 @@ inoremap <buffer> \ve \vec{}<++><Esc>0f{a
 inoremap <buffer> \ol \overline{}<++><Esc>0f{a
 inoremap <buffer> \wt \widetilde{}<++><Esc>0f{a
 inoremap <buffer> \pr ^{\prime}
+inoremap <buffer> \ra \rightarrow
