@@ -39,6 +39,8 @@
 
 4. **Snippets**
   - Simple snippets inserting with vim `inoremap` option.
+  - Vim will load `xxx_foo.vim, xxx.vim` (`xxx` is a filetypename.). With this
+    feature, I define some useful `remaps`.
 
 5. **Especially Designed for Notes Taking**
   - Use [markdown-wiki](https://github.com/mmai/vim-markdown-wiki)
