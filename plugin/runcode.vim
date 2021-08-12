@@ -19,30 +19,52 @@
 "
 "**************************************************************************************************
 
-" auto-update the timestamp right before saving a file
-" Last [Cc]hange(d)
-" Changed
-" Last [Mm]odified
-" Modified
-" Last [Uu]pdate(d)
-" https://gist.github.com/jelera/7838011
-
-function! TimeStamp()
-    let pat = '\(\(Last\)\?\s*\([Cc]hanged\?\|[Mm]odified\|[Uu]pdated\?\)\s*:\s*\).*'
-    let rep = '\1' . strftime("%a %d %b %Y %I:%M:%S %p")
-    call s:subst(1, line('$'), pat, rep)
-endfunction
-
-function! s:subst(start, end, pat, rep)
-    let lineno = a:start
-    while lineno <= a:end
-    let curline = getline(lineno)
-    if match(curline, a:pat) != -1
-        let newline = substitute( curline, a:pat, a:rep, '' )
-        if( newline != curline )
-        keepjumps call setline(lineno, newline)
-        endif
+" ===
+" === 编译运行
+" ===
+noremap r :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'cpp'
+        set splitbelow
+        exec "!g++ -std=c++11 % -Wall -o %<"
+        :sp
+        :res -15
+        :term ./%<
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java %<"
+    elseif &filetype == 'sh'
+        :!time bash %
+    elseif &filetype == 'python'
+        set splitbelow
+        :sp
+        :term python3 %
+    elseif &filetype == 'html'
+        silent! exec "!".g:mkdp_browser." % &"
+    elseif &filetype == 'vimwiki'
+        exec "MarkdownPreview"
+    elseif &filetype == 'pandoc'
+        exec "MarkdownPreview"
+    elseif &filetype == 'markdown'
+        exec "MarkdownPreview"
+    elseif &filetype == 'tex'
+        silent! exec "VimtexStop"
+        silent! exec "VimtexCompile"
+    elseif &filetype == 'dart'
+        exec "CocCommand flutter.run -d ".g:flutter_default_device
+        silent! exec "CocCommand flutter.dev.openDevLog"
+    elseif &filetype == 'javascript'
+        set splitbelow
+        :sp
+        :term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
+    elseif &filetype == 'go'
+        set splitbelow
+        :sp
+        :term go run .
     endif
-    let lineno = lineno + 1
-    endwhile
-endfunction
+endfunc
+
