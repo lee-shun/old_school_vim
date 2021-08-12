@@ -206,10 +206,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ'z
 
-" ===
-" === search the chosen
-" ===
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " ===
 " === modify history

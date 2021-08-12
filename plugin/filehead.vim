@@ -20,103 +20,6 @@
 "**************************************************************************************************
 
 " ===
-" === 转换tab为空格
-" ===
-fun! Tab2Space()
-    exec "set expandtab"
-    exec "%retab!"
-endfun
-
-" ===
-" === 空格替换为TAB：
-" ===
-fun! Space2Tab()
-    exec "set noexpandtab"
-    exec "%retab!"
-endfun
-
-" ===
-" === 清理空格
-" ===
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
-" ===
-" === 编译运行
-" ===
-noremap r :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-    exec "w"
-    if &filetype == 'c'
-        exec "!g++ % -o %<"
-        exec "!time ./%<"
-    elseif &filetype == 'cpp'
-        set splitbelow
-        exec "!g++ -std=c++11 % -Wall -o %<"
-        :sp
-        :res -15
-        :term ./%<
-    elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!time java %<"
-    elseif &filetype == 'sh'
-        :!time bash %
-    elseif &filetype == 'python'
-        set splitbelow
-        :sp
-        :term python3 %
-    elseif &filetype == 'html'
-        silent! exec "!".g:mkdp_browser." % &"
-    elseif &filetype == 'vimwiki'
-        exec "MarkdownPreview"
-    elseif &filetype == 'pandoc'
-        exec "MarkdownPreview"
-    elseif &filetype == 'markdown'
-        exec "MarkdownPreview"
-    elseif &filetype == 'tex'
-        silent! exec "VimtexStop"
-        silent! exec "VimtexCompile"
-    elseif &filetype == 'dart'
-        exec "CocCommand flutter.run -d ".g:flutter_default_device
-        silent! exec "CocCommand flutter.dev.openDevLog"
-    elseif &filetype == 'javascript'
-        set splitbelow
-        :sp
-        :term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
-    elseif &filetype == 'go'
-        set splitbelow
-        :sp
-        :term go run .
-    endif
-endfunc
-
-" ===
-" === 选择查找
-" ===
-function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
-
-
-" ===
 " === automaticallly add file head
 " ===
 autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":call SetTitle()"
@@ -162,7 +65,6 @@ func SetComment_sh()
     call setline(19, "")
 endfunc
 
-" 定义函数SetTitle，自动插入文件头
 func SetTitle()
     if expand("%:e") == 'make'
         call setline(1,"")

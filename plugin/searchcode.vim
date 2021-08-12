@@ -19,30 +19,24 @@
 "
 "**************************************************************************************************
 
-" auto-update the timestamp right before saving a file
-" Last [Cc]hange(d)
-" Changed
-" Last [Mm]odified
-" Modified
-" Last [Uu]pdate(d)
-" https://gist.github.com/jelera/7838011
+" ===
+" === search the chosen
+" ===
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
 
-function! TimeStamp()
-    let pat = '\(\(Last\)\?\s*\([Cc]hanged\?\|[Mm]odified\|[Uu]pdated\?\)\s*:\s*\).*'
-    let rep = '\1' . strftime("%a %d %b %Y %I:%M:%S %p")
-    call s:subst(1, line('$'), pat, rep)
-endfunction
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-function! s:subst(start, end, pat, rep)
-    let lineno = a:start
-    while lineno <= a:end
-    let curline = getline(lineno)
-    if match(curline, a:pat) != -1
-        let newline = substitute( curline, a:pat, a:rep, '' )
-        if( newline != curline )
-        keepjumps call setline(lineno, newline)
-        endif
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
     endif
-    let lineno = lineno + 1
-    endwhile
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
 endfunction
+
