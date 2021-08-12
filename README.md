@@ -101,4 +101,4 @@ its own vim.
 - [ ] Think about what is pure vim!
 - [ ] Translate plugin needs python! FIX IT!
 
-> Last Modified : Thu 12 Aug 2021 08:41:25 AM
+> Last Modified : Thu 12 Aug 2021 08:42:47 AM
