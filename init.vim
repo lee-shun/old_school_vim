@@ -34,11 +34,6 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 source $CONF_PATH/basic_vimrc.vim
 
 " ===
-" === function_vimrc
-" ===
-source $CONF_PATH/function_vimrc.vim
-
-" ===
 " === pure vim ulti mode
 " ===
 if g:pure_vim_ulti == 1
