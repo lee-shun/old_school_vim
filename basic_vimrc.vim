@@ -278,7 +278,10 @@ endif
 " ===
 
 " autosave the buffers on the events
-autocmd InsertLeave,TermChanged <buffer> silent write
+augroup saving_files
+    autocmd!
+    autocmd InsertLeave,TermChanged <buffer> silent write
+augroup END
 
 if exists('##CmdLineEnter')
     augroup dynamic_smartcase
