@@ -19,9 +19,6 @@
 "
 "**************************************************************************************************
 
-
-"****************************************有用函数**************************************************
-
 " ===
 " === 转换tab为空格
 " ===
@@ -122,10 +119,10 @@ endfunction
 
 
 " ===
-" === 自动文件
+" === automaticallly add file head
 " ===
 autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":call SetTitle()"
-" 加入注释
+
 func SetComment()
     call setline(1,"/*******************************************************************************")
     call append(line(".")    , "*")
@@ -145,7 +142,8 @@ func SetComment()
     call append(line(".")+14 , "")
     call append(line(".")+15 , "")
 endfunc
-" 加入shell,Makefile注释
+
+" for shell-like file
 func SetComment_sh()
     call setline(3, "#------------------------------------------------------------------------------")
     call setline(4 , "#")
@@ -165,6 +163,7 @@ func SetComment_sh()
     call setline(18, "")
     call setline(19, "")
 endfunc
+
 " 定义函数SetTitle，自动插入文件头
 func SetTitle()
     if expand("%:e") == 'make'
