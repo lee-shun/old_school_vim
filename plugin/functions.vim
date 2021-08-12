@@ -22,8 +22,7 @@
 " ===
 " === 转换tab为空格
 " ===
-fun! Tab2Sapce()
-    exec "set tabstop=4"
+fun! Tab2Space()
     exec "set expandtab"
     exec "%retab!"
 endfun
@@ -31,8 +30,7 @@ endfun
 " ===
 " === 空格替换为TAB：
 " ===
-fun! Sapce2Tab()
-    exec "set tabstop=4"
+fun! Space2Tab()
     exec "set noexpandtab"
     exec "%retab!"
 endfun
