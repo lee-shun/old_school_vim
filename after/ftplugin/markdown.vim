@@ -85,4 +85,7 @@ function! ToggleComplete()
     " no need to return anything
 endfunction
 
-nnoremap <buffer> <LEADER>c :call ToggleComplete()<CR>
+" ===
+" === use the mkdx instead
+" ===
+" nnoremap <buffer> <LEADER>c :call ToggleComplete()<CR>
