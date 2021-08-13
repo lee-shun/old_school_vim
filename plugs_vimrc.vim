@@ -47,7 +47,6 @@ Plug 'ludovicchabant/vim-ctrlp-autoignore'
 " ===
 " === General Highlight
 " ===
-Plug 'sheerun/vim-polyglot'
 Plug 'chrisbra/Colorizer'
 
 " ===
@@ -94,6 +93,7 @@ Plug 'APZelos/blamer.nvim' " very recent plugin, use it with new version of (neo
 " ===
 " === Markdown
 " ===
+Plug 'SidOfc/mkdx'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
