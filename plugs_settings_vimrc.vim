@@ -93,10 +93,9 @@ let g:indent_guides_enable_on_vim_startup = 0
 " ===
 " === markdown
 " ===
-let g:tex_conceal = ""
-let g:vim_markdown_math = 1
-let g:vim_markdown_new_list_item_indent = 2
-" close tag
+" NOTE: use the plasticboy markdown sytanx file + SidOFc mxkd.vim functions.
+let g:vim_markdown_math=1
+let g:vim_markdown_conceal=1
 let g:closetag_html_style=1
 
 " ===
