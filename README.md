@@ -102,4 +102,8 @@ its own vim.
 - [ ] Think about what is pure vim!
 - [ ] Translate plugin needs python! FIX IT!
 
+## BTW
+*YOU WILL GET MY POINT AFTER THE PAIN IN ASS.*
+![image](./img/doge.png)
+
 > Last Modified : 六 14 8月 2021 08:52:00 上午
