@@ -32,7 +32,8 @@
   - Automatically commonly used words completion with google-20k words.
   - The commonly used programming languages like `python` and `c++` etc.
     key-words completion.
-  - ~~Unicode completion by [unicode.vim](https://github.com/chrisbra/unicode.vim)~~, dont use it, which makes vim slow😭
+  - ~~Unicode completion by [unicode.vim](https://github.com/chrisbra/unicode.vim)~~
+    , dont use it, which makes vim slow😭
 
 3. **All Platform Supporting and Portable**
   - Clone and Use without any pain.
@@ -101,4 +102,4 @@ its own vim.
 - [ ] Think about what is pure vim!
 - [ ] Translate plugin needs python! FIX IT!
 
-> Last Modified : Thu 12 Aug 2021 09:01:49 PM
+> Last Modified : 六 14 8月 2021 08:52:00 上午
