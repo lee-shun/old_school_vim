@@ -1,5 +1,5 @@
 """HTML
-let maplocalleader='/'
+let maplocalleader=';'
 
 inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
 inoremap <buffer> <LocalLeader>b <b></b><Space><++><Esc>FbT>i

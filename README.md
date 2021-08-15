@@ -103,7 +103,8 @@ its own vim.
 - [ ] Translate plugin needs python! FIX IT!
 
 ## BTW
+
 *YOU WILL GET MY POINT AFTER THE PAIN IN ASS.*
 ![image](./img/doge.png)
 
-> Last Modified : 六 14 8月 2021 08:52:00 上午
+> Last Modified : Sat 14 Aug 2021 08:30:34 PM
