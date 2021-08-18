@@ -91,6 +91,18 @@ let g:indentLine_enabled = 0
 let g:indent_guides_enable_on_vim_startup = 0
 
 " ===
+" === auto save
+" ===
+let g:auto_save = 0
+let g:auto_save_silent = 0
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+augroup ft_markdown
+    autocmd!
+    autocmd FileType tex let b:auto_save = 1
+augroup END
+
+" ===
 " === markdown
 " ===
 " NOTE: use the plasticboy markdown sytanx file + SidOFc mxkd.vim functions.
@@ -131,6 +143,7 @@ vnoremap ts :TranslateW<CR>
 " === vimtex
 " ===
 let g:vimtex_mappings_enabled=0
+let g:vimtex_imaps_enabled=0
 let g:vimtex_text_obj_enabled=0
 let g:tex_flavor='latex'
 if has('win32')
