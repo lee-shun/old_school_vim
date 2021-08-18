@@ -272,12 +272,6 @@ endif
 " === auto setting command
 " ===
 
-" autosave the buffers on the events
-augroup saving_files
-    autocmd!
-    autocmd InsertLeave <buffer> silent write
-augroup END
-
 if exists('##CmdLineEnter')
     augroup dynamic_smartcase
         autocmd!
