@@ -18,6 +18,4 @@
 "
 "**************************************************************************************************
 
-setlocal colorcolumn=81
-setlocal textwidth=80
 setlocal foldmethod=indent

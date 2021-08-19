@@ -2,7 +2,6 @@
 let maplocalleader = ","
 
 inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
-inoremap <buffer> <localLeader>eq $$<++><Esc>F$i
 
 " for general environment
 inoremap <buffer> <LocalLeader>en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
@@ -21,7 +20,7 @@ inoremap <buffer> \ha \hat{}<++><Esc>0f{a
 inoremap <buffer> \do \dot{}<++><Esc>0f{a
 inoremap <buffer> \dd \ddot{}<++><Esc>0f{a
 inoremap <buffer> \sq \sqrt{}<++><Esc>0f{a
-inoremap <buffer> \ve \vec{}<++><Esc>0f{a
+inoremap <buffer> \vec \vec{}<++><Esc>0f{a
 inoremap <buffer> \ol \overline{}<++><Esc>0f{a
 inoremap <buffer> \wt \widetilde{}<++><Esc>0f{a
 inoremap <buffer> \pr ^{\prime}

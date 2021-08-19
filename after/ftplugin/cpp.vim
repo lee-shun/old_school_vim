@@ -58,6 +58,4 @@ endfunction
 xnoremap <buffer> <silent> b/ :<c-u>call <sid>inComment2()<cr>
 onoremap <buffer> <silent> b/ :<c-u>call <sid>inComment2()<cr>
 
-setlocal colorcolumn=81
-setlocal textwidth=81
 setlocal foldmethod=syntax
