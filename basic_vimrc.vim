@@ -57,7 +57,7 @@ set number
 set relativenumber
 set cursorline
 set cursorcolumn
-set colorcolumn=81
+let &colorcolumn="81,".join(range(121,999),",")
 set textwidth=80
 set hidden
 set showmode
