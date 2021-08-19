@@ -18,9 +18,6 @@
 "
 "**************************************************************************************************
 
-setlocal colorcolumn=81
-setlocal textwidth=80
-
 " NOTE:
 " 1. cancle the markdown indent, use the smart indent instead
 " 2. set with formatoptions, use <CR> to continue, use o,O to have indent.
