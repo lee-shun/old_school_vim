@@ -32,4 +32,5 @@ inoremap <buffer> \it \item<Space>
 inoremap <buffer> \ref \ref{}<++><Esc>T{i
 inoremap <buffer> \fnt \footnotetext[]{<++>}<++><Esc>T[i
 inoremap <buffer> \fnm \footnotemark[]<++><Esc>T[i
-inoremap <buffer> \co \colorbox{}{<++>}<++><Esc>0f{i
+inoremap <buffer> \co \colorbox{}{<++>}<++><Esc>0f{a
+inoremap <buffer> \txb \textbf{}<++><Esc>0f{a
