@@ -40,7 +40,6 @@ filetype plugin indent on
 
 " for gvim
 if has('gui_running')
-    set shell=powershell
     set guifont=SauceCodePro\ NF:h12:cANSI
     set guifontwide=SauceCodePro\ NF:h12
     set guioptions-=m
@@ -58,7 +57,8 @@ set number
 set relativenumber
 set cursorline
 set cursorcolumn
-set colorcolumn=81
+" let &colorcolumn="81,".join(range(121,999),",")
+let &colorcolumn="81,121"
 set textwidth=80
 set hidden
 set showmode
@@ -273,12 +273,6 @@ endif
 " === auto setting command
 " ===
 
-" autosave the buffers on the events
-augroup saving_files
-    autocmd!
-    autocmd InsertLeave,TermChanged <buffer> silent write
-augroup END
-
 if exists('##CmdLineEnter')
     augroup dynamic_smartcase
         autocmd!
@@ -312,9 +306,6 @@ augroup END
 " ===
 " === Terminal Behaviors
 " ===
-if has('win32')
-    set shell=powershell.exe
-endif
 tnoremap <C-N> <C-\><C-N>
 tnoremap <C-O> <C-\><C-N><C-O>
 let g:neoterm_autoscroll = 1
