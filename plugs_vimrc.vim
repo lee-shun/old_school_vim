@@ -54,7 +54,6 @@ Plug 'chrisbra/Colorizer'
 " ===
 Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
