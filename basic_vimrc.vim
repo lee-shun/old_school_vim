@@ -85,6 +85,10 @@ set shiftround
 " Virtual edit is useful for visual block edit
 set virtualedit=block
 
+" incremental substitution (neovim)
+if has('nvim')
+  set inccommand=split
+endif
 
 " keyword match
 set showmatch               " 显示括号配对情况
