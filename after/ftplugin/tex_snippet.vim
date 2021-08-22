@@ -4,7 +4,7 @@ let maplocalleader = ","
 inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
 
 " for general environment
-inoremap <buffer> <LocalLeader>en \begin{ENV}<Enter><++><Enter>\end{ENV}<Esc>2k0f{a
+inoremap <buffer> <LocalLeader>en \begin{ENV}<Enter><++><Enter>\end{ENV}<Esc>2kV3j:VMSearch ENV<CR>
 inoremap <buffer> <LocalLeader>al \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
 inoremap <buffer> <LocalLeader>it \begin{itemize}<Enter><Enter>\end{itemize}<Esc>kcc
 inoremap <buffer> <LocalLeader>ma \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
