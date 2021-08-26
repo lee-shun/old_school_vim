@@ -17,7 +17,7 @@ inoremap <buffer> <LocalLeader>cl \begin{columns}[t]<Enter>\column{\textwidth}<E
 inoremap <buffer> <LocalLeader>bl \begin{block}{}<Enter><++><Enter>\end{block}<Enter><++><Esc>3k$F{a
 
 " for symbol
-inoremap <buffer> \fr \frac{}{<++>}<++><Esc>0f{a
+inoremap <buffer> \fr \frac{}{<++>}<++><Esc>F};i
 inoremap <buffer> \ha \hat{}<++><Esc>0f{a
 inoremap <buffer> \do \dot{}<++><Esc>0f{a
 inoremap <buffer> \dd \ddot{}<++><Esc>0f{a
@@ -35,6 +35,7 @@ inoremap <buffer> \ref \ref{}<++><Esc>T{i
 inoremap <buffer> \fnt \footnotetext[]{<++>}<++><Esc>T[i
 inoremap <buffer> \fnm \footnotemark[]<++><Esc>T[i
 inoremap <buffer> \cob \colorbox{}{<++>}<++><Esc>0f{a
-inoremap <buffer> \txb \textbf{}<++><Esc>0f{a
-inoremap <buffer> \txi \textit{}<++><Esc>0f{a
-inoremap <buffer> \clm \column{/textwidth}<Esc>0f{a
+inoremap <buffer> \tbf \textbf{}<++><Esc>F}i
+inoremap <buffer> \tit \textit{}<++><Esc>F}i
+inoremap <buffer> \clm \column{\textwidth}<Esc>F\i
+inoremap <buffer> \lb \linebreak<Enter>

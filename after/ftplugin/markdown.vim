@@ -25,10 +25,11 @@
 " filetype indent off
 " set indentexpr=
 
-" the indent is 2 for md.
+" the indent is 2 for markdown.
 setlocal tabstop=2
 setlocal softtabstop=2
 setlocal shiftwidth=2
+setlocal spell
 
 function! s:inCodeFence()
     " Search backwards for the opening of the code fence.
