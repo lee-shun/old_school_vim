@@ -31,11 +31,9 @@ Plug 'itchyny/lightline.vim'
 " === File navigation
 " ===
 Plug 'mhinz/vim-startify'
-Plug 'csch0/vim-startify-renderer-nerdfont'
-Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-devicons.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 
 " ===
 " === File Finder

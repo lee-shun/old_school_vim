@@ -45,6 +45,13 @@ let g:lightline = {
       \ }
 
 " ===
+" === startify
+" ===
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
+
+" ===
 " === Fern.vim
 " ===
 let g:fern#drawer_width = 30
@@ -72,7 +79,7 @@ augroup fern-custom
       autocmd FileType fern call s:init_fern()
 augroup END
 
-let g:fern#renderer = "nerdfont"
+let g:fern#renderer = "devicons"
 
 " ===
 " === rainbow
