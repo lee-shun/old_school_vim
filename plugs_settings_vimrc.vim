@@ -152,6 +152,7 @@ vnoremap ts :TranslateW<CR>
 let g:vimtex_mappings_enabled=0
 let g:vimtex_imaps_enabled=0
 let g:vimtex_text_obj_enabled=0
+let g:vimtex_fold_enabled=1
 let g:tex_flavor='latex'
 if has('win32')
       let g:vimtex_view_general_viewer = 'SumatraPDF'

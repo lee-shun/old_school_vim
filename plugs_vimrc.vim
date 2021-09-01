@@ -26,6 +26,11 @@ call plug#begin($CONF_PATH.'/plugged')
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/everforest'
 Plug 'itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
+Plug 'machakann/vim-highlightedyank'
+Plug 'RRethy/vim-illuminate'
 
 " ===
 " === File navigation
@@ -50,20 +55,20 @@ Plug 'chrisbra/Colorizer'
 " ===
 " === General Enhancement
 " ===
-Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
-Plug 'machakann/vim-highlightedyank'
-Plug 'RRethy/vim-illuminate'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug '907th/vim-auto-save'
+
+" ===
+" === Fold
+" ===
+Plug 'lambdalisue/readablefold.vim'
 
 " ===
 " === Text object
