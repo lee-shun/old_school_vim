@@ -105,7 +105,7 @@ let g:auto_save = 0
 let g:auto_save_silent = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-augroup ft_markdown
+augroup ft_tex
     autocmd!
     autocmd FileType tex let b:auto_save = 1
 augroup END

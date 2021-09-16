@@ -100,7 +100,7 @@ Plug 'SidOfc/mkdx', {'for' :['markdown', 'vim-plug']}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
-Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
+" Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
 
 " It needs the asyncrun.vim And marp-cli (https://github.com/marp-team/marp-cli)
 " On win10, use SumatraPDF (https://www.sumatrapdfreader.org/free-pdf-reader)
