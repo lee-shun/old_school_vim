@@ -246,18 +246,16 @@ autocmd BufNewFile,BufRead *.ejs set filetype=html
 " ===
 " === build-in netrw
 " ===
-if g:pure_vim_ulti==0
-    nnoremap <LEADER>t :Vex<CR>
-endif
 let g:netrw_hide = 1
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 2
 let g:netrw_winsize = 24
 let g:netrw_altv = 1
 let g:netrw_chgwin = 2
 let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
+
 
 " ===
 " === status line
