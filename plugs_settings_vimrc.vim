@@ -167,3 +167,9 @@ let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmg'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_format_enabled=1
+
+" ===
+" === deoplete
+" ===
+let g:deoplete#enable_at_startup = 1
+let g:neopairs#enable = 1

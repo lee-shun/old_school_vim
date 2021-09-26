@@ -19,6 +19,15 @@
 "**************************************************************************************************
 
 " ===
+" === python3
+" ===
+" let g:python3_host_prog = '/home/ls/anaconda3/envs/mlcv/bin/python'
+" let g:python_host_prog = '/usr/bin/python'
+
+let g:python_host_prog='/usr/bin/python'
+let g:python3_host_prog='/usr/bin/python3'
+
+" ===
 " === control the mini and ulti mode
 " ===
 let g:pure_vim_ulti = 1
