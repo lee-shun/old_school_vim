@@ -94,7 +94,6 @@ else
 endif
 Plug 'Shougo/deoplete-clangx'
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neopairs.vim'
@@ -130,7 +129,11 @@ Plug 'lervag/vimtex'
 " ===
 " === Translate
 " ===
-" TODO: This one requires python!
 Plug 'voldikss/vim-translator'
+
+" ===
+" === python
+" ===
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 
 call plug#end()
