@@ -85,8 +85,8 @@ Plug 'mbbill/undotree'
 " ===
 Plug 'lee-shun/vim-dict'
 
-if (g:os_name == 'Linux'&&g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-    " only Linux_x86_64, Window have this plugin
+if g:os_name == 'Linux' || g:os_name == 'Windows'
+    " only Linux, Windows have this plugin
 
     if has('nvim')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -124,7 +124,7 @@ Plug 'APZelos/blamer.nvim'
 " ===
 if (g:os_name == 'Linux'&& g:os_architect == 'x86_64') || (g:os_name == 'Windows')
 
-    " only Linux_x86_64, Window have this plugin
+    " only Linux_x86_64, Windows have this plugin
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 
 endif
