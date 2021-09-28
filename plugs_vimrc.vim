@@ -26,6 +26,11 @@ call plug#begin($CONF_PATH.'/plugged')
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/everforest'
 Plug 'itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
+Plug 'machakann/vim-highlightedyank'
+Plug 'RRethy/vim-illuminate'
 
 " ===
 " === File navigation
@@ -50,20 +55,20 @@ Plug 'chrisbra/Colorizer'
 " ===
 " === General Enhancement
 " ===
-Plug 'luochen1990/rainbow'
 Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
-Plug 'machakann/vim-highlightedyank'
-Plug 'RRethy/vim-illuminate'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug '907th/vim-auto-save'
+
+" ===
+" === Fold
+" ===
+Plug 'lambdalisue/readablefold.vim'
 
 " ===
 " === Text object
@@ -80,6 +85,19 @@ Plug 'mbbill/undotree'
 " ===
 Plug 'lee-shun/vim-dict'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'Shougo/deoplete-clangx'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neopairs.vim'
+
 " ===
 " === Git
 " ===
@@ -95,7 +113,7 @@ Plug 'SidOfc/mkdx', {'for' :['markdown', 'vim-plug']}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
-Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
+" Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
 
 " It needs the asyncrun.vim And marp-cli (https://github.com/marp-team/marp-cli)
 " On win10, use SumatraPDF (https://www.sumatrapdfreader.org/free-pdf-reader)
@@ -111,7 +129,11 @@ Plug 'lervag/vimtex'
 " ===
 " === Translate
 " ===
-" TODO: This one requires python!
 Plug 'voldikss/vim-translator'
+
+" ===
+" === python
+" ===
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 
 call plug#end()
