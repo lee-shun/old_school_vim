@@ -257,12 +257,6 @@ let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
 
 
-" ===
-" === status line
-" ===
-if g:pure_vim_ulti==0
-    source $CONF_PATH/statusline.vim
-endif
 
 " ===
 " === themes
