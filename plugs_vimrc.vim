@@ -85,24 +85,30 @@ Plug 'mbbill/undotree'
 " ===
 Plug 'lee-shun/vim-dict'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'Shougo/deoplete-clangx'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neopairs.vim'
+if (g:os_name == 'Linux'&&g:os_architect == 'x86_64') || (g:os_name == 'Windows')
+    " only Linux_x86_64, Window have deoplete
 
-if g:os_name == 'Windows'
-  Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-  Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    if has('nvim')
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+    endif
+    Plug 'Shougo/deoplete-clangx'
+    Plug 'deoplete-plugins/deoplete-jedi'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
+    Plug 'Shougo/neopairs.vim'
+
+    if g:os_name == 'Windows'
+        Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
+    elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
+        Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    endif
+
 endif
+
 
 " ===
 " === Git
@@ -115,8 +121,11 @@ Plug 'APZelos/blamer.nvim'
 " ===
 " === Markdown
 " ===
+if (g:os_name == 'Linux'&& g:os_architect == 'x86_64') || (g:os_name == 'Windows')
+    " only Linux_x86_64, Window have deoplete
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
+endif
 Plug 'SidOfc/mkdx', {'for' :['markdown', 'vim-plug']}
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 " Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
