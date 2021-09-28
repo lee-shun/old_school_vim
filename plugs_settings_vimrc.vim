@@ -57,6 +57,7 @@ endfunction
 let g:fern#drawer_width = 30
 let g:fern#default_hidden = 1
 let g:fern#disable_drawer_smart_quit = 1
+let g:fern_renderer_devicons_disable_warning = 1
 
 noremap <silent> <leader>t :Fern . -drawer -toggle <CR>
 
@@ -104,7 +105,7 @@ let g:auto_save = 0
 let g:auto_save_silent = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-augroup ft_markdown
+augroup ft_tex
     autocmd!
     autocmd FileType tex let b:auto_save = 1
 augroup END
@@ -152,6 +153,7 @@ vnoremap ts :TranslateW<CR>
 let g:vimtex_mappings_enabled=0
 let g:vimtex_imaps_enabled=0
 let g:vimtex_text_obj_enabled=0
+let g:vimtex_fold_enabled=1
 let g:tex_flavor='latex'
 if has('win32')
       let g:vimtex_view_general_viewer = 'SumatraPDF'
@@ -165,3 +167,9 @@ let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmg'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_format_enabled=1
+
+" ===
+" === deoplete
+" ===
+let g:deoplete#enable_at_startup = 1
+let g:neopairs#enable = 1
