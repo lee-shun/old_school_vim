@@ -18,13 +18,17 @@
 "
 "**************************************************************************************************
 
+" TODO: if I have an Apple Mac, there will be some different in the system
+" identification 'if-esle', however, I probably never want to spend that much
+" money until I'm rich. :)
+
 " ===
 " === identify the operating system(even the git bash is different)
 " ===
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
-    else " not windows use 'uname' command
+    else " not windows, use 'uname' command.
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
     endif
