@@ -24,7 +24,7 @@
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
-    else " not windows
+    else " not windows use 'uname' command
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
     endif
