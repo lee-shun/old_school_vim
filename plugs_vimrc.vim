@@ -140,7 +140,7 @@ Plug 'voldikss/vim-translator'
 " ===
 " === python
 " ===
-if has('nvim')
+if g:os_name == 'Linux'&&has('nvim')
     Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
 endif
 
