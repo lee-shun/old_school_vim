@@ -97,9 +97,10 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neopairs.vim'
+
 if g:os_name == 'Windows'
   Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-elseif g:os_name == 'Linux'
+elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
   Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 endif
 
