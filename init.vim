@@ -35,7 +35,7 @@ if !exists("g:os_name")
 endif
 
 " ===
-" === python3
+" === python path
 " ===
 if g:os_name == 'Windows'&&has('nvim') " nvim on win
     let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
