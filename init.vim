@@ -23,7 +23,7 @@
 " ===
 if has('win32')&&has('nvim') " nvim on win
     let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-elseif
+else
     let g:python_host_prog='/usr/bin/python'
     let g:python3_host_prog='/usr/bin/python3'
 endif
