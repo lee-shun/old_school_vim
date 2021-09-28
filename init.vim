@@ -19,7 +19,7 @@
 "**************************************************************************************************
 
 " ===
-" === identify the operating system
+" === identify the operating system(even the git bash is different)
 " ===
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
@@ -38,6 +38,8 @@ if g:os_name == 'Windows'&&has('nvim') " nvim on win
 elseif g:os_name == 'Linux'
     let g:python_host_prog='/usr/bin/python'
     let g:python3_host_prog='/usr/bin/python3'
+else
+    echo('the os name is'.g:os_name.', please checkout!')
 endif
 
 " ===
