@@ -86,7 +86,7 @@ Plug 'mbbill/undotree'
 Plug 'lee-shun/vim-dict'
 
 if (g:os_name == 'Linux'&&g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-    " only Linux_x86_64, Window have deoplete
+    " only Linux_x86_64, Window have this plugin
 
     if has('nvim')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -122,9 +122,12 @@ Plug 'APZelos/blamer.nvim'
 " === Markdown
 " ===
 if (g:os_name == 'Linux'&& g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-    " only Linux_x86_64, Window have deoplete
+
+    " only Linux_x86_64, Window have this plugin
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
+
 endif
+
 Plug 'SidOfc/mkdx', {'for' :['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
