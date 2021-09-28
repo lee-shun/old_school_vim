@@ -95,6 +95,7 @@ if (g:os_name == 'Linux'&&g:os_architect == 'x86_64') || (g:os_name == 'Windows'
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     endif
+
     Plug 'Shougo/deoplete-clangx'
     Plug 'deoplete-plugins/deoplete-jedi'
     Plug 'Shougo/neosnippet'
