@@ -173,3 +173,8 @@ let g:vimtex_format_enabled=1
 " ===
 let g:deoplete#enable_at_startup = 1
 let g:neopairs#enable = 1
+
+" ===
+" === illuminate
+" ===
+let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
