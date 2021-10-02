@@ -1,23 +1,21 @@
-"**************************************************************************************************
+"***********************************************************************************************************************
+"       ___       ___           ___           ___                    ___           ___                       ___
+"      /\__\     /\  \         /\  \         /\  \                  /\__\         /\__\          ___        /\__\
+"     /:/  /    /::\  \       /::\  \       /::\  \                /::|  |       /:/  /         /\  \      /::|  |
+"    /:/  /    /:/\:\  \     /:/\:\  \     /:/\ \  \              /:|:|  |      /:/  /          \:\  \    /:|:|  |
+"   /:/  /    /::\~\:\  \   /::\~\:\  \   _\:\~\ \  \            /:/|:|  |__   /:/__/  ___      /::\__\  /:/|:|__|__
+"  /:/__/    /:/\:\ \:\__\ /:/\:\ \:\__\ /\ \:\ \ \__\          /:/ |:| /\__\  |:|  | /\__\  __/:/\/__/ /:/ |::::\__\
+"  \:\  \    \:\~\:\ \/__/ \:\~\:\ \/__/ \:\ \:\ \/__/          \/__|:|/:/  /  |:|  |/:/  / /\/:/  /    \/__/~~/:/  /
+"   \:\  \    \:\ \:\__\    \:\ \:\__\    \:\ \:\__\                |:/:/  /   |:|__/:/  /  \::/__/           /:/  /
+"    \:\  \    \:\ \/__/     \:\ \/__/     \:\/:/  /                |::/  /     \::::/__/    \:\__\          /:/  /
+"     \:\__\    \:\__\        \:\__\        \::/  /                 /:/  /       ~~~~         \/__/         /:/  /
+"      \/__/     \/__/         \/__/         \/__/                  \/__/                                   \/__/
 "
-"       ___          ___          ___          ___                  ___                   ___
-"      /\  \        /\__\        /\  \        /\  \                /\__\        ___      /\__\
-"     /::\  \      /:/  /       /::\  \      /::\  \              /:/  /       /\  \    /::|  |
-"    /:/\:\  \    /:/  /       /:/\:\  \    /:/\:\  \            /:/  /        \:\  \  /:|:|  |
-"   /::\~\:\  \  /:/  /  ___  /::\~\:\  \  /::\~\:\  \          /:/__/  ___    /::\__\/:/|:|__|__
-"  /:/\:\ \:\__\/:/__/  /\__\/:/\:\ \:\__\/:/\:\ \:\__\         |:|  | /\__\__/:/\/__/:/ |::::\__\
-"  \/__\:\/:/  /\:\  \ /:/  /\/_|::\/:/  /\:\~\:\ \/__/         |:|  |/:/  /\/:/  /  \/__/~~/:/  /
-"       \::/  /  \:\  /:/  /    |:|::/  /  \:\ \:\__\           |:|__/:/  /\::/__/         /:/  /
-"        \/__/    \:\/:/  /     |:|\/__/    \:\ \/__/            \::::/__/  \:\__\        /:/  /
-"                  \::/  /      |:|  |       \:\__\               ~~~~       \/__/       /:/  /
-"                   \/__/        \|__|        \/__/                                      \/__/
+"Author : Shun Li
 "
+"Email  : 2015097272@qq.com
 "
-"  Author : lee-shun
-"
-"  Email  : 2015097272@qq.com
-"
-"**************************************************************************************************
+"***********************************************************************************************************************
 
 " ===
 " === automaticallly add file head
@@ -27,11 +25,11 @@ autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*
 func SetComment()
     call setline(1,"/*******************************************************************************")
     call append(line(".")    , "*")
-    call append(line(".")+1  , "*   Copyright (C) ".strftime("%Y")." Lee Ltd. All rights reserved.")
+    call append(line(".")+1  , "*   Copyright (C) ".strftime("%Y")." Concordia NAVlab. All rights reserved.")
     call append(line(".")+2  , "*")
     call append(line(".")+3  , "*   @Filename: ".expand("%:t"))
     call append(line(".")+4  , "*")
-    call append(line(".")+5  , "*   @Author: lee-shun")
+    call append(line(".")+5  , "*   @Author: Shun Li")
     call append(line(".")+6  , "*")
     call append(line(".")+7  , "*   @Email: 2015097272@qq.com")
     call append(line(".")+8  , "*")
@@ -48,11 +46,11 @@ endfunc
 func SetComment_sh()
     call setline(3, "#------------------------------------------------------------------------------")
     call setline(4 , "#")
-    call setline(5  , "#   Copyright (C) ".strftime("%Y")." Lee Ltd. All rights reserved.")
+    call setline(5  , "#   Copyright (C) ".strftime("%Y")." Concordia NAVlab. All rights reserved.")
     call setline(6  , "#")
     call setline(7  , "#   @Filename: ".expand("%:t"))
     call setline(8  , "#")
-    call setline(9  , "#   @Author: lee-shun")
+    call setline(9  , "#   @Author: Shun Li")
     call setline(10  , "#")
     call setline(11 , "#   @Date: ".strftime("%Y-%m-%d"))
     call setline(12  , "#")
@@ -87,14 +85,14 @@ func SetTitle()
         call SetComment_sh()
 
     elseif expand("%:e") == 'py'
-        call setline(1,"# -*- coding: utf-8 -*- #")
-        call setline(2,"")
+        call setline(1,"#!/usr/bin/env python3")
+        call setline(2,"# -*- coding: utf-8 -*- #")
         call SetComment_sh()
     else
         call SetComment()
         if expand("%:e") == 'hpp'
-            call append(line(".")+15, "#ifndef _".toupper(expand("%:t:r"))."_HPP")
-            call append(line(".")+16, "#define _".toupper(expand("%:t:r"))."_HPP")
+            call append(line(".")+15, "#ifndef __".toupper(expand("%:t:r"))."_HPP__")
+            call append(line(".")+16, "#define __".toupper(expand("%:t:r"))."_HPP__")
             call append(line(".")+17, "")
             call append(line(".")+18, "")
             call append(line(".")+19, "#include<iostream>")
