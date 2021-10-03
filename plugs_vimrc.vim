@@ -97,9 +97,9 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     endif
 
     Plug 'Shougo/deoplete-clangx'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'deoplete-plugins/deoplete-jedi'
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
     Plug 'Shougo/neopairs.vim'
 
     if g:os_name == 'Windows'
@@ -131,13 +131,6 @@ endif
 
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
-" Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
-
-" It needs the asyncrun.vim And marp-cli (https://github.com/marp-team/marp-cli)
-" On win10, use SumatraPDF (https://www.sumatrapdfreader.org/free-pdf-reader)
-" On Linux, use Zathura(maybe...)
-" Plug 'skywind3000/asyncrun.vim'
-" Plug 'mattf1n/VimMarp' 
 
 " ===
 " === Latex

@@ -34,15 +34,15 @@ let g:everforest_better_performance = 1
 " === lightline
 " ===
 let g:lightline = {
-      \ 'colorscheme': 'everforest',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ }
-      \ }
+            \ 'colorscheme': 'everforest',
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ],
+            \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
+            \ },
+            \ 'component_function': {
+            \   'gitbranch': 'FugitiveHead'
+            \ }
+            \ }
 
 " ===
 " === startify
@@ -62,22 +62,22 @@ let g:fern_renderer_devicons_disable_warning = 1
 noremap <silent> <leader>t :Fern . -drawer -toggle <CR>
 
 function! s:init_fern() abort
-      nmap <buffer> S <Plug>(fern-action-open:split)
-      nmap <buffer> V <Plug>(fern-action-open:vsplit)
-      nmap <buffer> R <Plug>(fern-action-rename)
-      nmap <buffer> M <Plug>(fern-action-move)
-      nmap <buffer> C <Plug>(fern-action-copy)
-      nmap <buffer> P <Plug>(fern-action-new-path)
-      nmap <buffer> F <Plug>(fern-action-new-file)
-      nmap <buffer> D <Plug>(fern-action-new-dir)
-      nmap <buffer> H <Plug>(fern-action-hidden-toggle)
-      nmap <buffer> T <Plug>(fern-action-trash)
-      nmap <buffer> B <Plug>(fern-action-mark)
+    nmap <buffer> S <Plug>(fern-action-open:split)
+    nmap <buffer> V <Plug>(fern-action-open:vsplit)
+    nmap <buffer> R <Plug>(fern-action-rename)
+    nmap <buffer> M <Plug>(fern-action-move)
+    nmap <buffer> C <Plug>(fern-action-copy)
+    nmap <buffer> P <Plug>(fern-action-new-path)
+    nmap <buffer> F <Plug>(fern-action-new-file)
+    nmap <buffer> D <Plug>(fern-action-new-dir)
+    nmap <buffer> H <Plug>(fern-action-hidden-toggle)
+    nmap <buffer> T <Plug>(fern-action-trash)
+    nmap <buffer> B <Plug>(fern-action-mark)
 endfunction
 
 augroup fern-custom
-      autocmd! *
-      autocmd FileType fern call s:init_fern()
+    autocmd! *
+    autocmd FileType fern call s:init_fern()
 augroup END
 
 let g:fern#renderer = "devicons"
@@ -129,9 +129,9 @@ let vim_markdown_preview_github=1
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
+            \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
+            \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+            \ }
 let g:ctrlp_extensions = ['autoignore', 'funky']
 
 nnoremap <leader>fc :CtrlPChange<CR>
@@ -156,12 +156,12 @@ let g:vimtex_text_obj_enabled=0
 let g:vimtex_fold_enabled=1
 let g:tex_flavor='latex'
 if has('win32')
-      let g:vimtex_view_general_viewer = 'SumatraPDF'
-      let g:vimtex_view_general_options
-                  \ = '-reuse-instance -forward-search @tex @line @pdf'
-      let g:vimtex_view_general_options_latexmk = '-reuse-instance'
+    let g:vimtex_view_general_viewer = 'SumatraPDF'
+    let g:vimtex_view_general_options
+                \ = '-reuse-instance -forward-search @tex @line @pdf'
+    let g:vimtex_view_general_options_latexmk = '-reuse-instance'
 else
-      let g:vimtex_view_method = 'zathura'
+    let g:vimtex_view_method = 'zathura'
 endif
 let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmg'
@@ -172,9 +172,21 @@ let g:vimtex_format_enabled=1
 " === deoplete
 " ===
 let g:deoplete#enable_at_startup = 1
-let g:neopairs#enable = 1
+call deoplete#custom#option({
+            \ 'auto_complete_delay': 10,
+            \ 'smart_case': v:true,
+            \ })
+
+
 
 " ===
 " === illuminate
 " ===
 let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
+
+" ===
+" === Snippets
+" ===
+let g:UltiSnipsExpandTrigger='<c-y>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
