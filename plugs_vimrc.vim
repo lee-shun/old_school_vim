@@ -129,7 +129,6 @@ if (g:os_name == 'Linux'&& g:os_architect == 'x86_64') || (g:os_name == 'Windows
 
 endif
 
-Plug 'SidOfc/mkdx', {'for' :['markdown', 'vim-plug']}
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 " Plug 'docunext/closetag.vim', {'for':['markdown', 'html', 'vim-plug']}
