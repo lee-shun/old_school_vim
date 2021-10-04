@@ -176,6 +176,7 @@ let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
 " ===
 " === Snippets
 " ===
+" work with deoplete
 let g:UltiSnipsExpandTrigger='<c-y>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
