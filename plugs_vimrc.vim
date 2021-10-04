@@ -103,23 +103,28 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     endif
 
     " ===
+    " === deoplete plugins
+    " ===
+    Plug 'Shougo/neopairs.vim'
+
+    if g:os_name == 'Windows'
+        Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
+    elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
+        Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    endif
+
+    " ===
     " === vim-lsp + deoplete
     " ===
     Plug 'lighttiger2505/deoplete-vim-lsp'
     Plug 'prabirshrestha/vim-lsp'
     Plug 'prabirshrestha/async.vim'
 
-    Plug 'Shougo/neopairs.vim'
-
     " ===
     " === cpp
     " ===
-    Plug 'jackguo380/vim-lsp-cxx-highlight'
-
-    if g:os_name == 'Windows'
-        Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-    elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-        Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    if g:os_name == 'Linux'
+        Plug 'jackguo380/vim-lsp-cxx-highlight'
     endif
 
 endif

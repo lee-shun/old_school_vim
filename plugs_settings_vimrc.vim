@@ -207,8 +207,9 @@ if executable('ccls')
       \ },
       \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
       \ })
-endif
 
+   hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+endif
 if executable('pyls')
     " pip install python-language-server
     au User lsp_setup call lsp#register_server({
