@@ -81,6 +81,12 @@ Plug 'wellle/targets.vim'
 Plug 'mbbill/undotree'
 
 " ===
+" === Snippets
+" ===
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" ===
 " === Complete
 " ===
 Plug 'lee-shun/vim-dict'
@@ -96,11 +102,19 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
         Plug 'roxma/vim-hug-neovim-rpc'
     endif
 
-    Plug 'Shougo/deoplete-clangx'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'deoplete-plugins/deoplete-jedi'
+    " ===
+    " === vim-lsp + deoplete
+    " ===
+    Plug 'lighttiger2505/deoplete-vim-lsp'
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'prabirshrestha/async.vim'
+
     Plug 'Shougo/neopairs.vim'
+
+    " ===
+    " === cpp
+    " ===
+    Plug 'jackguo380/vim-lsp-cxx-highlight'
 
     if g:os_name == 'Windows'
         Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
@@ -109,7 +123,6 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     endif
 
 endif
-
 
 " ===
 " === Git
