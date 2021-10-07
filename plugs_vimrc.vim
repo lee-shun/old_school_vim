@@ -94,6 +94,9 @@ Plug 'lee-shun/vim-dict'
 if g:os_name == 'Linux' || g:os_name == 'Windows'
     " only Linux, Windows have this plugin
 
+    " ===
+    " === deoplete (works well with the omnifunc in vim)
+    " ===
     if has('nvim')
         Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     else
@@ -106,7 +109,6 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     " === deoplete plugins
     " ===
     Plug 'Shougo/neopairs.vim'
-
     if g:os_name == 'Windows'
         Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
     elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
@@ -114,17 +116,21 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     endif
 
     " ===
-    " === vim-lsp + deoplete
-    " ===
-    Plug 'lighttiger2505/deoplete-vim-lsp'
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'prabirshrestha/async.vim'
-
-    " ===
-    " === cpp
+    " === deoplete + languages support
     " ===
     if g:os_name == 'Linux'
+
+        " vim-lsp + deoplete
+        Plug 'lighttiger2505/deoplete-vim-lsp'
+        Plug 'prabirshrestha/vim-lsp'
+        Plug 'prabirshrestha/async.vim'
         Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+    elseif g:os_name == 'Windows'
+
+        " for windows, use the deoplete-plugins
+        Plug 'deoplete-plugins/deoplete-jedi'
+
     endif
 
 endif
