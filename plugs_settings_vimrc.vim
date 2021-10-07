@@ -36,13 +36,13 @@ let g:everforest_better_performance = 1
 let g:lightline = {
             \ 'colorscheme': 'everforest',
             \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
-            \ },
-            \ 'component_function': {
-            \   'gitbranch': 'FugitiveHead'
-            \ }
-            \ }
+                \   'left': [ [ 'mode', 'paste' ],
+                \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
+                \ },
+                \ 'component_function': {
+                    \   'gitbranch': 'FugitiveHead'
+                    \ }
+                    \ }
 
 " ===
 " === startify
@@ -141,7 +141,7 @@ nnoremap <leader>fm :CtrlPMRUFiles<CR>
 nnoremap <leader>fl :CtrlPLine<CR>
 
 " ===
-" === TODO: translate requires PYTHON
+" === Translate
 " ===
 let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
 nnoremap ts :TranslateW<CR>
@@ -189,36 +189,41 @@ call deoplete#custom#option({
             \ 'auto_complete_delay': 10,
             \ 'smart_case': v:true,
             \ })
+" for latex
 call deoplete#custom#var('omni', 'input_patterns', {
-        \ 'tex': g:vimtex#re#deoplete
-        \})
+            \ 'tex': g:vimtex#re#deoplete
+            \})
 
 " ===
 " === vim-lsp
 " ===
 " Register ccls C++ lanuage server.
 if executable('ccls')
-   au User lsp_setup call lsp#register_server({
-      \ 'name': 'ccls',
-      \ 'cmd': {server_info->['ccls']},
-      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': {
-      \   'highlight': { 'lsRanges' : v:true },
-      \ },
-      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-      \ })
-
-   hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
-endif
-if executable('pyls')
-    " pip install python-language-server
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
+                \ 'name': 'ccls',
+                \ 'cmd': {server_info->['ccls']},
+                \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+                \ 'initialization_options': {
+                    \   'highlight': { 'lsRanges' : v:true },
+                    \ },
+                    \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+                    \ })
+
+    hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+endif
+" Register python lanuage server.
+if executable('pyls')
+    " pip3 install "python-language-server[all]"
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'pyls',
+                \ 'cmd': {server_info->['pyls']},
+                \ 'allowlist': ['python'],
+                \ })
 endif
 
+" ===
+" === vim-lsp
+" ===
 function! s:on_lsp_buffer_enabled() abort
     " use omnifunc if you are fine with it.
     " setlocal omnifunc=lsp#complete
@@ -239,3 +244,6 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" use the <c-x><c-o> have the popup menu if just use the vim-lsp
+" setlocal omnifunc=lsp#complete
