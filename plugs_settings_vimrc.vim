@@ -245,5 +245,13 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+let g:lsp_diagnostics_signs_error = {'text': '❌'}
+let g:lsp_diagnostics_signs_warning = {'text': '📢'} " icons require GUI
+let g:lsp_diagnostics_signs_hint = {'text': '🟊'} " icons require GUI
+let g:lsp_diagnostics_signs_information = {'text': '💬'}
+
+let g:lsp_diagnostics_virtual_text_prefix = " ‣ "
+let g:lsp_diagnostics_virtual_text_enabled = 1
+
 " use the <c-x><c-o> have the popup menu if just use the vim-lsp
 " setlocal omnifunc=lsp#complete
