@@ -184,6 +184,7 @@ let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 " ===
 " === deoplete
 " ===
+if g:os_name == 'Linux' || g:os_name == 'Windows'
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option({
             \ 'auto_complete_delay': 10,
@@ -255,3 +256,4 @@ let g:lsp_diagnostics_virtual_text_enabled = 1
 
 " use the <c-x><c-o> have the popup menu if just use the vim-lsp
 " setlocal omnifunc=lsp#complete
+endif
