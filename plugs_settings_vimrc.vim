@@ -31,6 +31,17 @@ let g:sonokai_lightline_disable_bold = 0
 let g:sonokai_better_performance = 1
 
 " ===
+" === comment highlighting
+" ===
+let g:todo_highlight_config = {
+            \   'STEP': {
+                \     'gui_fg_color': '#ffffff',
+                \     'gui_bg_color': '#27AE60 ',
+                \     'cterm_fg_color': 'white',
+                \     'cterm_bg_color': 'green' },
+                \ }
+
+" ===
 " === lightline
 " ===
 let g:lightline = {
