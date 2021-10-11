@@ -82,11 +82,6 @@ Plug 'wellle/targets.vim'
 " ===
 Plug 'mbbill/undotree'
 
-" ===
-" === Snippets
-" ===
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 " ===
 " === Complete
@@ -94,7 +89,30 @@ Plug 'honza/vim-snippets'
 Plug 'lee-shun/vim-dict'
 
 if g:os_name == 'Linux' || g:os_name == 'Windows'
-    " only Linux, Windows have this plugin
+    " NOT For Git bash(only pure vimscript)
+
+    " ===
+    " === Snippets
+    " ===
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
+    " ===
+    " === Translate
+    " ===
+    Plug 'voldikss/vim-translator'
+
+    " ===
+    " === python
+    " ===
+    if g:os_name == 'Linux'&&has('nvim')
+        Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
+    endif
+
+    " ===
+    " === Latex
+    " ===
+    Plug 'lervag/vimtex'
 
     " ===
     " === deoplete (works well with the omnifunc in vim)
@@ -158,21 +176,5 @@ endif
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
-" ===
-" === Latex
-" ===
-Plug 'lervag/vimtex'
-
-" ===
-" === Translate
-" ===
-Plug 'voldikss/vim-translator'
-
-" ===
-" === python
-" ===
-if g:os_name == 'Linux'&&has('nvim')
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
-endif
 
 call plug#end()
