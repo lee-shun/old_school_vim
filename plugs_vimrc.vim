@@ -47,10 +47,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'ludovicchabant/vim-ctrlp-autoignore'
 
+
 " ===
 " === General Highlight
 " ===
 Plug 'chrisbra/Colorizer'
+Plug 'sakshamgupta05/vim-todo-highlight'
 
 " ===
 " === General Enhancement
