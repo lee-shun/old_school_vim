@@ -18,31 +18,18 @@
 "
 "**************************************************************************************************
 
+function! MaxBufWindow ()
+    " check if is the zoomed state (tabnumber > 1 && window == 1)
+    if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
+        let l:cur_winview = winsaveview()
+        let l:cur_bufname = bufname('')
+        tabclose
 
-" ===
-" === 转换tab为空格
-" ===
-fun! Tab2Space()
-    exec "set expandtab"
-    exec "%retab!"
-endfun
-
-" ===
-" === 空格替换为TAB：
-" ===
-fun! Space2Tab()
-    exec "set noexpandtab"
-    exec "%retab!"
-endfun
-
-" ===
-" === 清理空格
-" ===
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
+        " restore the view
+        if l:cur_bufname == bufname('')
+            call winrestview(cur_winview)
+        endif
+    else
+        tab split
+    endif
+endfunction
