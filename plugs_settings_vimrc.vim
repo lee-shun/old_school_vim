@@ -236,7 +236,7 @@ endif
 " ===
 " === vim-lsp
 " ===
-let g:lsp_auto_enable = 0
+let g:lsp_auto_enable = 1
 function! s:on_lsp_buffer_enabled() abort
     " use omnifunc if you are fine with it.
     " setlocal omnifunc=lsp#complete
