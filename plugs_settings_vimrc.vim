@@ -263,8 +263,10 @@ let g:lsp_diagnostics_signs_warning = {'text': 'Ⓦ'} " icons require GUI
 let g:lsp_diagnostics_signs_hint = {'text': 'Ⓗ'} " icons require GUI
 let g:lsp_diagnostics_signs_information = {'text': 'Ⓘ'}
 
-let g:lsp_diagnostics_virtual_text_prefix = "‣"
-let g:lsp_diagnostics_virtual_text_enabled = 1
+if has('nvim')
+    let g:lsp_diagnostics_virtual_text_prefix = "‣"
+    let g:lsp_diagnostics_virtual_text_enabled = 1
+endif
 
 " use the <c-x><c-o> have the popup menu if just use the vim-lsp
 " setlocal omnifunc=lsp#complete
