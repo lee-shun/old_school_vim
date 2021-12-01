@@ -176,5 +176,10 @@ endif
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
+" ===
+" === ros
+" ===
+Plug 'taketwo/vim-ros'
+
 
 call plug#end()
