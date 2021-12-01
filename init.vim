@@ -80,6 +80,8 @@ if g:pure_vim_ulti == 1
     " === Automatic install plugins
     " ===
     if empty(glob($CONF_PATH."/plugged/"))
+        silent exec "!cp -r " . $CONF_PATH . "/font/HasklugNerdFontCompleteMonoWindowsCompatible.otf ".$HOME."/.local/share/fonts/"
+        silent exec "!fc-cache -fv"  
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
 
