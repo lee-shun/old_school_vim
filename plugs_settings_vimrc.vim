@@ -264,7 +264,7 @@ let g:lsp_diagnostics_signs_hint = {'text': 'Ⓗ'} " icons require GUI
 let g:lsp_diagnostics_signs_information = {'text': 'Ⓘ'}
 
 if has('nvim')
-    let g:lsp_diagnostics_virtual_text_prefix = "‣"
+    let g:lsp_diagnostics_virtual_text_prefix = "‣ "
     let g:lsp_diagnostics_virtual_text_enabled = 1
 endif
 
