@@ -60,7 +60,6 @@ Plug 'sakshamgupta05/vim-todo-highlight'
 Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-surround'
-Plug 'rhysd/clever-f.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
 Plug 'godlygeek/tabular'
@@ -176,6 +175,11 @@ endif
 
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
+
+" ===
+" === ros
+" ===
+Plug 'taketwo/vim-ros'
 
 
 call plug#end()
