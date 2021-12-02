@@ -236,7 +236,7 @@ endif
 " ===
 " === vim-lsp
 " ===
-let g:lsp_auto_enable = 0
+let g:lsp_auto_enable = 1
 function! s:on_lsp_buffer_enabled() abort
     " use omnifunc if you are fine with it.
     " setlocal omnifunc=lsp#complete
@@ -258,13 +258,19 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-let g:lsp_diagnostics_signs_error = {'text': '❌'}
-let g:lsp_diagnostics_signs_warning = {'text': '📢'} " icons require GUI
-let g:lsp_diagnostics_signs_hint = {'text': '🟊'} " icons require GUI
-let g:lsp_diagnostics_signs_information = {'text': '💬'}
+let g:lsp_diagnostics_signs_error = {'text': 'Ⓔ'}
+let g:lsp_diagnostics_signs_warning = {'text': 'Ⓦ'} " icons require GUI
+let g:lsp_diagnostics_signs_hint = {'text': 'Ⓗ'} " icons require GUI
+let g:lsp_diagnostics_signs_information = {'text': 'Ⓘ'}
 
-let g:lsp_diagnostics_virtual_text_prefix = " ‣ "
-let g:lsp_diagnostics_virtual_text_enabled = 1
+if has('nvim')
+    let g:lsp_diagnostics_virtual_text_prefix = "‣ "
+    let g:lsp_diagnostics_virtual_text_enabled = 1
+else
+
+    let g:lsp_diagnostics_float_cursor = 0
+    let g:lsp_diagnostics_echo_cursor = 1
+endif
 
 " use the <c-x><c-o> have the popup menu if just use the vim-lsp
 " setlocal omnifunc=lsp#complete
