@@ -303,7 +303,6 @@ augroup END
 " === Terminal Behaviors
 " ===
 tnoremap <C-N> <C-\><C-N>
-tnoremap <C-O> <C-\><C-N><C-O>
 let g:neoterm_autoscroll = 1
 if exists('##TermOpen')
     augroup term_settings
