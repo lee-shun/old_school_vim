@@ -47,7 +47,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'ludovicchabant/vim-ctrlp-autoignore'
 
-
 " ===
 " === General Highlight
 " ===
@@ -144,6 +143,8 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
         Plug 'lighttiger2505/deoplete-vim-lsp'
         Plug 'prabirshrestha/vim-lsp'
         Plug 'prabirshrestha/async.vim'
+
+        " === c++
         Plug 'jackguo380/vim-lsp-cxx-highlight'
 
     elseif g:os_name == 'Windows'
@@ -176,10 +177,12 @@ endif
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
+
 " ===
 " === ros
 " ===
-Plug 'taketwo/vim-ros'
-
+if (g:os_name == 'Linux')
+    Plug 'taketwo/vim-ros'
+endif
 
 call plug#end()
