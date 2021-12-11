@@ -25,6 +25,7 @@ call plug#begin($CONF_PATH.'/plugged')
 " ===
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
+Plug 'sainnhe/everforest'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'nathanaelkane/vim-indent-guides'
