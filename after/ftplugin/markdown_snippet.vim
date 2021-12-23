@@ -50,6 +50,7 @@ inoremap <buffer> <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle(
 " === for greneral writting
 " ===
 inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
+inoremap <buffer> <localLeader>F <Esc>/<++><CR>N:nohlsearch<CR>i<Del><Del><Del><Del>
 
 inoremap <buffer> <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
 inoremap <buffer> <localLeader>m - [ ] 
@@ -76,25 +77,54 @@ imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-r>": <++><Esc><C-o>f]a
 " ===
 " === for equations
 " ===
-inoremap <buffer> <localLeader>eq $$<++><Esc>F$i
+inoremap <buffer> \$ $$<++><Esc>F$i
+inoremap <buffer> <LocalLeader>$ $$<Enter><Enter>$$<Enter><++><Esc>2kA
 imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<localLeader><F10>}$$<Enter><BS><++><Esc>2kA
 
 " for general environment ==> 'e' for environment
-inoremap <buffer> <LocalLeader>en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2k0f{a
-inoremap <buffer> <LocalLeader>ea \begin{aligned}<Enter><Enter>\end{aligned}<Esc>kcc
-inoremap <buffer> <LocalLeader>em \begin{matrix}<Enter><Enter>\end{matrix}<Esc>kcc
+" inoremap <buffer> <LocalLeader>en \begin{}<Enter><++><Enter>\end{<++>}<Esc>2kF{a
+inoremap <buffer> <LocalLeader>en \begin{ENV}<Enter><++><Enter>\end{ENV}<Esc>2kV3j:VMSearch ENV<CR>
+inoremap <buffer> <LocalLeader>ea \left\{<Enter>\begin{aligned}<Enter><Enter>\end{aligned}<Enter>\right.<Esc>2kA
+inoremap <buffer> <LocalLeader>em \left[<Enter>\begin{matrix}<Enter><Enter>\end{matrix}<Enter>\right]<Esc>2kA
 
 " for speed up \
 inoremap <buffer> \\ \\
 
 " for symbol
-inoremap <buffer> \fr \frac{}{<++>}<++><Esc>0f{a
-inoremap <buffer> \ha \hat{}<++><Esc>0f{a
-inoremap <buffer> \do \dot{}<++><Esc>0f{a
-inoremap <buffer> \dd \ddot{}<++><Esc>0f{a
-inoremap <buffer> \sq \sqrt{}<++><Esc>0f{a
-inoremap <buffer> \ve \vec{}<++><Esc>0f{a
-inoremap <buffer> \ol \overline{}<++><Esc>0f{a
-inoremap <buffer> \wt \widetilde{}<++><Esc>0f{a
-inoremap <buffer> \pr ^{\prime}
-inoremap <buffer> \ra \rightarrow
+inoremap <buffer> \frac \frac{}{<++>}<++><Esc>F{;a
+inoremap <buffer> \hat \hat{}<++><Esc>F{a
+inoremap <buffer> \dot \dot{}<++><Esc>F{a
+inoremap <buffer> \ddot \ddot{}<++><Esc>F{a
+inoremap <buffer> \sqrt \sqrt{}<++><Esc>F{a
+inoremap <buffer> \vec \vec{}<++><Esc>F{a
+inoremap <buffer> \ovl \overline{}<++><Esc>F{a
+inoremap <buffer> \wdt \widetilde{}<++><Esc>F{a
+inoremap <buffer> \prm ^{\prime}
+inoremap <buffer> \rta \rightarrow
+inoremap <buffer> \bds \boldsymbol{}<++><Esc>F{a
+
+" ===
+" === toggle todo
+" ===
+
+function! ToggleTODO()
+    let l:has_todo = match(getline('.'), 'TODO:')
+    if l:has_todo != -1
+        exec 'norm 0fTd2w'
+    else
+        exec 'norm 0f*iTODO: '
+    endif
+endfunction
+
+" ===
+" === for paper arrangement
+" ===
+inoremap <buffer> <LocalLeader>- ## **[](.pdf)**<Enter><Enter>```bibtex<Enter><Enter>```<Enter><Enter>- **Keywords:** <++><Enter>- **Abstract:** <++><Enter>- **Note:** <++><Esc>5ka<Tab>
+
+" ===
+" === add the paper name
+" ===
+function! AddPaperName()
+    exec "norm 0f{lyw"
+    exec "norm 3k0f[pf(p"
+endfunction
