@@ -58,4 +58,9 @@ endfunction
 xnoremap <buffer> <silent> b/ :<c-u>call <sid>inComment2()<cr>
 onoremap <buffer> <silent> b/ :<c-u>call <sid>inComment2()<cr>
 
-setlocal foldmethod=syntax
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
+
+setlocal foldmethod=expr
+setlocal foldexpr=nvim_treesitter#foldexpr()

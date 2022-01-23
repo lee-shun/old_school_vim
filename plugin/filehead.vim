@@ -45,7 +45,7 @@ endfunc
 " for shell-like file
 func SetCommentSh()
     call setline(3,"")
-    call setline(4, "#------------------------------------------------------------------------------")
+    call setline(4, "# ------------------------------------------------------------------------------")
     call setline(5 , "#")
     call setline(6  , "#   Copyright (C) ".strftime("%Y")." Concordia NAVlab. All rights reserved.")
     call setline(7  , "#")
@@ -59,7 +59,7 @@ func SetCommentSh()
     call setline(15 , "#")
     call setline(16 , "#   @Description: ")
     call setline(17 , "#")
-    call setline(18, "#------------------------------------------------------------------------------")
+    call setline(18, "# ------------------------------------------------------------------------------")
     call setline(19, "")
     call setline(20, "")
 endfunc
@@ -121,7 +121,7 @@ func SetTitle()
     elseif expand("%:e") == 'cpp'
         call SetComment()
         call setline(17,"#include \"".expand("%:t:r").".hpp\"")
-        call setline(18, "int main(int argc, char** argv){")
+        call setline(18, "int main(int argc, char** argv) {")
         call setline(19, "return 0;")
         call setline(20, "}")
 
