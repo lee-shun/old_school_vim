@@ -25,7 +25,6 @@
 " Modified
 " Last [Uu]pdate(d)
 " https://gist.github.com/jelera/7838011
-
 function! TimeStamp()
     let pat = '\(\(Last\)\?\s*\([Cc]hanged\?\|[Mm]odified\|[Uu]pdated\?\)\s*:\s*\).*'
     let rep = '\1' . strftime("%a %d %b %Y %I:%M:%S %p")

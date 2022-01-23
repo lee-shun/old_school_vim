@@ -32,6 +32,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
+Plug 'voldikss/vim-floaterm'
 
 " ===
 " === File navigation

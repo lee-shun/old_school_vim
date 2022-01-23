@@ -119,7 +119,7 @@ endfunction
 " ===
 " === for paper arrangement
 " ===
-inoremap <buffer> <LocalLeader>- ## **[](.pdf)**<Enter><Enter>```bibtex<Enter><Enter>```<Enter><Enter>- **Keywords:** <++><Enter>- **Abstract:** <++><Enter>- **Note:** <++><Esc>5ka<Tab>
+inoremap <buffer> <LocalLeader>- ### **[](.pdf)**<Enter><Enter>```bibtex<Enter><Enter>```<Enter><Enter>- **Keywords:** <++><Enter>- **Abstract:** <++><Enter>- **Note:** <++><Esc>5ka<Tab>
 
 " ===
 " === add the paper name
