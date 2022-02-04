@@ -84,8 +84,6 @@ if g:pure_vim_ulti == 1
         silent exec "!sudo apt install python3-pip curl && pip3 install pynvim"
 
         " install font
-        silent exec "!mkdir -p ~/.local/share/fonts/"  
-        silent exec "!cp -r " . $CONF_PATH . "/font/Hasklug\\ Nerd\\ Font\\ Complete\\ Mono\\ Windows\\ Compatible.otf ".$HOME."/.local/share/fonts/"
         silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
         silent exec "!fc-cache -fv"  
 
