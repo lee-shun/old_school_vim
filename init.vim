@@ -77,11 +77,17 @@ if g:pure_vim_ulti == 1
     source $CONF_PATH/plugs_settings_vimrc.vim
 
     " ===
-    " === Automatic install plugins
+    " === Automatic config
     " ===
     if empty(glob($CONF_PATH."/plugged/"))
+        " install python3-pip3 and pynvim
+        silent exec "!sudo apt install python3-pip && pip3 install pynvim"
+
+        " install font
         silent exec "!cp -r " . $CONF_PATH . "/font/HasklugNerdFontCompleteMonoWindowsCompatible.otf ".$HOME."/.local/share/fonts/"
         silent exec "!fc-cache -fv"  
+
+        " install vim plugins
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     endif
 
