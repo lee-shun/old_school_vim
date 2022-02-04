@@ -84,8 +84,10 @@ if g:pure_vim_ulti == 1
         silent exec "!sudo apt install python3-pip && pip3 install pynvim"
 
         " install font
-        silent exec "!cp -r " . $CONF_PATH . "/font/HasklugNerdFontCompleteMonoWindowsCompatible.otf ".$HOME."/.local/share/fonts/"
+        silent exec "!mkdir -p ~/.local/share/fonts/"  
+        silent exec "!cp -r " . $CONF_PATH . "/font/Hasklug Nerd Font Complete Mono Windows Compatible.otf ".$HOME."/.local/share/fonts/"
         silent exec "!fc-cache -fv"  
+        silent exec "!bash" . $CONF_PATH . "/font/install_nerd_font.sh"
 
         " install vim plugins
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
