@@ -23,48 +23,49 @@
 " money until I'm rich. :)
 
 " ===
-" === identify the operating system(even the git bash is different)
-" ===
-if !exists("g:os_name")
-    if has("win64") || has("win32") || has("win16")
-        let g:os_name = "Windows"
-    else " not windows, use 'uname' command.
-        let g:os_name = substitute(system('uname'), '\n', '', '')
-        let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
-    endif
-endif
-
-" ===
-" === python path
-" ===
-if g:os_name == 'Windows'&&has('nvim') " nvim on win
-    let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-elseif g:os_name == 'Linux'
-    let g:python_host_prog='/usr/bin/python'
-    let g:python3_host_prog='/usr/bin/python3'
-else
-    echo('the os name is'.g:os_name.', please checkout!')
-endif
-
-" ===
 " === control the mini and ulti mode
 " ===
 let g:pure_vim_ulti = 1
 
 " ===
-" === environment
+" === path
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
 
 " ===
-" === basic_vimrc
+" === basic config
 " ===
 source $CONF_PATH/basic_vimrc.vim
 
 " ===
-" === pure vim ulti mode
+" === Ulit-mode
 " ===
 if g:pure_vim_ulti == 1
+
+    " ===
+    " === identify the operating system(even the git bash is different)
+    " ===
+    if !exists("g:os_name")
+        if has("win64") || has("win32") || has("win16")
+            let g:os_name = "Windows"
+        else " not windows, use 'uname' command.
+            let g:os_name = substitute(system('uname'), '\n', '', '')
+            let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
+        endif
+    endif
+
+    " ===
+    " === python path
+    " ===
+    if g:os_name == 'Windows'&&has('nvim') " nvim on win
+        let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
+    elseif g:os_name == 'Linux'
+        let g:python_host_prog='/usr/bin/python'
+        let g:python3_host_prog='/usr/bin/python3'
+    else
+        " git bash etc.
+        echo('the os name is'.g:os_name.', please checkout python(3) path!')
+    endif
 
     " ===
     " === plugs_vimrc
@@ -76,22 +77,26 @@ if g:pure_vim_ulti == 1
     " ===
     source $CONF_PATH/plugs_settings_vimrc.vim
 
-    " ===
-    " === Automatic config
-    " ===
-    if empty(glob($CONF_PATH."/plugged/"))
-        " install python3-pip3 and pynvim
-        if !(executable('pip3'))
-            silent exec "!sudo apt install python3-pip curl"
-        endif
-        silent exec "!pip3 install pynvim"
-
-        " install font
-        silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
-        silent exec "!fc-cache -fv"  
-
-        " install vim plugins
-        autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    endif
-
 endif
+
+" ===
+" === Automatic config
+" ===
+if executable('python3') || executable('python') " has python in path
+    if !(executable('pip3'))
+        silent exec "!sudo apt install python3-pip curl"
+        silent exec "!pip3 install pynvim"
+    endif
+else
+    echo("please check the python!")
+endif
+
+if empty(glob($CONF_PATH."/plugged/"))
+    " install font
+    silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
+    silent exec "!fc-cache -fv"  
+
+    " install vim plugins
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
