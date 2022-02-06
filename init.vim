@@ -81,7 +81,10 @@ if g:pure_vim_ulti == 1
     " ===
     if empty(glob($CONF_PATH."/plugged/"))
         " install python3-pip3 and pynvim
-        silent exec "!sudo apt install python3-pip curl && pip3 install pynvim"
+        if !(executable('pip3'))
+            silent exec "!sudo apt install python3-pip curl"
+        endif
+        silent exec "!pip3 install pynvim"
 
         " install font
         silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
