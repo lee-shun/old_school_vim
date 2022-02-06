@@ -83,7 +83,6 @@ Plug 'wellle/targets.vim'
 " ===
 Plug 'mbbill/undotree'
 
-
 " ===
 " === Complete
 " ===
@@ -140,20 +139,17 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     " === deoplete + languages support
     " ===
     if g:os_name == 'Linux'
-
         " vim-lsp + deoplete
         Plug 'lighttiger2505/deoplete-vim-lsp'
         Plug 'prabirshrestha/vim-lsp'
         Plug 'prabirshrestha/async.vim'
-
-        " === c++
-        Plug 'jackguo380/vim-lsp-cxx-highlight'
-
+        " c++
+        if executable('ccls')
+            Plug 'jackguo380/vim-lsp-cxx-highlight'
+        endif
     elseif g:os_name == 'Windows'
-
         " for windows, use the deoplete-plugins
         Plug 'deoplete-plugins/deoplete-jedi'
-
     endif
 
 endif
