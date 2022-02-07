@@ -18,7 +18,6 @@
 "
 "**************************************************************************************************
 
-call plug#begin($CONF_PATH.'/plugged')
 
 " ===
 " === UI
@@ -28,7 +27,6 @@ Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
@@ -84,75 +82,14 @@ Plug 'wellle/targets.vim'
 Plug 'mbbill/undotree'
 
 " ===
-" === Complete
+" === keywords
 " ===
 Plug 'lee-shun/vim-dict'
 
-if g:os_name == 'Linux' || g:os_name == 'Windows'
-    " NOT For Git bash(only pure vimscript)
-
-    " ===
-    " === Snippets
-    " ===
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-
-    " ===
-    " === Translate
-    " ===
-    Plug 'voldikss/vim-translator'
-
-    " ===
-    " === python
-    " ===
-    if g:os_name == 'Linux'&&has('nvim')
-        Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
-    endif
-
-    " ===
-    " === Latex
-    " ===
-    Plug 'lervag/vimtex'
-
-    " ===
-    " === deoplete (works well with the omnifunc in vim)
-    " ===
-    if has('nvim')
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    else
-        Plug 'Shougo/deoplete.nvim'
-        Plug 'roxma/nvim-yarp'
-        Plug 'roxma/vim-hug-neovim-rpc'
-    endif
-
-    " ===
-    " === deoplete plugins
-    " ===
-    Plug 'Shougo/neopairs.vim'
-    if g:os_name == 'Windows'
-        Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-    elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-        Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-    endif
-
-    " ===
-    " === deoplete + languages support
-    " ===
-    if g:os_name == 'Linux'
-        " vim-lsp + deoplete
-        Plug 'lighttiger2505/deoplete-vim-lsp'
-        Plug 'prabirshrestha/vim-lsp'
-        Plug 'prabirshrestha/async.vim'
-        " c++
-        if executable('ccls')
-            Plug 'jackguo380/vim-lsp-cxx-highlight'
-        endif
-    elseif g:os_name == 'Windows'
-        " for windows, use the deoplete-plugins
-        Plug 'deoplete-plugins/deoplete-jedi'
-    endif
-
-endif
+" ===
+" === Translate
+" ===
+Plug 'voldikss/vim-translator'
 
 " ===
 " === Git
@@ -165,22 +102,18 @@ Plug 'APZelos/blamer.nvim'
 " ===
 " === Markdown
 " ===
-if (g:os_name == 'Linux'&& g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-
+if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
     " only Linux_x86_64, Windows have this plugin
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
-
 endif
 
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
-
 " ===
 " === ros
 " ===
-if (g:os_name == 'Linux')
+if (g:os_name == 'Linux') && (executable('roscore'))
     Plug 'taketwo/vim-ros'
 endif
 
-call plug#end()

@@ -28,6 +28,11 @@
 let g:pure_vim_ulti = 1
 
 " ===
+" === use the completion plugins
+" ===
+let g:pure_vim_complete = 1
+
+" ===
 " === path
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
@@ -35,7 +40,7 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 " ===
 " === basic config
 " ===
-source $CONF_PATH/basic_vimrc.vim
+source $CONF_PATH/basic.vim
 
 " ===
 " === Ulit-mode
@@ -60,38 +65,58 @@ if g:pure_vim_ulti == 1
     if g:os_name == 'Windows'&&has('nvim') " nvim on win
         let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
     elseif g:os_name == 'Linux'
-        let g:python_host_prog='/usr/bin/python'
-        let g:python3_host_prog='/usr/bin/python3'
+        if executable('conda')
+            let g:python_host_prog='/usr/bin/python'
+            let g:python3_host_prog='python3'
+        else
+            let g:python_host_prog='/usr/bin/python'
+            let g:python3_host_prog='/usr/bin/python3'
+        endif
     else
         " git bash etc.
         echo('the os name is'.g:os_name.', please checkout python(3) path!')
     endif
 
     " ===
-    " === plugs_vimrc
+    " === plugs
     " ===
-    source $CONF_PATH/plugs_vimrc.vim
+    call plug#begin($CONF_PATH.'/plugged')
+
+    source $CONF_PATH/plugs.vim
+
+    if g:pure_vim_complete == 1
+        source $CONF_PATH/plugs_complete.vim
+    endif
+
+    call plug#end()
 
     " ===
-    " === plugs_settings_vimrc
+    " === plugs_settings
     " ===
-    source $CONF_PATH/plugs_settings_vimrc.vim
+    source $CONF_PATH/plugs_settings.vim
+
+    if g:pure_vim_complete == 1
+        source $CONF_PATH/plugs_complete_settings.vim
+    endif
 
 endif
 
 " ===
 " === Automatic config
 " ===
-if executable('python3') || executable('python') " has python in path
+" has python in path
+if executable('python3') || executable('python')
     if !(executable('pip3'))
         silent exec "!sudo apt install python3-pip curl"
-        silent exec "!pip3 install pynvim"
     endif
 else
-    echo("please check the python!")
+    echo("please install the python and pip-pynvim")
 endif
 
 if empty(glob($CONF_PATH."/plugged/"))
+    " install pynvim
+    silent exec "!pip3 install pynvim"
+
     " install font
     silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
     silent exec "!fc-cache -fv"  
@@ -99,4 +124,3 @@ if empty(glob($CONF_PATH."/plugged/"))
     " install vim plugins
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
