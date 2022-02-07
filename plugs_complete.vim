@@ -18,7 +18,6 @@
 "
 "**************************************************************************************************
 
-
 if g:os_name == 'Linux' || g:os_name == 'Windows'
     " ===
     " === Snippets
@@ -31,13 +30,6 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     " ===
     if g:os_name == 'Linux' && has('nvim')
         Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
-    endif
-
-    " ===
-    " === Latex
-    " ===
-    if executable('latexmk')
-        Plug 'lervag/vimtex'
     endif
 
     " ===

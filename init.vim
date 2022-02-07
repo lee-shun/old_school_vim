@@ -30,6 +30,7 @@ let g:pure_vim_ulti = 1
 " ===
 " === use the completion plugins
 " ===
+" NOTE: NEED PYTHON !!!
 let g:pure_vim_complete = 1
 
 " ===
