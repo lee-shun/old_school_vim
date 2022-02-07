@@ -111,9 +111,15 @@ Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 
 " ===
+" === Latex
+" ===
+if executable('latexmk')
+    Plug 'lervag/vimtex'
+endif
+
+" ===
 " === ros
 " ===
 if (g:os_name == 'Linux') && (executable('roscore'))
     Plug 'taketwo/vim-ros'
 endif
-
