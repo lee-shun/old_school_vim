@@ -30,7 +30,7 @@ let g:pure_vim_ulti = 1
 " ===
 " === use the completion plugins
 " ===
-let g:pure_vim_advanced = 0
+let g:pure_vim_advanced = 1
 if !has('python3')
     let g:pure_vim_advanced = 0
 endif
@@ -50,19 +50,19 @@ source $CONF_PATH/basic.vim
 " ===
 if g:pure_vim_ulti == 1
 
+    " ===  ulti mode needs to know os name
+    if !exists("g:os_name")
+        if has("win64") || has("win32") || has("win16")
+            let g:os_name = "Windows"
+        else " not windows, use 'uname' command.
+            let g:os_name = substitute(system('uname'), '\n', '', '')
+            let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
+        endif
+    endif
+
     if g:pure_vim_advanced == 1
 
-        " === identify the operating system(even the git bash is different)
-        if !exists("g:os_name")
-            if has("win64") || has("win32") || has("win16")
-                let g:os_name = "Windows"
-            else " not windows, use 'uname' command.
-                let g:os_name = substitute(system('uname'), '\n', '', '')
-                let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
-            endif
-        endif
-
-        " === python path
+        " === advanced features need to know python path
         if g:os_name == 'Windows' && has('nvim') " nvim on win
             let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
         elseif g:os_name == 'Linux'
@@ -81,18 +81,14 @@ if g:pure_vim_ulti == 1
 
     " === plugs
     call plug#begin($CONF_PATH.'/plugged')
-
     source $CONF_PATH/plugs.vim
-
     if g:pure_vim_advanced == 1
         source $CONF_PATH/plugs_advanced.vim
     endif
-
     call plug#end()
 
     " === plugs_settings
     source $CONF_PATH/plugs_settings.vim
-
     if g:pure_vim_advanced == 1
         source $CONF_PATH/plugs_advanced_settings.vim
     endif

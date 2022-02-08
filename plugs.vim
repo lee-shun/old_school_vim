@@ -92,7 +92,9 @@ Plug 'lee-shun/vim-dict'
 Plug 'rhysd/conflict-marker.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-Plug 'APZelos/blamer.nvim'
+if has('nvim') || has('popupwin')
+    Plug 'APZelos/blamer.nvim'
+endif
 
 " ===
 " === Markdown
