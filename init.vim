@@ -46,6 +46,7 @@ let g:pure_vim_advanced = 1
 
 " === advanced features need to know python path
 if g:pure_vim_advanced == 1
+
     if g:os_name == 'Windows' && has('nvim') " nvim on win
         let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
     elseif g:os_name == 'Linux'
@@ -56,18 +57,17 @@ if g:pure_vim_advanced == 1
             let g:python_host_prog='/usr/bin/python'
             let g:python3_host_prog='/usr/bin/python3'
         endif
-    else
     endif
-endif
 
-" === install pynvim for the first time
-if empty(glob($CONF_PATH."/plugged/")) && (g:pure_vim_advanced == 1)
-    if !(executable('pip3'))
-        silent exec "!sudo apt install python3-pip"
-        echo("install pip3!")
+    " === install pynvim for the first time
+    if empty(glob($CONF_PATH."/plugged/"))
+        if !(executable('pip3'))
+            silent exec "!sudo apt install python3-pip"
+            echo("install pip3!")
+        endif
+        silent exec "!pip3 install pynvim"
+        echo("install pynvim via pip3!")
     endif
-    silent exec "!pip3 install pynvim"
-    echo("install pynvim via pip3!")
 endif
 
 " ===
