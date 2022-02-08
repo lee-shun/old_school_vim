@@ -85,6 +85,7 @@ Plug 'mbbill/undotree'
 " === keywords
 " ===
 Plug 'lee-shun/vim-dict'
+Plug 'junegunn/vim-emoji'
 
 " ===
 " === Git

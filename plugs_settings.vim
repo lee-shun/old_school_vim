@@ -181,3 +181,17 @@ let g:vimtex_format_enabled=1
 " === illuminate
 " ===
 let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
+
+" ===
+" === emoji
+" ===
+" <c-x><c-u>
+set completefunc=emoji#complete
+fun! <SID>Sub_movend(lineno)
+    if (match(getline(a:lineno), ':\([^:]\+\):') != -1) " There is a match
+        exe a:lineno . 'su /:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g'
+        star!
+    endif
+endfun
+
+autocmd! CompleteDone * call <SID>Sub_movend(line('.'))
