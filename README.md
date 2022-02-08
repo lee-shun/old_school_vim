@@ -15,14 +15,23 @@
 
 - **Mini-Mode:** set `g:pure_vim_ulti` to `0` in [init.vim](init.vim)
   > use vim as an excellent text editor!
+  >
   > - No Plugins, No Dependencies.
+  >
 - **Ulti-Mode** set `g:pure_vim_ulti` to `1` in [init.vim](init.vim)
   > use vim with some pretty neat plugins
+  >
   > - dependence-free plugins written in Vimscripts.
+  >
 - **Advanced Features:** set `g:pure_vim_ulti` and `g:pure_vim_advanced` both to `1` in [init.vim](init.vim)
   > use vim as a lightweight IDE for `C/C++` and `python`.
+  >
   > - multi language translations based on python plugins.
   > - language-sever based code completion, etc.
+  >
+- **NOTE:**
+  - 🆘 using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
+  installation. Under this situation, use `neovim` instead.
 
 ## Requirements
 
