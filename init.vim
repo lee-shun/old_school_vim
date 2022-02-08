@@ -23,6 +23,11 @@
 " money until I'm rich. :)
 
 " ===
+" === path
+" ===
+let $CONF_PATH = split(&runtimepath, ',')[0]
+
+" ===
 " === control the mini and ulti mode
 " ===
 let g:pure_vim_ulti = 1
@@ -62,18 +67,14 @@ if g:pure_vim_advanced == 1
     " === install pynvim for the first time
     if empty(glob($CONF_PATH."/plugged/"))
         if !(executable('pip3'))
-            silent exec "!sudo apt install python3-pip"
+            exec "!sudo apt install python3-pip"
             echo("install pip3!")
         endif
-        silent exec "!pip3 install pynvim"
+        exec "!pip3 install pynvim"
         echo("install pynvim via pip3!")
     endif
 endif
 
-" ===
-" === path
-" ===
-let $CONF_PATH = split(&runtimepath, ',')[0]
 
 " ===
 " === basic config
@@ -104,11 +105,13 @@ endif
 " ===
 if empty(glob($CONF_PATH."/plugged/"))
     " install font
-    silent exec "!sudo apt install curl"
-    silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
+    if !execute('curl')
+        exec "!sudo apt install curl"
+    endif
+    exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
     " install vim plugins
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     if has('nvim')
-        silent exec "UpdateRemotePlugins"
+        autocmd VimEnter * UpdateRemotePlugins
     endif
 endif
