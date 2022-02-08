@@ -30,8 +30,7 @@ let g:pure_vim_ulti = 1
 " ===
 " === use the completion plugins
 " ===
-" NOTE: NEED PYTHON !!!
-let g:pure_vim_complete = 1
+let g:pure_vim_advanced = 0
 
 " ===
 " === path
@@ -85,8 +84,8 @@ if g:pure_vim_ulti == 1
 
     source $CONF_PATH/plugs.vim
 
-    if g:pure_vim_complete == 1
-        source $CONF_PATH/plugs_complete.vim
+    if g:pure_vim_advanced == 1
+        source $CONF_PATH/plugs_advanced.vim
     endif
 
     call plug#end()
@@ -96,8 +95,8 @@ if g:pure_vim_ulti == 1
     " ===
     source $CONF_PATH/plugs_settings.vim
 
-    if g:pure_vim_complete == 1
-        source $CONF_PATH/plugs_complete_settings.vim
+    if g:pure_vim_advanced == 1
+        source $CONF_PATH/plugs_advanced_settings.vim
     endif
 
 endif

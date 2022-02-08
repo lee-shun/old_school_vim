@@ -157,13 +157,6 @@ nnoremap <leader>fm :CtrlPMRUFiles<CR>
 nnoremap <leader>fl :CtrlPLine<CR>
 
 " ===
-" === Translate
-" ===
-let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
-nnoremap ts :TranslateW<CR>
-vnoremap ts :TranslateW<CR>
-
-" ===
 " === vimtex
 " ===
 let g:vimtex_mappings_enabled=0
