@@ -95,27 +95,42 @@ if g:pure_vim_ulti == 1
 
 endif
 
+
 " ===
 " === Automatic config
 " ===
 if empty(glob($CONF_PATH."/plugged/"))
-    " install python
-    if g:pure_vim_advanced == 1
-        if executable('python3') || executable('python')
-            if !(executable('pip3'))
-                silent exec "!sudo apt install python3-pip"
-            endif
-            silent exec "!pip3 install pynvim"
-        else
-            echo("please install the python and pynvim")
+
+function! PynvimInstalled()
+python3 << EOF
+import vim
+try:
+    import pynvim
+except ModuleNotFoundError:
+    vim.command("return 0")
+EOF
+return 1
+endfunction
+
+" install python
+if g:pure_vim_advanced == 1
+    if executable('python3') || executable('python')
+        if !(executable('pip3'))
+            silent exec "!sudo apt install python3-pip"
         endif
+        if(!PynvimInstalled())
+            silent exec "!pip3 install pynvim"
+        endif
+    else
+        echo("please install the python and pynvim")
     endif
+endif
 
-    " install font
-    silent exec "!sudo apt install curl"
-    silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
-    silent exec "!fc-cache -fv"  
+" install font
+silent exec "!sudo apt install curl"
+silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
 
-    " install vim plugins
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" install vim plugins
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+
 endif
