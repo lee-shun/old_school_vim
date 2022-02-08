@@ -110,9 +110,7 @@ Plug 'lee-shun/vim-markdown-wiki'
 " ===
 " === Latex
 " ===
-if executable('latexmk')
-    Plug 'lervag/vimtex'
-endif
+Plug 'lervag/vimtex'
 
 " ===
 " === ros
