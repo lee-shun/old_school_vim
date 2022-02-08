@@ -50,8 +50,10 @@ if g:pure_vim_advanced == 1
         let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
     elseif g:os_name == 'Linux'
         if executable('conda')
+            let g:python_host_prog='/usr/bin/python'
             let g:python3_host_prog='python'
         else
+            let g:python_host_prog='/usr/bin/python'
             let g:python3_host_prog='/usr/bin/python3'
         endif
     else
@@ -59,7 +61,7 @@ if g:pure_vim_advanced == 1
 endif
 
 " === install pynvim for the first time
-if (empty(glob($CONF_PATH."/plugged/"))&&g:pure_vim_advanced == 1)
+if empty(glob($CONF_PATH."/plugged/") && (g:pure_vim_advanced == 1)
     if !(executable('pip3'))
         silent exec "!sudo apt install python3-pip"
         echo("install pip3!")
@@ -106,4 +108,7 @@ if empty(glob($CONF_PATH."/plugged/"))
     silent exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
     " install vim plugins
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    if has('nvim')
+        silent exec "UpdateRemotePlugins"
+    endif
 endif
