@@ -31,7 +31,7 @@ let g:pure_vim_ulti = 1
 " === use the completion plugins
 " ===
 let g:pure_vim_advanced = 1
-if !(has('python3')||has('nvim'))
+if !has('python3')
     let g:pure_vim_advanced = 0
 endif
 
