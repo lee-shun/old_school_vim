@@ -105,7 +105,7 @@ endif
 " ===
 if empty(glob($CONF_PATH."/plugged/"))
     " install font
-    if !execute('curl')
+    if !executable('curl')
         exec "!sudo apt install curl"
     endif
     exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
