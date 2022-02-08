@@ -258,7 +258,6 @@ let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
 
 
-
 " ===
 " === themes
 " ===

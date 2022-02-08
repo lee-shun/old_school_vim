@@ -87,11 +87,6 @@ Plug 'mbbill/undotree'
 Plug 'lee-shun/vim-dict'
 
 " ===
-" === Translate
-" ===
-Plug 'voldikss/vim-translator'
-
-" ===
 " === Git
 " ===
 Plug 'rhysd/conflict-marker.vim'

@@ -18,6 +18,12 @@
 "
 "**************************************************************************************************
 
+" ===
+" === Translate
+" ===
+Plug 'voldikss/vim-translator'
+
+
 if g:os_name == 'Linux' || g:os_name == 'Windows'
     " ===
     " === Snippets
