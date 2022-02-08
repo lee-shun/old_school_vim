@@ -95,34 +95,35 @@ if g:pure_vim_ulti == 1
 
 endif
 
-
 " ===
 " === Automatic config
 " ===
-if empty(glob($CONF_PATH."/plugged/"))
-
 function! PynvimInstalled()
+let l:pynvim_installed = 1
 python3 << EOF
 import vim
 try:
     import pynvim
 except ModuleNotFoundError:
-    vim.command("return 0")
+    vim.command("let l:pynvim_installed = 0")
 EOF
-return 1
+return l:pynvim_installed
 endfunction
 
-" install python
+if empty(glob($CONF_PATH."/plugged/"))
+" install pynvim
 if g:pure_vim_advanced == 1
     if executable('python3') || executable('python')
         if !(executable('pip3'))
             silent exec "!sudo apt install python3-pip"
+            echo("install pip3!")
         endif
-        if(!PynvimInstalled())
+        if !(PynvimInstalled())
             silent exec "!pip3 install pynvim"
+            echo("install pynvim via pip3!")
         endif
     else
-        echo("please install the python and pynvim")
+        echo("please install the python3 and pynvim!")
     endif
 endif
 
