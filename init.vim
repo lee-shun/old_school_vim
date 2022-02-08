@@ -27,13 +27,25 @@
 " ===
 let g:pure_vim_ulti = 1
 
+" ===  ulti mode needs to know os name
+if g:pure_vim_ulti == 1
+    if !exists("g:os_name")
+        if has("win64") || has("win32") || has("win16")
+            let g:os_name = "Windows"
+        else " not windows, use 'uname' command.
+            let g:os_name = substitute(system('uname'), '\n', '', '')
+            let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
+        endif
+    endif
+endif
+
 " ===
 " === use the completion plugins
 " ===
 let g:pure_vim_advanced = 1
 
+" === advanced features need to know python path
 if g:pure_vim_advanced == 1
-    " === advanced features need to know python path
     if g:os_name == 'Windows' && has('nvim') " nvim on win
         let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
     elseif g:os_name == 'Linux'
@@ -46,6 +58,7 @@ if g:pure_vim_advanced == 1
     endif
 endif
 
+" === install pynvim for the first time
 if (empty(glob($CONF_PATH."/plugged/"))&&g:pure_vim_advanced == 1)
     if !(executable('pip3'))
         silent exec "!sudo apt install python3-pip"
@@ -69,16 +82,6 @@ source $CONF_PATH/basic.vim
 " === Ulit-mode and Advanced features
 " ===
 if g:pure_vim_ulti == 1
-    " ===  ulti mode needs to know os name
-    if !exists("g:os_name")
-        if has("win64") || has("win32") || has("win16")
-            let g:os_name = "Windows"
-        else " not windows, use 'uname' command.
-            let g:os_name = substitute(system('uname'), '\n', '', '')
-            let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
-        endif
-    endif
-
     " === plugs
     call plug#begin($CONF_PATH.'/plugged')
     source $CONF_PATH/plugs.vim
@@ -97,7 +100,6 @@ endif
 " ===
 " === Automatic config
 " ===
-
 if empty(glob($CONF_PATH."/plugged/"))
     " install font
     silent exec "!sudo apt install curl"
