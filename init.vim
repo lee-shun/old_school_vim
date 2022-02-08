@@ -61,7 +61,7 @@ if g:pure_vim_advanced == 1
 endif
 
 " === install pynvim for the first time
-if empty(glob($CONF_PATH."/plugged/") && (g:pure_vim_advanced == 1)
+if empty(glob($CONF_PATH."/plugged/")) && (g:pure_vim_advanced == 1)
     if !(executable('pip3'))
         silent exec "!sudo apt install python3-pip"
         echo("install pip3!")
