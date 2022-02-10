@@ -107,6 +107,7 @@ endif
 
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
+Plug 'ferrine/md-img-paste.vim'
 
 " ===
 " === Latex

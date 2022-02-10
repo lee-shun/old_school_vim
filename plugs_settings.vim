@@ -140,6 +140,11 @@ let g:closetag_html_style=1
 let vim_markdown_preview_github=1
 
 " ===
+" === markdown paste image
+" ===
+let g:mdip_imgdir = 'img'
+
+" ===
 " === ctrl-p
 " ===
 let g:ctrlp_map = '<leader>ff'
