@@ -192,8 +192,12 @@ let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
 " === emoji
 " ===
 " <c-x><c-u>
-set completefunc=emoji#complete
-command! -nargs=0 ReplaceEmj :su /:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
+augroup emoji_complete
+  autocmd!
+  autocmd FileType markdown setlocal completefunc=emoji#complete
+  " Emoji command to replace emoji name with emoji e.g. :apple: with 🍎
+  command! -nargs=* Emoji %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
+augroup END
 
 " ===
 " === open.vim
