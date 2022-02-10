@@ -120,3 +120,8 @@ Plug 'lervag/vimtex'
 if (g:os_name == 'Linux') && (executable('roscore'))
     Plug 'taketwo/vim-ros'
 endif
+
+" ===
+" === other files
+" ===
+Plug 'edersonferreira/open.vim'
