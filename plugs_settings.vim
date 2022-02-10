@@ -143,6 +143,7 @@ let vim_markdown_preview_github=1
 " === markdown paste image
 " ===
 let g:mdip_imgdir = 'img'
+command! -nargs=0 PastImg :call mdip#MarkdownClipboardImage()
 
 " ===
 " === ctrl-p
@@ -192,11 +193,12 @@ let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
 " ===
 " <c-x><c-u>
 set completefunc=emoji#complete
-fun! <SID>Sub_movend(lineno)
-    if (match(getline(a:lineno), ':\([^:]\+\):') != -1) " There is a match
-        exe a:lineno . 'su /:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g'
-        star!
-    endif
-endfun
+command! -nargs=0 ReplaceEmj :su /:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
 
-autocmd! CompleteDone * call <SID>Sub_movend(line('.'))
+" ===
+" === open.vim
+" ===
+let g:open#image = 'feh'
+let g:open#pdf = 'zathura'
+let g:open#video = 'vlc'
+let g:open#audio = 'vlc'
