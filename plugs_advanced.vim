@@ -32,6 +32,11 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
     Plug 'honza/vim-snippets'
 
     " ===
+    " === code format
+    " ===
+    Plug 'sbdchd/neoformat'
+
+    " ===
     " === python
     " ===
     if g:os_name == 'Linux' && has('nvim')
