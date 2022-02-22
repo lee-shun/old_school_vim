@@ -68,6 +68,12 @@ function! StartifyEntryFormat()
 endfunction
 
 " ===
+" === rooter.vim
+" ===
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_patterns = ['.git', '=code', 'compile_commands.json', 'package.xml']
+
+" ===
 " === Fern.vim
 " ===
 let g:fern#drawer_width = 30
