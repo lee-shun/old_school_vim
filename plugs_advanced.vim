@@ -73,6 +73,7 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
         Plug 'lighttiger2505/deoplete-vim-lsp'
         Plug 'prabirshrestha/vim-lsp'
         Plug 'prabirshrestha/async.vim'
+        Plug 'halkn/lightline-lsp'
         " c++
         if executable('ccls')
             Plug 'jackguo380/vim-lsp-cxx-highlight'
