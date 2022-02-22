@@ -172,6 +172,11 @@ inoremap <C-A-right> <nop>
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " ===
+" === auto redraw the whole buffer
+" ===
+" autocmd BufWrite * :redraw!
+
+" ===
 " === change the cursor shape(works on alacritty,but change the fonts in git bash)
 " ===
 if !has('nvim')
