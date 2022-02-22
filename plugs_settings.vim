@@ -84,7 +84,7 @@ endfunction
 " === rooter.vim
 " ===
 let g:rooter_change_directory_for_non_project_files = 'current'
-let g:rooter_patterns = ['.git', '=code', 'compile_commands.json', 'package.xml']
+let g:rooter_patterns = ['compile_commands.json', '.git', '=code', 'package.xml']
 
 " ===
 " === Fern.vim
@@ -154,9 +154,14 @@ let g:vim_markdown_conceal=1
 let g:closetag_html_style=1
 
 " ===
-" === markdown_preview
+" === markdown_preview.nvim
 " ===
-let vim_markdown_preview_github=1
+let g:mkdp_browser = 'google-chrome'
+" google-chrome  --password-store=gnome
+function! g:Open_browser(url)
+  silent exec "!google-chrome --password-store=gnome --new-window " . a:url . " &"
+endfunction
+let g:mkdp_browserfunc = 'g:Open_browser'
 
 " ===
 " === markdown paste image
