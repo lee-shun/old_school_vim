@@ -115,7 +115,7 @@ augroup fern-custom
     autocmd FileType fern call s:init_fern()
 augroup END
 
-let g:fern#renderer = "devicons"
+let g:fern#renderer = "nerdfont"
 
 " ===
 " === rainbow
