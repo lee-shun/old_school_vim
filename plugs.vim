@@ -22,6 +22,7 @@
 " ===
 " === UI
 " ===
+Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
@@ -37,7 +38,8 @@ Plug 'voldikss/vim-floaterm'
 " === File navigation
 " ===
 Plug 'mhinz/vim-startify'
-Plug 'lambdalisue/fern-renderer-devicons.vim'
+Plug 'csch0/vim-startify-renderer-nerdfont'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'airblade/vim-rooter'
