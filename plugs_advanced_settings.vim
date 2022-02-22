@@ -72,10 +72,10 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
         autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
     augroup END
 
-    let g:lsp_diagnostics_signs_error = {'text': 'Ⓔ'}
-    let g:lsp_diagnostics_signs_warning = {'text': 'Ⓦ'} " icons require GUI
-    let g:lsp_diagnostics_signs_hint = {'text': 'Ⓗ'} " icons require GUI
-    let g:lsp_diagnostics_signs_information = {'text': 'Ⓘ'}
+    let g:lsp_diagnostics_signs_error = {'text': 'E'}
+    let g:lsp_diagnostics_signs_warning = {'text': 'W'} " icons require GUI
+    let g:lsp_diagnostics_signs_hint = {'text': 'H'} " icons require GUI
+    let g:lsp_diagnostics_signs_information = {'text': 'I'}
 
     if has('nvim')
         let g:lsp_diagnostics_virtual_text_prefix = "‣ "
