@@ -25,6 +25,7 @@
 Plug 'ryanoasis/vim-devicons'
 Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
+Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'

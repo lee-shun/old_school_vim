@@ -22,7 +22,7 @@
 " === UI
 " ===
 set background=dark
-colorscheme everforest
+colorscheme nord
 let g:everforest_style = 'atlantis'
 let g:everforest_enable_italic = 1
 let g:everforest_disable_italic_comment = 0
@@ -50,15 +50,26 @@ let g:todo_highlight_config = {
 " === lightline
 " ===
 let g:lightline = {
-            \ 'colorscheme': 'everforest',
-            \ 'active': {
-                \   'left': [ [ 'mode', 'paste' ],
-                \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
-                \ },
-                \ 'component_function': {
-                    \   'gitbranch': 'FugitiveHead'
-                    \ }
-                    \ }
+                     \ 'colorscheme': 'nord',
+                     \ 'active': {
+                     \ 'left': [ [ 'mode', 'paste' ],
+                     \ [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+                     \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']]
+                     \ },
+                     \ 'component_function': {
+                     \ 'gitbranch': 'FugitiveHead'
+                     \ },
+                     \ 'component_expand': {
+                     \ 'lsp_warnings': 'lightline_lsp#warnings',
+                     \ 'lsp_errors':   'lightline_lsp#errors',
+                     \ 'lsp_ok':       'lightline_lsp#ok',
+                     \ },
+                     \ 'component_type': {
+                     \ 'lsp_warnings': 'warning',
+                     \ 'lsp_errors':   'error',
+                     \ 'lsp_ok':       'middle',
+                     \ }
+                     \ }
 
 " ===
 " === startify
