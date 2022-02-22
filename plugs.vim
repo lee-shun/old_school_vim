@@ -39,6 +39,7 @@ Plug 'mhinz/vim-startify'
 Plug 'lambdalisue/fern-renderer-devicons.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
+Plug 'airblade/vim-rooter'
 
 " ===
 " === File Finder
