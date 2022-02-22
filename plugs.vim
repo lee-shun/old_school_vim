@@ -67,7 +67,6 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug '907th/vim-auto-save'
-Plug 'roxma/vim-paste-easy'
 
 " ===
 " === Fold
