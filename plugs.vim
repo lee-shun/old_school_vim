@@ -56,6 +56,7 @@ Plug 'ludovicchabant/vim-ctrlp-autoignore'
 " ===
 Plug 'chrisbra/Colorizer'
 Plug 'sakshamgupta05/vim-todo-highlight'
+Plug 'skywind3000/asyncrun.vim'
 
 " ===
 " === General Enhancement

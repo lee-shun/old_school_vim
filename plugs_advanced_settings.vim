@@ -62,7 +62,7 @@ if g:os_name == 'Linux' || g:os_name == 'Windows'
         nmap <buffer> gi <plug>(lsp-implementation)
         nmap <buffer> gt <plug>(lsp-type-definition)
         nmap <buffer> <leader>rn <plug>(lsp-rename)
-        nmap <buffer> <leader>ac <plug>((lsp-code-action))
+        nmap <buffer> <leader>ac <plug>(lsp-code-action)
         nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
         nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
         nmap <buffer> K <plug>(lsp-hover)
