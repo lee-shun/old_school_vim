@@ -162,7 +162,8 @@ let g:closetag_html_style=1
 let g:mkdp_browser = 'google-chrome'
 " google-chrome  --password-store=gnome
 function! g:Open_browser(url)
-  silent exec "!google-chrome --password-store=gnome --new-window " . a:url . " &"
+    silent exec "AsyncRun! google-chrome --password-store=gnome --new-window " . a:url . " &"
+    " silent exec "!google-chrome --password-store=gnome --new-window " . a:url . " &"
 endfunction
 let g:mkdp_browserfunc = 'g:Open_browser'
 
