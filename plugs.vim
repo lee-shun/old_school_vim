@@ -56,7 +56,6 @@ Plug 'ludovicchabant/vim-ctrlp-autoignore'
 " ===
 Plug 'chrisbra/Colorizer'
 Plug 'sakshamgupta05/vim-todo-highlight'
-Plug 'skywind3000/asyncrun.vim'
 
 " ===
 " === General Enhancement
@@ -92,6 +91,12 @@ Plug 'mbbill/undotree'
 " ===
 Plug 'lee-shun/vim-dict'
 Plug 'junegunn/vim-emoji'
+
+" ===
+" === Async
+" ===
+Plug 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asynctasks.vim'
 
 " ===
 " === Git

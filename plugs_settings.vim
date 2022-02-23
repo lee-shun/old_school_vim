@@ -126,12 +126,7 @@ let g:rainbow_active = 1
 " === indentLine
 " ===
 let g:indentLine_setColors = 0
-let g:indentLine_enabled = 0
-
-" ===
-" === indent_guides
-" ===
-let g:indent_guides_enable_on_vim_startup = 0
+let g:indentLine_enabled = 1
 
 " ===
 " === auto save
@@ -234,3 +229,8 @@ let g:open#image = 'feh'
 let g:open#pdf = 'zathura'
 let g:open#video = 'vlc'
 let g:open#audio = 'vlc'
+
+" ===
+" === Async
+" ===
+let g:asyncrun_open = 6
