@@ -143,6 +143,9 @@ let g:auto_save_events = ["InsertLeave", "TextChanged"]
 augroup ft_tex
     autocmd!
     autocmd FileType tex let b:auto_save = 1
+    autocmd FileType c let b:auto_save = 1
+    autocmd FileType cpp let b:auto_save = 1
+    autocmd FileType cmake let b:auto_save = 1
 augroup END
 
 " ===
