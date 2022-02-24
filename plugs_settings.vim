@@ -135,7 +135,6 @@ augroup auto_indentline_ft
     autocmd FileType python :IndentLinesToggle
 augroup END
 
-
 " ===
 " === auto save
 " ===
@@ -150,31 +149,6 @@ augroup auto_save_ft
     autocmd FileType cpp let b:auto_save = 1
     autocmd FileType cmake let b:auto_save = 1
 augroup END
-
-" ===
-" === markdown
-" ===
-" NOTE: use the plasticboy markdown sytanx file + SidOFc mxkd.vim functions.
-let g:vim_markdown_math=1
-let g:vim_markdown_conceal=1
-let g:closetag_html_style=1
-
-" ===
-" === markdown_preview.nvim
-" ===
-let g:mkdp_browser = 'google-chrome'
-" google-chrome  --password-store=gnome
-function! g:Open_browser(url)
-    silent exec "AsyncRun! google-chrome --password-store=gnome --new-window " . a:url . " &"
-    " silent exec "!google-chrome --password-store=gnome --new-window " . a:url . " &"
-endfunction
-let g:mkdp_browserfunc = 'g:Open_browser'
-
-" ===
-" === markdown paste image
-" ===
-let g:mdip_imgdir = 'img'
-command! -nargs=0 PastImg :call mdip#MarkdownClipboardImage()
 
 " ===
 " === ctrl-p
@@ -194,27 +168,6 @@ nnoremap <leader>fm :CtrlPMRUFiles<CR>
 nnoremap <leader>fl :CtrlPLine<CR>
 
 " ===
-" === vimtex
-" ===
-let g:vimtex_mappings_enabled=0
-let g:vimtex_imaps_enabled=0
-let g:vimtex_text_obj_enabled=0
-let g:vimtex_fold_enabled=1
-let g:tex_flavor='latex'
-if has('win32')
-    let g:vimtex_view_general_viewer = 'SumatraPDF'
-    let g:vimtex_view_general_options
-                \ = '-reuse-instance -forward-search @tex @line @pdf'
-    let g:vimtex_view_general_options_latexmk = '-reuse-instance'
-else
-    let g:vimtex_view_method = 'zathura'
-endif
-let g:vimtex_quickfix_mode=0
-let g:tex_conceal='abdmg'
-let g:vimtex_compiler_progname = 'nvr'
-let g:vimtex_format_enabled=1
-
-" ===
 " === illuminate
 " ===
 let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
@@ -229,14 +182,6 @@ augroup emoji_complete
   " Emoji command to replace emoji name with emoji e.g. :apple: with 🍎
   command! -nargs=* Emoji %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
 augroup END
-
-" ===
-" === open.vim
-" ===
-let g:open#image = 'feh'
-let g:open#pdf = 'zathura'
-let g:open#video = 'vlc'
-let g:open#audio = 'vlc'
 
 " ===
 " === Async

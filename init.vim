@@ -32,7 +32,7 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 " ===
 let g:pure_vim_ulti = 1
 
-" ===  ulti mode needs to know os name
+" ulti mode needs to know os name
 if g:pure_vim_ulti == 1
     if !exists("g:os_name")
         if has("win64") || has("win32") || has("win16")
@@ -49,7 +49,7 @@ endif
 " ===
 let g:pure_vim_advanced = 1
 
-" === advanced features need to know python path
+" advanced features need to know python path
 if g:pure_vim_advanced == 1
 
     if g:os_name == 'Windows' && has('nvim') " nvim on win
@@ -64,7 +64,7 @@ if g:pure_vim_advanced == 1
         endif
     endif
 
-    " === install pynvim for the first time
+    " install pynvim for the first time
     if empty(glob($CONF_PATH."/plugged/"))
         if !(executable('pip3'))
             exec "!sudo apt install python3-pip"
@@ -85,18 +85,24 @@ source $CONF_PATH/basic.vim
 " === Ulit-mode and Advanced features
 " ===
 if g:pure_vim_ulti == 1
-    " === plugs
+    " plugs
     call plug#begin($CONF_PATH.'/plugged')
     source $CONF_PATH/plugs.vim
     if g:pure_vim_advanced == 1
-        source $CONF_PATH/plugs_advanced.vim
+        source $CONF_PATH/advanced/plugs_language_advanced.vim
+        " source $CONF_PATH/advanced/plug_deoplete.vim
+        source $CONF_PATH/advanced/plug_asyncomplete.vim
+        source $CONF_PATH/advanced/plug_lsp.vim
     endif
     call plug#end()
 
-    " === plugs_settings
+    " plugs_settings
     source $CONF_PATH/plugs_settings.vim
     if g:pure_vim_advanced == 1
-        source $CONF_PATH/plugs_advanced_settings.vim
+        source $CONF_PATH/advanced/plugs_language_advanced_settings.vim
+        " source $CONF_PATH/advanced/plug_deoplete_settings.vim
+        source $CONF_PATH/advanced/plug_asyncomplete_settings.vim
+        source $CONF_PATH/advanced/plug_lsp_settings.vim
     endif
 endif
 
