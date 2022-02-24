@@ -126,7 +126,15 @@ let g:rainbow_active = 1
 " === indentLine
 " ===
 let g:indentLine_setColors = 0
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
+augroup auto_indentline_ft
+    autocmd!
+    autocmd FileType tex :IndentLinesToggle
+    autocmd FileType cpp :IndentLinesToggle
+    autocmd FileType c :IndentLinesToggle
+    autocmd FileType python :IndentLinesToggle
+augroup END
+
 
 " ===
 " === auto save
@@ -135,7 +143,7 @@ let g:auto_save = 0
 let g:auto_save_silent = 0
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
-augroup ft_tex
+augroup auto_save_ft
     autocmd!
     autocmd FileType tex let b:auto_save = 1
     autocmd FileType c let b:auto_save = 1
