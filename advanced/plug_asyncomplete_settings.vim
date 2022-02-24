@@ -18,25 +18,15 @@
 "
 "**************************************************************************************************
 
-" ===
-" === deoplete (works well with the omnifunc in vim)
-" ===
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+let g:asyncomplete_auto_popup = 0
 
-" ===
-" === deoplete plugins
-" ===
-Plug 'Shougo/neopairs.vim'
-if g:os_name == 'Windows'
-    Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-    Plug 'deoplete-plugins/deoplete-jedi'
-elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-    Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-    Plug 'lighttiger2505/deoplete-vim-lsp'
-endif
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ asyncomplete#force_refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"

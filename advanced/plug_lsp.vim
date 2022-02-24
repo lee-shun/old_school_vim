@@ -27,7 +27,6 @@ if g:os_name == 'Linux'
 
     " adapters...
     Plug 'halkn/lightline-lsp'
-    Plug 'lighttiger2505/deoplete-vim-lsp'
 
     " c++
     if executable('ccls')
