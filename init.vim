@@ -90,7 +90,8 @@ if g:pure_vim_ulti == 1
     source $CONF_PATH/plugs.vim
     if g:pure_vim_advanced == 1
         source $CONF_PATH/advanced/plugs_language_advanced.vim
-        source $CONF_PATH/advanced/plug_deoplete.vim
+        " source $CONF_PATH/advanced/plug_deoplete.vim
+        source $CONF_PATH/advanced/plug_asyncomplete.vim
         source $CONF_PATH/advanced/plug_lsp.vim
     endif
     call plug#end()
@@ -99,7 +100,8 @@ if g:pure_vim_ulti == 1
     source $CONF_PATH/plugs_settings.vim
     if g:pure_vim_advanced == 1
         source $CONF_PATH/advanced/plugs_language_advanced_settings.vim
-        source $CONF_PATH/advanced/plug_deoplete_settings.vim
+        " source $CONF_PATH/advanced/plug_deoplete_settings.vim
+        source $CONF_PATH/advanced/plug_asyncomplete_settings.vim
         source $CONF_PATH/advanced/plug_lsp_settings.vim
     endif
 endif

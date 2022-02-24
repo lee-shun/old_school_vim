@@ -18,25 +18,23 @@
 "
 "**************************************************************************************************
 
-" ===
-" === deoplete (works well with the omnifunc in vim)
-" ===
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " ===
-" === deoplete plugins
+" === plugins
 " ===
-Plug 'Shougo/neopairs.vim'
-if g:os_name == 'Windows'
-    Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-    Plug 'deoplete-plugins/deoplete-jedi'
-elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-    Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-    Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+Plug 'htlsne/asyncomplete-look'
+Plug 'high-moctane/asyncomplete-nextword.vim'
+Plug 'prabirshrestha/asyncomplete-file.vim'
+
+if has('win32') || has('win64')
+    Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': 'powershell.exe .\install.ps1' }
+else
+    Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': './install.sh' }
+endif
+
+if has('python3')
+    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 endif
