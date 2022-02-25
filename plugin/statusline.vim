@@ -21,7 +21,7 @@
 " ===
 " === status line
 " ===
-if g:pure_vim_ulti==0
+if g:pure_vim_ulti_mode == 0
     " https://github.com/jdhao/minimal_vim/blob/master/init.vim
     " statusline settings
     let g:currentmode={
