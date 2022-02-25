@@ -262,14 +262,6 @@ let g:netrw_chgwin = 2
 let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
 
-
-" ===
-" === themes
-" ===
-if g:pure_vim_ulti==0
-    colorscheme pure_theme
-endif
-
 " ===
 " === auto setting command
 " ===
