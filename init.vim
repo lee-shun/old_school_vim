@@ -18,21 +18,29 @@
 "
 "**************************************************************************************************
 
-" TODO: if I have an Apple Mac, there will be some different in the system
-" identification 'if-esle', however, I probably never want to spend that much
-" money until I'm rich. :)
-
-" ===
-" === path
-" ===
-let $CONF_PATH = split(&runtimepath, ',')[0]
-
 " ===
 " === control the mini and ulti mode
 " ===
 let g:pure_vim_ulti = 1
 
-" ulti mode needs to know os name
+" ===
+" === use the advanced plugins
+" ===
+let g:pure_vim_plug_advanced = 1
+" choose one of the options to use the completion
+let g:pure_vim_plug_deoplete = 1
+let g:pure_vim_plug_asyncomplete = 0
+" use vim-lsp
+let g:pure_vim_plug_lsp = 1
+
+"**************************************************************************************************
+
+" ===
+" === path & environment
+" ===
+let $CONF_PATH = split(&runtimepath, ',')[0]
+
+" ulti mode needs to know os name and architecture
 if g:pure_vim_ulti == 1
     if !exists("g:os_name")
         if has("win64") || has("win32") || has("win16")
@@ -44,19 +52,8 @@ if g:pure_vim_ulti == 1
     endif
 endif
 
-" ===
-" === use the advanced plugins
-" ===
-let g:pure_vim_advanced = 1
-" choose one of the options to use the completion
-let g:pure_vim_deoplete = 1
-let g:pure_vim_asyncomplete = 0
-" use vim-lsp
-let g:pure_vim_lsp = 1
-
-" advanced features need to know python path
-if g:pure_vim_advanced == 1
-
+" advanced features need to know python3 path
+if g:pure_vim_plug_advanced == 1
     if g:os_name == 'Windows' && has('nvim') " nvim on win
         let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
     elseif g:os_name == 'Linux'
@@ -80,7 +77,6 @@ if g:pure_vim_advanced == 1
     endif
 endif
 
-
 " ===
 " === basic config
 " ===
@@ -93,32 +89,32 @@ if g:pure_vim_ulti == 1
     " plugs
     call plug#begin($CONF_PATH.'/plugged')
     source $CONF_PATH/plugs.vim
-    if g:pure_vim_advanced == 1
+    if g:pure_vim_plug_advanced == 1
         source $CONF_PATH/advanced/plugs_language_advanced.vim
     endif
-    if g:pure_vim_deoplete == 1
+    if g:pure_vim_plug_deoplete == 1
         source $CONF_PATH/advanced/plug_deoplete.vim
     endif
-    if g:pure_vim_asyncomplete == 1
+    if g:pure_vim_plug_asyncomplete == 1
         source $CONF_PATH/advanced/plug_asyncomplete.vim
     endif
-    if g:pure_vim_lsp == 1
+    if g:pure_vim_plug_lsp == 1
         source $CONF_PATH/advanced/plug_lsp.vim
     endif
     call plug#end()
 
     " plugs_settings
     source $CONF_PATH/plugs_settings.vim
-    if g:pure_vim_advanced == 1
+    if g:pure_vim_plug_advanced == 1
         source $CONF_PATH/advanced/plugs_language_advanced_settings.vim
     endif
-    if g:pure_vim_deoplete == 1
+    if g:pure_vim_plug_deoplete == 1
         source $CONF_PATH/advanced/plug_deoplete_settings.vim
     endif
-    if g:pure_vim_asyncomplete == 1
+    if g:pure_vim_plug_asyncomplete == 1
         source $CONF_PATH/advanced/plug_asyncomplete_settings.vim
     endif
-    if g:pure_vim_lsp == 1
+    if g:pure_vim_plug_lsp == 1
         source $CONF_PATH/advanced/plug_lsp_settings.vim
     endif
 endif
