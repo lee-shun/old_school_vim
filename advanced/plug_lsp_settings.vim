@@ -59,9 +59,7 @@ endif
 " use the <c-x><c-o> have the popup menu if just use the vim-lsp
 " setlocal omnifunc=lsp#complete
 
-set foldmethod=expr
-            \ foldexpr=lsp#ui#vim#folding#foldexpr()
-            \ foldtext=lsp#ui#vim#folding#foldtext()
+let g:lsp_fold_enabled = 0
 
 " ===
 " === vim-lsp-lanuguage-sever
@@ -76,10 +74,7 @@ if executable('ccls')
                     \   'highlight': { 'lsRanges' : v:true },
                     \ },
                     \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-                    \ 'config': {
-                        \   'max_num_result': 5,
-                        \  },
-                        \ })
+                    \ })
 
     hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
 endif
@@ -91,8 +86,6 @@ if executable('pyls')
                 \ 'name': 'pyls',
                 \ 'cmd': {server_info->['pyls']},
                 \ 'allowlist': ['python'],
-                \ 'config': {
-                    \   'max_num_result': 5,
-                    \  },
-                    \ })
+                \ })
 endif
+

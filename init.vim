@@ -45,9 +45,14 @@ if g:pure_vim_ulti == 1
 endif
 
 " ===
-" === use the completion plugins
+" === use the advanced plugins
 " ===
 let g:pure_vim_advanced = 1
+" choose one of the options to use the completion
+let g:pure_vim_deoplete = 1
+let g:pure_vim_asyncomplete = 0
+" use vim-lsp
+let g:pure_vim_lsp = 1
 
 " advanced features need to know python path
 if g:pure_vim_advanced == 1
@@ -90,8 +95,14 @@ if g:pure_vim_ulti == 1
     source $CONF_PATH/plugs.vim
     if g:pure_vim_advanced == 1
         source $CONF_PATH/advanced/plugs_language_advanced.vim
-        " source $CONF_PATH/advanced/plug_deoplete.vim
+    endif
+    if g:pure_vim_deoplete == 1
+        source $CONF_PATH/advanced/plug_deoplete.vim
+    endif
+    if g:pure_vim_asyncomplete == 1
         source $CONF_PATH/advanced/plug_asyncomplete.vim
+    endif
+    if g:pure_vim_lsp == 1
         source $CONF_PATH/advanced/plug_lsp.vim
     endif
     call plug#end()
@@ -100,8 +111,14 @@ if g:pure_vim_ulti == 1
     source $CONF_PATH/plugs_settings.vim
     if g:pure_vim_advanced == 1
         source $CONF_PATH/advanced/plugs_language_advanced_settings.vim
-        " source $CONF_PATH/advanced/plug_deoplete_settings.vim
+    endif
+    if g:pure_vim_deoplete == 1
+        source $CONF_PATH/advanced/plug_deoplete_settings.vim
+    endif
+    if g:pure_vim_asyncomplete == 1
         source $CONF_PATH/advanced/plug_asyncomplete_settings.vim
+    endif
+    if g:pure_vim_lsp == 1
         source $CONF_PATH/advanced/plug_lsp_settings.vim
     endif
 endif
