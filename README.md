@@ -1,7 +1,7 @@
 # <p align="center">![title](./img/pure_vim.png)</p>
 
 > I just want to use my Vim configuration on different machines😹, but various Plugins and their dependencies always
-> drive me crazy, especially under different environment! Some of them require `python`(which is reasonable at some
+> drive me crazy, especially under different environments! Some of them require `python`(which is reasonable at some
 > point), some require `nodejs`.  But most of times, they requires the so-called **DEPENDENCIES**❌ that I never heard
 > about! I am **NOT almighty** 🤖 , you got be kidding me!😠
 
@@ -13,31 +13,34 @@
 
 ## Quick Start
 
-- **Mini-Mode:** set `g:pure_vim_ulti` to `0` in [init.vim](init.vim)
+- **Mini-Mode:** set `g:pure_vim_ulti_mode` to `0` in [init.vim](init.vim)
   > use vim as an excellent text editor!
   >
   > - No Plugins, No Dependencies.
   >
-- **Ulti-Mode** set `g:pure_vim_ulti` to `1` in [init.vim](init.vim)
+- **Ulti-Mode** set `g:pure_vim_ulti_mode` to `1` in [init.vim](init.vim)
   > use vim with some pretty neat plugins
   >
-  > - dependence-free plugins written in Vimscripts.
+  - `g:pure_vim_plug_general = 1`
+  >  dependence-free plugins written in Vimscripts.
   >
-- **Advanced Features:** set `g:pure_vim_ulti` and `g:pure_vim_advanced` both to `1` in [init.vim](init.vim)
+  - `g:pure_vim_plug_advanced  = 1`
+  >  multi language translations based on python plugins.
+
+  - `g:pure_vim_plug_deoplete = 1` **OR** `g:pure_vim_plug_asyncomplete = 1` as complete engine 
+  **AND** `g:pure_vim_plug_lsp = 1 `
   > use vim as a lightweight IDE for `C/C++` and `python`.
-  >
-  > - multi language translations based on python plugins.
-  > - language-sever based code completion, etc.
+  > language-sever based code completion, etc.
   >
 - **NOTE:**
   - 🆘 using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
-  installation. Under this situation, use `neovim` instead.
+  installation. Under this situation, tuisting by hands may be needed.
 
 ## Requirements
 
-- vim 8.2.
+- vim 8.2 if use plugins, vim 7 if use `mini-mode`
 - neovim 4.2 or later.
-- *python and language-sever stuff(advanced features only)
+- *python and language-sever stuff(advanced plugins only)
 
 ## Features
 
@@ -104,4 +107,4 @@ its own vim.
 | <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png) |
 | <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)         |
 
-> Last Modified : 一 07 2月 2022 08:42:00 下午
+> Last Modified : 五 25 2月 2022 06:11:19 下午
