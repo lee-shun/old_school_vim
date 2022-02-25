@@ -18,7 +18,7 @@
 "
 "**************************************************************************************************
 
-let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_popup = 0
 
 function! s:check_back_space() abort
     let col = col('.') - 1
@@ -43,7 +43,6 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ 'completor': function('asyncomplete#sources#buffer#completor'),
             \ 'config': {
                 \    'max_buffer_size': 5000000,
-                \   'max_num_result': 5,
                 \  },
                 \ }))
 
@@ -52,32 +51,23 @@ au User asyncomplete_setup call asyncomplete#register_source({
             \ 'name': 'look',
             \ 'allowlist': ['text', 'markdown'],
             \ 'completor': function('asyncomplete#sources#look#completor'),
-            \ 'config': {
-                \   'max_num_result': 5,
-                \  },
-                \ })
+            \ })
 
 " next word
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#nextword#get_source_options({
             \   'name': 'nextword',
             \   'allowlist': ['*'],
             \   'args': ['-n', '10000'],
-            \   'completor': function('asyncomplete#sources#nextword#completor'),
-            \ 'config': {
-                \   'max_num_result': 5,
-                \  },
-                \   }))
+            \   'completor': function('asyncomplete#sources#nextword#completor')
+            \   }))
 
 " file
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
             \ 'name': 'file',
             \ 'allowlist': ['*'],
             \ 'priority': 10,
-            \ 'completor': function('asyncomplete#sources#file#completor'),
-            \ 'config': {
-                \   'max_num_result': 5,
-                \  },
-                \ }))
+            \ 'completor': function('asyncomplete#sources#file#completor')
+            \ }))
 
 " tabnine
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
@@ -86,7 +76,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ 'completor': function('asyncomplete#sources#tabnine#completor'),
             \ 'config': {
                 \   'line_limit': 1000,
-                \   'max_num_result': 5,
+                \   'max_num_result': 20,
                 \  },
                 \ }))
 
@@ -96,8 +86,5 @@ if has('python3')
                 \ 'name': 'ultisnips',
                 \ 'allowlist': ['*'],
                 \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
-                \ 'config': {
-                    \   'max_num_result': 5,
-                    \  },
-                    \ }))
+                \ }))
 endif

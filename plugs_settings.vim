@@ -129,6 +129,7 @@ let g:indentLine_setColors = 0
 let g:indentLine_enabled = 0
 augroup auto_indentline_ft
     autocmd!
+    autocmd FileType vim :IndentLinesToggle
     autocmd FileType tex :IndentLinesToggle
     autocmd FileType cpp :IndentLinesToggle
     autocmd FileType c :IndentLinesToggle
