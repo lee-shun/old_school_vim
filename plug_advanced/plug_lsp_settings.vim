@@ -64,7 +64,6 @@ let g:lsp_fold_enabled = 0
 " ===
 " === vim-lsp-lanuguage-sever
 " ===
-" Register ccls C++ lanuage server.
 if executable('ccls')
     au User lsp_setup call lsp#register_server({
                 \ 'name': 'ccls',
@@ -75,22 +74,35 @@ if executable('ccls')
                     \ },
                     \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
                     \ })
-
     hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+elseif !executable('ccls') && executable('clangd')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'clangd',
+                \ 'cmd': {server_info->['clangd', '-background-index']},
+                \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+                \ })
 endif
+
 
 if executable('pyright-langserver')
     au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyright-langserver',
-        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
-        \ 'allowlist': ['python'],
-        \ 'workspace_config': {
-        \   'python': {
-        \     'analysis': {
-        \       'useLibraryCodeForTypes': v:true
-        \      },
-        \   },
-        \ }
-        \ })
+                \ 'name': 'pyright-langserver',
+                \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
+                \ 'allowlist': ['python'],
+                \ 'workspace_config': {
+                    \   'python': {
+                        \     'analysis': {
+                            \       'useLibraryCodeForTypes': v:true
+                            \      },
+                            \   },
+                            \ }
+                            \ })
+elseif !executable('pyright-langserver') && executable('pyls')
+    " pip3 install "python-language-server[all]"
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'pyls',
+                \ 'cmd': {server_info->['pyls']},
+                \ 'allowlist': ['python'],
+                \ })
 endif
 
