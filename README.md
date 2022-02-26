@@ -58,7 +58,7 @@
 4. **Snippets**
   - Simple snippets inserting with vim `inoremap` option.
   - Vim will load `xxx_foo.vim, xxx.vim` (`xxx` is a filetype name.). With this
-    feature, I define some useful `remaps`.
+  feature, I define some useful `remaps`.
 
 5. **Especially Designed for Notes Taking**
   - Use [markdown-wiki](https://github.com/mmai/vim-markdown-wiki)
@@ -107,4 +107,4 @@ its own vim.
 | <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png) |
 | <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)         |
 
-> Last Modified : 五 25 2月 2022 06:11:19 下午
+> Last Modified : 五 25 2月 2022 07:46:22 下午
