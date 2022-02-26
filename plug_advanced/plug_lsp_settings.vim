@@ -79,13 +79,18 @@ if executable('ccls')
     hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
 endif
 
-" Register python lanuage server.
-if executable('pyls')
-    " pip3 install "python-language-server[all]"
+if executable('pyright-langserver')
     au User lsp_setup call lsp#register_server({
-                \ 'name': 'pyls',
-                \ 'cmd': {server_info->['pyls']},
-                \ 'allowlist': ['python'],
-                \ })
+        \ 'name': 'pyright-langserver',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
+        \ 'allowlist': ['python'],
+        \ 'workspace_config': {
+        \   'python': {
+        \     'analysis': {
+        \       'useLibraryCodeForTypes': v:true
+        \      },
+        \   },
+        \ }
+        \ })
 endif
 
