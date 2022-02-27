@@ -133,7 +133,7 @@ set complete+=k
 set completeopt=menuone,noselect,noinsert
 set dictionary+=$CONF_PATH/20k
 
-inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+inoremap <expr> <CR> ((pumvisible())?("\<C-y>"):("\<CR>"))
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
