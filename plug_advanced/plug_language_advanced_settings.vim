@@ -37,10 +37,11 @@ let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 " === mkdx
 " ===
 let g:mkdx#settings = {
-            \'highlight': { 'enable': 0 },
-            \'map': { 'prefix': '=' },
-            \'enter': { 'enable': 1 }
-            \}
+            \ 'highlight': { 'enable': 0 },
+            \ 'map': { 'prefix': '=' },
+            \ 'enter': { 'enable': 1 },
+            \ 'fold': { 'enable': 1, 'components': ['toc', 'fence'] }
+            \ }
 
 " ===
 " === markdown
