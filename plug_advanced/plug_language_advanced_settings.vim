@@ -32,10 +32,20 @@ let g:UltiSnipsExpandTrigger='<c-y>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
+
+" ===
+" === mkdx
+" ===
+" m usuall for mark in vim, but I never use it!
+let g:mkdx#settings = {
+            \'highlight': { 'enable': 0 },
+            \'map': { 'prefix': 'm' }
+            \}
+
 " ===
 " === markdown
 " ===
-" NOTE: use the plasticboy markdown sytanx file + SidOFc mxkd.vim functions.
+" NOTE: use the plasticboy markdown sytanx file
 let g:vim_markdown_math=1
 let g:vim_markdown_conceal=1
 let g:closetag_html_style=1
