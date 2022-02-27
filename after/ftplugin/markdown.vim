@@ -84,7 +84,9 @@ function! ToggleComplete()
     " no need to return anything
 endfunction
 
-" ===
-" === use the mkdx instead
-" ===
-" nnoremap <buffer> <LEADER>c :call ToggleComplete()<CR>
+" === patch mkdx
+function! s:cr_close_pop()
+  return pumvisible() ? "\<C-y>" : ""
+endfunction
+inoremap <silent> <Plug>(mkdx-enter-modify) <C-R>=<SID>cr_close_pop()<CR><C-R>=mkdx#EnterHandler()<Cr>:setlocal autoindent<Cr>
+imap <buffer><silent> <CR> <Plug>(mkdx-enter-modify)
