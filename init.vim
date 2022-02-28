@@ -43,7 +43,7 @@ let g:pure_vim_plug_asyncomplete = 0
 
 " 0: NOT use vim-lsp
 " 1: use vim-lsp
-let g:pure_vim_plug_lsp = 1
+let g:pure_vim_plug_lsp = 0
 
 
 if g:pure_vim_ulti_mode == 0

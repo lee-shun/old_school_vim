@@ -54,12 +54,14 @@ let g:closetag_html_style=1
 " ===
 " === markdown_preview.nvim
 " ===
-" google-chrome  --password-store=gnome
-function! g:Open_browser(url)
-    silent exec "AsyncRun! google-chrome --password-store=gnome --new-window " . a:url . " &"
-    " silent exec "!google-chrome --password-store=gnome --new-window " . a:url . " &"
-endfunction
-let g:mkdp_browserfunc = 'g:Open_browser'
+if g:os_name == 'Linux' && executable('google-chrome')
+    function! g:Open_browser(url)
+        " google-chrome  --password-store=gnome
+        silent exec "AsyncRun! google-chrome --password-store=gnome --new-window " . a:url . " &"
+        " silent exec "!google-chrome --password-store=gnome --new-window " . a:url . " &"
+    endfunction
+    let g:mkdp_browserfunc = 'g:Open_browser'
+endif
 
 " ===
 " === markdown paste image
