@@ -99,14 +99,13 @@ inoremap <buffer> \sqrt \sqrt{}<++><Esc>F{a
 inoremap <buffer> \vec \vec{}<++><Esc>F{a
 inoremap <buffer> \ovl \overline{}<++><Esc>F{a
 inoremap <buffer> \wdt \widetilde{}<++><Esc>F{a
-inoremap <buffer> \prm ^{\prime}
+inoremap <buffer> \prime ^{\prime}
 inoremap <buffer> \rta \rightarrow
 inoremap <buffer> \bds \boldsymbol{}<++><Esc>F{a
 
 " ===
 " === toggle todo
 " ===
-
 function! ToggleTODO()
     let l:has_todo = match(getline('.'), 'TODO:')
     if l:has_todo != -1

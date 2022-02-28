@@ -83,10 +83,3 @@ function! ToggleComplete()
     " Please note that this last line is doing the desired job. There is
     " no need to return anything
 endfunction
-
-" === patch mkdx
-function! s:cr_close_pop()
-  return pumvisible() ? "\<C-y>" : ""
-endfunction
-inoremap <silent> <Plug>(mkdx-enter-modify) <C-R>=<SID>cr_close_pop()<CR><C-R>=mkdx#EnterHandler()<Cr>:setlocal autoindent<Cr>
-imap <buffer><silent> <CR> <Plug>(mkdx-enter-modify)
