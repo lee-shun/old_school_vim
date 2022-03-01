@@ -43,6 +43,8 @@ filetype plugin indent on
 if has('gui_running') || exists('g:gui_dotnvim')
     set guifont=SauceCodePro\ NF:h12:cANSI
     set guifontwide=SauceCodePro\ NF:h12
+    " set guifont=DroidSansMono\ Nerd\ Font:h12:cANSI
+    " set guifontwide=DroidSansMono\ Nerd\ Font:h12
     set guioptions-=m
     set guioptions-=T
     set guioptions-=L
