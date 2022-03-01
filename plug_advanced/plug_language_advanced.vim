@@ -27,8 +27,8 @@ Plug 'voldikss/vim-translator'
 " === Snippets
 " ===
 if has('python3')
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
 endif
 
 " ===
