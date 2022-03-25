@@ -64,7 +64,7 @@ Plug 'lervag/vimtex'
 " === ros
 " ===
 if (g:os_name == 'Linux') && (executable('roscore'))
-    Plug 'taketwo/vim-ros'
+    Plug 'taketwo/vim-ros', { 'for' : 'rosmsg' }
 endif
 
 " ===
