@@ -257,12 +257,23 @@ autocmd BufRead,BufNewFile *.h,*.c set filetype=c
 let g:netrw_hide = 1
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
-let g:netrw_browse_split = 2
-let g:netrw_winsize = 24
-let g:netrw_altv = 1
+let g:netrw_browse_split = 0
+let g:netrw_winsize = 25
 let g:netrw_chgwin = 2
 let g:netrw_list_hide = '.*\.swp$'
 let g:netrw_localrmdir = 'rm -rf'
+
+noremap <LEADER>t :Lexplore<CR>
+
+function! NetrwMapping()
+    nmap <buffer> H u
+    nmap <buffer> <BS> -
+    nmap <buffer> l <CR>
+endfunction
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
 
 " ===
 " === auto setting command

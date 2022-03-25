@@ -74,7 +74,7 @@ if g:pure_vim_ulti_mode == 1
             let g:os_name = "Windows"
         else " not windows, use 'uname' command.
             let g:os_name = substitute(system('uname'), '\n', '', '')
-            let g:os_architect =substitute(system('uname -m'), '\n', '', '') 
+            let g:os_architect =substitute(system('uname -m'), '\n', '', '')
         endif
     endif
 
