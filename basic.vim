@@ -77,8 +77,15 @@ set conceallevel=0
 set wildmenu
 set lazyredraw
 set ttyfast
+
 set t_Co=256
 set termguicolors
+if !has('nvim')
+    " fix the termguicolors black and white in vi
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 set laststatus=2
 set cmdheight=1
 set spelllang=en,cjk  " Spell languages
