@@ -27,12 +27,6 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
 set ffs=unix,dos,mac
 
-" NOTE: if directly use 'set ..', it will be reset by the buildin vimscripts.
-augroup Format-Options
-    autocmd!
-    autocmd BufEnter * setlocal formatoptions+=m formatoptions+=B formatoptions-=o
-augroup END
-
 set nocompatible
 let g:mapleader = ' '
 set autochdir
@@ -97,7 +91,7 @@ set virtualedit=block
 
 " incremental substitution (neovim)
 if has('nvim')
-  set inccommand=split
+    set inccommand=split
 endif
 
 " keyword match
@@ -142,47 +136,11 @@ set complete+=k
 set completeopt=menuone,noselect,noinsert
 set dictionary+=$CONF_PATH/20k
 
-inoremap <expr> <CR> ((pumvisible())?("\<C-y>"):("\<CR>"))
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-
-" ===
-" === quick mapping
-" ===
-noremap <LEADER>rc :e $CONF_PATH/init.vim<CR>
-nnoremap <F2> :set relativenumber! number!<CR>
-nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-nnoremap <C-h> :set hlsearch!<CR>
-
 " ===
 " === window split
 " ===
 set splitright
 set splitbelow
-
-nnoremap <up> :res +5<CR>
-nnoremap <down> :res -5<CR>
-nnoremap <left> :vertical resize-5<CR>
-nnoremap <right> :vertical resize+5<CR>
-
-nnoremap <C-A-up> <nop>
-nnoremap <C-A-down> <nop>
-nnoremap <C-A-left> <nop>
-nnoremap <C-A-right> <nop>
-inoremap <C-A-up> <nop>
-inoremap <C-A-down> <nop>
-inoremap <C-A-left> <nop>
-inoremap <C-A-right> <nop>
-
-" ===
-" === save the cursor line position
-" ===
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" ===
-" === auto redraw the whole buffer
-" ===
-" autocmd BufWrite * :redraw!
 
 " ===
 " === change the cursor shape(works on alacritty,but change the fonts in git bash)
@@ -195,43 +153,15 @@ if !has('nvim')
     if exists('&t_SR')
         let &t_SR = "\<esc>[4 q"
     endif
-
 endif
-
-" ===
-" === some useful remaps
-" ===
-
-" change indent and select in v-mode
-xnoremap <  <gv
-xnoremap >  >gv
-
-" add blank line
-nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
-nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
-nnoremap [<space> :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space> :<c-u>put =repeat(nr2char(10), v:count1)<cr>
-
-" add and move line
-nnoremap Y y$
-
-" move the chosen zone
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
-" place the cursor in the middle
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ'z
-
 
 " ===
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
-  echo "Creating the tmp dir!"
-  silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
-  silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
+    echo "Creating the tmp dir!"
+    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
+    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
 endif
 
 set undofile
@@ -249,14 +179,6 @@ set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
 set wildignore+=*.pyc
 set wildignore+=*.DS_Store
 set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
-
-" ===
-" === better file type
-" ===
-autocmd BufNewFile,BufRead *.launch set filetype=xml
-autocmd BufNewFile,BufRead *.Md set filetype=markdown
-autocmd BufNewFile,BufRead *.ejs set filetype=html
-autocmd BufRead,BufNewFile *.msg set filetype=rosmsg
 
 " ===
 " === build-in netrw
@@ -283,40 +205,6 @@ augroup netrw_mapping
 augroup END
 
 " ===
-" === auto setting command
-" ===
-
-if exists('##CmdLineEnter')
-    augroup dynamic_smartcase
-        autocmd!
-        autocmd CmdLineEnter : set nosmartcase
-        autocmd CmdLineLeave : set smartcase
-    augroup END
-endif
-
-" More accurate syntax highlighting? (see `:h syn-sync`)
-augroup accurate_syn_highlight
-    autocmd!
-    autocmd BufEnter * :syntax sync fromstart
-augroup END
-
-" Display a message when the current file is not in utf-8 format.
-" Note that we need to use `unsilent` command here because of this issue:
-" https://github.com/vim/vim/issues/4379. For older Vim (version 7.4), the
-" help file are in gzip format, do not warn this.
-augroup non_utf8_file_warn
-    autocmd!
-    autocmd BufRead * if &fileencoding != 'utf-8' && expand('%:e') != 'gz'
-                \ | unsilent echomsg 'File not in UTF-8 format!' | endif
-augroup END
-
-augroup number_toggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number | set relativenumber | endif
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
-augroup END
-
-" ===
 " === Terminal Behaviors
 " ===
 tnoremap <C-N> <C-\><C-N>
@@ -328,18 +216,3 @@ if exists('##TermOpen')
         autocmd TermOpen * startinsert
     augroup END
 endif
-let g:terminal_color_0  = '#000000'
-let g:terminal_color_1  = '#FF5555'
-let g:terminal_color_2  = '#50FA7B'
-let g:terminal_color_3  = '#F1FA8C'
-let g:terminal_color_4  = '#BD93F9'
-let g:terminal_color_5  = '#FF79C6'
-let g:terminal_color_6  = '#8BE9FD'
-let g:terminal_color_7  = '#BFBFBF'
-let g:terminal_color_8  = '#4D4D4D'
-let g:terminal_color_9  = '#FF6E67'
-let g:terminal_color_10 = '#5AF78E'
-let g:terminal_color_11 = '#F4F99D'
-let g:terminal_color_12 = '#CAA9FA'
-let g:terminal_color_13 = '#FF92D0'
-let g:terminal_color_14 = '#9AEDFE'
