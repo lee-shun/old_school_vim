@@ -58,7 +58,8 @@ endif
 " ===
 " === basic config
 " ===
-source $CONF_PATH/basic.vim
+source $CONF_PATH/basic/options.vim
+source $CONF_PATH/basic/mappings.vim
 
 if g:pure_vim_ulti_mode == 0
     colorscheme pure_theme
