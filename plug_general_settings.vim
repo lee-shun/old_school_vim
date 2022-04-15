@@ -188,3 +188,8 @@ augroup END
 " === Async
 " ===
 " let g:asyncrun_open = 6
+
+" ===
+" === vim-cool
+" ===
+" let g:CoolTotalMatches = 1
