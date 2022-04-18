@@ -33,6 +33,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
 Plug 'voldikss/vim-floaterm'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 " ===
 " === File navigation
