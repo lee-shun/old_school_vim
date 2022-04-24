@@ -33,6 +33,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
 Plug 'voldikss/vim-floaterm'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 " ===
 " === File navigation
@@ -70,6 +71,7 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug '907th/vim-auto-save'
+Plug 'romainl/vim-cool'
 
 " ===
 " === Fold

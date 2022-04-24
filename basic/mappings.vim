@@ -40,8 +40,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " place the cursor in the middle
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 nnoremap J mzJ'z
 
 inoremap <expr> <CR> ((pumvisible())?("\<C-y>"):("\<CR>"))
@@ -70,4 +70,3 @@ inoremap <C-A-up> <nop>
 inoremap <C-A-down> <nop>
 inoremap <C-A-left> <nop>
 inoremap <C-A-right> <nop>
-
