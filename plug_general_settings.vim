@@ -22,13 +22,22 @@
 " === UI
 " ===
 set background=dark
-colorscheme nord
+colorscheme purify
 let g:everforest_background = 'hard'
 let g:everforest_enable_italic = 1
 let g:everforest_disable_italic_comment = 0
 let g:everforest_diagnostic_text_highlight = 1
 let g:everforest_lightline_disable_bold = 0
 let g:everforest_better_performance = 1
+
+" ===
+" === purify
+" ===
+let g:purify_bold = 1
+let g:purify_italic = 0
+let g:purify_underline = 0
+let g:purify_undercurl = 1
+let g:purify_inverse = 0
 
 " ===
 " === floaterm
@@ -50,7 +59,7 @@ let g:todo_highlight_config = {
 " === lightline
 " ===
 let g:lightline = {
-                     \ 'colorscheme': 'nord',
+                     \ 'colorscheme': 'purify',
                      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
                      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
                      \ 'active': {
@@ -188,3 +197,8 @@ augroup END
 " === Async
 " ===
 " let g:asyncrun_open = 6
+
+" ===
+" === vim-cool
+" ===
+" let g:CoolTotalMatches = 1
