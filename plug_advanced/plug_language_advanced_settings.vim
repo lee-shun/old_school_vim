@@ -69,6 +69,12 @@ endif
 let g:mdip_imgdir = 'img'
 command! -nargs=0 PastImg :call mdip#MarkdownClipboardImage()
 
+
+" ===
+" === table mode
+" ===
+let g:table_mode_map_prefix = ',t'
+
 " ===
 " === vimtex
 " ===
