@@ -33,12 +33,11 @@ set autochdir
 set autoread
 filetype plugin indent on
 
-" for gvim and neovim gui, currently dotnvim
-if has('gui_running') || exists('g:gui_dotnvim')
+
+" for gvim and neovim gui, currently dotnvim or neovide
+if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
     set guifont=Hasklug\ NF:h12:cANSI
     set guifontwide=Hasklug\ NF:h12
-    " set guifont=Hasklug\ Nerd\ Font:h12:cANSI
-    " set guifontwide=Hasklug\ Nerd\ Font:h12
     set guioptions-=m
     set guioptions-=T
     set guioptions-=L
