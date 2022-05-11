@@ -33,7 +33,7 @@ inoremap <buffer> <LocalLeader>e <a<Space>target="_blank"<Space>href=""><++></a>
 inoremap <buffer> <LocalLeader>ul <ul><Enter><li></li><Enter></ul><Enter><Enter><++><Esc>03kf<i
 inoremap <buffer> <LocalLeader>li <Esc>o<li></li><Esc>F>a
 inoremap <buffer> <LocalLeader>ol <ol><Enter><li></li><Enter></ol><Enter><Enter><++><Esc>03kf<i
-inoremap <buffer> <LocalLeader>im <img src="" alt="<++>"><++><esc>Fcf"a
+inoremap <buffer> <LocalLeader>im <img src="" alt="<++>" width=<++>><++><esc>Fcf"a
 inoremap <buffer> <LocalLeader>td <td></td><++><Esc>Fdcit
 inoremap <buffer> <LocalLeader>tr <tr></tr><Enter><++><Esc>kf<i
 inoremap <buffer> <LocalLeader>th <th></th><++><Esc>Fhcit
