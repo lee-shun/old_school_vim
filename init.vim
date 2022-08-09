@@ -147,7 +147,7 @@ endif
 " ===
 " === automatic config
 " ===
-if empty(glob($CONF_PATH."/plugged/"))
+if empty(glob($CONF_PATH."/plugged/")) && g:pure_vim_ulti_mode == 1
     " install font
     if !executable('curl')
         exec "!sudo apt install curl"
