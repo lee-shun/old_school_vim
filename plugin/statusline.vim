@@ -34,7 +34,6 @@ if g:pure_vim_ulti_mode == 0
                 \ 'Rv' : 'V·Replace ',
                 \ 'c'  : 'Command ',
                 \}
-
     set statusline=
     set statusline+=%1*
     " Show current mode
