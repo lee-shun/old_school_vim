@@ -62,7 +62,7 @@ source $CONF_PATH/basic/options.vim
 source $CONF_PATH/basic/mappings.vim
 
 if g:pure_vim_ulti_mode == 0
-    colorscheme pure_theme
+    colorscheme seoul256
 endif
 
 " ===

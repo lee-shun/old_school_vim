@@ -27,8 +27,8 @@ if g:pure_vim_ulti_mode == 0
     let g:currentmode={
                 \ 'n'  : 'NORMAL ',
                 \ 'v'  : 'VISUAL ',
-                \ 'V'  : 'V·Line ',
-                \ "\<C-V>" : 'V·Block ',
+                \ 'V'  : 'V-Line ',
+                \ "\<C-V>" : 'V-Block ',
                 \ 'i'  : 'INSERT ',
                 \ 'R'  : 'R ',
                 \ 'Rv' : 'V·Replace ',
@@ -142,5 +142,11 @@ if g:pure_vim_ulti_mode == 0
 
         return b:statusline_tab_warning
     endfunction
+
+    " ===
+    " === colors
+    " ===
+    hi User1 ctermfg=255 ctermbg=59
+    hi User2 ctermfg=247 ctermbg=237
 
 endif " if g:pure_vim_ulti==0
