@@ -211,11 +211,10 @@ augroup END
 " === Terminal Behaviors
 " ===
 tnoremap <C-N> <C-\><C-N>
-let g:neoterm_autoscroll = 1
-if exists('##TermOpen')
-    augroup term_settings
+if exists('##TerminalOpen')
+    augroup term_open_settings
         autocmd!
-        autocmd TermOpen * setlocal norelativenumber nonumber
-        autocmd TermOpen * startinsert
+        autocmd TerminalOpen * setlocal norelativenumber nonumber
+        autocmd TerminalOpen * startinsert
     augroup END
 endif
