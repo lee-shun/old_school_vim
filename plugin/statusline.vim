@@ -33,6 +33,7 @@ if g:pure_vim_ulti_mode == 0
                 \ 'R'  : 'R ',
                 \ 'Rv' : 'V·Replace ',
                 \ 'c'  : 'Command ',
+                \ 't' : 'Terminal',
                 \}
     set statusline=
     set statusline+=%1*
