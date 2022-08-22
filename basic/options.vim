@@ -137,7 +137,7 @@ set clipboard^=unnamed,unnamedplus
 " ===
 set complete+=k
 set completeopt=menuone,noselect,noinsert
-set dictionary+=$CONF_PATH/20k
+set dictionary+=$CONF_PATH/dictionary/20k.txt
 
 " ===
 " === window split

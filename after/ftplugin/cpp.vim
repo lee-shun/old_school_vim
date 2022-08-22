@@ -19,6 +19,11 @@
 "**************************************************************************************************
 
 " ===
+" === dict
+" ===
+setlocal dictionary+=$CONF_PATH/dictionary/cpp_keywords_list.txt
+
+" ===
 " === for commet coverting
 " ===
 nnoremap <buffer> <LEADER>c <Esc>k^/\/\/<CR>d2lv$hdA/* */<Esc>2hP$:set nohlsearch<CR>
