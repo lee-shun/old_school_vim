@@ -89,8 +89,6 @@ if g:pure_vim_ulti_mode == 1
     " config environment
     if empty(glob($CONF_PATH."/plugged/"))
         exec "!bash " . $CONF_PATH . "/env/config_env.sh"
-        " install font
-        exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
     endif
 
 endif
