@@ -23,9 +23,11 @@ sudo apt update
 echo "install curl..."
 sudo apt install curl
 
-echo "install xclip"
+echo "install xclip..."
 sudo apt install xclip
 
 echo "install python3, pip3, and pynvim..."
 sudo apt install python3 python3-pip
 sudo pip3 install pynvim
+
+echo "install nerd font for the system..."
