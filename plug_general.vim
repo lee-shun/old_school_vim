@@ -24,8 +24,6 @@
 " ===
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/seoul256.vim'
-Plug 'sainnhe/sonokai'
 Plug 'sainnhe/everforest'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
