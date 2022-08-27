@@ -27,7 +27,7 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 " === control the mini and ulti mode
 " ===
 
-let g:pure_vim_ulti_mode = 0
+let g:pure_vim_ulti_mode = 1
 
 " 0: NO plugs at all
 " 1: use general plugs
