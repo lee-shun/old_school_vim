@@ -22,7 +22,7 @@
 " === UI
 " ===
 set background=dark
-colorscheme sonokai
+colorscheme seoul256
 let g:everforest_background = 'hard'
 let g:everforest_enable_italic = 1
 let g:everforest_disable_italic_comment = 0
@@ -59,7 +59,7 @@ let g:todo_highlight_config = {
 " === lightline
 " ===
 let g:lightline = {
-                     \ 'colorscheme': 'sonokai',
+                     \ 'colorscheme': 'seoul256',
                      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
                      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
                      \ 'active': {

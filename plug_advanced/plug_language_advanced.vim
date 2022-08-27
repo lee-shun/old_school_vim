@@ -50,7 +50,6 @@ if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Window
     " only Linux_x86_64, Windows have this plugin
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 endif
-Plug 'SidOfc/mkdx'
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
 Plug 'lee-shun/vim-markdown-wiki'
 Plug 'ferrine/md-img-paste.vim'

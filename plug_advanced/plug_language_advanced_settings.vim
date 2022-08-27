@@ -32,17 +32,6 @@ let g:UltiSnipsExpandTrigger='<c-y>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 
-
-" ===
-" === mkdx
-" ===
-let g:mkdx#settings = {
-            \ 'highlight': { 'enable': 0 },
-            \ 'map': { 'prefix': '=' },
-            \ 'enter': { 'enable': 1, 'close_pum': 1},
-            \ 'fold': { 'enable': 1, 'components': ['toc', 'fence'] }
-            \ }
-
 " ===
 " === markdown
 " ===
