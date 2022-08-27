@@ -86,14 +86,11 @@ if g:pure_vim_ulti_mode == 1
         endif
     endif
 
-    " install pynvim for the first time
+    " config environment
     if empty(glob($CONF_PATH."/plugged/"))
-        if !(executable('pip3'))
-            exec "!sudo apt install python3-pip"
-            echo("install pip3!")
-        endif
-        exec "!pip3 install pynvim"
-        echo("install pynvim via pip3!")
+        exec "!bash " . $CONF_PATH . "/env/config_env.sh"
+        " install font
+        exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
     endif
 
 endif
@@ -148,11 +145,6 @@ endif
 " === automatic config
 " ===
 if empty(glob($CONF_PATH."/plugged/")) && g:pure_vim_ulti_mode == 1
-    " install font
-    if !executable('curl')
-        exec "!sudo apt install curl"
-    endif
-    exec "!bash " . $CONF_PATH . "/font/install_nerd_font.sh"
     " install vim plugins
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     if has('nvim')

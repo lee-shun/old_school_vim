@@ -76,12 +76,12 @@ func SetTitle()
         call SetCommentSh()
 
     elseif expand("%:e") == 'sh'
-        call setline(1,"#!/system/bin/sh")
+        call setline(1,"#!/bin/bash")
         call setline(2,"")
         call SetCommentSh()
 
     elseif expand("%:e") == 'zsh'
-        call setline(1,"#!/system/bin/zsh")
+        call setline(1,"#!/bin/zsh")
         call setline(2,"")
         call SetCommentSh()
 
