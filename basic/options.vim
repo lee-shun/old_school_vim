@@ -215,7 +215,6 @@ nnoremap <F12> :ToggleTerm<CR>
 if exists('##TerminalOpen')
     augroup term_open_settings
         autocmd!
-        autocmd TerminalOpen * setlocal norelativenumber nonumber
         autocmd TerminalOpen * startinsert
     augroup END
 endif
