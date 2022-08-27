@@ -26,21 +26,18 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 " ===
 " === control the mode
 " ===
-
 let g:pure_vim_ulti_mode = 1
-
 " 1: use general plugs
 let g:pure_vim_plug_general = 1
-
 " 1: use advanced plugs
 let g:pure_vim_plug_advanced = 1
 
 " choose one of the complete front end
-let g:pure_vim_plug_deoplete = 0
+let g:pure_vim_plug_deoplete = 1
 let g:pure_vim_plug_asyncomplete = 0
-let g:pure_vim_plug_lsp = 0 " vim-lsp as backend of the above frameworks.
+let g:pure_vim_plug_lsp = 1 " vim-lsp as backend of the above frameworks.
 " use the ycm
-let g:pure_vim_plug_ycm = 1
+let g:pure_vim_plug_ycm = 0
 
 " no use any of the plugs if ulti-mode deactive
 if g:pure_vim_ulti_mode == 0

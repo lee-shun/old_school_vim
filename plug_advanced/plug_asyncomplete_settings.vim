@@ -42,9 +42,9 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ 'blocklist': ['go'],
             \ 'completor': function('asyncomplete#sources#buffer#completor'),
             \ 'config': {
-                \    'max_buffer_size': 5000000,
-                \  },
-                \ }))
+            \    'max_buffer_size': 5000000,
+            \  },
+            \ }))
 
 " look
 au User asyncomplete_setup call asyncomplete#register_source({
@@ -54,7 +54,7 @@ au User asyncomplete_setup call asyncomplete#register_source({
             \ })
 
 " next word
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#nextword#get_source_options({
+call asyncomplete#register_source(asyncomplete#sources#nextword#get_source_options({
             \   'name': 'nextword',
             \   'allowlist': ['*'],
             \   'args': ['-n', '10000'],
@@ -70,19 +70,19 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ }))
 
 " tabnine
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
+call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
             \ 'name': 'tabnine',
             \ 'allowlist': ['*'],
             \ 'completor': function('asyncomplete#sources#tabnine#completor'),
             \ 'config': {
-                \   'line_limit': 1000,
-                \   'max_num_result': 20,
-                \  },
-                \ }))
+            \   'line_limit': 1000,
+            \   'max_num_result': 4,
+            \  },
+            \ }))
 
 " snippest
 if has('python3')
-    au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
                 \ 'name': 'ultisnips',
                 \ 'allowlist': ['*'],
                 \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
