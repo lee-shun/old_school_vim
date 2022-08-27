@@ -17,13 +17,15 @@
 #
 # ------------------------------------------------------------------------------
 
-
-echo "Install curl..."
-
+echo "this simple bash will config the basic environment for pure vim!"
 sudo apt update
+
+echo "install curl..."
 sudo apt install curl
 
-echo "Install python3, pip3, and pynvim..."
+echo "install xclip"
+sudo apt install xclip
 
+echo "install python3, pip3, and pynvim..."
 sudo apt install python3 python3-pip
 sudo pip3 install pynvim
