@@ -37,9 +37,9 @@ function! s:highlight(pos, type, reg) abort
   endif
   if has('patch-8.1.1741')
     let winid = win_getid()
-    call timer_start(200, {-> matchdelete(id, winid)})
+    call timer_start(400, {-> matchdelete(id, winid)})
   else
-    call timer_start(200, {-> matchdelete(id)})
+    call timer_start(400, {-> matchdelete(id)})
   endif
 endfunction
 

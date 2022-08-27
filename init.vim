@@ -38,12 +38,13 @@ let g:pure_vim_plug_general = 1
 let g:pure_vim_plug_advanced = 1
 
 " choose one of the complete front end
-let g:pure_vim_plug_deoplete = 1
+let g:pure_vim_plug_deoplete = 0
 let g:pure_vim_plug_asyncomplete = 0
+let g:pure_vim_plug_ycm = 1
 
 " 0: NOT use vim-lsp
 " 1: use vim-lsp
-let g:pure_vim_plug_lsp = 1
+let g:pure_vim_plug_lsp = 0
 
 
 if g:pure_vim_ulti_mode == 0
@@ -120,6 +121,9 @@ endif
 if g:pure_vim_plug_asyncomplete == 1
     source $CONF_PATH/plug_advanced/plug_asyncomplete.vim
 endif
+if g:pure_vim_plug_ycm == 1
+    source $CONF_PATH/plug_advanced/plug_ycm.vim
+endif
 if g:pure_vim_plug_lsp == 1
     source $CONF_PATH/plug_advanced/plug_lsp.vim
 endif
@@ -139,6 +143,9 @@ if g:pure_vim_plug_deoplete == 1
 endif
 if g:pure_vim_plug_asyncomplete == 1
     source $CONF_PATH/plug_advanced/plug_asyncomplete_settings.vim
+endif
+if g:pure_vim_plug_ycm == 1
+    source $CONF_PATH/plug_advanced/plug_ycm_settings.vim
 endif
 if g:pure_vim_plug_lsp == 1
     source $CONF_PATH/plug_advanced/plug_lsp_settings.vim
