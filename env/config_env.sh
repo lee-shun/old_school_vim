@@ -17,7 +17,7 @@
 #
 # ------------------------------------------------------------------------------
 
-echo "this simple bash will config the basic environment for pure vim!"
+echo "this simple bash will config the basic environment for pure vim! No language sever stuff."
 sudo apt update
 
 echo "install curl..."
