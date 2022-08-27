@@ -219,11 +219,3 @@ if exists('##TerminalOpen')
         autocmd TerminalOpen * startinsert
     augroup END
 endif
-
-" ===
-" === MRU
-" ===
-augroup mru_open
-    autocmd!
-    autocmd VimEnter * exec "MRU"
-augroup END
