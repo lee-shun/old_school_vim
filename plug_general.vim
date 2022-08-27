@@ -30,7 +30,6 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
-Plug 'machakann/vim-highlightedyank'
 Plug 'RRethy/vim-illuminate'
 Plug 'voldikss/vim-floaterm'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
@@ -41,7 +40,7 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'mhinz/vim-startify'
 Plug 'csch0/vim-startify-renderer-nerdfont'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern.vim', {'branch':'main'}
 Plug 'lambdalisue/fern-git-status.vim'
 Plug 'airblade/vim-rooter'
 
