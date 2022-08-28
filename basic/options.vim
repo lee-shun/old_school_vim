@@ -218,3 +218,8 @@ if exists('##TerminalOpen')
         autocmd TerminalOpen * startinsert
     augroup END
 endif
+
+" ===
+" === colorscheme
+" ===
+colorscheme seoul256

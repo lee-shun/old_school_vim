@@ -160,7 +160,7 @@ augroup auto_save_ft
     autocmd FileType cmake let b:auto_save = 1
 augroup END
 
-if pure_vim_plug_ctrlp == 1
+if g:pure_vim_plug_file_finder_ctrlp == 1
 
     " ===
     " === ctrl-p
@@ -179,7 +179,7 @@ if pure_vim_plug_ctrlp == 1
     nnoremap <leader>fm :CtrlPMRUFiles<CR>
     nnoremap <leader>fl :CtrlPLine<CR>
 
-elseif pure_vim_plug_leaderf == 1
+elseif g:pure_vim_plug_file_finder_leaderf == 1
 
     " ===
     " === LeaderF
@@ -205,18 +205,7 @@ endif
 " ===
 " === illuminate
 " ===
-let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
-
-" ===
-" === emoji
-" ===
-" <c-x><c-u>
-augroup emoji_complete
-    autocmd!
-    autocmd FileType markdown setlocal completefunc=emoji#complete
-    " Emoji command to replace emoji name with emoji e.g. :apple: with 🍎
-    command! -nargs=* Emoji %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
-augroup END
+let g:Illuminate_ftblacklist = ['python']
 
 " ===
 " === Async
