@@ -70,10 +70,10 @@ if executable('ccls')
                 \ 'cmd': {server_info->['ccls']},
                 \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
                 \ 'initialization_options': {
-                    \   'highlight': { 'lsRanges' : v:true },
-                    \ },
-                    \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-                    \ })
+                \   'highlight': { 'lsRanges' : v:true },
+                \ },
+                \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+                \ })
     hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
 elseif !executable('ccls') && executable('clangd')
     au User lsp_setup call lsp#register_server({
@@ -90,13 +90,13 @@ if executable('pyright-langserver')
                 \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
                 \ 'allowlist': ['python'],
                 \ 'workspace_config': {
-                    \   'python': {
-                        \     'analysis': {
-                            \       'useLibraryCodeForTypes': v:true
-                            \      },
-                            \   },
-                            \ }
-                            \ })
+                \   'python': {
+                \     'analysis': {
+                \       'useLibraryCodeForTypes': v:true
+                \      },
+                \   },
+                \ }
+                \ })
 elseif !executable('pyright-langserver') && executable('pyls')
     " pip3 install "python-language-server[all]"
     au User lsp_setup call lsp#register_server({
@@ -108,13 +108,18 @@ endif
 
 
 if executable('cmake-language-server')
-  au User lsp_setup call lsp#register_server({
-  \ 'name': 'cmake',
-  \ 'cmd': {server_info->['cmake-language-server']},
-  \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'build/'))},
-  \ 'whitelist': ['cmake'],
-  \ 'initialization_options': {
-  \   'buildDirectory': 'build',
-  \ }
-  \})
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'cmake',
+                \ 'cmd': {server_info->['cmake-language-server']},
+                \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'build/'))},
+                \ 'whitelist': ['cmake'],
+                \ 'initialization_options': {
+                \   'buildDirectory': 'build',
+                \ }
+                \})
 endif
+
+" ===
+" === ale
+" ===
+let g:ale_linters = {'cpp': ['cpplint']}
