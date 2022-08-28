@@ -46,15 +46,14 @@ Plug 'airblade/vim-rooter'
 " ===
 " === File Finder
 " ===
-let g:pure_vim_plug_ctrlp = 0
-let g:pure_vim_plug_leaderf = 1
+let g:pure_vim_plug_file_finder_ctrlp = 0
+let g:pure_vim_plug_file_finder_leaderf = 1
 
-if pure_vim_plug_ctrlp == 1
+if g:pure_vim_plug_file_finder_ctrlp == 1
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tacahiroy/ctrlp-funky'
     Plug 'ludovicchabant/vim-ctrlp-autoignore'
-elseif pure_vim_plug_leaderf == 1
-    " TODO: maybe can use the LeaderF
+elseif g:pure_vim_plug_file_finder_leaderf == 1
     Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 endif
 
@@ -69,10 +68,7 @@ Plug 'sakshamgupta05/vim-todo-highlight'
 " ===
 Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-peekaboo'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-repeat'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -93,12 +89,6 @@ Plug 'wellle/targets.vim'
 " === Undo
 " ===
 Plug 'mbbill/undotree'
-
-" ===
-" === keywords
-" ===
-Plug 'lee-shun/vim-dict'
-Plug 'junegunn/vim-emoji'
 
 " ===
 " === Async
