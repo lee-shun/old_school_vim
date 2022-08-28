@@ -65,10 +65,16 @@ let g:lightline = {
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
             \ [ 'gitbranch', 'readonly', 'filename', 'modified' ],
-            \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']]
+            \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']],
+            \   'right': [ [ 'lineinfo' ],
+            \              [ 'percent' ],
+            \              [ 'fileformat', 'fileencoding', 'filetype'] ]
             \ },
+            \ 'inactive': {
+            \   'left': [ [ 'filename' ] ],
+            \   'right': [ [ 'filetype' ] ] },
             \ 'component_function': {
-            \ 'gitbranch': 'FugitiveHead'
+            \ 'gitbranch': 'FugitiveHead',
             \ },
             \ 'component_expand': {
             \ 'lsp_warnings': 'lightline_lsp#warnings',
@@ -121,7 +127,7 @@ endfunction
 
 augroup fern-custom
     autocmd! *
-    autocmd FileType fern call s:init_fern()
+    autocmd FileType fern setlocal norelativenumber | setlocal nonumber | call s:init_fern()
 augroup END
 
 let g:fern#renderer = "nerdfont"
