@@ -46,9 +46,17 @@ Plug 'airblade/vim-rooter'
 " ===
 " === File Finder
 " ===
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'ludovicchabant/vim-ctrlp-autoignore'
+let g:pure_vim_plug_ctrlp = 0
+let g:pure_vim_plug_leaderf = 1
+
+if pure_vim_plug_ctrlp == 1
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tacahiroy/ctrlp-funky'
+    Plug 'ludovicchabant/vim-ctrlp-autoignore'
+elseif pure_vim_plug_leaderf == 1
+    " TODO: maybe can use the LeaderF
+    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+endif
 
 " ===
 " === General Highlight

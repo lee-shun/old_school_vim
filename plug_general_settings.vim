@@ -49,38 +49,38 @@ let g:floaterm_keymap_toggle = '<F12>'
 " ===
 let g:todo_highlight_config = {
             \   'STEP': {
-                \     'gui_fg_color': '#ffffff',
-                \     'gui_bg_color': '#27AE60 ',
-                \     'cterm_fg_color': 'white',
-                \     'cterm_bg_color': 'green' },
-                \ }
+            \     'gui_fg_color': '#ffffff',
+            \     'gui_bg_color': '#27AE60 ',
+            \     'cterm_fg_color': 'white',
+            \     'cterm_bg_color': 'green' },
+            \ }
 
 " ===
 " === lightline
 " ===
 let g:lightline = {
-                     \ 'colorscheme': 'seoul256',
-                     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-                     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
-                     \ 'active': {
-                     \ 'left': [ [ 'mode', 'paste' ],
-                     \ [ 'gitbranch', 'readonly', 'filename', 'modified' ],
-                     \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']]
-                     \ },
-                     \ 'component_function': {
-                     \ 'gitbranch': 'FugitiveHead'
-                     \ },
-                     \ 'component_expand': {
-                     \ 'lsp_warnings': 'lightline_lsp#warnings',
-                     \ 'lsp_errors':   'lightline_lsp#errors',
-                     \ 'lsp_ok':       'lightline_lsp#ok',
-                     \ },
-                     \ 'component_type': {
-                     \ 'lsp_warnings': 'warning',
-                     \ 'lsp_errors':   'error',
-                     \ 'lsp_ok':       'middle',
-                     \ }
-                     \ }
+            \ 'colorscheme': 'seoul256',
+            \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+            \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+            \ 'active': {
+            \ 'left': [ [ 'mode', 'paste' ],
+            \ [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+            \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']]
+            \ },
+            \ 'component_function': {
+            \ 'gitbranch': 'FugitiveHead'
+            \ },
+            \ 'component_expand': {
+            \ 'lsp_warnings': 'lightline_lsp#warnings',
+            \ 'lsp_errors':   'lightline_lsp#errors',
+            \ 'lsp_ok':       'lightline_lsp#ok',
+            \ },
+            \ 'component_type': {
+            \ 'lsp_warnings': 'warning',
+            \ 'lsp_errors':   'error',
+            \ 'lsp_ok':       'middle',
+            \ }
+            \ }
 
 " ===
 " === startify
@@ -160,22 +160,47 @@ augroup auto_save_ft
     autocmd FileType cmake let b:auto_save = 1
 augroup END
 
-" ===
-" === ctrl-p
-" ===
-let g:ctrlp_map = '<leader>ff'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
-            \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-            \ }
-let g:ctrlp_extensions = ['autoignore', 'funky']
+if pure_vim_plug_ctrlp == 1
 
-nnoremap <leader>fc :CtrlPChange<CR>
-nnoremap <leader>fb :CtrlPBuffer<CR>
-nnoremap <leader>fk :CtrlPFunky<CR>
-nnoremap <leader>fm :CtrlPMRUFiles<CR>
-nnoremap <leader>fl :CtrlPLine<CR>
+    " ===
+    " === ctrl-p
+    " ===
+    let g:ctrlp_map = '<leader>ff'
+    let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_custom_ignore = {
+                \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
+                \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+                \ }
+    let g:ctrlp_extensions = ['autoignore', 'funky']
+
+    nnoremap <leader>fc :CtrlPChange<CR>
+    nnoremap <leader>fb :CtrlPBuffer<CR>
+    nnoremap <leader>fk :CtrlPFunky<CR>
+    nnoremap <leader>fm :CtrlPMRUFiles<CR>
+    nnoremap <leader>fl :CtrlPLine<CR>
+
+elseif pure_vim_plug_leaderf == 1
+
+    " ===
+    " === LeaderF
+    " ===
+    " don't show the help in normal mode
+    let g:Lf_HideHelp = 1
+    let g:Lf_UseCache = 0
+    let g:Lf_UseVersionControlTool = 1
+    let g:Lf_IgnoreCurrentBufferName = 0
+    " popup mode
+    let g:Lf_WindowPosition = 'popup'
+    let g:Lf_PreviewInPopup = 1
+    let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2" }
+    let g:Lf_PreviewResult = {'Function': 0, 'BufTag': 0 }
+
+    let g:Lf_ShortcutF = "<leader>ff"
+    noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+    noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+    noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+
+endif
 
 " ===
 " === illuminate
@@ -187,10 +212,10 @@ let g:Illuminate_ftblacklist = ['python', 'coc-explorer']
 " ===
 " <c-x><c-u>
 augroup emoji_complete
-  autocmd!
-  autocmd FileType markdown setlocal completefunc=emoji#complete
-  " Emoji command to replace emoji name with emoji e.g. :apple: with 🍎
-  command! -nargs=* Emoji %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
+    autocmd!
+    autocmd FileType markdown setlocal completefunc=emoji#complete
+    " Emoji command to replace emoji name with emoji e.g. :apple: with 🍎
+    command! -nargs=* Emoji %s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g
 augroup END
 
 " ===
