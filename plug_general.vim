@@ -24,14 +24,11 @@
 " ===
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sainnhe/everforest'
-Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
 Plug 'voldikss/vim-floaterm'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'dracula/vim'
 
 " ===
