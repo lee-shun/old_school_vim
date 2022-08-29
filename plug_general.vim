@@ -32,13 +32,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
 Plug 'voldikss/vim-floaterm'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
-if has('nvim')
-    " Using Vim-Plug:
-    Plug 'Mofiqul/dracula.nvim'
-else
-    Plug 'dracula/vim'
-endif
-let g:pure_vim_plug_ui_color = 'dracula'
+Plug 'dracula/vim'
 
 " ===
 " === File navigation
