@@ -222,4 +222,6 @@ endif
 " ===
 " === colorscheme
 " ===
-colorscheme seoul256
+if g:pure_vim_ulti_mode == 0
+    colorscheme seoul256
+endif
