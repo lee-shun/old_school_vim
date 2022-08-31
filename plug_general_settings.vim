@@ -44,7 +44,7 @@ let g:todo_highlight_config = {
 " === lightline
 " ===
 let g:lightline = {
-            \ 'colorscheme': 'seoul256',
+            \ 'colorscheme': g:colors_name,
             \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
             \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
             \ 'active': {
@@ -132,15 +132,21 @@ let g:rainbow_active = 1
 " ===
 " === indentLine
 " ===
-let g:indentLine_setColors = 0
+" Vim
+let g:indentLine_bgcolor_term = 237
+
 let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
+let g:markdown_syntax_conceal=0
+let g:vim_json_conceal=0
 augroup auto_indentline_ft
     autocmd!
-    autocmd FileType vim :IndentLinesToggle
-    autocmd FileType tex :IndentLinesToggle
-    autocmd FileType cpp :IndentLinesToggle
-    autocmd FileType c :IndentLinesToggle
-    autocmd FileType python :IndentLinesToggle
+    autocmd FileType vim :IndentLinesEnable
+    autocmd FileType tex :IndentLinesEnable
+    autocmd FileType cpp :IndentLinesEnable
+    autocmd FileType c :IndentLinesEnable
+    autocmd FileType python :IndentLinesEnable
 augroup END
 
 " ===
