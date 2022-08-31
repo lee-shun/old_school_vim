@@ -32,7 +32,6 @@ endif
 " ===
 " === deoplete plugins
 " ===
-Plug 'Shougo/neopairs.vim'
 if g:os_name == 'Windows'
     Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
     Plug 'deoplete-plugins/deoplete-jedi'
