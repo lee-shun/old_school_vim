@@ -1,11 +1,19 @@
 " fix the Meta(Alt) key
+let g:AutoPairsMoveCharacter = "()[]{}\"'"
 if has('unix')
-    execute "set <M-e>=\<Esc>e"
     execute "set <M-p>=\<Esc>p"
+    execute "set <M-e>=\<Esc>e"
     execute "set <M-n>=\<Esc>n"
     execute "set <M-b>=\<Esc>b"
-    execute "set <M-j>=\<Esc>j"
-    execute "set <M-k>=\<Esc>k"
+
+    " FIXME: doesn't work !?
+    for key in split(g:AutoPairsMoveCharacter, '\s*')
+        if key == "\""
+            exec 'set <M-\'.key.'>=\<Esc>\'.key
+        else
+            exec 'set <M-'.key.'>=\<Esc>'.key
+        endif
+    endfor
 endif
 
 " Insert or delete brackets, parens, quotes in pairs.
