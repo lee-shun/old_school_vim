@@ -56,7 +56,7 @@ if !exists('g:AutoPairsWildClosedPair')
 end
 
 if !exists('g:AutoPairsMapSpace')
-  let g:AutoPairsMapSpace = 1
+  let g:AutoPairsMapSpace = 0
 end
 
 if !exists('g:AutoPairsCenterLine')
