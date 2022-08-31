@@ -44,7 +44,7 @@ let g:todo_highlight_config = {
 " === lightline
 " ===
 let g:lightline = {
-            \ 'colorscheme': g:colors_name,
+            \ 'colorscheme': 'seoul256',
             \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
             \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
             \ 'active': {
