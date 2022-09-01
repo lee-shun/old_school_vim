@@ -74,7 +74,6 @@ if g:pure_vim_ulti_mode == 1
     elseif g:os_name == 'Linux'
         if executable('conda')
             let g:python_host_prog='/usr/bin/python'
-
             let g:python3_host_prog='python'
         else
             let g:python_host_prog='/usr/bin/python'
