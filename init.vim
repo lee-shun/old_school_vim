@@ -83,8 +83,12 @@ if g:pure_vim_ulti_mode == 1
 
     " config environment
     if empty(glob($CONF_PATH."/plugged/"))
-        exec "!cd " . $CONF_PATH . "&&./config_env.sh"
-        exec "!cd -"
+        if has('nvim')
+            call termopen("!cd " . $CONF_PATH . "&&./config_env.sh")
+        else
+            exec "!cd " . $CONF_PATH . "&&./config_env.sh"
+            exec "!cd -"
+        endif
     endif
 
 endif

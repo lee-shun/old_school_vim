@@ -23,7 +23,6 @@
 " ===
 if g:os_name == 'Linux'
     Plug 'prabirshrestha/vim-lsp'
-    Plug 'prabirshrestha/async.vim'
 
     " ale
     Plug 'dense-analysis/ale'

@@ -122,4 +122,4 @@ endif
 " ===
 " === ale
 " ===
-let g:ale_linters = {'cpp': ['cpplint']}
+let g:ale_linters = {'cpp': ['cppcheck']}
