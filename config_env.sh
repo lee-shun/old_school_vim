@@ -17,9 +17,7 @@
 #
 # ------------------------------------------------------------------------------
 
-source ./env/log.sh
-
-msg_info " this script will config the dependencies for pure_vim..."
+echo " this script will config the dependencies for pure_vim..."
 
 # basic
 while true
@@ -35,7 +33,7 @@ do
             break
             ;;
         *)
-            msg_error "Invalid input..."
+            echo "Invalid input..."
             ;;
     esac
 done
@@ -53,13 +51,13 @@ do
             break
             ;;
         *)
-            msg_error "Invalid input..."
+            echo "Invalid input..."
             ;;
     esac
 done
 
 # cpp
-msg_info "config the C++ language sever..."
+echo "config the C++ language sever..."
 while true
 do
     read -r -p "install ccls by snap? [Y/n] " input
@@ -72,12 +70,12 @@ do
             break
             ;;
         *)
-            msg_error "Invalid input..."
+            echo "Invalid input..."
             ;;
     esac
 done
 
-msg_info "config the python language sever..."
+echo "config the python language sever..."
 while true
 do
     read -r -p "install pyright by pip3? [Y/n] " input
@@ -90,9 +88,9 @@ do
             break
             ;;
         *)
-            msg_error "Invalid input..."
+            echo "Invalid input..."
             ;;
     esac
 done
 
-msg_success  "All Done! Enjoy!"
+echo  "All Done! Enjoy!"

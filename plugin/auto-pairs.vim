@@ -1,21 +1,3 @@
-" fix the Meta(Alt) key
-let g:AutoPairsMoveCharacter = "()[]{}\"'"
-if has('unix')
-    execute "set <M-p>=\<Esc>p"
-    execute "set <M-e>=\<Esc>e"
-    execute "set <M-n>=\<Esc>n"
-    execute "set <M-b>=\<Esc>b"
-
-    " FIXME: doesn't work !?
-    for key in split(g:AutoPairsMoveCharacter, '\s*')
-        if key == "\""
-            exec 'set <M-\'.key.'>=\<Esc>\'.key
-        else
-            exec 'set <M-'.key.'>=\<Esc>'.key
-        endif
-    endfor
-endif
-
 " Insert or delete brackets, parens, quotes in pairs.
 " Maintainer:	JiangMiao <jiangfriend@gmail.com>
 " Contributor: camthompson
@@ -689,3 +671,21 @@ imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn
 
 
 au BufEnter * :call AutoPairsTryInit()
+
+" fix the Meta(Alt) key
+if has('unix') && !has('nvim')
+    execute "set <M-p>=\<Esc>p"
+    execute "set <M-e>=\<Esc>e"
+    execute "set <M-n>=\<Esc>n"
+    execute "set <M-b>=\<Esc>b"
+
+    " FIXME: doesn't work !?
+    for key in split(g:AutoPairsMoveCharacter, '\s*')
+        if key == "\""
+            exec 'set <M-\'.key.'>=\<Esc>\'.key
+        else
+            exec 'set <M-'.key.'>=\<Esc>'.key
+        endif
+    endfor
+endif
+
