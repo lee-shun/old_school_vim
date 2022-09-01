@@ -81,17 +81,6 @@ if g:pure_vim_ulti_mode == 1
         endif
     endif
 
-    " config environment
-    if empty(glob($CONF_PATH."/plugged/"))
-        if has('nvim')
-            let id =  call jobstart("cd " . $CONF_PATH . "&&./config_env.sh")
-            call jobwait(id)
-        else
-            exec "!cd " . $CONF_PATH . "&&./config_env.sh"
-            exec "!cd -"
-        endif
-    endif
-
 endif
 
 " ===
