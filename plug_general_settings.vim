@@ -136,8 +136,6 @@ let g:indentLine_enabled = 0
 let g:indentLine_leadingSpaceEnabled = 0
 let g:indentLine_bgcolor_term = 237
 let g:indentLine_leadingSpaceChar = '·'
-let g:markdown_syntax_conceal=0
-let g:vim_json_conceal=0
 augroup auto_indentline_ft
     autocmd!
     autocmd FileType vim IndentLinesEnable | LeadingSpaceEnable
