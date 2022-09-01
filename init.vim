@@ -84,7 +84,7 @@ if g:pure_vim_ulti_mode == 1
 
     " config environment
     if empty(glob($CONF_PATH."/plugged/"))
-        exec "!bash " . $CONF_PATH . "/env/config_env.sh"
+        exec "!bash " . $CONF_PATH . "/config_env.sh"
     endif
 
 endif
