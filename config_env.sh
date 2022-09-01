@@ -62,7 +62,7 @@ done
 msg_info "config the C++ language sever..."
 while true
 do
-    read -r -p "install ccls by sanp? [Y/n] " input
+    read -r -p "install ccls by snap? [Y/n] " input
     case $input in
         [yY][eE][sS]|[yY])
             ./env/install_cpp_lsp.sh
@@ -80,7 +80,7 @@ done
 msg_info "config the python language sever..."
 while true
 do
-    read -r -p "install pyright by sanp? [Y/n] " input
+    read -r -p "install pyright by pip3? [Y/n] " input
     case $input in
         [yY][eE][sS]|[yY])
             ./env/install_python_lsp.sh
