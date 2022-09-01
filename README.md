@@ -13,6 +13,8 @@
 
 ## Quick Start
 
+- use the `config_env.sh` to install the dependencies...
+
 - **Mini-Mode:** set `g:pure_vim_ulti_mode` to `0` in [init.vim](init.vim)
   > use vim as an excellent text editor!
   >
