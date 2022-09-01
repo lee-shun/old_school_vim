@@ -64,7 +64,6 @@ Plug 'sakshamgupta05/vim-todo-highlight'
 " ===
 " === General Enhancement
 " ===
-Plug 'psliwka/vim-smoothie'
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-speeddating'
 Plug 'godlygeek/tabular'
