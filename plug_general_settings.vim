@@ -28,6 +28,7 @@ colorscheme seoul256
 " === floaterm
 " ===
 let g:floaterm_keymap_toggle = '<F12>'
+nnoremap <leader>ra :FloatermNew --height=0.6 --width=0.8 --wintype=float ranger<CR>
 
 " ===
 " === comment highlighting
@@ -38,6 +39,12 @@ let g:todo_highlight_config = {
             \     'gui_bg_color': '#27AE60 ',
             \     'cterm_fg_color': 'white',
             \     'cterm_bg_color': 'green' },
+            \   'NOTE': {
+            \     'gui_fg_color': '#ffffff',
+            \     'gui_bg_color': '#ffbd2a',
+            \     'cterm_fg_color': 'white',
+            \     'cterm_bg_color': '214'
+            \   }
             \ }
 
 " ===
@@ -199,6 +206,7 @@ elseif g:pure_vim_plug_file_finder_leaderf == 1
     noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
     noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
     noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+    noremap <leader>fw :<C-U><C-R>=printf("Leaderf rg %s", "")<CR><CR>
 
 endif
 
