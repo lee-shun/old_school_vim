@@ -48,7 +48,6 @@ if g:pure_vim_ulti_mode == 0
     let g:pure_vim_plug_lsp = 0
 endif
 
-
 " ===
 " === basic config
 " ===
