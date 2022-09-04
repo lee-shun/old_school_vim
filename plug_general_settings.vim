@@ -206,6 +206,7 @@ elseif g:pure_vim_plug_file_finder_leaderf == 1
     noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
     noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
     noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+    noremap <leader>fw :<C-U><C-R>=printf("Leaderf rg %s", "")<CR><CR>
 
 endif
 
