@@ -12,6 +12,11 @@
 "            software.
 "
 " ****************** Do not modify after this line ************************
+" Not load for ulti-mode.
+if g:pure_vim_ulti_mode == 1
+  finish
+endif
+
 if exists('loaded_mru')
   finish
 endif
@@ -1115,11 +1120,9 @@ unlet s:cpo_save
 " ===
 " === MRU
 " ===
-if g:pure_vim_ulti_mode == 0
-  augroup mru_open
-    autocmd!
-    autocmd VimEnter * exec "MRU"
-  augroup END
-endif
+augroup mru_open
+  autocmd!
+  autocmd VimEnter * exec "MRU"
+augroup END
 
 " vim:set sw=2 sts=2 foldenable foldmethod=marker:
