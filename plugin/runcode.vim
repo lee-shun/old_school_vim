@@ -26,9 +26,11 @@ func! CompileRunGcc()
     exec "w"
     if &filetype == 'c'
         exec "!g++ % -o %<.out"
+        exec "!echo '--------------------------------------------'"
         exec "!time ./%<.out"
     elseif &filetype == 'cpp'
         exec "!g++ -std=c++11 % -Wall -o %<.out"
+        exec "!echo '--------------------------------------------'"
         exec "!time ./%<.out"
     elseif &filetype == 'java'
         exec "!javac %"
