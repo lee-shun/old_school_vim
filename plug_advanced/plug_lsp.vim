@@ -19,14 +19,14 @@
 " === Lsp
 " ===
 if g:os_name == 'Linux'
-    Plug 'prabirshrestha/vim-lsp'
-    Plug 'dense-analysis/ale'
-    Plug 'rhysd/vim-lsp-ale'
+    Jetpack 'prabirshrestha/vim-lsp'
+    Jetpack 'dense-analysis/ale'
+    Jetpack 'rhysd/vim-lsp-ale'
 
-    Plug 'maximbaz/lightline-ale'
+    Jetpack 'maximbaz/lightline-ale'
 
     " c++
     if executable('ccls')
-        Plug 'jackguo380/vim-lsp-cxx-highlight'
+        Jetpack 'jackguo380/vim-lsp-cxx-highlight'
     endif
 endif

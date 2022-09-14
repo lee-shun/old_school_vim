@@ -18,45 +18,45 @@
 " ===
 " === Translate
 " ===
-Plug 'voldikss/vim-translator'
+Jetpack 'voldikss/vim-translator'
 
 " ===
 " === Snippets
 " ===
 if has('python3')
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    Jetpack 'SirVer/ultisnips'
+    Jetpack 'honza/vim-snippets'
 endif
 
 " ===
 " === code format
 " ===
-Plug 'sbdchd/neoformat'
+Jetpack 'sbdchd/neoformat'
 
 " ===
 " === Markdown
 " ===
 if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
     " only Linux_x86_64, Windows have this plugin
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
+    Jetpack 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 endif
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
-Plug 'lee-shun/vim-markdown-wiki'
-Plug 'ferrine/md-img-paste.vim'
+Jetpack 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
+Jetpack 'lee-shun/vim-markdown-wiki'
+Jetpack 'ferrine/md-img-paste.vim'
 
 " ===
 " === Latex
 " ===
-Plug 'lervag/vimtex'
+Jetpack 'lervag/vimtex'
 
 " ===
 " === ros
 " ===
 if (g:os_name == 'Linux') && (executable('roscore'))
-    Plug 'taketwo/vim-ros', { 'for' : 'rosmsg', 'on':'Roscd'}
+    Jetpack 'taketwo/vim-ros', { 'for' : 'rosmsg', 'on':'Roscd'}
 endif
 
 " ===
 " === other files
 " ===
-Plug 'edersonferreira/open.vim'
+Jetpack 'edersonferreira/open.vim'

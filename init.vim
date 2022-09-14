@@ -84,7 +84,9 @@ endif
 " ===
 " === plug
 " ===
-call plug#begin($CONF_PATH.'/plugged')
+packadd vim-jetpack
+
+call jetpack#begin($CONF_PATH.'/plugged')
 if g:old_school_vim_plug_general == 1
     source $CONF_PATH/plug_general.vim
 endif
@@ -103,7 +105,7 @@ endif
 if g:old_school_vim_plug_lsp == 1
     source $CONF_PATH/plug_advanced/plug_lsp.vim
 endif
-call plug#end()
+call jetpack#end()
 
 " ===
 " === plug_settings
@@ -130,10 +132,10 @@ endif
 " ===
 " === automatic config
 " ===
-if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
-    " install vim plugins
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-    if has('nvim')
-        autocmd VimEnter * UpdateRemotePlugins
-    endif
-endif
+" if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
+"     " install vim plugins
+"     autocmd VimEnter * JetpackInstall --sync | source $MYVIMRC
+"     if has('nvim')
+"         autocmd VimEnter * UpdateRemoteJetpackins
+"     endif
+" endif
