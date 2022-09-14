@@ -26,7 +26,6 @@ Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
 Plug 'voldikss/vim-floaterm'
-Plug 'dracula/vim'
 
 " ===
 " === File navigation
@@ -41,16 +40,7 @@ Plug 'airblade/vim-rooter'
 " ===
 " === File Finder
 " ===
-let g:old_school_vim_plug_file_finder_ctrlp = 0
-let g:old_school_vim_plug_file_finder_leaderf = 1
-
-if g:old_school_vim_plug_file_finder_ctrlp == 1
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'tacahiroy/ctrlp-funky'
-    Plug 'ludovicchabant/vim-ctrlp-autoignore'
-elseif g:old_school_vim_plug_file_finder_leaderf == 1
-    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-endif
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " ===
 " === General Highlight
@@ -63,11 +53,9 @@ Plug 'sakshamgupta05/vim-todo-highlight'
 " ===
 Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-speeddating'
-Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug '907th/vim-auto-save'
-Plug 'romainl/vim-cool'
 
 " ===
 " === Fold
@@ -78,6 +66,8 @@ Plug 'lambdalisue/readablefold.vim'
 " === Text object
 " ===
 Plug 'wellle/targets.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'thinca/vim-textobj-between'
 
 " ===
 " === Undo
