@@ -48,12 +48,6 @@ if g:old_school_vim_ulti_mode == 0
 endif
 
 " ===
-" === basic config
-" ===
-source $CONF_PATH/basic/options.vim
-source $CONF_PATH/basic/mappings.vim
-
-" ===
 " === environment
 " ===
 if g:old_school_vim_ulti_mode == 1
@@ -107,6 +101,11 @@ if empty(glob($CONF_PATH."/pack/")) && g:old_school_vim_ulti_mode == 1
     endif
 endif
 
+" ===
+" === basic config
+" ===
+source $CONF_PATH/basic/options.vim
+source $CONF_PATH/basic/mappings.vim
 
 " ===
 " === plug
