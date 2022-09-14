@@ -19,74 +19,74 @@
 " ===
 " === UI
 " ===
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'itchyny/lightline.vim'
-Plug 'niklaas/lightline-gitdiff'
-Plug 'luochen1990/rainbow'
-Plug 'Yggdroot/indentLine'
-Plug 'RRethy/vim-illuminate'
-Plug 'voldikss/vim-floaterm'
+Jetpack 'lambdalisue/nerdfont.vim'
+Jetpack 'ryanoasis/vim-devicons'
+Jetpack 'itchyny/lightline.vim'
+Jetpack 'niklaas/lightline-gitdiff'
+Jetpack 'luochen1990/rainbow'
+Jetpack 'Yggdroot/indentLine'
+Jetpack 'RRethy/vim-illuminate'
+Jetpack 'voldikss/vim-floaterm'
 
 " ===
 " === File navigation
 " ===
-Plug 'mhinz/vim-startify'
-Plug 'csch0/vim-startify-renderer-nerdfont'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/fern.vim', {'branch':'main'}
-Plug 'lambdalisue/fern-git-status.vim'
-Plug 'airblade/vim-rooter'
+Jetpack 'mhinz/vim-startify'
+Jetpack 'csch0/vim-startify-renderer-nerdfont'
+Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
+Jetpack 'lambdalisue/fern.vim', {'branch':'main'}
+Jetpack 'lambdalisue/fern-git-status.vim'
+Jetpack 'airblade/vim-rooter'
 
 " ===
 " === File Finder
 " ===
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Jetpack 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 
 " ===
 " === General Highlight
 " ===
-Plug 'chrisbra/Colorizer'
-Plug 'sakshamgupta05/vim-todo-highlight'
+Jetpack 'chrisbra/Colorizer'
+Jetpack 'sakshamgupta05/vim-todo-highlight'
 
 " ===
 " === General Enhancement
 " ===
-Plug 'junegunn/vim-peekaboo'
-Plug 'tpope/vim-speeddating'
-Plug 'junegunn/vim-easy-align'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug '907th/vim-auto-save'
+Jetpack 'junegunn/vim-peekaboo'
+Jetpack 'tpope/vim-speeddating'
+Jetpack 'junegunn/vim-easy-align'
+Jetpack 'mg979/vim-visual-multi', {'branch': 'master'}
+Jetpack '907th/vim-auto-save'
 
 " ===
 " === Fold
 " ===
-Plug 'lambdalisue/readablefold.vim'
+Jetpack 'lambdalisue/readablefold.vim'
 
 " ===
 " === Text object
 " ===
-Plug 'wellle/targets.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'thinca/vim-textobj-between'
+Jetpack 'wellle/targets.vim'
+Jetpack 'kana/vim-textobj-user'
+Jetpack 'thinca/vim-textobj-between'
 
 " ===
 " === Undo
 " ===
-Plug 'mbbill/undotree'
+Jetpack 'mbbill/undotree'
 
 " ===
 " === Async
 " ===
-Plug 'skywind3000/asyncrun.vim'
-Plug 'skywind3000/asynctasks.vim'
+Jetpack 'skywind3000/asyncrun.vim'
+Jetpack 'skywind3000/asynctasks.vim'
 
 " ===
 " === Git
 " ===
-Plug 'rhysd/conflict-marker.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
+Jetpack 'rhysd/conflict-marker.vim'
+Jetpack 'tpope/vim-fugitive'
+Jetpack 'mhinz/vim-signify'
 if has('nvim') || has('popupwin')
-    Plug 'APZelos/blamer.nvim'
+    Jetpack 'APZelos/blamer.nvim'
 endif

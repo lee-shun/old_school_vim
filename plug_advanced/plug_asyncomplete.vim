@@ -15,25 +15,25 @@
 "                                                                              "
 "*******************************************************************************
 
-Plug 'prabirshrestha/asyncomplete.vim'
+Jetpack 'prabirshrestha/asyncomplete.vim'
 if(g:old_school_vim_plug_lsp == 1)
-    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    Jetpack 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
 " ===
 " === plugins
 " ===
-Plug 'prabirshrestha/asyncomplete-buffer.vim'
-Plug 'htlsne/asyncomplete-look'
-Plug 'high-moctane/asyncomplete-nextword.vim'
-Plug 'prabirshrestha/asyncomplete-file.vim'
+Jetpack 'prabirshrestha/asyncomplete-buffer.vim'
+Jetpack 'htlsne/asyncomplete-look'
+Jetpack 'high-moctane/asyncomplete-nextword.vim'
+Jetpack 'prabirshrestha/asyncomplete-file.vim'
 
 if has('win32') || has('win64')
-    Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': 'powershell.exe .\install.ps1' }
+    Jetpack 'kitagry/asyncomplete-tabnine.vim', { 'do': 'powershell.exe .\install.ps1' }
 else
-    Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': './install.sh' }
+    Jetpack 'kitagry/asyncomplete-tabnine.vim', { 'do': './install.sh' }
 endif
 
 if has('python3')&&(g:old_school_vim_plug_advanced == 1)
-    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+    Jetpack 'prabirshrestha/asyncomplete-ultisnips.vim'
 endif

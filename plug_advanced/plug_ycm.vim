@@ -18,4 +18,4 @@
 " ===
 " === YCM
 " ===
-Plug 'ycm-core/YouCompleteMe', {'branch': 'legacy-c++11'}
+Jetpack 'ycm-core/YouCompleteMe', {'branch': 'legacy-c++11'}

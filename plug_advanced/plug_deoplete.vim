@@ -19,22 +19,22 @@
 " === deoplete (works well with the omnifunc in vim)
 " ===
 if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Jetpack 'Shougo/deoplete.nvim', { 'do': ':UpdateRemoteJetpackins' }
 else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
+    Jetpack 'Shougo/deoplete.nvim'
+    Jetpack 'roxma/nvim-yarp'
+    Jetpack 'roxma/vim-hug-neovim-rpc'
 endif
 
 " ===
 " === deoplete plugins
 " ===
 if g:os_name == 'Windows'
-    Plug 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
-    Plug 'deoplete-plugins/deoplete-jedi'
+    Jetpack 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1' }
+    Jetpack 'deoplete-plugins/deoplete-jedi'
 elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-    Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+    Jetpack 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
     if(g:old_school_vim_plug_lsp == 1)
-        Plug 'lighttiger2505/deoplete-vim-lsp'
+        Jetpack 'lighttiger2505/deoplete-vim-lsp'
     endif
 endif
