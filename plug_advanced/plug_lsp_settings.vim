@@ -15,7 +15,7 @@
 "                                                                              "
 "*******************************************************************************
 " ===
-" === lightline with lsp
+" === lightline with lsp + ale
 " ===
 let g:lightline = {
             \ 'colorscheme': g:colors_name,
@@ -27,7 +27,7 @@ let g:lightline = {
             \ [ 'gitbranch', 'gitdiff']],
             \ 'right': [ [ 'lineinfo' ],
             \              [ 'percent' ],
-            \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']]
+            \ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'filename' ] ],
@@ -36,15 +36,19 @@ let g:lightline = {
             \ 'gitbranch': 'FugitiveHead',
             \ },
             \ 'component_expand': {
-            \ 'lsp_warnings': 'lightline_lsp#warnings',
-            \ 'lsp_errors':   'lightline_lsp#errors',
-            \ 'lsp_ok':       'lightline_lsp#ok',
-            \ 'gitdiff': 'lightline#gitdiff#get',
+            \  'linter_checking': 'lightline#ale#checking',
+            \  'linter_infos': 'lightline#ale#infos',
+            \  'linter_warnings': 'lightline#ale#warnings',
+            \  'linter_errors': 'lightline#ale#errors',
+            \  'linter_ok': 'lightline#ale#ok',
+            \  'gitdiff': 'lightline#gitdiff#get',
             \ },
             \ 'component_type': {
-            \ 'lsp_warnings': 'warning',
-            \ 'lsp_errors':   'error',
-            \ 'lsp_ok':       'middle',
+            \  'linter_checking': 'right',
+            \  'linter_infos': 'right',
+            \  'linter_warnings': 'warning',
+            \  'linter_errors': 'error',
+            \  'linter_ok': 'right',
             \ }
             \ }
 
@@ -63,8 +67,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gt <plug>(lsp-type-definition)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> <leader>ac <plug>(lsp-code-action)
-    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> [d <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]d <Plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
 endfunction
 
@@ -113,7 +117,6 @@ elseif !executable('ccls') && executable('clangd')
                 \ })
 endif
 
-
 if executable('pyright-langserver')
     au User lsp_setup call lsp#register_server({
                 \ 'name': 'pyright-langserver',
@@ -152,4 +155,7 @@ endif
 " ===
 " === ale
 " ===
-let g:ale_linters = {'cpp': ['cppcheck'], 'markdown':['markdownlint']}
+let g:ale_linters = {
+            \'cpp': ['cpplint'],
+            \'python': ['pylint'],
+            \'markdown':['markdownlint']}
