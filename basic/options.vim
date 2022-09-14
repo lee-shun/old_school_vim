@@ -65,6 +65,9 @@ set ttimeout          " for key codes
 set ttimeoutlen=10    " unnoticeable small value
 set conceallevel=0
 set wildmenu
+if !has('nvim')
+    set wildoptions=pum
+endif
 set lazyredraw
 set ttyfast
 
