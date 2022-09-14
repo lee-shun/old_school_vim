@@ -36,7 +36,7 @@ let g:old_school_vim_plug_asyncomplete = 0
 " use the ycm
 let g:old_school_vim_plug_ycm = 0
 
-let g:old_school_vim_plug_lsp = 1 " vim-lsp as backend of the above frameworks.
+let g:old_school_vim_plug_lsp = 0 " vim-lsp as backend of the above frameworks.
 
 " don't use any of the plugs if ulti-mode is deactived
 if g:old_school_vim_ulti_mode == 0

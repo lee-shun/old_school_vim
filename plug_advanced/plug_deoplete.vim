@@ -34,5 +34,7 @@ if g:os_name == 'Windows'
     Plug 'deoplete-plugins/deoplete-jedi'
 elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
     Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-    Plug 'lighttiger2505/deoplete-vim-lsp'
+    if(g:old_school_vim_plug_lsp == 1)
+        Plug 'lighttiger2505/deoplete-vim-lsp'
+    endif
 endif
