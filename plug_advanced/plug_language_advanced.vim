@@ -34,13 +34,6 @@ endif
 Plug 'sbdchd/neoformat'
 
 " ===
-" === python
-" ===
-if g:os_name == 'Linux' && has('nvim')
-    Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins', 'for' :['python', 'vim-plug'] }
-endif
-
-" ===
 " === Markdown
 " ===
 if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
