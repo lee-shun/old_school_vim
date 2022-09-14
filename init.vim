@@ -84,7 +84,7 @@ endif
 " ===
 " === automatic config
 " ===
-if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
+if empty(glob($CONF_PATH."/pack/")) && g:old_school_vim_ulti_mode == 1
     if has('nvim')
         let s:jetpackfile = stdpath('data') .. '/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
         let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
@@ -113,7 +113,7 @@ endif
 " ===
 packadd vim-jetpack
 
-call jetpack#begin($CONF_PATH.'/plugged')
+call jetpack#begin()
 if g:old_school_vim_plug_general == 1
     source $CONF_PATH/plug_general.vim
 endif
