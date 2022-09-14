@@ -14,6 +14,39 @@
 "  Email  : 2015097272@qq.com                                                  "
 "                                                                              "
 "*******************************************************************************
+" ===
+" === lightline with lsp
+" ===
+let g:lightline = {
+            \ 'colorscheme': g:colors_name,
+            \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+            \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+            \ 'active': {
+            \ 'left': [ [ 'mode', 'paste' ],
+            \ [ 'readonly', 'filename', 'modified' ],
+            \ [ 'gitbranch', 'gitdiff']],
+            \ 'right': [ [ 'lineinfo' ],
+            \              [ 'percent' ],
+            \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']]
+            \ },
+            \ 'inactive': {
+            \   'left': [ [ 'filename' ] ],
+            \   'right': [ [ 'filetype' ] ] },
+            \ 'component_function': {
+            \ 'gitbranch': 'FugitiveHead',
+            \ },
+            \ 'component_expand': {
+            \ 'lsp_warnings': 'lightline_lsp#warnings',
+            \ 'lsp_errors':   'lightline_lsp#errors',
+            \ 'lsp_ok':       'lightline_lsp#ok',
+            \ 'gitdiff': 'lightline#gitdiff#get',
+            \ },
+            \ 'component_type': {
+            \ 'lsp_warnings': 'warning',
+            \ 'lsp_errors':   'error',
+            \ 'lsp_ok':       'middle',
+            \ }
+            \ }
 
 " ===
 " === vim-lsp

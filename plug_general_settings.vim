@@ -53,11 +53,10 @@ let g:lightline = {
             \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste' ],
-            \ [ 'gitbranch', 'readonly', 'filename', 'modified' ],
-            \ [ 'lsp_errors', 'lsp_warnings', 'lsp_ok']],
-            \   'right': [ [ 'lineinfo' ],
+            \ [ 'readonly', 'filename', 'modified' ],
+            \ [ 'gitbranch', 'gitdiff']],
+            \ 'right': [ [ 'lineinfo' ],
             \              [ 'percent' ],
-            \              [ 'fileformat', 'fileencoding', 'filetype'] ]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'filename' ] ],
@@ -66,15 +65,8 @@ let g:lightline = {
             \ 'gitbranch': 'FugitiveHead',
             \ },
             \ 'component_expand': {
-            \ 'lsp_warnings': 'lightline_lsp#warnings',
-            \ 'lsp_errors':   'lightline_lsp#errors',
-            \ 'lsp_ok':       'lightline_lsp#ok',
+            \ 'gitdiff': 'lightline#gitdiff#get',
             \ },
-            \ 'component_type': {
-            \ 'lsp_warnings': 'warning',
-            \ 'lsp_errors':   'error',
-            \ 'lsp_ok':       'middle',
-            \ }
             \ }
 
 " ===
