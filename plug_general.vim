@@ -22,6 +22,7 @@
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
+Plug 'niklaas/lightline-gitdiff'
 Plug 'luochen1990/rainbow'
 Plug 'Yggdroot/indentLine'
 Plug 'RRethy/vim-illuminate'
