@@ -23,26 +23,26 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 " ===
 " === control the mode
 " ===
-let g:pure_vim_ulti_mode = 1
+let g:old_school_vim_ulti_mode = 1
 " 1: use general plugs
-let g:pure_vim_plug_general = 1
+let g:old_school_vim_plug_general = 1
 " 1: use advanced plugs
-let g:pure_vim_plug_advanced = 1
+let g:old_school_vim_plug_advanced = 1
 
 " choose one of the complete front end
-let g:pure_vim_plug_deoplete = 1
-let g:pure_vim_plug_asyncomplete = 0
-let g:pure_vim_plug_lsp = 1 " vim-lsp as backend of the above frameworks.
+let g:old_school_vim_plug_deoplete = 1
+let g:old_school_vim_plug_asyncomplete = 0
+let g:old_school_vim_plug_lsp = 1 " vim-lsp as backend of the above frameworks.
 " use the ycm
-let g:pure_vim_plug_ycm = 0
+let g:old_school_vim_plug_ycm = 0
 
 " no use any of the plugs if ulti-mode deactive
-if g:pure_vim_ulti_mode == 0
-    let g:pure_vim_plug_general = 0
-    let g:pure_vim_plug_advanced = 0
-    let g:pure_vim_plug_deoplete = 0
-    let g:pure_vim_plug_asyncomplete = 0
-    let g:pure_vim_plug_lsp = 0
+if g:old_school_vim_ulti_mode == 0
+    let g:old_school_vim_plug_general = 0
+    let g:old_school_vim_plug_advanced = 0
+    let g:old_school_vim_plug_deoplete = 0
+    let g:old_school_vim_plug_asyncomplete = 0
+    let g:old_school_vim_plug_lsp = 0
 endif
 
 " ===
@@ -54,7 +54,7 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === environment
 " ===
-if g:pure_vim_ulti_mode == 1
+if g:old_school_vim_ulti_mode == 1
 
     if !exists("g:os_name")
         if has("win64") || has("win32") || has("win16")
@@ -83,22 +83,22 @@ endif
 " === plug
 " ===
 call plug#begin($CONF_PATH.'/plugged')
-if g:pure_vim_plug_general == 1
+if g:old_school_vim_plug_general == 1
     source $CONF_PATH/plug_general.vim
 endif
-if g:pure_vim_plug_advanced == 1
+if g:old_school_vim_plug_advanced == 1
     source $CONF_PATH/plug_advanced/plug_language_advanced.vim
 endif
-if g:pure_vim_plug_deoplete == 1
+if g:old_school_vim_plug_deoplete == 1
     source $CONF_PATH/plug_advanced/plug_deoplete.vim
 endif
-if g:pure_vim_plug_asyncomplete == 1
+if g:old_school_vim_plug_asyncomplete == 1
     source $CONF_PATH/plug_advanced/plug_asyncomplete.vim
 endif
-if g:pure_vim_plug_ycm == 1
+if g:old_school_vim_plug_ycm == 1
     source $CONF_PATH/plug_advanced/plug_ycm.vim
 endif
-if g:pure_vim_plug_lsp == 1
+if g:old_school_vim_plug_lsp == 1
     source $CONF_PATH/plug_advanced/plug_lsp.vim
 endif
 call plug#end()
@@ -106,29 +106,29 @@ call plug#end()
 " ===
 " === plug_settings
 " ===
-if g:pure_vim_plug_general == 1
+if g:old_school_vim_plug_general == 1
     source $CONF_PATH/plug_general_settings.vim
 endif
-if g:pure_vim_plug_advanced == 1
+if g:old_school_vim_plug_advanced == 1
     source $CONF_PATH/plug_advanced/plug_language_advanced_settings.vim
 endif
-if g:pure_vim_plug_deoplete == 1
+if g:old_school_vim_plug_deoplete == 1
     source $CONF_PATH/plug_advanced/plug_deoplete_settings.vim
 endif
-if g:pure_vim_plug_asyncomplete == 1
+if g:old_school_vim_plug_asyncomplete == 1
     source $CONF_PATH/plug_advanced/plug_asyncomplete_settings.vim
 endif
-if g:pure_vim_plug_ycm == 1
+if g:old_school_vim_plug_ycm == 1
     source $CONF_PATH/plug_advanced/plug_ycm_settings.vim
 endif
-if g:pure_vim_plug_lsp == 1
+if g:old_school_vim_plug_lsp == 1
     source $CONF_PATH/plug_advanced/plug_lsp_settings.vim
 endif
 
 " ===
 " === automatic config
 " ===
-if empty(glob($CONF_PATH."/plugged/")) && g:pure_vim_ulti_mode == 1
+if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
     " install vim plugins
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
     if has('nvim')

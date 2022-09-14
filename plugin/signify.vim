@@ -1,4 +1,4 @@
-if g:pure_vim_ulti_mode == 0
+if g:old_school_vim_ulti_mode == 0
   " Plugin:      https://github.com/mhinz/vim-signify
   " Description: show a diff from a version control system via the signcolumn
   " Maintainer:  Marco Hinz <http://github.com/mhinz>
