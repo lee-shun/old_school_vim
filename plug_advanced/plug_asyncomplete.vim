@@ -16,7 +16,9 @@
 "*******************************************************************************
 
 Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+if(g:old_school_vim_plug_lsp == 1)
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+endif
 
 " ===
 " === plugins
@@ -32,6 +34,6 @@ else
     Plug 'kitagry/asyncomplete-tabnine.vim', { 'do': './install.sh' }
 endif
 
-if has('python3')
+if has('python3')&&(g:old_school_vim_plug_advanced == 1)
     Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 endif

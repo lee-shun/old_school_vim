@@ -20,13 +20,10 @@
 " ===
 if g:os_name == 'Linux'
     Plug 'prabirshrestha/vim-lsp'
-
-    " ale
     Plug 'dense-analysis/ale'
     Plug 'rhysd/vim-lsp-ale'
 
-    " adapters...
-    Plug 'halkn/lightline-lsp'
+    Plug 'maximbaz/lightline-ale'
 
     " c++
     if executable('ccls')
