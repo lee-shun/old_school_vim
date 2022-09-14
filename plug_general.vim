@@ -41,14 +41,14 @@ Plug 'airblade/vim-rooter'
 " ===
 " === File Finder
 " ===
-let g:pure_vim_plug_file_finder_ctrlp = 0
-let g:pure_vim_plug_file_finder_leaderf = 1
+let g:old_school_vim_plug_file_finder_ctrlp = 0
+let g:old_school_vim_plug_file_finder_leaderf = 1
 
-if g:pure_vim_plug_file_finder_ctrlp == 1
+if g:old_school_vim_plug_file_finder_ctrlp == 1
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tacahiroy/ctrlp-funky'
     Plug 'ludovicchabant/vim-ctrlp-autoignore'
-elseif g:pure_vim_plug_file_finder_leaderf == 1
+elseif g:old_school_vim_plug_file_finder_leaderf == 1
     Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 endif
 

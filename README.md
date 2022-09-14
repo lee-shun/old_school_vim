@@ -1,9 +1,8 @@
-# <p align="center">![title](./img/pure_vim.png)</p>
+# <p align="center">![title](./img/old_school_vim.png)</p>
 
-> I just want to use my Vim configuration on different machines😹, but various Plugins and their dependencies always
-> drive me crazy, especially under different environments! Some of them require `python`(which is reasonable at some
-> point), some require `nodejs`.  But most of times, they requires the so-called **DEPENDENCIES**❌ that I never heard
-> about! I am **NOT almighty** 🤖 , you got be kidding me!😠
+> Due to my study and work, I always want to use with under different environments. So, I always choose the plugins with
+> good compatibility. In my opinion, I prefer the plugins wrritten in `vimscripts > vimscripts + python3 >
+> lua`.Comparing with today's neovim lua trending, The plugins in this configuration are pretty "**Old School**"!
 
 **In this vim/neovim configuration, I tried to:**
 - separate the whole `vimrc` into `dependence-free` and `dependences` parts according to the features required by
@@ -15,23 +14,26 @@
 
 - use the `config_env.sh` to install the dependencies...
 
-- **Mini-Mode:** set `g:pure_vim_ulti_mode` to `0` in [init.vim](init.vim)
+- **Mini-Mode:** set `g:old_school_vim_ulti_mode` to `0` in [init.vim](init.vim)
   > use vim as an excellent text editor!
   >
   > - No Plugins, No Dependencies.
   >
-- **Ulti-Mode** set `g:pure_vim_ulti_mode` to `1` in [init.vim](init.vim)
+- **Ulti-Mode** set `g:old_school_vim_ulti_mode` to `1` in [init.vim](init.vim)
   > use vim with some pretty neat plugins
   >
-  - `g:pure_vim_plug_general = 1`
+  - `g:old_school_vim_plug_general = 1`
   >  dependence-free plugins written in Vimscripts.
   >
-  - `g:pure_vim_plug_advanced  = 1`
-  >  multi language translations based on python plugins.
+  - `g:old_school_vim_plug_advanced  = 1`
+  >  plugins based on python3.
 
-  - `g:pure_vim_plug_deoplete = 1` **OR** `g:pure_vim_plug_asyncomplete = 1` as complete engine 
-  **AND** `g:pure_vim_plug_lsp = 1 `
-  > use vim as a lightweight IDE for `C/C++` and `python`.
+  - `completion eigen' **Choose One:**
+    - `g:old_school_vim_plug_deoplete`
+    - `g:old_school_vim_plug_asyncomplete`
+    - `g:old_school_vim_plug_ycm`
+
+  - `g:old_school_vim_plug_lsp = 1 `
   > language-sever based code completion, etc.
   >
 - **NOTE:**
@@ -42,39 +44,11 @@
 
 - vim 8.2 if use plugins, vim 7 if use `mini-mode`
 - neovim 4.2 or later.
-- *python and language-sever stuff(advanced plugins only)
-
-## Features
-
-1. **As less dependences as possible**
-  - use vim with different level of demands.
-
-2. **Completion**
-  - Automatically commonly used words completion with google-20k words.
-  - The commonly used programming languages like `python` and `c++` etc.
-  key-words completion.
-  - `deoplete.nvim` and `vim-lsp` based completion
-
-3. **Multi Platforms Supporting**
-
-4. **Snippets**
-  - Simple snippets inserting with vim `inoremap` option.
-  - Vim will load `xxx_foo.vim, xxx.vim` (`xxx` is a filetype name.). With this
-  feature, I define some useful `remaps`.
-
-5. **Especially Designed for Notes Taking**
-  - Use [markdown-wiki](https://github.com/mmai/vim-markdown-wiki)
-  to arrange the notes.
-  - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)(it
-  needs to download a binary markdown software, but don't worry, it is
-  automatic.)
-
-6. **Automatically Configuration Path Setting**
-  - This configuration is designed for vim and neovim both on windows and
-  Linux.
-  - It will automatically find the path for the given situation.
+- *python and language-sever stuff (advanced plugins only)*
 
 ## Installation
+
+You can also  use the bash files under the `env/` folder.
 
 1. **Clone the repo to the path:**
   - **For Windows:**
@@ -109,4 +83,4 @@ its own vim.
 | <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png) |
 | <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)         |
 
-> Last Modified : 五 25 2月 2022 07:46:22 下午
+> Last Modified : 二 13 9月 2022 08:21:11 下午

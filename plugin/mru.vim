@@ -13,7 +13,7 @@
 "
 " ****************** Do not modify after this line ************************
 " Not load for ulti-mode.
-if g:pure_vim_ulti_mode == 1
+if g:old_school_vim_ulti_mode == 1
   finish
 endif
 

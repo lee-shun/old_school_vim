@@ -164,7 +164,7 @@ augroup auto_save_ft
     autocmd FileType cmake let b:auto_save = 1
 augroup END
 
-if g:pure_vim_plug_file_finder_ctrlp == 1
+if g:old_school_vim_plug_file_finder_ctrlp == 1
 
     " ===
     " === ctrl-p
@@ -183,7 +183,7 @@ if g:pure_vim_plug_file_finder_ctrlp == 1
     nnoremap <leader>fm :CtrlPMRUFiles<CR>
     nnoremap <leader>fl :CtrlPLine<CR>
 
-elseif g:pure_vim_plug_file_finder_leaderf == 1
+elseif g:old_school_vim_plug_file_finder_leaderf == 1
 
     " ===
     " === LeaderF
