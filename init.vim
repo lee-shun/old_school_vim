@@ -82,6 +82,25 @@ if g:old_school_vim_ulti_mode == 1
 endif
 
 " ===
+" === automatic config
+" ===
+if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
+    if has('nvim')
+        exec "!curl -fLo ~/.local/share/nvim/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+    else
+        exec "!curl -fLo ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+    endif
+
+    " install vim plugins
+    autocmd VimEnter * JetpackSync | source $MYVIMRC
+
+    if has('nvim')
+        autocmd VimEnter * UpdateRemotePlugins
+    endif
+endif
+
+
+" ===
 " === plug
 " ===
 packadd vim-jetpack
@@ -128,14 +147,3 @@ endif
 if g:old_school_vim_plug_lsp == 1
     source $CONF_PATH/plug_advanced/plug_lsp_settings.vim
 endif
-
-" ===
-" === automatic config
-" ===
-" if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
-"     " install vim plugins
-"     autocmd VimEnter * JetpackInstall --sync | source $MYVIMRC
-"     if has('nvim')
-"         autocmd VimEnter * UpdateRemoteJetpackins
-"     endif
-" endif
