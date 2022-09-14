@@ -74,24 +74,14 @@ inoremap <C-A-right> <nop>
 " === custom text objects
 " ===
 
-for s:char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '$', '#' ]
-  execute 'xnoremap i' . s:char . ' :<C-u>normal! T' . s:char . 'vt' . s:char . '<CR>'
-  execute 'onoremap i' . s:char . ' :normal vi' . s:char . '<CR>'
-  execute 'xnoremap a' . s:char . ' :<C-u>normal! F' . s:char . 'vf' . s:char . '<CR>'
-  execute 'onoremap a' . s:char . ' :normal va' . s:char . '<CR>'
-endfor
-
-" "in line" (entire line sans white-space; cursor at beginning--ie, ^)
-xnoremap <silent> il :<c-u>normal! g_v^<cr>
-onoremap <silent> il :<c-u>normal! g_v^<cr>
-
-" "around line" (entire line sans trailing newline; cursor at beginning--ie, 0)
-xnoremap <silent> al :<c-u>normal! $v0<cr>
-onoremap <silent> al :<c-u>normal! $v0<cr>
-
-" "in document" (from first line to last; cursor at top--ie, gg)
-xnoremap <silent> id :<c-u>normal! G$Vgg0<cr>
-onoremap <silent> id :<c-u>normal! GVgg<cr>
+if g:old_school_vim_plug_general == 0
+    for s:char in [ '_', '.', ':', ',', ';', '<bar>', '/', '<bslash>', '*', '+', '%', '$', '#' ]
+        execute 'xnoremap i' . s:char . ' :<C-u>normal! T' . s:char . 'vt' . s:char . '<CR>'
+        execute 'onoremap i' . s:char . ' :normal vi' . s:char . '<CR>'
+        execute 'xnoremap a' . s:char . ' :<C-u>normal! F' . s:char . 'vf' . s:char . '<CR>'
+        execute 'onoremap a' . s:char . ' :normal va' . s:char . '<CR>'
+    endfor
+endif
 
 " regular expressions that match numbers (order matters .. keep '\d' last!)
 " note: \+ will be appended to the end of each

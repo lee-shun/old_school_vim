@@ -91,8 +91,8 @@ if has('nvim')
 endif
 
 " keyword match
-set showmatch               " 显示括号配对情况
-set iskeyword+=_,$,@,%,#,-  " 带有如下符号的单词不要被换行分割
+set showmatch
+set iskeyword+=_,$,@,%,#
 set matchpairs=(:),{:},[:],<:>
 set whichwrap=b,s,<,>,[,]
 
@@ -112,8 +112,8 @@ set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set smarttab  " 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
-set expandtab " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
+set smarttab
+set expandtab  " 将Tab自动转化成空格(需要输入真正的Tab键时，使用 Ctrl+V + Tab)
 set shiftround
 
 " folding
