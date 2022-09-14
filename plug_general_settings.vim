@@ -56,7 +56,7 @@ let g:lightline = {
             \ [ 'readonly', 'filename', 'modified' ],
             \ [ 'gitbranch', 'gitdiff']],
             \ 'right': [ [ 'lineinfo' ],
-            \              [ 'percent' ],
+            \              [ 'percent' ],]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'filename' ] ],
