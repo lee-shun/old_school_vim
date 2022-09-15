@@ -23,7 +23,7 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
 call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1})
 
 call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
-            \'hook_post_source':'call fern_git_status#init()' })
+            \'hook_post_source':'source $CONF_PATH/plug_conf/fern_git_conf.vim' })
 
 call dein#add('lambdalisue/fern.vim', {'lazy':1,
             \'depends':['fern-git-status.vim','fern-renderer-nerdfont.vim'],
@@ -87,3 +87,10 @@ call dein#add('skywind3000/asyncrun.vim', {'lazy':1,
 call dein#add('skywind3000/asynctasks.vim', {'lazy':1,
             \'depedns':['asyncrun.vim'],
             \'on_event': ['BufReadPost'],})
+
+call dein#add('mhinz/vim-signify', {'lazy':1,
+            \'on_event': ['BufReadPost'], })
+
+call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
+            \'on_event': ['BufReadPost'], })
+
