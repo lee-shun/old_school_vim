@@ -1,0 +1,182 @@
+#*******************************************************************************
+#                                                                              #
+#          .oOOOo.   o      o       .oOOOo.         o                 o        #
+#         .O     o. O      O        o     o        O                 O         #
+#         O       o o      o        O.             o                 o         #
+#         o       O O      o         `OOoo.        O                 O         #
+#         O       o o  .oOoO              `O .oOo  OoOo. .oOo. .oOo. o         #
+#         o       O O  o   O               o O     o   o O   o O   o O         #
+#         `o     O' o  O   o        O.    .O o     o   O o   O o   O o         #
+#          `OoooO'  Oo `OoO'o        `oooO'  `OoO' O   o `OoO' `OoO' Oo        #
+#                                                                              #
+#  Author : lee-shun                                                           #
+#                                                                              #
+#  Email  : 2015097272@qq.com                                                  #
+#                                                                              #
+#*******************************************************************************
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+
+# ==
+# == UI
+# ==
+
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+            \ 'colorscheme': g:colors_name,
+            \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+            \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+            \ 'active': {
+            \ 'left': [ [ 'mode', 'paste' ],
+            \ [ 'readonly', 'filename', 'modified' ],
+            \ [ 'gitbranch', 'gitdiff']],
+            \ 'right': [ [ 'lineinfo' ],
+            \              [ 'percent' ],]
+            \ },
+            \ 'inactive': {
+            \   'left': [ [ 'filename' ] ],
+            \   'right': [ [ 'filetype' ] ] },
+            \ 'component_function': {
+            \ 'gitbranch': 'FugitiveHead',
+            \ },
+            \ 'component_expand': {
+            \ 'gitdiff': 'lightline#gitdiff#get',
+            \ },
+            \ }
+'''
+
+[[plugins]]
+repo = 'niklaas/lightline-gitdiff'
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'RRethy/vim-illuminate'
+
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+hook_add = '''
+let g:floaterm_keymap_toggle = '<F12>'
+nnoremap <leader>ra :FloatermNew --height=0.6 --width=0.8 --wintype=float ranger<CR>
+'''
+
+# ==
+# == File navigation
+# ==
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+
+# ==
+# == File Finder
+# ==
+
+[[plugins]]
+repo = 'Yggdroot/LeaderF'
+
+# ==
+# == General Highlight
+# ==
+
+[[plugins]]
+repo = 'chrisbra/Colorizer'
+
+[[plugins]]
+repo = 'sakshamgupta05/vim-todo-highlight'
+
+# ==
+# == General Enhancement
+# ==
+
+[[plugins]]
+repo = 'junegunn/vim-peekaboo'
+
+[[plugins]]
+repo = 'tpope/vim-speeddating'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'mg979/vim-visual-multi'
+
+[[plugins]]
+repo = '907th/vim-auto-save'
+
+# ==
+# == Fold
+# ==
+
+[[plugins]]
+repo = 'lambdalisue/readablefold.vim'
+
+# ==
+# == Text object
+# ==
+
+[[plugins]]
+repo = 'wellle/targets.vim'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'thinca/vim-textobj-between'
+
+# ==
+# == Undo
+# ==
+
+[[plugins]]
+repo = 'mbbill/undotree'
+
+# ==
+# == Async
+# ==
+
+[[plugins]]
+repo = 'skywind3000/asyncrun.vim'
+
+[[plugins]]
+repo = 'skywind3000/asynctasks.vim'
+
+# ==
+# == Git
+# ==
+
+[[plugins]]
+repo = 'rhysd/conflict-marker.vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'mhinz/vim-signify'
+
+[[plugins]]
+repo = 'APZelos/blamer.nvim'
