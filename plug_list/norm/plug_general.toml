@@ -20,6 +20,9 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'wsdjeg/dein-ui.vim'
+hook_post_update = '''
+echom "hello"
+'''
 
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
