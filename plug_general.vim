@@ -15,7 +15,6 @@
 "                                                                              "
 "*******************************************************************************
 
-
 " ===
 " === UI
 " ===
@@ -23,16 +22,15 @@ Jetpack 'lambdalisue/nerdfont.vim'
 Jetpack 'ryanoasis/vim-devicons'
 Jetpack 'itchyny/lightline.vim'
 Jetpack 'niklaas/lightline-gitdiff'
-Jetpack 'luochen1990/rainbow'
+Jetpack 'luochen1990/rainbow', {'event':'BufReadPost'}
 Jetpack 'Yggdroot/indentLine'
-Jetpack 'RRethy/vim-illuminate'
-Jetpack 'voldikss/vim-floaterm'
+Jetpack 'RRethy/vim-illuminate', {'event':'BufReadPost'}
+Jetpack 'voldikss/vim-floaterm', {'event':'BufReadPost'}
 
 " ===
 " === File navigation
 " ===
-Jetpack 'mhinz/vim-startify'
-Jetpack 'csch0/vim-startify-renderer-nerdfont'
+" TODO: use other file manager
 Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 Jetpack 'lambdalisue/fern.vim', {'branch':'main'}
 Jetpack 'lambdalisue/fern-git-status.vim'
@@ -46,47 +44,47 @@ Jetpack 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 " ===
 " === General Highlight
 " ===
-Jetpack 'chrisbra/Colorizer'
-Jetpack 'sakshamgupta05/vim-todo-highlight'
+Jetpack 'chrisbra/Colorizer', {'event':'BufReadPost'}
+Jetpack 'sakshamgupta05/vim-todo-highlight', {'event':'BufReadPost'}
 
 " ===
 " === General Enhancement
 " ===
-Jetpack 'junegunn/vim-peekaboo'
-Jetpack 'tpope/vim-speeddating'
-Jetpack 'junegunn/vim-easy-align'
-Jetpack 'mg979/vim-visual-multi', {'branch': 'master'}
-Jetpack '907th/vim-auto-save'
+Jetpack 'junegunn/vim-peekaboo', {'event':'BufReadPost'}
+Jetpack 'tpope/vim-speeddating', {'event':'BufReadPost'}
+Jetpack 'junegunn/vim-easy-align', {'event':'BufReadPost'}
+Jetpack 'mg979/vim-visual-multi', {'branch': 'master', 'event':'BufReadPost'}
+Jetpack '907th/vim-auto-save', {'event':'BufReadPost'}
 
 " ===
 " === Fold
 " ===
-Jetpack 'lambdalisue/readablefold.vim'
+Jetpack 'lambdalisue/readablefold.vim', {'event':'BufReadPost'}
 
 " ===
 " === Text object
 " ===
-Jetpack 'wellle/targets.vim'
-Jetpack 'kana/vim-textobj-user'
-Jetpack 'thinca/vim-textobj-between'
+Jetpack 'wellle/targets.vim', {'event':'BufReadPost'}
+Jetpack 'kana/vim-textobj-user', {'event':'BufReadPost'}
+Jetpack 'thinca/vim-textobj-between', {'event':'BufReadPost'}
 
 " ===
 " === Undo
 " ===
-Jetpack 'mbbill/undotree'
+Jetpack 'mbbill/undotree', {'event':'BufReadPost'}
 
 " ===
 " === Async
 " ===
-Jetpack 'skywind3000/asyncrun.vim'
-Jetpack 'skywind3000/asynctasks.vim'
+Jetpack 'skywind3000/asyncrun.vim', {'event':'BufReadPost'}
+Jetpack 'skywind3000/asynctasks.vim', {'event':'BufReadPost'}
 
 " ===
 " === Git
 " ===
-Jetpack 'rhysd/conflict-marker.vim'
-Jetpack 'tpope/vim-fugitive'
-Jetpack 'mhinz/vim-signify'
+Jetpack 'rhysd/conflict-marker.vim', {'event':'BufReadPost'}
+Jetpack 'tpope/vim-fugitive', {'event':'BufReadPost'}
+Jetpack 'mhinz/vim-signify', {'event':'BufReadPost'}
 if has('nvim') || has('popupwin')
-    Jetpack 'APZelos/blamer.nvim'
+    Jetpack 'APZelos/blamer.nvim', {'event':'BufReadPost'}
 endif

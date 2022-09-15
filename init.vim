@@ -113,6 +113,7 @@ source $CONF_PATH/basic/mappings.vim
 packadd vim-jetpack
 
 call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1}
 if g:old_school_vim_plug_general == 1
     source $CONF_PATH/plug_general.vim
 endif
