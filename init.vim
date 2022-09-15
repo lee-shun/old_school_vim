@@ -88,14 +88,12 @@ let s:dein_dir = $CONF_PATH."/dein"
 let s:norm_plug_dir = $CONF_PATH.'/plug_toml/norm'
 let s:lazy_plug_dir = $CONF_PATH.'/plug_toml/lazy'
 
-if dein#load_state(s:dein_dir)
-    call dein#begin(s:dein_dir)
-    if g:old_school_vim_plug_general == 1
-        call dein#load_toml(s:norm_plug_dir.'/plug_general.toml', {'lazy':0})
-        call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
-    endif
-    call dein#end()
-    call dein#save_state()
+call dein#begin(s:dein_dir)
+if g:old_school_vim_plug_general == 1
+    call dein#load_toml(s:norm_plug_dir.'/plug_general.toml', {'lazy':0})
+    call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
+endif
+call dein#end()
 endif
 
 filetype plugin indent on
