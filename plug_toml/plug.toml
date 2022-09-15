@@ -33,29 +33,7 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = '''
-let g:lightline = {
-            \ 'colorscheme': g:colors_name,
-            \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-            \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
-            \ 'active': {
-            \ 'left': [ [ 'mode', 'paste' ],
-            \ [ 'readonly', 'filename', 'modified' ],
-            \ [ 'gitbranch', 'gitdiff']],
-            \ 'right': [ [ 'lineinfo' ],
-            \              [ 'percent' ],]
-            \ },
-            \ 'inactive': {
-            \   'left': [ [ 'filename' ] ],
-            \   'right': [ [ 'filetype' ] ] },
-            \ 'component_function': {
-            \ 'gitbranch': 'FugitiveHead',
-            \ },
-            \ 'component_expand': {
-            \ 'gitdiff': 'lightline#gitdiff#get',
-            \ },
-            \ }
-'''
+hook_add = ''' source $CONF_PATH/plug_conf/lightline_conf.vim '''
 
 [[plugins]]
 repo = 'niklaas/lightline-gitdiff'
@@ -84,10 +62,13 @@ nnoremap <leader>ra :FloatermNew --height=0.6 --width=0.8 --wintype=float ranger
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 
 [[plugins]]
-repo = 'lambdalisue/fern.vim'
+repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
-repo = 'lambdalisue/fern-git-status.vim'
+repo = 'lambdalisue/fern.vim'
+hook_add = ''' source $CONF_PATH/plug_conf/fern_conf.vim '''
+depends = ['fern-git-status.vim','fern-renderer-nerdfont.vim']
+
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
@@ -98,6 +79,7 @@ repo = 'airblade/vim-rooter'
 
 [[plugins]]
 repo = 'Yggdroot/LeaderF'
+hook_add = ''' source $CONF_PATH/plug_conf/leaderF_conf.vim '''
 
 # ==
 # == General Highlight
