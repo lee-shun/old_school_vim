@@ -16,55 +16,41 @@
 #*******************************************************************************
 
 [[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'wsdjeg/dein-ui.vim'
-
-# ==
-# == UI
-# ==
-
-[[plugins]]
-repo = 'lambdalisue/nerdfont.vim'
-
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
+repo = 'niklaas/lightline-gitdiff'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+depends = ['lightline-gitdiff', 'vim-fugitive']
+on_event = ['BufReadPre']
 hook_add = '''
 source $CONF_PATH/plug_conf/lightline_conf.vim
 '''
 
 [[plugins]]
-repo = 'niklaas/lightline-gitdiff'
-
-[[plugins]]
 repo = 'luochen1990/rainbow'
+on_event = ['BufReadPost']
 hook_add = '''
 let g:rainbow_active = 1
 '''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+on_event = ['BufReadPre']
 hook_add = '''
 source $CONF_PATH/plug_conf/indentLine_conf.vim
 '''
 
 [[plugins]]
 repo = 'RRethy/vim-illuminate'
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'voldikss/vim-floaterm'
+on_event = ['BufReadPost']
 hook_add = '''
 let g:floaterm_keymap_toggle = '<F12>'
 nnoremap <leader>ra :FloatermNew --height=0.6 --width=0.8 --wintype=float ranger<CR>
 '''
-
-# ==
-# == File navigation
-# ==
 
 [[plugins]]
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
@@ -74,6 +60,7 @@ repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
+on_map  = {n='<leader>t'}
 depends = ['fern-git-status.vim','fern-renderer-nerdfont.vim']
 hook_add = '''
 source $CONF_PATH/plug_conf/fern_conf.vim
@@ -81,30 +68,27 @@ source $CONF_PATH/plug_conf/fern_conf.vim
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
+on_event = ['BufReadPost']
 hook_add = '''
 let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_patterns = ['.vim_root', 'compile_commands.json','.clang-format','.git','=code','package.xml']
 '''
 
-# ==
-# == File Finder
-# ==
-
 [[plugins]]
 repo = 'Yggdroot/LeaderF'
+on_map  = {n='<leader>f'}
 hook_add = '''
 source $CONF_PATH/plug_conf/leaderF_conf.vim
 '''
 
-# ==
-# == General Highlight
-# ==
-
 [[plugins]]
 repo = 'chrisbra/Colorizer'
+on_event = ['BufReadPost']
+on_cmd = ['ColorToggle']
 
 [[plugins]]
 repo = 'sakshamgupta05/vim-todo-highlight'
+on_event = ['BufReadPost']
 hook_add  = '''
 let g:todo_highlight_config = {
             \   'STEP': {
@@ -121,77 +105,55 @@ let g:todo_highlight_config = {
             \ }
 '''
 
-# ==
-# == General Enhancement
-# ==
-
 [[plugins]]
 repo = 'junegunn/vim-peekaboo'
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'tpope/vim-speeddating'
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
+on_event = ['BufReadPost']
+on_map = '<Plug>(EasyAlign)'
 
 [[plugins]]
 repo = 'mg979/vim-visual-multi'
+on_map = {n='<C-n>'}
 
 [[plugins]]
 repo = '907th/vim-auto-save'
+on_event = ['BufReadPost']
 hook_add  = '''
 source $CONF_PATH/plug_conf/auto_save_conf.vim
 '''
 
-# ==
-# == Fold
-# ==
-
 [[plugins]]
 repo = 'lambdalisue/readablefold.vim'
-
-# ==
-# == Text object
-# ==
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'wellle/targets.vim'
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'kana/vim-textobj-user'
 
 [[plugins]]
 repo = 'thinca/vim-textobj-between'
-
-# ==
-# == Undo
-# ==
+depends = ['vim-textobj-user']
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'mbbill/undotree'
-
-# ==
-# == Async
-# ==
+on_cmd = ['UndoTreeToggle']
 
 [[plugins]]
 repo = 'skywind3000/asyncrun.vim'
+on_event = ['BufReadPost']
 
 [[plugins]]
 repo = 'skywind3000/asynctasks.vim'
-
-# ==
-# == Git
-# ==
-
-[[plugins]]
-repo = 'rhysd/conflict-marker.vim'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'mhinz/vim-signify'
-
-[[plugins]]
-repo = 'APZelos/blamer.nvim'
+depedns=['asyncrun.vim']
+on_event = ['BufReadPost']
