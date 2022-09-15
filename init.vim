@@ -85,16 +85,17 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
 let s:dein_dir = $CONF_PATH."/dein"
-let s:norm_plug_dir = $CONF_PATH.'/plug_toml/norm'
-let s:lazy_plug_dir = $CONF_PATH.'/plug_toml/lazy'
+let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
+let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
 call dein#begin(s:dein_dir)
 if g:old_school_vim_plug_general == 1
     call dein#load_toml(s:norm_plug_dir.'/plug_general.toml', {'lazy':0})
-    call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
+    " call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
 endif
+
+source $CONF_PATH/plug_list/lazy/plug_general.vim
 call dein#end()
-endif
 
 filetype plugin indent on
 syntax enable
