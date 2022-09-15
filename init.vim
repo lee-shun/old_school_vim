@@ -90,11 +90,10 @@ let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
 call dein#begin(s:dein_dir)
 if g:old_school_vim_plug_general == 1
-    call dein#load_toml(s:norm_plug_dir.'/plug_general.toml', {'lazy':0})
-    " call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
+source $CONF_PATH/plug_list/norm/plug_general.vim
+source $CONF_PATH/plug_list/lazy/plug_general.vim
 endif
 
-source $CONF_PATH/plug_list/lazy/plug_general.vim
 call dein#end()
 
 filetype plugin indent on
