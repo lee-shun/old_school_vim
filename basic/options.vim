@@ -260,6 +260,5 @@ endif
 " ===
 " === colorscheme
 " ===
-if g:old_school_vim_ulti_mode == 0
-    colorscheme seoul256
-endif
+set background=dark
+colorscheme seoul256
