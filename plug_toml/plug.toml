@@ -33,16 +33,24 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = ''' source $CONF_PATH/plug_conf/lightline_conf.vim '''
+hook_add = '''
+source $CONF_PATH/plug_conf/lightline_conf.vim
+'''
 
 [[plugins]]
 repo = 'niklaas/lightline-gitdiff'
 
 [[plugins]]
 repo = 'luochen1990/rainbow'
+hook_add = '''
+let g:rainbow_active = 1
+'''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+hook_add = '''
+source $CONF_PATH/plug_conf/indentLine_conf.vim
+'''
 
 [[plugins]]
 repo = 'RRethy/vim-illuminate'
@@ -66,12 +74,17 @@ repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
-hook_add = ''' source $CONF_PATH/plug_conf/fern_conf.vim '''
 depends = ['fern-git-status.vim','fern-renderer-nerdfont.vim']
-
+hook_add = '''
+source $CONF_PATH/plug_conf/fern_conf.vim
+'''
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
+hook_add = '''
+let g:rooter_change_directory_for_non_project_files = 'current'
+let g:rooter_patterns = ['.vim_root', 'compile_commands.json','.clang-format','.git','=code','package.xml']
+'''
 
 # ==
 # == File Finder
@@ -79,7 +92,9 @@ repo = 'airblade/vim-rooter'
 
 [[plugins]]
 repo = 'Yggdroot/LeaderF'
-hook_add = ''' source $CONF_PATH/plug_conf/leaderF_conf.vim '''
+hook_add = '''
+source $CONF_PATH/plug_conf/leaderF_conf.vim
+'''
 
 # ==
 # == General Highlight
@@ -90,6 +105,21 @@ repo = 'chrisbra/Colorizer'
 
 [[plugins]]
 repo = 'sakshamgupta05/vim-todo-highlight'
+hook_add  = '''
+let g:todo_highlight_config = {
+            \   'STEP': {
+            \     'gui_fg_color': '#ffffff',
+            \     'gui_bg_color': '#27AE60 ',
+            \     'cterm_fg_color': 'white',
+            \     'cterm_bg_color': 'green' },
+            \   'NOTE': {
+            \     'gui_fg_color': '#ffffff',
+            \     'gui_bg_color': '#ffbd2a',
+            \     'cterm_fg_color': 'white',
+            \     'cterm_bg_color': '214'
+            \   }
+            \ }
+'''
 
 # ==
 # == General Enhancement
@@ -109,6 +139,9 @@ repo = 'mg979/vim-visual-multi'
 
 [[plugins]]
 repo = '907th/vim-auto-save'
+hook_add  = '''
+source $CONF_PATH/plug_conf/auto_save_conf.vim
+'''
 
 # ==
 # == Fold
