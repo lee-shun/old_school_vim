@@ -60,8 +60,8 @@ repo = 'lambdalisue/fern-git-status.vim'
 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
-on_map  = {n='<leader>t'}
 depends = ['fern-git-status.vim','fern-renderer-nerdfont.vim']
+on_event = ['BufReadPost']
 hook_add = '''
 source $CONF_PATH/plug_conf/fern_conf.vim
 '''
