@@ -93,4 +93,3 @@ call dein#add('mhinz/vim-signify', {'lazy':1,
 
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'], })
-

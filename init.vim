@@ -92,10 +92,10 @@ call dein#begin(s:dein_dir)
 if g:old_school_vim_plug_general == 1
 source $CONF_PATH/plug_list/norm/plug_general.vim
 source $CONF_PATH/plug_list/lazy/plug_general.vim
+source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
 endif
 
 call dein#end()
 
 filetype plugin indent on
 syntax enable
-
