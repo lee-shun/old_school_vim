@@ -18,17 +18,25 @@
 " ===
 " === deoplete
 " ===
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option({
-            \ 'auto_complete_delay': 10,
-            \ 'smart_case': v:true,
-            \ })
-" for latex
-if(exists('g:loaded_vimtex'))
-    call deoplete#custom#var('omni', 'input_patterns', {
-                \ 'tex': g:vimtex#re#deoplete
-                \})
-endif
+function! SetupDeopeleteNvim() abort
+    call deoplete#custom#option({
+                \ 'auto_complete_delay': 10,
+                \ 'smart_case': v:true,
+                \ })
+    " for latex
+    if(exists('g:loaded_vimtex'))
+        call deoplete#custom#var('omni', 'input_patterns', {
+                    \ 'tex': g:vimtex#re#deoplete
+                    \})
+    endif
+endfunction
+
+augroup SetupDeopeleteNvim
+    autocmd!
+    autocmd User JetpackDeopeleteNvimPost echom "hello Lazy loaded!"
+    autocmd User JetpackDeopeleteNvimPost call SetupDeopeleteNvim()
+augroup END
+
 " ===
 " === map for TAB
 " ===
