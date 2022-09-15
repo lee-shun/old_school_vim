@@ -24,7 +24,9 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
 set ffs=unix,dos,mac
 
-set nocompatible
+if &compatible
+  set nocompatible " Be iMproved
+endif
 let g:mapleader = ' '
 set autochdir
 set autoread
@@ -42,6 +44,8 @@ if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
 endif
 
 " display
+filetype plugin indent on
+syntax enable
 set scrolloff=5
 set number
 set relativenumber
