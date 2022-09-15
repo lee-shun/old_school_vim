@@ -75,31 +75,31 @@ if g:old_school_vim_ulti_mode == 1
 
 endif
 
-" ===
-" === automatic config
-" ===
-if empty(glob($CONF_PATH."/pack/")) && g:old_school_vim_ulti_mode == 1
-    if has('nvim')
-        let s:jetpackfile = stdpath('data') .. '/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-        let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
-        if !filereadable(s:jetpackfile)
-            call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
-        endif
-    else
-        let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-        let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
-        if !filereadable(s:jetpackfile)
-            call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
-        endif
-    endif
+" " ===
+" " === automatic config
+" " ===
+" if empty(glob($CONF_PATH."/plugged/")) && g:old_school_vim_ulti_mode == 1
+"     if has('nvim')
+"         let s:jetpackfile = stdpath('data') .. '/site/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+"         let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+"         if !filereadable(s:jetpackfile)
+"             call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+"         endif
+"     else
+"         let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+"         let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+"         if !filereadable(s:jetpackfile)
+"             call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+"         endif
+"     endif
 
-    " install vim plugins
-    autocmd VimEnter * JetpackSync | source $MYVIMRC
+"     " install vim plugins
+"     autocmd VimEnter * JetpackSync | source $MYVIMRC
 
-    if has('nvim')
-        autocmd VimEnter * UpdateRemotePlugins
-    endif
-endif
+"     if has('nvim')
+"         autocmd VimEnter * UpdateRemotePlugins
+"     endif
+" endif
 
 " ===
 " === basic config
@@ -110,49 +110,59 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === plug
 " ===
-packadd vim-jetpack
+set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
+let s:dein_dir = $CONF_PATH."/dein"
+let s:plug = $CONF_PATH.'/plug_toml/plug.toml'
+let s:plug_lazy = $CONF_PATH.'/plug_toml/plug_lazy.toml'
 
-call jetpack#begin()
-Jetpack 'tani/vim-jetpack', {'opt': 1}
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-if g:old_school_vim_plug_general == 1
-    source $CONF_PATH/plug_general.vim
-endif
-if g:old_school_vim_plug_advanced == 1
-    source $CONF_PATH/plug_advanced/plug_advanced.vim
-endif
-if g:old_school_vim_plug_deoplete == 1
-    source $CONF_PATH/plug_advanced/plug_deoplete.vim
-endif
-if g:old_school_vim_plug_asyncomplete == 1
-    source $CONF_PATH/plug_advanced/plug_asyncomplete.vim
-endif
-if g:old_school_vim_plug_ycm == 1
-    source $CONF_PATH/plug_advanced/plug_ycm.vim
-endif
-if g:old_school_vim_plug_lsp == 1
-    source $CONF_PATH/plug_advanced/plug_lsp.vim
-endif
-call jetpack#end()
+    call dein#load_toml(s:plug, {'lazy':0})
+    call dein#load_toml(s:plug_lazy, {'lazy':1})
 
-" ===
-" === plug_settings
-" ===
-if g:old_school_vim_plug_general == 1
-    source $CONF_PATH/plug_general_settings.vim
+  call dein#end()
+    call dein#save_state()
 endif
-if g:old_school_vim_plug_advanced == 1
-    source $CONF_PATH/plug_advanced/plug_advanced_settings.vim
-endif
-if g:old_school_vim_plug_deoplete == 1
-    source $CONF_PATH/plug_advanced/plug_deoplete_settings.vim
-endif
-if g:old_school_vim_plug_asyncomplete == 1
-    source $CONF_PATH/plug_advanced/plug_asyncomplete_settings.vim
-endif
-if g:old_school_vim_plug_ycm == 1
-    source $CONF_PATH/plug_advanced/plug_ycm_settings.vim
-endif
-if g:old_school_vim_plug_lsp == 1
-    source $CONF_PATH/plug_advanced/plug_lsp_settings.vim
-endif
+
+
+" if g:old_school_vim_plug_general == 1
+"     source $CONF_PATH/plug_general.vim
+" endif
+" if g:old_school_vim_plug_advanced == 1
+"     source $CONF_PATH/plug_advanced/plug_advanced.vim
+" endif
+" if g:old_school_vim_plug_deoplete == 1
+"     source $CONF_PATH/plug_advanced/plug_deoplete.vim
+" endif
+" if g:old_school_vim_plug_asyncomplete == 1
+"     source $CONF_PATH/plug_advanced/plug_asyncomplete.vim
+" endif
+" if g:old_school_vim_plug_ycm == 1
+"     source $CONF_PATH/plug_advanced/plug_ycm.vim
+" endif
+" if g:old_school_vim_plug_lsp == 1
+"     source $CONF_PATH/plug_advanced/plug_lsp.vim
+" endif
+
+" " ===
+" " === plug_settings
+" " ===
+" if g:old_school_vim_plug_general == 1
+"     source $CONF_PATH/plug_general_settings.vim
+" endif
+" if g:old_school_vim_plug_advanced == 1
+"     source $CONF_PATH/plug_advanced/plug_advanced_settings.vim
+" endif
+" if g:old_school_vim_plug_deoplete == 1
+"     source $CONF_PATH/plug_advanced/plug_deoplete_settings.vim
+" endif
+" if g:old_school_vim_plug_asyncomplete == 1
+"     source $CONF_PATH/plug_advanced/plug_asyncomplete_settings.vim
+" endif
+" if g:old_school_vim_plug_ycm == 1
+"     source $CONF_PATH/plug_advanced/plug_ycm_settings.vim
+" endif
+" if g:old_school_vim_plug_lsp == 1
+"     source $CONF_PATH/plug_advanced/plug_lsp_settings.vim
+" endif
