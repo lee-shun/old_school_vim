@@ -70,13 +70,6 @@ let g:lightline = {
             \ }
 
 " ===
-" === startify
-" ===
-function! StartifyEntryFormat()
-    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
-
-" ===
 " === rooter.vim
 " ===
 let g:rooter_change_directory_for_non_project_files = 'current'

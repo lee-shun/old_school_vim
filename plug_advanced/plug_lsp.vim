@@ -27,6 +27,6 @@ if g:os_name == 'Linux'
 
     " c++
     if executable('ccls')
-        Jetpack 'jackguo380/vim-lsp-cxx-highlight'
+        Jetpack 'jackguo380/vim-lsp-cxx-highlight', {'for':['cpp', 'c']}
     endif
 endif

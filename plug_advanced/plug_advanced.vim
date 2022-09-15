@@ -18,7 +18,7 @@
 " ===
 " === Translate
 " ===
-Jetpack 'voldikss/vim-translator'
+Jetpack 'voldikss/vim-translator', {'cmd':'TranslateW'}
 
 " ===
 " === Snippets
@@ -40,14 +40,13 @@ if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Window
     " only Linux_x86_64, Windows have this plugin
     Jetpack 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()  }, 'for' :['markdown', 'vim-plug']  }
 endif
-Jetpack 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle'  }
-Jetpack 'lee-shun/vim-markdown-wiki'
-Jetpack 'ferrine/md-img-paste.vim'
+Jetpack 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle', 'for':'markdown'  }
+Jetpack 'ferrine/md-img-paste.vim',{'for':'markdown'}
 
 " ===
 " === Latex
 " ===
-Jetpack 'lervag/vimtex'
+Jetpack 'lervag/vimtex', {'for':'tex'}
 
 " ===
 " === ros
