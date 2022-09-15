@@ -15,6 +15,7 @@
 "                                                                              "
 "*******************************************************************************
 
+
 " ===
 " === path
 " ===
@@ -40,11 +41,11 @@ let g:old_school_vim_plug_lsp = 1 " vim-lsp as backend of the above frameworks.
 
 " don't use any of the plugs if ulti-mode is deactived
 if g:old_school_vim_ulti_mode == 0
-let g:old_school_vim_plug_general = 0
-let g:old_school_vim_plug_advanced = 0
-let g:old_school_vim_plug_deoplete = 0
-let g:old_school_vim_plug_asyncomplete = 0
-let g:old_school_vim_plug_lsp = 0
+    let g:old_school_vim_plug_general = 0
+    let g:old_school_vim_plug_advanced = 0
+    let g:old_school_vim_plug_deoplete = 0
+    let g:old_school_vim_plug_asyncomplete = 0
+    let g:old_school_vim_plug_lsp = 0
 endif
 
 " ===
@@ -52,26 +53,26 @@ endif
 " ===
 if g:old_school_vim_ulti_mode == 1
 
-if !exists("g:os_name")
-if has("win64") || has("win32") || has("win16")
-let g:os_name = "Windows"
-else " not windows, use 'uname' command.
-let g:os_name = substitute(system('uname'), '\n', '', '')
-let g:os_architect =substitute(system('uname -m'), '\n', '', '')
-endif
-endif
+    if !exists("g:os_name")
+        if has("win64") || has("win32") || has("win16")
+            let g:os_name = "Windows"
+        else " not windows, use 'uname' command.
+            let g:os_name = substitute(system('uname'), '\n', '', '')
+            let g:os_architect =substitute(system('uname -m'), '\n', '', '')
+        endif
+    endif
 
-if g:os_name == 'Windows' && has('nvim') " nvim on win
-let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-elseif g:os_name == 'Linux'
-if executable('conda')
-let g:python_host_prog='/usr/bin/python'
-let g:python3_host_prog='python'
-else
-let g:python_host_prog='/usr/bin/python'
-let g:python3_host_prog='/usr/bin/python3'
-endif
-endif
+    if g:os_name == 'Windows' && has('nvim') " nvim on win
+        let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
+    elseif g:os_name == 'Linux'
+        if executable('conda')
+            let g:python_host_prog='/usr/bin/python'
+            let g:python3_host_prog='python'
+        else
+            let g:python_host_prog='/usr/bin/python'
+            let g:python3_host_prog='/usr/bin/python3'
+        endif
+    endif
 
 endif
 
@@ -115,54 +116,16 @@ let s:dein_dir = $CONF_PATH."/dein"
 let s:norm_plug_dir = $CONF_PATH.'/plug_toml/norm'
 let s:lazy_plug_dir = $CONF_PATH.'/plug_toml/lazy'
 
-    if dein#load_state(s:dein_dir)
-call dein#begin(s:dein_dir)
-
+if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
     if g:old_school_vim_plug_general == 1
-    call dein#load_toml(s:norm_plug_dir.'/plug_general.toml', {'lazy':0})
-    call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
+        call dein#load_toml(s:norm_plug_dir.'/plug_general.toml', {'lazy':0})
+        call dein#load_toml(s:lazy_plug_dir.'/plug_general.toml', {'lazy':1})
     endif
-
     call dein#end()
-call dein#save_state()
-    endif
+    call dein#save_state()
+endif
 
+filetype plugin indent on
+syntax enable
 
-    "     source $CONF_PATH/plug_general.vim
-    " if g:old_school_vim_plug_advanced == 1
-    "     source $CONF_PATH/plug_advanced/plug_advanced.vim
-    " endif
-    " if g:old_school_vim_plug_deoplete == 1
-    "     source $CONF_PATH/plug_advanced/plug_deoplete.vim
-    " endif
-    " if g:old_school_vim_plug_asyncomplete == 1
-    "     source $CONF_PATH/plug_advanced/plug_asyncomplete.vim
-    " endif
-    " if g:old_school_vim_plug_ycm == 1
-    "     source $CONF_PATH/plug_advanced/plug_ycm.vim
-    " endif
-    " if g:old_school_vim_plug_lsp == 1
-    "     source $CONF_PATH/plug_advanced/plug_lsp.vim
-    " endif
-
-    " " ===
-    " " === plug_settings
-    " " ===
-    " if g:old_school_vim_plug_general == 1
-    "     source $CONF_PATH/plug_general_settings.vim
-    " endif
-    " if g:old_school_vim_plug_advanced == 1
-    "     source $CONF_PATH/plug_advanced/plug_advanced_settings.vim
-    " endif
-    " if g:old_school_vim_plug_deoplete == 1
-    "     source $CONF_PATH/plug_advanced/plug_deoplete_settings.vim
-    " endif
-    " if g:old_school_vim_plug_asyncomplete == 1
-    "     source $CONF_PATH/plug_advanced/plug_asyncomplete_settings.vim
-    " endif
-    " if g:old_school_vim_plug_ycm == 1
-    "     source $CONF_PATH/plug_advanced/plug_ycm_settings.vim
-    " endif
-    " if g:old_school_vim_plug_lsp == 1
-    "     source $CONF_PATH/plug_advanced/plug_lsp_settings.vim
-    " endif

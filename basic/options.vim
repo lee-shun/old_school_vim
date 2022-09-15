@@ -28,8 +28,6 @@ set nocompatible
 let g:mapleader = ' '
 set autochdir
 set autoread
-filetype plugin indent on
-
 
 " for gvim and neovim gui, currently dotnvim or neovide
 if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
@@ -44,7 +42,6 @@ if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
 endif
 
 " display
-syntax on
 set scrolloff=5
 set number
 set relativenumber
@@ -95,7 +92,7 @@ endif
 
 " keyword match
 set showmatch
-set iskeyword+=_,$,@,%,#
+set iskeyword+=_,$,@,%,#,:
 set matchpairs=(:),{:},[:],<:>
 set whichwrap=b,s,<,>,[,]
 
