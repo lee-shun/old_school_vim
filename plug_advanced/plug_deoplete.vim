@@ -21,7 +21,7 @@
 if has('nvim')
     Jetpack 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
 else
-    Jetpack 'Shougo/deoplete.nvim', {'event':'BufReadPre'}
+    Jetpack 'Shougo/deoplete.nvim'
     Jetpack 'roxma/nvim-yarp'
     Jetpack 'roxma/vim-hug-neovim-rpc'
 endif
@@ -33,8 +33,8 @@ if g:os_name == 'Windows'
     Jetpack 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1'}
     Jetpack 'deoplete-plugins/deoplete-jedi'
 elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-    Jetpack 'tbodt/deoplete-tabnine', { 'do': './install.sh', 'event':'User JetpackDeopeleteNvimPost'}
+    Jetpack 'tbodt/deoplete-tabnine', { 'do': './install.sh'}
     if(g:old_school_vim_plug_lsp == 1)
-        Jetpack 'lighttiger2505/deoplete-vim-lsp',{'event':'User JetpackDeopeleteNvimPost '}
+        Jetpack 'lighttiger2505/deoplete-vim-lsp'
     endif
 endif
