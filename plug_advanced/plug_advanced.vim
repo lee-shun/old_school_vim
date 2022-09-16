@@ -31,7 +31,7 @@ endif
 " ===
 " === code format
 " ===
-Jetpack 'sbdchd/neoformat'
+Jetpack 'sbdchd/neoformat', {'cmd':'Neoformat'}
 
 " ===
 " === Markdown
@@ -54,8 +54,3 @@ Jetpack 'lervag/vimtex', {'for':'tex'}
 if (g:os_name == 'Linux') && (executable('roscore'))
     Jetpack 'taketwo/vim-ros', { 'for' : 'rosmsg', 'on':'Roscd'}
 endif
-
-" ===
-" === other files
-" ===
-Jetpack 'edersonferreira/open.vim'
