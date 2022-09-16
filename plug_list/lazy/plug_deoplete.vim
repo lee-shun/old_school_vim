@@ -5,4 +5,3 @@ call dein#add('Shougo/deoplete.nvim',{'lazy':1,
             \'on_event': 'InsertEnter',
             \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
             \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim' })
-

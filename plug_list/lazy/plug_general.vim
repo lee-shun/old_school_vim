@@ -1,3 +1,9 @@
+call dein#add('lambdalisue/nerdfont.vim', {'lazy':1})
+
+call dein#add('ryanoasis/vim-devicons', {'lazy':1})
+
+call dein#add('tpope/vim-fugitive', {'lazy':1})
+
 call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
 
 call dein#add('itchyny/lightline.vim', {'lazy':1,
@@ -28,7 +34,8 @@ call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
 call dein#add('lambdalisue/fern.vim', {'lazy':1,
             \'depends':['fern-git-status.vim','fern-renderer-nerdfont.vim'],
             \'on_event':['BufReadPost'],
-            \'hook_add':'source $CONF_PATH/plug_conf/fern_conf.vim'})
+            \'on_map':{'n':'<leader>t'},
+            \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
             \'on_event' : ['BufReadPost'],
