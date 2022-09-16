@@ -99,6 +99,5 @@ let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
     " call dein#save_state()
 " endif
 
-source $CONF_PATH/plug_conf/vim_lsp_conf.vim
 filetype plugin indent on
 syntax enable
