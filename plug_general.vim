@@ -31,6 +31,7 @@ Jetpack 'voldikss/vim-floaterm', {'event':'BufReadPost'}
 " === File navigation
 " ===
 " TODO: use other file manager
+Jetpack 'mhinz/vim-startify'
 Jetpack 'lambdalisue/fern-renderer-nerdfont.vim'
 Jetpack 'lambdalisue/fern.vim', {'branch':'main'}
 Jetpack 'lambdalisue/fern-git-status.vim'
