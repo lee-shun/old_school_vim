@@ -88,18 +88,17 @@ let s:dein_dir = $CONF_PATH."/dein"
 let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
 let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
-if dein#load_state(s:dein_dir)
+" if dein#load_state(s:dein_dir)
 
     call dein#begin(s:dein_dir)
-    if g:old_school_vim_plug_general == 1
         source $CONF_PATH/plug_list/norm/plug_general.vim
         source $CONF_PATH/plug_list/lazy/plug_general.vim
         source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
-    endif
-
+        source $CONF_PATH/plug_list/lazy/plug_lsp.vim
     call dein#end()
-    call dein#save_state()
-endif
+    " call dein#save_state()
+" endif
 
+source $CONF_PATH/plug_conf/vim_lsp_conf.vim
 filetype plugin indent on
 syntax enable

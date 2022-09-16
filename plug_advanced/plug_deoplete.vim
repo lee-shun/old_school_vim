@@ -26,15 +26,3 @@ else
     Jetpack 'roxma/vim-hug-neovim-rpc'
 endif
 
-" ===
-" === deoplete plugins
-" ===
-if g:os_name == 'Windows'
-    Jetpack 'tbodt/deoplete-tabnine', { 'do': 'powershell.exe .\install.ps1'}
-    Jetpack 'deoplete-plugins/deoplete-jedi'
-elseif g:os_name == 'Linux'&&g:os_architect =='x86_64'
-    Jetpack 'tbodt/deoplete-tabnine', { 'do': './install.sh', 'event':'User JetpackDeopeleteNvimPost'}
-    if(g:old_school_vim_plug_lsp == 1)
-        Jetpack 'lighttiger2505/deoplete-vim-lsp',{'event':'User JetpackDeopeleteNvimPost '}
-    endif
-endif
