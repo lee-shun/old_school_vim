@@ -19,4 +19,3 @@ call dein#add('rhysd/vim-lsp-ale', {'lazy':1,
 call dein#add('maximbaz/lightline-ale', {'lazy':1,
             \'depends':['lightline.vim', 'vim-lsp', 'ale'],
             \'on_event':'BufReadPost',})
-

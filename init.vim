@@ -93,6 +93,7 @@ let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
     call dein#begin(s:dein_dir)
         source $CONF_PATH/plug_list/norm/plug_general.vim
         source $CONF_PATH/plug_list/lazy/plug_general.vim
+        source $CONF_PATH/plug_list/lazy/plug_advanced.vim
         source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
         source $CONF_PATH/plug_list/lazy/plug_lsp.vim
     call dein#end()
