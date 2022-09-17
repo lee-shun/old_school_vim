@@ -99,5 +99,9 @@ let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
     " call dein#save_state()
 " endif
 
+" enable the post source
+autocmd VimEnter * call dein#call_hook('post_source')
+
+
 filetype plugin indent on
 syntax enable
