@@ -50,14 +50,6 @@ au User asyncomplete_setup call asyncomplete#register_source({
             \ 'completor': function('asyncomplete#sources#look#completor'),
             \ })
 
-" next word
-call asyncomplete#register_source(asyncomplete#sources#nextword#get_source_options({
-            \   'name': 'nextword',
-            \   'allowlist': ['*'],
-            \   'args': ['-n', '10000'],
-            \   'completor': function('asyncomplete#sources#nextword#completor')
-            \   }))
-
 " file
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
             \ 'name': 'file',
@@ -67,7 +59,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ }))
 
 " tabnine
-call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
             \ 'name': 'tabnine',
             \ 'allowlist': ['*'],
             \ 'completor': function('asyncomplete#sources#tabnine#completor'),
@@ -85,3 +77,9 @@ if has('python3')
                 \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
                 \ }))
 endif
+
+" ale
+au User asyncomplete_setup call asyncomplete#ale#register_source({
+            \ 'name': 'reason',
+            \ 'linter': 'flow',
+            \ })

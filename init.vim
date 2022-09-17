@@ -31,8 +31,8 @@ let g:old_school_vim_plug_general = 1
 let g:old_school_vim_plug_advanced = 1
 
 " choose one of following complete engines
-let g:old_school_vim_plug_deoplete = 1
-let g:old_school_vim_plug_asyncomplete = 0
+let g:old_school_vim_plug_deoplete = 0
+let g:old_school_vim_plug_asyncomplete = 1
 " use the ycm
 let g:old_school_vim_plug_ycm = 0
 
