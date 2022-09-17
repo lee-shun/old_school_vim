@@ -18,6 +18,7 @@
 Jetpack 'prabirshrestha/asyncomplete.vim'
 if(g:old_school_vim_plug_lsp == 1)
     Jetpack 'prabirshrestha/asyncomplete-lsp.vim'
+    Jetpack 'andreypopp/asyncomplete-ale.vim'
 endif
 
 " ===
@@ -25,7 +26,6 @@ endif
 " ===
 Jetpack 'prabirshrestha/asyncomplete-buffer.vim'
 Jetpack 'htlsne/asyncomplete-look'
-Jetpack 'high-moctane/asyncomplete-nextword.vim'
 Jetpack 'prabirshrestha/asyncomplete-file.vim'
 
 if has('win32') || has('win64')
