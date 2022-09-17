@@ -9,12 +9,11 @@ call dein#add('dense-analysis/ale', {'lazy':1,
             \'hook_add':'source $CONF_PATH/plug_conf/ale_conf.vim'})
 
 call dein#add('prabirshrestha/vim-lsp',{'lazy':1,
-            \ 'on_event':'BufReadPost',
-            \ 'hook_add':'source $CONF_PATH/plug_conf/vim_lsp_conf.vim',
-            \'hook_post_source':'source $CONF_PATH/plug_conf/vim_lsp_server_conf.vim'})
+            \'on_event':'BufReadPost',
+            \'hook_post_source':'source $CONF_PATH/plug_conf/vim_lsp_conf.vim'})
 
 call dein#add('rhysd/vim-lsp-ale', {'lazy':1,
-            \ 'depends':['ale', 'vim-lsp'],
+            \'depends':['ale', 'vim-lsp'],
             \'on_event':'BufReadPost'})
 
 call dein#add('maximbaz/lightline-ale', {'lazy':1,
