@@ -24,5 +24,5 @@ endif
 call dein#add('prabirshrestha/asyncomplete.vim', {'lazy':1,
             \'depends': ['asyncomplete-lsp.vim','asyncomplete-buffer.vim', 'asyncomplete-look',
             \'asyncomplete-file.vim', 'asyncomplete-tabnine.vim', 'asyncomplete-ultisnips.vim'],
-            \'on_event': ['InsertEnter', 'BufReadPost'],
+            \'on_event': ['BufReadPre'],
             \'hook_post_source':'source $CONF_PATH/plug_conf/asyncomplete_conf.vim' })

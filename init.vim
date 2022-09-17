@@ -88,30 +88,31 @@ if g:old_school_vim_ulti_mode == 1
     let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
     let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
-    " if dein#load_state(s:dein_dir)
+    if dein#load_state(s:dein_dir)
 
-    call dein#begin(s:dein_dir)
+        call dein#begin(s:dein_dir)
 
-    if g:old_school_vim_plug_general == 1
-        source $CONF_PATH/plug_list/norm/plug_general.vim
-        source $CONF_PATH/plug_list/lazy/plug_general.vim
-    endif
+        if g:old_school_vim_plug_general == 1
+            source $CONF_PATH/plug_list/norm/plug_general.vim
+            source $CONF_PATH/plug_list/lazy/plug_general.vim
+        endif
 
-    if g:old_school_vim_plug_advanced == 1
-        source $CONF_PATH/plug_list/lazy/plug_advanced.vim
-    endif
-    if g:old_school_vim_plug_lsp == 1
-        source $CONF_PATH/plug_list/lazy/plug_lsp.vim
-    endif
-    if g:old_school_vim_plug_deoplete == 1
-        source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
-    endif
-    if g:old_school_vim_plug_asyncomplete == 1
-        source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
-    endif
+        if g:old_school_vim_plug_advanced == 1
+            source $CONF_PATH/plug_list/lazy/plug_advanced.vim
+        endif
+        if g:old_school_vim_plug_lsp == 1
+            source $CONF_PATH/plug_list/lazy/plug_lsp.vim
+        endif
+        if g:old_school_vim_plug_deoplete == 1
+            source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
+        endif
+        if g:old_school_vim_plug_asyncomplete == 1
+            source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
+        endif
 
-    call dein#end()
-    " call dein#save_state() | endif
+        call dein#end()
+        call dein#save_state() 
+    endif
 
     augroup DeinSetup
         autocmd!
@@ -122,3 +123,4 @@ endif
 
 filetype plugin indent on
 syntax enable
+
