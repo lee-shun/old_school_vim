@@ -9,6 +9,7 @@ call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
 
 if dein#is_available('vim-lsp')
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
+    echom 'use'
 endif
 
 call dein#add('Shougo/deoplete.nvim',{'lazy':1,

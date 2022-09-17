@@ -32,9 +32,8 @@ let g:old_school_vim_plug_advanced = 1
 let g:old_school_vim_plug_lsp = 1
 
 " choose one of following complete engines
-let g:old_school_vim_plug_deoplete = 1
-let g:old_school_vim_plug_asyncomplete = 0
-
+let g:old_school_vim_plug_deoplete = 0
+let g:old_school_vim_plug_asyncomplete = 1
 
 " don't use any of the plugs if ulti-mode is deactived
 if g:old_school_vim_ulti_mode == 0
@@ -101,7 +100,7 @@ if g:old_school_vim_ulti_mode == 1
     if g:old_school_vim_plug_advanced == 1
         source $CONF_PATH/plug_list/lazy/plug_advanced.vim
     endif
-    if g:old_school_vim_plug_lsp == 0
+    if g:old_school_vim_plug_lsp == 1
         source $CONF_PATH/plug_list/lazy/plug_lsp.vim
     endif
     if g:old_school_vim_plug_deoplete == 1
