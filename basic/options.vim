@@ -24,12 +24,12 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
 set ffs=unix,dos,mac
 
-set nocompatible
+if &compatible
+    set nocompatible " Be iMproved
+endif
 let g:mapleader = ' '
 set autochdir
 set autoread
-filetype plugin indent on
-
 
 " for gvim and neovim gui, currently dotnvim or neovide
 if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
@@ -44,7 +44,8 @@ if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
 endif
 
 " display
-syntax on
+filetype plugin indent on
+syntax enable
 set scrolloff=5
 set number
 set relativenumber
@@ -95,7 +96,7 @@ endif
 
 " keyword match
 set showmatch
-set iskeyword+=_,$,@,%,#
+set iskeyword+=_,$,@,%,#,:
 set matchpairs=(:),{:},[:],<:>
 set whichwrap=b,s,<,>,[,]
 
@@ -186,26 +187,51 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 " ===
 " === build-in netrw
 " ===
-let g:netrw_hide = 1
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-let g:netrw_browse_split = 0
-let g:netrw_winsize = 25
-let g:netrw_chgwin = 2
-let g:netrw_list_hide = '.*\.swp$'
-let g:netrw_localrmdir = 'rm -rf'
+"
+if g:old_school_vim_ulti_mode == 0
+    let g:netrw_hide = 1
+    let g:netrw_liststyle = 3
+    let g:netrw_banner = 0
+    let g:netrw_browse_split = 0
+    let g:netrw_winsize = 25
+    let g:netrw_chgwin = 2
+    let g:netrw_list_hide = '.*\.swp$'
+    let g:netrw_localrmdir = 'rm -rf'
 
-noremap <LEADER>t :Lexplore<CR>
+    noremap <LEADER>t :Lexplore<CR>
 
-function! NetrwMapping()
-    nmap <buffer> H u
-    nmap <buffer> <BS> -
-    nmap <buffer> l <CR>
-endfunction
-augroup netrw_mapping
-    autocmd!
-    autocmd filetype netrw call NetrwMapping()
-augroup END
+    function! NetrwMapping()
+        nmap <buffer> H u
+        nmap <buffer> <BS> -
+        nmap <buffer> l <CR>
+    endfunction
+    augroup netrw_mapping
+        autocmd!
+        autocmd filetype netrw call NetrwMapping()
+    augroup END
+else " disable all of the buildins
+    let g:loaded_gzip = 1
+    let g:loaded_tar = 1
+    let g:loaded_tarPlugin = 1
+    let g:loaded_zip = 1
+    let g:loaded_zipPlugin = 1
+
+    let g:loaded_getscript = 1
+    let g:loaded_getscriptPlugin = 1
+    let g:loaded_vimball = 1
+    let g:loaded_vimballPlugin = 1
+
+    let g:loaded_matchit = 1
+    let g:loaded_matchparen = 1
+    let g:loaded_2html_plugin = 1
+    let g:loaded_logiPat = 1
+    let g:loaded_rrhelper = 1
+
+    let g:loaded_netrw = 1
+    let g:loaded_netrwPlugin = 1
+    let g:loaded_netrwSettings = 1
+    let g:loaded_netrwFileHandlers = 1
+endif
 
 " ===
 " === Terminal Behaviors
@@ -260,6 +286,5 @@ endif
 " ===
 " === colorscheme
 " ===
-if g:old_school_vim_ulti_mode == 0
-    colorscheme seoul256
-endif
+set background=dark
+colorscheme seoul256
