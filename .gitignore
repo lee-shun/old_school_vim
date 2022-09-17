@@ -5,7 +5,6 @@ tmp/
 sessions/
 
 dein/*
-!dein/installer.sh
 
 # Vim.gitignore:
 # Swap
