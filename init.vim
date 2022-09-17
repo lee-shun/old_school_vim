@@ -102,6 +102,5 @@ let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 " enable the post source
 autocmd VimEnter * call dein#call_hook('post_source')
 
-
 filetype plugin indent on
 syntax enable
