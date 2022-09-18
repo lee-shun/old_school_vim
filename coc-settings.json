@@ -59,8 +59,7 @@
     "diagnostic.messageTarget": "float",
     "tabnine.limit": 3,
     "snippets.ultisnips.directories": [
-        "$HOME/.config/nvim/dein/repos/github.com/honza/vim-snippets/UltiSnips/",
-        "$HOME/.vim/dein/repos/github.com/honza/vim-snippets/UltiSnips/"
+        "$CONF_PATH/dein/repos/github.com/honza/vim-snippets/UltiSnips/"
     ],
     "explorer.sources": [
         {
