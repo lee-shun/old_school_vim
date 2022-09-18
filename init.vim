@@ -28,17 +28,23 @@ let g:old_school_vim_ulti_mode = 1
 let g:old_school_vim_plug_general = 1
 " use advanced plugs
 let g:old_school_vim_plug_advanced = 1
+
+" or use coc
+let g:old_school_vim_plug_coc = 1
+
 " vim-lsp as backend of the above frameworks.
-let g:old_school_vim_plug_lsp = 1
+let g:old_school_vim_plug_lsp = 0
 
 " choose one of following complete engines
 let g:old_school_vim_plug_deoplete = 0
-let g:old_school_vim_plug_asyncomplete = 1
+let g:old_school_vim_plug_asyncomplete = 0
+
 
 " don't use any of the plugs if ulti-mode is deactived
 if g:old_school_vim_ulti_mode == 0
     let g:old_school_vim_plug_general = 0
     let g:old_school_vim_plug_advanced = 0
+    let g:old_school_vim_plug_coc = 0
     let g:old_school_vim_plug_lsp = 0
     let g:old_school_vim_plug_deoplete = 0
     let g:old_school_vim_plug_asyncomplete = 0
@@ -88,7 +94,7 @@ if g:old_school_vim_ulti_mode == 1
     let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
     let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
-    if dein#load_state(s:dein_dir)
+    " if dein#load_state(s:dein_dir)
 
         call dein#begin(s:dein_dir)
 
@@ -99,6 +105,10 @@ if g:old_school_vim_ulti_mode == 1
 
         if g:old_school_vim_plug_advanced == 1
             source $CONF_PATH/plug_list/lazy/plug_advanced.vim
+        endif
+
+        if g:old_school_vim_plug_coc == 1
+            source $CONF_PATH/plug_list/lazy/plug_coc.vim
         endif
         if g:old_school_vim_plug_lsp == 1
             source $CONF_PATH/plug_list/lazy/plug_lsp.vim
@@ -111,8 +121,8 @@ if g:old_school_vim_ulti_mode == 1
         endif
 
         call dein#end()
-        call dein#save_state() 
-    endif
+        " call dein#save_state() 
+    " endif
 
     augroup DeinSetup
         autocmd!
