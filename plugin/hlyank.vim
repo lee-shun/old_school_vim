@@ -1,6 +1,3 @@
-if g:old_school_vim_plug_coc == 1
-    finish
-endif
 " https://github.com/markonm/hlyank.vim
 
 let s:cpo_save = &cpo
