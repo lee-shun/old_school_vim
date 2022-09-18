@@ -1,17 +1,21 @@
+if g:old_school_vim_plug_coc == 0
 call dein#add( 'voldikss/vim-translator', {'lazy':1,
             \    'on_cmd':'TranslateW',
             \'hook_add':'source $CONF_PATH/plug_conf/translate_conf.vim'
             \})
+endif
 
 if has('python3')
     call dein#add( 'honza/vim-snippets', {'lazy':1,
                 \ 'on_event':'InsertEnter'
                 \})
+if g:old_school_vim_plug_coc == 0
     call dein#add( 'SirVer/ultisnips', {'lazy':1,
                 \ 'depends':['vim-snippets'],
                 \ 'on_event':'InsertEnter',
                 \'hook_add':'source $CONF_PATH/plug_conf/snippets_conf.vim'
                 \})
+endif
 endif
 
 call dein#add('sbdchd/neoformat', {'lazy':1,

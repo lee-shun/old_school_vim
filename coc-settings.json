@@ -1,0 +1,173 @@
+{
+    "hover.target": "float",
+    "coc.preferences.extensionUpdateCheck": "daily",
+    "coc.preferences.messageLevel": "error",
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "coc.preferences.rootPatterns": [
+        ".vim_root",
+        "compile_commands.json",
+        ".clang-format",
+        ".git",
+        ".hg",
+        ".projections.json"
+    ],
+    "yank.highlight.enable": false,
+    "suggest.labelMaxLength": 60,
+    "suggest.noselect": true,
+    "suggest.enablePreselect": false,
+    "suggest.triggerAfterInsertEnter": false,
+    "suggest.timeout": 5000,
+    "suggest.detailField": "abbr",
+    "suggest.snippetIndicator": "",
+    "suggest.triggerCompletionWait": 50,
+    "suggest.completionItemKindLabels": {
+        "class": "\uf0e8",
+        "color": "\ue22b",
+        "constant": "\uf8fe",
+        "default": "\uf29c",
+        "enum": "\uf435",
+        "enumMember": "\uf02b",
+        "event": "\ufacd",
+        "field": "\uf93d",
+        "file": "\uf723",
+        "folder": "\uf115",
+        "function": "\u0192",
+        "interface": "\uf417",
+        "keyword": "\uf1de",
+        "method": "\uf6a6",
+        "module": "\uf40d",
+        "operator": "\uf915",
+        "property": "\ue624",
+        "reference": "\ufa46",
+        "snippet": "\ue60b",
+        "struct": "\ufb44",
+        "text": "\ue612",
+        "typeParameter": "\uf728",
+        "unit": "\uf475",
+        "value": "\uf89f",
+        "variable": "\ue71b"
+    },
+    "diagnostic.errorSign": "\uf467",
+    "diagnostic.warningSign": "\uf071",
+    "diagnostic.infoSign": "\uf129",
+    "diagnostic.hintSign": "\uf864",
+    "diagnostic.displayByAle": false,
+    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualTextPrefix": " ◆ ",
+    "diagnostic.virtualText": false,
+    "diagnostic.messageTarget": "float",
+    "tabnine.limit": 3,
+    "snippets.ultisnips.directories": [
+        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips/"
+    ],
+    "explorer.sources": [
+        {
+            "name": "buffer",
+            "expand": false
+        },
+        {
+            "name": "file",
+            "expand": true
+        }
+    ],
+    "explorer.file.showHiddenFiles": true,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.buffer.showHiddenBuffers": false,
+    "codeLens.enable": true,
+    "cSpell.enabled": false,
+    "coc-actions.hideCursor": true,
+    "coc-actions.showActionKind": true,
+    "cSpell.userWords": [
+        "CPSs",
+        "Maxout",
+        "Wyner",
+        "imread",
+        "imshow",
+        "markdownlint",
+        "moveit",
+        "ndarray",
+        "neovim",
+        "nparray",
+        "numpy",
+        "osdk",
+        "sobel"
+    ],
+    "python.analysis.logLevel": "Trace",
+    "python.formatting.provider": "yapf",
+    "python.pythonPath": "python3",
+    "markdownlint.config": {
+        "default": true,
+        "line_length": false,
+        "html": false
+    },
+    "coc.source.vimtex.enable": false,
+    "texlab.path": "/usr/local/bin/texlab",
+    "coc.source.word.shortcut": "W",
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/13.0.0/clangd_13.0.0/bin/clangd",
+    "clangd.enabled": true,
+    "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+    "semanticTokens.enable": true,
+    "languageserver": {
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                ".vim_root",
+                ".ccls-cache/",
+                ".clang-format",
+                "compile_commands.json",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        },
+        "lua": {
+            "command": "lua-language-server",
+            "rootPatterns": [
+                ".git"
+            ],
+            "filetypes": [
+                "lua"
+            ]
+        }
+    },
+    "diagnostic-languageserver.filetypes": {
+        "cpp": "cpplint"
+    },
+    "diagnostic-languageserver.linters": {
+        "cpplint": {
+            "command": "cpplint",
+            "args": [
+                "--filter=-build/c++11",
+                "%file"
+            ],
+            "debounce": 100,
+            "isStderr": true,
+            "isStdout": false,
+            "sourceName": "cpplint",
+            "offsetLine": 0,
+            "offsetColumn": 0,
+            "formatPattern": [
+                "^[^:]+:(\\d+):(\\d+)?\\s+([^:]+?)\\s\\[(\\d)\\]$",
+                {
+                    "line": 1,
+                    "column": 2,
+                    "message": 3,
+                    "security": 4
+                }
+            ],
+            "securities": {
+                "1": "info",
+                "2": "warning",
+                "3": "warning",
+                "4": "error",
+                "5": "error"
+            }
+        }
+    }
+}

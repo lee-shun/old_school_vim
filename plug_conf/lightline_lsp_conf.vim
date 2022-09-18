@@ -11,7 +11,7 @@ let g:lightline = {
             \ [ 'gitbranch', 'gitdiff']],
             \ 'right': [ [ 'lineinfo' ],
             \              [ 'percent' ],
-            \ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ]]
+            \ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],]
             \ },
             \ 'inactive': {
             \   'left': [ [ 'filename' ] ],
