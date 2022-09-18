@@ -64,6 +64,7 @@ set timeout           " for mappings
 set timeoutlen=1000   " default value
 set ttimeout          " for key codes
 set ttimeoutlen=10    " unnoticeable small value
+set updatetime=50
 set conceallevel=0
 set wildmenu
 if !has('nvim')

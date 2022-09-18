@@ -1,14 +1,12 @@
-call dein#add('lambdalisue/nerdfont.vim', {'lazy':1})
-
 call dein#add('ryanoasis/vim-devicons', {'lazy':1})
 
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
-
 call dein#add('itchyny/lightline.vim', {'lazy':1,
             \'depends':['lightline-gitdiff', 'vim-fugitive'],
-            \'on_event':['BufReadPre'],})
+            \'on_event':['BufReadPost'],
+            \'hook_add':'source $CONF_PATH/plug_conf/lightline_conf.vim'})
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
@@ -25,16 +23,17 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'hook_add':'source $CONF_PATH/plug_conf/floaterm_conf.vim'})
 
-call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1})
-
-call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
-            \'hook_post_source':'source $CONF_PATH/plug_conf/fern_git_conf.vim' })
-
-call dein#add('lambdalisue/fern.vim', {'lazy':1,
-            \'depends':['fern-git-status.vim','fern-renderer-nerdfont.vim'],
-            \'on_event':['BufReadPost'],
-            \'on_map':{'n':'<leader>t'},
-            \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
+if g:old_school_vim_plug_coc == 0
+    call dein#add('lambdalisue/nerdfont.vim', {'lazy':1})
+    call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1})
+    call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
+                \'hook_post_source':'source $CONF_PATH/plug_conf/fern_git_conf.vim' })
+    call dein#add('lambdalisue/fern.vim', {'lazy':1,
+                \'depends':['fern-git-status.vim','fern-renderer-nerdfont.vim'],
+                \'on_event':['BufReadPost'],
+                \'on_map':{'n':'<leader>t'},
+                \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
+endif
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
             \'on_event' : ['BufReadPost'],
@@ -66,7 +65,7 @@ call dein#add('junegunn/vim-easy-align', {'lazy':1,
             \'hook_add': 'source $CONF_PATH/plug_conf/easy_align_conf.vim'})
 
 call dein#add('mg979/vim-visual-multi', {'lazy':1,
-            \'on_map': {'n':'<C-n>'}})
+            \'on_map': {'n':'<C-n>', 'v':'<C-n>'}})
 
 call dein#add('907th/vim-auto-save', {'lazy':1,
             \'on_event': ['BufReadPost'],

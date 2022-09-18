@@ -33,6 +33,7 @@ let g:lightline = {
             \  'linter_warnings': 'warning',
             \  'linter_errors': 'error',
             \  'linter_ok': 'right',
+            \  'gitdiff':'middle'
             \ }
             \ }
 

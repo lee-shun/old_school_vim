@@ -7,4 +7,4 @@ call dein#add('josa42/vim-lightline-coc', {'lazy':1,
             \ 'depends':['lightline.vim'],
             \'on_event': ['BufReadPost'], 
             \'hook_add':'source $CONF_PATH/plug_conf/lightline_coc_conf.vim',
-            \'hook_post_source':'call lightline#coc#register()'})
+            \'hook_post_source':'call lightline#coc#register() | call lightline#init()'})
