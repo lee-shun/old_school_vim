@@ -9,7 +9,6 @@ let g:lightline = {
             \],
             \ 'right': [ [ 'lineinfo' ],
             \              [ 'percent' ],
-            \['coc_info', 'coc_hints', 'coc_errors', 'coc_warnings', 'coc_ok' ], [ 'coc_status'  ],
             \  ]
             \ },
             \ 'inactive': {
