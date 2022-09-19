@@ -108,6 +108,7 @@ set incsearch
 set ignorecase
 if version > 801
     set shortmess-=S
+    set shortmess=atI
 endif
 
 set smartcase
@@ -283,9 +284,3 @@ if has('terminal')&&!has('nvim')
                 \'#e4e4e4',
                 \]
 endif
-
-" ===
-" === colorscheme
-" ===
-set background=dark
-colorscheme seoul256

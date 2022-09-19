@@ -85,6 +85,14 @@ source $CONF_PATH/basic/options.vim
 source $CONF_PATH/basic/mappings.vim
 
 " ===
+" === colorscheme
+" ===
+if g:old_school_vim_ulti_mode == 0
+    set background=dark
+    colorscheme seoul256
+endif
+
+" ===
 " === plug
 " ===
 if g:old_school_vim_ulti_mode == 1
@@ -133,4 +141,3 @@ endif
 
 filetype plugin indent on
 syntax enable
-

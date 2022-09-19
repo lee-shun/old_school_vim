@@ -126,10 +126,6 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " coc-explorer
 noremap <leader>t :CocCommand explorer<CR>
-augroup CocExplorerCustom
-  autocmd!
-   autocmd User CocExplorerOpenPre setl statusline=%#NonText#
-augroup END
 
 " coc-translator
 nmap ts <Plug>(coc-translator-p)
