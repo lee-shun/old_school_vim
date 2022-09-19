@@ -1,3 +1,7 @@
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
 " Vim indent file
 " Language:	C++
 " Maintainer:	Konstantin Lepa <konstantin.lepa@gmail.com>

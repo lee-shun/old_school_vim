@@ -55,7 +55,7 @@
     "diagnostic.refreshOnInsertMode": false,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualTextPrefix": " ◆ ",
-    "diagnostic.virtualText": false,
+    "diagnostic.virtualText": true,
     "diagnostic.messageTarget": "float",
     "tabnine.limit": 3,
     "snippets.ultisnips.directories": [
