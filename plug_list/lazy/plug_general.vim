@@ -4,8 +4,8 @@ call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
 call dein#add('itchyny/lightline.vim', {'lazy':1,
-            \'depends':['lightline-gitdiff', 'vim-fugitive'],
-            \'on_event':['BufReadPost'],
+            \'depends':['lightline-gitdiff', 'vim-fugitive', 'everforest'],
+            \'on_event':['BufReadPre'],
             \'hook_add':'source $CONF_PATH/plug_conf/lightline_conf.vim'})
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
@@ -39,9 +39,13 @@ call dein#add('airblade/vim-rooter', {'lazy':1,
             \'on_event' : ['BufReadPost'],
             \'hook_add' : 'source $CONF_PATH/plug_conf/vim_rooter_conf.vim'})
 
-call dein#add('Yggdroot/LeaderF', {'lazy':1,
-            \'on_map' : {'n':'<leader>f'},
-            \'hook_add' : 'source $CONF_PATH/plug_conf/leaderF_conf.vim'})
+call dein#add('junegunn/fzf', {'lazy':1,
+            \'build': './install --all',
+            \})
+call dein#add('junegunn/fzf.vim', {'lazy':1,
+            \ 'depends': ['fzf'],
+            \'on_cmd' : ['FZF', 'Tags', 'Buffers', 'Files', 'History', 'Lines', 'Ag', 'Rg', 'BLines'],
+            \'hook_add' : 'source $CONF_PATH/plug_conf/fzf_conf.vim'})
 
 call dein#add('chrisbra/Colorizer', {'lazy':1,
             \'on_event':['BufReadPost'],
