@@ -1,5 +1,3 @@
-call dein#add('ryanoasis/vim-devicons', {'lazy':1})
-
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
@@ -38,14 +36,6 @@ endif
 call dein#add('airblade/vim-rooter', {'lazy':1,
             \'on_event' : ['BufReadPost'],
             \'hook_add' : 'source $CONF_PATH/plug_conf/vim_rooter_conf.vim'})
-
-call dein#add('junegunn/fzf', {'lazy':1,
-            \'build': './install --all',
-            \})
-call dein#add('junegunn/fzf.vim', {'lazy':1,
-            \ 'depends': ['fzf'],
-            \'on_cmd' : ['FZF', 'Tags', 'Buffers', 'Files', 'History', 'Lines', 'Ag', 'Rg', 'BLines'],
-            \'hook_add' : 'source $CONF_PATH/plug_conf/fzf_conf.vim'})
 
 call dein#add('chrisbra/Colorizer', {'lazy':1,
             \'on_event':['BufReadPost'],
