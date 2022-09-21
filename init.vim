@@ -23,7 +23,7 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 " ===
 " === control the mode
 " ===
-let g:old_school_vim_ulti_mode = 0
+let g:old_school_vim_ulti_mode = 1
 
 " use general plugs
 let g:old_school_vim_plug_general = 1

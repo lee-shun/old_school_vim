@@ -50,10 +50,6 @@ if g:old_school_vim_plug_coc == 0
                 \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
 endif
 
-call dein#add('airblade/vim-rooter', {'lazy':1,
-            \'on_event' : ['BufReadPost'],
-            \'hook_add' : 'source $CONF_PATH/plug_conf/vim_rooter_conf.vim'})
-
 call dein#add('chrisbra/Colorizer', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'on_cmd':['ColorToggle'], })
