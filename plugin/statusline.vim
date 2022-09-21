@@ -148,5 +148,5 @@ endfunction
 " ===
 " === colors
 " ===
-hi User1 ctermfg=255 ctermbg=59
-hi User2 ctermfg=247 ctermbg=237
+hi User1 cterm=bold gui=bold ctermfg=255 ctermbg=59
+hi User2 cterm=bold gui=bold ctermfg=247 ctermbg=237
