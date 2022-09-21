@@ -15,8 +15,10 @@
 "                                                                              "
 "*******************************************************************************
 
+if !has('nvim')
 call dein#add('roxma/nvim-yarp', {'lazy':1})
 call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
+endif
 
 " ===
 " === deoplete plugins
