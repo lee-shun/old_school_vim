@@ -53,4 +53,3 @@ let g:lightline = {
             \  'gitdiff':'middle'
             \ }
             \ }
-

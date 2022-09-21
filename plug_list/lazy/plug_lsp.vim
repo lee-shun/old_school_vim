@@ -15,12 +15,6 @@
 "                                                                              "
 "*******************************************************************************
 
-" c++
-if executable('ccls')
-    call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
-                \'on_ft':['cpp', 'c']})
-endif
-
 call dein#add('dense-analysis/ale', {'lazy':1,
             \'on_event':'BufReadPre',
             \'hook_add':'source $CONF_PATH/plug_conf/ale_conf.vim'})

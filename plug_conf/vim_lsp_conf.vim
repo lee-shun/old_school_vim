@@ -19,10 +19,10 @@
 " === vim-lsp
 " ===
 let g:lsp_auto_enable = 1
-let g:lsp_diagnostics_signs_error = {'text': 'E'}
-let g:lsp_diagnostics_signs_warning = {'text': 'W'} " icons require GUI
-let g:lsp_diagnostics_signs_hint = {'text': 'H'} " icons require GUI
-let g:lsp_diagnostics_signs_information = {'text': 'I'}
+let g:lsp_diagnostics_signs_error = {'text': ''}
+let g:lsp_diagnostics_signs_warning = {'text': ''}
+let g:lsp_diagnostics_signs_hint = {'text': ''}
+let g:lsp_diagnostics_signs_information = {'text': ''}
 
 if has('nvim')
     let g:lsp_diagnostics_virtual_text_prefix = "‣ "
@@ -55,26 +55,30 @@ endfunction
 call s:on_lsp_buffer_enabled()
 
 if executable('ccls')
-     call lsp#register_server({
+    call lsp#register_server({
                 \ 'name': 'ccls',
                 \ 'cmd': {server_info->['ccls']},
-                \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+                \ 'root_uri': {server_info->lsp#utils#path_to_uri(
+                \ lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(),
+                \ ['.vim_root','compile_commands.json'] ))},
                 \ 'initialization_options': {
                 \   'highlight': { 'lsRanges' : v:true },
                 \ },
                 \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
                 \ })
-    hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
 elseif !executable('ccls') && executable('clangd')
-     call lsp#register_server({
+    call lsp#register_server({
                 \ 'name': 'clangd',
                 \ 'cmd': {server_info->['clangd', '-background-index']},
+                \ 'root_uri': {server_info->lsp#utils#path_to_uri(
+                \ lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(),
+                \ ['.vim_root','compile_commands.json'] ))},
                 \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
                 \ })
 endif
 
 if executable('pyright-langserver')
-     call lsp#register_server({
+    call lsp#register_server({
                 \ 'name': 'pyright-langserver',
                 \ 'cmd': {server_info->[&shell, &shellcmdflag, 'pyright-langserver --stdio']},
                 \ 'allowlist': ['python'],
@@ -88,7 +92,7 @@ if executable('pyright-langserver')
                 \ })
 elseif !executable('pyright-langserver') && executable('pyls')
     " pip3 install "python-language-server[all]"
-     call lsp#register_server({
+    call lsp#register_server({
                 \ 'name': 'pyls',
                 \ 'cmd': {server_info->['pyls']},
                 \ 'allowlist': ['python'],
@@ -96,10 +100,11 @@ elseif !executable('pyright-langserver') && executable('pyls')
 endif
 
 if executable('cmake-language-server')
-     call lsp#register_server({
+    call lsp#register_server({
                 \ 'name': 'cmake',
                 \ 'cmd': {server_info->['cmake-language-server']},
-                \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'build/'))},
+                \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(
+                \ lsp#utils#get_buffer_path(), 'build/'))},
                 \ 'whitelist': ['cmake'],
                 \ 'initialization_options': {
                 \   'buildDirectory': 'build',
@@ -111,4 +116,5 @@ endif
 " === user command
 " ===
 
-command! IDE call lsp#enable()
+command! IDE call lsp#enable() |
+            \ hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
