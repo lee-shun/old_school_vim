@@ -30,15 +30,18 @@ endif
 if !has('nvim')
     call dein#add('roxma/nvim-yarp', {'lazy':1})
     call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
-endif
-
-call dein#add('Shougo/deoplete.nvim',{'lazy':1,
-            \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-tabnine',
-            \'deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
-            \'on_event': 'InsertEnter',
-            \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
-            \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim' })
-if has('nvim')
+    call dein#add('Shougo/deoplete.nvim',{'lazy':1,
+                \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-tabnine',
+                \'deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
+                \'on_event': 'InsertEnter',
+                \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim' })
     call dein#set_hook('deoplete.nvim', 'hook_done_update', 'UpdateRemotePlugins')
+else
+    call dein#add('Shougo/deoplete.nvim',{'lazy':1,
+                \'depends':['deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
+                \'on_event': 'InsertEnter',
+                \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim' })
 endif
 
