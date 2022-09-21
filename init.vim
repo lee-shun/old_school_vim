@@ -130,7 +130,7 @@ if g:old_school_vim_ulti_mode == 1
         endif
 
         call dein#end()
-        " call dein#save_state() 
+        " call dein#save_state()
     " endif
 
     augroup DeinSetup
