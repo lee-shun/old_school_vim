@@ -19,18 +19,25 @@ if dein#is_available('vim-lsp')
     call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
                 \})
 endif
+
 call dein#add( 'prabirshrestha/asyncomplete-buffer.vim', {'lazy':1,
             \})
+
 call dein#add( 'htlsne/asyncomplete-look', {'lazy':1,
             \})
+
 call dein#add( 'prabirshrestha/asyncomplete-file.vim', {'lazy':1,
             \})
-if has('win32') || has('win64')
-    call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
-                \'build': 'powershell.exe .\install.ps1' })
-else
-    call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
-                \'build': './install.sh' })
+
+" tabnine
+if g:os_architect != 'aarch64'
+    if has('win32') || has('win64')
+        call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
+                    \'build': 'powershell.exe .\install.ps1' })
+    else
+        call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
+                    \'build': './install.sh' })
+    endif
 endif
 
 if has('python3') && dein#is_available('ultisnips')

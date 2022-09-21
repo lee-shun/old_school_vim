@@ -16,15 +16,35 @@
 "*******************************************************************************
 
 " ===
-" === path
+" === env
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
+
+if !exists("g:os_name")
+    if has("win64") || has("win32") || has("win16")
+        let g:os_name = "Windows"
+    else " not windows, use 'uname' command.
+        let g:os_name = substitute(system('uname'), '\n', '', '')
+        let g:os_architect =substitute(system('uname -m'), '\n', '', '')
+    endif
+endif
+
+if g:os_name == 'Windows' && has('nvim') " nvim on win
+    let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
+elseif g:os_name == 'Linux'
+    if executable('conda')
+        let g:python_host_prog='/usr/bin/python'
+        let g:python3_host_prog='python'
+    else
+        let g:python_host_prog='/usr/bin/python'
+        let g:python3_host_prog='/usr/bin/python3'
+    endif
+endif
 
 " ===
 " === control the mode
 " ===
 let g:old_school_vim_ulti_mode = 1
-
 
 " use general plugs
 let g:old_school_vim_plug_general = 1
@@ -55,32 +75,10 @@ if g:old_school_vim_ulti_mode == 0
     let g:old_school_vim_plug_asyncomplete = 0
 endif
 
-" ===
-" === environment
-" ===
-if g:old_school_vim_ulti_mode == 1
-
-    if !exists("g:os_name")
-        if has("win64") || has("win32") || has("win16")
-            let g:os_name = "Windows"
-        else " not windows, use 'uname' command.
-            let g:os_name = substitute(system('uname'), '\n', '', '')
-            let g:os_architect =substitute(system('uname -m'), '\n', '', '')
-        endif
-    endif
-
-    if g:os_name == 'Windows' && has('nvim') " nvim on win
-        let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-    elseif g:os_name == 'Linux'
-        if executable('conda')
-            let g:python_host_prog='/usr/bin/python'
-            let g:python3_host_prog='python'
-        else
-            let g:python_host_prog='/usr/bin/python'
-            let g:python3_host_prog='/usr/bin/python3'
-        endif
-    endif
-
+" don't use coc under aarch64
+if g:os_architect == 'aarch64' && g:old_school_vim_plug_coc == 1
+    let g:old_school_vim_plug_coc = 0
+    echom " don't use coc under " . g:os_architect
 endif
 
 " ===
@@ -109,32 +107,32 @@ if g:old_school_vim_ulti_mode == 1
 
     " if dein#load_state(s:dein_dir)
 
-        call dein#begin(s:dein_dir)
+    call dein#begin(s:dein_dir)
 
-        if g:old_school_vim_plug_general == 1
-            source $CONF_PATH/plug_list/norm/plug_general.vim
-            source $CONF_PATH/plug_list/lazy/plug_general.vim
-        endif
+    if g:old_school_vim_plug_general == 1
+        source $CONF_PATH/plug_list/norm/plug_general.vim
+        source $CONF_PATH/plug_list/lazy/plug_general.vim
+    endif
 
-        if g:old_school_vim_plug_advanced == 1
-            source $CONF_PATH/plug_list/lazy/plug_advanced.vim
-        endif
+    if g:old_school_vim_plug_advanced == 1
+        source $CONF_PATH/plug_list/lazy/plug_advanced.vim
+    endif
 
-        if g:old_school_vim_plug_coc == 1
-            source $CONF_PATH/plug_list/lazy/plug_coc.vim
-        endif
-        if g:old_school_vim_plug_lsp == 1
-            source $CONF_PATH/plug_list/lazy/plug_lsp.vim
-        endif
-        if g:old_school_vim_plug_deoplete == 1
-            source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
-        endif
-        if g:old_school_vim_plug_asyncomplete == 1
-            source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
-        endif
+    if g:old_school_vim_plug_coc == 1
+        source $CONF_PATH/plug_list/lazy/plug_coc.vim
+    endif
+    if g:old_school_vim_plug_lsp == 1
+        source $CONF_PATH/plug_list/lazy/plug_lsp.vim
+    endif
+    if g:old_school_vim_plug_deoplete == 1
+        source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
+    endif
+    if g:old_school_vim_plug_asyncomplete == 1
+        source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
+    endif
 
-        call dein#end()
-        " call dein#save_state()
+    call dein#end()
+    " call dein#save_state()
     " endif
 
     augroup DeinSetup
