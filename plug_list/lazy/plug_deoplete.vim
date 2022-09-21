@@ -39,6 +39,6 @@ call dein#add('Shougo/deoplete.nvim',{'lazy':1,
             \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
             \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim' })
 if has('nvim')
-    call dein#set_hook('deoplete.nvim'), 'hook_done_update', 'UpdateRemotePlugins')
+    call dein#set_hook('deoplete.nvim', 'hook_done_update', 'UpdateRemotePlugins')
 endif
 
