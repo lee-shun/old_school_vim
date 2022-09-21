@@ -21,12 +21,13 @@ call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
 " ===
 " === deoplete plugins
 " ===
-call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
-            \'build': './install.sh',})
+if g:os_architect != 'aarch64'
+    call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
+                \'build': './install.sh',})
+endif
 
 if dein#is_available('vim-lsp')
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
-    echom 'use'
 endif
 
 call dein#add('Shougo/deoplete.nvim',{'lazy':1,
