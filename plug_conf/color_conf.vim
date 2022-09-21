@@ -1,5 +1,23 @@
-let g:everforest_better_performance = 1
-let g:everforest_enable_italic = 1
+"*******************************************************************************
+"                                                                              "
+"          .oOOOo.   o      o       .oOOOo.         o                 o        "
+"         .O     o. O      O        o     o        O                 O         "
+"         O       o o      o        O.             o                 o         "
+"         o       O O      o         `OOoo.        O                 O         "
+"         O       o o  .oOoO              `O .oOo  OoOo. .oOo. .oOo. o         "
+"         o       O O  o   O               o O     o   o O   o O   o O         "
+"         `o     O' o  O   o        O.    .O o     o   O o   O o   O o         "
+"          `OoooO'  Oo `OoO'o        `oooO'  `OoO' O   o `OoO' `OoO' Oo        "
+"                                                                              "
+"  Author : lee-shun                                                           "
+"                                                                              "
+"  Email  : 2015097272@qq.com                                                  "
+"                                                                              "
+"*******************************************************************************
+
+let g:sonokai_better_performance = 1
+let g:sonokai_enable_italic = 1
+let g:sonokai_style = 'maia'
 
 set background=dark
-colorscheme everforest
+colorscheme sonokai
