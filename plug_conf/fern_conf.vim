@@ -39,17 +39,9 @@ function! s:init_fern() abort
     nmap <buffer> B <Plug>(fern-action-mark)
 endfunction
 
-let g:fern#renderer = "nerdfont"
+let g:fern#renderer = "devicons"
 
 augroup fern-custom
     autocmd! *
     autocmd FileType fern setlocal norelativenumber | setlocal nonumber | call s:init_fern()
-    autocmd FileType fern call s:disable_lightline_on_fern()
-    autocmd WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_fern()
 augroup END
-
-fu s:disable_lightline_on_fern() abort
-    let fern_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'fern') + 1
-    call timer_start(0, {-> fern_winnr && setwinvar(fern_winnr, '&stl', '%#Normal#')})
-endfu
-
