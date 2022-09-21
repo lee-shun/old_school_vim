@@ -78,7 +78,7 @@ endif
 " don't use coc under aarch64
 if g:os_architect == 'aarch64' && g:old_school_vim_plug_coc == 1
     let g:old_school_vim_plug_coc = 0
-    echom " don't use coc under " . g:os_architect
+    echom " do NOT use coc under " . g:os_architect
 endif
 
 " ===

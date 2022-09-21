@@ -4,7 +4,11 @@ pack/
 tmp/
 sessions/
 
-dein/*
+.ccls-cache/
+.clangd/
+.vscode/
+
+dein/
 
 # Vim.gitignore:
 # Swap

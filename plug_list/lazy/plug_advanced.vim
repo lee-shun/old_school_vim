@@ -15,6 +15,12 @@
 "                                                                              "
 "*******************************************************************************
 
+if executable('ccls') || executable('clangd')
+    call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
+                \'on_ft':['cpp', 'c'],
+                \'hook_add':''})
+endif
+
 if g:old_school_vim_plug_coc == 0
     call dein#add( 'voldikss/vim-translator', {'lazy':1,
                 \    'on_cmd':'TranslateW',
