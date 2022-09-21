@@ -19,7 +19,7 @@ call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
 call dein#add('itchyny/lightline.vim', {'lazy':1,
-            \'depends':['lightline-gitdiff', 'vim-fugitive'],
+            \'depends':['lightline-gitdiff', 'vim-fugitive', 'sonokai'],
             \'on_event':['BufReadPre'],
             \'hook_add':'source $CONF_PATH/plug_conf/lightline_conf.vim'})
 
