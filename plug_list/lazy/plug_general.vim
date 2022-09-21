@@ -39,12 +39,13 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'hook_add':'source $CONF_PATH/plug_conf/floaterm_conf.vim'})
 
 if g:old_school_vim_plug_coc == 0
-    call dein#add('lambdalisue/nerdfont.vim', {'lazy':1})
-    call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1})
+    call dein#add('lambdalisue/fern-renderer-devicons.vim', {'lazy':1,
+                \'depends':'vim-devicons'
+                \})
     call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
                 \'hook_post_source':'source $CONF_PATH/plug_conf/fern_git_conf.vim' })
     call dein#add('lambdalisue/fern.vim', {'lazy':1,
-                \'depends':['fern-git-status.vim','fern-renderer-nerdfont.vim'],
+                \'depends':['fern-git-status.vim','fern-renderer-devicons.vim'],
                 \'on_event':['BufReadPost'],
                 \'on_map':{'n':'<leader>t'},
                 \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})

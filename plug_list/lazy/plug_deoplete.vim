@@ -27,18 +27,22 @@ if dein#is_available('vim-lsp')
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
 endif
 
-if !has('nvim')
-    call dein#add('roxma/nvim-yarp', {'lazy':1})
-    call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
-endif
+call dein#add('roxma/nvim-yarp', {'lazy':1})
+call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
 
-call dein#add('Shougo/deoplete.nvim',{'lazy':1,
-            \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-tabnine',
+let g:deoplete_nvim_config = {'lazy':1,
+            \'depends':['nvim-yarp','vim-hug-neovim-rpc',
             \'deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
             \'on_event': 'InsertEnter',
             \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
-            \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim' })
+            \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim',
+            \'hook_done_update':''}
+
+if dein#is_available('deoplete-tabnine')
+    call add(g:deoplete_nvim_config.depends, 'deoplete-tabnine')
+endif
 if has('nvim')
-    call dein#set_hook('deoplete.nvim', 'hook_done_update', 'UpdateRemotePlugins')
+    let g:deoplete_nvim_config.hook_done_update = 'UpdateRemotePlugins'
 endif
 
+call dein#add('Shougo/deoplete.nvim', g:deoplete_nvim_config)
