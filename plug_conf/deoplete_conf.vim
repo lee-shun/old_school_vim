@@ -15,24 +15,13 @@
 "                                                                              "
 "*******************************************************************************
 
-call deoplete#custom#option({
-            \ 'auto_complete_delay': 10,
-            \ 'smart_case': v:true,
-            \ })
-" for latex
-if(exists('g:loaded_vimtex'))
-    call deoplete#custom#var('omni', 'input_patterns', {
-                \ 'tex': g:vimtex#re#deoplete
-                \})
-endif
-
 " ===
 " === map for TAB
 " ===
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+endfunction
 
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
@@ -50,3 +39,63 @@ imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function() abort
     return deoplete#close_popup() . "\<CR>"
 endfunction
+
+" overrall
+call deoplete#custom#option({
+            \ 'auto_complete_delay': 10,
+            \ 'smart_case': v:true,
+            \ })
+" file
+call deoplete#custom#source('file', {
+            \'mark':'file',
+            \'max_candidates': 4
+            \})
+call deoplete#custom#var('file', {
+            \'enable_slash_completion':1})
+
+" around
+call deoplete#custom#source('around',{
+            \'mark':'arou',
+            \'max_candidates': 4
+            \})
+
+" buffer
+call deoplete#custom#source('buffer', {
+            \'mark':'buff',
+            \'max_candidates': 4
+            \})
+
+" dictionary
+call deoplete#custom#source( 'dictionary', {
+            \'mark':'dict',
+            \'min_pattern_length': 4,
+            \'sorters': [],
+            \'max_candidates': 4
+            \})
+
+" latex
+if(exists('g:loaded_vimtex'))
+    call deoplete#custom#var('omni', 'input_patterns', {
+                \'tex': g:vimtex#re#deoplete
+                \})
+endif
+
+" tabnine
+if dein#is_available('deoplete-tabnine')
+    call deoplete#custom#var('tabnine', {
+                \'line_limit': 500,
+                \'max_num_results': 4,
+                \})
+    call deoplete#custom#source('tabnine', {
+                \'mark':'tabn',
+                \'max_candidates': 4,
+                \})
+endif
+
+" lsp
+if dein#is_available('vim-lsp')
+    call deoplete#custom#source('lsp', {
+                \'max_candidates': 10
+                \})
+endif
+

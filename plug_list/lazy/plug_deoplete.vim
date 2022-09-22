@@ -18,6 +18,8 @@
 " ===
 " === deoplete plugins
 " ===
+call dein#add('deoplete-plugins/deoplete-dictionary', {'lazy': 1})
+
 if g:os_architect != 'aarch64'
     call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
                 \'build': './install.sh',})
@@ -28,8 +30,8 @@ if dein#is_available('vim-lsp')
 endif
 
 let g:deoplete_nvim_config = {'lazy':1,
-            \'depends':['nvim-yarp','vim-hug-neovim-rpc',
-            \'deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
+            \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-dictionary',
+            \'deoplete-vim-lsp','vim-snippets','ultisnips'],
             \'on_event': ['BufReadPre'],
             \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
             \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim',
