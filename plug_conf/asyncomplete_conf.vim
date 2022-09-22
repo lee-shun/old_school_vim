@@ -57,19 +57,29 @@ call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
             \ 'completor': function('asyncomplete#sources#file#completor')
             \ }))
 
+" ale
+if dein#is_available('asyncomplete-ale.vim')
+    call asyncomplete#ale#register_source({
+                \ 'name': 'reason',
+                \ 'linter': 'flow',
+                \ })
+endif
+
 " tabnine
-call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
-            \ 'name': 'tabnine',
-            \ 'allowlist': ['*'],
-            \ 'completor': function('asyncomplete#sources#tabnine#completor'),
-            \ 'config': {
-            \   'line_limit': 1000,
-            \   'max_num_result': 4,
-            \  },
-            \ }))
+if dein#is_available('asyncomplete-tabnine.vim')
+    call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
+                \ 'name': 'tabnine',
+                \ 'allowlist': ['*'],
+                \ 'completor': function('asyncomplete#sources#tabnine#completor'),
+                \ 'config': {
+                \   'line_limit': 1000,
+                \   'max_num_result': 4,
+                \  },
+                \ }))
+endif
 
 " snippest
-if has('python3')
+if dein#is_available('asyncomplete-ultisnips.vim')
     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
                 \ 'name': 'ultisnips',
                 \ 'allowlist': ['*'],

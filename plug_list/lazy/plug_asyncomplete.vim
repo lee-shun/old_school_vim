@@ -47,6 +47,12 @@ if dein#is_available('vim-lsp')
                 \})
 endif
 
+" ale
+if dein#is_available('ale')
+    call dein#add('andreypopp/asyncomplete-ale.vim', {'lazy':1})
+endif
+
+
 " ===
 " === setting
 " ===
@@ -59,6 +65,11 @@ let g:asyncomplete_conf = { 'lazy':1,
 if dein#is_available('asyncomplete-lsp.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
 endif
+
+if dein#is_available('asyncomplete-ale.vim')
+    call add(g:asyncomplete_conf.depends, 'asyncomplete-ale.vim')
+endif
+
 if dein#is_available('asyncomplete-tabnine.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
 endif
