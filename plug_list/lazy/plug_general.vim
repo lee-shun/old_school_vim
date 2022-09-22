@@ -15,6 +15,9 @@
 "                                                                              "
 "*******************************************************************************
 
+call dein#add('roxma/nvim-yarp', {'lazy':1})
+call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
+
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
@@ -39,16 +42,24 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'hook_add':'source $CONF_PATH/plug_conf/floaterm_conf.vim'})
 
 if g:old_school_vim_plug_coc == 0
-    call dein#add('lambdalisue/fern-renderer-devicons.vim', {'lazy':1,
-                \'depends':'vim-devicons'
-                \})
-    call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
-                \'hook_post_source':'source $CONF_PATH/plug_conf/fern_git_conf.vim' })
-    call dein#add('lambdalisue/fern.vim', {'lazy':1,
-                \'depends':['fern-git-status.vim','fern-renderer-devicons.vim'],
-                \'on_event':['BufReadPost'],
-                \'on_map':{'n':'<leader>t'},
-                \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
+
+    call dein#add('kristijanhusak/defx-git', {'lazy':1,
+                \'hook_add':'source $CONF_PATH/plug_conf/defx_git_config.vim'})
+    call dein#add('kristijanhusak/defx-icons', {'lazy':1,
+                \'depends':'vim-devicons',
+                \'hook_add':'source $CONF_PATH/plug_conf/defx_icons_conf.vim'})
+
+    let g:defx_nvim_config = {'lazy':1,
+                \'on_cmd':'Defx',
+                \'on_map':'<leader>t',
+                \'depends':['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-git', 'defx-icons'],
+                \'hook_post_source':'source $CONF_PATH/plug_conf/defx_conf.vim',
+                \'hook_done_update': ''}
+    if has('nvim')
+        let g:defx_nvim_config.hook_done_update = 'UpdateRemotePlugins'
+    endif
+
+    call dein#add('Shougo/defx.nvim', g:defx_nvim_config)
 endif
 
 call dein#add('chrisbra/Colorizer', {'lazy':1,
