@@ -78,4 +78,9 @@ if dein#is_available('asyncomplete-ultisnips.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-ultisnips.vim')
 endif
 
+if has('nvim')
+    let g:asyncomplete_conf.hook_done_update = 'UpdateRemotePlugins'
+endif
+
+
 call dein#add('prabirshrestha/asyncomplete.vim', g:asyncomplete_conf)
