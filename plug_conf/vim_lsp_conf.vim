@@ -60,7 +60,7 @@ if executable('ccls')
                 \ 'cmd': {server_info->['ccls']},
                 \ 'root_uri': {server_info->lsp#utils#path_to_uri(
                 \ lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(),
-                \ ['.vim_root','compile_commands.json'] ))},
+                \ ['compile_commands.json', '.vim_root'] ))},
                 \ 'initialization_options': {
                 \   'highlight': { 'lsRanges' : v:true },
                 \ },
@@ -72,7 +72,7 @@ elseif !executable('ccls') && executable('clangd')
                 \ 'cmd': {server_info->['clangd', '-background-index']},
                 \ 'root_uri': {server_info->lsp#utils#path_to_uri(
                 \ lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(),
-                \ ['.vim_root','compile_commands.json'] ))},
+                \ ['compile_commands.json', '.vim_root'] ))},
                 \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
                 \ })
 endif
