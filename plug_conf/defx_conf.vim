@@ -1,6 +1,6 @@
 call defx#custom#column('icon', {
-            \ 'directory_icon': '⯈',
-            \ 'opened_icon': '⯆',
+            \ 'directory_icon': '+',
+            \ 'opened_icon': '-',
             \ })
 
 nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35 -direction=topleft -columns=git:indent:icon:icons:filename:type -toggle<CR>
