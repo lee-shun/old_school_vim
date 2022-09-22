@@ -3,7 +3,7 @@ call defx#custom#column('icon', {
             \ 'opened_icon': '⯆',
             \ })
 
-nnoremap <leader>t :Defx -split=vertical -winwidth=35 -direction=topleft -columns=git:indent:icon:icons:filename:type -toggle<CR>
+nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35 -direction=topleft -columns=git:indent:icon:icons:filename:type -toggle<CR>
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
     setlocal norelativenumber
@@ -79,4 +79,3 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> cd
                 \ defx#do_action('change_vim_cwd')
 endfunction
-
