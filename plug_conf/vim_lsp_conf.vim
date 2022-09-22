@@ -36,23 +36,19 @@ endif
 " setlocal omnifunc=lsp#complete
 let g:lsp_fold_enabled = 0
 
-function! s:on_lsp_buffer_enabled() abort
-    " use omnifunc if you are fine with it.
-    " setlocal omnifunc=lsp#complete
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    " some mappings to use, tweak as you wish.
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> <leader>ac <plug>(lsp-code-action)
-    nmap <buffer> [d <Plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]d <Plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
-endfunction
-
-call s:on_lsp_buffer_enabled()
+" use omnifunc if you are fine with it.
+" setlocal omnifunc=lsp#complete
+if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+" some mappings to use, tweak as you wish.
+nmap gd <plug>(lsp-definition)
+nmap gr <plug>(lsp-references)
+nmap gi <plug>(lsp-implementation)
+nmap gt <plug>(lsp-type-definition)
+nmap <leader>rn <plug>(lsp-rename)
+nmap <leader>ac <plug>(lsp-code-action)
+nmap [d <Plug>(lsp-previous-diagnostic)
+nmap ]d <Plug>(lsp-next-diagnostic)
+nmap K <plug>(lsp-hover)
 
 if executable('ccls')
     call lsp#register_server({
@@ -115,6 +111,5 @@ endif
 " ===
 " === user command
 " ===
-
 command! IDE call lsp#enable() |
             \ hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
