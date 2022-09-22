@@ -15,11 +15,6 @@
 "                                                                              "
 "*******************************************************************************
 
-if dein#is_available('vim-lsp')
-    call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
-                \})
-endif
-
 call dein#add( 'prabirshrestha/asyncomplete-buffer.vim', {'lazy':1,
             \})
 
@@ -40,13 +35,36 @@ if g:os_architect != 'aarch64'
     endif
 endif
 
+" snip
 if has('python3') && dein#is_available('ultisnips')
     call dein#add( 'prabirshrestha/asyncomplete-ultisnips.vim', {'lazy':1,
                 \})
 endif
 
-call dein#add('prabirshrestha/asyncomplete.vim', {'lazy':1,
-            \'depends': ['asyncomplete-lsp.vim','asyncomplete-buffer.vim', 'asyncomplete-look',
-            \'asyncomplete-file.vim', 'asyncomplete-tabnine.vim', 'asyncomplete-ultisnips.vim'],
+" lsp
+if dein#is_available('vim-lsp')
+    call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
+                \})
+endif
+
+" ===
+" === setting
+" ===
+let g:asyncomplete_conf = { 'lazy':1,
+            \'depends': ['asyncomplete-buffer.vim',
+            \'asyncomplete-look','asyncomplete-file.vim'],
             \'on_event': ['BufReadPre'],
-            \'hook_post_source':'source $CONF_PATH/plug_conf/asyncomplete_conf.vim' })
+            \'hook_post_source':'source $CONF_PATH/plug_conf/asyncomplete_conf.vim'}
+
+if dein#is_available('asyncomplete-lsp.vim')
+    call add(g:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
+endif
+if dein#is_available('asyncomplete-tabnine.vim')
+    call add(g:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
+endif
+
+if dein#is_available('asyncomplete-ultisnips.vim')
+    call add(g:asyncomplete_conf.depends, 'asyncomplete-ultisnips.vim')
+endif
+
+call dein#add('prabirshrestha/asyncomplete.vim', g:asyncomplete_conf)
