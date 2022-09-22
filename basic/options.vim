@@ -55,7 +55,7 @@ set cursorcolumn
 let &colorcolumn="81,121"
 set textwidth=80
 set hidden
-set showmode
+set noshowmode
 set showcmd
 set mouse=
 set nowrap
