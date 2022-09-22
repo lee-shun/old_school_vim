@@ -27,9 +27,6 @@ if dein#is_available('vim-lsp')
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
 endif
 
-call dein#add('roxma/nvim-yarp', {'lazy':1})
-call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
-
 let g:deoplete_nvim_config = {'lazy':1,
             \'depends':['nvim-yarp','vim-hug-neovim-rpc',
             \'deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
