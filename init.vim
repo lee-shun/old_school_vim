@@ -59,8 +59,8 @@ let g:old_school_vim_plug_coc = 0
 let g:old_school_vim_plug_lsp = 1
 
 " choose one of following complete engines
-let g:old_school_vim_plug_deoplete = 0
-let g:old_school_vim_plug_asyncomplete = 1
+let g:old_school_vim_plug_deoplete = 1
+let g:old_school_vim_plug_asyncomplete = 0
 
 " ===
 " === default control

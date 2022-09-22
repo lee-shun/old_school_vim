@@ -30,7 +30,7 @@ endif
 let g:deoplete_nvim_config = {'lazy':1,
             \'depends':['nvim-yarp','vim-hug-neovim-rpc',
             \'deoplete-vim-lsp', 'vim-snippets', 'ultisnips'],
-            \'on_event': 'InsertEnter',
+            \'on_event': ['BufReadPre'],
             \'hook_add':'let g:deoplete#enable_at_startup = 1 ',
             \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim',
             \'hook_done_update':''}
