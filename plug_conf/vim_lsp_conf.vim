@@ -40,15 +40,15 @@ let g:lsp_fold_enabled = 0
 " setlocal omnifunc=lsp#complete
 if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 " some mappings to use, tweak as you wish.
-nmap gd <plug>(lsp-definition)
-nmap gr <plug>(lsp-references)
-nmap gi <plug>(lsp-implementation)
-nmap gt <plug>(lsp-type-definition)
-nmap <leader>rn <plug>(lsp-rename)
-nmap <leader>ac <plug>(lsp-code-action)
-nmap [d <Plug>(lsp-previous-diagnostic)
-nmap ]d <Plug>(lsp-next-diagnostic)
-nmap K <plug>(lsp-hover)
+nnoremap gd <plug>(lsp-definition)
+nnoremap gr <plug>(lsp-references)
+nnoremap gi <plug>(lsp-implementation)
+nnoremap gt <plug>(lsp-type-definition)
+nnoremap <leader>rn <plug>(lsp-rename)
+nnoremap <leader>ac <plug>(lsp-code-action)
+nnoremap [d <Plug>(lsp-previous-diagnostic)
+nnoremap ]d <Plug>(lsp-next-diagnostic)
+nnoremap K <plug>(lsp-hover)
 
 if executable('ccls')
     call lsp#register_server({
