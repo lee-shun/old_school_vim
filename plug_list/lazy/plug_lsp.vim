@@ -22,7 +22,7 @@ call dein#add('dense-analysis/ale', {'lazy':1,
 call dein#add('prabirshrestha/vim-lsp',{'lazy':1,
             \'on_event':'BufReadPost',
             \'hook_add':'source $CONF_PATH/plug_conf/vim_lsp_conf.vim',
-            \'hook_post_source':'source $CONF_PATH/plug_conf/vim_lsp_server_conf.vim'})
+            \})
 
 call dein#add('rhysd/vim-lsp-ale', {'lazy':1,
             \'depends':['ale', 'vim-lsp'],
