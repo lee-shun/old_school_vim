@@ -3,7 +3,7 @@ call defx#custom#column('icon', {
             \ 'opened_icon': '-',
             \ })
 
-nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35 -direction=topleft -columns=git:indent:icons:filename:type -toggle<CR>
+nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35 -direction=topleft -columns=git:indent:icons:filename:type -toggle  -resume -search_recursive=`expand('%:p')` `getcwd()`<CR>
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
     setlocal norelativenumber
