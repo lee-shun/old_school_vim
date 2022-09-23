@@ -23,6 +23,7 @@ let $CONF_PATH = split(&runtimepath, ',')[0]
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
+        let g:os_architect = 'x86_64'
     else " not windows, use 'uname' command.
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '')
@@ -105,7 +106,7 @@ if g:old_school_vim_ulti_mode == 1
     let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
     let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
-    if dein#load_state(s:dein_dir)
+    " if dein#load_state(s:dein_dir)
 
     call dein#begin(s:dein_dir)
 
@@ -132,8 +133,8 @@ if g:old_school_vim_ulti_mode == 1
     endif
 
     call dein#end()
-    call dein#save_state()
-    endif
+    " call dein#save_state()
+    " endif
 
     augroup DeinSetup
         autocmd!
