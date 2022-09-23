@@ -117,3 +117,18 @@ call dein#add('mhinz/vim-signify', {'lazy':1,
 
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'], })
+
+
+if g:os_name == 'Linux'
+    call dein#add('junegunn/fzf', {'lazy':1,
+                \'build': './install --all',
+                \})
+elseif g:os_name == 'Windows'
+    call dein#add('junegunn/fzf', {'lazy':1,
+                \'build': 'powershell.exe .\install.ps1',
+                \})
+endif
+call dein#add('junegunn/fzf.vim', {'lazy':1,
+            \'depends': ['fzf'],
+            \'on_cmd' : ['FZF', 'Tags', 'Buffers', 'Files', 'History', 'Lines', 'Ag', 'Rg', 'BLines'],
+            \'hook_add' : 'source $CONF_PATH/plug_conf/fzf_conf.vim'})
