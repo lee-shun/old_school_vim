@@ -46,7 +46,6 @@ let g:coc_global_extensions = [
             \ 'coc-clangd',
             \ 'coc-java',
             \ 'coc-floaterm',
-            \ 'coc-fzf-preview',
             \]
 if has('nvim')
     call add(g:coc_global_extensions, 'coc-floatinput')

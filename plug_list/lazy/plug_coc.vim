@@ -26,3 +26,8 @@ call dein#add('josa42/vim-lightline-coc', {'lazy':1,
             \'on_event': ['BufReadPre'], 
             \'hook_add':'source $CONF_PATH/plug_conf/lightline_coc_conf.vim',
             \'hook_post_source':'call lightline#coc#register() | call lightline#init()'})
+
+call dein#add('antoinemadec/coc-fzf', {'lazy':1,
+            \'depends':['coc.nvim', 'fzf.vim'],
+            \'on_event': ['BufReadPre'],
+            \'rev': 'release', })
