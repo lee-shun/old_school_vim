@@ -45,6 +45,11 @@ let g:deoplete_nvim_config = {'lazy':1,
 if dein#is_available('deoplete-tabnine')
     call add(g:deoplete_nvim_config.depends, 'deoplete-tabnine')
 endif
+
+if dein#is_available('ale')
+    call add(g:deoplete_nvim_config.depends, 'ale')
+endif
+
 if has('nvim')
     let g:deoplete_nvim_config.hook_done_update = 'UpdateRemotePlugins'
 endif

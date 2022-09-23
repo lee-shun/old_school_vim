@@ -20,7 +20,6 @@
 " ===
 let g:ale_linters = {
             \'cpp': ['cpplint'],
-            \'python': ['pylint'],
             \'markdown':['markdownlint']}
 
 let g:ale_sign_error = ''

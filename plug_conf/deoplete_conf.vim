@@ -42,12 +42,12 @@ endfunction
 
 " overrall
 call deoplete#custom#option({
-            \ 'auto_complete_delay': 10,
+            \ 'auto_complete_delay': 5,
             \ 'smart_case': v:true,
             \ })
 " file
 call deoplete#custom#source('file', {
-            \'mark':'file',
+            \'mark':'[file]',
             \'max_candidates': 4
             \})
 call deoplete#custom#var('file', {
@@ -55,30 +55,23 @@ call deoplete#custom#var('file', {
 
 " around
 call deoplete#custom#source('around',{
-            \'mark':'arou',
+            \'mark':'[arou]',
             \'max_candidates': 4
             \})
 
 " buffer
 call deoplete#custom#source('buffer', {
-            \'mark':'buff',
+            \'mark':'[buff]',
             \'max_candidates': 4
             \})
 
 " dictionary
-call deoplete#custom#source( 'dictionary', {
-            \'mark':'dict',
+call deoplete#custom#source('dictionary', {
+            \'mark':'[dict]',
             \'min_pattern_length': 4,
             \'sorters': [],
             \'max_candidates': 4
             \})
-
-" latex
-if(exists('g:loaded_vimtex'))
-    call deoplete#custom#var('omni', 'input_patterns', {
-                \'tex': g:vimtex#re#deoplete
-                \})
-endif
 
 " tabnine
 if dein#is_available('deoplete-tabnine')
@@ -87,7 +80,7 @@ if dein#is_available('deoplete-tabnine')
                 \'max_num_results': 4,
                 \})
     call deoplete#custom#source('tabnine', {
-                \'mark':'tabn',
+                \'mark':'[tabn]',
                 \'max_candidates': 4,
                 \})
 endif
@@ -95,7 +88,16 @@ endif
 " lsp
 if dein#is_available('vim-lsp')
     call deoplete#custom#source('lsp', {
-                \'max_candidates': 10
+                \'max_candidates': 10,
+                \'mark':"[lsp]",
                 \})
 endif
 
+" ale
+if dein#is_available('ale')
+    call deoplete#custom#source('ale', {
+                \'max_candidates': 10,
+                \'mark':"[ale]",
+                \'rank': 999,
+                \})
+endif
