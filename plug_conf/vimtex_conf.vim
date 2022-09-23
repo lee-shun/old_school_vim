@@ -36,7 +36,11 @@ let g:tex_conceal='abdmg'
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_format_enabled=1
 
-" latex
+" latex with deoplete
+if dein#is_available('deoplete.nvim') && !dein#is_sourced('deoplete.nvim')
+    call dein#source('deoplete.nvim')
+endif
+
 if(exists('g:loaded_vimtex')) && dein#is_sourced('deoplete.nvim')
     call deoplete#custom#var('omni', 'input_patterns', {
                 \'tex': g:vimtex#re#deoplete
