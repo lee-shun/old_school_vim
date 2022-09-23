@@ -26,12 +26,12 @@ call dein#add( 'prabirshrestha/asyncomplete-file.vim', {'lazy':1,
 
 " tabnine
 if g:os_architect != 'aarch64'
-    if has('win32') || has('win64')
-        call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
-                    \'build': 'powershell.exe .\install.ps1' })
-    else
+    if g:os_name == 'Linux'
         call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
                     \'build': './install.sh' })
+    elseif g:os_name == 'Windows'
+        call dein#add( 'kitagry/asyncomplete-tabnine.vim', { 'lazy':1,
+                    \'build': 'powershell.exe .\install.ps1' })
     endif
 endif
 
