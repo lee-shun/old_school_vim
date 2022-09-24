@@ -32,11 +32,13 @@ endif
 
 if g:os_name == 'Windows' && has('nvim') " nvim on win
     let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-    " use git bash
-    set shell=\"C:/Program\ Files/Git/bin/bash.exe\"
-    set shellcmdflag=--login\ -c
-    set shellquote=
-    set shellxquote=
+    " use git-bash if possible
+    if executable('git')
+        set shell=\"C:/Program\ Files/Git/bin/bash.exe\"
+        set shellcmdflag=--login\ -c
+        set shellquote=
+        set shellxquote=
+    endif
 elseif g:os_name == 'Linux'
     if executable('conda')
         let g:python_host_prog='/usr/bin/python'
