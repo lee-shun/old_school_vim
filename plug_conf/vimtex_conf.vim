@@ -18,6 +18,16 @@
 " ===
 " === vimtex
 " ===
+if g:os_name == 'Windows'
+  let g:vimtex_view_general_viewer = 'SumatraPDF'
+  let g:vimtex_view_general_options
+      \ = '-reuse-instance -forward-search @tex @line @pdf'
+else
+    let g:vimtex_view_method = 'zathura'
+endif
+
+let g:vimtex_quickfix_mode = 0
+
 if dein#is_available('deoplete.nvim') && !dein#is_sourced('deoplete.nvim')
     call dein#source('deoplete.nvim')
 endif
