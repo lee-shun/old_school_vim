@@ -58,10 +58,15 @@ call dein#add( 'ferrine/md-img-paste.vim',{'lazy':1,
             \'hook_add':'source $CONF_PATH/plug_conf/mkd_paste_img_conf.vim'
             \})
 
-call dein#add('lervag/vimtex', {'lazy':1,
+let g:vim_tex_conf = {'lazy':1,
+            \'depends':[],
             \'on_ft':['tex', 'plaintex'],
             \'hook_post_source':'source $CONF_PATH/plug_conf/vimtex_conf.vim'
-            \})
+            \}
+if g:old_school_vim_plug_deoplete == 1
+    call add(g:vim_tex_conf.depends, 'deoplete.nvim')
+endif
+call dein#add('lervag/vimtex', g:vim_tex_conf)
 
 if (g:os_name == 'Linux') && (executable('roscore'))
     call dein#add( 'taketwo/vim-ros', {'lazy':1,
