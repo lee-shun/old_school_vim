@@ -94,10 +94,10 @@ You can also use the bash files under the `env/` folder.
 **NOTE:** Please notice that the Gvim on Windows will confuse the Git Bash with
 its own vim.
 
-| **Environment**                                                          | **Screen Shots**                     |
-| ------------------------------------------------------------------------ | ------------------------------------ |
-| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti_coc.png)        |
-| <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png) |
-| <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)         |
+| **Environment**                                                          | **Screen Shots**                          |
+| ------------------------------------------------------------------------ | ------------------------------------      |
+| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti_coc.png) |
+| <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png)      |
+| <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)              |
 
 > Last Modified : 二 13 9 月 2022 08:21:11 下午
