@@ -67,7 +67,7 @@ set ttimeoutlen=10    " unnoticeable small value
 set updatetime=50
 set conceallevel=0
 set wildmenu
-if !has('nvim')
+if !has('nvim') && v:version > 802
     set wildoptions=pum
 endif
 set lazyredraw
