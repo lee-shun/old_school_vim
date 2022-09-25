@@ -27,6 +27,12 @@ else
 endif
 
 let g:vimtex_quickfix_mode = 0
+let g:vimtex_mappings_enabled=0
+let g:vimtex_imaps_enabled=0
+let g:vimtex_text_obj_enabled=0
+let g:vimtex_fold_enabled=1
+let g:tex_conceal='abdmg'
+let g:vimtex_format_enabled=1
 
 if dein#is_available('deoplete.nvim') && !dein#is_sourced('deoplete.nvim')
     call dein#source('deoplete.nvim')

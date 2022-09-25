@@ -1,3 +1,8 @@
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
+
 " https://github.com/markonm/hlyank.vim
 
 let s:cpo_save = &cpo

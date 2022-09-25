@@ -1,3 +1,8 @@
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
+
 " repeat.vim - Let the repeat command repeat plugin maps
 " Maintainer:   Tim Pope
 " Version:      1.2
