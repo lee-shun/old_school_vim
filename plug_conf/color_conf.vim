@@ -15,6 +15,9 @@
 "                                                                              "
 "*******************************************************************************
 
+" ===
+" === sonokai
+" ===
 let g:sonokai_better_performance = 1
 let g:sonokai_enable_italic = 0
 let g:sonokai_style = 'maia'

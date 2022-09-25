@@ -93,7 +93,7 @@ call dein#add('tpope/vim-repeat', {'lazy':1,
             \})
 
 call dein#add('tpope/vim-commentary', {'lazy':1,
-            \'on_map':['gcc', 'gc'],
+            \'on_map':{'n':'gcc', 'v':'gc'},
             \})
 
 call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
@@ -134,13 +134,6 @@ call dein#add('thinca/vim-textobj-between', {'lazy':1,
 
 call dein#add('mbbill/undotree', {'lazy':1,
             \'on_cmd':['UndotreeToggle']})
-
-call dein#add('skywind3000/asyncrun.vim', {'lazy':1,
-            \'on_event': ['BufReadPost']})
-
-call dein#add('skywind3000/asynctasks.vim', {'lazy':1,
-            \'depedns':['asyncrun.vim'],
-            \'on_event': ['BufReadPost'],})
 
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'], })
