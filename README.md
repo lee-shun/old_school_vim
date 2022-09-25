@@ -6,10 +6,24 @@
 
 **In this vim/neovim configuration, I tried to:**
 
-- separate the whole `vimrc` into `dependence-free` and `dependences` parts.
+- choose and config the plugins with good compatibility, which can work under `Linux (x86_64, aarch64)`,
+  `Windows (x86_64)` and even `git bash`.
 - use as less dependences as possible to accomplish the functions.
 - keep the original vim keybindings and operations.
-- use `dein` to lazy load most of the plugins.
+- use `dein.vim` to lazy load most of the plugins.
+
+## Requirements
+
+### Vim & Neovim Version
+
+- vim 8.2 if use `Ulti-Mode`, vim 7 if use `Mini-Mode`
+- neovim 4.2 or later, no matter what modes.
+
+### Environment
+
+- `nodejs`, if use `coc.nvim`
+- `python3`, if use `deoplete.nvim`
+- `language servers` if use `vim-lsp` or `coc.nvim`
 
 ## Quick Start
 
@@ -24,14 +38,14 @@
 
 - **Ulti-Mode** set `g:old_school_vim_ulti_mode` to `1` in [init.vim](init.vim)
 
-  - `g:old_school_vim_plug_general = 1` : 
-  - `g:old_school_vim_plug_advanced = 1`
+  - `g:old_school_vim_plug_general = 1`
+    - general editor enhancement plugins.
 
-    > some plugins require python3 support.
+  - `g:old_school_vim_plug_advanced = 1`
+    - file type based special plugins.
 
   - `g:old_school_vim_plug_lsp = 1 `
-
-    > language-sever based code completion, etc.
+    - language-sever based code completion, etc.
 
   - choose one from `completion eigen`:
     - `g:old_school_vim_plug_deoplete`
@@ -41,17 +55,6 @@
   - 🆘 using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
     installation. Under this situation, tweaking manually may be needed.
 
-## Requirements
-
-- VIM
-
-  - vim 8.2 if use plugins, vim 7 if use `Mini-Mode`
-
-- NEOVIM
-
-  - neovim 4.2 or later.
-
-- _python3_ for (advanced plugins) and _language-server stuff_ for (vim-lsp)
 
 ## Installation
 
