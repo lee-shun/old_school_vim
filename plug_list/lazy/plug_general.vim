@@ -135,6 +135,14 @@ call dein#add('thinca/vim-textobj-between', {'lazy':1,
 call dein#add('mbbill/undotree', {'lazy':1,
             \'on_cmd':['UndotreeToggle']})
 
+if !has('nvim')
+    call dein#add('skywind3000/asyncrun.vim', {'lazy':1,
+                \'on_event': ['BufReadPost']})
+    call dein#add('skywind3000/asynctasks.vim', {'lazy':1,
+                \'depedns':['asyncrun.vim'],
+                \'on_event': ['BufReadPost'],})
+endif
+
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'], })
 
