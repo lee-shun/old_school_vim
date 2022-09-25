@@ -30,8 +30,9 @@
 - use the `config_env.sh` to install the dependencies...
 
 - **Mini-Mode:** set `g:old_school_vim_ulti_mode` to `0` in [init.vim](init.vim)
+
   > use vim as an excellent text editor!
-  >
+
   - Zero dependencies.
   - Fully portable.
   - Pure vimscripts.
@@ -39,40 +40,45 @@
 - **Ulti-Mode** set `g:old_school_vim_ulti_mode` to `1` in [init.vim](init.vim)
 
   - `g:old_school_vim_plug_general = 1`
+
     - general editor enhancement plugins.
 
   - `g:old_school_vim_plug_advanced = 1`
+
     - file type based special plugins.
 
-  - `g:old_school_vim_plug_lsp = 1 `
-    - language-sever based code completion, etc.
+  - `g:old_school_vim_plug_coc = 1`
 
-  - choose one from `completion eigen`:
-    - `g:old_school_vim_plug_deoplete`
-    - `g:old_school_vim_plug_asyncomplete`
+    - use coc as `lsp + completion engine` and much more.
+
+  - `g:old_school_vim_plug_lsp = 1`
+    - language-sever based code completion, etc.
+    - choose one from `completion eigen`:
+      - `g:old_school_vim_plug_deoplete`
+      - `g:old_school_vim_plug_asyncomplete`
 
 - **NOTE:**
+
   - 🆘 using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
     installation. Under this situation, tweaking manually may be needed.
 
+  - the support of `coc.nvim` on `aarch64` is not good, try to avoid this.
 
 ## Installation
 
 You can also use the bash files under the `env/` folder.
 
-1. **Clone the repo to the path:**
-
-- **For Windows:**
-  - Neovim configuration path: `~/Appdata/Local/nvim`
-  - Vim configuration path(For Git Bash): `~/.vim`
-  - Gvim configuration path: `~/vimfiles`
-- **For Linux:**
-  - Neovim configuration path: `~/.config/nvim`
-  - Vim configuration path: `~/.vim`
-
-2. **Choose your mode:**
-
-3. **Install the python and language-severs if applicable.**
+1. **clone the repo to the path:**
+    - **For Windows:**
+        - Neovim configuration path: `~/Appdata/Local/nvim`
+        - Vim configuration path(For Git Bash): `~/.vim`
+        - Gvim configuration path: `~/vimfiles`
+    - **For Linux:**
+        - Neovim configuration path: `~/.config/nvim`
+        - Vim configuration path: `~/.vim`
+2. **choose your mode**
+3. **:Dein install**
+4. **install the python and language-severs if applicable.**
 
 ## Screen Shots
 
@@ -90,7 +96,7 @@ its own vim.
 
 | **Environment**                                                          | **Screen Shots**                     |
 | ------------------------------------------------------------------------ | ------------------------------------ |
-| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/linux_vim.png)        |
+| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti_coc.png)        |
 | <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png) |
 | <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)         |
 
