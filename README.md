@@ -1,7 +1,8 @@
 # <p align="center">![tittle](./img/old_school_vim.png)</p>
 
-> Due to my study and work, I always want to use with under different environments. So, I always choose the plugins with
-> good compatibility. In my opinion, I prefer the plugins written in `vimscripts > vimscripts + python3 > lua`.Comparing with today's neovim lua trending, The plugins in this configuration are pretty "**Old-School**"!
+> Due to my study and work, I always want to use vim under different environments. So, I always choose the plugins with
+> good compatibility. In my opinion, I prefer the plugins written in `vimscripts > vimscripts + python3 > lua`.Comparing
+> with today's neovim lua trending, The plugins in this configuration are pretty "**Old-School**"!
 
 **In this vim/neovim configuration, I tried to:**
 
@@ -17,16 +18,16 @@
 - **Mini-Mode:** set `g:old_school_vim_ulti_mode` to `0` in [init.vim](init.vim)
   > use vim as an excellent text editor!
   >
-  > - No Plugins, No Dependencies.
+  - Zero dependencies.
+  - Fully portable.
+  - Pure vimscripts.
+
 - **Ulti-Mode** set `g:old_school_vim_ulti_mode` to `1` in [init.vim](init.vim)
 
-  > use vim with some pretty neat plugins
-
-  - `g:old_school_vim_plug_general = 1`
-    > dependence-free plugins written in Vimscripts.
+  - `g:old_school_vim_plug_general = 1` : 
   - `g:old_school_vim_plug_advanced = 1`
 
-    > plugins based on python3.
+    > some plugins require python3 support.
 
   - `g:old_school_vim_plug_lsp = 1 `
 
@@ -44,7 +45,7 @@
 
 - VIM
 
-  - vim 8.2 if use plugins, vim 7 if use `mini-mode`
+  - vim 8.2 if use plugins, vim 7 if use `Mini-Mode`
 
 - NEOVIM
 
