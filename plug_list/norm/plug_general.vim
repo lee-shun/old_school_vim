@@ -16,6 +16,7 @@
 "*******************************************************************************
 
 call dein#add('Shougo/dein.vim')
+call dein#add('haya14busa/dein-command.vim')
 
 call dein#add('sainnhe/sonokai', {
             \'name':'custom_colorscheme',
