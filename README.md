@@ -69,15 +69,18 @@
 You can also use the bash files under the `env/` folder.
 
 1. **clone the repo to the path:**
-    - **For Windows:**
-        - Neovim configuration path: `~/Appdata/Local/nvim`
-        - Vim configuration path(For Git Bash): `~/.vim`
-        - Gvim configuration path: `~/vimfiles`
-    - **For Linux:**
-        - Neovim configuration path: `~/.config/nvim`
-        - Vim configuration path: `~/.vim`
+   - **For Windows:**
+     - Neovim configuration path: `~/Appdata/Local/nvim`
+     - Vim configuration path(For Git Bash): `~/.vim`
+     - Gvim configuration path: `~/vimfiles`
+   - **For Linux:**
+     - Neovim configuration path: `~/.config/nvim`
+     - Vim configuration path: `~/.vim`
 2. **choose your mode**
-3. **:Dein install**
+3. **`:Dein install`**
+    - several times (at least 2) of `dein#install()` are required to make sure the correct plugins intstallion.
+    - `:UpdateRemotePlugins` may also needed...
+
 4. **install the python and language-severs if applicable.**
 
 ## Screen Shots
@@ -95,7 +98,7 @@ You can also use the bash files under the `env/` folder.
 its own vim.
 
 | **Environment**                                                          | **Screen Shots**                          |
-| ------------------------------------------------------------------------ | ------------------------------------      |
+| ------------------------------------------------------------------------ | ----------------------------------------- |
 | <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti_coc.png) |
 | <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png)      |
 | <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)              |
