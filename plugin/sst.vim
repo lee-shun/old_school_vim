@@ -1,3 +1,8 @@
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
+
 " stt.vim - Simple Togglable Terminal
 " Author: Cássio Ávila (AKA toniz4)
 " Version: 0.4
@@ -5,11 +10,6 @@
 " 		make it a fixed size when opening more then one terminal split
 " TODO: Better vim support
 " TODO: Fix this mess of a code
-
-" Not load for ulti-mode.
-if g:old_school_vim_ulti_mode == 1
-  finish
-endif
 
 if !exists('g:stt_auto_insert')
 	 let g:stt_auto_insert = 0

@@ -1,3 +1,8 @@
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
+
 " surround.vim - Surroundings
 " Author:       Tim Pope <http://tpo.pe/>
 " Version:      2.2

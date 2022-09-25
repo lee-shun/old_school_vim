@@ -20,11 +20,15 @@ call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
 
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
-call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
-call dein#add('itchyny/lightline.vim', {'lazy':1,
-            \'depends':['lightline-gitdiff', 'vim-fugitive', 'custom_colorscheme'],
+call dein#add('ryanoasis/vim-devicons', {'lazy':1})
+
+call dein#add('mhinz/vim-signify', {'lazy':1,
+            \'on_event': ['BufReadPost'], })
+
+call dein#add('glepnir/spaceline.vim', {'lazy':1,
             \'on_event':['BufReadPre'],
-            \'hook_add':'source $CONF_PATH/plug_conf/lightline_conf.vim'})
+            \'depends':['vim-signify', 'vim-devicons'],
+            \'hook_add':'source $CONF_PATH/plug_conf/spaceline_conf.vim'})
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
@@ -41,7 +45,7 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'hook_add':'source $CONF_PATH/plug_conf/floaterm_conf.vim'})
 
-if g:old_school_vim_plug_coc == 0
+if g:old_school_vim_plug_coc == 0 " coc-explorer..
 
     call dein#add('kristijanhusak/defx-git', {'lazy':1,
                 \'hook_add':'source $CONF_PATH/plug_conf/defx_git_config.vim'})
@@ -73,6 +77,31 @@ call dein#add('sakshamgupta05/vim-todo-highlight', {'lazy':1,
 call dein#add('junegunn/vim-peekaboo', {'lazy':1,
             \'on_event': ['BufReadPost'],
             \'on_map': {'i':'<C-r>', 'n':'"'}})
+
+call dein#add('airblade/vim-rooter', {'lazy':1,
+            \'on_event': ['BufReadPost'],
+            \'hook_add':'source $CONF_PATH/plug_conf/rooter_conf.vim'
+            \})
+
+call dein#add('tpope/vim-surround', {'lazy':1,
+            \'on_event': ['BufReadPost'],
+            \})
+
+call dein#add('tpope/vim-repeat', {'lazy':1,
+            \'on_map':'.',
+            \})
+
+call dein#add('tpope/vim-commentary', {'lazy':1,
+            \'on_map':['gcc', 'gc'],
+            \})
+
+call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
+            \'on_event':['BufReadPost'],
+            \})
+
+call dein#add('machakann/vim-highlightedyank', {'lazy':1,
+            \'on_event': ['TextYankPost'],
+            \'hook_post_source':'source $CONF_PATH/plug_conf/hlightedyank_conf.vim'})
 
 call dein#add('tpope/vim-speeddating', {'lazy':1,
             \'on_event': ['BufReadPost'],
@@ -112,12 +141,8 @@ call dein#add('skywind3000/asynctasks.vim', {'lazy':1,
             \'depedns':['asyncrun.vim'],
             \'on_event': ['BufReadPost'],})
 
-call dein#add('mhinz/vim-signify', {'lazy':1,
-            \'on_event': ['BufReadPost'], })
-
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'], })
-
 
 if g:os_name == 'Linux'
     call dein#add('junegunn/fzf', {'lazy':1,

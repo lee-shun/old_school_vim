@@ -1,3 +1,8 @@
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
+
 " File: mru.vim
 " Author: Yegappan Lakshmanan (yegappan AT yahoo DOT com)
 " Version: 3.11
@@ -12,11 +17,6 @@
 "            software.
 "
 " ****************** Do not modify after this line ************************
-" Not load for ulti-mode.
-if g:old_school_vim_ulti_mode == 1
-  finish
-endif
-
 if exists('loaded_mru')
   finish
 endif

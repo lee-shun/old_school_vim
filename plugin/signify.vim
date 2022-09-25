@@ -1,4 +1,8 @@
-if g:old_school_vim_ulti_mode == 0
+" Not load for ulti-mode.
+if g:old_school_vim_ulti_mode == 1
+  finish
+endif
+
   " Plugin:      https://github.com/mhinz/vim-signify
   " Description: show a diff from a version control system via the signcolumn
   " Maintainer:  Marco Hinz <http://github.com/mhinz>
@@ -555,4 +559,3 @@ if g:old_school_vim_ulti_mode == 0
 
 
   " vim: et sw=2 sts=2
-endif
