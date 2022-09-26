@@ -77,6 +77,10 @@ call dein#add('chrisbra/Colorizer', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'on_cmd':['ColorToggle'], })
 
+call dein#add('rlue/vim-barbaric', {'lazy':1,
+            \'on_event':['InsertEnter'],
+            \})
+
 call dein#add('sakshamgupta05/vim-todo-highlight', {'lazy':1,
             \'on_event': ['BufReadPost'],
             \'hook_add': 'source $CONF_PATH/plug_conf/todo_hl_conf.vim' })
