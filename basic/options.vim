@@ -84,6 +84,7 @@ endif
 set laststatus=2
 set cmdheight=1
 set spelllang=en,cjk  " Spell languages
+set spellfile=$CONF_PATH/spell/en.utf-8.add
 " Align indent to next multiple value of shiftwidth. For its meaning,
 " see http://vim.1045645.n5.nabble.com/shiftround-option-td5712100.html
 set shiftround
