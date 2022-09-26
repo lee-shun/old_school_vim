@@ -17,6 +17,7 @@
 
 call dein#add('neoclide/coc.nvim', { 'lazy':'1',
             \'depends':['vim-snippets'],
+            \'on_event': ['BufReadPre'],
             \'merged': 0,
             \'rev': 'release',
             \'hook_post_source':'source $CONF_PATH/plug_conf/coc_conf.vim'})

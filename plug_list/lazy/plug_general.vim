@@ -29,7 +29,13 @@ let g:spaceline_conf = {'lazy':1,
             \'on_event':['BufReadPost'],
             \'depends':['vim-signify', 'vim-devicons'],
             \'hook_add':'source $CONF_PATH/plug_conf/spaceline_conf.vim'}
-call dein#add('glepnir/spaceline.vim', g:spaceline_conf)
+if g:old_school_vim_plug_coc == 1
+    call add(g:spaceline_conf.depends, 'coc.nvim')
+endif
+if g:old_school_vim_plug_lsp == 1
+    call add(g:spaceline_conf.depends, 'vim-lsp-ale')
+endif
+call dein#add('lee-shun/spaceline.vim', g:spaceline_conf)
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
