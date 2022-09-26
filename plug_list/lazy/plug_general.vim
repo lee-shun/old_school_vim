@@ -15,10 +15,6 @@
 "                                                                              "
 "*******************************************************************************
 
-call dein#add('sheerun/vim-polyglot', {'lazy':1,
-            \'on_event':['BufReadPre'],
-            \})
-
 call dein#add('roxma/nvim-yarp', {'lazy':1})
 call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
 
