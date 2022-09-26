@@ -18,7 +18,7 @@
 call dein#add('Shougo/dein.vim')
 call dein#add('haya14busa/dein-command.vim')
 
-call dein#add('sainnhe/sonokai', {
+call dein#add('arcticicestudio/nord-vim', {
             \'name':'custom_colorscheme',
             \'hook_add':"source $CONF_PATH/plug_conf/color_conf.vim"
             \})
