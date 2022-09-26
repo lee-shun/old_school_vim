@@ -78,7 +78,7 @@ You can also use the bash files under the `env/` folder.
      - Vim configuration path: `~/.vim`
 2. **choose your mode**
 3. enter vim and **`:call dein#install()`**
-    - several times (at least 2) of `dein#install()` are required to make sure the correct plugins intstallion.
+    - several times (at least 2) of `dein#install()` are required to make sure the correct plugins installation.
     - `:UpdateRemotePlugins` may also needed...
 
 4. **install the python and language-severs if applicable.**
