@@ -25,21 +25,6 @@ function! s:warn(message) abort
     return 0
 endfunction
 
-function! s:fzf_mru_cwd_source() abort
-    let l:cwd = getcwd()
-    return filter(fzf#vim#_recent_files(), 'fnamemodify(v:val, ":p") =~ ("^" . l:cwd)')
-endfunction
-
-function! s:fzf_mru_cwd(bang) abort
-    let s:source = 'history-files-in-cwd'
-    call fzf#run(fzf#wrap('history-files-in-cwd', {
-                \ 'source':  s:fzf_mru_cwd_source(),
-                \ 'options': ['-m', '--header-lines', !empty(expand('%')), '--prompt', 'MRU> ']
-                \ }, a:bang))
-endfunction
-
-command! -bang MruCwd call <SID>fzf_mru_cwd(<bang>0)
-
 function! s:fzf_bufopen(e) abort
     let list = split(a:e)
     if len(list) < 4
@@ -64,21 +49,6 @@ function! s:fzf_bufopen(e) abort
     execute 'e '  . path
     call cursor(linenr, col)
 endfunction
-
-function! s:fzf_jumplist() abort
-    return split(call('execute', ['jumps']), '\n')[1:]
-endfunction
-
-function! s:fzf_jumps(bang) abort
-    let s:source = 'jumps'
-    call fzf#run(fzf#wrap('jumps', {
-                \ 'source':  s:fzf_jumplist(),
-                \ 'sink':    function('s:fzf_bufopen'),
-                \ 'options': '+m --prompt "Jumps> "',
-                \ }, a:bang))
-endfunction
-
-command! -bang Jumps call <SID>fzf_jumps(<bang>0)
 
 function! s:fzf_yank_sink(e) abort
     let @" = a:e
@@ -181,72 +151,9 @@ endfunction
 
 command! -bang Registers call s:fzf_registers(<bang>0)
 
-if exists('*trim')
-    function! s:strip(str) abort
-        return trim(a:str)
-    endfunction
-else
-    function! s:strip(str) abort
-        return substitute(a:str, '^\s*\(.\{-}\)\s*$', '\1', '')
-    endfunction
-endif
-
-function! s:fzf_outline_format(lists) abort
-    for list in a:lists
-        let linenr = list[2][:len(list[2])-3]
-        let line = s:strip(getline(linenr))
-        let list[0] = substitute(line, list[0], printf("\x1b[34m%s\x1b[m", list[0]), '')
-        call map(list, "printf('%s', v:val)")
-    endfor
-    return a:lists
-endfunction
-
-function! s:fzf_outline_source(tag_cmds) abort
-    if !filereadable(expand('%'))
-        throw 'Save the file first'
-    endif
-    let lines = []
-    for cmd in a:tag_cmds
-        let lines = split(system(cmd), "\n")
-        if !v:shell_error && len(lines)
-            break
-        endif
-    endfor
-    if v:shell_error
-        throw get(lines, 0, 'Failed to extract tags')
-    elseif empty(lines)
-        throw 'No tags found'
-    endif
-    return map(s:fzf_outline_format(map(lines, 'split(v:val, "\t")')), 'join(v:val, "\t")')
-endfunction
-
-function! s:fzf_outline_sink(lines) abort
-    if !empty(a:lines)
-        let line = a:lines[0]
-        execute split(line, "\t")[2]
-    endif
-endfunction
-
-function! s:fzf_outline(bang) abort
-    try
-        let s:source = 'outline'
-        let filetype = get({ 'cpp': 'c++' }, &filetype, &filetype)
-        let tag_cmds = [
-                    \ printf('%s -f - --sort=no --excmd=number --language-force=%s %s 2>/dev/null', g:fzf_ctags, filetype, expand('%:S')),
-                    \ printf('%s -f - --sort=no --excmd=number %s 2>/dev/null', g:fzf_ctags, expand('%:S'))
-                    \ ]
-        call fzf#run(fzf#wrap('outline', {
-                    \ 'source':  s:fzf_outline_source(tag_cmds),
-                    \ 'sink*':   function('s:fzf_outline_sink'),
-                    \ 'options': '--layout=reverse-list -m -d "\t" --with-nth 1 -n 1 --ansi --prompt "Outline> "'
-                    \ }, a:bang))
-    catch
-        call s:warn(v:exception)
-    endtry
-endfunction
-
-command! -bang BOutline call s:fzf_outline(<bang>0)
-
+" ===
+" === Jumps list and Change list
+" ===
 " from https://github.com/junegunn/fzf.vim/issues/865
 
 function GoTo(jumpline)
@@ -265,13 +172,29 @@ function GetLine(bufnr, lnum)
   endif
 endfunction
 
+function Getjumps()
+    let jumps = []
+    let raw_jumps = reverse(copy(getjumplist()[0]))
+    for it in raw_jumps
+        if bufexists(it.bufnr)
+            call add(jumps, it)
+        endif
+    endfor
+    return jumps
+endfunction
+
 function! Jumps()
   " Get jumps with filename added
-  let jumps = map(reverse(copy(getjumplist()[0])), 
-    \ { key, val -> extend(val, {'name': getbufinfo(val.bufnr)[0].name }) })
+  let tmp_jump = Getjumps()
+  if(tmp_jump == [])
+        call s:warn('Empty jump list!')
+        return
+  endif
+  let jumps = map(Getjumps(), 
+    \ { key, val -> extend(val, {'fname': getbufinfo(val.bufnr)[0].name }) })
  
   let jumptext = map(copy(jumps), { index, val -> 
-      \ (val.name).':'.(val.lnum).':'.(val.col+1).': '.GetLine(val.bufnr, val.lnum) })
+      \ (val.fname).':'.(val.lnum).':'.(val.col+1).': '.GetLine(val.bufnr, val.lnum) })
 
   call fzf#run(fzf#vim#with_preview(fzf#wrap({
         \ 'source': jumptext,
@@ -284,6 +207,10 @@ command! Jumps call Jumps()
 
 function! Changes()
   let changes  = reverse(copy(getchangelist()[0]))
+  if(changes == [])
+        call s:warn('Empty change list!')
+        return
+  endif
 
   let changetext = map(copy(changes), { index, val -> 
       \ expand('%').':'.(val.lnum).':'.(val.col+1).': '.GetLine(bufnr('%'), val.lnum) })
