@@ -18,7 +18,8 @@
 if has('nvim') || (!has('nvim')&&v:version>=900)
     call dein#add('github/copilot.vim', {'lazy':1,
                 \'on_event':'BufReadPost',
-                \'hook_done_update':'Copilot setup'
+                \'hook_done_update':'Copilot setup',
+                \'hook_add':'source $CONF_PATH/plug_conf/copilot_conf.vim'
                 \})
 endif
 
