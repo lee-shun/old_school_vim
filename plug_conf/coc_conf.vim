@@ -20,7 +20,11 @@ let g:coc_global_extensions = [
             \ 'coc-pyright',
             \ 'coc-vimtex',
             \ 'coc-texlab',
+            \ 'coc-bibtex',
             \ 'coc-sh',
+            \ 'coc-clangd',
+            \ 'coc-cmake',
+            \ 'coc-java',
             \ 'coc-markdownlint',
             \ 'coc-markmap',
             \ 'coc-html',
@@ -43,8 +47,6 @@ let g:coc_global_extensions = [
             \ 'coc-word',
             \ 'coc-yank',
             \ 'coc-tabnine',
-            \ 'coc-clangd',
-            \ 'coc-java',
             \ 'coc-floaterm',
             \]
 if has('nvim')
