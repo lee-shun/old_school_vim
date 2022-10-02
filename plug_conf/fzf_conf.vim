@@ -183,7 +183,7 @@ function s:get_jumps() abort
     return jumps
 endfunction
 
-function! s:fzf_jumps()
+function! s:fzf_jumps(bang) abort
     " Get jumps with filename added
     let tmp_jump = s:get_jumps()
     if(tmp_jump == [])
@@ -200,12 +200,12 @@ function! s:fzf_jumps()
                 \ 'source': jumptext,
                 \ 'column': 1,
                 \ 'options': ['--delimiter', ':', '--preview-window', '+{2}-/2', '--prompt', 'JumpList>'],
-                \ 'sink': function('s:go_to')})))
+                \ 'sink': function('s:go_to')}, a:bang)))
 endfunction
 
-command! Jumps call s:fzf_jumps()
+command! -bang Jumps call s:fzf_jumps(<bang>0)
 
-function! s:fzf_changes()
+function! s:fzf_changes(bang) abort
     let changes  = reverse(copy(getchangelist()[0]))
     if(changes == [])
         call s:warn('Empty change list!')
@@ -219,10 +219,10 @@ function! s:fzf_changes()
                 \ 'source': changetext,
                 \ 'column': 1,
                 \ 'options': ['--delimiter', ':', '--preview-window', '+{2}-/2', '--prompt', 'ChangeList>'],
-                \ 'sink': function('s:go_to')})))
+                \ 'sink': function('s:go_to')}, a:bang)))
 endfunction
 
-command! Changes call s:fzf_changes()
+command! -bang Changes call s:fzf_changes(<bang>0)
 
 " ===
 " === maps

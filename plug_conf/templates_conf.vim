@@ -53,7 +53,7 @@ function s:get_templates() abort
     return template_list
 endfunction
 
-function! FzfTemplates()
+function! s:fzf_templates(bang)
     let template_list = s:get_templates()
     if(template_list == [])
         call s:warn('Empty template list!')
@@ -63,7 +63,9 @@ function! FzfTemplates()
                 \ 'source': template_list,
                 \ 'column': 1,
                 \ 'options': ['--with-nth', '-2..', '--delimiter', '/', '--preview-window', '+{2}-/2', '--prompt', 'Templates>'],
-                \ 'sink': function('s:use_template')})))
+                \ 'sink': function('s:use_template')}, a:bang)))
 endfunction
 
-command! FzfTemp call FzfTemplates()
+command! -bang Tmpl call s:fzf_templates(<bang>0)
+
+nnoremap <leader>ft :Tmpl<CR>
