@@ -205,7 +205,7 @@ endfunction
 
 command! Jumps call Jumps()
 
-function! Changes()
+function! FzfTemplates()
   let changes  = reverse(copy(getchangelist()[0]))
   if(changes == [])
         call s:warn('Empty change list!')
@@ -222,7 +222,7 @@ function! Changes()
         \ 'sink': function('GoTo')})))
 endfunction
 
-command! Changes call Changes()
+command! Changes call FzfTemplates()
 
 " ===
 " === maps
