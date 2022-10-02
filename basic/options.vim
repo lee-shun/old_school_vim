@@ -98,7 +98,7 @@ endif
 
 " keyword match
 set showmatch
-set iskeyword+=_,$,@,%,#,:
+" set iskeyword+=_,$,@,%,#,:
 set matchpairs=(:),{:},[:],<:>
 set whichwrap=b,s,<,>,[,]
 
