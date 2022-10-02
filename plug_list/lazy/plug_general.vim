@@ -169,3 +169,8 @@ call dein#add('junegunn/fzf.vim', {'lazy':1,
             \'depends': ['fzf'],
             \'on_cmd' : ['FZF', 'Tags', 'Buffers', 'Files', 'History', 'Lines', 'Ag', 'Rg', 'BLines'],
             \'hook_add' : 'source $CONF_PATH/plug_conf/fzf_conf.vim'})
+
+call dein#add('tibabit/vim-templates', {'lazy':1,
+            \'on_cmd' : ['TemplateInit', 'TemplateExpand'],
+            \'hook_add' : 'source $CONF_PATH/plug_conf/templates_conf.vim',
+            \})
