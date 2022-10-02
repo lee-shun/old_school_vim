@@ -156,23 +156,23 @@ command! -bang Registers call s:fzf_registers(<bang>0)
 " ===
 " from https://github.com/junegunn/fzf.vim/issues/865
 
-function GoTo(jumpline)
-  let values = split(a:jumpline, ":")
-  execute "e ".values[0]
-  call cursor(str2nr(values[1]), str2nr(values[2]))
-  execute "normal zvzz"
+function s:go_to(jumpline) abort
+    let values = split(a:jumpline, ":")
+    execute "e ".values[0]
+    call cursor(str2nr(values[1]), str2nr(values[2]))
+    execute "normal zvzz"
 endfunction
 
-function GetLine(bufnr, lnum)
-  let lines = getbufline(a:bufnr, a:lnum)
-  if len(lines)>0
-    return trim(lines[0])
-  else
-    return ''
-  endif
+function s:get_line(bufnr, lnum) abort
+    let lines = getbufline(a:bufnr, a:lnum)
+    if len(lines)>0
+        return trim(lines[0])
+    else
+        return ''
+    endif
 endfunction
 
-function Getjumps()
+function s:get_jumps() abort
     let jumps = []
     let raw_jumps = reverse(copy(getjumplist()[0]))
     for it in raw_jumps
@@ -183,46 +183,46 @@ function Getjumps()
     return jumps
 endfunction
 
-function! Jumps()
-  " Get jumps with filename added
-  let tmp_jump = Getjumps()
-  if(tmp_jump == [])
+function! s:fzf_jumps()
+    " Get jumps with filename added
+    let tmp_jump = s:get_jumps()
+    if(tmp_jump == [])
         call s:warn('Empty jump list!')
         return
-  endif
-  let jumps = map(Getjumps(), 
-    \ { key, val -> extend(val, {'fname': getbufinfo(val.bufnr)[0].name }) })
- 
-  let jumptext = map(copy(jumps), { index, val -> 
-      \ (val.fname).':'.(val.lnum).':'.(val.col+1).': '.GetLine(val.bufnr, val.lnum) })
+    endif
+    let jumps = map(tmp_jump,
+                \ { key, val -> extend(val, {'fname': getbufinfo(val.bufnr)[0].name }) })
 
-  call fzf#run(fzf#vim#with_preview(fzf#wrap({
-        \ 'source': jumptext,
-        \ 'column': 1,
-        \ 'options': ['--delimiter', ':', '--bind', 'alt-a:select-all,alt-d:deselect-all', '--preview-window', '+{2}-/2'],
-        \ 'sink': function('GoTo')})))
+    let jumptext = map(copy(jumps), { index, val -> 
+                \ (val.fname).':'.(val.lnum).':'.(val.col+1).': '.s:get_line(val.bufnr, val.lnum) })
+
+    call fzf#run(fzf#vim#with_preview(fzf#wrap({
+                \ 'source': jumptext,
+                \ 'column': 1,
+                \ 'options': ['--delimiter', ':', '--preview-window', '+{2}-/2', '--prompt', 'JumpList>'],
+                \ 'sink': function('s:go_to')})))
 endfunction
 
-command! Jumps call Jumps()
+command! Jumps call s:fzf_jumps()
 
-function! Changes()
-  let changes  = reverse(copy(getchangelist()[0]))
-  if(changes == [])
+function! s:fzf_changes()
+    let changes  = reverse(copy(getchangelist()[0]))
+    if(changes == [])
         call s:warn('Empty change list!')
         return
-  endif
+    endif
 
-  let changetext = map(copy(changes), { index, val -> 
-      \ expand('%').':'.(val.lnum).':'.(val.col+1).': '.GetLine(bufnr('%'), val.lnum) })
+    let changetext = map(copy(changes), { index, val -> 
+                \ expand('%').':'.(val.lnum).':'.(val.col+1).': '.s:get_line(bufnr('%'), val.lnum) })
 
-  call fzf#run(fzf#vim#with_preview(fzf#wrap({
-        \ 'source': changetext,
-        \ 'column': 1,
-        \ 'options': ['--delimiter', ':', '--bind', 'alt-a:select-all,alt-d:deselect-all', '--preview-window', '+{2}-/2'],
-        \ 'sink': function('GoTo')})))
+    call fzf#run(fzf#vim#with_preview(fzf#wrap({
+                \ 'source': changetext,
+                \ 'column': 1,
+                \ 'options': ['--delimiter', ':', '--preview-window', '+{2}-/2', '--prompt', 'ChangeList>'],
+                \ 'sink': function('s:go_to')})))
 endfunction
 
-command! Changes call Changes()
+command! Changes call s:fzf_changes()
 
 " ===
 " === maps
