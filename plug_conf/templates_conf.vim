@@ -62,7 +62,7 @@ function! FzfTemplates()
     call fzf#run(fzf#vim#with_preview(fzf#wrap({
                 \ 'source': template_list,
                 \ 'column': 1,
-                \ 'options': ['--with-nth', '-2..', '--delimiter', '/', '--preview-window', '+{2}-/2'],
+                \ 'options': ['--with-nth', '-2..', '--delimiter', '/', '--preview-window', '+{2}-/2', '--prompt', 'Templates>'],
                 \ 'sink': function('s:use_template')})))
 endfunction
 
