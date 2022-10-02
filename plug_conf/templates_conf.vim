@@ -22,10 +22,13 @@ let g:tmpl_author_email = '2015097272@qq.com'
 " ===
 " === fzf
 " ===
-function UseTemplate(full_file_name)
+function GetFname(full_file_name)
     let tmp_name = split(a:full_file_name, "/")[-1]
     let name  = fnamemodify(tmp_name, ":r")
-    echom "hello ".name
+    return name
+endfunction
+function UseTemplate(full_file_name)
+    let name  = GetFname(a:full_file_name)
     execute 'TemplateInit '.name
 endfunction
 
@@ -48,11 +51,10 @@ function! FzfTemplates()
         call s:warn('Empty templatelist!')
         return
     endif
-    " let template_source = map(template_list, {val})
     call fzf#run(fzf#vim#with_preview(fzf#wrap({
                 \ 'source': template_list,
                 \ 'column': 1,
-                \ 'options': ['--delimiter', ':', '--bind', 'alt-a:select-all,alt-d:deselect-all', '--preview-window', '+{2}-/2'],
+                \ 'options': ['--with-nth', '-2..','--delimiter', '/', '--bind', 'alt-a:select-all,alt-d:deselect-all', '--preview-window', '+{2}-/2'],
                 \ 'sink': function('UseTemplate')})))
 endfunction
 
