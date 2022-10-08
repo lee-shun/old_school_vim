@@ -26,7 +26,7 @@ endif
 if executable('ccls') || executable('clangd')
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
-                \'hook_add':''})
+                \'hook_post_source':'source $CONF_PATH/plug_conf/vim_lsp_cxx_hl_conf.vim'})
 endif
 
 if g:old_school_vim_plug_coc == 0
