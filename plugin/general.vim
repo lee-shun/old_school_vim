@@ -66,7 +66,7 @@ augroup END
 " help file are in gzip format, do not warn this.
 augroup non_utf8_file_warn
     autocmd!
-    autocmd BufRead * if &fileencoding != 'utf-8' && expand('%:e') != 'gz'
+    autocmd BufRead * if &fileencoding != 'utf-8' && expand('%:e') != 'gz' && &ft != 'qf'
                 \ | unsilent echomsg 'File not in UTF-8 format!' | endif
 augroup END
 
