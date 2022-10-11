@@ -124,6 +124,11 @@ call dein#add('junegunn/vim-easy-align', {'lazy':1,
             \'on_map': '<Plug>(EasyAlign)',
             \'hook_add': 'source $CONF_PATH/plug_conf/easy_align_conf.vim'})
 
+call dein#add('preservim/vim-pencil', {'lazy':1,
+            \'on_cmd':['Pencil', 'NoPencil', 'PencilOff', 'TogglePencil',
+            \'PencilToggle', 'SoftPencil', 'PencilSoft', 'HardPencil', 'PencilHard']
+            \})
+
 call dein#add('mg979/vim-visual-multi', {'lazy':1,
             \'on_map': {'n':'<C-n>', 'v':'<C-n>'}})
 
