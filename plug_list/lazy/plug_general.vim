@@ -108,6 +108,7 @@ call dein#add('tpope/vim-commentary', {'lazy':1,
 
 call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
             \'on_event':['BufReadPost'],
+            \'hook_add':'let g:AutoPairsMapSpace=0'
             \})
 
 call dein#add('machakann/vim-highlightedyank', {'lazy':1,
