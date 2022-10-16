@@ -23,6 +23,10 @@ if has('nvim') || (!has('nvim')&&v:version>=900)
                 \})
 endif
 
+call dein#add('liuchengxu/vista.vim', {'lazy':1,
+            \'on_cmd':['Vista'],
+            \})
+
 if executable('ccls') || executable('clangd')
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
@@ -31,19 +35,19 @@ endif
 
 if g:old_school_vim_plug_coc == 0
     call dein#add( 'voldikss/vim-translator', {'lazy':1,
-                \    'on_cmd':'TranslateW',
+                \'on_cmd':'TranslateW',
                 \'hook_add':'source $CONF_PATH/plug_conf/translate_conf.vim'
                 \})
 endif
 
 if has('python3')
     call dein#add( 'honza/vim-snippets', {'lazy':1,
-                \ 'on_event':'InsertEnter'
+                \'on_event':'InsertEnter'
                 \})
     if g:old_school_vim_plug_coc == 0
         call dein#add( 'SirVer/ultisnips', {'lazy':1,
-                    \ 'depends':['vim-snippets'],
-                    \ 'on_event':'InsertEnter',
+                    \'depends':['vim-snippets'],
+                    \'on_event':'InsertEnter',
                     \'hook_add':'source $CONF_PATH/plug_conf/snippets_conf.vim'
                     \})
     endif
@@ -82,8 +86,8 @@ call dein#add('lervag/vimtex', g:vim_tex_conf)
 
 if (g:os_name == 'Linux') && (executable('roscore'))
     call dein#add( 'taketwo/vim-ros', {'lazy':1,
-                \ 'on_ft':'rosmsg',
-                \ 'on_cmd':'Roscd'
+                \'on_ft':'rosmsg',
+                \'on_cmd':'Roscd'
                 \})
 endif
 
