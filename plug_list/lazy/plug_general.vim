@@ -45,6 +45,10 @@ call dein#add('Yggdroot/indentLine', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'hook_add':'source $CONF_PATH/plug_conf/indentLine_conf.vim'})
 
+call dein#add('ntpeters/vim-better-whitespace', {'lazy':1,
+            \'on_event':['BufReadPost'],
+            \})
+
 call dein#add('RRethy/vim-illuminate', {'lazy':1,
             \'on_event' : ['BufReadPost'] })
 
