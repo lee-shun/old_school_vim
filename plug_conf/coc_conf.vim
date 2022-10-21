@@ -92,8 +92,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" Use gh to show documentation in preview window.
+nnoremap <silent> gh :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
     if CocAction('hasProvider', 'hover')
@@ -147,8 +147,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 noremap <leader>t :CocCommand explorer<CR>
 
 " coc-translator
-nmap ts <Plug>(coc-translator-p)
-vmap ts <Plug>(coc-translator-pv)
+nmap <leader>s <Plug>(coc-translator-p)
+vmap <leader>s <Plug>(coc-translator-pv)
 
 " hightlight for member functions
 hi CocSemProperty ctermfg=LightRed guifg=LightRed  cterm=none gui=none
