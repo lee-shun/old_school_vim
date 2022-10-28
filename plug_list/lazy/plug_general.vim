@@ -47,6 +47,7 @@ call dein#add('Yggdroot/indentLine', {'lazy':1,
 
 call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
             \'on_event':['BufReadPre'],
+            \'hook_add':'let g:extra_whitespace_ignored_filetypes = ["coc-explorer", "defx"]'
             \})
 
 call dein#add('RRethy/vim-illuminate', {'lazy':1,
