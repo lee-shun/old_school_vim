@@ -42,14 +42,14 @@ function! s:on_lsp_buffer_enabled() abort
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     " some mappings to use, tweak as you wish.
     nnoremap <buffer> gd <plug>(lsp-definition)
+    nnoremap <buffer> gD <plug>(lsp-declaration)
     nnoremap <buffer> gr <plug>(lsp-references)
     nnoremap <buffer> gi <plug>(lsp-implementation)
-    nnoremap <buffer> gt <plug>(lsp-type-definition)
+    nnoremap <buffer> gh <plug>(lsp-hover)
     nnoremap <buffer> <leader>rn <plug>(lsp-rename)
     nnoremap <buffer> <leader>ac <plug>(lsp-code-action)
     nnoremap <buffer> [d <Plug>(lsp-previous-diagnostic)
     nnoremap <buffer> ]d <Plug>(lsp-next-diagnostic)
-    nnoremap <buffer> K <plug>(lsp-hover)
 endfunction
 
 augroup lsp_install
@@ -62,6 +62,7 @@ augroup END
 " === set up lsp
 " ===
 command! IDE call lsp#enable() |
+            \ call s:on_lsp_buffer_enabled() |
             \ hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
 
 if executable('ccls')
