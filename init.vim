@@ -88,9 +88,10 @@ if g:os_architect == 'aarch64' && g:old_school_vim_plug_coc == 1
     let g:old_school_vim_plug_coc = 0
     echom " do NOT use coc under " . g:os_architect
 endif
+" don't use coc with vim under version 8.2
 if !has('nvim') && v:version< 802
     let g:old_school_vim_plug_coc = 0
-    echom " do NOT use coc with vim version: " . v:version
+    echom " minimal vim version to use coc.nvim is 8.2"
 endif
 
 " ===
