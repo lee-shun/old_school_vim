@@ -88,6 +88,10 @@ if g:os_architect == 'aarch64' && g:old_school_vim_plug_coc == 1
     let g:old_school_vim_plug_coc = 0
     echom " do NOT use coc under " . g:os_architect
 endif
+if !has('nvim') && v:version< 802
+    let g:old_school_vim_plug_coc = 0
+    echom " do NOT use coc with vim version: " . v:version
+endif
 
 " ===
 " === basic config
