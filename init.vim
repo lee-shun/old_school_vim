@@ -61,13 +61,13 @@ let g:old_school_vim_plug_advanced = 1
 
 " use coc
 " NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:old_school_vim_plug_coc = 0
+let g:old_school_vim_plug_coc = 1
 
 " vim-lsp as backend of the above frameworks.
-let g:old_school_vim_plug_lsp = 1
+let g:old_school_vim_plug_lsp = 0
 
 " choose one of following complete engines
-let g:old_school_vim_plug_deoplete = 1
+let g:old_school_vim_plug_deoplete = 0
 let g:old_school_vim_plug_asyncomplete = 0
 
 " ===
