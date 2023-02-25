@@ -34,4 +34,3 @@ endif
 
 nnoremap <leader>s :TranslateW<CR>
 vnoremap <leader>s :TranslateW<CR>
-
