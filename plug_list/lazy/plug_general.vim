@@ -39,7 +39,7 @@ call dein#add('lee-shun/spaceline.vim', g:spaceline_conf)
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
-            \'hook_add':'let g:rainbow_active = 1'})
+            \'hook_add':'source $CONF_PATH/plug_conf/rainbow_conf.vim'})
 
 call dein#add('Yggdroot/indentLine', {'lazy':1,
             \'on_event':['BufReadPost'],
@@ -68,7 +68,7 @@ if g:old_school_vim_plug_coc == 0 " coc-explorer..
                     \'on_map':'<leader>t',
                     \'on_cmd':'NERDTreeToggle',
                     \'depends':['nerdtree-visual-selection', 'nerdtree-git-plugin'],
-                    \'hook_add':'source $CONF_PATH/plug_conf/nerdtree_conf.vim'})
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/nerdtree_conf.vim'})
     else  " nvim or vim > 8.2
         call dein#add('kristijanhusak/defx-git', {'lazy':1,
                     \'hook_add':'source $CONF_PATH/plug_conf/defx_git_config.vim'})
