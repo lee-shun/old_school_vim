@@ -27,7 +27,7 @@ endif
 if !s:has_popup
     let g:floaterm_wintype = 'split'
 else
-    g:floaterm_wintype = 'float'
+    let g:floaterm_wintype = 'float'
 endif
 
 command! Ranger :FloatermNew --height=0.6 --width=0.8 --wintype=float ranger
