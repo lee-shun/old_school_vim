@@ -122,3 +122,11 @@ if executable('cmake-language-server')
                 \ }
                 \})
 endif
+
+if executable('texlab')
+  autocmd User lsp_setup call lsp#register_server({
+        \'name': 'texlab',
+        \'cmd': {server_info->[expand('texlab')]},
+        \'whitelist': ['tex']
+        \})
+endif
