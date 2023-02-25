@@ -16,6 +16,10 @@
 "*******************************************************************************
 
 " ===
+" === TODO: need to config the popup window!
+" ===
+
+" ===
 " === env
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
