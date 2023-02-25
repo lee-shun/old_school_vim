@@ -16,7 +16,7 @@
 "*******************************************************************************
 
 " ===
-" === TODO: need to config the popup window!
+" === NOTE: may need to reconfig the patch and version stuff...
 " ===
 
 " ===
