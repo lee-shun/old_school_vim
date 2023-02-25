@@ -60,15 +60,20 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
 if g:old_school_vim_plug_coc == 0 " coc-explorer..
 
     if !has('nvim') && v:version < 802  " not nvim, and vim version < 8.2
-        call dein#add('PhilRunninger/nerdtree-visual-selection', {'lazy':1,
+        call dein#add('lambdalisue/nerdfont.vim', {'lazy':1,
                     \})
-        call dein#add('Xuyuanp/nerdtree-git-plugin', {'lazy':1,
+        call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1,
+                    \'depends':['nerdfont.vim'],
                     \})
-        call dein#add('preservim/nerdtree', {'lazy':1,
+        call dein#add('lambdalisue/fern-hijack.vim', {'lazy':1,
+                    \})
+        call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
+                    \})
+        call dein#add('lambdalisue/fern.vim', {'lazy':1,
                     \'on_map':'<leader>t',
-                    \'on_cmd':'NERDTreeToggle',
-                    \'depends':['nerdtree-visual-selection', 'nerdtree-git-plugin'],
-                    \'hook_post_source':'source $CONF_PATH/plug_conf/nerdtree_conf.vim'})
+                    \'on_cmd':'Fern',
+                    \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
     else  " nvim or vim > 8.2
         call dein#add('kristijanhusak/defx-git', {'lazy':1,
                     \'hook_add':'source $CONF_PATH/plug_conf/defx_git_config.vim'})

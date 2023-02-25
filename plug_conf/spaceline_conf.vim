@@ -29,4 +29,3 @@ if g:old_school_vim_plug_lsp == 1
 elseif g:old_school_vim_plug_coc == 1
     let g:spaceline_diagnostic_tool = 'coc'
 endif
-
