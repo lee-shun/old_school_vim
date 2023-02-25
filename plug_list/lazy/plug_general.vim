@@ -126,10 +126,17 @@ call dein#add('tpope/vim-commentary', {'lazy':1,
             \'on_map':{'n':'gcc', 'v':'gc'},
             \})
 
-call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
-            \'on_event':['BufReadPost'],
-            \'hook_add':'let g:AutoPairsMapSpace=0'
-            \})
+if !has('nvim') && v:version< 802
+    call dein#add('jiangmiao/auto-pairs', {'lazy':1,
+                \'on_event':['BufReadPost'],
+                \'hook_add':'let g:AutoPairsMapSpace=0'
+                \})
+else " this new auto-pair need neovim or vim 8.2
+    call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
+                \'on_event':['BufReadPost'],
+                \'hook_add':'let g:AutoPairsMapSpace=0'
+                \})
+endif
 
 call dein#add('machakann/vim-highlightedyank', {'lazy':1,
             \'on_event': ['TextYankPost'],
@@ -150,7 +157,8 @@ call dein#add('preservim/vim-pencil', {'lazy':1,
             \})
 
 call dein#add('mg979/vim-visual-multi', {'lazy':1,
-            \'on_map': {'n':'<C-n>', 'v':'<C-n>'}})
+            \'on_map': {'n':'<C-n>', 'v':'<C-n>'},
+            \'hook_add':'source $CONF_PATH/plug_conf/visual_multi_conf.vim'})
 
 call dein#add('907th/vim-auto-save', {'lazy':1,
             \'on_event': ['BufReadPost'],

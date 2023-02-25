@@ -54,7 +54,7 @@ elseif g:os_name == 'Linux'
 endif
 
 " ===
-" === control the mode
+" === control the modules
 " ===
 let g:old_school_vim_ulti_mode = 1
 
@@ -72,6 +72,8 @@ let g:old_school_vim_plug_deoplete = 0
 let g:old_school_vim_plug_asyncomplete = 1
 " vim-lsp as backend of the above frameworks.
 let g:old_school_vim_plug_lsp = 1
+
+
 " ===
 " === default control
 " ===
@@ -104,6 +106,13 @@ if !has('nvim') && v:version< 802 && g:old_school_vim_plug_deoplete == 1
     echom " you may try asycomplete.vim~ "
 endif
 
+" don't use lsp with vim under version 8.0
+if !has('nvim') && v:version< 800 && g:old_school_vim_plug_lsp == 1
+    let g:old_school_vim_plug_lsp = 0
+    echom " minimal vim version to use vim-lsp is 8.0! "
+    echom " you may update your vim!"
+endif
+
 " ===
 " === basic config
 " ===
@@ -128,7 +137,7 @@ if g:old_school_vim_ulti_mode == 1
     let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
     let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
-    if dein#load_state(s:dein_dir)
+    " if dein#load_state(s:dein_dir)
 
     call dein#begin(s:dein_dir)
 
@@ -155,8 +164,8 @@ if g:old_school_vim_ulti_mode == 1
     endif
 
     call dein#end()
-    call dein#save_state()
-    endif
+    " call dein#save_state()
+    " endif
 
     augroup DeinSetup
         autocmd!
