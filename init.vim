@@ -61,15 +61,13 @@ let g:old_school_vim_plug_advanced = 1
 
 " use coc
 " NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:old_school_vim_plug_coc = 1
-
-" vim-lsp as backend of the above frameworks.
-let g:old_school_vim_plug_lsp = 0
+let g:old_school_vim_plug_coc = 0
 
 " choose one of following complete engines
 let g:old_school_vim_plug_deoplete = 0
-let g:old_school_vim_plug_asyncomplete = 0
-
+let g:old_school_vim_plug_asyncomplete = 1
+" vim-lsp as backend of the above frameworks.
+let g:old_school_vim_plug_lsp = 1
 " ===
 " === default control
 " ===
@@ -89,9 +87,17 @@ if g:os_architect == 'aarch64' && g:old_school_vim_plug_coc == 1
     echom " do NOT use coc under " . g:os_architect
 endif
 " don't use coc with vim under version 8.2
-if !has('nvim') && v:version< 802
+if !has('nvim') && v:version< 802 && g:old_school_vim_plug_coc == 1
     let g:old_school_vim_plug_coc = 0
-    echom " minimal vim version to use coc.nvim is 8.2"
+    echom " minimal vim version to use coc.nvim is 8.2! "
+    echom " you may try asycomplete.vim~ "
+endif
+
+" don't use deoplete with vim under version 8.2
+if !has('nvim') && v:version< 802 && g:old_school_vim_plug_deoplete == 1
+    let g:old_school_vim_plug_deoplete = 0
+    echom " minimal vim version to use deoplete.nvim is 8.2! "
+    echom " you may try asycomplete.vim~ "
 endif
 
 " ===
