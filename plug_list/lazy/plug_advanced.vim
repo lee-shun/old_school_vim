@@ -19,7 +19,7 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \'on_cmd':['Vista'],
             \})
 
-" NOTE: coc has it own sematic token, and only ccls supprot this plugin
+" NOTE: coc has its sematic token, and only ccls supprots, clangd doesn't.
 if executable('ccls') && g:old_school_vim_plug_coc == 0
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
