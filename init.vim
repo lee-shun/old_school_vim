@@ -36,13 +36,6 @@ endif
 
 if g:os_name == 'Windows' && has('nvim') " nvim on win
     let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-    " use git-bash if possible
-    if executable('git')
-        set shell=\"C:/Program\ Files/Git/bin/bash.exe\"
-        set shellcmdflag=--login\ -c
-        set shellquote=
-        set shellxquote=
-    endif
 elseif g:os_name == 'Linux'
     if executable('conda')
         let g:python_host_prog='/usr/bin/python'
@@ -110,7 +103,7 @@ endif
 if !has('nvim') && v:version< 800 && g:old_school_vim_plug_lsp == 1
     let g:old_school_vim_plug_lsp = 0
     echom " minimal vim version to use vim-lsp is 8.0! "
-    echom " you may update your vim!"
+    echom " you may update your vim, if you still want to use the lsp! "
 endif
 
 " ===
