@@ -15,9 +15,10 @@
 "                                                                              "
 "*******************************************************************************
 
-" ===
-" === NOTE: may need to reconfig the patch and version stuff...
-" ===
+" TODO:
+" 1. old_school_vim --> osv
+" 2. fern require vim 8.1 ...
+
 
 " ===
 " === env
