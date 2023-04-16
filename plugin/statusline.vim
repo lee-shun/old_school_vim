@@ -1,5 +1,5 @@
 " Not load for ulti-mode.
-if g:old_school_vim_ulti_mode == 1
+if g:osv_ulti_mode == 1
     set statusline=%#normal#
   finish
 endif
