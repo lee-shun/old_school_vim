@@ -76,21 +76,21 @@ if g:old_school_vim_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
         call dein#add('Shougo/defx.nvim', s:defx_nvim_config)
 
     elseif has('nvim') || has('patch-8.1-2269')
-        " call dein#add('lambdalisue/nerdfont.vim', {'lazy':1,
-        "             \})
-        " call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1,
-        "             \'depends':['nerdfont.vim'],
-        "             \})
-        " call dein#add('lambdalisue/fern-hijack.vim', {'lazy':1,
-        "             \})
-        " call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
-        "             \})
-        " call dein#add('lambdalisue/fern.vim', {'lazy':1,
-        "             \'on_map':'<leader>t',
-        "             \'on_cmd':'Fern',
-        "             \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
-        "             \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
-    " else
+        call dein#add('lambdalisue/nerdfont.vim', {'lazy':1,
+                    \})
+        call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1,
+                    \'depends':['nerdfont.vim'],
+                    \})
+        call dein#add('lambdalisue/fern-hijack.vim', {'lazy':1,
+                    \})
+        call dein#add('lambdalisue/fern-git-status.vim', {'lazy':1,
+                    \})
+        call dein#add('lambdalisue/fern.vim', {'lazy':1,
+                    \'on_map':'<leader>t',
+                    \'on_cmd':'Fern',
+                    \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
+    else
         call dein#add('Shougo/unite.vim', {'lazy':1,
                     \})
         call dein#add('Shougo/vimfiler.vim', {'lazy':1,
