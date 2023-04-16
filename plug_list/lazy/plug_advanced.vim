@@ -3,13 +3,13 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \})
 
 " NOTE: coc has its sematic token, and only ccls supprots, clangd doesn't.
-if executable('ccls') && g:old_school_vim_plug_coc == 0
+if executable('ccls') && g:osv_plug_coc == 0
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
                 \'hook_post_source':'source $CONF_PATH/plug_conf/vim_lsp_cxx_hl_conf.vim'})
 endif
 
-if g:old_school_vim_plug_coc == 0
+if g:osv_plug_coc == 0
     call dein#add( 'voldikss/vim-translator', {'lazy':1,
                 \'on_cmd':'TranslateW',
                 \'hook_add':'source $CONF_PATH/plug_conf/translate_conf.vim'
@@ -20,7 +20,7 @@ if has('python3')
     call dein#add( 'honza/vim-snippets', {'lazy':1,
                 \'on_event':'InsertEnter'
                 \})
-    if g:old_school_vim_plug_coc == 0
+    if g:osv_plug_coc == 0
         call dein#add( 'SirVer/ultisnips', {'lazy':1,
                     \'depends':['vim-snippets'],
                     \'on_event':'InsertEnter',
@@ -55,7 +55,7 @@ let g:vim_tex_conf = {'lazy':1,
             \'on_ft':['tex', 'plaintex'],
             \'hook_post_source':'source $CONF_PATH/plug_conf/vimtex_conf.vim'
             \}
-if g:old_school_vim_plug_deoplete == 1
+if g:osv_plug_deoplete == 1
     call add(g:vim_tex_conf.depends, 'deoplete.nvim')
 endif
 call dein#add('lervag/vimtex', g:vim_tex_conf)

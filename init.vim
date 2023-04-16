@@ -16,9 +16,7 @@
 "*******************************************************************************
 
 " TODO:
-" 1. old_school_vim --> osv
-" 2. fern require vim 8.1 ...
-
+" 1. webicons and git for vimfiler
 
 " ===
 " === env
@@ -50,59 +48,59 @@ endif
 " ===
 " === control the modules
 " ===
-let g:old_school_vim_ulti_mode = 1
+let g:osv_ulti_mode = 1
 
 " use general plugs
-let g:old_school_vim_plug_general = 1
+let g:osv_plug_general = 1
 " use advanced plugs
-let g:old_school_vim_plug_advanced = 1
+let g:osv_plug_advanced = 1
 
 " use coc
 " NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:old_school_vim_plug_coc = 0
+let g:osv_plug_coc = 0
 
 " choose one of following complete engines
-let g:old_school_vim_plug_deoplete = 0
-let g:old_school_vim_plug_asyncomplete = 1
+let g:osv_plug_deoplete = 0
+let g:osv_plug_asyncomplete = 1
 " vim-lsp as backend of the above frameworks.
-let g:old_school_vim_plug_lsp = 1
+let g:osv_plug_lsp = 1
 
 
 " ===
 " === default control
 " ===
 " don't use any of the plugs if ulti-mode is deactived
-if g:old_school_vim_ulti_mode == 0
-    let g:old_school_vim_plug_general = 0
-    let g:old_school_vim_plug_advanced = 0
-    let g:old_school_vim_plug_coc = 0
-    let g:old_school_vim_plug_lsp = 0
-    let g:old_school_vim_plug_deoplete = 0
-    let g:old_school_vim_plug_asyncomplete = 0
+if g:osv_ulti_mode == 0
+    let g:osv_plug_general = 0
+    let g:osv_plug_advanced = 0
+    let g:osv_plug_coc = 0
+    let g:osv_plug_lsp = 0
+    let g:osv_plug_deoplete = 0
+    let g:osv_plug_asyncomplete = 0
 endif
 
 " don't use coc under aarch64
-if g:os_architect == 'aarch64' && g:old_school_vim_plug_coc == 1
-    let g:old_school_vim_plug_coc = 0
+if g:os_architect == 'aarch64' && g:osv_plug_coc == 1
+    let g:osv_plug_coc = 0
     echom " do NOT use coc under " . g:os_architect
 endif
 " don't use coc with vim under version 8.2
-if !has('nvim') && v:version< 802 && g:old_school_vim_plug_coc == 1
-    let g:old_school_vim_plug_coc = 0
+if !has('nvim') && v:version< 802 && g:osv_plug_coc == 1
+    let g:osv_plug_coc = 0
     echom " minimal vim version to use coc.nvim is 8.2! "
     echom " you may try asycomplete.vim~ "
 endif
 
 " don't use deoplete with vim under version 8.2
-if !has('nvim') && v:version< 802 && g:old_school_vim_plug_deoplete == 1
-    let g:old_school_vim_plug_deoplete = 0
+if !has('nvim') && v:version< 802 && g:osv_plug_deoplete == 1
+    let g:osv_plug_deoplete = 0
     echom " minimal vim version to use deoplete.nvim is 8.2! "
     echom " you may try asycomplete.vim~ "
 endif
 
 " don't use lsp with vim under version 8.0
-if !has('nvim') && v:version< 800 && g:old_school_vim_plug_lsp == 1
-    let g:old_school_vim_plug_lsp = 0
+if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
+    let g:osv_plug_lsp = 0
     echom " minimal vim version to use vim-lsp is 8.0! "
     echom " you may update your vim, if you still want to use the lsp! "
 endif
@@ -116,7 +114,7 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === colorscheme
 " ===
-if g:old_school_vim_ulti_mode == 0
+if g:osv_ulti_mode == 0
     set background=dark
     colorscheme seoul256
 endif
@@ -124,7 +122,7 @@ endif
 " ===
 " === plug
 " ===
-if g:old_school_vim_ulti_mode == 1
+if g:osv_ulti_mode == 1
 
     " the dein version
     if !has('nvim')
@@ -154,25 +152,25 @@ if g:old_school_vim_ulti_mode == 1
 
     call dein#begin(s:dein_dir)
 
-    if g:old_school_vim_plug_general == 1
+    if g:osv_plug_general == 1
         source $CONF_PATH/plug_list/norm/plug_general.vim
         source $CONF_PATH/plug_list/lazy/plug_general.vim
     endif
 
-    if g:old_school_vim_plug_advanced == 1
+    if g:osv_plug_advanced == 1
         source $CONF_PATH/plug_list/lazy/plug_advanced.vim
     endif
 
-    if g:old_school_vim_plug_coc == 1
+    if g:osv_plug_coc == 1
         source $CONF_PATH/plug_list/lazy/plug_coc.vim
     endif
-    if g:old_school_vim_plug_lsp == 1
+    if g:osv_plug_lsp == 1
         source $CONF_PATH/plug_list/lazy/plug_lsp.vim
     endif
-    if g:old_school_vim_plug_deoplete == 1
+    if g:osv_plug_deoplete == 1
         source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
     endif
-    if g:old_school_vim_plug_asyncomplete == 1
+    if g:osv_plug_asyncomplete == 1
         source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
     endif
 

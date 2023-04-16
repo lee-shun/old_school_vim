@@ -11,10 +11,10 @@ let s:spaceline_conf = {'lazy':1,
             \'on_event':['BufReadPost'],
             \'depends':['vim-signify', 'vim-devicons'],
             \'hook_add':'source $CONF_PATH/plug_conf/spaceline_conf.vim'}
-if g:old_school_vim_plug_coc == 1
+if g:osv_plug_coc == 1
     call add(s:spaceline_conf.depends, 'coc.nvim')
 endif
-if g:old_school_vim_plug_lsp == 1
+if g:osv_plug_lsp == 1
     call add(s:spaceline_conf.depends, 'vim-lsp-ale')
 endif
 call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
@@ -39,7 +39,7 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'hook_add':'source $CONF_PATH/plug_conf/floaterm_conf.vim'})
 
-if g:old_school_vim_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
+if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
 
     if  has('nvim-0.4') || v:version > 802 " according to the repo
         call dein#add('kristijanhusak/defx-git', {'lazy':1,

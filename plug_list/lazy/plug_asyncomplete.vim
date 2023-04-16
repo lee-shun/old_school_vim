@@ -25,7 +25,7 @@ if has('python3') && dein#tap('ultisnips')
 endif
 
 " lsp
-if g:old_school_vim_plug_lsp == 1
+if g:osv_plug_lsp == 1
     call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
                 \})
     call dein#add('andreypopp/asyncomplete-ale.vim', {'lazy':1

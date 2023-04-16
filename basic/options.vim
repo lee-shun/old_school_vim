@@ -174,7 +174,7 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 " === build-in netrw
 " ===
 "
-if g:old_school_vim_ulti_mode == 0
+if g:osv_ulti_mode == 0
     let g:netrw_hide = 1
     let g:netrw_liststyle = 3
     let g:netrw_banner = 0

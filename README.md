@@ -29,7 +29,7 @@
 
 - use the `config_env.sh` to install the dependencies...
 
-- **Mini-Mode:** set `g:old_school_vim_ulti_mode` to `0` in [init.vim](init.vim)
+- **Mini-Mode:** set `g:osv_ulti_mode` to `0` in [init.vim](init.vim)
 
   > use vim as an excellent text editor!
 
@@ -37,25 +37,25 @@
   - Fully portable.
   - Pure vimscripts.
 
-- **Ulti-Mode** set `g:old_school_vim_ulti_mode` to `1` in [init.vim](init.vim)
+- **Ulti-Mode** set `g:osv_ulti_mode` to `1` in [init.vim](init.vim)
 
-  - `g:old_school_vim_plug_general = 1`
+  - `g:osv_plug_general = 1`
 
     - general editor enhancement plugins.
 
-  - `g:old_school_vim_plug_advanced = 1`
+  - `g:osv_plug_advanced = 1`
 
     - file type based special plugins.
 
-  - `g:old_school_vim_plug_coc = 1`
+  - `g:osv_plug_coc = 1`
 
     - use coc as `lsp + completion engine` and much more.
 
-  - `g:old_school_vim_plug_lsp = 1`
+  - `g:osv_plug_lsp = 1`
     - language-sever based code completion, etc.
     - choose one from `completion eigen`:
-      - `g:old_school_vim_plug_deoplete`
-      - `g:old_school_vim_plug_asyncomplete`
+      - `g:osv_plug_deoplete`
+      - `g:osv_plug_asyncomplete`
 
 - **NOTE:**
 
