@@ -74,7 +74,7 @@ call deoplete#custom#source('dictionary', {
             \})
 
 " tabnine
-if dein#is_available('deoplete-tabnine')
+if dein#tap('deoplete-tabnine')
     call deoplete#custom#var('tabnine', {
                 \'line_limit': 500,
                 \'max_num_results': 4,
@@ -86,7 +86,7 @@ if dein#is_available('deoplete-tabnine')
 endif
 
 " lsp
-if dein#is_available('vim-lsp')
+if dein#tap('vim-lsp')
     call deoplete#custom#source('lsp', {
                 \'max_candidates': 10,
                 \'mark':"[lsp]",
@@ -94,7 +94,7 @@ if dein#is_available('vim-lsp')
 endif
 
 " ale
-if dein#is_available('ale')
+if dein#tap('ale')
     call deoplete#custom#source('ale', {
                 \'max_candidates': 10,
                 \'mark':"[ale]",

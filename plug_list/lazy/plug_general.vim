@@ -15,13 +15,16 @@
 "                                                                              "
 "*******************************************************************************
 
+call dein#add('haya14busa/dein-command.vim', {
+            \'on_cmd':'Dein'
+            \})
+
 call dein#add('roxma/nvim-yarp', {'lazy':1})
 call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
 
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
-call dein#add('ryanoasis/vim-devicons', {'lazy':1})
-call dein#add('nvim-tree/nvim-web-devicons', {'lazy':1})
+call dein#add('ryanoasis/vim-devicons',)
 
 call dein#add('mhinz/vim-signify', {'lazy':1,
             \'on_event': ['BufReadPost'], })

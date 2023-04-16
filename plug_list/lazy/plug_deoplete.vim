@@ -42,11 +42,11 @@ let g:deoplete_nvim_config = {'lazy':1,
             \'hook_post_source':'source $CONF_PATH/plug_conf/deoplete_conf.vim',
             \'hook_done_update':''}
 
-if dein#is_available('deoplete-tabnine')
+if dein#tap('deoplete-tabnine')
     call add(g:deoplete_nvim_config.depends, 'deoplete-tabnine')
 endif
 
-if dein#is_available('ale')
+if dein#tap('ale')
     call add(g:deoplete_nvim_config.depends, 'ale')
 endif
 

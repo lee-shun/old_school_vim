@@ -62,9 +62,9 @@ let g:old_school_vim_plug_coc = 0
 
 " choose one of following complete engines
 let g:old_school_vim_plug_deoplete = 0
-let g:old_school_vim_plug_asyncomplete = 0
+let g:old_school_vim_plug_asyncomplete = 1
 " vim-lsp as backend of the above frameworks.
-let g:old_school_vim_plug_lsp = 0
+let g:old_school_vim_plug_lsp = 1
 
 
 " ===
@@ -125,24 +125,16 @@ endif
 " ===
 if g:old_school_vim_ulti_mode == 1
 
-if v:version >= 802
-    let s:dein_version = 'master'
-elseif v:version >= 800
-    let s:dein_version = '2.2'
-elseif v:version >= 704
-    let s:dein_version = '1.5'
-endif
-
-    let s:dein_dir = $CONF_PATH.'/dein'
-    let s:dein_src = s:dein_dir.'/repos/github.com/Shougo/dein.vim'
-    if !isdirectory(s:dein_dir)
-        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_src
-        execute '!cd' s:dein_src '&& git checkout' s:dein_version '&& cd -'
-        echom 'install dein.vim ' . s:dein_version.' to ' . s:dein_src
+    if v:version >= 802
+        let g:osv_dein_version = 'master'
+    elseif v:version >= 800
+        let g:osv_dein_version = '2.2'
+    elseif v:version >= 704
+        let g:osv_dein_version = '1.5'
     endif
+
     set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
-    let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
-    let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
+    let s:dein_dir = $CONF_PATH.'/dein'
 
     " if dein#load_state(s:dein_dir)
 

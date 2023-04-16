@@ -15,13 +15,13 @@
 "                                                                              "
 "*******************************************************************************
 
-call dein#add('Shougo/dein.vim')
-call dein#add('haya14busa/dein-command.vim', {
-            \'on_cmd':'Dein'
+call dein#add('Shougo/dein.vim', {
+            \'rev':g:osv_dein_version,
             \})
 
 call dein#add('arcticicestudio/nord-vim', {
-            \'hook_add':'source $CONF_PATH/plug_conf/color_conf.vim'
+            \'hook_post_source':'source $CONF_PATH/plug_conf/color_conf.vim'
             \})
 
-call dein#add('mhinz/vim-startify')
+call dein#add('mhinz/vim-startify', {
+            \})
