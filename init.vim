@@ -125,8 +125,13 @@ endif
 " ===
 if g:old_school_vim_ulti_mode == 1
 
-    set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
     let s:dein_dir = $CONF_PATH."/dein"
+    let s:dein_src = s:dein_dir .. '/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+        execute '!git clone https://github.com/Shougo/dein.vim' s:dein_src
+        echo 'install dein.vim to ' .. s:dein_src
+    endif
+    set runtimepath+=s:dein_src
     let s:norm_plug_dir = $CONF_PATH.'/plug_list/norm'
     let s:lazy_plug_dir = $CONF_PATH.'/plug_list/lazy'
 
