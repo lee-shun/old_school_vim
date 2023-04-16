@@ -21,6 +21,7 @@ call dein#add('roxma/vim-hug-neovim-rpc',{'lazy':1})
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 call dein#add('ryanoasis/vim-devicons', {'lazy':1})
+call dein#add('nvim-tree/nvim-web-devicons', {'lazy':1})
 
 call dein#add('mhinz/vim-signify', {'lazy':1,
             \'on_event': ['BufReadPost'], })
