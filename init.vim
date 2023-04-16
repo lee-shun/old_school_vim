@@ -125,16 +125,29 @@ endif
 " ===
 if g:old_school_vim_ulti_mode == 1
 
-    if v:version >= 802
+    " the dein version
+    if !has('nvim')
+        if v:version >= 802
+            let g:osv_dein_version = 'master'
+        elseif v:version >= 800
+            let g:osv_dein_version = '2.2'
+        elseif v:version >= 704
+            let g:osv_dein_version = '1.5'
+        endif
+    else
         let g:osv_dein_version = 'master'
-    elseif v:version >= 800
-        let g:osv_dein_version = '2.2'
-    elseif v:version >= 704
-        let g:osv_dein_version = '1.5'
+    endif
+
+    let s:dein_dir = $CONF_PATH.'/dein'
+    let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
+
+    " install dein for the first time
+    if empty(glob(s:dein_dir))
+        exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
+        echom "install dein" g:osv_dein_version "to" s:dein_src
     endif
 
     set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
-    let s:dein_dir = $CONF_PATH.'/dein'
 
     " if dein#load_state(s:dein_dir)
 
