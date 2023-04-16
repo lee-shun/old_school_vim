@@ -41,22 +41,17 @@ function! s:on_lsp_buffer_enabled() abort
     " setlocal omnifunc=lsp#complete
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     " some mappings to use, tweak as you wish.
-    nnoremap <buffer> gd <plug>(lsp-definition)
-    nnoremap <buffer> gD <plug>(lsp-declaration)
-    nnoremap <buffer> gr <plug>(lsp-references)
-    nnoremap <buffer> gi <plug>(lsp-implementation)
-    nnoremap <buffer> gh <plug>(lsp-hover)
-    nnoremap <buffer> <leader>rn <plug>(lsp-rename)
-    nnoremap <buffer> <leader>ac <plug>(lsp-code-action)
-    nnoremap <buffer> [d <Plug>(lsp-previous-diagnostic)
-    nnoremap <buffer> ]d <Plug>(lsp-next-diagnostic)
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>lr <plug>(lsp-rename)
+    nmap <buffer> [d <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]d <plug>(lsp-next-diagnostic)
+    nmap <buffer> gh <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 endfunction
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
 
 " ===
 " === set up lsp

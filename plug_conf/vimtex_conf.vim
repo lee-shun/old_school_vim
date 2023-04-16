@@ -34,7 +34,7 @@ let g:vimtex_fold_enabled=1
 let g:tex_conceal='abdmg'
 let g:vimtex_format_enabled=1
 
-if dein#is_available('deoplete.nvim') && !dein#is_sourced('deoplete.nvim')
+if dein#tap('deoplete.nvim') && !dein#is_sourced('deoplete.nvim')
     call dein#source('deoplete.nvim')
 endif
 

@@ -58,7 +58,7 @@ call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
             \ }))
 
 " ale
-if dein#is_available('asyncomplete-ale.vim')
+if dein#tap('asyncomplete-ale.vim')
     call asyncomplete#ale#register_source({
                 \ 'name': 'reason',
                 \ 'linter': 'flow',
@@ -66,7 +66,7 @@ if dein#is_available('asyncomplete-ale.vim')
 endif
 
 " tabnine
-if dein#is_available('asyncomplete-tabnine.vim')
+if dein#tap('asyncomplete-tabnine.vim')
     call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
                 \ 'name': 'tabnine',
                 \ 'allowlist': ['*'],
@@ -79,7 +79,7 @@ if dein#is_available('asyncomplete-tabnine.vim')
 endif
 
 " snippest
-if dein#is_available('asyncomplete-ultisnips.vim')
+if dein#tap('asyncomplete-ultisnips.vim')
     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
                 \ 'name': 'ultisnips',
                 \ 'allowlist': ['*'],

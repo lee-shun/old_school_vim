@@ -36,7 +36,7 @@ if g:os_architect != 'aarch64'
 endif
 
 " snip
-if has('python3') && dein#is_available('ultisnips')
+if has('python3') && dein#tap('ultisnips')
     call dein#add('prabirshrestha/asyncomplete-ultisnips.vim', {'lazy':1,
                 \})
 endif
@@ -58,19 +58,19 @@ let g:asyncomplete_conf = { 'lazy':1,
             \'on_event': ['BufReadPre'],
             \'hook_post_source':'source $CONF_PATH/plug_conf/asyncomplete_conf.vim'}
 
-if dein#is_available('asyncomplete-lsp.vim')
+if dein#tap('asyncomplete-lsp.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
 endif
 
-if dein#is_available('asyncomplete-ale.vim')
+if dein#tap('asyncomplete-ale.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-ale.vim')
 endif
 
-if dein#is_available('asyncomplete-tabnine.vim')
+if dein#tap('asyncomplete-tabnine.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
 endif
 
-if dein#is_available('asyncomplete-ultisnips.vim')
+if dein#tap('asyncomplete-ultisnips.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-ultisnips.vim')
 endif
 
