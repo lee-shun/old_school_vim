@@ -143,7 +143,7 @@ if g:old_school_vim_ulti_mode == 1
 
     " install dein for the first time
     if empty(glob(s:dein_dir))
-        exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
+        silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
         echom "install dein" g:osv_dein_version "to" s:dein_src
     endif
 
