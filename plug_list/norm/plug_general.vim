@@ -1,20 +1,3 @@
-"*******************************************************************************
-"                                                                              "
-"          .oOOOo.   o      o       .oOOOo.         o                 o        "
-"         .O     o. O      O        o     o        O                 O         "
-"         O       o o      o        O.             o                 o         "
-"         o       O O      o         `OOoo.        O                 O         "
-"         O       o o  .oOoO              `O .oOo  OoOo. .oOo. .oOo. o         "
-"         o       O O  o   O               o O     o   o O   o O   o O         "
-"         `o     O' o  O   o        O.    .O o     o   O o   O o   O o         "
-"          `OoooO'  Oo `OoO'o        `oooO'  `OoO' O   o `OoO' `OoO' Oo        "
-"                                                                              "
-"  Author : lee-shun                                                           "
-"                                                                              "
-"  Email  : 2015097272@qq.com                                                  "
-"                                                                              "
-"*******************************************************************************
-
 call dein#add('Shougo/dein.vim', {
             \'rev':g:osv_dein_version,
             \})
@@ -23,5 +6,17 @@ call dein#add('arcticicestudio/nord-vim', {
             \'hook_post_source':'source $CONF_PATH/plug_conf/color_conf.vim'
             \})
 
-call dein#add('mhinz/vim-startify', {
-            \})
+call dein#add('ryanoasis/vim-devicons')
+
+if !has('nvim') && v:version > 800
+    call dein#add('roxma/vim-hug-neovim-rpc')
+    call dein#add('roxma/nvim-yarp', {
+                \'depends':'vim-hug-neovim-rpc'
+                \})
+endif
+
+if has('nvim') && !has('nvim-0.8')
+    call dein#add('antoinemadec/FixCursorHold.nvim')
+endif
+
+call dein#add('mhinz/vim-startify')
