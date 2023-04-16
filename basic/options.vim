@@ -169,14 +169,15 @@ if empty(glob($CONF_PATH."/tmp/"))
     echo "Creating the tmp dir!"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
+    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/swap"
 endif
 
 set undofile
 set swapfile
-set nobackup
+set backup
 set undodir=$CONF_PATH/tmp/undo
 set backupdir=$CONF_PATH/tmp/backup
-set directory=$CONF_PATH/tmp/backup
+set directory=$CONF_PATH/tmp/swap
 
 " ===
 " === ignore some file types
