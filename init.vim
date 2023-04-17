@@ -65,7 +65,6 @@ let g:osv_plug_asyncomplete = 1
 " vim-lsp as backend of the above frameworks.
 let g:osv_plug_lsp = 1
 
-
 " ===
 " === default control
 " ===
@@ -84,25 +83,32 @@ if g:os_architect == 'aarch64' && g:osv_plug_coc == 1
     let g:osv_plug_coc = 0
     echom " do NOT use coc under " . g:os_architect
 endif
-" don't use coc with vim under version 8.2
-if !has('nvim') && v:version< 802 && g:osv_plug_coc == 1
+" don't use coc with vim under version 8.1-1719
+if !has('nvim-0.4') && !has('patch-8.1-1719') && g:osv_plug_coc == 1
     let g:osv_plug_coc = 0
-    echom " minimal vim version to use coc.nvim is 8.2! "
+    echom " for coc.nvim: vim>=8.1.1719; nvim>=0.4! "
     echom " you may try asycomplete.vim~ "
 endif
 
-" don't use deoplete with vim under version 8.2
-if !has('nvim') && v:version< 802 && g:osv_plug_deoplete == 1
+" don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
+if !has('nvim-0.3') && !has('patch-8.2-1978') && g:osv_plug_deoplete == 1
     let g:osv_plug_deoplete = 0
-    echom " minimal vim version to use deoplete.nvim is 8.2! "
+    echom " for deoplete.nvim: vim>=8.2.1978; nvim>=0.3! "
     echom " you may try asycomplete.vim~ "
+endif
+
+" don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
+if !has('nvim') && v:version< 800 && g:osv_plug_asyncomplete == 1
+    let g:osv_plug_asyncomplete = 0
+    echom " for asyncomplete.nvim: vim>=8.0; nvim! "
+    echom " you must update your vim or install nvim, if you still want to use the asyncomplete! "
 endif
 
 " don't use lsp with vim under version 8.0
 if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
     let g:osv_plug_lsp = 0
-    echom " minimal vim version to use vim-lsp is 8.0! "
-    echom " you may update your vim, if you still want to use the lsp! "
+    echom " for vim-lsp: vim>=8.0; nvim! "
+    echom " you must update your vim or install nvim, if you still want to use the lsp! "
 endif
 
 " ===
@@ -125,7 +131,17 @@ endif
 if g:osv_ulti_mode == 1
 
     " the dein version
-    if !has('nvim')
+    if has('nvim')
+        if has('nvim-0.8')
+            let g:osv_dein_version = 'master'
+        elseif has('nvim-0.5')
+            let g:osv_dein_version = '3.1'
+        elseif has('nvim-0.2')
+            let g:osv_dein_version = '2.2'
+        else
+            let g:osv_dein_version = '1.5'
+        endif
+    else " vim
         if v:version >= 802
             let g:osv_dein_version = 'master'
         elseif v:version >= 800
@@ -133,8 +149,6 @@ if g:osv_ulti_mode == 1
         elseif v:version >= 704
             let g:osv_dein_version = '1.5'
         endif
-    else
-        let g:osv_dein_version = 'master'
     endif
 
     let s:dein_dir = $CONF_PATH.'/dein'
@@ -145,10 +159,8 @@ if g:osv_ulti_mode == 1
         silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
         echom "install dein" g:osv_dein_version "to" s:dein_src
     endif
-
     set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
 
-    " if dein#load_state(s:dein_dir)
 
     call dein#begin(s:dein_dir)
 
@@ -175,8 +187,6 @@ if g:osv_ulti_mode == 1
     endif
 
     call dein#end()
-    " call dein#save_state()
-    " endif
 
     augroup DeinSetup
         autocmd!
