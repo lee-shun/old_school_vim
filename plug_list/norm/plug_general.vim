@@ -8,7 +8,7 @@ call dein#add('arcticicestudio/nord-vim', {
 
 call dein#add('ryanoasis/vim-devicons')
 
-if !has('nvim') && v:version > 800
+if has('nvim') || v:version > 800
     call dein#add('roxma/vim-hug-neovim-rpc')
     call dein#add('roxma/nvim-yarp', {
                 \'depends':'vim-hug-neovim-rpc'
