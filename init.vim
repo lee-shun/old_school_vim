@@ -197,12 +197,11 @@ if g:osv_ulti_mode == 1
     augroup END
 
     if g:osv_setup == 1
-        " TODO: git pull the repo
-        norm :call dein#install()
+        exec "call dein#update()"
+        echom "install the plugins with dein#update()."
         if has('nvim')
-            silent execute "UpdateRemotePlugins"
+            silent exec "UpdateRemotePlugins"
         endif
-        echom "install the plugins with dein#update."
     endif
 
 endif
