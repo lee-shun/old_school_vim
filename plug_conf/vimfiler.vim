@@ -8,7 +8,25 @@ let g:vimfiler_enable_auto_cd = 1
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_ignore_pattern = []
 
-nnoremap <silent> <leader>t :VimFiler -winwidth=35 -toggle -find -split -simple -status -explorer<cr>
+call vimfiler#custom#profile('default', 'context', {
+          \ 'explorer' : 1,
+          \ 'winwidth' : 35,
+          \ 'toggle' : 1,
+          \ 'columns' : 'devicons',
+          \ 'auto_expand': 1,
+          \ 'parent': 0,
+          \ 'explorer_columns' : 'devicons',
+          \ 'status' : 1,
+          \ 'safe' : 0,
+          \ 'split' : 1,
+          \ 'hidden': 1,
+          \ 'no_quit' : 1,
+          \ 'force_hide' : 0,
+          \ 'auto_cd':1,
+          \ 'find':0,
+          \ })
+
+nnoremap <silent> <leader>t :VimFiler<cr>
 
 let g:vimfiler_no_default_key_mappings = 1
 
@@ -74,7 +92,7 @@ function! s:vimfiler_my_settings() abort
     nmap <buffer> gc          <Plug>(vimfiler_cd_vim_current_dir)
     nmap <buffer> gs          <Plug>(vimfiler_toggle_safe_mode)
     nmap <buffer> gS          <Plug>(vimfiler_toggle_simple_mode)
-    nmap <buffer> a           <Plug>(vimfiler_choose_action)
+    nmap <buffer> n           <Plug>(vimfiler_choose_action)
     nmap <buffer> Y           <Plug>(vimfiler_pushd)
     nmap <buffer> P           <Plug>(vimfiler_popd)
     nmap <buffer> t           <Plug>(vimfiler_expand_tree)
@@ -85,4 +103,3 @@ function! s:vimfiler_my_settings() abort
     nmap <buffer> gk          <Plug>(vimfiler_jump_first_child)
     vmap <buffer> J         <Plug>(vimfiler_toggle_mark_selected_lines)
 endfunction
-
