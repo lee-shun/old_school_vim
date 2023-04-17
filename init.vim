@@ -158,7 +158,7 @@ if g:osv_ulti_mode == 1
     let g:osv_setup = 0
     if empty(glob(s:dein_dir))
         let g:osv_setup = 1
-        exec "!cd ".$CONF_PATH." && git checkout . && git pull && cd -"
+        silent exec "!cd ".$CONF_PATH." && git checkout . && git pull && cd -"
         echom "update the old school vim via git!"
         silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
         echom "install dein" g:osv_dein_version "to" s:dein_src
