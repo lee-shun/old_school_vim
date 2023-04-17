@@ -45,12 +45,12 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
         call dein#add('kristijanhusak/defx-git', {'lazy':1,
                     \'hook_add':'source $CONF_PATH/plug_conf/defx_git_config.vim'})
         call dein#add('kristijanhusak/defx-icons', {'lazy':1,
-                    \'depends':'vim-devicons',
+                    \'depends':['vim-devicons'],
                     \'hook_add':'source $CONF_PATH/plug_conf/defx_icons_conf.vim'})
         let s:defx_nvim_config = {'lazy':1,
                     \'on_cmd':'Defx',
                     \'on_map':'<leader>t',
-                    \'depends':['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-git', 'defx-icons'],
+                    \'depends':['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-git', 'defx-icons', 'vim-rooter'],
                     \'hook_post_source':'source $CONF_PATH/plug_conf/defx_conf.vim',
                     \'hook_done_update': ''}
         if has('nvim')
@@ -70,7 +70,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
         call dein#add('lambdalisue/fern.vim', {'lazy':1,
                     \'on_map':'<leader>t',
                     \'on_cmd':'Fern',
-                    \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
+                    \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim', 'vim-rooter'],
                     \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
     else
         call dein#add('Shougo/unite.vim', {'lazy':1,
@@ -78,7 +78,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
         call dein#add('Shougo/vimfiler.vim', {'lazy':1,
                     \'on_map':'<leader>t',
                     \'on_cmd':'VimFiler',
-                    \'depends':['unite.vim', 'vim-devicons'],
+                    \'depends':['unite.vim', 'vim-devicons', 'vim-rooter'],
                     \'hook_add':'source $CONF_PATH/plug_conf/vimfiler.vim'})
     endif
 endif
