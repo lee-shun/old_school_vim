@@ -50,7 +50,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
         let s:defx_nvim_config = {'lazy':1,
                     \'on_cmd':'Defx',
                     \'on_map':'<leader>t',
-                    \'depends':['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-git', 'defx-icons', 'vim-rooter'],
+                    \'depends':['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-git', 'defx-icons'],
                     \'hook_post_source':'source $CONF_PATH/plug_conf/defx_conf.vim',
                     \'hook_done_update': ''}
         if has('nvim')
@@ -70,7 +70,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
         call dein#add('lambdalisue/fern.vim', {'lazy':1,
                     \'on_map':'<leader>t',
                     \'on_cmd':'Fern',
-                    \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim', 'vim-rooter'],
+                    \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
                     \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
     else
         call dein#add('Shougo/unite.vim', {'lazy':1,
@@ -78,8 +78,8 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
         call dein#add('Shougo/vimfiler.vim', {'lazy':1,
                     \'on_map':'<leader>t',
                     \'on_cmd':'VimFiler',
-                    \'depends':['unite.vim', 'vim-devicons', 'vim-rooter'],
-                    \'hook_post_source':'source $CONF_PATH/plug_conf/vimfiler.vim'})
+                    \'depends':['unite.vim', 'vim-devicons'],
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/vimfiler_conf.vim'})
     endif
 endif
 
@@ -197,4 +197,10 @@ call dein#add('junegunn/fzf.vim', {'lazy':1,
 call dein#add('tibabit/vim-templates', {'lazy':1,
             \'on_cmd' : ['TemplateInit', 'TemplateExpand'],
             \'hook_add' : 'source $CONF_PATH/plug_conf/templates_conf.vim',
+            \})
+
+call dein#add('brooth/far.vim', {
+            \'lazy':1,
+            \'on_cmd':['F', 'Far', 'Farr',  'Farf', 'Fardo', 'Refar', 'Farundo'],
+            \'hook_add':'source $CONF_PATH/plug_conf/far_conf.vim'
             \})

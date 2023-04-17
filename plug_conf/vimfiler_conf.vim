@@ -22,7 +22,7 @@ call vimfiler#custom#profile('default', 'context', {
           \ 'hidden': 1,
           \ 'no_quit' : 1,
           \ 'force_hide' : 0,
-          \ 'auto_cd':1,
+          \ 'auto_cd':0,
           \ 'find':0,
           \ })
 
