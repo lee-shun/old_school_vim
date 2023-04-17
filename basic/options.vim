@@ -52,7 +52,7 @@ set wildmenu
 if !has('nvim') && v:version > 802
     set wildoptions=pum
 endif
-set lazyredraw
+set nolazyredraw
 set ttyfast
 
 set t_Co=256
