@@ -197,12 +197,11 @@ if g:osv_ulti_mode == 1
     augroup END
 
     if g:osv_setup == 1
-        silent exec "call dein#update()"
+        call dein#update()
         echom "install the plugins with dein#update()."
         if has('nvim')
             silent exec "UpdateRemotePlugins"
         endif
-        source $MYVIMRC
     endif
 
 endif
