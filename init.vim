@@ -16,7 +16,7 @@
 "*******************************************************************************
 
 " TODO:
-" 1. webicons and git for vimfiler
+" File Explorer. auto find file in fern and vimfiler, speed for defx.
 
 " ===
 " === env
