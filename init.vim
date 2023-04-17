@@ -204,6 +204,28 @@ if g:osv_ulti_mode == 1
         endif
     endif
 
+    " Run update every day automatically when entering Vim.
+    if g:osv_setup == 0
+        function! AutoUpdateVimPlug() abort
+            let l:filename = $CONF_PATH.'/tmp/plug_update_time'
+            if filereadable(l:filename) == 0
+                call writefile([], l:filename)
+            endif
+
+            let l:today = strftime('%Y_%m_%d')
+            let l:contents = readfile(l:filename)
+            if index(l:contents, l:today) < 0
+                let l:choice = input("daily upgrade vim plugs, [y/n]?")
+                if l:choice == 'y'
+                    call dein#update()
+                endif
+                call writefile([l:today], l:filename, 'a')
+            endif
+        endfunction
+
+        autocmd VimEnter * call AutoUpdateVimPlug()
+    endif
+
 endif
 
 filetype plugin indent on
