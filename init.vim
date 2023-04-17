@@ -155,12 +155,15 @@ if g:osv_ulti_mode == 1
     let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
 
     " install dein for the first time
+    let g:osv_setup = 0
     if empty(glob(s:dein_dir))
+        let g:osv_setup = 1
+        exec "!cd ".$CONF_PATH." && git checkout . && git pull && cd -"
+        echom "update the old school vim via git!"
         silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
         echom "install dein" g:osv_dein_version "to" s:dein_src
     endif
     set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
-
 
     call dein#begin(s:dein_dir)
 
@@ -192,6 +195,15 @@ if g:osv_ulti_mode == 1
         autocmd!
         autocmd VimEnter * call dein#call_hook('post_source')
     augroup END
+
+    if g:osv_setup == 1
+        " TODO: git pull the repo
+        norm :call dein#install()
+        if has('nvim')
+            silent execute "UpdateRemotePlugins"
+        endif
+        echom "install the plugins with dein#update."
+    endif
 
 endif
 
