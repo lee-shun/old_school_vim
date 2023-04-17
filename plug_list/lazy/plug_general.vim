@@ -57,7 +57,6 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > nerdtree
             let s:defx_nvim_config.hook_done_update = 'UpdateRemotePlugins'
         endif
         call dein#add('Shougo/defx.nvim', s:defx_nvim_config)
-
     elseif has('nvim') || has('patch-8.1-2269')
         call dein#add('lambdalisue/nerdfont.vim', {'lazy':1,
                     \})
