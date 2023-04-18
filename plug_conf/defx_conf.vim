@@ -82,9 +82,6 @@ function! s:defx_custom_keymappings() abort
                 \ defx#do_action('execute_system')
 
     " special
-    nnoremap <silent><buffer><expr> C
-                \ defx#do_action('toggle_columns',
-                \                'mark:filename:type:size:time')
     nnoremap <silent><buffer><expr> st
                 \ defx#do_action('toggle_sort', 'time')
     nnoremap <silent><buffer><expr> sf
@@ -93,12 +90,4 @@ function! s:defx_custom_keymappings() abort
                 \ defx#do_action('toggle_sort', 'size')
     nnoremap <silent><buffer><expr> se
                 \ defx#do_action('toggle_sort', 'extension')
-    nnoremap <silent><buffer><expr> ;
-                \ defx#do_action('repeat')
-    nnoremap <silent><buffer><expr> ~
-                \ defx#do_action('cd')
-    nnoremap <silent><buffer><expr> <C-g>
-                \ defx#do_action('print')
-    nnoremap <silent><buffer><expr> cd
-                \ defx#do_action('change_vim_cwd')
 endfunction
