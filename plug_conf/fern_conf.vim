@@ -14,7 +14,6 @@ function! s:init_fern() abort
     setlocal  nonumber norelativenumber
     nmap <buffer> h <Plug>(fern-action-collapse)
     nmap <buffer> l <Plug>(fern-action-open-or-expand)
-    nmap <buffer> q <Plug>(fern-action-hidden)
     nmap <buffer> J <Plug>(fern-action-mark)j
     nmap <buffer> K <Plug>(fern-action-mark)k
     nmap <buffer> <CR> <Plug>(fern-action-open-or-enter)
@@ -22,6 +21,7 @@ function! s:init_fern() abort
     nmap <buffer> <tab> <Plug>(fern-action-choice)
     nmap <buffer> s <Plug>(fern-action-open:split)
     nmap <buffer> v <Plug>(fern-action-open:vsplit)
+    nmap <buffer> t <Plug>(fern-action-open:tabedit)
     nmap <buffer> yy <Plug>(fern-action-clipboard-copy)
     nmap <buffer> yp <Plug>(fern-action-yank:path)
     nmap <buffer> yn <Plug>(fern-action-yank:bufname)
