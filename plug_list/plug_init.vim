@@ -91,5 +91,9 @@ if g:osv_setup == 0
         endif
     endfunction
 
+augroup AutoUpdatePlugGroup
+    autocmd!
     autocmd VimEnter * call AutoUpdateVimPlug()
+augroup END
+
 endif
