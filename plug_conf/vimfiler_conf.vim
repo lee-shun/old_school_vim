@@ -58,6 +58,7 @@ function! s:vimfiler_my_settings() abort
     nmap <buffer> <tab> <Plug>(vimfiler_choose_action)
     nmap <buffer> x     <Plug>(vimfiler_execute_system_associated)
     nmap <buffer> <C-h> <Plug>(vimfiler_toggle_visible_ignore_files)
+    nmap <buffer> .     <Plug>(vimfiler_toggle_visible_ignore_files)
     nmap <buffer> e     <Plug>(vimfiler_split_edit_file)
     nmap <buffer> !     <Plug>(vimfiler_execute_shell_command)
     nmap <buffer> q     <Plug>(vimfiler_hide)

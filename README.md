@@ -135,9 +135,10 @@ its own vim.
 | `A`     | add directory(s)                                     |
 | `r`     | rename                                               |
 | `f`     | filter                                               |
-| `s`     | sort                                       |
+| `s`     | sort                                                 |
 | `<C-r>` | refresh                                              |
 | `<C-h>` | toggle hidden items                                  |
+| `.`     | toggle hidden items                                  |
 | `<C-i>` | toggle gitignore items                               |
 | `!`     | execute vim cmd                                      |
 | `x`     | system execute                                       |
