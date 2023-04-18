@@ -106,6 +106,7 @@ call dein#add('airblade/vim-rooter', {'lazy':1,
 
 call dein#add('tpope/vim-surround', {'lazy':1,
             \'on_event': ['BufReadPost'],
+            \'hook_add':'source $CONF_PATH/plug_conf/surround.vim'
             \})
 
 call dein#add('tpope/vim-repeat', {'lazy':1,
