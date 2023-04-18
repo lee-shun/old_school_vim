@@ -16,6 +16,7 @@ function! s:init_fern() abort
     nmap <buffer> l <Plug>(fern-action-open-or-expand)
     nmap <buffer> J <Plug>(fern-action-mark)j
     nmap <buffer> K <Plug>(fern-action-mark)k
+    nmap <buffer> * <Plug>(fern-action-mark:clear)
     nmap <buffer> <CR> <Plug>(fern-action-open-or-enter)
     nmap <buffer> <BS> <Plug>(fern-action-leave)
     nmap <buffer> <tab> <Plug>(fern-action-choice)
@@ -35,6 +36,7 @@ function! s:init_fern() abort
     nmap <buffer> f <Plug>(fern-action-include)
     nmap <buffer> <C-r> <Plug>(fern-action-reload:all)
     nmap <buffer> <C-h> <Plug>(fern-action-hidden:toggle)
+    nmap <buffer> . <Plug>(fern-action-hidden:toggle)
     nmap <buffer> x <Plug>(fern-action-open:system)
 endfunction
 
