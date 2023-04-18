@@ -124,6 +124,7 @@ its own vim.
 | `v`     | vsplit and open                                      |
 | `t`     | new tab and open                                     |
 | `i`     | preview or show details of the item                  |
+| `yP`    | copy file path (different details)                   |
 | `yp`    | copy file path                                       |
 | `yy`    | copy file(s)                                         |
 | `yn`    | copy file name                                       |
@@ -134,14 +135,18 @@ its own vim.
 | `a`     | add file(s), maybe path with "/"                     |
 | `A`     | add directory(s)                                     |
 | `r`     | rename                                               |
+| `R`     | rename (different details)                           |
 | `f`     | filter                                               |
+| `<C-f>` | clean filter                                         |
 | `s`     | sort                                                 |
 | `<C-r>` | redraw/refresh                                       |
 | `<C-h>` | toggle hidden items                                  |
 | `.`     | toggle hidden items                                  |
 | `<C-i>` | toggle gitignore items                               |
+| `<C-d>` | toggle dot items                                     |
 | `!`     | execute vim cmd                                      |
 | `x`     | system execute                                       |
 | `?`     | help                                                 |
+| `m`     | multiple operation                                   |
 
 > Last Modified : 二 13 9 月 2022 08:21:11 下午

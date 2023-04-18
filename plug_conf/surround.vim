@@ -1,15 +1,15 @@
 let g:surround_no_mappings = 1
 
-nmap sd  <Plug>Dsurround
-nmap sr  <Plug>Csurround
-nmap Sr  <Plug>CSurround
-nmap sa  <Plug>Ysurround
-nmap Sa  <Plug>YSurround
+nmap gsd  <Plug>Dsurround
+nmap gsr  <Plug>Csurround
+nmap gSr  <Plug>CSurround
+nmap gsa  <Plug>Ysurround
+nmap gSa  <Plug>YSurround
 " line-wise add
-nmap ssa  <Plug>Yssurround
+nmap gssa  <Plug>Yssurround
 " line-wise indent add
-nmap Ssa  <Plug>YSsurround
+nmap gSsa  <Plug>YSsurround
 
-xmap sa  <Plug>VSurround
+xmap gsa  <Plug>VSurround
 " visual indent
-xmap Ssa  <Plug>VgSurround
+xmap gSsa  <Plug>VgSurround
