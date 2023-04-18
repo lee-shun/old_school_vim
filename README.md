@@ -113,12 +113,14 @@ its own vim.
 | `j, k`  | up and down                                          |
 | `h, l`  | left and right, but collapse or expand the tree node |
 | `J, K`  | toggle mark (select) multiple items                  |
+| `*`     | toggle select all                                    |
 | `H, L`  | collapse all (recursively), expand all (recursively) |
 | `q`     | quit                                                 |
 | `<CR>`  | open file or cd to the direcory                      |
 | `<BS>`  | cd to the parent directory                           |
 | `<TAB>` | action                                               |
 | `s`     | split and open                                       |
+| `o`     | toggle open tree                                     |
 | `v`     | vsplit and open                                      |
 | `t`     | new tab and open                                     |
 | `i`     | preview or show details of the item                  |
@@ -129,13 +131,14 @@ its own vim.
 | `p`     | paste file(s)                                        |
 | `df`    | delete/trash file(s)                                 |
 | `dF`    | delete/trash file(s), force or forever               |
-| `a`     | add file(s)                                          |
+| `a`     | add file(s), maybe path with "/"                     |
 | `A`     | add directory(s)                                     |
 | `r`     | rename                                               |
 | `f`     | filter                                               |
 | `<C-r>` | refresh                                              |
 | `<C-h>` | toggle hidden items                                  |
 | `<C-i>` | toggle gitignore items                               |
+| `!`     | execute vim cmd                                      |
 | `x`     | system execute                                       |
 | `?`     | help                                                 |
 
