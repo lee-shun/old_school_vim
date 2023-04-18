@@ -16,7 +16,9 @@
 "*******************************************************************************
 
 " TODO:
-" File Explorer. auto find file in fern and vimfiler, speed for defx.
+" 1. File Explorer. auto find file in fern and vimfiler, speed for defx.
+" 2. vim-surround key-binding with neovim
+" 3. coc-explorer keymaps
 
 " ===
 " === env
@@ -57,13 +59,13 @@ let g:osv_plug_advanced = 1
 
 " use coc
 " NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:osv_plug_coc = 0
+let g:osv_plug_coc = 1
 
 " choose one of following complete engines
 let g:osv_plug_deoplete = 0
-let g:osv_plug_asyncomplete = 1
+let g:osv_plug_asyncomplete = 0
 " vim-lsp as backend of the above frameworks.
-let g:osv_plug_lsp = 1
+let g:osv_plug_lsp = 0
 
 " ===
 " === default control
