@@ -121,7 +121,7 @@ its own vim.
 | `s`     | split and open                                       |
 | `v`     | vsplit and open                                      |
 | `t`     | new tab and open                                     |
-| `i`     | preview                                              |
+| `i`     | preview or show details of the item                  |
 | `yp`    | copy file path                                       |
 | `yy`    | copy file(s)                                         |
 | `yn`    | copy file name                                       |
