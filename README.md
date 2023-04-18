@@ -78,8 +78,9 @@ You can also use the bash files under the `env/` folder.
      - Vim configuration path: `~/.vim`
 2. **choose your mode**
 3. enter vim and **`:call dein#install()`**
-    - several times (at least 2) of `dein#install()` are required to make sure the correct plugins installation.
-    - `:UpdateRemotePlugins` may also needed...
+
+   - several times (at least 2) of `dein#install()` are required to make sure the correct plugins installation.
+   - `:UpdateRemotePlugins` may also needed...
 
 4. **install the python and language-severs if applicable.**
 
@@ -102,5 +103,40 @@ its own vim.
 | <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti_coc.png) |
 | <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png)      |
 | <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)              |
+
+## The file explorer keymaps
+
+`<leader>t`: toggle file explorer
+
+| keys    | functions                                            |
+| ------- | ---------------------------------------------------- |
+| `j, k`  | up and down                                          |
+| `h, l`  | left and right, but collapse or expand the tree node |
+| `J, K`  | toggle mark (select) multiple items                  |
+| `H, L`  | collapse all (recursively), expand all (recursively) |
+| `q`     | quit                                                 |
+| `<CR>`  | open file or cd to the direcory                      |
+| `<BS>`  | cd to the parent directory                           |
+| `<TAB>` | action                                               |
+| `s`     | split and open                                       |
+| `v`     | vsplit and open                                      |
+| `t`     | new tab and open                                     |
+| `i`     | preview                                              |
+| `yp`    | copy file path                                       |
+| `yy`    | copy file(s)                                         |
+| `yn`    | copy file name                                       |
+| `dd`    | cut file(s)                                          |
+| `p`     | paste file(s)                                        |
+| `df`    | delete/trash file(s)                                 |
+| `dF`    | delete/trash file(s), force or forever               |
+| `a`     | add file(s)                                          |
+| `A`     | add directory(s)                                     |
+| `r`     | rename                                               |
+| `f`     | filter                                               |
+| `<C-r>` | refresh                                              |
+| `<C-h>` | toggle hidden items                                  |
+| `<C-i>` | toggle gitignore items                               |
+| `x`     | system execute                                       |
+| `?`     | help                                                 |
 
 > Last Modified : 二 13 9 月 2022 08:21:11 下午
