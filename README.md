@@ -136,7 +136,7 @@ its own vim.
 | `r`     | rename                                               |
 | `f`     | filter                                               |
 | `s`     | sort                                                 |
-| `<C-r>` | refresh                                              |
+| `<C-r>` | redraw/refresh                                       |
 | `<C-h>` | toggle hidden items                                  |
 | `.`     | toggle hidden items                                  |
 | `<C-i>` | toggle gitignore items                               |
