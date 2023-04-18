@@ -19,7 +19,7 @@ function! s:init_fern() abort
     nmap <buffer> <CR> <Plug>(fern-action-open-or-enter)
     nmap <buffer> <BS> <Plug>(fern-action-leave)
     nmap <buffer> <tab> <Plug>(fern-action-choice)
-    nmap <buffer> s <Plug>(fern-action-open:split)
+    nmap <buffer> e <Plug>(fern-action-open:split)
     nmap <buffer> v <Plug>(fern-action-open:vsplit)
     nmap <buffer> t <Plug>(fern-action-open:tabedit)
     nmap <buffer> yy <Plug>(fern-action-clipboard-copy)

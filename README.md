@@ -119,7 +119,7 @@ its own vim.
 | `<CR>`  | open file or cd to the direcory                      |
 | `<BS>`  | cd to the parent directory                           |
 | `<TAB>` | action                                               |
-| `s`     | split and open                                       |
+| `e`     | split and open                                       |
 | `o`     | toggle open tree                                     |
 | `v`     | vsplit and open                                      |
 | `t`     | new tab and open                                     |
@@ -135,6 +135,7 @@ its own vim.
 | `A`     | add directory(s)                                     |
 | `r`     | rename                                               |
 | `f`     | filter                                               |
+| `s`     | sort                                       |
 | `<C-r>` | refresh                                              |
 | `<C-h>` | toggle hidden items                                  |
 | `<C-i>` | toggle gitignore items                               |
