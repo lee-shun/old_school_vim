@@ -18,7 +18,6 @@
 " TODO:
 " 1. File Explorer. auto find file in fern and vimfiler, speed for defx.
 " 2. vim-surround key-binding with neovim
-" 3. coc-explorer keymaps
 
 " ===
 " === env
