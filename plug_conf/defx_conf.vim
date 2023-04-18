@@ -39,7 +39,7 @@ function! s:defx_custom_keymappings() abort
                 \ defx#do_action('drop')
     nnoremap <silent><buffer><expr> <BS>
                 \ defx#do_action('cd', ['..'])
-    nnoremap <silent><buffer><expr> s
+    nnoremap <silent><buffer><expr> e
                 \ defx#do_action('open', 'split')
     nnoremap <silent><buffer><expr> o
                 \ defx#do_action('open_tree', 'toggle')
