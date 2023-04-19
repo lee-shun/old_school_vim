@@ -16,7 +16,7 @@
 "*******************************************************************************
 
 " TODO:
-" 1. File Explorer. auto find file in fern and vimfiler, speed for defx.
+" 1. Need to update the keymaps in file explorer!
 
 " ===
 " === env
