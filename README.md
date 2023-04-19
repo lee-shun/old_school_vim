@@ -168,6 +168,15 @@ its own vim.
 | `gp`    | git prev                                             |
 | `gn`    | git next                                             |
 | `gr`    | git reload                                           |
+| `gs`    | git stage                                            |
+| `gS`    | git unstage                                          |
+| `[d`    | diagnostic prev                                      |
+| `]d`    | diagnostic next                                      |
+| `zr`     | jump root                                            |
+| `zp`     | jump parent                                            |
+| `zh`     | jump home                                            |
+| `z`     | jump move                                            |
+| `wl`     | disk / drive list                                            |
 
 ## Finder Keymaps
 
