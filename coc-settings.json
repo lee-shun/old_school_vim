@@ -118,8 +118,6 @@
     "q": "quit",
     "<esc>": "esc",
     "xs": "systemExecute",
-    "mp": "markPrev",
-    "mn": "markNext",
     "[d": "diagnosticPrev",
     "]d": "diagnosticNext",
     "gp": "gitPrev",
