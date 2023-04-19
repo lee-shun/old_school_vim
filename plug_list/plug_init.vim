@@ -83,19 +83,21 @@ if g:osv_setup == 0
         if index(l:contents, l:today) < 0
 
             " update the repo first
-            let l:osv_update = input("upgrade old school vim with remote, [y/n]? ")
+            let l:osv_update = input("upgrade old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
-                let l:git_clean = system(printf("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null", expand('%:p:h:S'))) is# ''
+                let l:git_clean = system("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null") is# ''
                 if l:git_clean == 1
                     system("!cd ".$CONF_PATH." && git pull && cd -")
-                    echom "update the old school vim via git!"
+                    echo "update the old school vim via git!"
                 else
-                    echom "git status is not clean!"
+                    echohl WarningMsg
+                    echo "git status is not clean!"
+                    echohl None
                 endif
             endif
 
             " update the plugins
-            let l:choice = input("upgrade vim plugs, [y/n]? ")
+            let l:choice = input("upgrade vim plugs, [y/n]?\n")
             if l:choice == 'y'
                 call dein#update()
             endif
