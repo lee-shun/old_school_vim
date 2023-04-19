@@ -87,7 +87,7 @@ if g:osv_setup == 0
             if l:osv_update == 'y'
                 let l:git_clean = system("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null") is# ''
                 if l:git_clean == 1
-                    call system("!cd ".$CONF_PATH." && git pull && cd -")
+                    call system("!cd ".$CONF_PATH." && git pull")
                     echo "update the old school vim via git!"
                 else
                     echohl WarningMsg
