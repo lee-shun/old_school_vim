@@ -64,7 +64,7 @@ augroup END
 
 if g:osv_setup == 1
     call dein#update()
-    echom "install the plugins with dein#update()."
+    echo "install the plugins with dein#update()."
     if has('nvim')
         silent exec "UpdateRemotePlugins"
     endif
