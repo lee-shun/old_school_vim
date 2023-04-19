@@ -26,8 +26,6 @@ let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
 let g:osv_setup = 0
 if empty(glob(s:dein_dir))
     let g:osv_setup = 1
-    " silent exec "!cd ".$CONF_PATH." && git checkout . && git pull && cd -"
-    " echom "update the old school vim via git!"
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
     echom "install dein" g:osv_dein_version "to" s:dein_src
 endif
@@ -79,11 +77,18 @@ if g:osv_setup == 0
         if filereadable(l:filename) == 0
             call writefile([], l:filename)
         endif
-
         let l:today = strftime('%Y_%m_%d')
         let l:contents = readfile(l:filename)
+
         if index(l:contents, l:today) < 0
-            let l:choice = input("daily upgrade vim plugs, [y/n]?")
+            let l:osv_update = input("upgrade old school vim with remote, [y/n]? ")
+            if l:osv_update == 'y'
+                let l:git_clean = system(printf("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null", expand('%:p:h:S'))) is# ''
+                if l:git_clean == 1
+                system("!cd ".$CONF_PATH." && git pull && cd -")
+                echom "update the old school vim via git!"
+            endif
+            let l:choice = input("upgrade vim plugs, [y/n]? ")
             if l:choice == 'y'
                 call dein#update()
             endif
@@ -91,9 +96,9 @@ if g:osv_setup == 0
         endif
     endfunction
 
-augroup AutoUpdatePlugGroup
-    autocmd!
-    autocmd VimEnter * call AutoUpdateVimPlug()
-augroup END
+    augroup AutoUpdatePlugGroup
+        autocmd!
+        autocmd VimEnter * call AutoUpdateVimPlug()
+    augroup END
 
 endif
