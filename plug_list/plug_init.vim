@@ -26,8 +26,8 @@ let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
 let g:osv_setup = 0
 if empty(glob(s:dein_dir))
     let g:osv_setup = 1
-    silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
-    echom "install dein" g:osv_dein_version "to" s:dein_src
+    call system("!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src)
+    echo "install dein" g:osv_dein_version "to" s:dein_src
 endif
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
 
