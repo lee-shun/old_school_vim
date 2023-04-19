@@ -112,8 +112,13 @@ its own vim.
 | ------- | ---------------------------------------------------- |
 | `j, k`  | up and down                                          |
 | `h, l`  | left and right, but collapse or expand the tree node |
-| `J, K`  | toggle mark (select) multiple items                  |
-| `*`     | toggle select all                                    |
+| `mt`    | toggle mark (select) multiple items                  |
+| `mn`    | next mark item                                       |
+| `mp`    | prev mark item                                       |
+| `ma`    | toggle mark (select) all                             |
+| `mc`    | clear mark (select) all                              |
+| `mv`    | mark (select) items move                             |
+| `J, K`  | toggle mark (select) multiple items with move        |
 | `H, L`  | collapse all (recursively), expand all (recursively) |
 | `q`     | quit                                                 |
 | `<CR>`  | open file or cd to the direcory                      |
@@ -123,9 +128,10 @@ its own vim.
 | `o`     | toggle open tree                                     |
 | `v`     | vsplit and open                                      |
 | `t`     | new tab and open                                     |
-| `i`     | preview or show details of the item                  |
-| `yP`    | copy file path (different details)                   |
-| `yp`    | copy file path                                       |
+| `if`    | show info of the item                                |
+| `ip`    | preview                                              |
+| `yP`    | copy abs file path (different details)               |
+| `yp`    | copy relative file path                              |
 | `yy`    | copy file(s)                                         |
 | `yn`    | copy file name                                       |
 | `dd`    | cut file(s)                                          |
@@ -136,17 +142,30 @@ its own vim.
 | `A`     | add directory(s)                                     |
 | `r`     | rename                                               |
 | `R`     | rename (different details)                           |
-| `f`     | filter                                               |
-| `<C-f>` | clean filter                                         |
-| `s`     | sort                                                 |
+| `fs`    | start filter                                         |
+| `fc`    | clear filter                                         |
+| `sc`    | change sort                                          |
+| `sr`    | reverse sort                                         |
+| `st`    | sort by time                                         |
+| `sn`    | sort by filename                                     |
+| `ss`    | sort by size                                         |
+| `se`    | sort by extension                                    |
 | `<C-r>` | redraw/refresh                                       |
 | `<C-h>` | toggle hidden items                                  |
-| `.`     | toggle hidden items                                  |
 | `<C-i>` | toggle gitignore items                               |
-| `<C-d>` | toggle dot items                                     |
-| `!`     | execute vim cmd                                      |
-| `x`     | system execute                                       |
+| `.`     | toggle dot items                                     |
+| `xv`    | execute vim cmd                                      |
+| `xs`    | system execute                                       |
 | `?`     | help                                                 |
-| `m`     | multiple operation                                   |
+| `cp`    | clipboard print (show)                               |
+| `cc`    | clipboard clear                                      |
+| `b`     | book mark operation                                  |
+| `/`     | search node                                          |
+| `gg`    | first item (in all or in the sibling)                |
+| `G`     | last item (in all or in the sibling)                 |
+| `gp`    | git prev                                             |
+| `gp`    | git prev                                             |
+| `gn`    | git next                                             |
+| `gr`    | git reload                                           |
 
 > Last Modified : 二 13 9 月 2022 08:21:11 下午

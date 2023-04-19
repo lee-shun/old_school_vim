@@ -47,8 +47,10 @@ function! s:defx_custom_keymappings() abort
                 \ defx#do_action('open', 'vsplit')
     nnoremap <silent><buffer><expr> t
                 \ defx#do_action('open', 'tab')
-    nnoremap <silent><buffer><expr> i
+    nnoremap <silent><buffer><expr> ip
                 \ defx#do_action('preview')
+    nnoremap <silent><buffer><expr> if
+                \ defx#do_action('print')
     nnoremap <silent><buffer><expr> yy
                 \ defx#do_action('copy')
     nnoremap <silent><buffer><expr> yp
@@ -86,7 +88,7 @@ function! s:defx_custom_keymappings() abort
     " special
     nnoremap <silent><buffer><expr> st
                 \ defx#do_action('toggle_sort', 'time')
-    nnoremap <silent><buffer><expr> sf
+    nnoremap <silent><buffer><expr> sn
                 \ defx#do_action('toggle_sort', 'filename')
     nnoremap <silent><buffer><expr> ss
                 \ defx#do_action('toggle_sort', 'size')
