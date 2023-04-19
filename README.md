@@ -161,7 +161,7 @@ its own vim.
 | `cp`    | clipboard print (show)                               |
 | `cc`    | clipboard clear                                      |
 | `b`     | book mark operation                                  |
-| `/`     | search node                                          |
+| `/`     | search                                               |
 | `gg`    | first item (in all or in the sibling)                |
 | `G`     | last item (in all or in the sibling)                 |
 | `gp`    | git prev                                             |
