@@ -81,17 +81,25 @@ if g:osv_setup == 0
         let l:contents = readfile(l:filename)
 
         if index(l:contents, l:today) < 0
+
+            " update the repo first
             let l:osv_update = input("upgrade old school vim with remote, [y/n]? ")
             if l:osv_update == 'y'
                 let l:git_clean = system(printf("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null", expand('%:p:h:S'))) is# ''
                 if l:git_clean == 1
-                system("!cd ".$CONF_PATH." && git pull && cd -")
-                echom "update the old school vim via git!"
+                    system("!cd ".$CONF_PATH." && git pull && cd -")
+                    echom "update the old school vim via git!"
+                else
+                    echom "git status is not clean!"
+                endif
             endif
+
+            " update the plugins
             let l:choice = input("upgrade vim plugs, [y/n]? ")
             if l:choice == 'y'
                 call dein#update()
             endif
+
             call writefile([l:today], l:filename, 'a')
         endif
     endfunction
