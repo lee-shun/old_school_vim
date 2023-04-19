@@ -140,8 +140,9 @@ its own vim.
 | `dF`    | delete/trash file(s), force or forever               |
 | `a`     | add file(s), maybe path with "/"                     |
 | `A`     | add directory(s)                                     |
-| `r`     | rename                                               |
-| `R`     | rename (different details)                           |
+| `rn`    | rename only name (or the normal one)                 |
+| `rN`    | rename with extension                                |
+| `rp`    | rename with abs path                                 |
 | `fs`    | start filter                                         |
 | `fc`    | clear filter                                         |
 | `sc`    | change sort                                          |
