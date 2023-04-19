@@ -33,7 +33,9 @@ function! s:defx_custom_keymappings() abort
                 \ defx#do_action('open_tree', 'recursive')
     nnoremap <silent><buffer><expr> q
                 \ defx#do_action('quit')
-    nnoremap <silent><buffer><expr> *
+    nnoremap <silent><buffer><expr> mt
+                \ defx#do_action('toggle_select')
+    nnoremap <silent><buffer><expr> ma
                 \ defx#do_action('toggle_select_all')
     nnoremap <silent><buffer><expr> <CR>
                 \ defx#do_action('drop')
@@ -51,6 +53,8 @@ function! s:defx_custom_keymappings() abort
                 \ defx#do_action('preview')
     nnoremap <silent><buffer><expr> if
                 \ defx#do_action('print')
+    nnoremap <silent><buffer><expr> cc
+                \ defx#do_action('clear_clipboard')
     nnoremap <silent><buffer><expr> yy
                 \ defx#do_action('copy')
     nnoremap <silent><buffer><expr> yp
@@ -70,19 +74,19 @@ function! s:defx_custom_keymappings() abort
     " file or path with /
     nnoremap <silent><buffer><expr> a
                 \ defx#do_action('new_multiple_files')
-    nnoremap <silent><buffer><expr> r
+    nnoremap <silent><buffer><expr> rn
+                \ defx#do_action('rename', "append")
+    nnoremap <silent><buffer><expr> rN
                 \ defx#do_action('rename')
-    nnoremap <silent><buffer><expr> f
+    nnoremap <silent><buffer><expr> fs
                 \ defx#do_action('change_filtered_files')
     nnoremap <silent><buffer><expr> <C-r>
                 \ defx#do_action('redraw')
-    nnoremap <silent><buffer><expr> .
-                \ defx#do_action('toggle_ignored_files')
     nnoremap <silent><buffer><expr> <C-h>
                 \ defx#do_action('toggle_ignored_files')
-    nnoremap <silent><buffer><expr> !
+    nnoremap <silent><buffer><expr> xv
                 \ defx#do_action('execute_command')
-    nnoremap <silent><buffer><expr> x
+    nnoremap <silent><buffer><expr> xs
                 \ defx#do_action('execute_system')
 
     " special
