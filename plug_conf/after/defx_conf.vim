@@ -3,12 +3,12 @@ call defx#custom#column('icon', {
             \ 'opened_icon': '',
             \ })
 
-" nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35
-"             \ -direction=topleft -columns=git:indent:icons:filename:type -toggle
-"             \ -resume -search_recursive=`expand('%:p')` `getcwd()`<CR>
 nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35
             \ -direction=topleft -columns=git:indent:icons:filename:type -toggle
-            \ -resume <CR>
+            \ -resume -search_recursive=`expand('%:p')` `getcwd()`<CR>
+" nnoremap <silent> <leader>t :Defx -split=vertical -winwidth=35
+"             \ -direction=topleft -columns=git:indent:icons:filename:type -toggle
+"             \ -resume <CR>
 
 autocmd FileType defx call s:defx_custom_keymappings()
 function! s:defx_custom_keymappings() abort

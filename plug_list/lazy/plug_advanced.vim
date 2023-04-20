@@ -2,8 +2,8 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \'on_cmd':['Vista'],
             \})
 
-" NOTE: coc has its sematic token, and only ccls supprots, clangd doesn't.
-if executable('ccls') && g:osv_plug_coc == 0
+" NOTE: coc has its sematic token, and only ccls supprots
+if executable('ccls')
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'})
