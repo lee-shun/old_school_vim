@@ -7,6 +7,9 @@ call dein#add('htlsne/asyncomplete-look', {'lazy':1,
 call dein#add('prabirshrestha/asyncomplete-file.vim', {'lazy':1,
             \})
 
+call dein#add('prabirshrestha/asyncomplete-emoji.vim', {'lazy':1,
+            \})
+
 " tabnine
 if g:os_architect != 'aarch64'
     if g:os_name == 'Linux'
@@ -37,9 +40,10 @@ endif
 " ===
 let g:asyncomplete_conf = { 'lazy':1,
             \'depends': ['asyncomplete-buffer.vim',
-            \'asyncomplete-look','asyncomplete-file.vim'],
+            \'asyncomplete-look','asyncomplete-file.vim', 'asyncomplete-emoji.vim'],
             \'on_event': ['BufReadPre'],
-            \'hook_post_source':'source $CONF_PATH/plug_conf/asyncomplete_conf.vim'}
+            \'hook_source':'source $CONF_PATH/plug_conf/before/asyncomplete_conf.vim',
+            \'hook_post_source':'source $CONF_PATH/plug_conf/after/asyncomplete_conf.vim'}
 
 if dein#tap('asyncomplete-lsp.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
