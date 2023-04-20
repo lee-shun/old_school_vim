@@ -10,7 +10,7 @@ let g:osv_plug_advanced = 1
 
 " use coc
 " NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:osv_plug_coc = 0
+let g:osv_plug_coc = 1
 
 " choose one of following complete engines
 let g:osv_plug_deoplete = 1
