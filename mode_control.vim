@@ -13,7 +13,7 @@ let g:osv_plug_advanced = 1
 let g:osv_plug_coc = 0
 
 " choose one of following complete engines
-let g:osv_plug_deoplete = 0
+let g:osv_plug_deoplete = 1
 let g:osv_plug_asyncomplete = 1
 
 " vim-lsp as backend of the above frameworks.
