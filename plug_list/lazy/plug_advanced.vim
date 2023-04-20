@@ -55,7 +55,8 @@ call dein#add( 'ferrine/md-img-paste.vim',{'lazy':1,
 let g:vim_tex_conf = {'lazy':1,
             \'depends':[],
             \'on_ft':['tex', 'plaintex'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim'
+            \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
+            \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimtex_conf.vim'
             \}
 if g:osv_plug_deoplete == 1
     call add(g:vim_tex_conf.depends, 'deoplete.nvim')
