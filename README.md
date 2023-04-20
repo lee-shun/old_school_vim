@@ -11,6 +11,7 @@
 - use as less dependences as possible to accomplish the functions.
 - keep the original vim keybindings and operations.
 - use `dein.vim` to lazy load most of the plugins.
+- daily update.
 
 ## Requirements
 
