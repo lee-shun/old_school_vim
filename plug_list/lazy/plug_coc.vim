@@ -7,6 +7,7 @@ call dein#add('neoclide/coc.nvim', { 'lazy':'1',
 
 call dein#add('antoinemadec/coc-fzf', {'lazy':1,
             \'depends':['coc.nvim', 'fzf.vim'],
-            \'on_event': ['BufReadPre'],
+            \'on_map': {'n':'<leader>fd'},
+            \'on_cmd':["CocFzfList", "CocFzfListResume"],
             \'rev': 'release',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/coc_fzf_conf.vim'})
