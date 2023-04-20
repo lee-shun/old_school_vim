@@ -172,11 +172,11 @@ its own vim.
 | `gS`    | git unstage                                          |
 | `[d`    | diagnostic prev                                      |
 | `]d`    | diagnostic next                                      |
-| `zr`     | jump root                                            |
-| `zp`     | jump parent                                            |
-| `zh`     | jump home                                            |
+| `zr`    | jump root                                            |
+| `zp`    | jump parent                                          |
+| `zh`    | jump home                                            |
 | `z`     | jump move                                            |
-| `wl`     | disk / drive list                                            |
+| `wl`    | disk / drive list                                    |
 
 ## Finder Keymaps
 
