@@ -15,8 +15,11 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'auto_cd':0,
             \ 'find':0,
             \ })
+
 nnoremap <silent> <leader>t :VimFiler<cr>
+
 autocmd FileType vimfiler call s:vimfiler_my_settings()
+
 function! s:vimfiler_my_settings() abort
     setlocal norelativenumber
     setlocal nonumber

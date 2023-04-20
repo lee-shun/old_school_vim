@@ -49,7 +49,7 @@ endif
 call dein#add('ferrine/md-img-paste.vim',{'lazy':1,
             \'on_ft':'markdown',
             \'on_cmd':'PastImg',
-            \'hook_post_source':'source $CONF_PATH/plug_conf/after/mkd_paste_img_conf.vim'
+            \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_paste_img_conf.vim'
             \})
 
 let g:vim_tex_conf = {'lazy':1,

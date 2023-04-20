@@ -71,6 +71,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
                     \'on_map':'<leader>t',
                     \'on_cmd':'Fern',
                     \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/fern_conf.vim',
                     \'hook_post_source':'source $CONF_PATH/plug_conf/after/fern_conf.vim'})
     else
         call dein#add('Shougo/unite.vim', {'lazy':1,
@@ -195,12 +196,14 @@ call dein#add('junegunn/fzf.vim', {'lazy':1,
             \'depends': ['fzf'],
             \'on_map':{'n':'<leader>f'},
             \'on_cmd' : [ 'FZF', 'Files', 'GFiles', 'Buffers', 'Colors', 'Ag', 'Rg', 'Lines', 'BLines', 'Tags', 'BTags', 'Marks', 'Windows', 'Locate', 'History', 'Snippets', 'Commits', 'BCommits', 'Commands', 'Maps', 'Helptags', 'Filetypes' ],
+            \'hook_source':'source $CONF_PATH/plug_conf/before/fzf_conf.vim',
             \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/fzf_conf.vim'})
 
 call dein#add('tibabit/vim-templates', {'lazy':1,
             \'on_cmd' : ['TemplateInit', 'TemplateExpand', 'Tmpl'],
             \'on_map':{'n':'<leader>ft'},
             \'depends':['fzf.vim'],
+            \'hook_source' : 'source $CONF_PATH/plug_conf/before/templates_conf.vim',
             \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/templates_conf.vim',
             \})
 

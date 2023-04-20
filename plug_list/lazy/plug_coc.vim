@@ -3,6 +3,7 @@ call dein#add('neoclide/coc.nvim', { 'lazy':'1',
             \'on_event': ['BufReadPre'],
             \'merged': 0,
             \'rev': 'release',
+            \'hook_source':'source $CONF_PATH/plug_conf/before/coc_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/coc_conf.vim'})
 
 call dein#add('antoinemadec/coc-fzf', {'lazy':1,

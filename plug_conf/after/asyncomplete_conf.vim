@@ -21,7 +21,6 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ }))
 
 " look
-let g:asc_look_good_words_file = $CONF_PATH.'/spell/en.utf-8.add'
 au User asyncomplete_setup call asyncomplete#register_source({
             \ 'name': 'look',
             \ 'allowlist': ['text', 'markdown', 'tex'],
