@@ -286,6 +286,6 @@ function! s:aroundIndentation()
     let &magic = l:magic
 endfunction
 
-" "around indentation" (indentation level and any surrounding empty lines)
+" around indentation(indentation level and any surrounding empty lines)
 xnoremap <silent> ai :<c-u>call <sid>aroundIndentation()<cr>
 onoremap <silent> ai :<c-u>call <sid>aroundIndentation()<cr>
