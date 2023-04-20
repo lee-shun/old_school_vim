@@ -1,4 +1,4 @@
-# <p align="center">![tittle](./img/old_school_vim.png)</p>
+# <p align="center">![tittle](./img/osv.png)</p>
 
 > Due to my study and work, I always want to use vim under different environments. So, I always choose the plugins with
 > good compatibility. In my opinion, I prefer the plugins written in `vimscripts > vimscripts + python3 > lua`.Comparing
