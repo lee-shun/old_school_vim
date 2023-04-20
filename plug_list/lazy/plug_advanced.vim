@@ -6,13 +6,14 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
 if executable('ccls') && g:osv_plug_coc == 0
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
-                \'hook_post_source':'source $CONF_PATH/plug_conf/vim_lsp_cxx_hl_conf.vim'})
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'})
 endif
 
 if g:osv_plug_coc == 0
     call dein#add( 'voldikss/vim-translator', {'lazy':1,
+                \'on_map':{'n':'<leader>s', 'v':'<leader>s'},
                 \'on_cmd':'TranslateW',
-                \'hook_add':'source $CONF_PATH/plug_conf/translate_conf.vim'
+                \'hook_source':'source $CONF_PATH/plug_conf/before/translate_conf.vim'
                 \})
 endif
 
@@ -24,7 +25,7 @@ if has('python3')
         call dein#add( 'SirVer/ultisnips', {'lazy':1,
                     \'depends':['vim-snippets'],
                     \'on_event':'InsertEnter',
-                    \'hook_add':'source $CONF_PATH/plug_conf/snippets_conf.vim'
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/snippets_conf.vim'
                     \})
     endif
 endif
@@ -41,19 +42,20 @@ if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Window
     call dein#add('iamcco/markdown-preview.nvim', {'lazy':1,
                 \'on_ft' :['markdown'],
                 \'hook_done_update':'call mkdp#util#install_sync()',
-                \'hook_add':'source $CONF_PATH/plug_conf/mkd_preview_conf.vim'
+                \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_preview_conf.vim'
                 \})
 endif
 
 call dein#add( 'ferrine/md-img-paste.vim',{'lazy':1,
             \'on_ft':'markdown',
-            \'hook_add':'source $CONF_PATH/plug_conf/mkd_paste_img_conf.vim'
+            \'on_cmd':'PastImg',
+            \'hook_post_source':'source $CONF_PATH/plug_conf/after/mkd_paste_img_conf.vim'
             \})
 
 let g:vim_tex_conf = {'lazy':1,
             \'depends':[],
             \'on_ft':['tex', 'plaintex'],
-            \'hook_post_source':'source $CONF_PATH/plug_conf/vimtex_conf.vim'
+            \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim'
             \}
 if g:osv_plug_deoplete == 1
     call add(g:vim_tex_conf.depends, 'deoplete.nvim')
@@ -69,5 +71,5 @@ endif
 
 call dein#add( 'edersonferreira/open.vim', {'lazy':1,
             \'on_event':'BufReadPost',
-            \'hook_add':'source $CONF_PATH/plug_conf/open_conf.vim',
+            \'hook_source':'source $CONF_PATH/plug_conf/before/open_conf.vim',
             \})
