@@ -29,7 +29,7 @@ call dein#add('Yggdroot/indentLine', {'lazy':1,
 
 call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
             \'on_event':['BufReadPre'],
-            \'hook_add':'let g:extra_whitespace_ignored_filetypes = ["coc-explorer", "defx", "fern"]'
+            \'hook_add':'let g:extra_whitespace_ignored_filetypes = ["coc-explorer", "defx", "fern", "which_key"]'
             \})
 
 call dein#add('RRethy/vim-illuminate', {'lazy':1,
@@ -192,7 +192,7 @@ elseif g:os_name == 'Windows'
 endif
 call dein#add('junegunn/fzf.vim', {'lazy':1,
             \'depends': ['fzf'],
-            \'on_cmd' : ['FZF', 'Tags', 'Buffers', 'Files', 'History', 'Lines', 'Ag', 'Rg', 'BLines'],
+            \'on_cmd' : [ 'FZF', 'Files', 'GFiles', 'Buffers', 'Colors', 'Ag', 'Rg', 'Lines', 'BLines', 'Tags', 'BTags', 'Marks', 'Windows', 'Locate', 'History', 'Snippets', 'Commits', 'BCommits', 'Commands', 'Maps', 'Helptags', 'Filetypes' ],
             \'hook_add' : 'source $CONF_PATH/plug_conf/fzf_conf.vim'})
 
 call dein#add('tibabit/vim-templates', {'lazy':1,

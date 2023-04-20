@@ -43,7 +43,7 @@ set mouse=
 set nowrap
 set linebreak
 set timeout           " for mappings
-set timeoutlen=1000   " default value
+set timeoutlen=800
 set ttimeout          " for key codes
 set ttimeoutlen=10    " unnoticeable small value
 set updatetime=50
