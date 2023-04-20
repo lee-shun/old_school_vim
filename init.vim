@@ -16,13 +16,13 @@
 "*******************************************************************************
 
 " define the osv mode
+let $CONF_PATH = split(&runtimepath, ',')[0]
+
 source $CONF_PATH/mode_control.vim
 
 " ===
 " === env
 " ===
-let $CONF_PATH = split(&runtimepath, ',')[0]
-
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
