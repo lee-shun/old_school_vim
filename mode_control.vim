@@ -18,5 +18,3 @@ let g:osv_plug_asyncomplete = 1
 
 " vim-lsp as backend of the above frameworks.
 let g:osv_plug_lsp = 1
-
-
