@@ -10,7 +10,7 @@ if executable('ccls') && g:osv_plug_coc == 0
 endif
 
 if g:osv_plug_coc == 0
-    call dein#add( 'voldikss/vim-translator', {'lazy':1,
+    call dein#add('voldikss/vim-translator', {'lazy':1,
                 \'on_map':{'n':'<leader>s', 'v':'<leader>s'},
                 \'on_cmd':'TranslateW',
                 \'hook_source':'source $CONF_PATH/plug_conf/before/translate_conf.vim'
@@ -18,11 +18,11 @@ if g:osv_plug_coc == 0
 endif
 
 if has('python3')
-    call dein#add( 'honza/vim-snippets', {'lazy':1,
+    call dein#add('honza/vim-snippets', {'lazy':1,
                 \'on_event':'InsertEnter'
                 \})
     if g:osv_plug_coc == 0
-        call dein#add( 'SirVer/ultisnips', {'lazy':1,
+        call dein#add('SirVer/ultisnips', {'lazy':1,
                     \'depends':['vim-snippets'],
                     \'on_event':'InsertEnter',
                     \'hook_source':'source $CONF_PATH/plug_conf/before/snippets_conf.vim'
@@ -46,7 +46,7 @@ if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Window
                 \})
 endif
 
-call dein#add( 'ferrine/md-img-paste.vim',{'lazy':1,
+call dein#add('ferrine/md-img-paste.vim',{'lazy':1,
             \'on_ft':'markdown',
             \'on_cmd':'PastImg',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/mkd_paste_img_conf.vim'
@@ -70,7 +70,7 @@ if (g:os_name == 'Linux') && (executable('roscore'))
                 \})
 endif
 
-call dein#add( 'edersonferreira/open.vim', {'lazy':1,
+call dein#add('edersonferreira/open.vim', {'lazy':1,
             \'on_event':'BufReadPost',
             \'hook_source':'source $CONF_PATH/plug_conf/before/open_conf.vim',
             \})
