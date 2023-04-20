@@ -268,3 +268,11 @@ if has('terminal')&&!has('nvim')
                 \'#e4e4e4',
                 \]
 endif
+
+" ===
+" === colorscheme
+" ===
+if g:osv_ulti_mode == 0
+    set background=dark
+    colorscheme seoul256
+endif
