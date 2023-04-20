@@ -3,7 +3,7 @@ call dein#add('Shougo/dein.vim', {
             \})
 
 call dein#add('arcticicestudio/nord-vim', {
-            \'hook_post_source':'source $CONF_PATH/plug_conf/color_conf.vim'
+            \'hook_post_source':'source $CONF_PATH/plug_conf/after/color_conf.vim'
             \})
 
 call dein#add('ryanoasis/vim-devicons')

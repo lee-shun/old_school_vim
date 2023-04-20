@@ -1,4 +1,5 @@
 call dein#add('dense-analysis/ale', {'lazy':1,
+            \'hook_source':'source $CONF_PATH/plug_conf/before/ale_conf.vim'
             \})
 
 call dein#add('prabirshrestha/vim-lsp',{'lazy':1,

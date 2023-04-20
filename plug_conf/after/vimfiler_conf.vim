@@ -1,13 +1,3 @@
-let g:vimfiler_as_default_explorer = 1
-let g:webdevicons_enable_vimfiler = 1
-let g:vimfiler_tree_indentation = 2
-let g:vimfiler_tree_leaf_icon = ""
-let g:vimfiler_tree_opened_icon = ""
-let g:vimfiler_tree_closed_icon = ""
-let g:vimfiler_enable_auto_cd = 1
-let g:vimfiler_safe_mode_by_default = 0
-let g:vimfiler_ignore_pattern = []
-
 call vimfiler#custom#profile('default', 'context', {
             \ 'explorer' : 1,
             \ 'winwidth' : 35,
@@ -25,11 +15,7 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'auto_cd':0,
             \ 'find':0,
             \ })
-
 nnoremap <silent> <leader>t :VimFiler<cr>
-
-let g:vimfiler_no_default_key_mappings = 1
-
 autocmd FileType vimfiler call s:vimfiler_my_settings()
 function! s:vimfiler_my_settings() abort
     setlocal norelativenumber
@@ -67,3 +53,4 @@ function! s:vimfiler_my_settings() abort
 
     vmap <buffer> J     <Plug>(vimfiler_toggle_mark_selected_lines)
 endfunction
+

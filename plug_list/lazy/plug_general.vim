@@ -10,7 +10,7 @@ call dein#add('mhinz/vim-signify', {'lazy':1,
 let s:spaceline_conf = {'lazy':1,
             \'on_event':['BufReadPost'],
             \'depends':['vim-signify', 'vim-devicons'],
-            \'hook_add':'source $CONF_PATH/plug_conf/spaceline_conf.vim'}
+            \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
 if g:osv_plug_coc == 1
     call add(s:spaceline_conf.depends, 'coc.nvim')
 endif
@@ -21,15 +21,15 @@ call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
-            \'hook_add':'source $CONF_PATH/plug_conf/rainbow_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/rainbow_conf.vim'})
 
 call dein#add('Yggdroot/indentLine', {'lazy':1,
             \'on_event':['BufReadPost'],
-            \'hook_add':'source $CONF_PATH/plug_conf/indentLine_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/indentLine_conf.vim'})
 
 call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
             \'on_event':['BufReadPre'],
-            \'hook_add':'let g:extra_whitespace_ignored_filetypes = ["coc-explorer", "defx", "fern", "which_key"]'
+            \'hook_source':'source $CONF_PATH/plug_conf/before/whitespace_conf.vim'
             \})
 
 call dein#add('RRethy/vim-illuminate', {'lazy':1,
@@ -37,21 +37,21 @@ call dein#add('RRethy/vim-illuminate', {'lazy':1,
 
 call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'on_event':['BufReadPost'],
-            \'hook_add':'source $CONF_PATH/plug_conf/floaterm_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/floaterm_conf.vim'})
 
 if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
 
     if  has('nvim-0.4') || v:version > 802 " according to the repo
         call dein#add('kristijanhusak/defx-git', {'lazy':1,
-                    \'hook_add':'source $CONF_PATH/plug_conf/defx_git_config.vim'})
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/defx_git_config.vim'})
         call dein#add('kristijanhusak/defx-icons', {'lazy':1,
                     \'depends':['vim-devicons'],
-                    \'hook_add':'source $CONF_PATH/plug_conf/defx_icons_conf.vim'})
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/defx_icons_conf.vim'})
         let s:defx_nvim_config = {'lazy':1,
                     \'on_cmd':'Defx',
                     \'on_map':'<leader>t',
                     \'depends':['nvim-yarp', 'vim-hug-neovim-rpc', 'defx-git', 'defx-icons'],
-                    \'hook_post_source':'source $CONF_PATH/plug_conf/defx_conf.vim',
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/defx_conf.vim',
                     \'hook_done_update': ''}
         if has('nvim')
             let s:defx_nvim_config.hook_done_update = 'UpdateRemotePlugins'
@@ -71,7 +71,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
                     \'on_map':'<leader>t',
                     \'on_cmd':'Fern',
                     \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
-                    \'hook_post_source':'source $CONF_PATH/plug_conf/fern_conf.vim'})
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/fern_conf.vim'})
     else
         call dein#add('Shougo/unite.vim', {'lazy':1,
                     \})
@@ -79,7 +79,8 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
                     \'on_map':'<leader>t',
                     \'on_cmd':'VimFiler',
                     \'depends':['unite.vim', 'vim-devicons'],
-                    \'hook_post_source':'source $CONF_PATH/plug_conf/vimfiler_conf.vim'})
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/vimfiler_conf.vim',
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimfiler_conf.vim'})
     endif
 endif
 
@@ -93,7 +94,7 @@ call dein#add('rlue/vim-barbaric', {'lazy':1,
 
 call dein#add('sakshamgupta05/vim-todo-highlight', {'lazy':1,
             \'on_event': ['BufReadPost'],
-            \'hook_add': 'source $CONF_PATH/plug_conf/todo_hl_conf.vim' })
+            \'hook_source': 'source $CONF_PATH/plug_conf/before/todo_hl_conf.vim' })
 
 call dein#add('junegunn/vim-peekaboo', {'lazy':1,
             \'on_event': ['BufReadPost'],
@@ -101,12 +102,12 @@ call dein#add('junegunn/vim-peekaboo', {'lazy':1,
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
             \'on_event': ['BufReadPost'],
-            \'hook_add':'source $CONF_PATH/plug_conf/rooter_conf.vim'
+            \'hook_source':'source $CONF_PATH/plug_conf/before/rooter_conf.vim'
             \})
 
 call dein#add('tpope/vim-surround', {'lazy':1,
             \'on_event': ['BufReadPost'],
-            \'hook_add':'source $CONF_PATH/plug_conf/surround.vim'
+            \'hook_source':'source $CONF_PATH/plug_conf/before/surround.vim'
             \})
 
 call dein#add('tpope/vim-repeat', {'lazy':1,
@@ -120,18 +121,18 @@ call dein#add('tpope/vim-commentary', {'lazy':1,
 if !has('nvim') && v:version< 802
     call dein#add('jiangmiao/auto-pairs', {'lazy':1,
                 \'on_event':['BufReadPost'],
-                \'hook_add':'let g:AutoPairsMapSpace=0'
+                \'hook_source':'let g:AutoPairsMapSpace=0'
                 \})
 else " this new auto-pair need neovim or vim 8.2
     call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
                 \'on_event':['BufReadPost'],
-                \'hook_add':'let g:AutoPairsMapSpace=0'
+                \'hook_source':'let g:AutoPairsMapSpace=0'
                 \})
 endif
 
 call dein#add('machakann/vim-highlightedyank', {'lazy':1,
             \'on_event': ['TextYankPost'],
-            \'hook_post_source':'source $CONF_PATH/plug_conf/hlightedyank_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/hlightedyank_conf.vim'})
 
 call dein#add('tpope/vim-speeddating', {'lazy':1,
             \'on_event': ['BufReadPost'],
@@ -140,20 +141,20 @@ call dein#add('tpope/vim-speeddating', {'lazy':1,
 call dein#add('junegunn/vim-easy-align', {'lazy':1,
             \'on_event': ['BufReadPost'],
             \'on_map': '<Plug>(EasyAlign)',
-            \'hook_add': 'source $CONF_PATH/plug_conf/easy_align_conf.vim'})
+            \'hook_post_source': 'source $CONF_PATH/plug_conf/after/easy_align_conf.vim'})
 
 call dein#add('preservim/vim-pencil', {'lazy':1,
             \'on_cmd':['Pencil', 'NoPencil', 'PencilOff', 'TogglePencil',
             \'PencilToggle', 'SoftPencil', 'PencilSoft', 'HardPencil', 'PencilHard'],
-            \'hook_post_source': 'source $CONF_PATH/plug_conf/pencil_conf.vim'})
+            \'hook_post_source': 'source $CONF_PATH/plug_conf/after/pencil_conf.vim'})
 
 call dein#add('mg979/vim-visual-multi', {'lazy':1,
             \'on_map': {'n':'<C-n>', 'v':'<C-n>'},
-            \'hook_add':'source $CONF_PATH/plug_conf/visual_multi_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/visual_multi_conf.vim'})
 
 call dein#add('907th/vim-auto-save', {'lazy':1,
             \'on_event': ['BufReadPost'],
-            \'hook_add': 'source $CONF_PATH/plug_conf/auto_save_conf.vim'})
+            \'hook_source': 'source $CONF_PATH/plug_conf/before/auto_save_conf.vim'})
 
 call dein#add('lambdalisue/readablefold.vim', {'lazy':1,
             \'on_event': ['BufReadPost']})
@@ -192,16 +193,19 @@ elseif g:os_name == 'Windows'
 endif
 call dein#add('junegunn/fzf.vim', {'lazy':1,
             \'depends': ['fzf'],
+            \'on_map':{'n':'<leader>f'},
             \'on_cmd' : [ 'FZF', 'Files', 'GFiles', 'Buffers', 'Colors', 'Ag', 'Rg', 'Lines', 'BLines', 'Tags', 'BTags', 'Marks', 'Windows', 'Locate', 'History', 'Snippets', 'Commits', 'BCommits', 'Commands', 'Maps', 'Helptags', 'Filetypes' ],
-            \'hook_add' : 'source $CONF_PATH/plug_conf/fzf_conf.vim'})
+            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/fzf_conf.vim'})
 
 call dein#add('tibabit/vim-templates', {'lazy':1,
-            \'on_cmd' : ['TemplateInit', 'TemplateExpand'],
-            \'hook_add' : 'source $CONF_PATH/plug_conf/templates_conf.vim',
+            \'on_cmd' : ['TemplateInit', 'TemplateExpand', 'Tmpl'],
+            \'on_map':{'n':'<leader>ft'},
+            \'depends':['fzf.vim'],
+            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/templates_conf.vim',
             \})
 
 call dein#add('brooth/far.vim', {
             \'lazy':1,
             \'on_cmd':['F', 'Far', 'Farr',  'Farf', 'Fardo', 'Refar', 'Farundo'],
-            \'hook_add':'source $CONF_PATH/plug_conf/far_conf.vim'
+            \'hook_post_source':'source $CONF_PATH/plug_conf/after/far_conf.vim'
             \})

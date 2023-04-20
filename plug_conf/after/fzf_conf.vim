@@ -221,7 +221,7 @@ function! s:fzf_changes(bang) abort
         return
     endif
 
-    let changetext = map(copy(changes), { index, val -> 
+    let changetext = map(copy(changes), { index, val ->
                 \ expand('%').':'.(val.lnum).':'.(val.col+1).': '.s:get_line(bufnr('%'), val.lnum) })
 
     call fzf#run(fzf#vim#with_preview(fzf#wrap({
@@ -236,10 +236,10 @@ command! -bang Changes call s:fzf_changes(<bang>0)
 " ===
 " === maps
 " ===
-noremap <leader>ff :Files<CR>
-noremap <leader>fb :Buffers<CR>
-noremap <leader>fm :History<CR>
-noremap <leader>fl :BLines<CR>
-noremap <leader>fw :Rg<CR>
-noremap <leader>fj :Jumps<CR>
-noremap <leader>fc :Changes<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fm :History<CR>
+nnoremap <leader>fl :BLines<CR>
+nnoremap <leader>fw :Rg<CR>
+nnoremap <leader>fj :Jumps<CR>
+nnoremap <leader>fc :Changes<CR>
