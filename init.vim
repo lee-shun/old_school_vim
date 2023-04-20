@@ -53,12 +53,26 @@ if g:osv_ulti_mode == 0
     let g:osv_plug_general = 0
     let g:osv_plug_advanced = 0
     let g:osv_plug_coc = 0
-    let g:osv_plug_lsp = 0
     let g:osv_plug_deoplete = 0
     let g:osv_plug_asyncomplete = 0
+    let g:osv_plug_lsp = 0
 endif
 
 " NOTE: prority: coc > deoplete + lsp > asyncomplete + lsp
+if g:osv_plug_coc == 1
+    let g:osv_plug_deoplete = 0
+    let g:osv_plug_asyncomplete = 0
+    let g:osv_plug_lsp = 0
+endif
+
+if g:osv_plug_deoplete == 1
+    let g:osv_plug_asyncomplete = 0
+endif
+
+if g:osv_plug_deoplete == 0 && g:osv_plug_asyncomplete == 0 && g:osv_plug_lsp == 1
+    let g:osv_plug_lsp = 0
+    echom "please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!"
+endif
 
 " don't use coc under aarch64
 if g:os_architect == 'aarch64' && g:osv_plug_coc == 1
@@ -79,7 +93,7 @@ if !has('nvim-0.3') && !has('patch-8.2-1978') && g:osv_plug_deoplete == 1
     echom " you may try asycomplete.vim~ "
 endif
 
-" don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
+" don't use asyncomplete with vim under version 8 or nvim
 if !has('nvim') && v:version< 800 && g:osv_plug_asyncomplete == 1
     let g:osv_plug_asyncomplete = 0
     echom " for asyncomplete.nvim: vim>=8.0; nvim! "
