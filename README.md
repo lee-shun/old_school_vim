@@ -14,22 +14,16 @@
 
 ## Requirements
 
-### Vim & Neovim Version
+### Vim & Neovim Version (recommend)
 
-- vim 8.2 if use `Ulti-Mode`, vim 7 if use `Mini-Mode`
+- vim 8 if use `Ulti-Mode`, vim 7 if use `Mini-Mode`
 - neovim 4.2 or later, no matter what modes.
-
-### Environment
-
-- `nodejs`, if use `coc.nvim`
-- `python3`, if use `deoplete.nvim`
-- `language servers` if use `vim-lsp` or `coc.nvim`
 
 ## Quick Start
 
-- use the `config_env.sh` to install the dependencies...
+- take a reference or just use the `config_env.sh` to install the dependencies...
 
-- **Mini-Mode:** set `g:osv_ulti_mode` to `0` in [init.vim](init.vim)
+- **Mini-Mode:** set `g:osv_ulti_mode` to `0` in [mode_control.vim](./mode_control.vim)
 
   > use vim as an excellent text editor!
 
@@ -37,7 +31,7 @@
   - Fully portable.
   - Pure vimscripts.
 
-- **Ulti-Mode** set `g:osv_ulti_mode` to `1` in [init.vim](init.vim)
+- **Ulti-Mode** set `g:osv_ulti_mode` to `1` in [mode_control.vim](./mode_control.vim)
 
   - `g:osv_plug_general = 1`
 
@@ -49,24 +43,35 @@
 
   - `g:osv_plug_coc = 1`
 
-    - use coc as `lsp + completion engine` and much more.
+    - use `coc.nvim` as `lsp + completion engine` and much more.
+
+  - choose **one** from `completion engine`:
+
+    - `g:osv_plug_deoplete`
+    - `g:osv_plug_asyncomplete`
 
   - `g:osv_plug_lsp = 1`
     - language-sever based code completion, etc.
-    - choose one from `completion eigen`:
-      - `g:osv_plug_deoplete`
-      - `g:osv_plug_asyncomplete`
 
-- **NOTE:**
+## Installation
+
+### Before Installation
+
+**NOTE:**
 
   - 🆘 using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
     installation. Under this situation, tweaking manually may be needed.
 
   - the support of `coc.nvim` on `aarch64` is not good, try to avoid this.
 
-## Installation
+### Installation Steps
 
-You can also use the bash files under the `env/` folder.
+0. **the dependences:**
+
+   - `python 3`, if `g:osv_plug_advanced = 1` or `g:osv_plug_deoplete = 1`
+   - `nodejs`, if `g:osv_plug_coc = 1`
+   - some language servers (clangd, ccls, pyright etc.), if `g:osv_plug_lsp = 1` or `g:osv_plug_coc = 1`
+   - You can also use the bash files under the `env/` folder.
 
 1. **clone the repo to the path:**
    - **For Windows:**
@@ -76,13 +81,13 @@ You can also use the bash files under the `env/` folder.
    - **For Linux:**
      - Neovim configuration path: `~/.config/nvim`
      - Vim configuration path: `~/.vim`
-2. **choose your mode**
-3. enter vim and **`:call dein#install()`**
 
-   - several times (at least 2) of `dein#install()` are required to make sure the correct plugins installation.
-   - `:UpdateRemotePlugins` may also needed...
+2. **choose your mode** with the global variables defined in [mode_control.vim](./mode_control.vim)
 
-4. **install the python and language-severs if applicable.**
+3. open vim/nvim and wait for the `dein` to install all the plugins.
+   - `:UpdateRemotePlugins` may also needed for nvim.
+
+4. restart vim/nvim
 
 ## Screen Shots
 
@@ -93,18 +98,18 @@ You can also use the bash files under the `env/` folder.
 | <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
 | <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
 
-### Ulti-Mode & Advanced Features
+### Ulti-Mode & Advanced Features h
 
 **NOTE:** Please notice that the Gvim on Windows will confuse the Git Bash with
 its own vim.
 
-| **Environment**                                                          | **Screen Shots**                          |
-| ------------------------------------------------------------------------ | ----------------------------------------- |
-| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti_coc.png) |
-| <kbd>Windows 10</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Git Bash</kbd>         | ![image](./img/win_vim_git_bash.png)      |
-| <kbd>Windows 10</kbd> + <kbd>GVim 8.2</kbd>                              | ![image](./img/win_gvim.png)              |
+| **Environment**                                                          | **Screen Shots**                      |
+| ------------------------------------------------------------------------ | ------------------------------------- |
+| <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti.png) |
 
-## The file explorer keymaps
+## Keymaps
+
+### File Explorer
 
 `<leader>t`: toggle file explorer
 
@@ -178,6 +183,4 @@ its own vim.
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-## Finder Keymaps
-
-> Last Modified : 二 13 9 月 2022 08:21:11 下午
+> Last Modified : 三 19 4月 2023 09:43:35 下午

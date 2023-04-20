@@ -15,8 +15,8 @@
 "                                                                              "
 "*******************************************************************************
 
-" TODO:
-" 1. Need to update the keymaps in file explorer!
+" define the osv mode
+source $CONF_PATH/mode_control.vim
 
 " ===
 " === env
@@ -46,27 +46,7 @@ elseif g:os_name == 'Linux'
 endif
 
 " ===
-" === control the modules
-" ===
-let g:osv_ulti_mode = 1
-
-" use general plugs
-let g:osv_plug_general = 1
-" use advanced plugs
-let g:osv_plug_advanced = 1
-
-" use coc
-" NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:osv_plug_coc = 0
-
-" choose one of following complete engines
-let g:osv_plug_deoplete = 0
-let g:osv_plug_asyncomplete = 1
-" vim-lsp as backend of the above frameworks.
-let g:osv_plug_lsp = 1
-
-" ===
-" === default control
+" === mode check
 " ===
 " don't use any of the plugs if ulti-mode is deactived
 if g:osv_ulti_mode == 0
@@ -77,6 +57,8 @@ if g:osv_ulti_mode == 0
     let g:osv_plug_deoplete = 0
     let g:osv_plug_asyncomplete = 0
 endif
+
+" NOTE: prority: coc > deoplete + lsp > asyncomplete + lsp
 
 " don't use coc under aarch64
 if g:os_architect == 'aarch64' && g:osv_plug_coc == 1
@@ -116,14 +98,6 @@ endif
 " ===
 source $CONF_PATH/basic/options.vim
 source $CONF_PATH/basic/mappings.vim
-
-" ===
-" === colorscheme
-" ===
-if g:osv_ulti_mode == 0
-    set background=dark
-    colorscheme seoul256
-endif
 
 " ===
 " === plug
