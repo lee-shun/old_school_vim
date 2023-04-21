@@ -27,7 +27,7 @@ let g:osv_setup = 0
 if empty(glob(s:dein_dir))
     let g:osv_setup = 1
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
-    echom "install dein" g:osv_dein_version "to" s:dein_src
+    echom "Install dein" g:osv_dein_version "to" s:dein_src
     call input('Press any key to continue')
 endif
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
@@ -65,7 +65,7 @@ augroup END
 
 if g:osv_setup == 1
     call dein#update()
-    echom "install the plugins with dein#update()."
+    echom "Install the plugins with dein#update()."
     call input('Press any key to continue')
     if has('nvim')
         silent exec "UpdateRemotePlugins"
@@ -85,7 +85,7 @@ if g:osv_setup == 0
         if index(l:contents, l:today) < 0
 
             " update the repo first
-            let l:osv_update = input("upgrade old school vim with remote, [y/n]?\n")
+            let l:osv_update = input("Upgrade old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
                 let l:git_clean = system("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null") is# ''
                 if l:git_clean == 1
@@ -97,7 +97,7 @@ if g:osv_setup == 0
             endif
 
             " update the plugins
-            let l:choice = input("upgrade vim plugs, [y/n]?\n")
+            let l:choice = input("Upgrade vim plugs, [y/n]?\n")
             if l:choice == 'y'
                 call dein#update()
             endif
