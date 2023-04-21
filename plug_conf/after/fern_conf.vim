@@ -1,4 +1,4 @@
-nnoremap <silent> <leader>t :Fern . -drawer -toggle <CR>
+nnoremap <silent> <leader>t :Fern . -reveal=% -drawer -toggle <CR>
 
 function! s:init_fern() abort
     call fern_git_status#init()
@@ -36,5 +36,3 @@ augroup fern-custom
     autocmd! *
     autocmd FileType fern call s:init_fern()
 augroup END
-
-let g:fern#renderer = "nerdfont"
