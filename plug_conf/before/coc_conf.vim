@@ -36,5 +36,3 @@ let g:coc_global_extensions = [
 if has('nvim')
     call add(g:coc_global_extensions, 'coc-floatinput')
 endif
-
-
