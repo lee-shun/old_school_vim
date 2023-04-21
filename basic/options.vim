@@ -148,10 +148,11 @@ endif
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
-    echo "Creating the tmp dir!"
+    echom "creating the tmp dir!"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/swap"
+    call input('Press any key to continue')
 endif
 
 set undofile
