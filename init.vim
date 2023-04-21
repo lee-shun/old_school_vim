@@ -58,51 +58,6 @@ if g:osv_ulti_mode == 0
     let g:osv_plug_lsp = 0
 endif
 
-if g:osv_plug_deoplete == 0 && g:osv_plug_asyncomplete == 0 && g:osv_plug_lsp == 1
-    let g:osv_plug_lsp = 0
-    echom "please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!"
-    call input('Press any key to continue')
-endif
-
-" don't use coc under aarch64
-if g:os_architect == 'aarch64' && g:osv_plug_coc == 1
-    let g:osv_plug_coc = 0
-    echom " do NOT use coc under " . g:os_architect
-    call input('Press any key to continue')
-endif
-
-" don't use coc with vim under version 8.1-1719
-if !has('nvim-0.4') && !has('patch-8.1-1719') && g:osv_plug_coc == 1
-    let g:osv_plug_coc = 0
-    echom " for coc.nvim: vim>=8.1.1719; nvim>=0.4! "
-    echom " you may try asycomplete.vim~ "
-    call input('Press any key to continue')
-endif
-
-" don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
-if !has('nvim-0.3') && !has('patch-8.2-1978') && g:osv_plug_deoplete == 1
-    let g:osv_plug_deoplete = 0
-    echom " for deoplete.nvim: vim>=8.2.1978; nvim>=0.3! "
-    echom " you may try asycomplete.vim~ "
-    call input('Press any key to continue')
-endif
-
-" don't use asyncomplete with vim under version 8 or nvim
-if !has('nvim') && v:version< 800 && g:osv_plug_asyncomplete == 1
-    let g:osv_plug_asyncomplete = 0
-    echom " for asyncomplete.nvim: vim>=8.0; nvim! "
-    echom " you must update your vim or install nvim, if you still want to use the asyncomplete! "
-    call input('Press any key to continue')
-endif
-
-" don't use lsp with vim under version 8.0
-if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
-    let g:osv_plug_lsp = 0
-    echom " for vim-lsp: vim>=8.0; nvim! "
-    echom " you must update your vim or install nvim, if you still want to use the lsp! "
-    call input('Press any key to continue')
-endif
-
 " NOTE: prority: coc > deoplete + lsp > asyncomplete + lsp
 if g:osv_plug_coc == 1
     let g:osv_plug_deoplete = 0
@@ -112,6 +67,51 @@ endif
 
 if g:osv_plug_deoplete == 1
     let g:osv_plug_asyncomplete = 0
+endif
+
+if g:osv_plug_deoplete == 0 && g:osv_plug_asyncomplete == 0 && g:osv_plug_lsp == 1
+    let g:osv_plug_lsp = 0
+    echom "Please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!"
+    call input('Press any key to continue')
+endif
+
+" don't use coc under aarch64
+if g:os_architect == 'aarch64' && g:osv_plug_coc == 1
+    let g:osv_plug_coc = 0
+    echom "Do NOT use coc under " . g:os_architect
+    call input('Press any key to continue')
+endif
+
+" don't use coc with vim under version 8.1-1719
+if !has('nvim-0.4') && !has('patch-8.1-1719') && g:osv_plug_coc == 1
+    let g:osv_plug_coc = 0
+    echom "For coc.nvim: vim>=8.1.1719; nvim>=0.4! "
+    echom "You may try asycomplete.vim~ "
+    call input('Press any key to continue')
+endif
+
+" don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
+if !has('nvim-0.3') && !has('patch-8.2-1978') && g:osv_plug_deoplete == 1
+    let g:osv_plug_deoplete = 0
+    echom "For deoplete.nvim: vim>=8.2.1978; nvim>=0.3! "
+    echom "You may try asycomplete.vim~ "
+    call input('Press any key to continue')
+endif
+
+" don't use asyncomplete with vim under version 8 or nvim
+if !has('nvim') && v:version< 800 && g:osv_plug_asyncomplete == 1
+    let g:osv_plug_asyncomplete = 0
+    echom "For asyncomplete.nvim: vim>=8.0; nvim! "
+    echom "You must update your vim or install nvim, if you still want to use the asyncomplete! "
+    call input('Press any key to continue')
+endif
+
+" don't use lsp with vim under version 8.0
+if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
+    let g:osv_plug_lsp = 0
+    echom "For vim-lsp: vim>=8.0; nvim! "
+    echom "You must update your vim or install nvim, if you still want to use the lsp! "
+    call input('Press any key to continue')
 endif
 
 " ===

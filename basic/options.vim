@@ -148,7 +148,7 @@ endif
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
-    echom "creating the tmp dir!"
+    echom "Creating the tmp dir!"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/swap"
