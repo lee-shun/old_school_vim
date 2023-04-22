@@ -2,11 +2,12 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \'on_cmd':['Vista'],
             \})
 
-" NOTE: coc has its sematic token, and only ccls supprots
+" NOTE: coc has its sematic token, and only ccls supprots this plugin
 if executable('ccls')
     call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                 \'on_ft':['cpp', 'c'],
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'})
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
+                \})
 endif
 
 if g:osv_complete_engine != 'coc'
@@ -31,7 +32,8 @@ if has('python3')
 endif
 
 call dein#add('sbdchd/neoformat', {'lazy':1,
-            \'on_cmd':'Neoformat'})
+            \'on_cmd':'Neoformat'
+            \})
 
 call dein#add('preservim/vim-markdown', {'lazy':1,
             \'on_ft' :['markdown'],
@@ -48,23 +50,16 @@ endif
 
 call dein#add('ferrine/md-img-paste.vim',{'lazy':1,
             \'on_ft':'markdown',
-            \'on_cmd':'PastImg',
             \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_paste_img_conf.vim'
             \})
 
-let g:vim_tex_conf = {'lazy':1,
-            \'depends':[],
-            \'on_ft':['tex', 'plaintex'],
+call dein#add('lervag/vimtex', {'lazy':1,
+            \'on_ft':['tex'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
-            \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimtex_conf.vim'
-            \}
-if g:osv_complete_engine == 'deoplete'
-    call add(g:vim_tex_conf.depends, 'deoplete.nvim')
-endif
-call dein#add('lervag/vimtex', g:vim_tex_conf)
+            \})
 
 if (g:os_name == 'Linux') && (executable('roscore'))
-    call dein#add( 'taketwo/vim-ros', {'lazy':1,
+    call dein#add('taketwo/vim-ros', {'lazy':1,
                 \'on_ft':'rosmsg',
                 \'on_cmd':'Roscd'
                 \})

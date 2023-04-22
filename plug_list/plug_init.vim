@@ -41,6 +41,10 @@ if g:osv_plug_general == 1
     source $CONF_PATH/plug_list/lazy/plug_general.vim
 endif
 
+if g:osv_complete_engine != 'coc'
+    source $CONF_PATH/plug_list/lazy/plug_file_explorer.vim
+endif
+
 if g:osv_plug_advanced == 1
     source $CONF_PATH/plug_list/lazy/plug_advanced.vim
 endif
@@ -48,12 +52,15 @@ endif
 if g:osv_complete_engine == 'coc'
     source $CONF_PATH/plug_list/lazy/plug_coc.vim
 endif
+
 if g:osv_complete_engine == 'deoplete'
     source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
 endif
+
 if g:osv_complete_engine == 'asyncomplete'
     source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
 endif
+
 if g:osv_plug_lsp == 1
     source $CONF_PATH/plug_list/lazy/plug_lsp.vim
 endif

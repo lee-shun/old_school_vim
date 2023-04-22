@@ -84,3 +84,14 @@ if dein#tap('ale')
                 \'rank': 999,
                 \})
 endif
+
+" already make sure the vimtex is sourced, double check.
+if dein#is_sourced('vimtex')
+    call deoplete#custom#source('omni', {
+                \'mark':'[omni]',
+                \'max_candidates': 6,
+                \})
+    call deoplete#custom#var('omni', 'input_patterns', {
+                \'tex': g:vimtex#re#deoplete
+                \})
+endif

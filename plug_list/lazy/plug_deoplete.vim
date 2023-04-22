@@ -21,7 +21,7 @@ let g:deoplete_nvim_config = {'lazy':1,
             \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-dictionary',
             \'deoplete-vim-lsp','vim-snippets','ultisnips'],
             \'on_event': ['BufReadPre'],
-            \'hook_source':'let g:deoplete#enable_at_startup = 1 ',
+            \'hook_source':'source $CONF_PATH/plug_conf/before/deoplete_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/deoplete_conf.vim',
             \'hook_done_update':''}
 
