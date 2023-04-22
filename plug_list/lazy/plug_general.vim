@@ -28,7 +28,7 @@ call dein#add('Yggdroot/indentLine', {'lazy':1,
             \'hook_source':'source $CONF_PATH/plug_conf/before/indentLine_conf.vim'})
 
 call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
-            \'on_event':['BufReadPre'],
+            \'on_event':['BufReadPost'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/whitespace_conf.vim'
             \})
 
@@ -85,8 +85,8 @@ if g:osv_complete_engine != 'coc'
 endif
 
 call dein#add('chrisbra/Colorizer', {'lazy':1,
-            \'on_event':['BufReadPost'],
-            \'on_cmd':['ColorToggle'], })
+            \'on_cmd':['ColorToggle']
+            \})
 
 call dein#add('rlue/vim-barbaric', {'lazy':1,
             \'on_event':['InsertEnter'],
@@ -98,7 +98,7 @@ call dein#add('sakshamgupta05/vim-todo-highlight', {'lazy':1,
 
 call dein#add('junegunn/vim-peekaboo', {'lazy':1,
             \'on_event': ['BufReadPost'],
-            \'on_map': {'i':'<C-r>', 'n':'"'}})
+            \})
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
             \'on_event': ['BufReadPost'],
@@ -106,12 +106,12 @@ call dein#add('airblade/vim-rooter', {'lazy':1,
             \})
 
 call dein#add('tpope/vim-surround', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_map':{'n':['gs', 'gS']},
             \'hook_source':'source $CONF_PATH/plug_conf/before/surround.vim'
             \})
 
 call dein#add('tpope/vim-repeat', {'lazy':1,
-            \'on_map':'.',
+            \'on_map':{'n':'.'},
             \})
 
 call dein#add('tpope/vim-commentary', {'lazy':1,
@@ -132,55 +132,67 @@ endif
 
 call dein#add('machakann/vim-highlightedyank', {'lazy':1,
             \'on_event': ['TextYankPost'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/hlightedyank_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/hlightedyank_conf.vim'
+            \})
 
 call dein#add('tpope/vim-speeddating', {'lazy':1,
-            \'on_event': ['BufReadPost'],
-            \'on_map': {'n':'<C-a>'}})
+            \'on_map': {'n':['<C-a>', '<C-x>']}
+            \})
 
 call dein#add('junegunn/vim-easy-align', {'lazy':1,
-            \'on_event': ['BufReadPost'],
-            \'on_map': '<Plug>(EasyAlign)',
-            \'hook_post_source': 'source $CONF_PATH/plug_conf/after/easy_align_conf.vim'})
+            \'on_map': {'n':'ga', 'v':'ga'},
+            \'hook_post_source': 'source $CONF_PATH/plug_conf/after/easy_align_conf.vim'
+            \})
 
 call dein#add('preservim/vim-pencil', {'lazy':1,
             \'on_cmd':['Pencil', 'NoPencil', 'PencilOff', 'TogglePencil',
             \'PencilToggle', 'SoftPencil', 'PencilSoft', 'HardPencil', 'PencilHard'],
-            \'hook_source': 'source $CONF_PATH/plug_conf/before/pencil_conf.vim'})
+            \'hook_source': 'source $CONF_PATH/plug_conf/before/pencil_conf.vim'
+            \})
 
 call dein#add('mg979/vim-visual-multi', {'lazy':1,
             \'on_map': {'n':'<C-n>', 'v':'<C-n>'},
-            \'hook_source':'source $CONF_PATH/plug_conf/before/visual_multi_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/visual_multi_conf.vim'
+            \})
 
 call dein#add('907th/vim-auto-save', {'lazy':1,
             \'on_event': ['BufReadPost'],
-            \'hook_source': 'source $CONF_PATH/plug_conf/before/auto_save_conf.vim'})
+            \'hook_source': 'source $CONF_PATH/plug_conf/before/auto_save_conf.vim'
+            \})
 
 call dein#add('lambdalisue/readablefold.vim', {'lazy':1,
-            \'on_event': ['BufReadPost']})
+            \'on_event': ['BufReadPost']
+            \})
 
 call dein#add('wellle/targets.vim', {'lazy':1,
-            \'on_event': ['BufReadPost']})
+            \'on_event': ['BufReadPost']
+            \})
 
-call dein#add('kana/vim-textobj-user', {'lazy':1,})
+call dein#add('kana/vim-textobj-user', {'lazy':1,
+            \})
 
 call dein#add('thinca/vim-textobj-between', {'lazy':1,
             \'depends': ['vim-textobj-user'],
-            \'on_event': ['BufReadPost']})
+            \'on_event': ['BufReadPost']
+            \})
 
 call dein#add('mbbill/undotree', {'lazy':1,
-            \'on_cmd':['UndotreeToggle']})
+            \'on_cmd':['UndotreeToggle']
+            \})
 
 if !has('nvim')
     call dein#add('skywind3000/asyncrun.vim', {'lazy':1,
-                \'on_event': ['BufReadPost']})
+                \'on_event': ['BufReadPost']
+                \})
     call dein#add('skywind3000/asynctasks.vim', {'lazy':1,
                 \'depedns':['asyncrun.vim'],
-                \'on_event': ['BufReadPost'],})
+                \'on_event': ['BufReadPost'],
+                \})
 endif
 
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
-            \'on_event': ['BufReadPost'], })
+            \'on_event': ['BufReadPost'],
+            \})
 
 if g:os_name == 'Linux'
     call dein#add('junegunn/fzf', {'lazy':1,
@@ -196,7 +208,8 @@ call dein#add('junegunn/fzf.vim', {'lazy':1,
             \'on_map':{'n':'<leader>f'},
             \'on_cmd' : [ 'FZF', 'Files', 'GFiles', 'Buffers', 'Colors', 'Ag', 'Rg', 'Lines', 'BLines', 'Tags', 'BTags', 'Marks', 'Windows', 'Locate', 'History', 'Snippets', 'Commits', 'BCommits', 'Commands', 'Maps', 'Helptags', 'Filetypes' ],
             \'hook_source':'source $CONF_PATH/plug_conf/before/fzf_conf.vim',
-            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/fzf_conf.vim'})
+            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/fzf_conf.vim'
+            \})
 
 call dein#add('tibabit/vim-templates', {'lazy':1,
             \'on_cmd' : ['TemplateInit', 'TemplateExpand', 'Tmpl'],
