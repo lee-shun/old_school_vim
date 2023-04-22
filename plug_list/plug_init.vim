@@ -1,4 +1,6 @@
-" the dein version
+" ===
+" === check the dein version
+" ===
 if has('nvim')
     if has('nvim-0.8')
         let g:osv_dein_version = 'master'
@@ -28,7 +30,7 @@ if empty(glob(s:dein_dir))
     let g:osv_setup = 1
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
     echom "Install dein" g:osv_dein_version "to" s:dein_src
-    call input('Press any key to continue')
+    call input('Press any key to continue.')
 endif
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
 
@@ -43,17 +45,17 @@ if g:osv_plug_advanced == 1
     source $CONF_PATH/plug_list/lazy/plug_advanced.vim
 endif
 
-if g:osv_plug_coc == 1
+if g:osv_complete_engine == 'coc'
     source $CONF_PATH/plug_list/lazy/plug_coc.vim
+endif
+if g:osv_complete_engine == 'deoplete'
+    source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
+endif
+if g:osv_complete_engine == 'asyncomplete'
+    source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
 endif
 if g:osv_plug_lsp == 1
     source $CONF_PATH/plug_list/lazy/plug_lsp.vim
-endif
-if g:osv_plug_deoplete == 1
-    source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
-endif
-if g:osv_plug_asyncomplete == 1
-    source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
 endif
 
 call dein#end()
@@ -66,7 +68,7 @@ augroup END
 if g:osv_setup == 1
     call dein#update()
     echom "Install the plugins with dein#update()."
-    call input('Press any key to continue')
+    call input('Press any key to continue.')
     if has('nvim')
         silent exec "UpdateRemotePlugins"
     endif
@@ -92,7 +94,7 @@ if g:osv_setup == 0
                     call system("!cd ".$CONF_PATH." && git pull")
                 else
                     echom "git status is not clean!"
-                    call input('Press any key to continue')
+                    call input('Press any key to continue.')
                 endif
             endif
 

@@ -9,7 +9,7 @@ if executable('ccls')
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'})
 endif
 
-if g:osv_plug_coc == 0
+if g:osv_complete_engine != 'coc'
     call dein#add('voldikss/vim-translator', {'lazy':1,
                 \'on_map':{'n':'<leader>s', 'v':'<leader>s'},
                 \'on_cmd':'TranslateW',
@@ -21,7 +21,7 @@ if has('python3')
     call dein#add('honza/vim-snippets', {'lazy':1,
                 \'on_event':'InsertEnter'
                 \})
-    if g:osv_plug_coc == 0
+    if g:osv_complete_engine != 'coc'
         call dein#add('SirVer/ultisnips', {'lazy':1,
                     \'depends':['vim-snippets'],
                     \'on_event':'InsertEnter',
@@ -58,7 +58,7 @@ let g:vim_tex_conf = {'lazy':1,
             \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimtex_conf.vim'
             \}
-if g:osv_plug_deoplete == 1
+if g:osv_complete_engine == 'deoplete'
     call add(g:vim_tex_conf.depends, 'deoplete.nvim')
 endif
 call dein#add('lervag/vimtex', g:vim_tex_conf)

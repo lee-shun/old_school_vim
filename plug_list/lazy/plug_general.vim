@@ -11,7 +11,7 @@ let s:spaceline_conf = {'lazy':1,
             \'on_event':['BufReadPost'],
             \'depends':['vim-signify', 'vim-devicons'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
-if g:osv_plug_coc == 1
+if g:osv_complete_engine == 'coc'
     call add(s:spaceline_conf.depends, 'coc.nvim')
 endif
 if g:osv_plug_lsp == 1
@@ -39,9 +39,8 @@ call dein#add('voldikss/vim-floaterm', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/floaterm_conf.vim'})
 
-if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
-
-    if  has('nvim-0.4') || v:version > 802 " according to the repo
+if g:osv_complete_engine != 'coc'
+    if g:osv_file_explorer == 'defx'
         call dein#add('kristijanhusak/defx-git', {'lazy':1,
                     \'hook_source':'source $CONF_PATH/plug_conf/before/defx_git_config.vim'})
         call dein#add('kristijanhusak/defx-icons', {'lazy':1,
@@ -57,7 +56,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
             let s:defx_nvim_config.hook_done_update = 'UpdateRemotePlugins'
         endif
         call dein#add('Shougo/defx.nvim', s:defx_nvim_config)
-    elseif has('nvim') || has('patch-8.1-2269')
+    elseif g:osv_file_explorer == 'fern'
         call dein#add('lambdalisue/nerdfont.vim', {'lazy':1,
                     \})
         call dein#add('lambdalisue/fern-renderer-nerdfont.vim', {'lazy':1,
@@ -73,7 +72,7 @@ if g:osv_plug_coc == 0 " coc-expolorer > defx > fern > vimfiler
                     \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
                     \'hook_source':'source $CONF_PATH/plug_conf/before/fern_conf.vim',
                     \'hook_post_source':'source $CONF_PATH/plug_conf/after/fern_conf.vim'})
-    else
+    elseif g:osv_file_explorer == 'vimfiler'
         call dein#add('Shougo/unite.vim', {'lazy':1,
                     \})
         call dein#add('Shougo/vimfiler.vim', {'lazy':1,
