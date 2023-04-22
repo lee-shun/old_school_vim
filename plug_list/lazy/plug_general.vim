@@ -149,30 +149,6 @@ call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'],
             \})
 
-if g:os_name == 'Linux'
-    call dein#add('junegunn/fzf', {'lazy':1,
-                \'build': './install --all',
-                \})
-elseif g:os_name == 'Windows'
-    call dein#add('junegunn/fzf', {'lazy':1,
-                \'build': 'powershell.exe .\install.ps1',
-                \})
-endif
-call dein#add('junegunn/fzf.vim', {'lazy':1,
-            \'depends': ['fzf'],
-            \'on_map':{'n':'<leader>f'},
-            \'on_cmd' : [ 'FZF', 'Files', 'GFiles', 'Buffers', 'Colors', 'Ag', 'Rg', 'Lines', 'BLines', 'Tags', 'BTags', 'Marks', 'Windows', 'Locate', 'History', 'Snippets', 'Commits', 'BCommits', 'Commands', 'Maps', 'Helptags', 'Filetypes' ],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/fzf_conf.vim',
-            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/fzf_conf.vim'
-            \})
-
-call dein#add('tibabit/vim-templates', {'lazy':1,
-            \'on_cmd' : ['TemplateInit', 'TemplateExpand', 'Tmpl'],
-            \'on_map':{'n':'<leader>ft'},
-            \'depends':['fzf.vim'],
-            \'hook_source' : 'source $CONF_PATH/plug_conf/before/templates_conf.vim',
-            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/templates_conf.vim',
-            \})
 
 call dein#add('brooth/far.vim', {
             \'lazy':1,

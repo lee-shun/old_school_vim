@@ -5,7 +5,7 @@ let g:osv_ulti_mode = 1
 
 " use general plugs
 let g:osv_plug_general = 1
-" NOTE: possible value: fzf, leader-f, ctrl-p and none.
+" NOTE: possible value: fzf, leaderF, ctrlp and none.
 let g:osv_finder = 'fzf'
 " NOTE: possible value: fern, defx, vimfiler, nerdtree and none.
 let g:osv_file_explorer = 'fern'

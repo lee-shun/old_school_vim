@@ -211,8 +211,8 @@ command! -bang Changes call s:fzf_changes(<bang>0)
 " === maps
 " ===
 nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fD :Quickfix<CR>
-nnoremap <leader>fd :LocationList<CR>
+nnoremap <leader>fQ :Quickfix<CR>
+nnoremap <leader>fq :LocationList<CR>
 nnoremap <leader>fr :Registers<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fm :History<CR>
