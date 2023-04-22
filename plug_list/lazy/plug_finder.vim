@@ -40,5 +40,32 @@ elseif g:osv_finder == 'fzf'
 elseif g:osv_finder == 'leaderF'
 
 elseif g:osv_finder == 'ctrlp'
+    let s:ctrlp_config = {'lazy':1,
+                \'depends': [],
+                \'on_map':{'n':'<leader>f'},
+                \'on_cmd':['CtrlP'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_conf.vim'
+                \}
+    call dein#add('tacahiroy/ctrlp-funky', {'lazy':1,
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_funky_conf.vim',
+                \})
+    call add(s:ctrlp_config.depends, 'ctrlp-funky')
+
+    call dein#add('ludovicchabant/vim-ctrlp-autoignore', {'lazy':1
+                \})
+    call add(s:ctrlp_config.depends, 'ctrlp-funky')
+
+    call dein#add('lee-shun/ctrlp-location-list', {'lazy':1,
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_location_list_conf.vim',
+                \})
+    call add(s:ctrlp_config.depends, 'ctrlp-location-list')
+
+    call dein#add('sgur/ctrlp-extensions.vim', {'lazy':1,
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_extensions_conf.vim',
+                \})
+    call add(s:ctrlp_config.depends, 'ctrlp-extensions.vim')
+
+    call dein#add('ctrlpvim/ctrlp.vim', s:ctrlp_config)
 
 endif
