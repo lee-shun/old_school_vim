@@ -22,7 +22,7 @@ elseif g:osv_finder == 'fzf'
     call add(s:fzf_vim_config.depends, 'fzf')
 
     call dein#add('tibabit/vim-templates', {'lazy':1,
-                \'hook_source' : 'source $CONF_PATH/plug_conf/before/templates_conf.vim',
+                \'hook_source':'source $CONF_PATH/plug_conf/before/templates_conf.vim',
                 \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/templates_conf.vim',
                 \})
     call add(s:fzf_vim_config.depends, 'vim-templates')
@@ -47,6 +47,12 @@ elseif g:osv_finder == 'ctrlp'
                 \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_conf.vim'
                 \}
+    call dein#add('lokikl/vim-ctrlp-ag', {'lazy':1,
+                \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_ag_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_ag_conf.vim',
+                \})
+    call add(s:ctrlp_config.depends, 'vim-ctrlp-ag')
+
     call dein#add('tacahiroy/ctrlp-funky', {'lazy':1,
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_funky_conf.vim',
                 \})
@@ -65,6 +71,11 @@ elseif g:osv_finder == 'ctrlp'
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_extensions_conf.vim',
                 \})
     call add(s:ctrlp_config.depends, 'ctrlp-extensions.vim')
+
+    call dein#add('mattn/ctrlp-register', {'lazy':1,
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_register_conf.vim',
+                \})
+    call add(s:ctrlp_config.depends, 'ctrlp-register')
 
     call dein#add('ctrlpvim/ctrlp.vim', s:ctrlp_config)
 
