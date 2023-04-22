@@ -57,6 +57,37 @@ if g:osv_ulti_mode == 0
 endif
 
 " ===
+" === check the finder
+" ===
+if g:osv_finder == 'fzf'
+    if !(executable('ag') && executable('rg'))
+        echom "Need ripgrep (rg) and the silver searcher (ag) to run fzf.vim!"
+        call input('Press any key to continue.')
+    endif
+    if !executable('bat')
+        echom "Need bat to run the syntax highlight preview in fzf.vim!"
+        call input('Press any key to continue.')
+    endif
+elseif g:osv_finder == 'ctrlp'
+        if v:version < 700 && !has('nvim')
+        echom "Need nvim or vim >= 7 to use ctrlp. Skip!"
+        call input('Press any key to continue.')
+        let g:osv_finder == 'none'
+    endif
+elseif g:osv_finder == 'leaderF'
+    if !has('patch-7.4-1126') && !has('nvim')
+        echom "Need nvim or vim >= 7.4.1126 to use leaderF. Skip!"
+        call input('Press any key to continue.')
+        let g:osv_finder == 'none'
+    endif
+    if !has('python3')
+        echom "Need python3 to use leaderF. Skip!"
+        call input('Press any key to continue.')
+        let g:osv_finder == 'none'
+    endif
+endif
+
+" ===
 " === check the file explorer
 " ===
 if g:osv_file_explorer == 'defx'
