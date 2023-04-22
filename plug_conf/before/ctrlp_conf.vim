@@ -4,4 +4,4 @@ let g:ctrlp_custom_ignore = {
             \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|plugged$',
             \ 'file': '\.so$\|\.dat$|\.DS_Store$'
             \ }
-let g:ctrlp_extensions = ['autoignore', 'funky', 'location_list', 'cmdline', 'yankring', 'menu']
+let g:ctrlp_extensions = ['autoignore', 'funky', 'location_list', 'cmdline', 'yankring', 'menu', 'register', 'ag']
