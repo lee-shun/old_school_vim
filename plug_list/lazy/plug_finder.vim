@@ -70,7 +70,6 @@ elseif g:osv_finder == 'ctrlp'
                 \})
     call add(s:ctrlp_config.depends, 'vim-ctrlp-ag')
 
-
     call dein#add('ctrlpvim/ctrlp.vim', s:ctrlp_config)
 
 endif
