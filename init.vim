@@ -17,8 +17,7 @@
 
 " define the osv mode
 let $CONF_PATH = split(&runtimepath, ',')[0]
-
-source $CONF_PATH/mode_control.vim
+source $CONF_PATH/osv_modules.vim
 
 " ===
 " === env
@@ -78,9 +77,6 @@ elseif g:osv_file_explorer == 'fern'
     endif
 elseif g:osv_file_explorer == 'vimfiler'
     " vimfiler is ok
-elseif g:osv_file_explorer == 'none'
-    echom "No file explorer will be used!"
-    call input('Press any key to continue.')
 endif
 
 " ===

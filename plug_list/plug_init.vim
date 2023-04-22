@@ -25,9 +25,9 @@ let s:dein_dir = $CONF_PATH.'/dein'
 let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
 
 " install dein for the first time
-let g:osv_setup = 0
+let s:osv_setup = 0
 if empty(glob(s:dein_dir))
-    let g:osv_setup = 1
+    let s:osv_setup = 1
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
     echom "Install dein" g:osv_dein_version "to" s:dein_src
     call input('Press any key to continue.')
@@ -65,7 +65,7 @@ augroup DeinSetup
     autocmd VimEnter * call dein#call_hook('post_source')
 augroup END
 
-if g:osv_setup == 1
+if s:osv_setup == 1
     call dein#update()
     echom "Install the plugins with dein#update()."
     call input('Press any key to continue.')
@@ -75,7 +75,7 @@ if g:osv_setup == 1
 endif
 
 " Run update every day automatically when entering Vim.
-if g:osv_setup == 0
+if s:osv_setup == 0
     function! AutoUpdateVimPlug() abort
         let l:filename = $CONF_PATH.'/tmp/plug_update_time'
         if filereadable(l:filename) == 0
