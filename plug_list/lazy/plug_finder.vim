@@ -39,6 +39,16 @@ elseif g:osv_finder == 'fzf'
 
 elseif g:osv_finder == 'leaderF'
 
+    let s:leaderF_config = {'lazy':1,
+                \'depends': [],
+                \'on_map':{'n':'<leader>f'},
+                \'hook_done_update':'LeaderfInstallCExtension',
+                \'hook_source':'source $CONF_PATH/plug_conf/before/leaderF_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderF_conf.vim'
+                \}
+
+    call dein#add('Yggdroot/LeaderF', s:leaderF_config)
+
 elseif g:osv_finder == 'ctrlp'
 
     call dein#add('tacahiroy/ctrlp-funky', {'lazy':1,
