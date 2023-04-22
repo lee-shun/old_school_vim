@@ -5,16 +5,16 @@ let g:osv_ulti_mode = 1
 
 " use general plugs
 let g:osv_plug_general = 1
+" NOTE: possible value: fzf, leader-f, ctrl-p and none.
+let g:osv_finder = 'fzf'
+" NOTE: possible value: fern, defx, vimfiler, nerdtree and none.
+let g:osv_file_explorer = 'fern'
+
 " use advanced plugs
 let g:osv_plug_advanced = 1
 
-" use coc
-" NOTE: do NOT use coc on aarch64, compatibility is not good.
-let g:osv_plug_coc = 0
+" NOTE: possible value: coc, deoplete, asycomplete and none.
+let g:osv_complete_engine = 'asyncomplete'
 
-" choose one of following complete engines
-let g:osv_plug_deoplete = 0
-let g:osv_plug_asyncomplete = 1
-
-" vim-lsp as backend of the above frameworks.
+" vim-lsp as backend of the above frameworks (Not for coc).
 let g:osv_plug_lsp = 1
