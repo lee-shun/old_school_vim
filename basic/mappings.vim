@@ -2,6 +2,9 @@
 " === some useful remaps
 " ===
 
+" opne new file if no
+noremap gf :e <cfile><cr>
+
 " change indent and select in v-mode
 xnoremap <  <gv
 xnoremap >  >gv
