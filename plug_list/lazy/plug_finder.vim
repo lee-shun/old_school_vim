@@ -92,8 +92,14 @@ elseif g:osv_finder == 'ctrlp'
     call dein#add('ctrlpvim/ctrlp.vim', s:ctrlp_config)
 
 elseif g:osv_finder == 'clap'
-    call dein#add('liuchengxu/vim-clap', {'lazy':1,
-                \'hook_done_update':'call clap#installer#force_download()',
+    let s:clap_config = {'lazy':1,
+                \'build':'',
                 \'on_cmd':'Clap',
-                \})
+                \}
+    if g:os_name == 'Linux'
+        let s:clap_config.build = './install.sh'
+    elseif g:os_name == 'Windows'
+        let s:clap_config.build = 'powershell.exe .\install.ps1'
+    endif
+    call dein#add('liuchengxu/vim-clap', s:clap_config)
 endif
