@@ -48,7 +48,7 @@ call dein#add('rlue/vim-barbaric', {'lazy':1,
             \})
 
 call dein#add('sakshamgupta05/vim-todo-highlight', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_event': ['BufRead'],
             \'hook_source': 'source $CONF_PATH/plug_conf/before/todo_hl_conf.vim' })
 
 call dein#add('junegunn/vim-peekaboo', {'lazy':1,
