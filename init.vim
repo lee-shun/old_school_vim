@@ -91,6 +91,12 @@ elseif g:osv_finder == 'leaderF'
         call input('Press any key to continue.')
         let g:osv_finder == 'none'
     endif
+elseif g:osv_finder == 'clap'
+    if !has('patch-8.1.2114') && !has('nvim-0.4.2')
+        echom "Need nvim >= 0.4.2 or vim >= 8.1.2114 to use clap. Skip!"
+        call input('Press any key to continue.')
+        let g:osv_finder == 'none'
+    endif
 endif
 
 " ===
