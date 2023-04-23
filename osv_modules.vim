@@ -5,13 +5,14 @@ let g:osv_ulti_mode = 1
 
 " use general plugs
 let g:osv_plug_general = 1
+
+" some python and filetype-based
+let g:osv_plug_advanced = 1
+
 " NOTE: possible value: fzf, leaderF, ctrlp and none. Maybe vim-clap.
 let g:osv_finder = 'leaderF'
 " NOTE: possible value: fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'fern'
-
-" use advanced plugs
-let g:osv_plug_advanced = 1
 
 " NOTE: possible value: coc, deoplete, asycomplete and none.
 let g:osv_complete_engine = 'asyncomplete'
