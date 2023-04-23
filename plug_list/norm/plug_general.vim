@@ -19,7 +19,7 @@ if has('nvim') && !has('nvim-0.8')
     call dein#add('antoinemadec/FixCursorHold.nvim')
 endif
 
-if g:osv_finder == 'clap' || g:osv_finder == 'fzf'
+if g:osv_finder == 'clap' || g:osv_finder == 'fzf' || g:osv_finder == 'leaderF'
     let s:vim_dashboard_config = {
                 \'hook_source':'source $CONF_PATH/plug_conf/before/vim_dashboard_conf.vim',
                 \}
