@@ -91,4 +91,9 @@ elseif g:osv_finder == 'ctrlp'
 
     call dein#add('ctrlpvim/ctrlp.vim', s:ctrlp_config)
 
+elseif g:osv_finder == 'clap'
+    call dein#add('liuchengxu/vim-clap', {'lazy':1,
+                \'hook_done_update':'call clap#installer#force_download()',
+                \'on_cmd':'Clap',
+                \})
 endif

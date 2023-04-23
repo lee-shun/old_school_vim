@@ -9,8 +9,8 @@ let g:osv_plug_general = 1
 " some python and filetype-based
 let g:osv_plug_advanced = 1
 
-" NOTE: possible value: fzf, leaderF, ctrlp and none. Maybe vim-clap.
-let g:osv_finder = 'leaderF'
+" NOTE: possible value: fzf, leaderF, ctrlp, clap and none. .
+let g:osv_finder = 'clap'
 " NOTE: possible value: fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'fern'
 
