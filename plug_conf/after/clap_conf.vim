@@ -1,6 +1,7 @@
 " yank bugs
 call clap#provider#yanks#init()
 
+" maps
 nnoremap <leader>fa :Clap<CR>
 nnoremap <leader>ff :Clap files<CR>
 nnoremap <leader>fb :Clap buffers<CR>
