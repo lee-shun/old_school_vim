@@ -56,7 +56,7 @@ call dein#add('junegunn/vim-peekaboo', {'lazy':1,
             \})
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_event': ['BufRead'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/rooter_conf.vim'
             \})
 
@@ -148,7 +148,6 @@ endif
 call dein#add('rhysd/conflict-marker.vim', {'lazy':1,
             \'on_event': ['BufReadPost'],
             \})
-
 
 call dein#add('brooth/far.vim', {
             \'lazy':1,

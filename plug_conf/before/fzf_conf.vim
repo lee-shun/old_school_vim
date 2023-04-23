@@ -16,5 +16,3 @@ endif
 
 let s:fzf_preview_key    = get(g:, 'fzf_preview_key', 'ctrl-/')
 let g:fzf_preview_window = ['up:50%', s:fzf_preview_key]
-
-
