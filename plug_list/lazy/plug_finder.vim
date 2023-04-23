@@ -42,10 +42,17 @@ elseif g:osv_finder == 'leaderF'
     let s:leaderF_config = {'lazy':1,
                 \'depends': [],
                 \'on_map':{'n':'<leader>f'},
+                \'on_cmd':'Leaderf',
                 \'hook_done_update':'LeaderfInstallCExtension',
                 \'hook_source':'source $CONF_PATH/plug_conf/before/leaderF_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderF_conf.vim'
                 \}
+    if g:osv_complete_engine != 'coc'
+        call dein#add('skywind3000/Leaderf-snippet', {'lazy':1,
+                    \'depends':['ultisnips'],
+                    \})
+        call add(s:leaderF_config.depends, 'Leaderf-snippet')
+    endif
 
     call dein#add('Yggdroot/LeaderF', s:leaderF_config)
 
