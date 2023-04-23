@@ -78,27 +78,27 @@ elseif g:osv_finder == 'ctrlp'
     if v:version < 700 && !has('nvim')
         echom "Need nvim or vim >= 7 to use ctrlp. Skip!"
         call input('Press any key to continue.')
-        let g:osv_finder == 'none'
+        let g:osv_finder = 'none'
         finish
     endif
 elseif g:osv_finder == 'leaderF'
     if !has('patch-7.4-1126') && !has('nvim')
         echom "Need nvim or vim >= 7.4.1126 to use leaderF. Skip!"
         call input('Press any key to continue.')
-        let g:osv_finder == 'none'
+        let g:osv_finder = 'none'
         finish
     endif
     if !has('python3')
         echom "Need python3 to use leaderF. Skip!"
         call input('Press any key to continue.')
-        let g:osv_finder == 'none'
+        let g:osv_finder = 'none'
         finish
     endif
 elseif g:osv_finder == 'clap'
     if !has('patch-8.1.2114') && !has('nvim-0.4.2')
         echom "Need nvim >= 0.4.2 or vim >= 8.1.2114 to use clap. Skip!"
         call input('Press any key to continue.')
-        let g:osv_finder == 'none'
+        let g:osv_finder = 'none'
         finish
     endif
 endif
@@ -112,7 +112,7 @@ if g:osv_file_explorer == 'defx'
     else
         echom "Need nvim >= 0.4 or vim >= 8.2 to use defx.nvim. Skip!"
         call input('Press any key to continue.')
-        let g:osv_file_explorer == 'none'
+        let g:osv_file_explorer = 'none'
         finish
     endif
 elseif g:osv_file_explorer == 'fern'
@@ -121,7 +121,7 @@ elseif g:osv_file_explorer == 'fern'
     else
         echom "Need nvim or vim >= 8.1.2269 to use fern.vim. Skip!"
         call input('Press any key to continue.')
-        let g:osv_file_explorer == 'none'
+        let g:osv_file_explorer = 'none'
         finish
     endif
 elseif g:osv_file_explorer == 'vimfiler'
@@ -135,7 +135,7 @@ endif
 if g:osv_complete_engine == 'coc'
     " don't use coc under aarch64
     if g:os_architect == 'aarch64'
-        let g:osv_complete_engine == 'none'
+        let g:osv_complete_engine = 'none'
         echom "Do NOT use coc under " . g:os_architect . ". Skip!"
         call input('Press any key to continue.')
         finish
@@ -143,7 +143,7 @@ if g:osv_complete_engine == 'coc'
 
     " don't use coc with vim under version 8.1-1719
     if !has('nvim-0.4') && !has('patch-8.1-1719')
-        let g:osv_complete_engine == 'none'
+        let g:osv_complete_engine = 'none'
         echom "For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!"
         call input('Press any key to continue.')
         finish
@@ -158,7 +158,7 @@ if g:osv_complete_engine == 'coc'
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
     if !has('nvim-0.3') && !has('patch-8.2-1978')
-        let g:osv_complete_engine == 'none'
+        let g:osv_complete_engine = 'none'
         echom "For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!"
         call input('Press any key to continue.')
         finish
@@ -166,7 +166,7 @@ elseif g:osv_complete_engine == 'deoplete'
 elseif g:osv_complete_engine == 'asyncomplete'
     " don't use asyncomplete with vim under version 8 or nvim
     if !has('nvim') && v:version< 800
-        let g:osv_complete_engine == 'none'
+        let g:osv_complete_engine = 'none'
         echom "For asyncomplete.nvim: vim>=8.0 or nvim! Skip!"
         call input('Press any key to continue.')
         finish
