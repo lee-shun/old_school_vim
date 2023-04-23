@@ -95,6 +95,8 @@ elseif g:osv_finder == 'clap'
     let s:clap_config = {'lazy':1,
                 \'build':'',
                 \'on_cmd':'Clap',
+                \'on_map':'<leader>f',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/clap_conf.vim',
                 \}
     if g:os_name == 'Linux'
         let s:clap_config.build = './install.sh'
