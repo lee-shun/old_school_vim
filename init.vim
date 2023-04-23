@@ -70,8 +70,8 @@ if g:osv_finder == 'fzf'
         echom "Need ripgrep (rg) and the silver searcher (ag) to run fzf.vim!"
         call input('Press any key to continue.')
     endif
-    if !executable('bat')
-        echom "Need bat to run the syntax highlight preview in fzf.vim!"
+    if !executable('batcat')
+        echom "Need bat(cat) to run the syntax highlight preview in fzf.vim!"
         call input('Press any key to continue.')
     endif
 elseif g:osv_finder == 'ctrlp'
