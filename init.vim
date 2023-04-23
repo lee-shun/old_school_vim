@@ -44,6 +44,12 @@ elseif g:os_name == 'Linux'
     endif
 endif
 
+if has('nvim')
+    let g:has_popup = exists('*nvim_win_set_config') && has('nvim-0.4.2')
+else
+    let g:has_popup = exists('*popup_create') && has('patch-8.2.191')
+endif
+
 " ===
 " === check the baisc mode
 " ===
