@@ -7,8 +7,8 @@ let g:spaceline_custom_diff_icon =  [' ',' ',' ']
 
 let g:spaceline_diff_tool = 'vim-signify'
 
-if g:osv_plug_lsp == 1
-    let g:spaceline_diagnostic_tool = 'ale'
-elseif g:osv_plug_coc == 1
+if g:osv_complete_engine == 'coc'
     let g:spaceline_diagnostic_tool = 'coc'
+lseif g:osv_plug_lsp == 1
+    let g:spaceline_diagnostic_tool = 'ale'
 endif

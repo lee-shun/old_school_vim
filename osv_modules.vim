@@ -15,7 +15,7 @@ let g:osv_finder = 'ctrlp'
 let g:osv_file_explorer = 'fern'
 
 " NOTE: possible value: coc, deoplete, asycomplete and none.
-let g:osv_complete_engine = 'asycomplete'
+let g:osv_complete_engine = 'coc'
 
 " vim-lsp as backend of the above frameworks (Not for coc).
-let g:osv_plug_lsp = 1
+let g:osv_plug_lsp = 0
