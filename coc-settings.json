@@ -105,6 +105,7 @@
     "yn": "copyFilename",
     "yy": "copyFile",
     "dd": "cutFile",
+    "cc": "clearCopyOrCut",
     "p": "pasteFile",
     "df": "delete",
     "dF": "deleteForever",
