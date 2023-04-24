@@ -82,7 +82,7 @@ elseif g:osv_finder == 'ctrlp'
                 \})
 
     let s:ctrlp_config = {'lazy':1,
-                \'depends': ['ctrp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register'],
+                \'depends': ['ctrlp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register', 'vim-ctrlp-ag'],
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':['CtrlP'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_conf.vim',
