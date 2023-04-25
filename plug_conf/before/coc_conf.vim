@@ -25,14 +25,18 @@ let g:coc_global_extensions = [
             \ 'coc-syntax',
             \ 'coc-diagnostic',
             \ 'coc-actions',
-            \ 'coc-lightbulb',
             \ 'coc-calc',
             \ 'coc-emoji',
             \ 'coc-word',
             \ 'coc-yank',
-            \ 'coc-tabnine',
             \ 'coc-floaterm',
             \]
 if has('nvim')
     call add(g:coc_global_extensions, 'coc-floatinput')
+endif
+
+if g:os_architect != 'aarch64'
+    " these 2 coc plugins are not supported by aarch64
+    call add(g:coc_global_extensions, 'coc-lightbulb')
+    call add(g:coc_global_extensions, 'coc-tabnine')
 endif
