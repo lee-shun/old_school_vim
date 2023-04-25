@@ -177,8 +177,8 @@ elseif g:osv_file_explorer == 'vimfiler'
 endif
 
 if g:osv_complete_engine == 'coc' && g:osv_file_explorer != 'none'
-    let g:osv_file_explorer = 'none'
     call OsvWarn("coc.nvim already has the coc-explorer! No need to install ".g:osv_file_explorer."!")
+    let g:osv_file_explorer = 'none'
 endif
 
 " ===
@@ -188,40 +188,40 @@ endif
 if g:osv_complete_engine == 'coc'
     " don't use coc under aarch64
     if !executable('npm')
-        let g:osv_complete_engine = 'none'
         call OsvWarn("Please install nodejs to use coc. Skip!")
+        let g:osv_complete_engine = 'none'
         finish
     endif
 
     " don't use coc with vim under version 8.1-1719
     if !has('nvim-0.4') && !has('patch-8.1-1719')
-        let g:osv_complete_engine = 'none'
         call OsvWarn("For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!")
+        let g:osv_complete_engine = 'none'
         finish
     endif
 
     if g:osv_plug_lsp == 1
-        let g:osv_plug_lsp = 0
         call OsvWarn("coc.nvim already has the lsp support! No need to install vim-lsp!")
+        let g:osv_plug_lsp = 0
     endif
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
     if !has('nvim-0.3') && !has('patch-8.2-1978')
-        let g:osv_complete_engine = 'none'
         call OsvErr("For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!")
+        let g:osv_complete_engine = 'none'
         finish
     endif
 elseif g:osv_complete_engine == 'asyncomplete'
     " don't use asyncomplete with vim under version 8 or nvim
     if !has('nvim') && v:version< 800
-        let g:osv_complete_engine = 'none'
         call OsvWarn("For asyncomplete.nvim: vim>=8.0 or nvim! Skip!")
+        let g:osv_complete_engine = 'none'
         finish
     endif
 elseif g:osv_complete_engine == 'none'
     if g:osv_plug_lsp == 1
-        let g:osv_plug_lsp = 0
         call OsvWarn("Please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!")
+        let g:osv_plug_lsp = 0
     endif
 endif
 
@@ -231,8 +231,8 @@ endif
 
 " don't use lsp with vim under version 8.0
 if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
-    let g:osv_plug_lsp = 0
     call OsvWarn("For vim-lsp: vim>=8.0 or nvim! Skip!")
+    let g:osv_plug_lsp = 0
     finish
 endif
 
