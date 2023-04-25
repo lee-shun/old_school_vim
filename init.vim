@@ -95,7 +95,7 @@ elseif g:osv_finder == 'leaderF'
         finish
     endif
 elseif g:osv_finder == 'clap'
-    if g:os_architect == ! 'aarch64'
+    if g:os_architect == 'aarch64'
         echom "Do not use clap under aarch64. Skip!"
         call input('Press any key to continue.\n')
         let g:osv_finder = 'none'
