@@ -1,5 +1,5 @@
-" Not load for ulti-mode.
-if g:osv_ulti_mode == 1
+" Do not load when install finders
+if g:osv_finder != 'none'
   finish
 endif
 

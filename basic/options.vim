@@ -273,7 +273,7 @@ endif
 " ===
 " === colorscheme
 " ===
-if g:osv_ulti_mode == 0
+if g:osv_ulti_mode == 0 || g:osv_plug_general == 0
     set background=dark
     colorscheme seoul256
 endif
