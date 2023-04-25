@@ -134,12 +134,18 @@ endif
 
 if g:osv_complete_engine == 'coc'
     " don't use coc under aarch64
-    if g:os_architect == 'aarch64'
+    if !executable('npm')
         let g:osv_complete_engine = 'none'
-        echom "Do NOT use coc under " . g:os_architect . ". Skip!"
+        echom "Please install nodejs to use coc. Skip!"
         call input('Press any key to continue.')
         finish
     endif
+    " if g:os_architect == 'aarch64'
+    "     let g:osv_complete_engine = 'none'
+    "     echom "Do NOT use coc under " . g:os_architect . ". Skip!"
+    "     call input('Press any key to continue.')
+    "     finish
+    " endif
 
     " don't use coc with vim under version 8.1-1719
     if !has('nvim-0.4') && !has('patch-8.1-1719')
