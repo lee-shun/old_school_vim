@@ -30,12 +30,12 @@ if empty(glob(s:dein_dir)) && !exists($CONF_PATH.'/custom_modules.vim')
     let s:osv_setup = 1
     " copy the custom_modules out.
     silent exec "!cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim"
-    OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
+    call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("Press any keys to continue...")
 
     " install dein.vim
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
-    OsvInfo("Install dein" g:osv_dein_version "to" s:dein_src)
+    call OsvInfo("Install dein" g:osv_dein_version "to" s:dein_src)
     call input("Press any keys to continue...")
 endif
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
@@ -83,7 +83,7 @@ augroup END
 
 if s:osv_setup == 1
     call dein#update()
-    OsvInfo("Install the plugins with dein#update().")
+    call OsvInfo("Install the plugins with dein#update().")
     call input("Press any keys to continue...")
     if has('nvim')
         silent exec "UpdateRemotePlugins"
@@ -109,7 +109,7 @@ if s:osv_setup == 0
                 if l:git_clean == 1
                     call system("!cd ".$CONF_PATH." && git pull")
                 else
-                    OsvInfo("git status is not clean! Skip!")
+                    call OsvWarn("git status is not clean! Skip!")
                     call input("Press any keys to continue...")
                 endif
             endif
