@@ -66,8 +66,12 @@ endif
 " === check the finder
 " ===
 if g:osv_finder == 'fzf'
-    if !(executable('ag') && executable('rg'))
-        echom "Need ripgrep (rg) and the silver searcher (ag) to run fzf.vim!"
+    if !executable('ag')
+        echom "Need the silver searcher (ag) to run fzf.vim!"
+        call input('Press any key to continue.')
+    endif
+    if !executable('rg')
+        echom "Need the ripgrep (rg) to run fzf.vim!"
         call input('Press any key to continue.')
     endif
     if !executable('batcat')
@@ -81,6 +85,10 @@ elseif g:osv_finder == 'ctrlp'
         let g:osv_finder = 'none'
         finish
     endif
+    if !executable('ag')
+        echom "Need the silver searcher (ag) to run ctrlp!"
+        call input('Press any key to continue.')
+    endif
 elseif g:osv_finder == 'leaderF'
     if !has('patch-7.4-1126') && !has('nvim')
         echom "Need nvim or vim >= 7.4.1126 to use leaderF. Skip!"
@@ -93,6 +101,10 @@ elseif g:osv_finder == 'leaderF'
         call input('Press any key to continue.')
         let g:osv_finder = 'none'
         finish
+    endif
+    if !executable('rg')
+        echom "Need the ripgrep (rg) to run leaderF!"
+        call input('Press any key to continue.')
     endif
 elseif g:osv_finder == 'clap'
     if g:os_architect == 'aarch64'
