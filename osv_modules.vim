@@ -18,4 +18,4 @@ let g:osv_file_explorer = 'fern'
 let g:osv_complete_engine = 'coc'
 
 " vim-lsp as backend of the above frameworks (Not for coc).
-let g:osv_plug_lsp = 0
+let g:osv_plug_lsp = 1
