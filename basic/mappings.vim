@@ -3,7 +3,7 @@
 " ===
 
 " opne new file if no
-noremap gf :e <cfile><cr>
+" noremap gf :e <cfile><cr>
 
 " change indent and select in v-mode
 xnoremap <  <gv

@@ -8,6 +8,8 @@ sessions/
 .clangd/
 .vscode/
 
+custom_modules.vim
+
 dein/
 
 # Vim.gitignore:
