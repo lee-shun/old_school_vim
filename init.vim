@@ -85,7 +85,7 @@ let g:osv_complete_engine = 'none'
 let g:osv_plug_lsp = 0
 
 " customs
-if exists($CONF_PATH.'/custom_modules.vim')
+if !empty(glob($CONF_PATH.'/custom_modules.vim'))
     source $CONF_PATH/custom_modules.vim
 endif
 
