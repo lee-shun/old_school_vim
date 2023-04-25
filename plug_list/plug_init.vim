@@ -112,6 +112,7 @@ if s:osv_setup == 0
             let l:choice = input("Upgrade vim plugs, [y/n]?\n")
             if l:choice == 'y'
                 call dein#update()
+                call dein#recache_runtimepath()
             endif
 
             call writefile([l:today], l:filename, 'a')

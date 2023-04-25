@@ -10,7 +10,7 @@ let g:osv_plug_general = 1
 let g:osv_plug_advanced = 1
 
 " NOTE: possible value: fzf, leaderF, ctrlp, clap and none. .
-let g:osv_finder = 'ctrlp'
+let g:osv_finder = 'clap'
 " NOTE: possible value: fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'fern'
 
