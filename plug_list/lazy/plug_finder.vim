@@ -74,7 +74,7 @@ elseif g:osv_finder == 'ctrlp'
                 \})
     if !executable('ag')
         echom "Need the silver searcher (ag) to run ctrlp-ag"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
     endif
     call dein#add('lokikl/vim-ctrlp-ag', {'lazy':1,
                 \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_ag_conf.vim',

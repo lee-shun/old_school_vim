@@ -68,36 +68,42 @@ endif
 if g:osv_finder == 'fzf'
     if !(executable('ag') && executable('rg'))
         echom "Need ripgrep (rg) and the silver searcher (ag) to run fzf.vim!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
     endif
     if !executable('batcat')
         echom "Need bat(cat) to run the syntax highlight preview in fzf.vim!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
     endif
 elseif g:osv_finder == 'ctrlp'
     if v:version < 700 && !has('nvim')
         echom "Need nvim or vim >= 7 to use ctrlp. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         let g:osv_finder = 'none'
         finish
     endif
 elseif g:osv_finder == 'leaderF'
     if !has('patch-7.4-1126') && !has('nvim')
         echom "Need nvim or vim >= 7.4.1126 to use leaderF. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         let g:osv_finder = 'none'
         finish
     endif
     if !has('python3')
         echom "Need python3 to use leaderF. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         let g:osv_finder = 'none'
         finish
     endif
 elseif g:osv_finder == 'clap'
+    if g:os_architect == ! 'aarch64'
+        echom "Do not use clap under aarch64. Skip!"
+        call input('Press any key to continue.\n')
+        let g:osv_finder = 'none'
+        finish
+    endif
     if !has('patch-8.1.2114') && !has('nvim-0.4.2')
         echom "Need nvim >= 0.4.2 or vim >= 8.1.2114 to use clap. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         let g:osv_finder = 'none'
         finish
     endif
@@ -111,7 +117,7 @@ if g:osv_file_explorer == 'defx'
         " defx.nvim is ok
     else
         echom "Need nvim >= 0.4 or vim >= 8.2 to use defx.nvim. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         let g:osv_file_explorer = 'none'
         finish
     endif
@@ -120,7 +126,7 @@ elseif g:osv_file_explorer == 'fern'
         " fern.vim is ok
     else
         echom "Need nvim or vim >= 8.1.2269 to use fern.vim. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         let g:osv_file_explorer = 'none'
         finish
     endif
@@ -137,13 +143,13 @@ if g:osv_complete_engine == 'coc'
     if !executable('npm')
         let g:osv_complete_engine = 'none'
         echom "Please install nodejs to use coc. Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         finish
     endif
     " if g:os_architect == 'aarch64'
     "     let g:osv_complete_engine = 'none'
     "     echom "Do NOT use coc under " . g:os_architect . ". Skip!"
-    "     call input('Press any key to continue.')
+    "     call input('Press any key to continue.\n')
     "     finish
     " endif
 
@@ -151,14 +157,14 @@ if g:osv_complete_engine == 'coc'
     if !has('nvim-0.4') && !has('patch-8.1-1719')
         let g:osv_complete_engine = 'none'
         echom "For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         finish
     endif
 
     if g:osv_plug_lsp == 1
         let g:osv_plug_lsp = 0
         echom "coc.nvim already has the lsp support! No need to install vim-lsp!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
     endif
 
 elseif g:osv_complete_engine == 'deoplete'
@@ -166,7 +172,7 @@ elseif g:osv_complete_engine == 'deoplete'
     if !has('nvim-0.3') && !has('patch-8.2-1978')
         let g:osv_complete_engine = 'none'
         echom "For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         finish
     endif
 elseif g:osv_complete_engine == 'asyncomplete'
@@ -174,14 +180,14 @@ elseif g:osv_complete_engine == 'asyncomplete'
     if !has('nvim') && v:version< 800
         let g:osv_complete_engine = 'none'
         echom "For asyncomplete.nvim: vim>=8.0 or nvim! Skip!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
         finish
     endif
 elseif g:osv_complete_engine == 'none'
     if g:osv_plug_lsp == 1
         let g:osv_plug_lsp = 0
         echom "Please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!"
-        call input('Press any key to continue.')
+        call input('Press any key to continue.\n')
     endif
 endif
 
@@ -193,7 +199,7 @@ endif
 if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
     let g:osv_plug_lsp = 0
     echom "For vim-lsp: vim>=8.0 or nvim! Skip!"
-    call input('Press any key to continue.')
+    call input('Press any key to continue.\n')
     finish
 endif
 
