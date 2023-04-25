@@ -1,10 +1,26 @@
-" Not load for ulti-mode.
-if g:osv_ulti_mode == 1
+" Do not load when install general plugins
+if g:osv_plug_general == 1
   finish
 endif
 
+let g:surround_no_mappings = 1
+nmap gsd  <Plug>Dsurround
+nmap gsr  <Plug>Csurround
+nmap gSr  <Plug>CSurround
+nmap gsa  <Plug>Ysurround
+nmap gSa  <Plug>YSurround
+" line-wise add
+nmap gssa  <Plug>Yssurround
+" line-wise indent add
+nmap gSsa  <Plug>YSsurround
+
+xmap gsa  <Plug>VSurround
+" visual indent
+xmap gSsa  <Plug>VgSurround
+
 " surround.vim - Surroundings
 " Author:       Tim Pope <http://tpo.pe/>
+" Modifyed: Shun Li
 " Version:      2.2
 " GetLatestVimScripts: 1697 1 :AutoInstall: surround.vim
 

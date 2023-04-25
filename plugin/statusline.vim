@@ -1,6 +1,5 @@
-" Not load for ulti-mode.
-if g:osv_ulti_mode == 1
-    set statusline=%#normal#
+" Do not load when install general plugins
+if g:osv_plug_general == 1
   finish
 endif
 
