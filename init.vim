@@ -119,6 +119,10 @@ elseif g:osv_finder == 'clap'
         let g:osv_finder = 'none'
         finish
     endif
+    if !executable('rg')
+        echom "Need the ripgrep (rg) to run clap!"
+        call input('Press any key to continue.')
+    endif
 endif
 
 " ===
