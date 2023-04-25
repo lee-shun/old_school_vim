@@ -1,13 +1,6 @@
 " from https://github.com/phongnh/fzf-settings.vim/blob/master/plugin/fzf_settings.vim
 " Extra commands
 
-function! s:warn(message) abort
-    echohl WarningMsg
-    echomsg a:message
-    echohl None
-    return 0
-endfunction
-
 function! s:fzf_bufopen(e) abort
     let list = split(a:e)
     if len(list) < 4
@@ -76,7 +69,7 @@ function! s:fzf_quickfix(bang) abort
     let s:source = 'quickfix'
     let items = s:fzf_get_quickfix()
     if len(items) == 0
-        call s:warn('No quickfix items!')
+        call EchoWarn('No quickfix items!')
         return
     endif
     call fzf#run(fzf#wrap('quickfix', {
@@ -94,7 +87,7 @@ function! s:fzf_location_list(bang) abort
     let s:source = 'location_list'
     let items = s:fzf_get_location_list()
     if len(items) == 0
-        call s:warn('No location list items!')
+        call EchoWarn('No location list items!')
         return
     endif
     call fzf#run(fzf#wrap('location_list', {
@@ -122,7 +115,7 @@ function! s:fzf_registers(bang) abort
     let s:source = 'registers'
     let items = s:fzf_get_registers()
     if len(items) == 0
-        call s:warn('No register items!')
+        call EchoWarn('No register items!')
         return
     endif
     call fzf#run(fzf#wrap('registers', {
@@ -170,7 +163,7 @@ function! s:fzf_jumps(bang) abort
     " Get jumps with filename added
     let tmp_jump = s:get_jumps()
     if(tmp_jump == [])
-        call s:warn('Empty jump list!')
+        call EchoWarn('Empty jump list!')
         return
     endif
     let jumps = map(tmp_jump,
@@ -191,7 +184,7 @@ command! -bang Jumps call s:fzf_jumps(<bang>0)
 function! s:fzf_changes(bang) abort
     let changes  = reverse(copy(getchangelist()[0]))
     if(changes == [])
-        call s:warn('Empty change list!')
+        call warn_echo('Empty change list!')
         return
     endif
 
