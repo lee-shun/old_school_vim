@@ -1,7 +1,7 @@
 " NOTE: after change this file, Restart vim/neovim and then use "Dein install",
 " "Dein reacache_runtime_path" to make the config takes effect.
 
-" use plugins or not!
+" use ALL OF THE plugins or not!
 " let g:osv_ulti_mode = 1
 
 " some dependence-free plugins
@@ -14,11 +14,12 @@
 " let g:osv_finder = 'ctrlp'
 
 " possible value: fern, defx, vimfiler and none.
-" let g:osv_file_explorer = 'fern'
+" Cause coc has coc-explorer, no need to install these filer agian if use coc.
+" let g:osv_file_explorer = 'none'
 
 " possible value: coc, deoplete, asycomplete and none.
 " let g:osv_complete_engine = 'coc'
 
 " vim-lsp as backend of the above complete engine.
 " Cause coc has lsp support, no need to install vim-lsp agian if use coc.
-" let g:osv_plug_lsp = 1
+" let g:osv_plug_lsp = 0

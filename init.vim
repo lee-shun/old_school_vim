@@ -176,6 +176,11 @@ elseif g:osv_file_explorer == 'vimfiler'
     " vimfiler is ok
 endif
 
+if g:osv_complete_engine == 'coc' && g:osv_file_explorer != 'none'
+    let g:osv_file_explorer = 'none'
+    call OsvWarn("coc.nvim already has the coc-explorer! No need to install ".g:osv_file_explorer."!")
+endif
+
 " ===
 " === check the complete engine
 " ===
@@ -199,7 +204,6 @@ if g:osv_complete_engine == 'coc'
         let g:osv_plug_lsp = 0
         call OsvWarn("coc.nvim already has the lsp support! No need to install vim-lsp!")
     endif
-
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
     if !has('nvim-0.3') && !has('patch-8.2-1978')
