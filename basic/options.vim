@@ -63,7 +63,7 @@ if !has('nvim')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-set laststatus=2
+set laststatus=0
 set cmdheight=1
 set spelllang=en,cjk  " Spell languages
 set spellfile=$CONF_PATH/spell/en.utf-8.add
