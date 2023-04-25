@@ -30,6 +30,7 @@ if empty(glob(s:dein_dir))
     let s:osv_setup = 1
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
     OsvInfo("Install dein" g:osv_dein_version "to" s:dein_src)
+    call input("Press any keys to continue...")
 endif
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
 
@@ -77,6 +78,7 @@ augroup END
 if s:osv_setup == 1
     call dein#update()
     OsvInfo("Install the plugins with dein#update().")
+    call input("Press any keys to continue...")
     if has('nvim')
         silent exec "UpdateRemotePlugins"
     endif
@@ -101,7 +103,8 @@ if s:osv_setup == 0
                 if l:git_clean == 1
                     call system("!cd ".$CONF_PATH." && git pull")
                 else
-                    OsvInfo("git status is not clean!")
+                    OsvInfo("git status is not clean! Skip!")
+                    call input("Press any keys to continue...")
                 endif
             endif
 
