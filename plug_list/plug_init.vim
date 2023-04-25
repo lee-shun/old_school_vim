@@ -26,8 +26,14 @@ let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
 
 " install dein for the first time
 let s:osv_setup = 0
-if empty(glob(s:dein_dir))
+if empty(glob(s:dein_dir)) && !exists($CONF_PATH.'/custom_modules.vim')
     let s:osv_setup = 1
+    " copy the custom_modules out.
+    silent exec "!cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim"
+    OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
+    call input("Press any keys to continue...")
+
+    " install dein.vim
     silent exec "!git clone --depth 1 --branch" g:osv_dein_version " https://github.com/Shougo/dein.vim " s:dein_src
     OsvInfo("Install dein" g:osv_dein_version "to" s:dein_src)
     call input("Press any keys to continue...")

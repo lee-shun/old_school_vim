@@ -72,10 +72,9 @@ endif
 " ===
 " === get the modules
 " ===
+" defaults
 let g:osv_ulti_mode = 1
-" use general plugs
 let g:osv_plug_general = 1
-" some python and filetype-based
 let g:osv_plug_advanced = 0
 " possible value: fzf, leaderF, ctrlp, clap and none. .
 let g:osv_finder = 'none'
@@ -83,9 +82,9 @@ let g:osv_finder = 'none'
 let g:osv_file_explorer = 'none'
 " possible value: coc, deoplete, asycomplete and none.
 let g:osv_complete_engine = 'none'
-" vim-lsp as backend of the above frameworks (Not for coc).
 let g:osv_plug_lsp = 0
 
+" customs
 if exists($CONF_PATH.'/custom_modules.vim')
     source $CONF_PATH/custom_modules.vim
 endif
