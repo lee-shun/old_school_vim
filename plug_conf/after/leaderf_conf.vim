@@ -8,3 +8,7 @@ noremap <leader>fW :<C-U>Leaderf! rg --recall<CR>
 
 noremap <leader>fq :<C-U><C-R>=printf("Leaderf loclist %s", "")<CR><CR>
 noremap <leader>fQ :<C-U><C-R>=printf("Leaderf quickfix %s", "")<CR><CR>
+
+" ===
+" === TODO: leaderf + vim-templates
+" ===

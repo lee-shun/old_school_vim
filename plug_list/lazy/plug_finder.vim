@@ -21,7 +21,9 @@ elseif g:osv_finder == 'fzf'
     endif
     call add(s:fzf_vim_config.depends, 'fzf')
 
-    call add(s:fzf_vim_config.depends, 'vim-templates')
+    if dein#tap('vim-templates')
+        call add(s:fzf_vim_config.depends, 'vim-templates')
+    endif
 
     if g:osv_complete_engine == 'coc'
         call dein#add('antoinemadec/coc-fzf', {'lazy':1,
@@ -43,7 +45,7 @@ elseif g:osv_finder == 'leaderf'
                 \'hook_source':'source $CONF_PATH/plug_conf/before/leaderf_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderf_conf.vim'
                 \}
-    if g:osv_complete_engine != 'coc'
+    if dein#tap('ultisnips')
         call dein#add('skywind3000/Leaderf-snippet', {'lazy':1,
                     \'depends':['ultisnips'],
                     \})
