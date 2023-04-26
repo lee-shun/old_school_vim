@@ -1,7 +1,6 @@
 call dein#add('tibabit/vim-templates', {'lazy':1,
             \'on_cmd':['TemplateAutoInit', 'TemplateInit', 'TemplateExpand'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/templates_conf.vim',
-            \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/templates_conf.vim',
             \})
 
 call dein#add('liuchengxu/vista.vim', {'lazy':1,
