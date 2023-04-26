@@ -21,10 +21,6 @@ elseif g:osv_finder == 'fzf'
     endif
     call add(s:fzf_vim_config.depends, 'fzf')
 
-    call dein#add('tibabit/vim-templates', {'lazy':1,
-                \'hook_source':'source $CONF_PATH/plug_conf/before/templates_conf.vim',
-                \'hook_post_source' : 'source $CONF_PATH/plug_conf/after/templates_conf.vim',
-                \})
     call add(s:fzf_vim_config.depends, 'vim-templates')
 
     if g:osv_complete_engine == 'coc'
@@ -37,24 +33,24 @@ elseif g:osv_finder == 'fzf'
 
     call dein#add('junegunn/fzf.vim', s:fzf_vim_config)
 
-elseif g:osv_finder == 'leaderF'
+elseif g:osv_finder == 'leaderf'
 
-    let s:leaderF_config = {'lazy':1,
+    let s:leaderf_config = {'lazy':1,
                 \'depends': [],
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':'Leaderf',
                 \'hook_done_update':'LeaderfInstallCExtension',
-                \'hook_source':'source $CONF_PATH/plug_conf/before/leaderF_conf.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderF_conf.vim'
+                \'hook_source':'source $CONF_PATH/plug_conf/before/leaderf_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderf_conf.vim'
                 \}
     if g:osv_complete_engine != 'coc'
         call dein#add('skywind3000/Leaderf-snippet', {'lazy':1,
                     \'depends':['ultisnips'],
                     \})
-        call add(s:leaderF_config.depends, 'Leaderf-snippet')
+        call add(s:leaderf_config.depends, 'Leaderf-snippet')
     endif
 
-    call dein#add('Yggdroot/LeaderF', s:leaderF_config)
+    call dein#add('Yggdroot/LeaderF', s:leaderf_config)
 
 elseif g:osv_finder == 'ctrlp'
 

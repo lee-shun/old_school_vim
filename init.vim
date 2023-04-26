@@ -76,7 +76,7 @@ endif
 let g:osv_ulti_mode = 1
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
-" possible value: fzf, leaderF, ctrlp, clap and none. .
+" possible value: fzf, leaderf, ctrlp, clap and none. .
 let g:osv_finder = 'none'
 " possible value: fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'none'
@@ -123,19 +123,19 @@ elseif g:osv_finder == 'ctrlp'
     if !executable('ag')
         call OsvWarn("Need the silver searcher (ag) to run ctrlp!")
     endif
-elseif g:osv_finder == 'leaderF'
+elseif g:osv_finder == 'leaderf'
     if !has('patch-7.4-1126') && !has('nvim')
-        call OsvWarn("Need nvim or vim >= 7.4.1126 to use leaderF. Skip!")
+        call OsvWarn("Need nvim or vim >= 7.4.1126 to use leaderf. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !has('python3')
-        call OsvWarn("Need python3 to use leaderF. Skip!")
+        call OsvWarn("Need python3 to use leaderf. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !executable('rg')
-        call OsvWarn("Need the ripgrep (rg) to run leaderF!")
+        call OsvWarn("Need the ripgrep (rg) to run leaderf!")
     endif
 elseif g:osv_finder == 'clap'
     if g:os_architect == 'aarch64'

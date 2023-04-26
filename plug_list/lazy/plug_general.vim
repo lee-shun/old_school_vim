@@ -56,7 +56,7 @@ call dein#add('junegunn/vim-peekaboo', {'lazy':1,
             \})
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_event': ['WinEnter'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/rooter_conf.vim'
             \})
 

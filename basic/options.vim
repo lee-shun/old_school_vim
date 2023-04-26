@@ -10,7 +10,7 @@ if &compatible
     set nocompatible " Be iMproved
 endif
 let g:mapleader = ' '
-set autochdir
+set noautochdir
 set autoread
 
 " for gvim and neovim gui, currently dotnvim or neovide
