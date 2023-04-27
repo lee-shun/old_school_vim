@@ -136,6 +136,9 @@
 | `y`  | find yank                                  |
 | `q`  | find location list                         |
 | `Q`  | find quickfix list                         |
+| `c`  | find change                                |
+| `a`  | list all of the providers, pickers         |
+| `k`  | find function entrance                     |
 
 ### File Explorer
 

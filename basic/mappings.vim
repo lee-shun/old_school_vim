@@ -38,7 +38,6 @@ inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 " ===
 noremap <LEADER>v :e $CONF_PATH/init.vim<CR>
 nnoremap <F2> :set relativenumber! number!<CR>
-nnoremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 nnoremap <C-h> :set hlsearch!<CR>
 
 
