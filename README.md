@@ -1,30 +1,65 @@
 # <p align="center">![tittle](./img/osv.png)</p>
 
-> Due to my study and work, I always want to use vim under different environments. So, I always choose the plugins with
-> good compatibility. In my opinion, I prefer the plugins written in `vimscripts > vimscripts + python3 > lua`.Comparing
-> with today's neovim lua trending, The plugins in this configuration are pretty "**Old-School**"!
+> Due to my study and work, I always want to use vim under different environments💻. So, I always choose the plugins
+> with considering compatibility. Comparing with fancy and breaking new "lua" trending, The plugins in this configuration are
+> pretty "**Old-School**"🏫!
 
-**In this vim/neovim configuration, I tried to:**
+**Features:**
 
-- choose and config the plugins with good compatibility, which can work under `Linux (x86_64, aarch64)`,
-  `Windows (x86_64)` and even `git bash`.
-- use as less dependences as possible to accomplish the functions.
-- keep the original vim keybindings and operations.
-- use `dein.vim` to lazy load most of the plugins.
-- daily update.
+- Functions are well arranged into different modules, which can be customized in `custom_modules.vim`.
+- Good compatibility to different platform (Windows, Linux) of different architectures (x86, x64, aarch64) with different
+  vim/neovim version.
+- Original vim keybindings and operations.
+- Fast startup time using `dein.vim` to lazy load most of the plugins.
+- Daily update.
 
-## Requirements
+## Recommended Vim/Neovim Version
 
-### Vim & Neovim Version (recommend)
+- Vim 8 or neovim.
+- The vim/nvim version will be checked _automatically_ when using different modules.
 
-- vim 8 if use `Ulti-Mode`, vim 7 if use `Mini-Mode`
-- neovim 4.2 or later, no matter what modes.
+## Installation
+
+### Before Installation
+
+- 🆘 Using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
+  installation. Under this situation, tweaking manually may be needed.
+
+### Installation Steps
+
+0. **Optional dependences:**
+
+   - `has('python3')` (if using the advanced plugins.).
+   - rg, ag for finders (fzf, leaderf, clap and ctrlp).
+   - some language servers for `coc.nvim` or `vim-lsp`.
+   - `nodejs` for `coc.nvim`.
+
+1. **Clone the repo to the path:**
+
+   - **For Windows:**
+     - Neovim configuration path: `~/Appdata/Local/nvim`
+     - Vim configuration path(For Git Bash): `~/.vim`
+     - Gvim configuration path: `~/vimfiles`
+   - **For Linux:**
+     - Neovim configuration path: `~/.config/nvim`
+     - Vim configuration path: `~/.vim`
+
+2. **Choose your modules** with the global variables defined in `custom_modules.vim`
+
+   - This `custom_modules.vim` is generated _automatically_ after installation.
+
+3. Open vim/nvim and wait for the `dein` to install all the plugins.
+
+   - `:call dein#recache_runtime_path()` to refresh the runtime path.
+   - `:UpdateRemotePlugins` may also needed for nvim.
+
+4. Restart vim/nvim
 
 ## Quick Start
 
-- take a reference or just use the `config_env.sh` to install the dependencies...
+- Take a reference or just use the `config_env.sh` to install the dependencies...
 
-- **Mini-Mode:** set `g:osv_ulti_mode` to `0` in [mode_control.vim](./mode_control.vim)
+- **Mini-Mode:** set `g:osv_ulti_mode` to `0` in [custom_modules.vim](./custom_modules.vim)
 
   > use vim as an excellent text editor!
 
@@ -32,7 +67,7 @@
   - Fully portable.
   - Pure vimscripts.
 
-- **Ulti-Mode** set `g:osv_ulti_mode` to `1` in [mode_control.vim](./mode_control.vim)
+- **Ulti-Mode** set `g:osv_ulti_mode` to `1` in [custom_modules.vim](./custom_modules.vim)
 
   - `g:osv_plug_general = 1`
 
@@ -42,53 +77,23 @@
 
     - file type based special plugins.
 
-  - `g:osv_plug_coc = 1`
+  - `g:osv_finder`
 
-    - use `coc.nvim` as `lsp + completion engine` and much more.
+    - choose the popular finders from `fzf`, `leaderf`, `clap` and `ctrlp`.
+    - set to `none` to disable.
 
-  - choose **one** from `completion engine`:
+  - `g:osv_file_explorer`
 
-    - `g:osv_plug_deoplete`
-    - `g:osv_plug_asyncomplete`
+    - choose the popular file explorer from `fern`, `defx` and `vimfiler`.
+    - set to `none` to disable.
+
+  - `g:osv_complete_engine`
+
+    - choose the completion engine from `coc`, `deoplete` and `asyncomplete`.
+    - set to `none` to disable.
 
   - `g:osv_plug_lsp = 1`
-    - language-sever based code completion, etc.
-
-## Installation
-
-### Before Installation
-
-**NOTE:**
-
-  - 🆘 using `Anaconda3` instead of the system default `python` may cause problems with python path and `pynvim`
-    installation. Under this situation, tweaking manually may be needed.
-
-  - the support of `coc.nvim` on `aarch64` is not good, try to avoid this.
-
-### Installation Steps
-
-0. **the dependences:**
-
-   - `python 3`, if `g:osv_plug_advanced = 1` or `g:osv_plug_deoplete = 1`
-   - `nodejs`, if `g:osv_plug_coc = 1`
-   - some language servers (clangd, ccls, pyright etc.), if `g:osv_plug_lsp = 1` or `g:osv_plug_coc = 1`
-   - You can also use the bash files under the `env/` folder.
-
-1. **clone the repo to the path:**
-   - **For Windows:**
-     - Neovim configuration path: `~/Appdata/Local/nvim`
-     - Vim configuration path(For Git Bash): `~/.vim`
-     - Gvim configuration path: `~/vimfiles`
-   - **For Linux:**
-     - Neovim configuration path: `~/.config/nvim`
-     - Vim configuration path: `~/.vim`
-
-2. **choose your mode** with the global variables defined in [mode_control.vim](./mode_control.vim)
-
-3. open vim/nvim and wait for the `dein` to install all the plugins.
-   - `:UpdateRemotePlugins` may also needed for nvim.
-
-4. restart vim/nvim
+    - use `vim-lsp` to provide the lsp support.
 
 ## Screen Shots
 
@@ -101,14 +106,36 @@
 
 ### Ulti-Mode & Advanced Features h
 
-**NOTE:** Please notice that the Gvim on Windows will confuse the Git Bash with
-its own vim.
-
 | **Environment**                                                          | **Screen Shots**                      |
 | ------------------------------------------------------------------------ | ------------------------------------- |
 | <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti.png) |
 
 ## Keymaps
+
+### Finders
+
+`<leader>f+<keys>`: toggle finder with:
+
+| keys | functions                                  |
+| ---- | ------------------------------------------ |
+| `b`  | find buffers                               |
+| `d`  | find diagnostic                            |
+| `f`  | find files                                 |
+| `j`  | find jumplist                              |
+| `l`  | find lines (current or the active buffers) |
+| `m`  | find frequency (mru)                       |
+| `n`  | find notice (messages)                     |
+| `o`  | find old files (file history)              |
+| `p`  | find projects                              |
+| `r`  | find register                              |
+| `s`  | find sessions                              |
+| `t`  | find templates                             |
+| `u`  | find undo                                  |
+| `w`  | find word                                  |
+| `W`  | find previous word                         |
+| `y`  | find yank                                  |
+| `q`  | find location list                         |
+| `Q`  | find quickfix list                         |
 
 ### File Explorer
 
@@ -184,4 +211,4 @@ its own vim.
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 三 19 4月 2023 09:43:35 下午
+> Last Modified : 三 19 4 月 2023 09:43:35 下午
