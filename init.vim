@@ -74,7 +74,6 @@ endif
 " ===
 
 " defaults
-let g:osv_mode = 1
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
 " possible value: fzf, leaderf, ctrlp, clap and none. .
@@ -93,23 +92,6 @@ else
     silent exec "!cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim"
     call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("Press any keys to continue...")
-endif
-
-" ===
-" === check the baisc mode
-" ===
-if g:osv_mode != 'mini' && g:osv_mode != 'ulti'
-    call OsvWarn("Wrong osv mode. Skip!")
-    let g:osv_mode = 'mini'
-    finish
-endif
-" don't use any of the plugs if ulti-mode is deactived
-if g:osv_mode == 'mini'
-    let g:osv_plug_general = 0
-    let g:osv_file_explorer = 'none'
-    let g:osv_plug_advanced = 0
-    let g:osv_complete_engine = 'none'
-    let g:osv_vim_lsp = 0
 endif
 
 " ===
@@ -196,7 +178,6 @@ endif
 " ===
 " === check the complete engine
 " ===
-
 if g:osv_complete_engine == 'coc'
     " don't use coc under aarch64
     if !executable('npm')
@@ -257,9 +238,7 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === plug
 " ===
-if g:osv_mode == 'ulti'
-    source $CONF_PATH/plug_list/plug_init.vim
-endif
+source $CONF_PATH/plug_list/plug_init.vim
 
 filetype plugin indent on
 syntax enable

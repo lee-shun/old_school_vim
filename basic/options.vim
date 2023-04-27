@@ -63,7 +63,11 @@ if !has('nvim')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-set laststatus=0
+if g:osv_plug_general == 0
+    set laststatus=2
+else
+    set laststatus=0
+endif
 set cmdheight=1
 set spelllang=en,cjk  " Spell languages
 set spellfile=$CONF_PATH/spell/en.utf-8.add
@@ -175,7 +179,7 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 " === build-in netrw
 " ===
 "
-if g:osv_mode == 'mini'
+if g:osv_file_explorer == 'none'
     let g:netrw_hide = 1
     let g:netrw_liststyle = 3
     let g:netrw_banner = 0
@@ -273,7 +277,7 @@ endif
 " ===
 " === colorscheme
 " ===
-if g:osv_mode == 'mini' || g:osv_plug_general == 0
+if g:osv_plug_general == 0
     set background=dark
     colorscheme seoul256
 endif
