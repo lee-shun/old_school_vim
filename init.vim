@@ -87,6 +87,11 @@ let g:osv_plug_lsp = 0
 " customs
 if !empty(glob($CONF_PATH.'/custom_modules.vim'))
     source $CONF_PATH/custom_modules.vim
+else
+    " copy the custom_modules out.
+    silent exec "!cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim"
+    call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
+    call input("Press any keys to continue...")
 endif
 
 " ===
