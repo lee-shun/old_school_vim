@@ -175,7 +175,7 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 " === build-in netrw
 " ===
 "
-if g:osv_mode == 0
+if g:osv_mode == 'mini'
     let g:netrw_hide = 1
     let g:netrw_liststyle = 3
     let g:netrw_banner = 0
@@ -273,7 +273,7 @@ endif
 " ===
 " === colorscheme
 " ===
-if g:osv_mode == 0 || g:osv_plug_general == 0
+if g:osv_mode == 'mini' || g:osv_plug_general == 0
     set background=dark
     colorscheme seoul256
 endif
