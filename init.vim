@@ -74,7 +74,7 @@ endif
 " ===
 
 " defaults
-let g:osv_ulti_mode = 1
+let g:osv_mode = 1
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
 " possible value: fzf, leaderf, ctrlp, clap and none. .
@@ -83,7 +83,7 @@ let g:osv_finder = 'none'
 let g:osv_file_explorer = 'none'
 " possible value: coc, deoplete, asycomplete and none.
 let g:osv_complete_engine = 'none'
-let g:osv_plug_lsp = 0
+let g:osv_vim_lsp = 0
 
 " customs
 if !empty(glob($CONF_PATH.'/custom_modules.vim'))
@@ -99,12 +99,12 @@ endif
 " === check the baisc mode
 " ===
 " don't use any of the plugs if ulti-mode is deactived
-if g:osv_ulti_mode == 0
+if g:osv_mode == 0
     let g:osv_plug_general = 0
     let g:osv_file_explorer = 'none'
     let g:osv_plug_advanced = 0
     let g:osv_complete_engine = 'none'
-    let g:osv_plug_lsp = 0
+    let g:osv_vim_lsp = 0
 endif
 
 " ===
@@ -207,9 +207,9 @@ if g:osv_complete_engine == 'coc'
         finish
     endif
 
-    if g:osv_plug_lsp == 1
+    if g:osv_vim_lsp == 1
         call OsvWarn("coc.nvim already has the lsp support! No need to install vim-lsp!")
-        let g:osv_plug_lsp = 0
+        let g:osv_vim_lsp = 0
     endif
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
@@ -226,9 +226,9 @@ elseif g:osv_complete_engine == 'asyncomplete'
         finish
     endif
 elseif g:osv_complete_engine == 'none'
-    if g:osv_plug_lsp == 1
+    if g:osv_vim_lsp == 1
         call OsvWarn("Please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!")
-        let g:osv_plug_lsp = 0
+        let g:osv_vim_lsp = 0
     endif
 endif
 
@@ -237,9 +237,9 @@ endif
 " ===
 
 " don't use lsp with vim under version 8.0
-if !has('nvim') && v:version< 800 && g:osv_plug_lsp == 1
+if !has('nvim') && v:version< 800 && g:osv_vim_lsp == 1
     call OsvWarn("For vim-lsp: vim>=8.0 or nvim! Skip!")
-    let g:osv_plug_lsp = 0
+    let g:osv_vim_lsp = 0
     finish
 endif
 
@@ -252,7 +252,7 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === plug
 " ===
-if g:osv_ulti_mode == 1
+if g:osv_mode == 1
     source $CONF_PATH/plug_list/plug_init.vim
 endif
 

@@ -9,6 +9,6 @@ let g:spaceline_diff_tool = 'vim-signify'
 
 if g:osv_complete_engine == 'coc'
     let g:spaceline_diagnostic_tool = 'coc'
-elseif g:osv_plug_lsp == 1
+elseif g:osv_vim_lsp == 1
     let g:spaceline_diagnostic_tool = 'ale'
 endif

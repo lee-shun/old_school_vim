@@ -13,6 +13,21 @@
 - Fast startup time using `dein.vim` to lazy load most of the plugins.
 - Daily update.
 
+## Screen Shots
+
+### Mini-Mode
+
+| **Environment**                                                          | **Screen Shots**               |
+| ------------------------------------------------------------------------ | ------------------------------ |
+| <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
+| <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
+
+### Ulti-Mode & Advanced Features
+
+| **Environment**                                                          | **Screen Shots**                      |
+| ------------------------------------------------------------------------ | ------------------------------------- |
+| <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti.png) |
+
 ## Recommended Vim/Neovim Version
 
 - Vim 8 or neovim.
@@ -95,21 +110,6 @@
 
   - `g:osv_plug_lsp = 1`
     - use `vim-lsp` to provide the lsp support.
-
-## Screen Shots
-
-### Mini-Mode
-
-| **Environment**                                                          | **Screen Shots**               |
-| ------------------------------------------------------------------------ | ------------------------------ |
-| <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
-| <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
-
-### Ulti-Mode & Advanced Features
-
-| **Environment**                                                          | **Screen Shots**                      |
-| ------------------------------------------------------------------------ | ------------------------------------- |
-| <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti.png) |
 
 ## Keymaps
 
@@ -236,4 +236,4 @@ TODO:
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 三 19 4 月 2023 09:43:35 下午
+> Last Modified : 四 27 4月 2023 09:55:49 上午
