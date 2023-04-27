@@ -15,17 +15,10 @@
 
 ## Screen Shots
 
-### Mini-Mode
-
 | **Environment**                                                          | **Screen Shots**               |
 | ------------------------------------------------------------------------ | ------------------------------ |
 | <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
 | <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
-
-### Ulti-Mode & Advanced Features
-
-| **Environment**                                                          | **Screen Shots**                      |
-| ------------------------------------------------------------------------ | ------------------------------------- |
 | <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti.png) |
 
 ## Recommended Vim/Neovim Version
@@ -43,6 +36,8 @@
 ### Installation Steps
 
 0. **Optional dependences:**
+
+    **NOTE:** Take a reference or just use the `config_env.sh` to install the dependencies...
 
    - `has('python3')` (if using the advanced plugins.).
    - rg, ag for finders (fzf, leaderf, clap and ctrlp).
@@ -72,44 +67,35 @@
 
 ## Quick Start
 
-- Take a reference or just use the `config_env.sh` to install the dependencies...
+- `g:osv_plug_general = 1`
 
-- **Mini-Mode:** set `g:osv_ulti_mode` to `0` in [custom_modules.vim](./custom_modules.vim)
+  - general editor enhancement plugins.
+  - zero dependencies.
+  - pure vimscripts.
 
-  > use vim as an excellent text editor!
+- `g:osv_plug_advanced = 1`
 
-  - Zero dependencies.
-  - Fully portable.
-  - Pure vimscripts.
+  - file type based plugins, may also needs some dependences.
 
-- **Ulti-Mode** set `g:osv_ulti_mode` to `1` in [custom_modules.vim](./custom_modules.vim)
+- `g:osv_finder`
 
-  - `g:osv_plug_general = 1`
+  - **possible values:** `fzf`, `leaderf`, `clap` and `ctrlp`.
+  - need `ag` and `rg` for searching.
+  - set to `none` to disable.
 
-    - general editor enhancement plugins.
+- `g:osv_file_explorer`
 
-  - `g:osv_plug_advanced = 1`
+  - **possible values:** `coc-explorer`, `fern`, `defx` and `vimfiler`.
+  - `coc-explorer` needs the `coc` as the completion engine.
+  - set to `none` to disable.
 
-    - file type based special plugins.
+- `g:osv_complete_engine`
 
-  - `g:osv_finder`
+  - **possible values:** `coc`, `deoplete` and `asyncomplete`.
+  - set to `none` to disable.
 
-    - **possible values:** `fzf`, `leaderf`, `clap` and `ctrlp`.
-    - set to `none` to disable.
-
-  - `g:osv_file_explorer`
-
-    - **possible values:** `coc-explorer`, `fern`, `defx` and `vimfiler`.
-    - `coc-explorer` needs the `coc` as the completion engine.
-    - set to `none` to disable.
-
-  - `g:osv_complete_engine`
-
-    - **possible values:** `coc`, `deoplete` and `asyncomplete`.
-    - set to `none` to disable.
-
-  - `g:osv_plug_lsp = 1`
-    - use `vim-lsp` to provide the lsp support.
+- `g:osv_plug_lsp = 1`
+  - use `vim-lsp` to provide the lsp support.
 
 ## Keymaps
 
