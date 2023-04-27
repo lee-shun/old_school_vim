@@ -84,7 +84,7 @@
 
   - `g:osv_file_explorer`
 
-    - choose the popular file explorer from `fern`, `defx` and `vimfiler`.
+    - choose the popular file explorer from  `coc-explorer`, `fern`, `defx` and `vimfiler`.
     - set to `none` to disable.
 
   - `g:osv_complete_engine`
@@ -104,7 +104,7 @@
 | <kbd>Ubuntu 18.04</kbd> + <kbd>Vim 8.2</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
 | <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
 
-### Ulti-Mode & Advanced Features h
+### Ulti-Mode & Advanced Features
 
 | **Environment**                                                          | **Screen Shots**                      |
 | ------------------------------------------------------------------------ | ------------------------------------- |
