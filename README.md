@@ -84,7 +84,7 @@
 
   - `g:osv_file_explorer`
 
-    - **possible values:**  `coc-explorer`, `fern`, `defx` and `vimfiler`.
+    - **possible values:** `coc-explorer`, `fern`, `defx` and `vimfiler`.
     - `coc-explorer` needs the `coc` as the completion engine.
     - set to `none` to disable.
 
@@ -140,6 +140,7 @@
 | `c`  | find change                                |
 | `a`  | list all of the providers, pickers         |
 | `k`  | find function entrance                     |
+| `p`  | resume previous providers, pickers         |
 
 ### File Explorer
 
