@@ -208,6 +208,7 @@ nnoremap <leader>fQ :Quickfix<CR>
 nnoremap <leader>fq :LocationList<CR>
 nnoremap <leader>fr :Registers<CR>
 nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fm :History<CR>
 nnoremap <leader>fo :History<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fw :Rg<CR>
