@@ -14,7 +14,7 @@ let s:spaceline_conf = {'lazy':1,
 if g:osv_complete_engine == 'coc'
     call add(s:spaceline_conf.depends, 'coc.nvim')
 endif
-if g:osv_plug_lsp == 1
+if g:osv_vim_lsp == 1
     call add(s:spaceline_conf.depends, 'vim-lsp-ale')
 endif
 call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)

@@ -13,7 +13,7 @@ if g:os_architect != 'aarch64'
     endif
 endif
 
-if g:osv_plug_lsp == 1
+if g:osv_vim_lsp == 1
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
 endif
 
