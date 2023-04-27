@@ -98,8 +98,13 @@ endif
 " ===
 " === check the baisc mode
 " ===
+if g:osv_mode != 'mini' && g:osv_mode != 'ulti'
+    call OsvWarn("Wrong osv mode. Skip!")
+    let g:osv_mode = 'mini'
+    finish
+endif
 " don't use any of the plugs if ulti-mode is deactived
-if g:osv_mode == 0
+if g:osv_mode == 'mini'
     let g:osv_plug_general = 0
     let g:osv_file_explorer = 'none'
     let g:osv_plug_advanced = 0
@@ -252,7 +257,7 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === plug
 " ===
-if g:osv_mode == 1
+if g:osv_mode == 'ulti'
     source $CONF_PATH/plug_list/plug_init.vim
 endif
 
