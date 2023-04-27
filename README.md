@@ -79,17 +79,18 @@
 
   - `g:osv_finder`
 
-    - choose the popular finders from `fzf`, `leaderf`, `clap` and `ctrlp`.
+    - **possible values:** `fzf`, `leaderf`, `clap` and `ctrlp`.
     - set to `none` to disable.
 
   - `g:osv_file_explorer`
 
-    - choose the popular file explorer from  `coc-explorer`, `fern`, `defx` and `vimfiler`.
+    - **possible values:**  `coc-explorer`, `fern`, `defx` and `vimfiler`.
+    - `coc-explorer` needs the `coc` as the completion engine.
     - set to `none` to disable.
 
   - `g:osv_complete_engine`
 
-    - choose the completion engine from `coc`, `deoplete` and `asyncomplete`.
+    - **possible values:** `coc`, `deoplete` and `asyncomplete`.
     - set to `none` to disable.
 
   - `g:osv_plug_lsp = 1`
