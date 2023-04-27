@@ -115,6 +115,8 @@
 
 ### Finders
 
+#### Invoke the finders
+
 `<leader>f+<keys>`: toggle finder with:
 
 | keys | functions                                  |
@@ -142,9 +144,27 @@
 | `k`  | find function entrance                     |
 | `p`  | resume previous providers, pickers         |
 
+#### In the finder buffer
+
+##### insert mode
+
+| keys    | functions     |
+| ------- | ------------- |
+| `<C-j>` | next item     |
+| `<C-k>` | previous item |
+| `<CR>`  | confirm       |
+
+##### normal mode
+
+TODO:
+
 ### File Explorer
 
+#### Invoke file explorer
+
 `<leader>t`: toggle file explorer
+
+#### In the file explorer buffer
 
 | keys    | functions                                            |
 | ------- | ---------------------------------------------------- |
