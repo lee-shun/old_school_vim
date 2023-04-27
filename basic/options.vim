@@ -228,7 +228,6 @@ endif
 " === Terminal Behaviors
 " ===
 tnoremap <C-N> <C-\><C-N>
-nnoremap <F12> :ToggleTerm<CR>
 if exists('##TerminalOpen')
     augroup term_open_settings
         autocmd!

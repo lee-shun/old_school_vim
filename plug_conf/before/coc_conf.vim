@@ -15,7 +15,6 @@ let g:coc_global_extensions = [
             \ 'coc-xml',
             \ 'coc-yaml',
             \ 'coc-vimlsp',
-            \ 'coc-snippets',
             \ 'coc-lists',
             \ 'coc-marketplace',
             \ 'coc-translator',
@@ -29,6 +28,10 @@ let g:coc_global_extensions = [
             \ 'coc-yank',
             \ 'coc-floaterm',
             \]
+
+if dein#tap('vim-snippets')
+    call add(g:coc_global_extensions, 'coc-snippets')
+endif
 
 if g:osv_file_explorer == 'coc-exporter'
     call add(g:coc_global_extensions, 'coc-explorer')
