@@ -13,8 +13,7 @@
 " possible value: fzf, leaderf, ctrlp, clap and none. .
 " let g:osv_finder = 'none'
 
-" possible value: fern, defx, vimfiler and none.
-" Cause coc has coc-explorer, no need to install these filer agian if use coc.
+" possible value: coc-explorer, fern, defx, vimfiler and none.
 " let g:osv_file_explorer = 'none'
 
 " possible value: coc, deoplete, asycomplete and none.
