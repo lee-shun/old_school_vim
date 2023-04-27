@@ -78,7 +78,7 @@ let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
 " possible value: fzf, leaderf, ctrlp, clap and none. .
 let g:osv_finder = 'none'
-" possible value: fern, defx, vimfiler and none.
+" possible value: coc-explorer, fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'none'
 " possible value: coc, deoplete, asycomplete and none.
 let g:osv_complete_engine = 'none'
@@ -156,7 +156,13 @@ endif
 " ===
 " === check the file explorer
 " ===
-if g:osv_file_explorer == 'defx'
+if g:osv_file_explorer == 'coc-explorer'
+    if g:osv_complete_engine != 'coc'
+        call OsvWarn("coc-explorer needs the coc.nvim to be used properly. Skip!")
+        let g:osv_file_explorer = 'none'
+        finish
+    endif
+elseif g:osv_file_explorer == 'defx'
     if has('nvim-0.4') || v:version > 802 " according to the repo
         " defx.nvim is ok
     else
@@ -174,11 +180,6 @@ elseif g:osv_file_explorer == 'fern'
     endif
 elseif g:osv_file_explorer == 'vimfiler'
     " vimfiler is ok
-endif
-
-if g:osv_complete_engine == 'coc' && g:osv_file_explorer != 'none'
-    call OsvWarn("coc.nvim already has the coc-explorer! No need to install ".g:osv_file_explorer."!")
-    let g:osv_file_explorer = 'none'
 endif
 
 " ===

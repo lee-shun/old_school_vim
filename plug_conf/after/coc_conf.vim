@@ -75,23 +75,33 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " coc-clangd
-augroup CocClangSettings
-    autocmd!
-    autocmd FileType c,cpp nnoremap <leader>j :CocCommand clangd.switchSourceHeader<cr>
-augroup END
+if index(g:coc_global_extensions, 'coc-clangd') >= 0
+    augroup CocClangSettings
+        autocmd!
+        autocmd FileType c,cpp nnoremap <leader>j :CocCommand clangd.switchSourceHeader<cr>
+    augroup END
+endif
 
 " coc-yank
-nnoremap <silent> <space>ya  :<C-u>CocList -A --normal yank<cr>
+if index(g:coc_global_extensions, 'coc-yank') >= 0
+    nnoremap <silent> <space>ya  :<C-u>CocList -A --normal yank<cr>
+endif
 
 " coc-highlight
-autocmd CursorHold * silent call CocActionAsync('highlight')
+if index(g:coc_global_extensions, 'coc-highlight') >= 0
+    autocmd CursorHold * silent call CocActionAsync('highlight')
+endif
 
 " coc-explorer
-noremap <leader>t :CocCommand explorer<CR>
+if index(g:coc_global_extensions, 'coc-exporer') >= 0
+    noremap <leader>t :CocCommand explorer<CR>
+endif
 
 " coc-translator
-nmap <leader>s <Plug>(coc-translator-p)
-vmap <leader>s <Plug>(coc-translator-pv)
+if index(g:coc_global_extensions, 'coc-translator') >= 0
+    nmap <leader>s <Plug>(coc-translator-p)
+    vmap <leader>s <Plug>(coc-translator-pv)
+endif
 
 " hightlight for member functions
 hi CocSemProperty ctermfg=LightRed guifg=LightRed  cterm=none gui=none
