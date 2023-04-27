@@ -32,6 +32,7 @@ inoremap <buffer> <expr> <localLeader><F10> Count(' \\tag{\d\+-\d\+}',Findtitle(
 inoremap <buffer> <localLeader>f <Esc>/<++><CR>:nohlsearch<CR>i<Del><Del><Del><Del>
 inoremap <buffer> <localLeader>F <Esc>/<++><CR>N:nohlsearch<CR>i<Del><Del><Del><Del>
 
+inoremap <buffer> <localLeader>h <++>
 inoremap <buffer> <localLeader>c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
 inoremap <buffer> <localLeader>m - [ ] 
 inoremap <buffer> <localLeader>p ![](<++>)<++><Esc>F]i
@@ -53,7 +54,6 @@ inoremap <buffer> <localLeader>5 #####<Space><Enter><++><Esc>kA
 " foot notes
 imap <localLeader>n [^<localLeader><F12>]<Esc>ya[Go<C-r>": <++><Esc><C-o>f]a
 
-
 " ===
 " === for equations
 " ===
@@ -66,9 +66,6 @@ imap <localLeader>q <ESC>o$$<Enter><Enter> \tag{<localLeader><F11>-<localLeader>
 inoremap <buffer> <LocalLeader>en \begin{ENV}<Enter><++><Enter>\end{ENV}<Esc>2kV3j:VMSearch ENV<CR>
 inoremap <buffer> <LocalLeader>ea \left\{<Enter>\begin{aligned}<Enter><Enter>\end{aligned}<Enter>\right.<Esc>2kA
 inoremap <buffer> <LocalLeader>em \left[<Enter>\begin{matrix}<Enter><Enter>\end{matrix}<Enter>\right]<Esc>2kA
-
-" for speed up \
-inoremap <buffer> \\ \\
 
 " for symbol
 inoremap <buffer> \frac \frac{}{<++>}<++><Esc>F{;a
@@ -107,3 +104,8 @@ function! AddPaperName()
     exec "norm 0f{lyw"
     exec "norm 3k0f[pf(p"
 endfunction
+
+" ===
+" === for the quick change
+" ===
+nnoremap <buffer> <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
