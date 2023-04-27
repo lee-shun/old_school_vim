@@ -1,4 +1,3 @@
-let g:coc_disable_startup_warning = 1
 " coc-plugins
 let g:coc_global_extensions = [
             \ 'coc-pyright',
@@ -19,7 +18,6 @@ let g:coc_global_extensions = [
             \ 'coc-snippets',
             \ 'coc-lists',
             \ 'coc-marketplace',
-            \ 'coc-explorer',
             \ 'coc-translator',
             \ 'coc-spell-checker',
             \ 'coc-syntax',
@@ -31,6 +29,11 @@ let g:coc_global_extensions = [
             \ 'coc-yank',
             \ 'coc-floaterm',
             \]
+
+if g:osv_file_explorer == 'coc-exporter'
+    call add(g:coc_global_extensions, 'coc-explorer')
+endif
+
 if has('nvim')
     call add(g:coc_global_extensions, 'coc-floatinput')
 endif
@@ -40,3 +43,5 @@ if g:os_architect != 'aarch64'
     call add(g:coc_global_extensions, 'coc-lightbulb')
     call add(g:coc_global_extensions, 'coc-tabnine')
 endif
+
+let g:coc_disable_startup_warning = 1

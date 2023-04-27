@@ -1,4 +1,4 @@
-if g:osv_file_explorer == 'none'
+if g:osv_file_explorer == 'none' || g:osv_file_explorer == 'coc-explorer'
     finish
 elseif g:osv_file_explorer == 'defx'
     call dein#add('kristijanhusak/defx-git', {'lazy':1,
