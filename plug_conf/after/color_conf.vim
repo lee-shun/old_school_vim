@@ -1,4 +1,0 @@
-" ===
-" === nord
-" ===
-colorscheme nord

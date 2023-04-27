@@ -276,7 +276,5 @@ endif
 " ===
 " === colorscheme
 " ===
-if g:osv_plug_general == 0
-    set background=dark
-    colorscheme seoul256
-endif
+set background=dark
+colorscheme chito

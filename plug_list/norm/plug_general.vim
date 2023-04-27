@@ -2,10 +2,6 @@ call dein#add('Shougo/dein.vim', {
             \'rev':g:osv_dein_version,
             \})
 
-call dein#add('arcticicestudio/nord-vim', {
-            \'hook_post_source':'source $CONF_PATH/plug_conf/after/color_conf.vim'
-            \})
-
 call dein#add('ryanoasis/vim-devicons')
 
 if has('nvim') || v:version > 800
