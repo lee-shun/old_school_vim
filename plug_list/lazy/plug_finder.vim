@@ -1,4 +1,4 @@
-if g:osv_finder == 'none'
+if g:osv_finder == 'none' || g:osv_finder == 'coc-lists'
     finish
 elseif g:osv_finder == 'fzf'
 

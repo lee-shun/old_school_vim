@@ -140,7 +140,6 @@
     "line_length": false,
     "html": false
   },
-  "coc.source.vimtex.enable": false,
   "coc.source.word.shortcut": "W",
   "clangd.enabled": false,
   "clangd.path": "clangd",

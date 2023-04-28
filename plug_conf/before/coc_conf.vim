@@ -1,7 +1,6 @@
 " coc-plugins
 let g:coc_global_extensions = [
             \ 'coc-pyright',
-            \ 'coc-vimtex',
             \ 'coc-texlab',
             \ 'coc-bibtex',
             \ 'coc-sh',
@@ -16,12 +15,12 @@ let g:coc_global_extensions = [
             \ 'coc-yaml',
             \ 'coc-vimlsp',
             \ 'coc-lists',
+            \ 'coc-git',
             \ 'coc-marketplace',
             \ 'coc-translator',
             \ 'coc-spell-checker',
             \ 'coc-syntax',
             \ 'coc-diagnostic',
-            \ 'coc-actions',
             \ 'coc-calc',
             \ 'coc-emoji',
             \ 'coc-word',
