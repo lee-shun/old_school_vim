@@ -277,4 +277,4 @@ endif
 " === colorscheme
 " ===
 set background=dark
-colorscheme chito
+colorscheme onehalfdark
