@@ -15,11 +15,9 @@
 
 ## Screen Shots
 
-| **Environment**                                                          | **Screen Shots**               |
-| ------------------------------------------------------------------------ | ------------------------------ |
-| <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/mini_linux.png) |
-| <kbd>Windows 10</kbd> + <kbd>Neovim 5.0</kbd> + <kbd>Alacritty</kbd>     | ![image](./img/mini_win.png)   |
-| <kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd> | ![image](./img/Linux_x86_64_ulti.png) |
+<kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd>
+
+![image](./img/Linux_x86_64_ulti.png)
 
 ## Recommended Vim/Neovim Version
 
