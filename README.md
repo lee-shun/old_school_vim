@@ -15,7 +15,7 @@
 
 ## Screen Shots
 
-<kbd>Ubuntu 20.04</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd>
+<kbd>Ubuntu 20.04 (x86_64)</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd>
 
 ![image](./img/Linux_x86_64_ulti.png)
 
