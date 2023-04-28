@@ -2,6 +2,10 @@ call dein#add('Shougo/dein.vim', {
             \'rev':g:osv_dein_version,
             \})
 
+call dein#add('joshdick/onedark.vim', {
+            \'hook_post_source':'colorscheme onedark'
+            \})
+
 call dein#add('ryanoasis/vim-devicons')
 
 if has('nvim') || v:version > 800
