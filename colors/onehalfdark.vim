@@ -84,7 +84,7 @@ call s:h("MoreMsg", s:fg, "", "")
 call s:h("WarningMsg", s:red, "", "")
 call s:h("Question", s:purple, "", "")
 
-call s:h("Pmenu", s:bg, s:comment_fg, "")
+call s:h("Pmenu", "", s:comment_fg, "")
 call s:h("PmenuSel", s:fg, s:blue, "")
 call s:h("PmenuSbar", "", s:selection, "")
 call s:h("PmenuThumb", "", s:fg, "")
