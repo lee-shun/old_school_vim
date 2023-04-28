@@ -109,20 +109,6 @@ call s:HL('Underlined',                     s:blue,     '',         'none')
 call s:HL('Error',                          s:red,      s:gray1,    'bold')
 call s:HL('Todo',                           s:orange,   s:gray1,    'bold')
 
-" CSS
-call s:HL('cssAttrComma',                   s:purple,   '',         '')
-call s:HL('cssAttributeSelector',           s:green,    '',         '')
-call s:HL('cssBraces',                      s:gray5,    '',         '')
-call s:HL('cssClassName',                   s:yellow,   '',         '')
-call s:HL('cssClassNameDot',                s:yellow,   '',         '')
-call s:HL('cssFontDescriptor',              s:purple,   '',         '')
-call s:HL('cssFunctionName',                s:blue,     '',         '')
-call s:HL('cssIdentifier',                  s:blue,     '',         '')
-call s:HL('cssMediaType',                   s:orange,   '',         '')
-call s:HL('cssProp',                        s:gray5,    '',         '')
-call s:HL('cssSelectorOp',                  s:indigo,   '',         '')
-call s:HL('cssSelectorOp2',                 s:indigo,   '',         '')
-
 " Git Commit
 call s:HL('gitcommitBranch',                s:blue,     '',         '')
 call s:HL('gitcommitUnmerged',              s:green,    '',         '')
@@ -147,27 +133,6 @@ call s:HL('htmlTag',                        s:blue,     '',         '')
 call s:HL('htmlTitle',                      s:gray5,    '',         '')
 call s:HL('htmlSpecialTagName',             s:purple,   '',         '')
 
-" Javascript
-call s:HL('javaScriptBraces',               s:gray5,    '',         '')
-call s:HL('javaScriptNull',                 s:orange,   '',         '')
-call s:HL('javaScriptIdentifier',           s:purple,   '',         '')
-call s:HL('javaScriptNumber',               s:orange,   '',         '')
-call s:HL('javaScriptRequire',              s:cyan,     '',         '')
-call s:HL('javaScriptReserved',             s:purple,   '',         '')
-" pangloss/vim-javascript
-call s:HL('jsArrowFunction',                s:purple,   '',         '')
-call s:HL('jsClassKeywords',                s:purple,   '',         '')
-call s:HL('jsDocParam',                     s:green,    '',         '')
-call s:HL('jsDocTags',                      s:cyan,     '',         '')
-call s:HL('jsFuncCall',                     s:blue,     '',         '')
-call s:HL('jsFunction',                     s:purple,   '',         '')
-call s:HL('jsGlobalObjects',                s:yellow,   '',         '')
-call s:HL('jsGlobalNodeObjects',            s:yellow,   '',         '')
-call s:HL('jsNull',                         s:orange,   '',         '')
-call s:HL('jsStorageClass',                 s:purple,   '',         '')
-call s:HL('jsThis',                         s:red,      '',         '')
-call s:HL('jsUndefined',                    s:orange,   '',         '')
-
 " JSON
 call s:HL('jsonCommentError',               s:red,      '',         'reverse')
 call s:HL('jsonMissingCommaError',          s:red,      '',         'reverse')
@@ -175,12 +140,6 @@ call s:HL('jsonNoQuotesError',              s:red,      '',         'reverse')
 call s:HL('jsonNumError',                   s:red,      '',         'reverse')
 call s:HL('jsonStringSQError',              s:red,      '',         'reverse')
 call s:HL('jsonSemicolonError',             s:red,      '',         'reverse')
-
-" Less
-call s:HL('lessAmpersand',                  s:purple,   '',         '')
-call s:HL('lessClassChar',                  s:yellow,   '',         '')
-call s:HL('lessCssAttribute',               s:gray5,    '',         '')
-call s:HL('lessFunction',                   s:blue,     '',         '')
 
 " Markdown
 call s:HL('markdownBold',                   s:orange,   '',         'bold')
@@ -196,17 +155,6 @@ call s:HL('markdownOrderedListMarker',      s:indigo,   '',         '')
 call s:HL('markdownRule',                   s:gray4,    '',         '')
 call s:HL('markdownUrl',                    s:purple,   '',         '')
 call s:HL('markdownUrlTitleDelimiter',      s:green,    '',         '')
-
-" Ruby
-call s:HL('rubyInterpolation',              s:cyan,     '',         '')
-call s:HL('rubyInterpolationDelimiter',     s:indigo,   '',         '')
-call s:HL('rubyRegexp',                     s:cyan,     '',         '')
-call s:HL('rubyRegexpDelimiter',            s:indigo,   '',         '')
-call s:HL('rubyStringDelimiter',            s:green,    '',         '')
-
-" Sass
-call s:HL('sassAmpersand',                  s:purple,   '',         '')
-call s:HL('sassClassChar',                  s:yellow,   '',         '')
 
 " Vim-Fugitive
 call s:HL('diffAdded',                      s:green,    '',         '')
