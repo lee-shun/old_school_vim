@@ -85,9 +85,8 @@ else " this new auto-pair need neovim or vim 8.2
                 \})
 endif
 
-call dein#add('machakann/vim-highlightedyank', {'lazy':1,
+call dein#add('markonm/hlyank.vim', {'lazy':1,
             \'on_event': ['TextYankPost'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/hlightedyank_conf.vim'
             \})
 
 call dein#add('tpope/vim-speeddating', {'lazy':1,
