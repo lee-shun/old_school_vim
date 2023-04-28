@@ -97,7 +97,13 @@ endif
 " ===
 " === check the finder
 " ===
-if g:osv_finder == 'fzf'
+if g:osv_finder == 'coc-lists'
+    if g:osv_complete_engine != 'coc'
+        call OsvWarn("coc-explorer needs the coc.nvim to be used properly. Skip!")
+        let g:osv_finder = 'none'
+        finish
+    endif
+elseif g:osv_finder == 'fzf'
     if !executable('ag')
         call OsvWarn("Need the silver searcher (ag) to run fzf.vim!")
     endif
