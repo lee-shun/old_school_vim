@@ -11,7 +11,7 @@ endif
 set background=dark
 let g:colors_name = 'chito'
 
-let g:chito_italics = get(g:, 'chito_italics', 0)
+let g:chito_italics = get(g:, 'chito_italics', 1)
 let g:chito_black = get(g:, 'chito_black', 0)
 
 " Color Palette
