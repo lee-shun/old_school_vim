@@ -35,12 +35,6 @@ function! OsvErr(message) abort
 endfunction
 
 " ===
-" === basic config
-" ===
-source $CONF_PATH/basic/options.vim
-source $CONF_PATH/basic/mappings.vim
-
-" ===
 " === env check
 " ===
 if !exists("g:os_name")
@@ -232,6 +226,12 @@ if !has('nvim') && v:version< 800 && g:osv_vim_lsp == 1
     let g:osv_vim_lsp = 0
     finish
 endif
+
+" ===
+" === basic config
+" ===
+source $CONF_PATH/basic/options.vim
+source $CONF_PATH/basic/mappings.vim
 
 " ===
 " === plug
