@@ -76,11 +76,8 @@ endif
 " defaults
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
-" possible value: fzf, leaderf, ctrlp, clap and none. .
 let g:osv_finder = 'none'
-" possible value: coc-explorer, fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'none'
-" possible value: coc, deoplete, asycomplete and none.
 let g:osv_complete_engine = 'none'
 let g:osv_vim_lsp = 0
 
