@@ -1116,13 +1116,3 @@ command! -nargs=0 FZFMru call s:MRU_FZF_Run()
 " restore 'cpoptions'
 let &cpoptions = s:cpo_save
 unlet s:cpo_save
-
-" ===
-" === MRU
-" ===
-augroup mru_open
-  autocmd!
-  autocmd VimEnter * exec "MRU"
-augroup END
-
-" vim:set sw=2 sts=2 foldenable foldmethod=marker:
