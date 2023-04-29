@@ -69,8 +69,8 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
 endif
 
 command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.organizeImport')
+command! -nargs=? Fold   :call CocAction('fold',            <f-args>)
+command! -nargs=0 OR     :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " coc-clangd
 if index(g:coc_global_extensions, 'coc-clangd') >= 0
@@ -86,7 +86,7 @@ if index(g:coc_global_extensions, 'coc-highlight') >= 0
 endif
 
 " coc-explorer
-if index(g:coc_global_extensions, 'coc-exporer') >= 0
+if index(g:coc_global_extensions, 'coc-explorer') >= 0
     noremap <leader>t :CocCommand explorer<CR>
 endif
 
@@ -94,6 +94,13 @@ endif
 if index(g:coc_global_extensions, 'coc-translator') >= 0
     nmap <leader>s <Plug>(coc-translator-p)
     vmap <leader>s <Plug>(coc-translator-pv)
+endif
+
+" coc-snippets
+if index(g:coc_global_extensions, 'coc-snippets') >= 0
+    call coc#config('snippets', {
+                \ 'ultisnips.directories': $CONF_PATH.'/dein/repos/github.com/honza/vim-snippets/UltiSnips/',
+                \})
 endif
 
 " coc-lists
@@ -112,9 +119,6 @@ if index(g:coc_global_extensions, 'coc-lists') >= 0
     nnoremap <silent> <leader>fa :<C-u>CocList<cr>
     nnoremap <silent> <leader>fp :<C-u>CocListResume<cr>
 
-    if index(g:coc_global_extensions, 'coc-snippets') >= 0
-        nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>
-    endif
 
     if index(g:coc_global_extensions, 'coc-yank') >= 0
         nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>

@@ -58,9 +58,6 @@
   "diagnostic.virtualText": true,
   "diagnostic.messageTarget": "float",
   "tabnine.limit": 3,
-  "snippets.ultisnips.directories": [
-    "$CONF_PATH/dein/repos/github.com/honza/vim-snippets/UltiSnips/"
-  ],
   "explorer.sources": [
     {
       "name": "buffer",
