@@ -7,8 +7,8 @@ let g:osv_plug_general = 1
 " some python and filetype-based plugins
 let g:osv_plug_advanced = 1
 
-" possible value: fzf, leaderf, ctrlp, clap and none. .
-let g:osv_finder = 'leaderf'
+" possible value: coc-lists, fzf, leaderf, ctrlp, clap and none.
+let g:osv_finder = 'coc-lists'
 
 " possible value: coc-explorer, fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'fern'
