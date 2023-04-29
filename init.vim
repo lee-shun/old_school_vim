@@ -119,7 +119,7 @@ elseif g:osv_finder == 'ctrlp'
         call OsvWarn("Need the silver searcher (ag) to run ctrlp!")
     endif
 elseif g:osv_finder == 'leaderf'
-    if !has('patch-7.4-1126') && !has('nvim')
+    if !has('patch-7.4.1126') && !has('nvim')
         call OsvErr("Need nvim or vim >= 7.4.1126 to use leaderf. Skip!")
         let g:osv_finder = 'none'
         finish
@@ -165,7 +165,7 @@ elseif g:osv_file_explorer == 'defx'
         finish
     endif
 elseif g:osv_file_explorer == 'fern'
-    if has('nvim') || has('patch-8.1-2269') " according to the repo
+    if has('nvim') || has('patch-8.1.2269') " according to the repo
         " fern.vim is ok
     else
         call OsvErr("Need nvim or vim >= 8.1.2269 to use fern.vim. Skip!")
@@ -188,7 +188,7 @@ if g:osv_complete_engine == 'coc'
     endif
 
     " don't use coc with vim under version 8.1-1719
-    if !has('nvim-0.4') && !has('patch-8.1-1719')
+    if !has('nvim-0.4') && !has('patch-8.1.1719')
         call OsvErr("For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!")
         let g:osv_complete_engine = 'none'
         finish
@@ -200,7 +200,7 @@ if g:osv_complete_engine == 'coc'
     endif
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
-    if !has('nvim-0.3') && !has('patch-8.2-1978')
+    if !has('nvim-0.3') && !has('patch-8.2.1978')
         call OsvErr("For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!")
         let g:osv_complete_engine = 'none'
         finish
