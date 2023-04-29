@@ -130,8 +130,6 @@
     "wl": "listDrive",
   },
   "codeLens.enable": true,
-  "coc-actions.hideCursor": true,
-  "coc-actions.showActionKind": true,
   "python.analysis.logLevel": "Trace",
   "python.formatting.provider": "yapf",
   "python.pythonPath": "python3",

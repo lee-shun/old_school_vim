@@ -1,8 +1,6 @@
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: There's always complete item selected by default, you may want to enable
-" no select by `"suggest.noselect": true` in your configuration file.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
+" hightlight for member functions
+hi CocSemProperty ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+
 inoremap <silent><expr> <TAB>
             \ coc#pum#visible() ? coc#pum#next(1) :
             \ CheckBackspace() ? "\<Tab>" :
@@ -82,11 +80,6 @@ if index(g:coc_global_extensions, 'coc-clangd') >= 0
     augroup END
 endif
 
-" coc-yank
-if index(g:coc_global_extensions, 'coc-yank') >= 0
-    nnoremap <silent> <space>ya  :<C-u>CocList -A --normal yank<cr>
-endif
-
 " coc-highlight
 if index(g:coc_global_extensions, 'coc-highlight') >= 0
     autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -103,5 +96,31 @@ if index(g:coc_global_extensions, 'coc-translator') >= 0
     vmap <leader>s <Plug>(coc-translator-pv)
 endif
 
-" hightlight for member functions
-hi CocSemProperty ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+" coc-lists
+if index(g:coc_global_extensions, 'coc-lists') >= 0
+    nnoremap <silent> <leader>ff :<C-u>CocList files<cr>
+    nnoremap <silent> <leader>fc :<C-u>CocList changes<cr>
+    nnoremap <silent> <leader>fb :<C-u>CocList buffers<cr>
+    nnoremap <silent> <leader>fd :<C-u>CocList diagnostics<cr>
+    nnoremap <silent> <leader>fl :<C-u>CocList lines<cr>
+    nnoremap <silent> <leader>fm :<C-u>CocList mru<cr>
+    nnoremap <silent> <leader>fr :<C-u>CocList registers<cr>
+    nnoremap <silent> <leader>fs :<C-u>CocList sessions<cr>
+    nnoremap <silent> <leader>fw :<C-u>CocList grep<cr>
+    nnoremap <silent> <leader>fq :<C-u>CocList locationlist<cr>
+    nnoremap <silent> <leader>fQ :<C-u>CocList quickfix<cr>
+    nnoremap <silent> <leader>fa :<C-u>CocList<cr>
+    nnoremap <silent> <leader>fp :<C-u>CocListResume<cr>
+
+    if index(g:coc_global_extensions, 'coc-snippets') >= 0
+        nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>
+    endif
+
+    if index(g:coc_global_extensions, 'coc-yank') >= 0
+        nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>
+    endif
+
+    call coc#config('session', {
+                \ 'directory': $CONF_PATH.'/tmp/session',
+                \})
+endif
