@@ -16,7 +16,9 @@ if has('nvim') && !has('nvim-0.8')
 endif
 
 if g:osv_finder == 'none' || g:osv_finder == 'coc-lists'
-    call dein#add('mhinz/vim-startify')
+    call dein#add('mhinz/vim-startify', {
+                \'hook_source':'source $CONF_PATH/plug_conf/before/vim_startify_conf.vim',
+                \})
 else
     let s:vim_dashboard_config = {
                 \'hook_source':'source $CONF_PATH/plug_conf/before/vim_dashboard_conf.vim',
