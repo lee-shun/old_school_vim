@@ -70,22 +70,22 @@ elseif g:osv_finder == 'ctrlp'
     call dein#add('mattn/ctrlp-register', {'lazy':1,
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_register_conf.vim',
                 \})
-    if !executable('ag')
-        echom "Need the silver searcher (ag) to run ctrlp-ag"
-        call input('Press any key to continue.')
-    endif
-    call dein#add('lokikl/vim-ctrlp-ag', {'lazy':1,
-                \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_ag_conf.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_ag_conf.vim',
-                \})
 
     let s:ctrlp_config = {'lazy':1,
-                \'depends': ['ctrlp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register', 'vim-ctrlp-ag'],
+                \'depends': ['ctrlp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register',],
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':['CtrlP'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_conf.vim'
                 \}
+
+    if executable('ag')
+        call dein#add('lokikl/vim-ctrlp-ag', {'lazy':1,
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_ag_conf.vim',
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_ag_conf.vim',
+                    \})
+        call add(s:ctrlp_config.depends, 'vim-ctrlp-ag')
+    endif
 
     call dein#add('ctrlpvim/ctrlp.vim', s:ctrlp_config)
 
