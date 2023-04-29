@@ -19,6 +19,10 @@
 
 ![image](./img/Linux_x86_64_ulti.png)
 
+<kbd>Win10</kbd> + <kbd>Vim 9</kbd> + <kbd>git bash </kbd>
+
+![image](./img/win10_git_bash.png)
+
 ## Recommended Vim/Neovim Version
 
 - Vim 8 or neovim.
