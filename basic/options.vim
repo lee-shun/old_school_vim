@@ -152,10 +152,10 @@ endif
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
-    echom "Creating the tmp dir!"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/swap"
+    OsvInfo("Creating the tmp dir!")
     call input('Press any key to continue')
 endif
 

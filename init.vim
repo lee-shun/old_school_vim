@@ -14,13 +14,7 @@
 "  Email  : 2015097272@qq.com                                                  "
 "                                                                              "
 "*******************************************************************************
-
-" define the osv mode
 let $CONF_PATH = split(&runtimepath, ',')[0]
-
-" ===
-" === env check
-" ===
 function! OsvInfo(message) abort
     echomsg a:message | echo ""
     return 0
@@ -40,6 +34,15 @@ function! OsvErr(message) abort
     return 0
 endfunction
 
+" ===
+" === basic config
+" ===
+source $CONF_PATH/basic/options.vim
+source $CONF_PATH/basic/mappings.vim
+
+" ===
+" === env check
+" ===
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
@@ -72,8 +75,6 @@ endif
 " ===
 " === get the modules
 " ===
-
-" defaults
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
 let g:osv_finder = 'none'
@@ -231,12 +232,6 @@ if !has('nvim') && v:version< 800 && g:osv_vim_lsp == 1
     let g:osv_vim_lsp = 0
     finish
 endif
-
-" ===
-" === basic config
-" ===
-source $CONF_PATH/basic/options.vim
-source $CONF_PATH/basic/mappings.vim
 
 " ===
 " === plug
