@@ -99,7 +99,7 @@ if s:osv_setup == 0
             if l:osv_update == 'y'
                 let l:git_clean = system("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null") is# ''
                 if l:git_clean == 1
-                    call system("!cd ".$CONF_PATH." && git pull")
+                    call system("cd ".$CONF_PATH." && git pull")
                 else
                     call OsvWarn("git status is not clean! Skip!")
                     call input("Press any keys to continue...")
