@@ -3,7 +3,7 @@ if exists('g:loaded_streamline_plugin')
 endif
 
 if  g:osv_plug_general == 1
-    if has('nvim') || v:version >= 800
+    if has('nvim') || v:version >= 800 " ready to use fancy line, otherwise use this!
         finish
     endif
 endif
