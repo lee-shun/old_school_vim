@@ -214,10 +214,6 @@ elseif g:osv_complete_engine == 'asyncomplete'
         let g:osv_complete_engine = 'none'
         finish
     endif
-elseif g:osv_complete_engine == 'none'
-    if g:osv_vim_lsp == 1
-        call OsvWarn("Use onmifunction to for vim-lsp!")
-    endif
 endif
 
 " ===
