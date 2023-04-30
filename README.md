@@ -25,7 +25,7 @@
 
 ## Recommended Vim/Neovim Version
 
-- Vim 8 or neovim.
+- Vim 8 (at least 7.4) or neovim.
 - The vim/nvim version will be checked _automatically_ when using different modules.
 
 ## Installation
