@@ -216,8 +216,7 @@ elseif g:osv_complete_engine == 'asyncomplete'
     endif
 elseif g:osv_complete_engine == 'none'
     if g:osv_vim_lsp == 1
-        call OsvWarn("Please choose deoplete or asyncomplete as auto-complete engine for vim-lsp!")
-        let g:osv_vim_lsp = 0
+        call OsvWarn("Use onmifunction to for vim-lsp!")
     endif
 endif
 
@@ -226,7 +225,7 @@ endif
 " ===
 
 " don't use lsp with vim under version 8.0
-if !has('nvim') && v:version< 800 && g:osv_vim_lsp == 1
+if !has('nvim') && v:version < 800 && g:osv_vim_lsp == 1
     call OsvErr("For vim-lsp: vim>=8.0 or nvim! Skip!")
     let g:osv_vim_lsp = 0
     finish

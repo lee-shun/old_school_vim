@@ -1,7 +1,7 @@
 " vim-lsp+ale mappings refresh
 function! s:on_lsp_buffer_enabled() abort
     " use omnifunc if you are fine with it.
-    " setlocal omnifunc=lsp#complete
+    setlocal omnifunc=lsp#complete
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     " some mappings to use, tweak as you wish.
     nmap <buffer> gd <plug>(lsp-definition)
