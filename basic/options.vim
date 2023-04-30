@@ -55,10 +55,12 @@ endif
 set nolazyredraw
 set ttyfast
 
-set t_Co=256
-set termguicolors
+" set t_Co=256
+if has("termguicolors")
+    set termguicolors
+endif
 if !has('nvim')
-    " fix the termguicolors black and white in vi
+    " fix the termguicolors black and white in vim
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
@@ -227,8 +229,8 @@ endif
 " ===
 " === Terminal Behaviors
 " ===
-tnoremap <C-N> <C-\><C-N>
 if exists('##TerminalOpen')
+    tnoremap <C-N> <C-\><C-N>
     augroup term_open_settings
         autocmd!
         autocmd TerminalOpen * startinsert
