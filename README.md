@@ -4,6 +4,10 @@
 > with considering compatibility. Comparing with fancy and breaking new "lua" trending, The plugins in this configuration are
 > pretty "**Old-School**"🏫!
 
+TODO:
+
+- windows cmd support! Only linux now!
+
 **Features:**
 
 - Functions are well arranged into different modules, which can be customized in `custom_modules.vim`.
