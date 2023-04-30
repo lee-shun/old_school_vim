@@ -1,6 +1,13 @@
-if exists('g:loaded_streamline_plugin') || g:osv_plug_general == 1 || v:version >= 800
+if exists('g:loaded_streamline_plugin')
     finish
 endif
+
+if  g:osv_plug_general == 1
+    if has('nvim') || v:version >= 800
+        finish
+    endif
+endif
+
 let g:loaded_streamline_plugin = 1
 
 set laststatus=2
