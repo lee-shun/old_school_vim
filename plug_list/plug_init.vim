@@ -63,7 +63,7 @@ if g:osv_complete_engine == 'asyncomplete'
 endif
 
 if g:osv_complete_engine == 'auto_popup'
-    source $CONF_PATH/plug_list/lazy/plug_autopopup.vim
+    source $CONF_PATH/plug_list/lazy/plug_mucomplete.vim
 endif
 
 if g:osv_vim_lsp == 1

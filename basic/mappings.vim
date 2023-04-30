@@ -29,9 +29,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " nnoremap N Nzzzv
 nnoremap J mzJ'z
 
-inoremap <expr> <CR> ((pumvisible())?("\<C-y>"):("\<CR>"))
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+" inoremap <expr> <CR> ((pumvisible())?("\<C-y>"):("\<CR>"))
+" inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " ===
 " === quick mapping
