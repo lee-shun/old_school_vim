@@ -1,4 +1,4 @@
-if exists('g:loaded_streamline_plugin') || g:osv_plug_general == 1
+if exists('g:loaded_streamline_plugin') || g:osv_plug_general == 1 || v:version >= 800
     finish
 endif
 let g:loaded_streamline_plugin = 1
