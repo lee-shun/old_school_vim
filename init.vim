@@ -97,7 +97,7 @@ endfunction
 " ===
 if g:osv_finder == 'coc-lists'
     if g:osv_complete_engine != 'coc'
-        call OsvErr("coc-explorer needs the coc.nvim to be used properly. Skip!")
+        call OsvErr("coc-lists needs the coc.nvim to be used as completion engine. Skip!")
         let g:osv_finder = 'none'
         finish
     endif

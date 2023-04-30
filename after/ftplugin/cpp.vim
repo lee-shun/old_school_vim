@@ -1,7 +1,7 @@
 " ===
 " === dict
 " ===
-setlocal dictionary+=$CONF_PATH/dictionary/cpp_keywords_list.txt
+setlocal dictionary=$CONF_PATH/dictionary/cpp_keywords_list.txt
 
 setlocal tabstop=2
 setlocal softtabstop=2
