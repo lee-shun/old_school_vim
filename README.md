@@ -4,9 +4,10 @@
 > with considering compatibility. Comparing with fancy and breaking new "lua" trending, The plugins in this configuration are
 > pretty "**Old-School**"🏫!
 
-TODO:
+## TODOs
 
 - windows cmd support! Only linux now!
+- pure vim-lsp without complete engine?
 
 **Features:**
 
