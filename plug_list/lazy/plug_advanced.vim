@@ -23,11 +23,12 @@ if g:osv_complete_engine != 'coc'
                 \})
 endif
 
-if has('python3')
-    call dein#add('honza/vim-snippets', {'lazy':1,
-                \'on_event':'InsertEnter'
-                \})
-    if g:osv_complete_engine != 'coc'
+call dein#add('honza/vim-snippets', {'lazy':1,
+            \'on_event':'InsertEnter'
+            \})
+
+if g:osv_complete_engine != 'coc'
+    if (has('nvim') || v:version >= 800) && has('python3')
         call dein#add('SirVer/ultisnips', {'lazy':1,
                     \'depends':['vim-snippets'],
                     \'on_event':'InsertEnter',

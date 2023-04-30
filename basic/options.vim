@@ -95,10 +95,11 @@ set hlsearch
 exec "nohlsearch"
 set incsearch
 set ignorecase
-if version > 801
+if v:version > 801
     set shortmess-=S
     set shortmess=atI
 endif
+
 
 set smartcase
 
@@ -128,7 +129,7 @@ set clipboard^=unnamed,unnamedplus
 " === built-in completion
 " ===
 set complete+=k
-set completeopt=menuone,noselect,noinsert
+set completeopt=menuone,noselect,noinsert,preview
 set dictionary+=$CONF_PATH/dictionary/20k.txt
 
 " ===
