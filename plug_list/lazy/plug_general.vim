@@ -7,17 +7,19 @@ call dein#add('tpope/vim-fugitive', {'lazy':1})
 call dein#add('mhinz/vim-signify', {'lazy':1,
             \'on_event': ['BufReadPost'], })
 
-let s:spaceline_conf = {'lazy':1,
-            \'on_event':['BufReadPost'],
-            \'depends':['vim-signify', 'vim-devicons'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
-if g:osv_complete_engine == 'coc'
-    call add(s:spaceline_conf.depends, 'coc.nvim')
+if v:version >= 800
+    let s:spaceline_conf = {'lazy':1,
+                \'on_event':['BufReadPost'],
+                \'depends':['vim-signify', 'vim-devicons'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
+    if g:osv_complete_engine == 'coc'
+        call add(s:spaceline_conf.depends, 'coc.nvim')
+    endif
+    if g:osv_vim_lsp == 1
+        call add(s:spaceline_conf.depends, 'vim-lsp-ale')
+    endif
+    call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 endif
-if g:osv_vim_lsp == 1
-    call add(s:spaceline_conf.depends, 'vim-lsp-ale')
-endif
-call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
