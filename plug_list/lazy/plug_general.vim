@@ -7,20 +7,6 @@ call dein#add('tpope/vim-fugitive', {'lazy':1})
 call dein#add('mhinz/vim-signify', {'lazy':1,
             \'on_event': ['BufReadPost'], })
 
-if v:version >= 800
-    let s:spaceline_conf = {'lazy':1,
-                \'on_event':['BufReadPost'],
-                \'depends':['vim-signify', 'vim-devicons'],
-                \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
-    if g:osv_complete_engine == 'coc'
-        call add(s:spaceline_conf.depends, 'coc.nvim')
-    endif
-    if g:osv_vim_lsp == 1
-        call add(s:spaceline_conf.depends, 'vim-lsp-ale')
-    endif
-    call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
-endif
-
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/rainbow_conf.vim'})
@@ -45,10 +31,6 @@ endif
 
 call dein#add('chrisbra/Colorizer', {'lazy':1,
             \'on_cmd':['ColorToggle']
-            \})
-
-call dein#add('rlue/vim-barbaric', {'lazy':1,
-            \'on_event':['InsertEnter'],
             \})
 
 call dein#add('sakshamgupta05/vim-todo-highlight', {'lazy':1,
@@ -157,3 +139,22 @@ call dein#add('brooth/far.vim', {
             \'on_cmd':['F', 'Far', 'Farr',  'Farf', 'Fardo', 'Refar', 'Farundo'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/far_conf.vim'
             \})
+
+" plugins for nvim and vim > 8.0
+if v:version >= 800 || has('nvim')
+    let s:spaceline_conf = {'lazy':1,
+                \'on_event':['BufReadPost'],
+                \'depends':['vim-signify', 'vim-devicons'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
+    if g:osv_complete_engine == 'coc'
+        call add(s:spaceline_conf.depends, 'coc.nvim')
+    endif
+    if g:osv_vim_lsp == 1
+        call add(s:spaceline_conf.depends, 'vim-lsp-ale')
+    endif
+    call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
+
+    call dein#add('rlue/vim-barbaric', {'lazy':1,
+                \'on_event':['InsertEnter'],
+                \})
+endif
