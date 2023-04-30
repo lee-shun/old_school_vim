@@ -157,11 +157,4 @@ if v:version >= 800 || has('nvim')
     call dein#add('rlue/vim-barbaric', {'lazy':1,
                 \'on_event':['InsertEnter'],
                 \})
-
-elseif v:version >= 704
-call dein#add('niklaas/lightline-gitdiff', {'lazy':1})
-call dein#add('itchyny/lightline.vim', {'lazy':1,
-            \'depends':['lightline-gitdiff', 'vim-fugitive'],
-            \'on_event':['BufReadPre'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/lightline_conf.vim'})
 endif
