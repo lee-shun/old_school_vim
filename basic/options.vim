@@ -95,13 +95,6 @@ set hlsearch
 exec "nohlsearch"
 set incsearch
 set ignorecase
-if v:version > 801
-    set shortmess-=S
-    set shortmess=atI
-endif
-
-
-set smartcase
 
 " indent
 set smartindent
