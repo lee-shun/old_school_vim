@@ -58,11 +58,11 @@ set ttyfast
 " set t_Co=256
 if has("termguicolors")
     set termguicolors
-endif
-if !has('nvim')
-    " fix the termguicolors black and white in vim
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    if !has('nvim')
+        " fix the termguicolors black and white in vim
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    endif
 endif
 
 if g:osv_plug_general == 0
