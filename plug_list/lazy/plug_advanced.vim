@@ -49,14 +49,14 @@ call dein#add('preservim/vim-markdown', {'lazy':1,
 
 if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
     if has('nvim') || v:version >= 801
-    call dein#add('iamcco/markdown-preview.nvim', {'lazy':1,
-                \'on_ft' :['markdown'],
-                \'hook_done_update':'call mkdp#util#install_sync()',
-                \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_preview_conf.vim'
-                \})
-else
-    OsvWarn("Mkd preview needs vim >=8.1 or nvim! Skip!")
-
+        call dein#add('iamcco/markdown-preview.nvim', {'lazy':1,
+                    \'on_ft' :['markdown'],
+                    \'hook_done_update':'call mkdp#util#install_sync()',
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_preview_conf.vim'
+                    \})
+    else
+        OsvWarn("Mkd preview needs vim >=8.1 or nvim! Skip!")
+    endif
 else
     OsvWarn("Only Linux_x86_64, Windows have mkd preview! Skip!")
 endif
