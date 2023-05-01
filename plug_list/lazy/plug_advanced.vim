@@ -13,6 +13,8 @@ if executable('ccls')
                 \'on_ft':['cpp', 'c'],
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
                 \})
+else
+    OsvWarn('vim-lsp-cxx-hl needs the ccls installed!')
 endif
 
 if g:osv_complete_engine != 'coc'
@@ -59,16 +61,22 @@ call dein#add('ferrine/md-img-paste.vim',{'lazy':1,
             \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_paste_img_conf.vim'
             \})
 
-call dein#add('lervag/vimtex', {'lazy':1,
-            \'on_ft':['tex'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
-            \})
+if executable('latexmk')
+    call dein#add('lervag/vimtex', {'lazy':1,
+                \'on_ft':['tex'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
+                \})
+elseif
+    OsvWarn('Vimtex needs the texlive installed!')
+endif
 
 if (g:os_name == 'Linux') && (executable('roscore'))
     call dein#add('taketwo/vim-ros', {'lazy':1,
                 \'on_ft':'rosmsg',
                 \'on_cmd':'Roscd'
                 \})
+elseif
+    OsvWarn('Vim-ros needs the ros installed!')
 endif
 
 call dein#add('edersonferreira/open.vim', {'lazy':1,
