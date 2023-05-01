@@ -225,7 +225,7 @@ endif
 " ===
 if exists(':terminal')
     tnoremap <C-N> <C-\><C-N>
-    if has('nvim')
+    if !has('nvim')
         augroup term_open_settings
             autocmd!
             autocmd TerminalOpen * startinsert
