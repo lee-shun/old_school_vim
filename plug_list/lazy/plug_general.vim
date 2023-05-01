@@ -4,8 +4,14 @@ call dein#add('haya14busa/dein-command.vim', {
 
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
+if has('nvim') || has('patch-8.0.902')
 call dein#add('mhinz/vim-signify', {'lazy':1,
             \'on_event': ['BufReadPost'], })
+else
+call dein#add('mhinz/vim-signify', {'lazy':1,
+            \'on_event': ['BufReadPost'],
+            \'rev':'legacy'})
+endif
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
