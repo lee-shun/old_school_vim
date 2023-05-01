@@ -14,7 +14,7 @@ if executable('ccls')
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
                 \})
 else
-    OsvWarn('vim-lsp-cxx-hl needs the ccls installed!')
+    call OsvWarn("vim-lsp-cxx-hl needs the ccls installed! Skip!")
 endif
 
 if g:osv_complete_engine != 'coc'
@@ -55,10 +55,10 @@ if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Window
                     \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_preview_conf.vim'
                     \})
     else
-        OsvWarn("Mkd preview needs vim >=8.1 or nvim! Skip!")
+        call OsvWarn("Mkd preview needs vim >=8.1 or nvim! Skip!")
     endif
 else
-    OsvWarn("Only Linux_x86_64, Windows have mkd preview! Skip!")
+    call OsvWarn("Only Linux_x86_64, Windows have mkd preview! Skip!")
 endif
 
 call dein#add('ferrine/md-img-paste.vim',{'lazy':1,
@@ -71,8 +71,8 @@ if executable('latexmk')
                 \'on_ft':['tex'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
                 \})
-elseif
-    OsvWarn('Vimtex needs the texlive to be installed! Skip!')
+else
+    call OsvWarn('Vimtex needs the texlive to be installed! Skip!')
 endif
 
 if (g:os_name == 'Linux') && (executable('roscore'))
@@ -80,8 +80,8 @@ if (g:os_name == 'Linux') && (executable('roscore'))
                 \'on_ft':'rosmsg',
                 \'on_cmd':'Roscd'
                 \})
-elseif
-    OsvWarn('Vim-ros needs the ros to be installed! Skip!')
+else
+    call OsvWarn('Vim-ros needs the ros to be installed! Skip!')
 endif
 
 call dein#add('edersonferreira/open.vim', {'lazy':1,
