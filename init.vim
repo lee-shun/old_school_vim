@@ -51,6 +51,10 @@ if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
         let g:os_architect = 'x86_64'
+        set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+        set shellcmdflag=-command
+        set shellquote=\"
+        set shellxquote=
     else " not windows, use 'uname' command.
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '')
@@ -91,9 +95,9 @@ if !empty(glob($CONF_PATH.'/custom_modules.vim'))
     source $CONF_PATH/custom_modules.vim
 else
     " copy the custom_modules out.
-    silent exec "!cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim"
+    call system("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
     call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
-    call input("Press any keys to continue...")
+    call input("Press any key to continue...")
 endif
 
 " ===
