@@ -74,7 +74,7 @@ call dein#end()
 
 augroup DeinSetup
     autocmd!
-    autocmd VimEnter * call dein#call_hook('post_source')
+    autocmd VimEnter * call dein#call_hook('source') | call dein#call_hook('post_source')
 augroup END
 
 if s:osv_setup == 1
