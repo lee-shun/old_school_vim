@@ -223,7 +223,7 @@ endif
 " ===
 " === Terminal Behaviors
 " ===
-if exists('##TerminalOpen')
+if exists(':terminal')
     tnoremap <C-N> <C-\><C-N>
     augroup term_open_settings
         autocmd!
@@ -248,7 +248,7 @@ if has('nvim')
     let g:terminal_color_14 = '#9AEDFE'
 endif
 
-if has('terminal')&&!has('nvim')
+if exists(':terminal') && !has('nvim')
     let g:terminal_ansi_colors = [
                 \'#4e4e4e',
                 \'#d68787',

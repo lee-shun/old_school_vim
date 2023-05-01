@@ -23,7 +23,7 @@ call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
 call dein#add('RRethy/vim-illuminate', {'lazy':1,
             \'on_event' : ['BufReadPost'] })
 
-if exists('##TerminalOpen')
+if exists(':terminal')
     call dein#add('voldikss/vim-floaterm', {'lazy':1,
                 \'on_event':['BufReadPost'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/floaterm_conf.vim'})
