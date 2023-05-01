@@ -6,7 +6,6 @@
 
 ## TODOs
 
-- windows powershell support! Only linux now!
 - bulidin statuslines upgrade based-on eleline.vim~
 
 **Features:**
