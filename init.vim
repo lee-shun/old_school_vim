@@ -20,6 +20,33 @@
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
 
+function! OsvInfo(message) abort
+    echomsg a:message | echo ""
+    return 0
+endfunction
+
+function! OsvWarn(message) abort
+    if g:osv_warning == 0
+        return 0
+    endif
+    echohl WarningMsg
+    echomsg a:message | echo ""
+    echohl None
+    return 0
+endfunction
+
+function! OsvErr(message) abort
+    echohl ErrorMsg
+    echomsg a:message | echo ""
+    echohl None
+    return 0
+endfunction
+
+if !has('nvim') && v:version < 704
+    OsvErr('Osv needs vim >= 7.4 or nvim! Finish!')
+    finish
+endif
+
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
@@ -68,29 +95,6 @@ else
     call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("Press any keys to continue...")
 endif
-
-function! OsvInfo(message) abort
-    echomsg a:message | echo ""
-    return 0
-endfunction
-
-function! OsvWarn(message) abort
-    if g:osv_warning == 0
-        return 0
-    endif
-    echohl WarningMsg
-    echomsg a:message | echo ""
-    echohl None
-    return 0
-endfunction
-
-function! OsvErr(message) abort
-    echohl ErrorMsg
-    echomsg a:message | echo ""
-    echohl None
-    return 0
-endfunction
-
 
 " ===
 " === check the finder
