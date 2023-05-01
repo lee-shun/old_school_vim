@@ -210,6 +210,11 @@ if g:osv_complete_engine == 'coc'
     endif
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
+    if !has('python3')
+        call OsvErr("Deoplete.nvim needs python3 support! Skip!")
+        let g:osv_complete_engine = 'none'
+        finish
+    endif
     if !has('nvim-0.3') && !has('patch-8.2.1978')
         call OsvErr("For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!")
         let g:osv_complete_engine = 'none'
