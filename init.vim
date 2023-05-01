@@ -43,7 +43,7 @@ function! OsvErr(message) abort
 endfunction
 
 if !has('nvim') && v:version < 704
-    OsvErr('Osv needs vim >= 7.4 or nvim! Finish!')
+    OsvErr('OSV needs vim >= 7.4 or nvim! Finish!')
     finish
 endif
 

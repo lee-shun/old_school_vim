@@ -4,20 +4,16 @@
 > with considering compatibility. Comparing with fancy and breaking new "lua" trending, The plugins in this configuration are
 > pretty "**Old-School**"🏫!
 
-## TODOs
-
-- bulidin statuslines upgrade based-on eleline.vim~
-
 **Features:**
 
-- Functions are well arranged into different modules, which can be customized in `custom_modules.vim`.
-- Good compatibility to different platform (Windows, Linux) of different architectures (x86, x64, aarch64) with different
-  vim/neovim version.
-- Original vim keybindings and operations.
-- Fast startup time using `dein.vim` to lazy load most of the plugins.
-- Daily update.
+- 🔌Functions are well arranged into different modules, which can be customized in `custom_modules.vim`.
+- 🤖Good compatibility to different platform (Windows, Linux) of different architectures (x86, x64, aarch64) with different
+  vim/neovim versions.
+- 🌟Stay in original vim keybindings and operations, but add some meaningful keybindings.
+- ⚡Fast startup time using `dein.vim` to lazy load most of the plugins.
+- 🆙 Daily update  support.
 
-## Screen Shots
+## <p align="center"> Screen Shots📺 </p>
 
 <kbd>Ubuntu 20.04 (x86_64)</kbd> + <kbd>Vim 8.1</kbd> + <kbd>Xfce4-terminal</kbd>
 
@@ -27,12 +23,13 @@
 
 ![image](./img/win10_git_bash.png)
 
-## Recommended Vim/Neovim Version
+## <p align="center"> Vim/Neovim Version </p>
 
-- Vim 8 (at least 7.4) or neovim.
-- The vim/nvim version will be checked _automatically_ when using different modules.
+- Vim 8 or higher, at least 7.4.
+- Neovim 0.4.2 or higher.
+> The vim/nvim version will be checked _automatically_ when using different modules.
 
-## Installation
+## <p align="center"> Installation </p>
 
 ### Before Installation
 
@@ -43,7 +40,7 @@
 
 0. **Optional dependences:**
 
-    **NOTE:** Take a reference or just use the `config_env.sh` to install the dependencies...
+   **NOTE:** Take a reference or just use the `config_env.sh` to install the dependencies...
 
    - `has('python3')` (if using the advanced plugins.).
    - rg, ag for finders (fzf, leaderf, clap and ctrlp).
@@ -71,41 +68,71 @@
 
 4. Restart vim/nvim
 
-## Quick Start
+## <p align="center"> Quick Start🚀 </p>
 
-- `g:osv_plug_general = 1`
+⌨Use the `custom_modules.vim` in the configuration path to manage the functional modules in OSV.
 
-  - general editor enhancement plugins.
-  - zero dependencies.
-  - pure vimscripts.
+- **`g:osv_warning`**
 
-- `g:osv_plug_advanced = 1`
+    > print the warning message when OSV starts.
 
-  - file type based plugins, may also needs some dependences.
+  - **type:** int
+  - **possible values:** `0` and `1`
 
-- `g:osv_finder`
+- **`g:osv_plug_general`**
 
-  - **possible values:** `fzf`, `leaderf`, `clap` and `ctrlp`.
-  - need `ag` and `rg` for searching.
-  - set to `none` to disable.
+    > use some general editor enhancement plugins, zero dependencies, and  pure vimscripts.
 
-- `g:osv_file_explorer`
+  - **type:** int
+  - **possible values:** `0` and `1`
 
+- **`g:osv_plug_advanced`**
+
+  > file type based plugins, may also needs some dependences.
+
+  - **type:** int
+  - **possible values:** `0` and `1`
+
+- **`g:osv_finder`**
+
+  > choose one of fidners to find files, buffers, and more.
+
+  - **type:** string
+  - **possible values:** `coc-lists`, `fzf`, `leaderf`, `clap` and `ctrlp`.
+  - **note:**
+    - `coc-lists` needs the `coc` as the complete engine.
+    - need `ag` and `rg` for searching.
+    - set to `none` to disable.
+
+- **`g:osv_file_explorer`**
+
+  > choose one of the file explorers to arrange files
+
+  - **type:** string
   - **possible values:** `coc-explorer`, `fern`, `defx` and `vimfiler`.
-  - `coc-explorer` needs the `coc` as the completion engine.
-  - set to `none` to disable.
+  - **note:**
+    - `coc-explorer` needs the `coc` as the completion engine.
+    - set to `none` to disable.
 
-- `g:osv_complete_engine`
+- **`g:osv_complete_engine`**
 
-  - **possible values:** `coc`, `deoplete` and `asyncomplete`.
-  - set to `none` to disable.
+  > choose one of the complete framework to provide automatic completion.
 
-- `g:osv_plug_lsp = 1`
-  - use `vim-lsp` to provide the lsp support.
+  - **type:** string
+  - **possible values:** `coc`, `deoplete`, `mucomplete` and `asyncomplete`.
+  - **note:**
+    - set to `none` to disable.
 
-## Keymaps
+- **`g:osv_vim_lsp`**
 
-### Finders
+  > use `vim-lsp` to provide the lsp support.
+
+  - **type:** int
+  - **possible values:** `0` and `1`
+
+## <p align="center"> Keymap 🗺 </p>
+
+### Finders🔍
 
 #### Invoke the finders
 
@@ -138,7 +165,7 @@
 
 #### In the finder buffer
 
-##### insert mode
+##### Insert mode
 
 | keys    | functions     |
 | ------- | ------------- |
@@ -146,11 +173,11 @@
 | `<C-k>` | previous item |
 | `<CR>`  | confirm       |
 
-##### normal mode
+##### Normal mode
 
 TODO:
 
-### File Explorer
+### File Explorer📁
 
 #### Invoke file explorer
 
@@ -228,4 +255,4 @@ TODO:
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 四 27 4月 2023 09:55:49 上午
+> Last Modified : 一 01 5月 2023 04:20:31 下午
