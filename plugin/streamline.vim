@@ -22,7 +22,14 @@ augroup END
 hi WarningColor guibg=#E5C07B guifg=#1E1E1E ctermbg=Yellow ctermfg=Black
 hi ErrorColor guibg=#DF6A63 guifg=#1E1E1E ctermbg=Red ctermfg=Black
 
+let s:streamline_spec_filetypes = ['fern', 'coc-explorer', 'defx', 'vimfiler']
+
 function! CreateStatusline()
+    if index(s:streamline_spec_filetypes, &ft) >= 0
+        let statusline=''
+        let statusline.='☰ '.&ft
+        return statusline
+    endif
     let statusline=''
     let statusline.='%#Cursor#'
     let statusline.=' %{GetMode()} '
@@ -34,8 +41,6 @@ function! CreateStatusline()
     else
         let statusline.=' %y'              " Show filetype
     endif
-    let statusline.=' %f'                  " Show filename
-    let statusline.=' %m '                  " Show modified tag
     if get(g:, 'streamline_show_ale_status', 1) && exists(':ALELint')
         let statusline.='%#WarningColor#'
         let statusline.='%{GetAleStatus()[0]}'
@@ -43,8 +48,12 @@ function! CreateStatusline()
         let statusline.='%{GetAleStatus()[1]}'
     endif
     if get(g:, 'streamline_show_coc_status', 1) && exists('g:coc_enabled')
+        let statusline.='%#WarningMsg#'
         let statusline.=GetCocStatus()
+        let statusline.='%#CursorlineNr#'
     endif
+    let statusline.=' %f'                  " Show filename
+    let statusline.=' %m '                  " Show modified tag
     let statusline.='%='                   " Switch elements to the right
     if !get(g:, 'streamline_minimal_ui', 0)
         let statusline.='%{&fileencoding?&fileencoding:&encoding}'
@@ -58,10 +67,13 @@ function! CreateStatusline()
 endfunction
 
 function! CreateInactiveStatusline()
+    if index(s:streamline_spec_filetypes, &ft) >= 0
+        let statusline=''
+        let statusline.='☰ '.&ft
+        return statusline
+    endif
     let statusline=''
     let statusline.='%#Whitespace#'
-    let statusline.=' %{GetMode()} '
-    let statusline.=s:git_branch
     let statusline.='▏'
     if get(g:, 'streamline_enable_devicons', 1) && exists('*WebDevIconsGetFileTypeSymbol')
         let statusline.=' %{WebDevIconsGetFileTypeSymbol()}'
@@ -71,20 +83,8 @@ function! CreateInactiveStatusline()
     let statusline.=' %f'
     let statusline.=' %m'
     let statusline.='%='
-    if !get(g:, 'streamline_minimal_ui', 0)
-        let statusline.='%{&fileencoding?&fileencoding:&encoding}'
-        let statusline.=' %{&fileformat} '
-        let statusline.='▏'
-    endif
-    let statusline.='☰ %l:%c'
+    let statusline.='☰ %l:%c'              " Show line number and column
     let statusline.=' %p%% '
-    if get(g:, 'streamline_show_ale_status', 1) && exists(':ALELint')
-        let statusline.='%{GetAleStatus()[0]}'
-        let statusline.='%{GetAleStatus()[1]}'
-    endif
-    if get(g:, 'streamline_show_coc_status', 1) && exists('g:coc_enabled')
-        let statusline.=GetCocStatus()
-    endif
     return statusline
 endfunction
 
