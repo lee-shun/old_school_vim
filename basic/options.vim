@@ -25,6 +25,13 @@ if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
     set columns=120
 endif
 
+" for the powershell in windows
+if g:os_name == 'Windows'
+    set shell=powershell shellquote=\" shellpipe=\| shellredir=>
+    set shellcmdflag=-Command
+    let &shellxquote=' '
+endif
+
 " display
 filetype plugin indent on
 syntax enable
