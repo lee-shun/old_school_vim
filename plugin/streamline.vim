@@ -24,7 +24,7 @@ hi ErrorColor guibg=#DF6A63 guifg=#1E1E1E ctermbg=Red ctermfg=Black
 
 function! CreateStatusline()
     let statusline=''
-    let statusline.='%#Search#'
+    let statusline.='%#Cursor#'
     let statusline.=' %{GetMode()} '
     let statusline.='%#diffadd#'
     let statusline.=s:git_branch
@@ -35,7 +35,16 @@ function! CreateStatusline()
         let statusline.=' %y'              " Show filetype
     endif
     let statusline.=' %f'                  " Show filename
-    let statusline.=' %m'                  " Show modified tag
+    let statusline.=' %m '                  " Show modified tag
+    if get(g:, 'streamline_show_ale_status', 1) && exists(':ALELint')
+        let statusline.='%#WarningColor#'
+        let statusline.='%{GetAleStatus()[0]}'
+        let statusline.='%#ErrorColor#'
+        let statusline.='%{GetAleStatus()[1]}'
+    endif
+    if get(g:, 'streamline_show_coc_status', 1) && exists('g:coc_enabled')
+        let statusline.=GetCocStatus()
+    endif
     let statusline.='%='                   " Switch elements to the right
     if !get(g:, 'streamline_minimal_ui', 0)
         let statusline.='%{&fileencoding?&fileencoding:&encoding}'
@@ -45,12 +54,6 @@ function! CreateStatusline()
     endif
     let statusline.='☰ %l:%c'              " Show line number and column
     let statusline.=' %p%% '               " Show percentage
-    if get(g:, 'streamline_show_ale_status', 1) && exists(':ALELint')
-        let statusline.='%#WarningColor#'
-        let statusline.='%{GetAleStatus()[0]}'
-        let statusline.='%#ErrorColor#'
-        let statusline.='%{GetAleStatus()[1]}'
-    endif
     return statusline
 endfunction
 
@@ -79,6 +82,9 @@ function! CreateInactiveStatusline()
         let statusline.='%{GetAleStatus()[0]}'
         let statusline.='%{GetAleStatus()[1]}'
     endif
+    if get(g:, 'streamline_show_coc_status', 1) && exists('g:coc_enabled')
+        let statusline.=GetCocStatus()
+    endif
     return statusline
 endfunction
 
@@ -90,10 +96,15 @@ endfunction
 function GetAleStatus()
     let l:counts = ale#statusline#Count(bufnr(''))
     let l:all_errors = l:counts.error + l:counts.style_error
-    let l:formated_errors = l:all_errors == 0 ? '' : '▏✗ ' . l:all_errors . ' '
+    let l:formated_errors = l:all_errors == 0 ? '' : '' . l:all_errors . ' '
     let l:all_warnings = l:counts.total - l:all_errors
-    let l:formated_warnings = l:all_warnings == 0 ? '' : '▏⊖ ' . l:all_warnings . ' '
+    let l:formated_warnings = l:all_warnings == 0 ? '' : '' . l:all_warnings . ' '
     return [l:formated_warnings, l:formated_errors]
+endfunction
+
+function GetCocStatus()
+    let l:coc_status = substitute(coc#status(), "E", "", "")
+    return substitute(l:coc_status, "W", "", "")
 endfunction
 
 function! GetMode()
