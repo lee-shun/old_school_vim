@@ -153,9 +153,9 @@ if empty(glob($CONF_PATH."/tmp/"))
         call system("mkdir ".$CONF_PATH."/tmp/undo")
         call system("mkdir ".$CONF_PATH."/tmp/swap")
     elseif g:os_name == 'Linux'
-    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
-    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
-    silent exec "!mkdir -p " . $CONF_PATH . "/tmp/swap"
+        call system("mkdir -p ".$CONF_PATH."/tmp/backup")
+        call system("mkdir -p ".$CONF_PATH."/tmp/undo")
+        call system("mkdir -p ".$CONF_PATH."/tmp/swap")
     endif
     call OsvInfo("Creating the tmp dir!")
     call input('Press any key to continue')
