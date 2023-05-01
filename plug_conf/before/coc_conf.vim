@@ -35,7 +35,7 @@ if dein#tap('vim-snippets')
     call add(g:coc_global_extensions, 'coc-snippets')
 endif
 
-if g:osv_file_explorer == 'coc-exporter'
+if g:osv_file_explorer == 'coc-explorer'
     call add(g:coc_global_extensions, 'coc-explorer')
 endif
 
