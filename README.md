@@ -7,11 +7,6 @@
 ## TODOs
 
 - windows cmd support! Only linux now!
-- vim 7.4
-  - t_8f problem!
-  - terminal
-  - general plugins: statusline?
-  - pure vim-lsp without complete engine?
 
 **Features:**
 
