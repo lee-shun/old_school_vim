@@ -29,7 +29,7 @@ elseif g:osv_file_explorer == 'fern'
     call dein#add('lambdalisue/fern.vim', {'lazy':1,
                 \'on_map':'<leader>t',
                 \'on_cmd':'Fern',
-                \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
+                \'depends':['nerdfont.vim','fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/fern_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/fern_conf.vim'})
 elseif g:osv_file_explorer == 'vimfiler'

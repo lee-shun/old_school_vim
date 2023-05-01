@@ -58,7 +58,7 @@ call dein#add('tpope/vim-surround', {'lazy':1,
             \})
 
 call dein#add('tpope/vim-repeat', {'lazy':1,
-            \'on_map':{'n':'.'},
+            \'on_event':['BufReadPost'],
             \})
 
 call dein#add('tpope/vim-commentary', {'lazy':1,
