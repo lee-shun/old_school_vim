@@ -48,12 +48,17 @@ call dein#add('preservim/vim-markdown', {'lazy':1,
             \})
 
 if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-    " only Linux_x86_64, Windows have this plugin
+    if has('nvim') || v:version >= 801
     call dein#add('iamcco/markdown-preview.nvim', {'lazy':1,
                 \'on_ft' :['markdown'],
                 \'hook_done_update':'call mkdp#util#install_sync()',
                 \'hook_source':'source $CONF_PATH/plug_conf/before/mkd_preview_conf.vim'
                 \})
+else
+    OsvWarn("Mkd preview needs vim >=8.1 or nvim! Skip!")
+
+else
+    OsvWarn("Only Linux_x86_64, Windows have mkd preview! Skip!")
 endif
 
 call dein#add('ferrine/md-img-paste.vim',{'lazy':1,
@@ -67,7 +72,7 @@ if executable('latexmk')
                 \'hook_source':'source $CONF_PATH/plug_conf/before/vimtex_conf.vim',
                 \})
 elseif
-    OsvWarn('Vimtex needs the texlive installed!')
+    OsvWarn('Vimtex needs the texlive to be installed! Skip!')
 endif
 
 if (g:os_name == 'Linux') && (executable('roscore'))
@@ -76,7 +81,7 @@ if (g:os_name == 'Linux') && (executable('roscore'))
                 \'on_cmd':'Roscd'
                 \})
 elseif
-    OsvWarn('Vim-ros needs the ros installed!')
+    OsvWarn('Vim-ros needs the ros to be installed! Skip!')
 endif
 
 call dein#add('edersonferreira/open.vim', {'lazy':1,
