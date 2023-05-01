@@ -25,13 +25,6 @@ if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
     set columns=120
 endif
 
-" for the powershell in windows
-if g:os_name == 'Windows'
-    set shell=powershell shellquote=\" shellpipe=\| shellredir=>
-    set shellcmdflag=-Command
-    let &shellxquote=' '
-endif
-
 " display
 filetype plugin indent on
 syntax enable
@@ -155,10 +148,16 @@ endif
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
+    if g:os_name == 'Windows'
+        call system("mkdir ".$CONF_PATH."/tmp/backup")
+        call system("mkdir ".$CONF_PATH."/tmp/undo")
+        call system("mkdir ".$CONF_PATH."/tmp/swap")
+    elseif g:os_name == 'Linux'
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/backup"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/undo"
     silent exec "!mkdir -p " . $CONF_PATH . "/tmp/swap"
-    OsvInfo("Creating the tmp dir!")
+    endif
+    call OsvInfo("Creating the tmp dir!")
     call input('Press any key to continue')
 endif
 
