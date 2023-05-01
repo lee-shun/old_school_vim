@@ -225,11 +225,19 @@ endif
 " ===
 if exists(':terminal')
     tnoremap <C-N> <C-\><C-N>
-    augroup term_open_settings
-        autocmd!
-        autocmd TerminalOpen * startinsert
-    augroup END
+    if has('nvim')
+        augroup term_open_settings
+            autocmd!
+            autocmd TerminalOpen * startinsert
+        augroup END
+    else
+        augroup term_open_settings
+            autocmd!
+            autocmd TermOpen * startinsert
+        augroup END
+    endif
 endif
+
 if has('nvim')
     let g:terminal_color_0  = '#000000'
     let g:terminal_color_1  = '#FF5555'
