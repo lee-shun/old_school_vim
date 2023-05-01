@@ -1,17 +1,16 @@
-# <p align="center">![tittle](./img/osv.png)</p>
+# <p align="center"><img src="./img/osv.png"  width="40%" height="20%"></p>
 
-> Due to my study and work, I always want to use vim under different environments💻. So, I always choose the plugins
-> with considering compatibility. Comparing with fancy and breaking new "lua" trending, The plugins in this configuration are
-> pretty "**Old-School**"🏫!
+<p align="center"><b>Old-school Vim/Neovim Configuration.</b></p>
 
 **Features:**
 
+- 🏫Old-school configuration in vimscripts.
 - 🔌Functions are well arranged into different modules, which can be customized in `custom_modules.vim`.
 - 🤖Good compatibility to different platform (Windows, Linux) of different architectures (x86, x64, aarch64) with different
   vim/neovim versions.
 - 🌟Stay in original vim keybindings and operations, but add some meaningful keybindings.
 - ⚡Fast startup time using `dein.vim` to lazy load most of the plugins.
-- 🆙 Daily update  support.
+- 🆙 Daily update support.
 
 ## <p align="center"> Screen Shots📺 </p>
 
@@ -23,13 +22,14 @@
 
 ![image](./img/win10_git_bash.png)
 
-## <p align="center"> Vim/Neovim Version </p>
+## <p align="center"> Vim/Neovim Version 🎯</p>
+
+> The vim/nvim version will be checked _automatically_ when using different modules.
 
 - Vim 8 or higher, at least 7.4.
 - Neovim 0.4.2 or higher.
-> The vim/nvim version will be checked _automatically_ when using different modules.
 
-## <p align="center"> Installation </p>
+## <p align="center"> Installation ⬇ </p>
 
 ### Before Installation
 
@@ -74,14 +74,14 @@
 
 - **`g:osv_warning`**
 
-    > print the warning message when OSV starts.
+  > print the warning message when OSV starts.
 
   - **type:** int
   - **possible values:** `0` and `1`
 
 - **`g:osv_plug_general`**
 
-    > use some general editor enhancement plugins, zero dependencies, and  pure vimscripts.
+  > use some general editor enhancement plugins, zero dependencies, and pure vimscripts.
 
   - **type:** int
   - **possible values:** `0` and `1`
@@ -255,4 +255,4 @@ TODO:
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 一 01 5月 2023 04:20:31 下午
+> Last Modified : 一 01 5 月 2023 04:20:31 下午
