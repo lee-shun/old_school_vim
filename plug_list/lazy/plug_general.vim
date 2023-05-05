@@ -1,6 +1,27 @@
+call dein#add('ryanoasis/vim-devicons', {'lazy':1})
+
 call dein#add('haya14busa/dein-command.vim', {
             \'on_cmd':'Dein'
             \})
+
+if has('nvim') && !has('nvim-0.8')
+    call dein#add('antoinemadec/FixCursorHold.nvim')
+endif
+
+if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' || v:version < 800
+    call dein#add('mhinz/vim-startify', { 'lazy':1,
+                \'on_event':'VimEnter',
+                \'depends':['vim-devicons'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/vim_startify_conf.vim',
+                \})
+else
+    let s:vim_dashboard_config = { 'lazy':1,
+                \'on_event':'VimEnter',
+                \'depends':['vim-devicons'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/vim_dashboard_conf.vim',
+                \}
+    call dein#add('lee-shun/vim-dashboard', s:vim_dashboard_config)
+endif
 
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
