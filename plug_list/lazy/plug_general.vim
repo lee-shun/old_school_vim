@@ -1,10 +1,3 @@
-if has('nvim') || v:version > 800
-    call dein#add('roxma/vim-hug-neovim-rpc', {'lazy':1})
-    call dein#add('roxma/nvim-yarp', {'lazy':1,
-                \'depends':'vim-hug-neovim-rpc'
-                \})
-endif
-
 call dein#add('haya14busa/dein-command.vim', {
             \'on_cmd':'Dein'
             \})
