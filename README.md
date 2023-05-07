@@ -2,6 +2,8 @@
 
 <p align="center"><b>Old-school Vim/Neovim Configuration.</b></p>
 
+TODO: windows asyncomplete tabnine!+ look!
+
 **Features:**
 
 - 🏫Old-school configuration in vimscripts.
