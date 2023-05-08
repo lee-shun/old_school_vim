@@ -170,7 +170,7 @@ call dein#add('brooth/far.vim', {
 " plugins for nvim and vim > 8.0
 if v:version >= 800 || has('nvim')
     let s:spaceline_conf = {'lazy':1,
-                \'on_event':['BufReadPost'],
+                \'on_event': ['BufNewFile', 'BufReadPost'],
                 \'depends':['vim-signify', 'vim-devicons'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
     if g:osv_complete_engine == 'coc'

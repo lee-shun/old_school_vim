@@ -42,7 +42,7 @@ endif
 " ===
 let g:asyncomplete_conf = { 'lazy':1,
             \'depends': ['asyncomplete-buffer.vim', 'asyncomplete-file.vim', 'asyncomplete-emoji.vim'],
-            \'on_event': ['BufReadPre'],
+            \'on_event': ['BufNewFile', 'BufReadPre'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/asyncomplete_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/asyncomplete_conf.vim'}
 

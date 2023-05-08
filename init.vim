@@ -51,10 +51,10 @@ if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
         let g:os_architect = 'x86_64'
-        set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
-        set shellcmdflag=-command
-        set shellquote=\"
-        set shellxquote=
+        " set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+        " set shellcmdflag=-command
+        " set shellquote=\"
+        " set shellxquote=
     else " not windows, use 'uname' command.
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '')

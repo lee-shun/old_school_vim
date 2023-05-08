@@ -60,7 +60,7 @@ if dein#tap('asyncomplete-tabnine.vim')
                 \ 'completor': function('asyncomplete#sources#tabnine#completor'),
                 \ 'config': {
                 \   'line_limit': 1000,
-                \   'max_num_result': 4,
+                \   'max_num_result': 5,
                 \  },
                 \ }))
 endif
