@@ -10,7 +10,7 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " buffer
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
             \ 'name': 'buffer',
             \ 'allowlist': ['*'],
             \ 'completor': function('asyncomplete#sources#buffer#completor'),
@@ -21,14 +21,16 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ }))
 
 " look
-au User asyncomplete_setup call asyncomplete#register_source({
-            \ 'name': 'look',
-            \ 'allowlist': ['text', 'markdown', 'tex'],
-            \ 'completor': function('asyncomplete#sources#look#completor'),
-            \ })
+if dein#tap('asyncomplete-look.vim')
+    call asyncomplete#register_source({
+                \ 'name': 'look',
+                \ 'allowlist': ['text', 'markdown', 'tex'],
+                \ 'completor': function('asyncomplete#sources#look#completor'),
+                \ })
+endif
 
 " file
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
             \ 'name': 'file',
             \ 'allowlist': ['*'],
             \ 'priority': 10,
@@ -36,7 +38,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
             \ }))
 
 " emoji
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
+call asyncomplete#register_source(asyncomplete#sources#emoji#get_source_options({
             \ 'name': 'emoji',
             \ 'allowlist': ['markdown'],
             \ 'completor': function('asyncomplete#sources#emoji#completor'),
@@ -44,7 +46,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 
 " ale
 if dein#tap('asyncomplete-ale.vim')
-    au User asyncomplete_setup  call asyncomplete#ale#register_source({
+    call asyncomplete#ale#register_source({
                 \ 'name': 'ale',
                 \ 'linter': 'flow',
                 \ })
@@ -52,7 +54,7 @@ endif
 
 " tabnine
 if dein#tap('asyncomplete-tabnine.vim')
-    au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
+    call asyncomplete#register_source(asyncomplete#sources#tabnine#get_source_options({
                 \ 'name': 'tabnine',
                 \ 'allowlist': ['*'],
                 \ 'completor': function('asyncomplete#sources#tabnine#completor'),
@@ -65,7 +67,7 @@ endif
 
 " snippest
 if dein#tap('asyncomplete-ultisnips.vim')
-    au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
                 \ 'name': 'ultisnips',
                 \ 'allowlist': ['*'],
                 \ 'completor': function('asyncomplete#sources#ultisnips#completor'),

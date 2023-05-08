@@ -1,8 +1,10 @@
 call dein#add('prabirshrestha/asyncomplete-buffer.vim', {'lazy':1,
             \})
 
+if executable('look')
 call dein#add('htlsne/asyncomplete-look', {'lazy':1,
             \})
+endif
 
 call dein#add('prabirshrestha/asyncomplete-file.vim', {'lazy':1,
             \})
@@ -39,11 +41,14 @@ endif
 " === setting
 " ===
 let g:asyncomplete_conf = { 'lazy':1,
-            \'depends': ['asyncomplete-buffer.vim',
-            \'asyncomplete-look','asyncomplete-file.vim', 'asyncomplete-emoji.vim'],
+            \'depends': ['asyncomplete-buffer.vim', 'asyncomplete-file.vim', 'asyncomplete-emoji.vim'],
             \'on_event': ['BufReadPre'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/asyncomplete_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/asyncomplete_conf.vim'}
+
+if dein#tap('asyncomplete-look.vim')
+    call add(g:asyncomplete_conf.depends, 'asyncomplete-look.vim')
+endif
 
 if dein#tap('asyncomplete-lsp.vim')
     call add(g:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
