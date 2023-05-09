@@ -2,7 +2,9 @@
 
 <p align="center"><b>Old-school Vim/Neovim Configuration.</b></p>
 
-TODO: windows asyncomplete tabnine!+ look!
+**TODO:** 
+- BUG: asyncomplete-tabnine + nvim-0.9
+
 
 **Features:**
 
