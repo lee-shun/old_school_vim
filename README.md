@@ -3,7 +3,7 @@
 <p align="center"><b>Old-school Vim/Neovim Configuration.</b></p>
 
 **TODO:** 
-- BUG: asyncomplete-tabnine + nvim-0.9
+- BUG: asyncomplete-tabnine + nvim-0.9:  track the [issue](https://github.com/kitagry/asyncomplete-tabnine.vim/issues/15)
 
 
 **Features:**
