@@ -61,7 +61,7 @@ function! OsvInfo(message) abort
 endfunction
 
 function! OsvWarn(message) abort
-    if g:osv_warning == 0
+    if !exists('g:osv_warning') || g:osv_warning == 0
         return 0
     endif
     echohl WarningMsg
