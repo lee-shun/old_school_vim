@@ -29,7 +29,7 @@ let s:osv_setup = 0
 if empty(glob(s:dein_dir))
     let s:osv_setup = 1
     " install dein.vim
-    call system("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim ".s:dein_src)
+    call OsvSystemExe("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim ".s:dein_src)
     call OsvInfo("Install dein ".g:osv_dein_version." to ".s:dein_src)
     call input("Press any key to continue...")
 endif
