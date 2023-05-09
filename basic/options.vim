@@ -148,15 +148,9 @@ endif
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
-    if g:os_name == 'Windows'
-        call OsvSystemExe("mkdir ".$CONF_PATH."/tmp/backup")
-        call OsvSystemExe("mkdir ".$CONF_PATH."/tmp/undo")
-        call OsvSystemExe("mkdir ".$CONF_PATH."/tmp/swap")
-    elseif g:os_name == 'Linux'
-        call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/backup")
-        call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/undo")
-        call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/swap")
-    endif
+    call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/backup")
+    call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/undo")
+    call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/swap")
     call OsvInfo("Creating the tmp dir!")
     call input('Press any key to continue')
 endif
