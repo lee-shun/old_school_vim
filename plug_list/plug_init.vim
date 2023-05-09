@@ -101,9 +101,10 @@ if s:osv_setup == 0
             " update the repo first
             let l:osv_update = input("Upgrade old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
-                let l:git_clean = system("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null") is# ''
+                let l:git_clean = OsvSystemExe("cd ".$CONF_PATH." && git status --porcelain 2>/dev/null") is# ''
+                echom l:git_clean " 0 ???
                 if l:git_clean == 1
-                    call system("cd ".$CONF_PATH." && git pull")
+                    call OsvSystemExe("cd ".$CONF_PATH." && git pull")
                 else
                     call OsvWarn("git status is not clean! Skip!")
                     call input("Press any key to continue...")
