@@ -101,7 +101,7 @@ if s:osv_setup == 0
             " update the repo first
             let l:osv_update = input("Upgrade old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
-                let l:git_clean = OsvSystemExe("cd ".$CONF_PATH." && git status --porcelain") is# ''
+                let l:git_clean = OsvSystemExe("cd ".$CONF_PATH." && git status -s") is# ''
                 if l:git_clean == 1
                     call OsvSystemExe("cd ".$CONF_PATH." && git pull")
                 else
