@@ -58,22 +58,22 @@ elseif g:osv_finder == 'ctrlp'
 
     call dein#add('tacahiroy/ctrlp-funky', {'lazy':1,
                 \'depends':'ctrlp.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_funky_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/funky.vim',
                 \})
     call dein#add('ludovicchabant/vim-ctrlp-autoignore', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \})
     call dein#add('lee-shun/ctrlp-location-list', {'lazy':1,
                 \'depends':'ctrlp.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_location_list_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/location_list.vim',
                 \})
     call dein#add('sgur/ctrlp-extensions.vim', {'lazy':1,
                 \'depends':'ctrlp.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_extensions_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/extensions.vim',
                 \})
     call dein#add('mattn/ctrlp-register', {'lazy':1,
                 \'depends':'ctrlp.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_register_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/register.vim',
                 \})
     " will be sourced after the ctrlp.vim
     let g:ctrlp_plugins = ['ctrlp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register',]
@@ -81,8 +81,8 @@ elseif g:osv_finder == 'ctrlp'
     if executable('ag')
         call dein#add('lokikl/vim-ctrlp-ag', {'lazy':1,
                     \'depends':'ctrlp.vim',
-                    \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_ag_conf.vim',
-                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_ag_conf.vim',
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp/ag.vim',
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/ag.vim',
                     \})
         call add(g:ctrlp_plugins, 'vim-ctrlp-ag')
     endif
@@ -91,8 +91,8 @@ elseif g:osv_finder == 'ctrlp'
                 \'depends':g:ctrlp_plugins,
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':['CtrlP'],
-                \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp_conf.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp_conf.vim '
+                \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp/ctrlp.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/ctrlp.vim '
                 \})
 
 elseif g:osv_finder == 'clap'
