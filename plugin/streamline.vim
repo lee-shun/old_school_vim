@@ -89,7 +89,7 @@ function! CreateInactiveStatusline()
 endfunction
 
 function! GetGitBranch()
-    let l:branch = system('cd '.expand('%:p:h').' && git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d "\n"')
+    let l:branch = OsvSystemExe('cd '.expand('%:p:h').' && git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d "\n"')
     let s:git_branch = !strlen(l:branch) || !isdirectory(expand('%:p:h')) ? '' : '▏' . l:branch . ' '
 endfunction
 

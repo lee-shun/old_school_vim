@@ -20,33 +20,6 @@
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
 
-function! OsvInfo(message) abort
-    echomsg a:message | echo ""
-    return 0
-endfunction
-
-function! OsvWarn(message) abort
-    if g:osv_warning == 0
-        return 0
-    endif
-    echohl WarningMsg
-    echomsg a:message | echo ""
-    echohl None
-    return 0
-endfunction
-
-function! OsvErr(message) abort
-    echohl ErrorMsg
-    echomsg a:message | echo ""
-    echohl None
-    return 0
-endfunction
-
-if !has('nvim') && v:version < 704
-    OsvErr('OSV needs vim >= 7.4 or nvim! Finish!')
-    finish
-endif
-
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
@@ -80,6 +53,47 @@ else
 endif
 
 " ===
+" === ulti functions
+" ===
+function! OsvInfo(message) abort
+    echomsg a:message | echo ""
+    return 0
+endfunction
+
+function! OsvWarn(message) abort
+    if g:osv_warning == 0
+        return 0
+    endif
+    echohl WarningMsg
+    echomsg a:message | echo ""
+    echohl None
+    return 0
+endfunction
+
+function! OsvErr(message) abort
+    echohl ErrorMsg
+    echomsg a:message | echo ""
+    echohl None
+    return 0
+endfunction
+
+function! OsvSystemExe(cmd) abort
+    if g:os_name == 'Windows'
+        return system('powershell.exe '.a:cmd)
+    else
+        return system(a:cmd)
+    endif
+endfunction
+
+" ===
+" === check the base env
+" ===
+if !has('nvim') && v:version < 704
+    OsvErr('OSV needs vim >= 7.4 or nvim! Finish!')
+    finish
+endif
+
+" ===
 " === get the modules
 " ===
 let g:osv_warning = 1
@@ -95,7 +109,7 @@ if !empty(glob($CONF_PATH.'/custom_modules.vim'))
     source $CONF_PATH/custom_modules.vim
 else
     " copy the custom_modules out.
-    call system("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
+    call OsvSystemExe("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
     call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("Press any key to continue...")
 endif
