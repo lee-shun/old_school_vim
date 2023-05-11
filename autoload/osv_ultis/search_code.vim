@@ -1,4 +1,4 @@
-function! osv_ultis#searchcode#visual_search(direction, extra_filter) range
+function! osv_ultis#search_code#visual_search(direction, extra_filter) range
     let l:saved_reg = @"
     execute "normal! vgvy"
 

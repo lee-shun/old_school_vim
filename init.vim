@@ -53,43 +53,10 @@ else
 endif
 
 " ===
-" === ulti functions
-" ===
-function! OsvInfo(message) abort
-    echomsg a:message | echo ""
-    return 0
-endfunction
-
-function! OsvWarn(message) abort
-    if !exists('g:osv_warning') || g:osv_warning == 0
-        return 0
-    endif
-    echohl WarningMsg
-    echomsg a:message | echo ""
-    echohl None
-    return 0
-endfunction
-
-function! OsvErr(message) abort
-    echohl ErrorMsg
-    echomsg a:message | echo ""
-    echohl None
-    return 0
-endfunction
-
-function! OsvSystemExe(cmd) abort
-    if g:os_name == 'Windows'
-        return system('powershell.exe '.a:cmd)
-    else
-        return system(a:cmd)
-    endif
-endfunction
-
-" ===
 " === check the base env
 " ===
 if !has('nvim') && v:version < 704
-    OsvErr('OSV needs vim >= 7.4 or nvim! Finish!')
+    call osv_ultis#msg#err('OSV needs vim >= 7.4 or nvim! Finish!')
     finish
 endif
 
@@ -110,8 +77,8 @@ if !empty(glob($CONF_PATH.'/custom_modules.vim'))
     source $CONF_PATH/custom_modules.vim
 else
     " copy the custom_modules out.
-    call OsvSystemExe("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
-    call OsvInfo("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
+    call osv_ultis#system#exec("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
+    call osv_ultis#msg#info("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("Press any key to continue...")
 endif
 
@@ -120,56 +87,56 @@ endif
 " ===
 if g:osv_finder == 'coc-lists'
     if g:osv_complete_engine != 'coc'
-        call OsvErr("coc-lists needs the coc.nvim to be used as completion engine. Skip!")
+        call osv_ultis#msg#err("coc-lists needs the coc.nvim to be used as completion engine. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
 elseif g:osv_finder == 'fzf'
     if !executable('ag')
-        call OsvWarn("Need the silver searcher (ag) to run fzf.vim!")
+        call osv_ultis#msg#warn("Need the silver searcher (ag) to run fzf.vim!")
     endif
     if !executable('rg')
-        call OsvWarn("Need the ripgrep (rg) to run fzf.vim!")
+        call osv_ultis#msg#warn("Need the ripgrep (rg) to run fzf.vim!")
     endif
     if !executable('batcat')
-        call OsvWarn("Need bat(cat) to run the syntax highlight preview in fzf.vim!")
+        call osv_ultis#msg#warn("Need bat(cat) to run the syntax highlight preview in fzf.vim!")
     endif
 elseif g:osv_finder == 'ctrlp'
     if v:version < 700 && !has('nvim')
-        call OsvErr("Need nvim or vim >= 7 to use ctrlp. Skip!")
+        call osv_ultis#msg#err("Need nvim or vim >= 7 to use ctrlp. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !executable('ag')
-        call OsvWarn("Need the silver searcher (ag) to run ctrlp!")
+        call osv_ultis#msg#warn("Need the silver searcher (ag) to run ctrlp!")
     endif
 elseif g:osv_finder == 'leaderf'
     if !has('patch-7.4.1126') && !has('nvim')
-        call OsvErr("Need nvim or vim >= 7.4.1126 to use leaderf. Skip!")
+        call osv_ultis#msg#err("Need nvim or vim >= 7.4.1126 to use leaderf. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !has('python3')
-        call OsvErr("Need python3 to use leaderf. Skip!")
+        call osv_ultis#msg#err("Need python3 to use leaderf. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !executable('rg')
-        call OsvWarn("Need the ripgrep (rg) to run leaderf!")
+        call osv_ultis#msg#warn("Need the ripgrep (rg) to run leaderf!")
     endif
 elseif g:osv_finder == 'clap'
     if g:os_architect == 'aarch64'
-        call OsvErr("Do not use clap under aarch64. Skip!")
+        call osv_ultis#msg#err("Do not use clap under aarch64. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !has('patch-8.1.2114') && !has('nvim-0.4.2')
-        call OsvErr("Need nvim >= 0.4.2 or vim >= 8.1.2114 to use clap. Skip!")
+        call osv_ultis#msg#err("Need nvim >= 0.4.2 or vim >= 8.1.2114 to use clap. Skip!")
         let g:osv_finder = 'none'
         finish
     endif
     if !executable('rg')
-        call OsvWarn("Need the ripgrep (rg) to run clap!")
+        call osv_ultis#msg#warn("Need the ripgrep (rg) to run clap!")
     endif
 endif
 
@@ -178,14 +145,14 @@ endif
 " ===
 if g:osv_file_explorer == 'coc-explorer'
     if g:osv_complete_engine != 'coc'
-        call OsvWarn("coc-explorer needs the coc.nvim to be used as completion engine. Skip!")
+        call osv_ultis#msg#warn("coc-explorer needs the coc.nvim to be used as completion engine. Skip!")
         let g:osv_file_explorer = 'none'
     endif
 elseif g:osv_file_explorer == 'defx'
     if has('nvim-0.4') || v:version > 802 " according to the repo
         " defx.nvim is ok
     else
-        call OsvErr("Need nvim >= 0.4 or vim >= 8.2 to use defx.nvim. Skip!")
+        call osv_ultis#msg#err("Need nvim >= 0.4 or vim >= 8.2 to use defx.nvim. Skip!")
         let g:osv_file_explorer = 'none'
         finish
     endif
@@ -193,7 +160,7 @@ elseif g:osv_file_explorer == 'fern'
     if has('nvim') || has('patch-8.1.2269') " according to the repo
         " fern.vim is ok
     else
-        call OsvErr("Need nvim or vim >= 8.1.2269 to use fern.vim. Skip!")
+        call osv_ultis#msg#err("Need nvim or vim >= 8.1.2269 to use fern.vim. Skip!")
         let g:osv_file_explorer = 'none'
         finish
     endif
@@ -207,38 +174,38 @@ endif
 if g:osv_complete_engine == 'coc'
     " don't use coc under aarch64
     if !executable('npm')
-        call OsvErr("Please install nodejs to use coc. Skip!")
+        call osv_ultis#msg#err("Please install nodejs to use coc. Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
 
     " don't use coc with vim under version 8.1-1719
     if !has('nvim-0.4') && !has('patch-8.1.1719')
-        call OsvErr("For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!")
+        call osv_ultis#msg#err("For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
 
     if g:osv_lsp != 'none'
-        call OsvWarn("coc.nvim already has the lsp support! No need to install lsp backend!")
+        call osv_ultis#msg#warn("coc.nvim already has the lsp support! No need to install lsp backend!")
         let g:osv_lsp = 'none'
     endif
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
     if !has('python3')
-        call OsvErr("Deoplete.nvim needs python3 support! Skip!")
+        call osv_ultis#msg#err("Deoplete.nvim needs python3 support! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
     if !has('nvim-0.3') && !has('patch-8.2.1978')
-        call OsvErr("For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!")
+        call osv_ultis#msg#err("For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
 elseif g:osv_complete_engine == 'asyncomplete'
     " don't use asyncomplete with vim under version 8 or nvim
     if !has('nvim') && v:version< 800
-        call OsvErr("For asyncomplete.nvim: vim>=8.0 or nvim! Skip!")
+        call osv_ultis#msg#err("For asyncomplete.nvim: vim>=8.0 or nvim! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
@@ -249,7 +216,7 @@ endif
 " ===
 " don't use ale with vim under version 8.0
 if !has('nvim-0.2.0') && v:version < 800 && g:osv_linter == 'ale'
-    call OsvErr("For ale: vim>=8.0 or nvim! Skip!")
+    call osv_ultis#msg#err("For ale: vim>=8.0 or nvim! Skip!")
     let g:osv_linter = 'none'
     finish
 endif
@@ -259,12 +226,12 @@ endif
 " ===
 " don't use lsp with vim under version 8.0
 if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsp'
-    call OsvErr("For vim-lsp: vim>=8.0 or nvim! Skip!")
+    call osv_ultis#msg#err("For vim-lsp: vim>=8.0 or nvim! Skip!")
     let g:osv_lsp = 'none'
     finish
 endif
 if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsc'
-    call OsvErr("For vim-lsc: vim>=8.0 or nvim! Skip!")
+    call osv_ultis#msg#err("For vim-lsc: vim>=8.0 or nvim! Skip!")
     let g:osv_lsp = 'none'
     finish
 endif

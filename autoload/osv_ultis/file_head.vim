@@ -44,7 +44,7 @@ func! s:set_comment_sh()
     call setline(20, "")
 endfunc
 
-func! osv_ultis#filehead#set_title()
+func! osv_ultis#file_head#set_title()
     if expand("%:e") == 'make'
         call setline(1,"")
         call setline(2,"")

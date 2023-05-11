@@ -66,6 +66,6 @@ augroup END
 if g:osv_plug_general == 0
     augroup file_head
         autocmd!
-        autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":<c-u>call osv_ultis#filehead#set_title()"
+        autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":<c-u>call osv_ultis#file_head#set_title()"
     augroup END
 endif
