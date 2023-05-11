@@ -66,7 +66,15 @@ if g:osv_complete_engine == 'mucomplete'
     source $CONF_PATH/plug_list/lazy/plug_mucomplete.vim
 endif
 
-if g:osv_vim_lsp == 1
+if g:osv_linter= 'ale'
+    source $CONF_PATH/plug_list/lazy/plug_ale.vim
+endif
+
+if g:osv_lsp == 'vim-lsc'
+    source $CONF_PATH/plug_list/lazy/plug_lsc.vim
+endif
+
+if g:osv_lsp == 'vim-lsp'
     source $CONF_PATH/plug_list/lazy/plug_lsp.vim
 endif
 

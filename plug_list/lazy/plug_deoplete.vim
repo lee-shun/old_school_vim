@@ -13,7 +13,7 @@ if g:os_architect != 'aarch64'
     endif
 endif
 
-if g:osv_vim_lsp == 1
+if g:osv_lsp == 'vim-lsp'
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
 endif
 
@@ -29,7 +29,8 @@ if dein#tap('deoplete-tabnine')
     call add(g:deoplete_nvim_config.depends, 'deoplete-tabnine')
 endif
 
-if dein#tap('ale')
+" as a complete source
+if g:osv_linter == 'ale'
     call add(g:deoplete_nvim_config.depends, 'ale')
 endif
 
