@@ -4,6 +4,7 @@
 
 **TODO:** 
 - BUG: asyncomplete-tabnine + nvim-0.9:  track the [issue](https://github.com/kitagry/asyncomplete-tabnine.vim/issues/15)
+- Yes, maybe I will remove the support of the asyncomplete!
 
 **Features:**
 
