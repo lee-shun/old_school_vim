@@ -202,12 +202,15 @@ elseif g:osv_complete_engine == 'deoplete'
         let g:osv_complete_engine = 'none'
         finish
     endif
-elseif g:osv_complete_engine == 'asyncomplete'
-    " don't use asyncomplete with vim under version 8 or nvim
-    if !has('nvim') && v:version< 800
-        call osv_ultis#msg#err("For asyncomplete.nvim: vim>=8.0 or nvim! Skip!")
+elseif g:osv_complete_engine == 'mucomplete'
+    " don't use  with vim under version 7.4 or nvim
+    if !has('nvim') && v:version < 704
+        call osv_ultis#msg#err("For mucomplete: vim>=7.4 or nvim! Skip!")
         let g:osv_complete_engine = 'none'
         finish
+    endif
+    if v:version < 800
+        call osv_ultis#msg#warn("Update vim to nvim or vim > 8.0 to support mucomplete better!")
     endif
 endif
 

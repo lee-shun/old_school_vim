@@ -2,10 +2,6 @@
 
 <p align="center"><b>Old-school Vim/Neovim Configuration.</b></p>
 
-**TODO:** 
-- BUG: asyncomplete-tabnine + nvim-0.9:  track the [issue](https://github.com/kitagry/asyncomplete-tabnine.vim/issues/15)
-- Yes, maybe I will remove the support of the asyncomplete!
-
 **Features:**
 
 - 🏫Old-school configuration in vimscripts.
@@ -123,7 +119,7 @@
   > choose one of the complete framework to provide automatic completion.
 
   - **type:** string
-  - **possible values:** `coc`, `deoplete`, `mucomplete` and `asyncomplete`.
+  - **possible values:** `coc`, `deoplete`, and `mucomplete`
   - **note:**
     - set to `none` to disable.
 
