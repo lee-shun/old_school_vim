@@ -176,8 +176,8 @@ if v:version >= 800 || has('nvim')
     if g:osv_complete_engine == 'coc'
         call add(s:spaceline_conf.depends, 'coc.nvim')
     endif
-    if g:osv_vim_lsp == 1
-        call add(s:spaceline_conf.depends, 'vim-lsp-ale')
+    if g:osv_linter == 'ale'
+        call add(s:spaceline_conf.depends, 'ale')
     endif
     call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 

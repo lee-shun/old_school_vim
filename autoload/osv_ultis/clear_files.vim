@@ -1,23 +1,14 @@
-" ===
-" === 转换tab为空格
-" ===
-fun! Tab2Space()
+fun! osv_ultis#clear_files#tab2space()
     exec "set expandtab"
     exec "%retab!"
 endfun
 
-" ===
-" === 空格替换为TAB：
-" ===
-fun! Space2Tab()
+fun! osv_ultis#clear_files#space2tab()
     exec "set noexpandtab"
     exec "%retab!"
 endfun
 
-" ===
-" === 清理空格
-" ===
-fun! CleanExtraSpaces()
+fun! osv_ultis#clear_files#clean_extra_spaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
     silent! %s/\s\+$//e

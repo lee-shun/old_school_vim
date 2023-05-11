@@ -1,8 +1,4 @@
-" ===
-" === 编译运行
-" ===
-noremap r :call CompileRunGcc()<CR>
-func! CompileRunGcc()
+func! osv_ultis#run_code#run_code()
     exec "w"
     if &filetype == 'c'
         exec "!g++ % -ggdb -o %<.out"
@@ -45,4 +41,3 @@ func! CompileRunGcc()
         :term go run .
     endif
 endfunc
-

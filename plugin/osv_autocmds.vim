@@ -58,3 +58,14 @@ augroup number_toggle
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number | set relativenumber | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
 augroup END
+
+" ===
+" === add file heads
+" ===
+" Do not load when install general plugins
+if g:osv_plug_general == 0
+    augroup file_head
+        autocmd!
+        autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":<c-u>call osv_ultis#file_head#set_title()"
+    augroup END
+endif

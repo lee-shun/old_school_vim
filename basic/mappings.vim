@@ -293,3 +293,13 @@ endfunction
 " around indentation(indentation level and any surrounding empty lines)
 xnoremap <silent> ai :<c-u>call <sid>aroundIndentation()<cr>
 onoremap <silent> ai :<c-u>call <sid>aroundIndentation()<cr>
+
+" ===
+" === run the code
+" ===
+noremap r :<c-u>call osv_ultis#run_code#run_code()<CR>
+
+" ===
+" === search
+" ===
+vnoremap <silent> # :<C-u>call osv_ultis#search_code#visual_search('', '')<CR>?<C-R>=@/<CR><CR>
