@@ -19,6 +19,9 @@ let g:osv_file_explorer = 'none'
 " possible value: coc, deoplete, asyncomplete, mucomplete and none.
 let g:osv_complete_engine = 'none'
 
-" vim-lsp as backend of the above complete engine.
-" Cause coc has lsp support, no need to install vim-lsp agian if use coc.
-let g:osv_vim_lsp = 0
+" possible value: ale and none
+let g:osv_linter= 'none'
+
+" possible value: vim-lsp, vim-lsc and none
+" Because coc has lsp support, no need to install lsp agian if use coc.
+let g:osv_lsp= 'none'
