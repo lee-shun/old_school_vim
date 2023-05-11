@@ -65,15 +65,19 @@ if has('python3') && dein#tap('ultisnips')
                 \})
 endif
 
-" lsp
-if g:osv_vim_lsp == 1
-    call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
-                \'on_event': ['BufNewFile', 'BufReadPre'],
-                \'depends':'asyncomplete.vim',
-                \})
+" linter
+if g:osv_linter == 'ale'
     call dein#add('andreypopp/asyncomplete-ale.vim', {'lazy':1,
                 \'on_event': ['BufNewFile', 'BufReadPre'],
                 \'depends':'asyncomplete.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/asyncomplete/ale.vim',
+                \})
+endif
+
+" lsp
+if g:osv_lsp == 'vim_lsp'
+    call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
+                \'on_event': ['BufNewFile', 'BufReadPre'],
+                \'depends':'asyncomplete.vim',
                 \})
 endif

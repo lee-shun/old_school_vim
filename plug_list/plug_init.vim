@@ -29,8 +29,8 @@ let s:osv_setup = 0
 if empty(glob(s:dein_dir))
     let s:osv_setup = 1
     " install dein.vim
-    call OsvSystemExe("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim ".s:dein_src)
-    call OsvInfo("Install dein ".g:osv_dein_version." to ".s:dein_src)
+    call osv_ultis#system#exec("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim ".s:dein_src)
+    call osv_ultis#msg#info("Install dein ".g:osv_dein_version." to ".s:dein_src)
     call input("Press any key to continue...")
 endif
 set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
@@ -66,7 +66,15 @@ if g:osv_complete_engine == 'mucomplete'
     source $CONF_PATH/plug_list/lazy/plug_mucomplete.vim
 endif
 
-if g:osv_vim_lsp == 1
+if g:osv_linter == 'ale'
+    source $CONF_PATH/plug_list/lazy/plug_ale.vim
+endif
+
+if g:osv_lsp == 'vim-lsc'
+    source $CONF_PATH/plug_list/lazy/plug_lsc.vim
+endif
+
+if g:osv_lsp == 'vim-lsp'
     source $CONF_PATH/plug_list/lazy/plug_lsp.vim
 endif
 
@@ -79,11 +87,8 @@ augroup END
 
 if s:osv_setup == 1
     call dein#update()
-    call OsvInfo("Install the plugins with dein#update().")
+    call osv_ultis#msg#info("Install the plugins with dein#update().")
     call input("Press any key to continue...")
-    if has('nvim')
-        silent exec "UpdateRemotePlugins"
-    endif
 endif
 
 " Run update every day automatically when entering Vim.
@@ -101,11 +106,11 @@ if s:osv_setup == 0
             " update the repo first
             let l:osv_update = input("Upgrade old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
-                let l:git_clean = OsvSystemExe("cd ".$CONF_PATH." && git status -s") is# ''
+                let l:git_clean = osv_ultis#system#exec("cd ".$CONF_PATH." && git status -s") is# ''
                 if l:git_clean == 1
-                    call OsvSystemExe("cd ".$CONF_PATH." && git pull")
+                    call osv_ultis#system#exec("cd ".$CONF_PATH." && git pull")
                 else
-                    call OsvWarn("git status is not clean! Skip!")
+                    call osv_ultis#msg#warn("git status is not clean! Skip!")
                     call input("Press any key to continue...")
                 endif
             endif
