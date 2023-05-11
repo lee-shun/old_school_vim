@@ -1,4 +1,4 @@
-function! osv_ultis#window#maxbufwindow()
+function! osv_ultis#window#max_buf_window()
     " check if is the zoomed state (tabnumber > 1 && window == 1)
     if tabpagenr('$') > 1 && tabpagewinnr(tabpagenr(), '$') == 1
         let l:cur_winview = winsaveview()

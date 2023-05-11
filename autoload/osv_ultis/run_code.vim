@@ -1,4 +1,4 @@
-func! osv_ultis#runcode#runcode()
+func! osv_ultis#run_code#run_code()
     exec "w"
     if &filetype == 'c'
         exec "!g++ % -ggdb -o %<.out"
@@ -41,4 +41,3 @@ func! osv_ultis#runcode#runcode()
         :term go run .
     endif
 endfunc
-
