@@ -1,8 +1,4 @@
-" ===
-" === search the chosen
-" ===
-vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-function! VisualSelection(direction, extra_filter) range
+function! osv_ultis#searchcode#visual_search(direction, extra_filter) range
     let l:saved_reg = @"
     execute "normal! vgvy"
 
@@ -18,3 +14,4 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+

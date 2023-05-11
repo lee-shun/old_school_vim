@@ -1,8 +1,4 @@
-" ===
-" === 编译运行
-" ===
-noremap r :call CompileRunGcc()<CR>
-func! CompileRunGcc()
+func! osv_ultis#runcode#runcode()
     exec "w"
     if &filetype == 'c'
         exec "!g++ % -ggdb -o %<.out"
