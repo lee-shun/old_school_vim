@@ -102,7 +102,8 @@ let g:osv_plug_advanced = 0
 let g:osv_finder = 'none'
 let g:osv_file_explorer = 'none'
 let g:osv_complete_engine = 'none'
-let g:osv_vim_lsp = 0
+let g:osv_linter = 'none'
+let g:osv_lsp = 'none'
 
 " customs
 if !empty(glob($CONF_PATH.'/custom_modules.vim'))
@@ -218,9 +219,9 @@ if g:osv_complete_engine == 'coc'
         finish
     endif
 
-    if g:osv_vim_lsp == 1
-        call OsvWarn("coc.nvim already has the lsp support! No need to install vim-lsp!")
-        let g:osv_vim_lsp = 0
+    if g:osv_lsp != 'none'
+        call OsvWarn("coc.nvim already has the lsp support! No need to install lsp backend!")
+        let g:osv_lsp = 'none'
     endif
 elseif g:osv_complete_engine == 'deoplete'
     " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
@@ -244,13 +245,27 @@ elseif g:osv_complete_engine == 'asyncomplete'
 endif
 
 " ===
-" === check the vim-lsp
+" === check the linter
 " ===
+" don't use ale with vim under version 8.0
+if !has('nvim-0.2.0') && v:version < 800 && g:osv_linter == 'ale'
+    call OsvErr("For ale: vim>=8.0 or nvim! Skip!")
+    let g:osv_linter = 'none'
+    finish
+endif
 
+" ===
+" === check the lsp
+" ===
 " don't use lsp with vim under version 8.0
-if !has('nvim') && v:version < 800 && g:osv_vim_lsp == 1
+if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsp'
     call OsvErr("For vim-lsp: vim>=8.0 or nvim! Skip!")
-    let g:osv_vim_lsp = 0
+    let g:osv_lsp = 'none'
+    finish
+endif
+if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsc'
+    call OsvErr("For vim-lsc: vim>=8.0 or nvim! Skip!")
+    let g:osv_lsp = 'none'
     finish
 endif
 
