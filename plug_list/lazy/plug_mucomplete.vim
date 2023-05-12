@@ -19,4 +19,3 @@ if g:os_architect != 'aarch64'
 endif
 
 call dein#add('lifepillar/vim-mucomplete', s:mucomplete_config)
-
