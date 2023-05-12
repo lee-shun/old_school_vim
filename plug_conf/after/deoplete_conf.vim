@@ -76,6 +76,13 @@ if dein#tap('vim-lsp')
                 \})
 endif
 
+if dein#tap('vim-lsc')
+    call deoplete#custom#source('lsc', {
+                \'max_candidates': 10,
+                \'mark':"[lsc]",
+                \})
+endif
+
 " ale
 if dein#tap('ale')
     call deoplete#custom#source('ale', {
