@@ -1,4 +1,4 @@
-let g:lsc_enable_autocomplete = v:true
+let g:lsc_enable_autocomplete = v:false
 let g:lsc_auto_map = {
             \ 'GoToDefinition': 'gd',
             \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
@@ -12,12 +12,12 @@ let g:lsc_auto_map = {
             \ 'DocumentSymbol': 'go',
             \ 'WorkspaceSymbol': 'gS',
             \ 'SignatureHelp': 'gh',
-            \ 'Completion': 'completefunc',
+            \ 'Completion': 'omnifunc',
             \}
 
 let g:lsc_server_commands = {
             \ 'cpp': {
-            \ 'command': 'clangd --background-index',
+            \ 'command': 'ccls',
             \ 'suppress_stderr': v:true
             \},
             \ 'c': {
