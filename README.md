@@ -44,7 +44,7 @@
 
    - `has('python3')` (if using the advanced plugins.).
    - rg, ag for finders (fzf, leaderf, clap and ctrlp).
-   - some language servers for `coc.nvim` or `vim-lsp`.
+   - some language servers for `coc.nvim`, `vim-lsc`, `vim-lsp`.
    - `nodejs` for `coc.nvim`.
 
 1. **Clone the repo to the path:**
@@ -123,12 +123,14 @@
   - **note:**
     - set to `none` to disable.
 
-- **`g:osv_vim_lsp`**
+- **`g:osv_lsp`**
 
-  > use `vim-lsp` to provide the lsp support.
+  > choose one backend of the lsp
 
-  - **type:** int
-  - **possible values:** `0` and `1`
+  - **type:** string
+  - **possible values:** `vim-lsp` and `vim-lsc`
+  - **note:**
+    - set to `none` to disable.
 
 ## <p align="center"> Keymap 🗺 </p>
 
