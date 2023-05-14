@@ -14,7 +14,4 @@ if dein#tap('vim-tabnine-completefunc')
                 \ }
     let g:mucomplete#chains.default = ['path', 'ulti', 'incl', 'tabnine', 'dict']
     let g:mucomplete#chains.markdown = ['path', 'dict', 'tabnine']
-    let g:mucomplete#chains.cpp = ['path', 'ulti', 'omni', 'tabnine', 'incl']
-    let g:mucomplete#chains.c = g:mucomplete#chains.cpp
-    let g:mucomplete#chains.python = g:mucomplete#chains.cpp
 endif
