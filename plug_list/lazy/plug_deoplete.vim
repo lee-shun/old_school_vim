@@ -14,7 +14,7 @@ if g:os_architect != 'aarch64'
 endif
 
 let s:deoplete_nvim_config = {'lazy':1,
-            \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-dictionary']
+            \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-dictionary'],
             \'on_event': ['BufReadPre'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/deoplete_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/deoplete_conf.vim',
