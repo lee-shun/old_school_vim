@@ -58,7 +58,7 @@ if g:osv_complete_engine == 'deoplete'
     source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
 endif
 
-if g:osv_complete_engine == 'asynchomplete'
+if g:osv_complete_engine == 'asyncomplete'
     source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
 endif
 

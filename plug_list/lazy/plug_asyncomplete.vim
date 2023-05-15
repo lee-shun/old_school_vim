@@ -19,15 +19,15 @@ call dein#add('prabirshrestha/asyncomplete-file.vim', {'lazy':1,
 call add(s:asyncomplete_conf.depends, 'asyncomplete-file.vim')
 call dein#add('prabirshrestha/asyncomplete-emoji.vim', {'lazy':1,
             \})
-call add(s:asyncomplete_conf.depends, 'asyncomplete-file.vim')
-
+call add(s:asyncomplete_conf.depends, 'asyncomplete-emoji.vim')
 
 if executable('look')
     call dein#add('htlsne/asyncomplete-look', {'lazy':1,
                 \'hook_source':"let g:asc_look_good_words_file = $CONF_PATH.'/spell/en.utf-8.add'",
                 \})
-call add(s:asyncomplete_conf.depends, 'asyncomplete-look.vim')
+    call add(s:asyncomplete_conf.depends, 'asyncomplete-look')
 endif
+
 " tabnine
 if g:os_architect != 'aarch64'
     if g:os_name == 'Linux'
@@ -39,28 +39,28 @@ if g:os_architect != 'aarch64'
                     \'build': 'powershell.exe .\install.ps1',
                     \})
     endif
-call add(s:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
+    call add(s:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
 endif
 
 " snip
 if has('python3') && dein#tap('ultisnips')
     call dein#add('prabirshrestha/asyncomplete-ultisnips.vim', {'lazy':1,
                 \})
-call add(s:asyncomplete_conf.depends, 'asyncomplete-ultisnips.vim')
+    call add(s:asyncomplete_conf.depends, 'asyncomplete-ultisnips.vim')
 endif
 
 " linter
 if g:osv_linter == 'ale'
     call dein#add('andreypopp/asyncomplete-ale.vim', {'lazy':1,
                 \})
-call add(s:asyncomplete_conf.depends, 'asyncomplete-ale.vim')
+    call add(s:asyncomplete_conf.depends, 'asyncomplete-ale.vim')
 endif
 
 " lsp
-if g:osv_lsp == 'vim_lsp'
+if g:osv_lsp == 'vim-lsp'
     call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
                 \})
-call add(s:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
+    call add(s:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
 endif
 
 call dein#add('prabirshrestha/asyncomplete.vim', s:asyncomplete_conf)

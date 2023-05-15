@@ -85,9 +85,20 @@ if executable('cmake-language-server')
 endif
 
 if executable('texlab')
-  autocmd User lsp_setup call lsp#register_server({
-        \'name': 'texlab',
-        \'cmd': {server_info->[expand('texlab')]},
-        \'whitelist': ['tex', 'plaintex', 'bib']
-        \})
+    autocmd User lsp_setup call lsp#register_server({
+                \'name': 'texlab',
+                \'cmd': {server_info->[expand('texlab')]},
+                \'whitelist': ['tex', 'plaintex', 'bib']
+                \})
+endif
+
+if executable('vim-language-server')
+    autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'vim-language-server',
+                \ 'cmd': {server_info->['vim-language-server', '--stdio']},
+                \ 'whitelist': ['vim'],
+                \ 'initialization_options': {
+                \   'vimruntime': $VIMRUNTIME,
+                \   'runtimepath': &rtp,
+                \ }})
 endif
