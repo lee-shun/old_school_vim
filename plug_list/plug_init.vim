@@ -88,6 +88,9 @@ augroup END
 if s:osv_setup == 1
     call dein#update()
     call osv_ultis#msg#info("Install the plugins with dein#update().")
+    if has('nvim') && has('python3')
+        execute "UpdateRemotePlugins"
+    endif
     call input("Press any key to continue...")
 endif
 
