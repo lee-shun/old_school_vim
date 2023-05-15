@@ -202,6 +202,18 @@ elseif g:osv_complete_engine == 'deoplete'
         let g:osv_complete_engine = 'none'
         finish
     endif
+elseif g:osv_complete_engine == 'asyncomplete'
+    " don't use asyncomplete with vim under version 8 or nvim
+    if !has('nvim') && v:version< 800
+        call osv_ultis#msg#err("For asyncomplete.nvim: vim>=8.0 or nvim! Skip!")
+        let g:osv_complete_engine = 'none'
+        finish
+    endif
+    if !has('timers')
+        call osv_ultis#msg#err("For asyncomplete.nvim: should has 'timers' feature! Skip!")
+        let g:osv_complete_engine = 'none'
+        finish
+    endif
 elseif g:osv_complete_engine == 'mucomplete'
     " don't use  with vim under version 7.4 or nvim
     if !has('nvim') && v:version < 704
