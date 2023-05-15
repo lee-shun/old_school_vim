@@ -121,7 +121,7 @@ if s:osv_setup == 0
                         call osv_ultis#system#exec("cd ".$CONF_PATH." && git pull")
                     endif
                 else
-                    call osv_ultis#msg#warn("git status is not clean! Skip!")
+                    call osv_ultis#msg#err("git status is not clean! Skip!")
                     call input("Press any key to continue...")
                 endif
             endif
