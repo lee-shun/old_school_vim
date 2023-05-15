@@ -81,4 +81,17 @@ endif
 
 " NOTE: vim-lsp will be registered automatically.
 
+" vim-lsc use omni func
+if dein#tap('asyncomplete-omni.vim')
+    call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
+                \ 'name': 'omni',
+                \ 'allowlist': ['*'],
+                \ 'blocklist': [],
+                \ 'completor': function('asyncomplete#sources#omni#completor'),
+                \ 'config': {
+                \   'show_source_kind': 1,
+                \ },
+                \ }))
+endif
+
 call asyncomplete#enable_for_buffer()

@@ -61,6 +61,11 @@ if g:osv_lsp == 'vim-lsp'
     call dein#add('prabirshrestha/asyncomplete-lsp.vim', {'lazy':1,
                 \})
     call add(s:asyncomplete_conf.depends, 'asyncomplete-lsp.vim')
+elseif g:osv_lsp == 'vim-lsc'
+    " use omni function to help the lsc
+    call dein#add('yami-beta/asyncomplete-omni.vim', {'lazy':1
+                \})
+    call add(s:asyncomplete_conf.depends, 'asyncomplete-omni.vim')
 endif
 
 call dein#add('prabirshrestha/asyncomplete.vim', s:asyncomplete_conf)
