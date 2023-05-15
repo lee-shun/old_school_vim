@@ -119,7 +119,16 @@
   > choose one of the complete framework to provide automatic completion.
 
   - **type:** string
-  - **possible values:** `coc`, `deoplete`, and `mucomplete`
+  - **possible values:** `coc`, `deoplete`, `asyncomplete`, and `mucomplete`
+  - **note:**
+    - set to `none` to disable.
+
+- **`g:osv_linter`**
+
+  > choose one backend of the linter
+
+  - **type:** string
+  - **possible values:** `ale`
   - **note:**
     - set to `none` to disable.
 
@@ -257,4 +266,4 @@ TODO:
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 一 01 5 月 2023 04:20:31 下午
+> Last Modified : 周一 15 5月 2023 04:06:01 下午
