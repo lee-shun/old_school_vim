@@ -16,7 +16,7 @@ let g:osv_finder = 'none'
 " possible value: coc-explorer, fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'none'
 
-" possible value: coc, deoplete, mucomplete and none.
+" possible value: coc, deoplete, asyncomplete, mucomplete and none.
 let g:osv_complete_engine = 'none'
 
 " possible value: ale and none
