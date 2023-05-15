@@ -1,6 +1,7 @@
 " ==============================================================================
 "   Name:        One Half Dark
 "   Author:      Son A. Pham <sp@sonpham.me>
+"   Modify:      Shun Li
 "   Url:         https://github.com/sonph/onehalf
 "   License:     The MIT License (MIT)
 "
