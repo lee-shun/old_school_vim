@@ -148,10 +148,10 @@ endif
 " === modify history
 " ===
 if empty(glob($CONF_PATH."/tmp/"))
-    call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/backup")
-    call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/undo")
-    call OsvSystemExe("mkdir -p ".$CONF_PATH."/tmp/swap")
-    call OsvInfo("Creating the tmp dir!")
+    call osv_ultis#system#exec("mkdir -p ".$CONF_PATH."/tmp/backup")
+    call osv_ultis#system#exec("mkdir -p ".$CONF_PATH."/tmp/undo")
+    call osv_ultis#system#exec("mkdir -p ".$CONF_PATH."/tmp/swap")
+    call osv_ultis#msg#info("Creating the tmp dir!")
     call input('Press any key to continue')
 endif
 
