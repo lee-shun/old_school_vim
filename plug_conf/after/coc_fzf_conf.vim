@@ -1,1 +1,1 @@
-nnoremap <leader>fd :CocFzfList diagnostics<CR>
+nnoremap <leader>fd :<c-u>CocFzfList diagnostics<CR>
