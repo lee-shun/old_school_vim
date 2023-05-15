@@ -123,6 +123,9 @@ if s:osv_setup == 0
             endif
 
             call writefile([l:today], l:filename, 'a')
+            if has('nvim') && has('python3')
+                execute "UpdateRemotePlugins"
+            endif
         endif
     endfunction
 
