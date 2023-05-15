@@ -109,9 +109,17 @@ if s:osv_setup == 0
             " update the repo first
             let l:osv_update = input("Upgrade old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
-                let l:git_clean = osv_ultis#system#exec("cd ".$CONF_PATH." && git status -s") is# ''
+                if g:os_name == 'Windows'
+                    let l:git_clean = osv_ultis#system#exec("cd ".$CONF_PATH." ; git status -s") is# ''
+                else
+                    let l:git_clean = osv_ultis#system#exec("cd ".$CONF_PATH." && git status -s") is# ''
+                endif
                 if l:git_clean == 1
-                    call osv_ultis#system#exec("cd ".$CONF_PATH." && git pull")
+                    if g:os_name == 'Windows'
+                        call osv_ultis#system#exec("cd ".$CONF_PATH." ; git pull")
+                    else
+                        call osv_ultis#system#exec("cd ".$CONF_PATH." && git pull")
+                    endif
                 else
                     call osv_ultis#msg#warn("git status is not clean! Skip!")
                     call input("Press any key to continue...")
