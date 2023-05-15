@@ -34,12 +34,13 @@ if g:os_architect != 'aarch64'
         call dein#add('lee-shun/asyncomplete-tabnine.vim', { 'lazy':1,
                     \'build': './install.sh',
                     \})
+        call add(s:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
     elseif g:os_name == 'Windows'
         call dein#add('lee-shun/asyncomplete-tabnine.vim', { 'lazy':1,
                     \'build': 'powershell.exe .\install.ps1',
                     \})
+        call add(s:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
     endif
-    call add(s:asyncomplete_conf.depends, 'asyncomplete-tabnine.vim')
 endif
 
 " snip
