@@ -7,11 +7,3 @@ let g:mucomplete#chains = {
             \ 'python':['path', 'ulti', 'omni', 'dict'],
             \ 'markdown':['path', 'dict'],
             \}
-
-if dein#tap('vim-tabnine-completefunc')
-    let g:mucomplete#user_mappings = {
-                \'tabnine': "\<C-r>=tabnine#complete()\<CR>",
-                \ }
-    let g:mucomplete#chains.default = ['path', 'ulti', 'incl', 'tabnine', 'dict']
-    let g:mucomplete#chains.markdown = ['path', 'dict', 'tabnine']
-endif
