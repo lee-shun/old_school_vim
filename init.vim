@@ -178,33 +178,36 @@ if g:osv_complete_engine == 'coc'
         let g:osv_complete_engine = 'none'
         finish
     endif
-
     " don't use coc with vim under version 8.1-1719
     if !has('nvim-0.4') && !has('patch-8.1.1719')
         call osv_ultis#msg#err("For coc.nvim: vim>=8.1.1719 or nvim>=0.4! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
-
     if g:osv_lsp != 'none'
         call osv_ultis#msg#warn("coc.nvim already has the lsp support! No need to install lsp backend!")
         let g:osv_lsp = 'none'
     endif
 elseif g:osv_complete_engine == 'deoplete'
-    " don't use deoplete with vim under version 8.2.1978 or nvim < 0.3
     if !has('python3')
         call osv_ultis#msg#err("Deoplete.nvim needs python3 support! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
-    if !has('nvim-0.3') && !has('patch-8.2.1978')
-        call osv_ultis#msg#err("For deoplete.nvim: vim>=8.2.1978 or nvim>=0.3! Skip!")
+    " NOTE: osv will use different tags according to repo.
+    if !has('nvim-0.3') && v:version < 800
+        call osv_ultis#msg#err("For deoplete.nvim: vim>=8 or nvim>=0.3! Skip!")
+        let g:osv_complete_engine = 'none'
+        finish
+    endif
+    if !has('timers')
+        call osv_ultis#msg#err("For deoplete.nvim: should has 'timers' feature! Skip!")
         let g:osv_complete_engine = 'none'
         finish
     endif
 elseif g:osv_complete_engine == 'asyncomplete'
     " don't use asyncomplete with vim under version 8 or nvim
-    if !has('nvim') && v:version< 800
+    if !has('nvim') && v:version < 800
         call osv_ultis#msg#err("For asyncomplete.nvim: vim>=8.0 or nvim! Skip!")
         let g:osv_complete_engine = 'none'
         finish
