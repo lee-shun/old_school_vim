@@ -8,6 +8,13 @@ if has('nvim') && !has('nvim-0.8')
     call dein#add('antoinemadec/FixCursorHold.nvim')
 endif
 
+if has('nvim') || v:version > 800
+    call dein#add('roxma/vim-hug-neovim-rpc', {'lazy':1})
+    call dein#add('roxma/nvim-yarp', {'lazy':1,
+                \'depends':'vim-hug-neovim-rpc'
+                \})
+endif
+
 if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' || v:version < 800
     call dein#add('mhinz/vim-startify', { 'lazy':1,
                 \'on_event':'VimEnter',
@@ -26,12 +33,12 @@ endif
 call dein#add('tpope/vim-fugitive', {'lazy':1})
 
 if has('nvim') || has('patch-8.0.902')
-call dein#add('mhinz/vim-signify', {'lazy':1,
-            \'on_event': ['BufReadPost'], })
+    call dein#add('mhinz/vim-signify', {'lazy':1,
+                \'on_event': ['BufReadPost'], })
 else
-call dein#add('mhinz/vim-signify', {'lazy':1,
-            \'on_event': ['BufReadPost'],
-            \'rev':'legacy'})
+    call dein#add('mhinz/vim-signify', {'lazy':1,
+                \'on_event': ['BufReadPost'],
+                \'rev':'legacy'})
 endif
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
@@ -182,8 +189,8 @@ if v:version >= 800 || has('nvim')
     call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 
     if g:os_name == 'Linux'
-    call dein#add('rlue/vim-barbaric', {'lazy':1,
-                \'on_event':['InsertEnter'],
-                \})
+        call dein#add('rlue/vim-barbaric', {'lazy':1,
+                    \'on_event':['InsertEnter'],
+                    \})
     endif
 endif

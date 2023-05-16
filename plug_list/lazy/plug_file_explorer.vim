@@ -1,12 +1,6 @@
 if g:osv_file_explorer == 'none' || g:osv_file_explorer == 'coc-explorer'
     finish
 elseif g:osv_file_explorer == 'defx'
-    if has('nvim') || v:version > 800
-        call dein#add('roxma/vim-hug-neovim-rpc', {'lazy':1})
-        call dein#add('roxma/nvim-yarp', {'lazy':1,
-                    \'depends':'vim-hug-neovim-rpc'
-                    \})
-    endif
     call dein#add('kristijanhusak/defx-git', {'lazy':1,
                 \'hook_source':'source $CONF_PATH/plug_conf/before/defx_git_config.vim'})
     call dein#add('kristijanhusak/defx-icons', {'lazy':1,
