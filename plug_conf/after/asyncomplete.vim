@@ -9,7 +9,6 @@ inoremap <silent><expr> <TAB>
             \ asyncomplete#force_refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-
 " ===
 " === sources
 " ===
@@ -49,6 +48,13 @@ if dein#tap('asyncomplete-look.vim')
                 \ })
 endif
 
+call asyncomplete#register_source({
+    \ 'name': 'dict',
+    \ 'max_item': 5,
+    \ 'allowlist': ['*'],
+    \ 'completor': function('asyncomplete#sources#dictionary#completor'),
+    \ })
+
 "  snippest
 if dein#tap('asyncomplete-ultisnips.vim')
     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
@@ -66,7 +72,6 @@ if dein#tap('asyncomplete-tabnine.vim')
                 \ 'completor': function('asyncomplete#sources#tabnine#completor'),
                 \ 'config': {
                 \   'line_limit': 1000,
-                \   'max_num_result': 5,
                 \  },
                 \ }))
 endif
