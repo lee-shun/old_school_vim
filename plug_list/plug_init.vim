@@ -107,7 +107,7 @@ if s:osv_setup == 0
         if index(l:contents, l:today) < 0
 
             " update the repo first
-            let l:osv_update = input("Upgrade old school vim with remote, [y/n]?\n")
+            let l:osv_update = input("Update old school vim with remote, [y/n]?\n")
             if l:osv_update == 'y'
                 if g:os_name == 'Windows'
                     let l:git_clean = osv_ultis#system#exec("cd ".$CONF_PATH." ; git status -s") is# ''
@@ -121,16 +121,29 @@ if s:osv_setup == 0
                         call osv_ultis#system#exec("cd ".$CONF_PATH." && git pull")
                     endif
                 else
-                    call osv_ultis#msg#err("git status is not clean! Skip!")
-                    call input("Press any key to continue...")
+                    call osv_ultis#msg#err("git status is not clean!")
+                    let l:force_update = input("Force update? [y/n]?\n")
+                    if l:force_update == 'y'
+                        if g:os_name == 'Window'
+                            call osv_ultis#system#exec("cd ".$CONF_PATH." ; git fetch ; git reset --hard origin/master ; git pull")
+                        else
+                            call osv_ultis#system#exec("cd ".$CONF_PATH." && git fetch && git reset --hard origin/master && git pull")
+                        endif
+                    else
+                        call osv_ultis#msg#info("Skip force updating!")
+                    endif
                 endif
+            else " do not update
+                call osv_ultis#msg#info("Skip updating old school vim!")
             endif
 
             " update the plugins
-            let l:choice = input("Upgrade vim plugs, [y/n]?\n")
+            let l:choice = input("Update vim plugins, [y/n]?\n")
             if l:choice == 'y'
                 call dein#update()
                 call dein#recache_runtimepath()
+            else
+                call osv_ultis#msg#info("Skip updating plugins!")
             endif
 
             call writefile([l:today], l:filename, 'a')
