@@ -88,3 +88,9 @@ call dein#add('edersonferreira/open.vim', {'lazy':1,
             \'on_event':'BufReadPost',
             \'hook_source':'source $CONF_PATH/plug_conf/before/open_conf.vim',
             \})
+
+call dein#add('kkoomen/vim-doge', {'lazy':1,
+            \'on_cmd':'DogeGenerate',
+            \'hook_done_update':'call doge#install()',
+            \'hook_source':'source $CONF_PATH/plug_conf/before/doge_conf.vim'
+            \})
