@@ -48,13 +48,6 @@ if dein#tap('asyncomplete-look.vim')
                 \ })
 endif
 
-call asyncomplete#register_source({
-    \ 'name': 'dict',
-    \ 'max_item': 5,
-    \ 'allowlist': ['*'],
-    \ 'completor': function('asyncomplete#sources#dictionary#completor'),
-    \ })
-
 "  snippest
 if dein#tap('asyncomplete-ultisnips.vim')
     call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
