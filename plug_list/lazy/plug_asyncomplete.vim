@@ -28,10 +28,6 @@ if executable('look')
     call add(s:asyncomplete_conf.depends, 'asyncomplete-look')
 endif
 
-call dein#add('lee-shun/asyncomplete-dictionary.vim', {'lazy':1
-            \})
-call add(s:asyncomplete_conf.depends, 'asyncomplete-dictionary.vim')
-
 " tabnine
 if g:os_architect != 'aarch64'
     if g:os_name == 'Linux'
