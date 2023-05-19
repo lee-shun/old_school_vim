@@ -44,6 +44,7 @@ if dein#tap('ultisnips')
     call add(s:deoplete_nvim_config.depends, 'ultisnips')
 endif
 
+" lsp
 if g:osv_lsp == 'vim-lsp'
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
     call add(s:deoplete_nvim_config.depends, 'deoplete-vim-lsp')
