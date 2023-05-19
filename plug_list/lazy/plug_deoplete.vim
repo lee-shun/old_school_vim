@@ -47,10 +47,15 @@ endif
 if g:osv_lsp == 'vim-lsp'
     call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
     call add(s:deoplete_nvim_config.depends, 'deoplete-vim-lsp')
+    call add(s:deoplete_nvim_config.depends, 'vim-lsp')
+endif
+if g:osv_lsp == 'lcn'
+    call add(s:deoplete_nvim_config.depends, 'LanguageClient-neovim')
 endif
 if g:osv_lsp == 'vim-lsc'
     call dein#add('hrsh7th/deoplete-vim-lsc',{'lazy':1})
     call add(s:deoplete_nvim_config.depends, 'deoplete-vim-lsc')
+    call add(s:deoplete_nvim_config.depends, 'vim-lsc')
 endif
 
 if dein#tap('deoplete-tabnine')
