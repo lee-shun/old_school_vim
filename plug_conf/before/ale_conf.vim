@@ -23,5 +23,8 @@ if g:osv_lsp != 'none'
     let g:ale_disable_lsp = 1
 endif
 
-nmap <buffer> ]d :<C-u>ALENext<CR>
-nmap <buffer> [d :<C-u>ALEPrevious<CR>
+" only vim-lsp can work with ale and share the diagnostic
+if dein#tap('vim-lsp')
+    nmap <buffer> ]d :<C-u>ALENext<CR>
+    nmap <buffer> [d :<C-u>ALEPrevious<CR>
+endif

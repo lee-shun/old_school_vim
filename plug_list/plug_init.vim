@@ -70,13 +70,18 @@ if g:osv_linter == 'ale'
     source $CONF_PATH/plug_list/lazy/plug_ale.vim
 endif
 
+if g:osv_lsp == 'vim-lsp'
+    source $CONF_PATH/plug_list/lazy/plug_lsp.vim
+endif
+
+if g:osv_lsp == 'lcn'
+    source $CONF_PATH/plug_list/lazy/plug_lcn.vim
+endif
+
 if g:osv_lsp == 'vim-lsc'
     source $CONF_PATH/plug_list/lazy/plug_lsc.vim
 endif
 
-if g:osv_lsp == 'vim-lsp'
-    source $CONF_PATH/plug_list/lazy/plug_lsp.vim
-endif
 
 call dein#end()
 
