@@ -248,6 +248,12 @@ if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsp'
     let g:osv_lsp = 'none'
     finish
 endif
+" don't use lcn with vim under version 8.0
+if !has('nvim') && v:version < 800 && g:osv_lsp == 'lcn'
+    call osv_ultis#msg#err("For LanguageClient-neovim: vim>=8.0 or nvim! Skip!")
+    let g:osv_lsp = 'none'
+    finish
+endif
 if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsc'
     call osv_ultis#msg#err("For vim-lsc: vim>=8.0 or nvim! Skip!")
     let g:osv_lsp = 'none'
