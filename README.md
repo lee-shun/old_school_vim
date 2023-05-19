@@ -137,7 +137,7 @@
   > choose one backend of the lsp
 
   - **type:** string
-  - **possible values:** `vim-lsp` and `vim-lsc`
+  - **possible values:** `vim-lsp`, `lcn`, and `vim-lsc`
   - **note:**
     - set to `none` to disable.
 
