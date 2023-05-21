@@ -61,7 +61,7 @@ if !has('nvim') && v:version < 704
 endif
 
 " ===
-" === get the modules
+" === read the custom_modules.vim
 " ===
 let g:osv_warning = 1
 let g:osv_plug_general = 1
@@ -76,7 +76,7 @@ let g:osv_lsp = 'none'
 if !empty(glob($CONF_PATH.'/custom_modules.vim'))
     source $CONF_PATH/custom_modules.vim
 else
-    " copy the custom_modules out.
+    " generate the custom_modules if it doesn't exist.
     call osv_ultis#system#exec("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
     call osv_ultis#msg#info("You may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("Press any key to continue...")
