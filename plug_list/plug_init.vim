@@ -30,7 +30,7 @@ let s:osv_setup = 0
 if empty(glob(s:dein_cache_dir))
     let s:osv_setup = 1
     " install dein.vim
-    call osv_ultis#system#exec("git clone --depth 1 --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
     call osv_ultis#msg#info("Install dein ".s:osv_dein_version." to ".s:dein_src . '!')
     call input("Press any key to continue...")
 endif
