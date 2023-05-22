@@ -221,9 +221,12 @@ TODO:
 | `yP`    | copy abs file path (different details)               |
 | `yp`    | copy relative file path                              |
 | `yy`    | copy file(s)                                         |
+| `ye`    | copy file name without extension                     |
+| `yd`    | copy directory name                                  |
 | `yn`    | copy file name                                       |
 | `dd`    | cut file(s)                                          |
-| `p`     | paste file(s)                                        |
+| `p(p)`  | paste file(s)                                        |
+| `p(o)`  | paste file(s) over write                             |
 | `df`    | delete/trash file(s)                                 |
 | `dF`    | delete/trash file(s), force or forever               |
 | `a`     | add file(s), maybe path with "/"                     |
@@ -266,4 +269,4 @@ TODO:
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 周一 15 5月 2023 04:06:01 下午
+> Last Modified : 周一 15 5 月 2023 04:06:01 下午
