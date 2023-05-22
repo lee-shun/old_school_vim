@@ -3,43 +3,45 @@
 " ===
 if has('nvim')
     if has('nvim-0.8')
-        let g:osv_dein_version = 'master'
+        let s:osv_dein_version = 'master'
     elseif has('nvim-0.5')
-        let g:osv_dein_version = '3.1'
+        let s:osv_dein_version = '3.1'
     elseif has('nvim-0.2')
-        let g:osv_dein_version = '2.2'
+        let s:osv_dein_version = '2.2'
     else
-        let g:osv_dein_version = '1.5'
+        let s:osv_dein_version = '1.5'
     endif
 else " vim
     if v:version >= 802
-        let g:osv_dein_version = 'master'
+        let s:osv_dein_version = 'master'
     elseif v:version >= 800
-        let g:osv_dein_version = '2.2'
+        let s:osv_dein_version = '2.2'
     elseif v:version >= 704
-        let g:osv_dein_version = '1.5'
+        let s:osv_dein_version = '1.5'
     endif
 endif
 
-let s:dein_dir = $CONF_PATH.'/dein'
-let s:version_tail = g:osv_dein_version=='master' ? '' : '_'.g:osv_dein_version
+let s:dein_cache_dir = $CONF_PATH.'/dein'
+let s:version_tail = s:osv_dein_version=='master' ? '' : '_'.s:osv_dein_version
 let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
 
 " install dein for the first time
 let s:osv_setup = 0
-if empty(glob(s:dein_dir))
+if empty(glob(s:dein_cache_dir))
     let s:osv_setup = 1
     " install dein.vim
-    call osv_ultis#system#exec("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
-    call osv_ultis#msg#info("Install dein ".g:osv_dein_version." to ".s:dein_src . '!')
+    call osv_ultis#system#exec("git clone --depth 1 --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    call osv_ultis#msg#info("Install dein ".s:osv_dein_version." to ".s:dein_src . '!')
     call input("Press any key to continue...")
 endif
 let &runtimepath.=','.s:dein_src
 
-call dein#begin(s:dein_dir)
+call dein#begin(s:dein_cache_dir)
+
+" add dein.vim as a local plugin
+call dein#add(s:dein_src)
 
 if g:osv_plug_general == 1
-    source $CONF_PATH/plug_list/norm/plug_general.vim
     source $CONF_PATH/plug_list/lazy/plug_general.vim
 endif
 
