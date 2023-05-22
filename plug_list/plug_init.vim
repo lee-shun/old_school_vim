@@ -22,19 +22,19 @@ else " vim
 endif
 
 let s:dein_dir = $CONF_PATH.'/dein'
-let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim'
+let s:version_tail = g:osv_dein_version=='master' ? '' : '_'.g:osv_dein_version
+let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
 
 " install dein for the first time
 let s:osv_setup = 0
 if empty(glob(s:dein_dir))
     let s:osv_setup = 1
     " install dein.vim
-    let s:version_tail = g:osv_dein_version=='master' ? '' : '_'.g:osv_dein_version
-    call osv_ultis#system#exec("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src . s:version_tail)
-    call osv_ultis#msg#info("Install dein ".g:osv_dein_version." to ".s:dein_src . s:version_tail . '!')
+    call osv_ultis#system#exec("git clone --depth 1 --branch ".g:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    call osv_ultis#msg#info("Install dein ".g:osv_dein_version." to ".s:dein_src . '!')
     call input("Press any key to continue...")
 endif
-set runtimepath+=$CONF_PATH/dein/repos/github.com/Shougo/dein.vim
+let &runtimepath.=','.s:dein_src
 
 call dein#begin(s:dein_dir)
 
