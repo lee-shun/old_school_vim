@@ -9,7 +9,7 @@
 - 🤖Good compatibility to different platform (Windows, Linux) of different architectures (x86, x64, aarch64) with different
   vim/neovim versions.
 - 🌟Stay in original vim keybindings and operations, but add some meaningful keybindings.
-- ⚡Fast startup time using `dein.vim` to lazy load most of the plugins.
+- ⚡Fast startup time using `dein.vim` to lazy load all of the plugins.
 - 🆙 Daily update support.
 
 ## <p align="center"> Screen Shots📺 </p>
