@@ -39,7 +39,9 @@ let &runtimepath.=','.s:dein_src
 call dein#begin(s:dein_cache_dir)
 
 " add dein.vim as a local plugin
-call dein#add(s:dein_src)
+call dein#add('Shougo/dein.vim', {
+            \'rev':s:osv_dein_version,
+            \})
 
 if g:osv_plug_general == 1
     source $CONF_PATH/plug_list/lazy/plug_general.vim
