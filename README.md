@@ -70,7 +70,7 @@
 
 ## <p align="center"> Quick Start🚀 </p>
 
-⌨Use the `custom_modules.vim` in the configuration path to manage the functional modules in OSV.
+⌨  Use the `custom_modules.vim` in the configuration path to manage the functional modules in OSV.
 
 - **`g:osv_warning`**
 
