@@ -1,0 +1,1 @@
+call wilder#setup({'modes': [':', '/', '?']})

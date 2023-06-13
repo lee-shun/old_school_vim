@@ -8,10 +8,17 @@ if has('nvim') && !has('nvim-0.8')
     call dein#add('antoinemadec/FixCursorHold.nvim')
 endif
 
-if has('nvim') || v:version > 800
+if has('nvim') || v:version > 800 " nvim still need this 2 plugins
     call dein#add('roxma/vim-hug-neovim-rpc', {'lazy':1})
     call dein#add('roxma/nvim-yarp', {'lazy':1,
                 \'depends':'vim-hug-neovim-rpc'
+                \})
+endif
+
+if v:version > 800 || has('nvim-0.3')
+    call dein#add('gelguy/wilder.nvim', {'lazy':1,
+                \'on_event':["CmdlineEnter", "CmdwinEnter"],
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/wilder_conf.vim',
                 \})
 endif
 
