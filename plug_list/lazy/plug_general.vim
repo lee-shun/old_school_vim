@@ -18,6 +18,7 @@ endif
 if v:version > 800 || has('nvim-0.3')
     call dein#add('gelguy/wilder.nvim', {'lazy':1,
                 \'on_event':["CmdlineEnter", "CmdwinEnter"],
+                \'depends':['nvim-yarp', 'vim-hug-neovim-rpc'],
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/wilder_conf.vim',
                 \})
 endif
