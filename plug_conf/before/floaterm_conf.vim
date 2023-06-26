@@ -10,7 +10,7 @@ endif
 
 let g:floaterm_keymap_toggle = '<F12>'
 
-if !g:has_popup
+if !g:has_popup_win
     let g:floaterm_wintype = 'split'
 else
     let g:floaterm_wintype = 'float'
