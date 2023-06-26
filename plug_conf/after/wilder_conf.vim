@@ -14,7 +14,7 @@ if has('python')
                 \ ])
 endif
 
-if  g:has_popup == 1
+if exists('*popup_create')
     let s:highlighters = [
                 \ wilder#pcre2_highlighter(),
                 \ wilder#basic_highlighter(),
