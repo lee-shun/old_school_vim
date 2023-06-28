@@ -31,11 +31,19 @@ if empty(glob(s:dein_src))
     let s:osv_setup = 1
     " install dein.vim
     call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
-    call osv_ultis#msg#info("Install dein ".s:osv_dein_version." to ".s:dein_src . '!')
-    call input("Press any key to continue...")
-endif
-let &runtimepath.=','.s:dein_src
 
+    " check if the dein is successfully installed.
+    if empty(glob(s:dein_src))
+        call osv_ultis#msg#err("Failed to install dein ".s:osv_dein_version." to ".s:dein_src . '! Finish!')
+        finish
+    else
+        call osv_ultis#msg#info("Successfully install dein ".s:osv_dein_version." to ".s:dein_src . '!')
+        call input("Press any key to continue...")
+    endif
+
+endif
+
+let &runtimepath.=','.s:dein_src
 call dein#begin(s:dein_cache_dir)
 
 " add dein.vim as a local plugin
