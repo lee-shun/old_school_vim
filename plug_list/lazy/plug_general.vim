@@ -197,8 +197,16 @@ if v:version >= 800 || has('nvim')
     call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 
     if g:os_name == 'Linux'
-        call dein#add('rlue/vim-barbaric', {'lazy':1,
-                    \'on_event':['InsertEnter'],
-                    \})
+        if executable('fcitx-remote')
+            call dein#add('rlue/vim-barbaric', {'lazy':1,
+                        \'on_event':['InsertEnter'],
+                        \'hook_source':'let g:barbaric_fcitx_cmd = "fcitx-remote"',
+                        \})
+        elseif executable('fcitx5-remote')
+            call dein#add('rlue/vim-barbaric', {'lazy':1,
+                        \'on_event':['InsertEnter'],
+                        \'hook_source':'let g:barbaric_fcitx_cmd = "fcitx5-remote"',
+                        \})
+        endif
     endif
 endif
