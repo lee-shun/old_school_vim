@@ -196,7 +196,9 @@ if v:version >= 800 || has('nvim')
     endif
     call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 
-    if g:os_name == 'Linux'
+     " do not enable in under the ssh connetction.
+     " only works if fcitx or fcitx5 is available.
+    if g:os_name == 'Linux' && (osv_ultis#system#exec(["echo $SSH_CLIENT"]) is# '')
         if executable('fcitx-remote')
             call dein#add('rlue/vim-barbaric', {'lazy':1,
                         \'on_event':['InsertEnter'],
