@@ -40,7 +40,8 @@ if g:osv_complete_engine != 'coc'
 endif
 
 call dein#add('sbdchd/neoformat', {'lazy':1,
-            \'on_cmd':'Neoformat'
+            \'on_cmd':'Neoformat',
+            \'hook_add':'command! Format Neoformat'
             \})
 
 call dein#add('preservim/vim-markdown', {'lazy':1,
