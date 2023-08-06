@@ -66,6 +66,7 @@ endif
 let g:osv_warning = 1
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
+let g:osv_snip = 'none'
 let g:osv_finder = 'none'
 let g:osv_file_explorer = 'none'
 let g:osv_complete_engine = 'none'
@@ -137,6 +138,22 @@ elseif g:osv_finder == 'clap'
     endif
     if !executable('rg')
         call osv_ultis#msg#warn("Need the ripgrep (rg) to run clap!")
+    endif
+endif
+
+" ===
+" === check the snip
+" ===
+if g:osv_snip == 'ultisnips'
+    if (has('nvim') || v:version >= 800) && has('python3')
+    else
+        call osv_ultis#msg#warn("ultisnips need nvim or vim > 8.0 with python3")
+        let g:osv_snip = 'none'
+    endif
+elseif g:osv_snip == 'coc'
+    if g:osv_complete_engine != 'coc'
+        call osv_ultis#msg#warn("coc-sinpet needs the coc.nvim to be used as completion engine. Skip!")
+        let g:osv_snip = 'none'
     endif
 endif
 

@@ -1,3 +1,7 @@
+if g:osv_snip != "none"
+    finish
+endif
+
 """LATEX
 let maplocalleader = ","
 
