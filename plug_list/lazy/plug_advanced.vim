@@ -25,18 +25,18 @@ if g:osv_complete_engine != 'coc'
                 \})
 endif
 
-call dein#add('honza/vim-snippets', {'lazy':1,
-            \'on_event':'InsertEnter'
-            \})
+if g:osv_snip != 'none'
+    call dein#add('honza/vim-snippets', {'lazy':1,
+                \'on_event':'InsertEnter'
+                \})
+endif
 
-if g:osv_complete_engine != 'coc'
-    if (has('nvim') || v:version >= 800) && has('python3')
-        call dein#add('SirVer/ultisnips', {'lazy':1,
-                    \'depends':['vim-snippets'],
-                    \'on_event':'InsertEnter',
-                    \'hook_source':'source $CONF_PATH/plug_conf/before/snippets_conf.vim'
-                    \})
-    endif
+if g:osv_snip == 'ultisnips'
+    call dein#add('SirVer/ultisnips', {'lazy':1,
+                \'depends':['vim-snippets'],
+                \'on_event':'InsertEnter',
+                \'hook_source':'source $CONF_PATH/plug_conf/before/snippets_conf.vim'
+                \})
 endif
 
 call dein#add('sbdchd/neoformat', {'lazy':1,

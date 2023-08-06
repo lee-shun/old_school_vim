@@ -31,7 +31,7 @@ if g:osv_finder == 'coc-lists'
     call add(g:coc_global_extensions, 'coc-lists')
 endif
 
-if dein#tap('vim-snippets')
+if g:osv_snip == 'coc'
     call add(g:coc_global_extensions, 'coc-snippets')
 endif
 
