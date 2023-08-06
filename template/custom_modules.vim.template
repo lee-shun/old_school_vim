@@ -10,7 +10,7 @@ let g:osv_plug_general = 1
 " some python and filetype-based plugins
 let g:osv_plug_advanced = 0
 
-" possible value: ultisnips, coc and none
+" possible value: ultisnips, coc-snippets and none
 let g:osv_snip = none
 
 " possible value: coc-lists, fzf, leaderf, ctrlp, clap and none.

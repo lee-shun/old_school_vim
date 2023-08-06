@@ -31,7 +31,7 @@ if g:osv_finder == 'coc-lists'
     call add(g:coc_global_extensions, 'coc-lists')
 endif
 
-if g:osv_snip == 'coc'
+if g:osv_snip == 'coc-snippets'
     call add(g:coc_global_extensions, 'coc-snippets')
 endif
 
