@@ -1,7 +1,7 @@
 call dein#add('ryanoasis/vim-devicons', {'lazy':1})
 
 call dein#add('haya14busa/dein-command.vim', {
-            \'on_cmd':'Dein'
+            \'on_event':["CmdlineEnter", "CmdwinEnter"],
             \})
 
 if has('nvim') && !has('nvim-0.8')
@@ -196,8 +196,8 @@ if v:version >= 800 || has('nvim')
     endif
     call dein#add('lee-shun/spaceline.vim', s:spaceline_conf)
 
-     " do not enable in under the ssh connetction.
-     " only works if fcitx or fcitx5 is available.
+    " do not enable in under the ssh connetction.
+    " only works if fcitx or fcitx5 is available.
     if g:os_name == 'Linux' && (osv_ultis#system#exec(["echo $SSH_CLIENT"]) is# '')
         if executable('fcitx-remote')
             call dein#add('rlue/vim-barbaric', {'lazy':1,
