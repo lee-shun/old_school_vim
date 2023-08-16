@@ -24,8 +24,8 @@ call dein#add('deoplete-plugins/deoplete-dictionary', {'lazy': 1})
 
 if g:os_architect != 'aarch64'
     if g:os_name == 'Linux'
-        call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
-                    \'build': './install.sh',})
+        " call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
+        "             \'build': './install.sh',})
     elseif g:os_name == 'Windows'
         call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
                     \'build': 'powershell.exe .\install.ps1' })

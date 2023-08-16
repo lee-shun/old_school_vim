@@ -13,11 +13,13 @@
 #
 #   @Email: 2015097272@qq.com
 #
-#   @Description: 
+#   @Description:
 #
 # ------------------------------------------------------------------------------
 
-
-sudo mkdir -p /usr/share/fonts/pure_vim_font
-sudo cp -r ~/.vim/env/*.otf /usr/share/fonts/pure_vim_font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hasklig.zip
+sudo mkdir -p /usr/share/fonts/osv_font
+unzip Hasklig.zip -d Hasklig/
+sudo cp -r Hasklig/* /usr/share/fonts/osv_font
+rm -rf Hasklig/
 fc-cache -fv
