@@ -17,5 +17,5 @@
 #
 # ------------------------------------------------------------------------------
 
-sudo snap install ccls --classic
+sudo apt install clangd clang-format
 sudo apt install -y cppcheck
