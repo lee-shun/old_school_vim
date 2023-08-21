@@ -7,7 +7,7 @@ sessions/
 .ccls-cache/
 .clangd/
 .vscode/
-.zip
+*.zip
 custom_modules.vim
 
 dein/

@@ -119,12 +119,12 @@ if index(g:coc_global_extensions, 'coc-lists') >= 0
     nnoremap <silent> <leader>fa :<C-u>CocList<cr>
     nnoremap <silent> <leader>fp :<C-u>CocListResume<cr>
 
-
-    if index(g:coc_global_extensions, 'coc-yank') >= 0
-        nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>
-    endif
-
     call coc#config('session', {
                 \ 'directory': $CONF_PATH.'/tmp/session',
                 \})
 endif
+
+if index(g:coc_global_extensions, 'coc-yank') >= 0
+    nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>
+endif
+
