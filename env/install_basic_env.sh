@@ -20,8 +20,8 @@
 echo "install curl..."
 sudo apt install -y curl
 
-echo "install xclip..."
-sudo apt install -y xclip
+echo "install xclip, xsel..."
+sudo apt install -y xclip xsel
 
 echo "install python3, pip3, and pynvim..."
 sudo apt install -y python3 python3-pip
