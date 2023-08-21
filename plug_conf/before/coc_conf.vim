@@ -1,8 +1,6 @@
 " coc-plugins
 let g:coc_global_extensions = [
             \ 'coc-pyright',
-            \ 'coc-texlab',
-            \ 'coc-bibtex',
             \ 'coc-sh',
             \ 'coc-clangd',
             \ 'coc-cmake',
@@ -37,6 +35,11 @@ endif
 
 if g:osv_file_explorer == 'coc-explorer'
     call add(g:coc_global_extensions, 'coc-explorer')
+endif
+
+if executable('latexmk')
+    call add(g:coc_global_extensions, 'coc-texlab')
+    call add(g:coc_global_extensions, 'coc-bibtex')
 endif
 
 if has('nvim')
