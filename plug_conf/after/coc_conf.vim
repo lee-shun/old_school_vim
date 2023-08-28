@@ -68,9 +68,9 @@ if has('nvim-0.4.0') || has('patch-8.2.0750')
     vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold   :call CocAction('fold',            <f-args>)
-command! -nargs=0 OR     :call CocActionAsync('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 CocFormat :call CocAction('format')
+command! -nargs=? CocFold   :call CocAction('fold',            <f-args>)
+command! -nargs=0 CocOR     :call CocActionAsync('runCommand', 'editor.action.organizeImport')
 
 " coc-clangd
 if index(g:coc_global_extensions, 'coc-clangd') >= 0
