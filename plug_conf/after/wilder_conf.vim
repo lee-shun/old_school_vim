@@ -1,3 +1,4 @@
+" TODO: need to figure out the nvim python bug
 call wilder#setup({'modes': [':', '/', '?']})
 
 if has('python')

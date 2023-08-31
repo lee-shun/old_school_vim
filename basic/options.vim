@@ -41,7 +41,7 @@ set noshowmode
 set showcmd
 set mouse=
 set nowrap
-set linebreak
+" set linebreak
 set timeout           " for mappings
 set timeoutlen=800
 set ttimeout          " for key codes
