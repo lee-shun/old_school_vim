@@ -17,9 +17,23 @@
 #
 # ------------------------------------------------------------------------------
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hasklig.zip
+if [ -f "Hasklig.zip" ];then
+    echo "Hasklig.zip is already downloaded!"
+else
+    echo "dowload the Hasklig.zip"
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hasklig.zip
+fi
+
+if [ -f "MapleMono-SC-NF.zip" ];then
+    echo "MapleMono-SC-NF.zip is already downloaded!"
+else
+    echo "dowload the MapleMono-SC-NF.zip"
+    wget https://github.com/subframe7536/maple-font/releases/download/v6.4/MapleMono-SC-NF.zip
+fi
+
 sudo mkdir -p /usr/share/fonts/osv_font
-unzip Hasklig.zip -d Hasklig/
-sudo cp -r Hasklig/* /usr/share/fonts/osv_font
-rm -rf Hasklig/
-fc-cache -fv
+unzip Hasklig.zip -d osv_font/
+unzip MapleMono-SC-NF.zip -d osv_font/
+
+sudo mv osv_font /usr/share/fonts/
+sudo fc-cache -fv
