@@ -64,6 +64,7 @@ endif
 " === read the custom_modules.vim
 " ===
 let g:osv_warning = 1
+let g:osv_repo_source = "origin"
 let g:osv_plug_general = 1
 let g:osv_plug_advanced = 0
 let g:osv_snip = 'none'
