@@ -23,14 +23,24 @@ endif
 
 let s:dein_cache_dir = $CONF_PATH.'/dein'
 let s:version_tail = s:osv_dein_version=='master' ? '' : '_'.s:osv_dein_version
-let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
+if g:osv_repo_source == 'origin'
+    let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
+    let g:dein#types#git#default_hub_site = 'github.com'
+elseif g:osv_repo_source == 'mirror'
+    let s:dein_src = $CONF_PATH.'/dein/repos/gitee.com/lee-shun/dein.vim' . s:version_tail
+    let g:dein#types#git#default_hub_site = 'gitee.com'
+endif
 
 " install dein for the first time
 let s:osv_setup = 0
 if empty(glob(s:dein_src))
     let s:osv_setup = 1
     " install dein.vim
-    call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    if g:osv_repo_source == 'origin'
+        call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    else
+        call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://gitee.com/lee-shun/dein.vim " . s:dein_src)
+    endif
 
     " check if the dein is successfully installed.
     if empty(glob(s:dein_src))
