@@ -22,8 +22,11 @@ let g:coc_global_extensions = [
             \ 'coc-emoji',
             \ 'coc-word',
             \ 'coc-yank',
-            \ 'coc-floaterm',
             \]
+
+if g:has_popup_win == 1
+    call add(g:coc_global_extensions, 'coc-floaterm')
+endif
 
 if g:osv_finder == 'coc-lists'
     call add(g:coc_global_extensions, 'coc-lists')
