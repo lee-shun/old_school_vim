@@ -11,4 +11,4 @@ if g:osv_finder == 'fzf'
     call add(s:lcn_config.depends, 'fzf.vim')
 endif
 
-call dein#add("autozimu/LanguageClient-neovim", s:lcn_config)
+call dein#add('lee-shun/LanguageClient-neovim', s:lcn_config)
