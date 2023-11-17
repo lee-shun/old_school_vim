@@ -27,7 +27,7 @@ if g:osv_repo_source == 'origin'
     let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
     let g:dein#types#git#default_hub_site = 'github.com'
 elseif g:osv_repo_source == 'mirror'
-    let s:dein_src = $CONF_PATH.'/dein/repos/gitee.com/lee-shun/dein.vim' . s:version_tail
+    let s:dein_src = $CONF_PATH.'/dein/repos/gitee.com/old_school_vim/dein.vim' . s:version_tail
     let g:dein#types#git#default_hub_site = 'gitee.com'
 endif
 
@@ -39,7 +39,7 @@ if empty(glob(s:dein_src))
     if g:osv_repo_source == 'origin'
         call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
     elseif g:osv_repo_source == 'mirror'
-        call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://gitee.com/lee-shun/dein.vim " . s:dein_src)
+        call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://gitee.com/old_school_vim/dein.vim " . s:dein_src)
     endif
 
     " check if the dein is successfully installed.
