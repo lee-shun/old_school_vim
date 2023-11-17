@@ -20,14 +20,14 @@ endif
 " ===
 " === deoplete plugins
 " ===
-call dein#add('deoplete-plugins/deoplete-dictionary', {'lazy': 1})
+call dein#add('lee-shun/deoplete-dictionary', {'lazy': 1})
 
 if g:os_architect != 'aarch64'
     if g:os_name == 'Linux'
         " call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
         "             \'build': './install.sh',})
     elseif g:os_name == 'Windows'
-        call dein#add('tbodt/deoplete-tabnine', { 'lazy':1,
+        call dein#add('lee-shun/deoplete-tabnine', { 'lazy':1,
                     \'build': 'powershell.exe .\install.ps1' })
     endif
 endif
@@ -46,7 +46,7 @@ endif
 
 " lsp
 if g:osv_lsp == 'vim-lsp'
-    call dein#add('lighttiger2505/deoplete-vim-lsp',{'lazy':1})
+    call dein#add('lee-shun/deoplete-vim-lsp',{'lazy':1})
     call add(s:deoplete_nvim_config.depends, 'deoplete-vim-lsp')
     call add(s:deoplete_nvim_config.depends, 'vim-lsp')
 endif
@@ -54,7 +54,7 @@ if g:osv_lsp == 'lcn'
     call add(s:deoplete_nvim_config.depends, 'LanguageClient-neovim')
 endif
 if g:osv_lsp == 'vim-lsc'
-    call dein#add('hrsh7th/deoplete-vim-lsc',{'lazy':1})
+    call dein#add('lee-shun/deoplete-vim-lsc',{'lazy':1})
     call add(s:deoplete_nvim_config.depends, 'deoplete-vim-lsc')
     call add(s:deoplete_nvim_config.depends, 'vim-lsc')
 endif
@@ -72,4 +72,4 @@ if has('nvim')
     let s:deoplete_nvim_config.hook_done_update = 'UpdateRemotePlugins'
 endif
 
-call dein#add('Shougo/deoplete.nvim', s:deoplete_nvim_config)
+call dein#add('lee-shun/deoplete.nvim', s:deoplete_nvim_config)
