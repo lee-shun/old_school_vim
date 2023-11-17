@@ -23,14 +23,24 @@ endif
 
 let s:dein_cache_dir = $CONF_PATH.'/dein'
 let s:version_tail = s:osv_dein_version=='master' ? '' : '_'.s:osv_dein_version
-let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
+if g:osv_repo_source == 'origin'
+    let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
+    let g:dein#types#git#default_hub_site = 'github.com'
+elseif g:osv_repo_source == 'mirror'
+    let s:dein_src = $CONF_PATH.'/dein/repos/gitee.com/old_school_vim/dein.vim' . s:version_tail
+    let g:dein#types#git#default_hub_site = 'gitee.com'
+endif
 
 " install dein for the first time
 let s:osv_setup = 0
 if empty(glob(s:dein_src))
     let s:osv_setup = 1
     " install dein.vim
-    call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    if g:osv_repo_source == 'origin'
+        call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
+    elseif g:osv_repo_source == 'mirror'
+        call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://gitee.com/old_school_vim/dein.vim " . s:dein_src)
+    endif
 
     " check if the dein is successfully installed.
     if empty(glob(s:dein_src))
@@ -47,52 +57,51 @@ let &runtimepath.=','.s:dein_src
 call dein#begin(s:dein_cache_dir)
 
 " add dein.vim as a local plugin
-call dein#add('Shougo/dein.vim', {
-            \'rev':s:osv_dein_version,
-            \})
+call dein#add(s:dein_src)
+let $OSV_REPO_SOURCE = g:osv_repo_source
 
 if g:osv_plug_general == 1
-    source $CONF_PATH/plug_list/lazy/plug_general.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_general.vim
 endif
 
 if g:osv_plug_advanced == 1
-    source $CONF_PATH/plug_list/lazy/plug_advanced.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_advanced.vim
 endif
 
-source $CONF_PATH/plug_list/lazy/plug_finder.vim
+source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_finder.vim
 
-source $CONF_PATH/plug_list/lazy/plug_file_explorer.vim
+source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_file_explorer.vim
 
 if g:osv_complete_engine == 'coc'
-    source $CONF_PATH/plug_list/lazy/plug_coc.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_coc.vim
 endif
 
 if g:osv_complete_engine == 'deoplete'
-    source $CONF_PATH/plug_list/lazy/plug_deoplete.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_deoplete.vim
 endif
 
 if g:osv_complete_engine == 'asyncomplete'
-    source $CONF_PATH/plug_list/lazy/plug_asyncomplete.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_asyncomplete.vim
 endif
 
 if g:osv_complete_engine == 'mucomplete'
-    source $CONF_PATH/plug_list/lazy/plug_mucomplete.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_mucomplete.vim
 endif
 
 if g:osv_linter == 'ale'
-    source $CONF_PATH/plug_list/lazy/plug_ale.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ale.vim
 endif
 
 if g:osv_lsp == 'vim-lsp'
-    source $CONF_PATH/plug_list/lazy/plug_lsp.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsp.vim
 endif
 
 if g:osv_lsp == 'lcn'
-    source $CONF_PATH/plug_list/lazy/plug_lcn.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lcn.vim
 endif
 
 if g:osv_lsp == 'vim-lsc'
-    source $CONF_PATH/plug_list/lazy/plug_lsc.vim
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsc.vim
 endif
 
 
