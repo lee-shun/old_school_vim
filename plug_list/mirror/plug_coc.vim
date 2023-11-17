@@ -1,4 +1,4 @@
-call dein#add('lee-shun/coc.nvim', { 'lazy':'1',
+call dein#add('old_school_vim/coc.nvim', { 'lazy':'1',
             \'depends':[g:osv_snip=='coc-snippets' ? 'vim-snippets' : ''],
             \'on_event': ['BufReadPre'],
             \'merged': 0,

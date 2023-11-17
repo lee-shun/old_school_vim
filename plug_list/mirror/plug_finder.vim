@@ -11,11 +11,11 @@ elseif g:osv_finder == 'fzf'
                 \}
 
     if g:os_name == 'Linux'
-        call dein#add('lee-shun/fzf', {'lazy':1,
+        call dein#add('old_school_vim/fzf', {'lazy':1,
                     \'build': './install --all',
                     \})
     elseif g:os_name == 'Windows'
-        call dein#add('lee-shun/fzf', {'lazy':1,
+        call dein#add('old_school_vim/fzf', {'lazy':1,
                     \'build': 'powershell.exe .\install.ps1',
                     \})
     endif
@@ -26,14 +26,14 @@ elseif g:osv_finder == 'fzf'
     endif
 
     if g:osv_complete_engine == 'coc'
-        call dein#add('lee-shun/coc-fzf', {'lazy':1,
+        call dein#add('old_school_vim/coc-fzf', {'lazy':1,
                     \'rev': 'release',
                     \'hook_post_source':'source $CONF_PATH/plug_conf/after/coc_fzf_conf.vim'
                     \})
         call add(s:fzf_vim_config.depends, 'coc-fzf')
     endif
 
-    call dein#add('lee-shun/fzf.vim', s:fzf_vim_config)
+    call dein#add('old_school_vim/fzf.vim', s:fzf_vim_config)
 
 elseif g:osv_finder == 'leaderf'
 
@@ -46,32 +46,32 @@ elseif g:osv_finder == 'leaderf'
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderf_conf.vim'
                 \}
     if dein#tap('ultisnips')
-        call dein#add('lee-shun/Leaderf-snippet', {'lazy':1,
+        call dein#add('old_school_vim/Leaderf-snippet', {'lazy':1,
                     \'depends':['ultisnips'],
                     \})
         call add(s:leaderf_config.depends, 'Leaderf-snippet')
     endif
 
-    call dein#add('lee-shun/LeaderF', s:leaderf_config)
+    call dein#add('old_school_vim/LeaderF', s:leaderf_config)
 
 elseif g:osv_finder == 'ctrlp'
 
-    call dein#add('lee-shun/ctrlp-funky', {'lazy':1,
+    call dein#add('old_school_vim/ctrlp-funky', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/funky.vim',
                 \})
-    call dein#add('lee-shun/vim-ctrlp-autoignore', {'lazy':1,
+    call dein#add('old_school_vim/vim-ctrlp-autoignore', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \})
-    call dein#add('lee-shun/ctrlp-location-list', {'lazy':1,
+    call dein#add('old_school_vim/ctrlp-location-list', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/location_list.vim',
                 \})
-    call dein#add('lee-shun/ctrlp-extensions.vim', {'lazy':1,
+    call dein#add('old_school_vim/ctrlp-extensions.vim', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/extensions.vim',
                 \})
-    call dein#add('lee-shun/ctrlp-register', {'lazy':1,
+    call dein#add('old_school_vim/ctrlp-register', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/register.vim',
                 \})
@@ -79,7 +79,7 @@ elseif g:osv_finder == 'ctrlp'
     let g:ctrlp_plugins = ['ctrlp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register',]
 
     if executable('ag')
-        call dein#add('lee-shun/vim-ctrlp-ag', {'lazy':1,
+        call dein#add('old_school_vim/vim-ctrlp-ag', {'lazy':1,
                     \'depends':'ctrlp.vim',
                     \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp/ag.vim',
                     \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/ag.vim',
@@ -87,7 +87,7 @@ elseif g:osv_finder == 'ctrlp'
         call add(g:ctrlp_plugins, 'vim-ctrlp-ag')
     endif
 
-    call dein#add('lee-shun/ctrlp.vim', {'lazy':1,
+    call dein#add('old_school_vim/ctrlp.vim', {'lazy':1,
                 \'depends':g:ctrlp_plugins,
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':['CtrlP'],
