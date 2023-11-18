@@ -17,5 +17,4 @@
 #
 # ------------------------------------------------------------------------------
 
-sudo apt install clangd clang-format
-sudo apt install -y cppcheck
+sudo apt install -y clangd clang-format cppcheck
