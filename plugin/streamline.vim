@@ -1,11 +1,11 @@
-if exists('g:loaded_streamline_plugin')
-    finish
-endif
-
 if  g:osv_plug_general == 1
     if has('nvim') || v:version >= 800 " ready to use fancy line, otherwise use this!
         finish
     endif
+endif
+
+if exists('g:loaded_streamline_plugin')
+    finish
 endif
 
 let g:loaded_streamline_plugin = 1
