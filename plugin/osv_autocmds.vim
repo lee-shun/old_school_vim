@@ -62,10 +62,177 @@ augroup END
 " ===
 " === add file heads
 " ===
+
+func SetComment()
+    call setline(1,"/*******************************************************************************")
+    call setline(2  , " *")
+    call setline(2  , " *   Copyright (C) ".strftime("%Y")." CASIA. All rights reserved.")
+    call setline(3  , " *")
+    call setline(4  , " *   @Filename: ".expand("%:t"))
+    call setline(5  , " *")
+    call setline(6  , " *   @Author: Shun Li")
+    call setline(7  , " *")
+    call setline(8  , " *   @Email: 2015097272@qq.com")
+    call setline(9  , " *")
+    call setline(10  , " *   @Date: ".strftime("%Y-%m-%d"))
+    call setline(11  , " *")
+    call setline(12  , " *   @Description: ")
+    call setline(13  , " *")
+    call setline(14 , " *******************************************************************************/")
+    call setline(15 , "")
+    call setline(16 , "")
+endfunc
+
+" for shell-like file
+func SetCommentSh()
+    call setline(1,"")
+    call setline(2,"")
+    call setline(3,"")
+    call setline(4, "# ------------------------------------------------------------------------------")
+    call setline(5 , "#")
+    call setline(6  , "#   Copyright (C) ".strftime("%Y")." CASIA. All rights reserved.")
+    call setline(7  , "#")
+    call setline(8  , "#   @Filename: ".expand("%:t"))
+    call setline(9  , "#")
+    call setline(10  , "#   @Author: Shun Li")
+    call setline(11  , "#")
+    call setline(12 , "#   @Date: ".strftime("%Y-%m-%d"))
+    call setline(13  , "#")
+    call setline(14 , "#   @Email: 2015097272@qq.com")
+    call setline(15 , "#")
+    call setline(16 , "#   @Description: ")
+    call setline(17 , "#")
+    call setline(18, "# ------------------------------------------------------------------------------")
+    call setline(19, "")
+    call setline(20, "")
+endfunc
+
+func SetTitle()
+    if expand("%:e") == 'make'
+        call SetCommentSh()
+        call setline(1,"")
+        call setline(2,"")
+
+    elseif expand("%:e") == 'txt'
+        call SetCommentSh()
+        call setline(1,"")
+        call setline(2,"")
+
+    elseif expand("%:e") == 'sh'
+        call SetCommentSh()
+        call setline(1,"#!/system/bin/sh")
+        call setline(2,"")
+
+    elseif expand("%:e") == 'zsh'
+        call SetCommentSh()
+        call setline(1,"#!/system/bin/zsh")
+        call setline(2,"")
+
+    elseif expand("%:e") == 'py'
+        call SetCommentSh()
+        call setline(1,"#!/usr/bin/env python3")
+        call setline(2,"# -*- coding: utf-8 -*- #")
+
+    elseif &filetype == 'c' && expand("%:e") == 'h'
+        call SetComment()
+        call setline(17, "#pragma once")
+
+    elseif &filetype == 'c' && expand("%:e") == 'c'
+        call SetComment()
+        call setline(17,"#include \"".expand("%:t:r").".h\"")
+        call setline(18, "int main(int argc, char** argv) {")
+        call setline(19, "return 0;")
+        call setline(20, "}")
+
+    elseif &filetype == 'cpp' && (expand("%:e") == 'hpp' || expand("%:e") == 'h')
+        call SetComment()
+        call setline(17, "#ifndef ".toupper(substitute(expand("%:p:r"), "\/", "_", "g"))."_HPP_")
+        call setline(18, "#define ".toupper(substitute(expand("%:p:r"), "\/", "_", "g"))."_HPP_")
+        call setline(19, "")
+        call setline(20, "")
+        call setline(21, "#include<iostream>")
+        call setline(22, "")
+        call setline(23, "namespace A{")
+        call setline(24, "namespace B{")
+        call setline(25, "class ".expand("%:t:r")."{};")
+        call setline(26, "}")
+        call setline(27, "}")
+        call setline(28, "")
+        call setline(29, "")
+        call setline(30, "#endif  // ".toupper(substitute(expand("%:p:r"), "\/", "_", "g"))."_HPP_")
+
+    elseif &filetype == 'cpp' && (expand("%:e") == 'cpp' || expand("%:e") == 'cc')
+        call SetComment()
+        call setline(17,"#include \"".expand("%:t:r").".hpp\"")
+        call setline(18, "int main(int argc, char** argv) {")
+        call setline(19, "return 0;")
+        call setline(20, "}")
+
+    endif
+endfunc
 " Do not load when install general plugins
-if g:osv_plug_general == 0
+if g:osv_use_web_plug == 0
     augroup file_head
         autocmd!
         autocmd BufNewFile *.cxx,*.c,*.cc,*.hpp,*.h,*.cpp,Makefile,CMakeLists.txt,*.sh,*.zsh,*.py exec ":<c-u>call osv_ultis#file_head#set_title()"
     augroup END
 endif
+
+" ===
+" === Run update every day automatically when entering Vim.
+" ===
+
+function! AutoUpdateOSV() abort
+    let l:filename = $CONF_PATH.'/tmp/plug_update_time'
+    let l:today = strftime('%Y_%m_%d')
+    let l:contents = readfile(l:filename)
+    if filereadable(l:filename) == 0
+        call writefile([l:today], l:filename)
+    endif
+
+    if index(l:contents, l:today) < 0
+
+        " update the repo first
+        let l:osv_update = input("Update old school vim with remote, [y/n]?\n")
+        if l:osv_update == 'y'
+            let l:git_clean = osv_ultis#system#exec(["cd ".$CONF_PATH, "git status -s"]) is# ''
+            if l:git_clean == 1
+                call osv_ultis#system#exec(["cd ".$CONF_PATH, "git pull"])
+            else
+                call osv_ultis#msg#err("git status is not clean!")
+                let l:force_update = input("Force update? [y/n]?\n")
+                if l:force_update == 'y'
+                    call osv_ultis#system#exec(
+                                \["cd ".$CONF_PATH,
+                                \ "git fetch",
+                                \ "git reset --hard origin/master",
+                                \ "git pull"]
+                                \)
+                else
+                    call osv_ultis#msg#info("Skip force updating!")
+                endif
+            endif
+        else " do not update
+            call osv_ultis#msg#info("Skip updating old school vim!")
+        endif
+
+        " update the plugins
+        let l:choice = input("Update vim plugins, [y/n]?\n")
+        if l:choice == 'y'
+            call dein#update()
+            call dein#recache_runtimepath()
+        else
+            call osv_ultis#msg#info("Skip updating plugins!")
+        endif
+
+        call writefile([l:today], l:filename, 'a')
+        if has('nvim') && has('python3') && l:choice == 'y' && l:osv_update == 'y'
+            execute "UpdateRemotePlugins"
+        endif
+    endif
+endfunction
+
+augroup AutoUpdatePlugGroup
+    autocmd!
+    autocmd VimEnter * call AutoUpdateOSV()
+augroup END
