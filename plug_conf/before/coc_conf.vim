@@ -1,4 +1,7 @@
 " coc-plugins
+let g:coc_config_home = $CONF_PATH."/plug_conf"
+let g:coc_data_home = $CONF_PATH."/coc_data"
+
 let g:coc_global_extensions = [
             \ 'coc-pyright',
             \ 'coc-sh',
