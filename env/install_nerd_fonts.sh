@@ -17,6 +17,10 @@
 #
 # ------------------------------------------------------------------------------
 
+sudo rm -rf /usr/share/fonts/osv_font
+mkdir -p nerd_fonts
+
+cd nerd_fonts
 if [ -f "Hasklig.zip" ];then
     echo "Hasklig.zip is already downloaded!"
 else
@@ -30,10 +34,9 @@ else
     echo "dowload the MapleMono-SC-NF.zip"
     wget https://github.com/subframe7536/maple-font/releases/download/v6.4/MapleMono-SC-NF.zip
 fi
-
-sudo mkdir -p /usr/share/fonts/osv_font
 unzip Hasklig.zip -d osv_font/
 unzip MapleMono-SC-NF.zip -d osv_font/
-
 sudo mv osv_font /usr/share/fonts/
+cd ..
+
 sudo fc-cache -fv
