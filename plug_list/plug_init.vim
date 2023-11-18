@@ -35,6 +35,24 @@ endif
 let s:osv_setup = 0
 if empty(glob(s:dein_src))
     let s:osv_setup = 1
+
+    let g:osv_repo_source = input("Choose OSV REPO SOURCE? [origin/mirror]?\n")
+    if g:osv_repo_source != 'origin' && g:osv_repo_source != 'mirror'
+        call osv_ultis#msg#err(g:osv_repo_source."is a wrong repo source type: [origin/mirror]! Finish!")
+        finish
+    endif
+
+    " write the choice into the "custom_modules.vim"
+    let s:custom_modules_content = readfile($CONF_PATH."/custom_modules.vim")
+    for i in range(len(s:custom_modules_content))
+        let ele = split(s:custom_modules_content[i], " = ")
+        if !empty(ele) && ele[0] == "let g:osv_repo_source"
+            let s:custom_modules_content[i] = "let g:osv_repo_source = " . g:osv_repo_source
+            break
+        endif
+    endfor
+    call writefile(s:content, $CONF_PATH."/custom_modules.vim")
+
     " install dein.vim
     if g:osv_repo_source == 'origin'
         call osv_ultis#system#exec("git clone --branch ".s:osv_dein_version." https://github.com/Shougo/dein.vim " . s:dein_src)
@@ -125,11 +143,11 @@ endif
 if s:osv_setup == 0
     function! AutoUpdateVimPlug() abort
         let l:filename = $CONF_PATH.'/tmp/plug_update_time'
-        if filereadable(l:filename) == 0
-            call writefile([], l:filename)
-        endif
         let l:today = strftime('%Y_%m_%d')
         let l:contents = readfile(l:filename)
+        if filereadable(l:filename) == 0
+            call writefile([l:today], l:filename)
+        endif
 
         if index(l:contents, l:today) < 0
 

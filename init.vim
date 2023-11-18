@@ -84,6 +84,20 @@ else
     call input("Press any key to continue...")
 endif
 
+" check if no web-plugins are used
+if g:osv_plug_general == 0
+            \ && g:osv_plug_advanced == 0
+            \ && g:osv_snip == 'none'
+            \ && g:osv_finder == 'none'
+            \ && g:osv_file_explorer == 'none'
+            \ && g:osv_complete_engine == 'none'
+            \ && g:osv_linter == 'none'
+            \ && g:osv_lsp == 'none'
+    let g:osv_use_web_plug = 0
+else
+    let g:osv_use_web_plug = 1
+endif
+
 " ===
 " === check the finder
 " ===
@@ -287,7 +301,9 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 " === plug
 " ===
-source $CONF_PATH/plug_list/plug_init.vim
+if g:osv_use_web_plug == 1
+    source $CONF_PATH/plug_list/plug_init.vim
+endif
 
 filetype plugin indent on
 syntax enable
