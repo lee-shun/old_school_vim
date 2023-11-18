@@ -25,14 +25,22 @@ if [ -f "Hasklig.zip" ];then
     echo "Hasklig.zip is already downloaded!"
 else
     echo "dowload the Hasklig.zip"
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hasklig.zip
+    curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest \
+        | grep "browser_download_url.*Hasklig.zip" \
+        | cut -d : -f 2,3 \
+        | tr -d \"\
+        | wget -qi -
 fi
 
 if [ -f "MapleMono-SC-NF.zip" ];then
     echo "MapleMono-SC-NF.zip is already downloaded!"
 else
     echo "dowload the MapleMono-SC-NF.zip"
-    wget https://github.com/subframe7536/maple-font/releases/download/v6.4/MapleMono-SC-NF.zip
+    curl -s https://api.github.com/repos/subframe7536/maple-font/releases/latest \
+        | grep "browser_download_url.*SC-NF.zip" \
+        | cut -d : -f 2,3 \
+        | tr -d \"\
+        | wget -qi -
 fi
 unzip Hasklig.zip -d osv_font/
 unzip MapleMono-SC-NF.zip -d osv_font/
