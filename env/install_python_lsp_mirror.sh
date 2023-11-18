@@ -5,7 +5,7 @@
 #
 #   Copyright (C) 2022 Concordia NAVlab. All rights reserved.
 #
-#   @Filename: install_basic_env.sh
+#   @Filename: install_python_lsp_mirror.sh
 #
 #   @Author: Shun Li
 #
@@ -17,14 +17,4 @@
 #
 # ------------------------------------------------------------------------------
 
-sudo apt update
-
-echo "install curl wget..."
-sudo apt install -y curl wget
-
-echo "install xclip, xsel..."
-sudo apt install -y xclip xsel
-
-echo "install python3, pip3, and pynvim..."
-sudo apt install -y python3 python3-pip
-sudo pip3 install pynvim
+sudo pip3 install pyright -i https://pypi.tuna.tsinghua.edu.cn/simple
