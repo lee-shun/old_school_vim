@@ -1,244 +1,191 @@
 {
-    "hover.target": "float",
-    "coc.preferences.extensionUpdateCheck": "daily",
-    "coc.preferences.messageLevel": "error",
-    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-    "workspace.rootPatterns": [
+  "hover.target": "float",
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.messageLevel": "error",
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "workspace.rootPatterns": [
+    ".vim_root",
+    "compile_commands.json",
+    ".clang-format",
+    ".git",
+    ".hg",
+    ".projections.json"
+  ],
+  "yank.highlight.enable": false,
+  "suggest.labelMaxLength": 60,
+  "suggest.noselect": true,
+  "suggest.enablePreselect": false,
+  "suggest.triggerAfterInsertEnter": false,
+  "suggest.timeout": 5000,
+  "suggest.detailField": "abbr",
+  "suggest.snippetIndicator": "",
+  "suggest.triggerCompletionWait": 50,
+  "suggest.completionItemKindLabels": {
+    "class": "\uf0e8",
+    "color": "\ue22b",
+    "constant": "\uf8fe",
+    "default": "\uf29c",
+    "enum": "\uf435",
+    "enumMember": "\uf02b",
+    "event": "\ufacd",
+    "field": "\uf93d",
+    "file": "\uf723",
+    "folder": "\uf115",
+    "function": "\u0192",
+    "interface": "\uf417",
+    "keyword": "\uf1de",
+    "method": "\uf6a6",
+    "module": "\uf40d",
+    "operator": "\uf915",
+    "property": "\ue624",
+    "reference": "\ufa46",
+    "snippet": "\ue60b",
+    "struct": "\ufb44",
+    "text": "\ue612",
+    "typeParameter": "\uf728",
+    "unit": "\uf475",
+    "value": "\uf89f",
+    "variable": "\ue71b"
+  },
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.displayByAle": false,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualTextPrefix": " ◆ ",
+  "diagnostic.virtualText": true,
+  "diagnostic.messageTarget": "float",
+  "tabnine.limit": 3,
+  "explorer.sources": [
+    {
+      "name": "buffer",
+      "expand": false
+    },
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.width": 30,
+  "explorer.file.showHiddenFiles": true,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.buffer.showHiddenBuffers": false,
+  "explorer.keyMappingMode": "none",
+  "explorer.keyMappings.global": {
+    "i": false,
+    "<c-o>": "noop",
+    "mt": "toggleSelection",
+    "<tab>": "actionMenu",
+    "h": ["wait", "collapse"],
+    "l": ["wait", "expandable?", "expand", "open"],
+    "J": ["wait", "toggleSelection", "normal:j"],
+    "K": ["wait", "toggleSelection", "normal:k"],
+    "L": ["wait", "expand:recursive"],
+    "H": ["wait", "collapse:recursive"],
+    "<2-LeftMouse>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open"
+    ],
+    "o": ["wait", "expanded?", "collapse", "expand"],
+    "<cr>": ["wait", "expandable?", "cd", "open"],
+    "e": "open:split",
+    "v": "open:vsplit",
+    "/": "search:recursive",
+    "t": "open:tab",
+    "<bs>": ["wait", "gotoParent"],
+    "if": "preview:labeling",
+    "ip": "preview:content",
+    "yp": "copyFilepath",
+    "yn": "copyFilename",
+    "yy": "copyFile",
+    "dd": "cutFile",
+    "cc": "clearCopyOrCut",
+    "p": "pasteFile",
+    "df": "delete",
+    "dF": "deleteForever",
+    "a": "addFile",
+    "A": "addDirectory",
+    "rn": "rename",
+    "<C-h>": "toggleHidden",
+    "<dot>": "toggleHidden",
+    "<C-r>": "refresh",
+    "?": "help",
+    "q": "quit",
+    "<esc>": "esc",
+    "xs": "systemExecute",
+    "[d": "diagnosticPrev",
+    "]d": "diagnosticNext",
+    "gp": "gitPrev",
+    "gn": "gitNext",
+    "gs": "gitStage",
+    "gS": "gitUnstage",
+    "zf": "gotoSource:file",
+    "zb": "gotoSource:buffer",
+    "wl": "listDrive"
+  },
+  "codeLens.enable": false,
+  "python.analysis.logLevel": "Trace",
+  "python.formatting.provider": "yapf",
+  "python.pythonPath": "python3",
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false,
+    "html": false
+  },
+  "coc.source.word.shortcut": "W",
+  "clangd.enabled": false,
+  "clangd.path": "clangd",
+  "java.jdt.ls.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+  "semanticTokens.enable": true,
+  "languageserver": {
+    "cmake": {
+      "command": "cmake-language-server",
+      "filetypes": ["cmake"],
+      "rootPatterns": [
         ".vim_root",
-        "compile_commands.json",
+        ".ccls-cache/",
         ".clang-format",
-        ".git",
-        ".hg",
-        ".projections.json"
-    ],
-    "yank.highlight.enable": false,
-    "suggest.labelMaxLength": 60,
-    "suggest.noselect": true,
-    "suggest.enablePreselect": false,
-    "suggest.triggerAfterInsertEnter": false,
-    "suggest.timeout": 5000,
-    "suggest.detailField": "abbr",
-    "suggest.snippetIndicator": "",
-    "suggest.triggerCompletionWait": 50,
-    "suggest.completionItemKindLabels": {
-        "class": "\uf0e8",
-        "color": "\ue22b",
-        "constant": "\uf8fe",
-        "default": "\uf29c",
-        "enum": "\uf435",
-        "enumMember": "\uf02b",
-        "event": "\ufacd",
-        "field": "\uf93d",
-        "file": "\uf723",
-        "folder": "\uf115",
-        "function": "\u0192",
-        "interface": "\uf417",
-        "keyword": "\uf1de",
-        "method": "\uf6a6",
-        "module": "\uf40d",
-        "operator": "\uf915",
-        "property": "\ue624",
-        "reference": "\ufa46",
-        "snippet": "\ue60b",
-        "struct": "\ufb44",
-        "text": "\ue612",
-        "typeParameter": "\uf728",
-        "unit": "\uf475",
-        "value": "\uf89f",
-        "variable": "\ue71b"
+        "compile_commands.json",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "buildDirectory": "build"
+      }
     },
-    "diagnostic.errorSign": "",
-    "diagnostic.warningSign": "",
-    "diagnostic.infoSign": "",
-    "diagnostic.hintSign": "",
-    "diagnostic.displayByAle": false,
-    "diagnostic.refreshOnInsertMode": false,
-    "diagnostic.checkCurrentLine": true,
-    "diagnostic.virtualTextPrefix": " ◆ ",
-    "diagnostic.virtualText": true,
-    "diagnostic.messageTarget": "float",
-    "tabnine.limit": 3,
-    "explorer.sources": [
-        {
-            "name": "buffer",
-            "expand": false
-        },
-        {
-            "name": "file",
-            "expand": true
+    "lua": {
+      "command": "lua-language-server",
+      "rootPatterns": [".git"],
+      "filetypes": ["lua"]
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["cpp", "c"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+      "initializationOptions": {
+        "highlight": {
+          "lsRanges": true
         }
-    ],
-    "explorer.width": 30,
-    "explorer.file.showHiddenFiles": true,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.buffer.showHiddenBuffers": false,
-    "explorer.keyMappingMode": "none",
-    "explorer.keyMappings.global": {
-        "i": false,
-        "<c-o>": "noop",
-        "mt": "toggleSelection",
-        "<tab>": "actionMenu",
-        "h": [
-            "wait",
-            "collapse"
-        ],
-        "l": [
-            "wait",
-            "expandable?",
-            "expand",
-            "open"
-        ],
-        "J": [
-            "wait",
-            "toggleSelection",
-            "normal:j"
-        ],
-        "K": [
-            "wait",
-            "toggleSelection",
-            "normal:k"
-        ],
-        "L": [
-            "wait",
-            "expand:recursive"
-        ],
-        "H": [
-            "wait",
-            "collapse:recursive"
-        ],
-        "<2-LeftMouse>": [
-            "expandable?",
-            [
-                "expanded?",
-                "collapse",
-                "expand"
-            ],
-            "open"
-        ],
-        "o": [
-            "wait",
-            "expanded?",
-            "collapse",
-            "expand"
-        ],
-        "<cr>": [
-            "wait",
-            "expandable?",
-            "cd",
-            "open"
-        ],
-        "e": "open:split",
-        "v": "open:vsplit",
-        "/": "search:recursive",
-        "t": "open:tab",
-        "<bs>": [
-            "wait",
-            "gotoParent"
-        ],
-        "if": "preview:labeling",
-        "ip": "preview:content",
-        "yp": "copyFilepath",
-        "yn": "copyFilename",
-        "yy": "copyFile",
-        "dd": "cutFile",
-        "cc": "clearCopyOrCut",
-        "p": "pasteFile",
-        "df": "delete",
-        "dF": "deleteForever",
-        "a": "addFile",
-        "A": "addDirectory",
-        "rn": "rename",
-        "<C-h>": "toggleHidden",
-        "<dot>": "toggleHidden",
-        "<C-r>": "refresh",
-        "?": "help",
-        "q": "quit",
-        "<esc>": "esc",
-        "xs": "systemExecute",
-        "[d": "diagnosticPrev",
-        "]d": "diagnosticNext",
-        "gp": "gitPrev",
-        "gn": "gitNext",
-        "gs": "gitStage",
-        "gS": "gitUnstage",
-        "zf": "gotoSource:file",
-        "zb": "gotoSource:buffer",
-        "wl": "listDrive",
-    },
-    "codeLens.enable": false,
-    "python.analysis.logLevel": "Trace",
-    "python.formatting.provider": "yapf",
-    "python.pythonPath": "python3",
-    "markdownlint.config": {
-        "default": true,
-        "line_length": false,
-        "html": false
-    },
-    "coc.source.word.shortcut": "W",
-    "clangd.enabled": false,
-    "clangd.path": "clangd",
-    "java.jdt.ls.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
-    "semanticTokens.enable": true,
-    "languageserver": {
-        "cmake": {
-            "command": "cmake-language-server",
-            "filetypes": [
-                "cmake"
-            ],
-            "rootPatterns": [
-                ".vim_root",
-                ".ccls-cache/",
-                ".clang-format",
-                "compile_commands.json",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "buildDirectory": "build"
-            }
-        },
-        "lua": {
-            "command": "lua-language-server",
-            "rootPatterns": [
-                ".git"
-            ],
-            "filetypes": [
-                "lua"
-            ]
-        },
-        "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "cpp",
-                "c"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "highlight": {
-                    "lsRanges": true
-                },
-            }
-        }
-    },
-    "cSpell.enabled": false,
-    "cSpell.userWords": [
-        "CPSs",
-        "Maxout",
-        "Wyner",
-        "imread",
-        "imshow",
-        "markdownlint",
-        "moveit",
-        "ndarray",
-        "neovim",
-        "nparray",
-        "numpy",
-        "osdk",
-        "sobel"
-    ]
+      }
+    }
+  },
+  "cSpell.enabled": false,
+  "cSpell.userWords": [
+    "CPSs",
+    "Maxout",
+    "Wyner",
+    "imread",
+    "imshow",
+    "markdownlint",
+    "moveit",
+    "ndarray",
+    "neovim",
+    "nparray",
+    "numpy",
+    "osdk",
+    "sobel"
+  ]
 }

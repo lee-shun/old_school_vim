@@ -1,7 +1,7 @@
 let g:spaceline_colorscheme = 'onehalfdark'
 let g:spaceline_seperate_style = 'arrow-fade'
-let g:spaceline_diagnostic_errorsign = ' '
-let g:spaceline_diagnostic_warnsign = ' '
+let g:spaceline_diagnostic_errorsign = ' '
+let g:spaceline_diagnostic_warnsign = ' '
 let g:spaceline_git_branch_icon = ' '
 let g:spaceline_custom_diff_icon =  [' ',' ',' ']
 
