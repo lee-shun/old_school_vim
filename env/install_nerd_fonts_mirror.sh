@@ -18,7 +18,6 @@
 # ------------------------------------------------------------------------------
 
 sudo rm -rf /usr/share/fonts/osv_font
-sudo mkdir -p /usr/share/fonts/osv_font
 git clone https://gitee.com/old_school_vim/nerd_fonts --depth 1
 
 cd nerd_fonts/
