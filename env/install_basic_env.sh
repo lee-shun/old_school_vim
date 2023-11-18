@@ -19,8 +19,8 @@
 
 sudo apt update
 
-echo "install curl wget..."
-sudo apt install -y curl wget
+echo "install curl wget unzip..."
+sudo apt install -y curl wget unzip
 
 echo "install xclip, xsel..."
 sudo apt install -y xclip xsel
