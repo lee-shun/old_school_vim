@@ -11,6 +11,7 @@ sessions/
 custom_modules.vim
 
 dein/
+coc_data/
 
 # Vim.gitignore:
 # Swap
