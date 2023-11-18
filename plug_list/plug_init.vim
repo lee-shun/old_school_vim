@@ -47,11 +47,11 @@ if empty(glob(s:dein_src))
     for i in range(len(s:custom_modules_content))
         let ele = split(s:custom_modules_content[i], " = ")
         if !empty(ele) && ele[0] == "let g:osv_repo_source"
-            let s:custom_modules_content[i] = "let g:osv_repo_source = " . g:osv_repo_source
+            let s:custom_modules_content[i] = "let g:osv_repo_source = " . "'" . g:osv_repo_source . "'"
             break
         endif
     endfor
-    call writefile(s:content, $CONF_PATH."/custom_modules.vim")
+    call writefile(s:custom_modules_content, $CONF_PATH."/custom_modules.vim")
 
     " install dein.vim
     if g:osv_repo_source == 'origin'
@@ -138,4 +138,3 @@ if s:osv_first_setup == 1
     endif
     call input("Press any key to continue...")
 endif
-
