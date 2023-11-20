@@ -1,21 +1,21 @@
 " NOTE: after change this file, Restart vim/neovim and then use "Dein install",
-" "Dein reacache_runtime_path" to make the config takes effect.
+ "Dein reacache_runtime_path" to make the config takes effect.
 
-" set to 1 to disable the warning infomation.
+" set to 0 to disable the warning infomation.
 let g:osv_warning = 0
+
+" set to 1, osv will check the updates daily.
+let g:osv_daily_update = 0
 
 " set to 'mirror' to use the repo mirrors from gitee, set to 'origin' to use the
 " original repos from github or gitlab
 let g:osv_repo_source = 'origin'
 
 " some dependence-free plugins
-let g:osv_plug_general = 1
+let g:osv_plug_general = 0
 
 " some python and filetype-based plugins
 let g:osv_plug_advanced = 0
-
-" possible value: ultisnips, coc-snippets and none
-let g:osv_snip = 'none'
 
 " possible value: coc-lists, fzf, leaderf, ctrlp, clap and none.
 let g:osv_finder = 'none'

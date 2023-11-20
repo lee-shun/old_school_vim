@@ -136,5 +136,6 @@ if s:osv_first_setup == 1
     if has('nvim') && has('python3')
         execute "UpdateRemotePlugins"
     endif
-    call input("Press any key to continue...")
+    call input("Press any key to restart the osv...")
+    quit!
 endif
