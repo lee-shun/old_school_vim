@@ -308,6 +308,6 @@ vnoremap <silent> # :<C-u>call osv_ultis#search_code#visual_search('', '')<CR>?<
 " ===
 " === open terminal
 " ===
-if exists(':terminal') 
+if g:osv_plug_general == 0 && exists(':terminal') 
 noremap <F12> :<c-u>term<CR>
 endif
