@@ -1,7 +1,7 @@
 " NOTE: after change this file, Restart vim/neovim and then use "Dein install",
  "Dein reacache_runtime_path" to make the config takes effect.
 
-" set to 0 to disable the warning infomation.
+" set to 1 use the debug mode, with all of the warnings and also some debug plugins
 let g:osv_debug = 0
 
 " set to 1, osv will check the updates daily.
