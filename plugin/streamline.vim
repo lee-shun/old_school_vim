@@ -27,7 +27,7 @@ let s:streamline_spec_filetypes = ['fern', 'coc-explorer', 'defx', 'vimfiler']
 function! CreateStatusline()
     if index(s:streamline_spec_filetypes, &ft) >= 0
         let statusline=''
-        let statusline.='☰ '.&ft
+        let statusline.=' '.&ft
         return statusline
     endif
     let statusline=''
@@ -49,7 +49,7 @@ function! CreateStatusline()
     endif
     if get(g:, 'streamline_show_coc_status', 1) && exists('g:coc_enabled')
         let statusline.='%#WarningMsg#'
-        let statusline.=GetCocStatus()
+        let statusline.=" ".GetCocStatus()
         let statusline.='%#CursorlineNr#'
     endif
     let statusline.=' %f'                  " Show filename
@@ -69,7 +69,7 @@ endfunction
 function! CreateInactiveStatusline()
     if index(s:streamline_spec_filetypes, &ft) >= 0
         let statusline=''
-        let statusline.='☰ '.&ft
+        let statusline.='  '.&ft
         return statusline
     endif
     let statusline=''
@@ -103,8 +103,8 @@ function GetAleStatus()
 endfunction
 
 function GetCocStatus()
-    let l:coc_status = substitute(coc#status(), "E", "", "")
-    return substitute(l:coc_status, "W", "", "")
+    let l:coc_status = substitute(coc#status(), "E", "", "")
+    return substitute(l:coc_status, "W", "", "")
 endfunction
 
 function! GetMode()
