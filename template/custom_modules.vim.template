@@ -2,7 +2,7 @@
  "Dein reacache_runtime_path" to make the config takes effect.
 
 " set to 0 to disable the warning infomation.
-let g:osv_warning = 0
+let g:osv_debug = 0
 
 " set to 1, osv will check the updates daily.
 let g:osv_daily_update = 0

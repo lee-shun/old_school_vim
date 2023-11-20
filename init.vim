@@ -63,7 +63,7 @@ endif
 " ===
 " === read the custom_modules.vim
 " ===
-let g:osv_warning = 1
+let g:osv_debug = 1
 let g:osv_daily_update = 0
 let g:osv_repo_source = "origin"
 let g:osv_plug_general = 0
