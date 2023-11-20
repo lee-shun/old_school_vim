@@ -2,7 +2,7 @@
 " === Run update every day automatically when entering Vim.
 " ===
 
-function! AutoUpdateOSV() abort
+function! osv_ultis#daily_update#daily_update_osv() abort
     let l:filename = $CONF_PATH.'/tmp/plug_update_time'
     let l:today = strftime('%Y_%m_%d')
     let l:contents = readfile(l:filename)
@@ -51,8 +51,3 @@ function! AutoUpdateOSV() abort
         endif
     endif
 endfunction
-
-augroup AutoUpdatePlugGroup
-    autocmd!
-    autocmd VimEnter * call AutoUpdateOSV()
-augroup END
