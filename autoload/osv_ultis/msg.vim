@@ -7,7 +7,7 @@ function! osv_ultis#msg#info(message) abort
 endfunction
 
 function! osv_ultis#msg#warn(message) abort
-    if !exists('g:osv_warning') || g:osv_warning == 0
+    if !exists('g:osv_debug') || g:osv_debug == 0
         return 0
     endif
     highlight OsvWarn guifg=yellow guibg=gray
