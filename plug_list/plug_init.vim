@@ -78,6 +78,10 @@ call dein#begin(s:dein_cache_dir)
 call dein#add(s:dein_src)
 let $OSV_REPO_SOURCE = g:osv_repo_source
 
+if g:osv_debug == 1
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_debug.vim
+endif
+
 if g:osv_plug_general == 1
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_general.vim
 endif
