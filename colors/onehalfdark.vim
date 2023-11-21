@@ -26,6 +26,7 @@ let s:blue        = { "gui": "#61afef", "cterm": "75"  }
 let s:purple      = { "gui": "#c678dd", "cterm": "176" }
 let s:cyan        = { "gui": "#56b6c2", "cterm": "73"  }
 let s:white       = { "gui": "#dcdfe4", "cterm": "188" }
+let s:orange      = { "gui": "#F39C12", "cterm": "NONE"}
 
 let s:fg          = s:white
 let s:bg          = s:black
@@ -43,21 +44,21 @@ let s:vertsplit   = { "gui": "#313640", "cterm": "237" }
 
 
 function! s:h(group, fg, bg, attr)
-  if type(a:fg) == type({})
-    exec "hi " . a:group . " guifg=" . a:fg.gui . " ctermfg=" . a:fg.cterm
-  else
-    exec "hi " . a:group . " guifg=NONE cterm=NONE"
-  endif
-  if type(a:bg) == type({})
-    exec "hi " . a:group . " guibg=" . a:bg.gui . " ctermbg=" . a:bg.cterm
-  else
-    exec "hi " . a:group . " guibg=NONE ctermbg=NONE"
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
-  else
-    exec "hi " . a:group . " gui=NONE cterm=NONE"
-  endif
+    if type(a:fg) == type({})
+        exec "hi " . a:group . " guifg=" . a:fg.gui . " ctermfg=" . a:fg.cterm
+    else
+        exec "hi " . a:group . " guifg=NONE cterm=NONE"
+    endif
+    if type(a:bg) == type({})
+        exec "hi " . a:group . " guibg=" . a:bg.gui . " ctermbg=" . a:bg.cterm
+    else
+        exec "hi " . a:group . " guibg=NONE ctermbg=NONE"
+    endif
+    if a:attr != ""
+        exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+    else
+        exec "hi " . a:group . " gui=NONE cterm=NONE"
+    endif
 endfun
 
 
@@ -126,14 +127,14 @@ call s:h("Whitespace", s:non_text, "", "")
 call s:h("NonText", s:non_text, "", "")
 call s:h("Comment", s:comment_fg, "", "italic")
 call s:h("Constant", s:cyan, "", "")
-call s:h("String", s:green, "", "")
+call s:h("String", s:yellow, "", "")
 call s:h("Character", s:green, "", "")
-call s:h("Number", s:yellow, "", "")
-call s:h("Boolean", s:yellow, "", "")
-call s:h("Float", s:yellow, "", "")
+call s:h("Number", s:purple, "", "")
+call s:h("Boolean", s:purple, "", "")
+call s:h("Float", s:purple, "", "")
 
 call s:h("Identifier", s:red, "", "")
-call s:h("Function", s:blue, "", "")
+call s:h("Function", s:green, "", "")
 call s:h("Statement", s:purple, "", "")
 
 call s:h("Conditional", s:purple, "", "")
@@ -149,7 +150,7 @@ call s:h("Define", s:purple, "", "")
 call s:h("Macro", s:purple, "", "")
 call s:h("PreCondit", s:yellow, "", "")
 
-call s:h("Type", s:yellow, "", "")
+call s:h("Type", s:blue, "", "")
 call s:h("StorageClass", s:yellow, "", "")
 call s:h("Structure", s:yellow, "", "")
 call s:h("Typedef", s:yellow, "", "")
@@ -201,7 +202,7 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
 " }
 
 " Fix colors in neovim terminal buffers {
-  if has('nvim')
+if has('nvim')
     let g:terminal_color_0 = s:black.gui
     let g:terminal_color_1 = s:red.gui
     let g:terminal_color_2 = s:green.gui
@@ -220,5 +221,43 @@ hi link gitcommitUnmergedArrow gitcommitUnmergedFile
     let g:terminal_color_15 = s:white.gui
     let g:terminal_color_background = s:bg.gui
     let g:terminal_color_foreground = s:fg.gui
-  endif
+endif
 " }
+
+
+if g:osv_complete_engine == 'coc'
+    let g:coc_default_semantic_highlight_groups = 1
+    " sematic token
+    call s:h("CocSemNamespace", s:red, "", "")
+    call s:h("CocSemType", s:yellow, "", "")
+    call s:h("CocSemClass", s:blue, "","")
+    call s:h("CocSemEnum", s:blue, "","")
+    call s:h("CocSemInterface", s:blue,"","")
+    call s:h("CocSemStruct", s:blue,"","")
+    call s:h("CocSemTypeParameter", s:blue,"","")
+    call s:h("CocSemParameter", s:cyan,"","")
+    call s:h("CocSemVariable", s:white, "","")
+    call s:h("CocSemProperty", s:orange, "","")
+    call s:h("CocSemEnumMember", s:purple, "","")
+    call s:h("CocSemEvent", s:yellow, "","")
+    call s:h("CocSemMethod", s:green, "", "")
+    call s:h("CocSemMacro", s:purple, "", "")
+    call s:h("CocSemModifier", s:red, "","")
+    call s:h("CocSemComment", s:comment_fg,"","")
+    call s:h("CocSemString", s:yellow, "", "")
+    call s:h("CocSemNumber", s:purple, "", "")
+    call s:h("CocSemRegexp", s:green, "","")
+    call s:h("CocSemDecorator", s:red,"","")
+    call s:h("CocSemOperator", s:red, "","")
+    " call s:h("CocSemDeclaration", s:red, "","")
+    " call s:h("CocSemDefinition", s:blue, "","")
+    call s:h("CocSemFunction", s:green, "","")
+    " call s:h("CocSemReadonly", s:red, "","")
+    call s:h("CocSemStatic", s:green, "","")
+    call s:h("CocSemDeprecated", s:yellow, "","")
+    call s:h("CocSemAbstract", s:red, "","")
+    call s:h("CocSemAsync", s:red, "","")
+    " call s:h("CocSemDefaultLibrary", s:purple, "","")
+    call s:h("CocSemLifetime", s:red, "","")
+    call s:h("CocSemKeyword", s:purple,"","")
+endif

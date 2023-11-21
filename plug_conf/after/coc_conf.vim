@@ -1,6 +1,3 @@
-" hightlight for member functions
-hi CocSemProperty ctermfg=LightRed guifg=LightRed  cterm=none gui=none
-
 inoremap <silent><expr> <TAB>
             \ coc#pum#visible() ? coc#pum#next(1) :
             \ CheckBackspace() ? "\<Tab>" :

@@ -107,5 +107,5 @@ elseif g:osv_finder == 'clap'
     elseif g:os_name == 'Windows'
         let s:clap_config.build = 'powershell.exe .\install.ps1'
     endif
-    call dein#add('liuchengxu/vim-clap', s:clap_config)
+    call dein#add('old_school_vim/vim-clap', s:clap_config)
 endif

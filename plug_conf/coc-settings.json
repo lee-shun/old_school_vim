@@ -136,7 +136,7 @@
     "html": false
   },
   "coc.source.word.shortcut": "W",
-  "clangd.enabled": false,
+  "clangd.enabled": true,
   "clangd.path": "clangd",
   "java.jdt.ls.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
   "semanticTokens.enable": true,
@@ -160,16 +160,6 @@
       "command": "lua-language-server",
       "rootPatterns": [".git"],
       "filetypes": ["lua"]
-    },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["cpp", "c"],
-      "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
-      "initializationOptions": {
-        "highlight": {
-          "lsRanges": true
-        }
-      }
     }
   },
   "cSpell.enabled": false,
