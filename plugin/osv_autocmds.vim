@@ -68,7 +68,7 @@ if g:osv_plug_advanced == 0
     augroup END
 endif
 
-if g:osv_daily_update == 0
+if g:osv_daily_update == 1
     augroup daily_update_osv_group
         autocmd!
         autocmd VimEnter * call osv_ultis#daily_update#daily_update_osv()
