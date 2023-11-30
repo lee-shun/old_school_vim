@@ -5,10 +5,12 @@
 function! osv_ultis#daily_update#daily_update_osv() abort
     let l:filename = $CONF_PATH.'/tmp/plug_update_time'
     let l:today = strftime('%Y_%m_%d')
-    let l:contents = readfile(l:filename)
+
     if filereadable(l:filename) == 0
-        call writefile([l:today], l:filename)
+        call writefile([l:today], l:filename, 'a')
     endif
+
+    let l:contents = readfile(l:filename)
 
     if index(l:contents, l:today) < 0
 
