@@ -5,6 +5,7 @@ call dein#add('tibabit/vim-templates', {'lazy':1,
 
 call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \'on_cmd':['Vista'],
+            \'hook_source':'source $CONF_PATH/plug_conf/before/vista.vim',
             \})
 
 " NOTE: coc has its sematic token, and only ccls supprots this plugin
