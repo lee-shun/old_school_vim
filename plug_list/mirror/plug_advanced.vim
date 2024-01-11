@@ -18,6 +18,10 @@ else
     call osv_ultis#msg#warn("vim-lsp-cxx-hl needs the ccls installed! Skip!")
 endif
 
+call dein#add('duyz1218/cpp-mode', {'lazy':1,
+            \'on_ft':['cpp'],
+            \})
+
 if g:osv_complete_engine != 'coc'
     call dein#add('old_school_vim/vim-translator', {'lazy':1,
                 \'on_map':{'n':'<leader>s', 'v':'<leader>s'},
