@@ -36,9 +36,14 @@ let s:osv_first_setup = 0
 if empty(glob(s:dein_src))
     let s:osv_first_setup = 1
 
-    let g:osv_repo_source = input("Choose OSV REPO SOURCE? [origin/mirror]?\n")
-    if g:osv_repo_source != 'origin' && g:osv_repo_source != 'mirror'
-        call osv_ultis#msg#err(g:osv_repo_source."is a wrong repo source type: [origin/mirror]! Finish!")
+    let s:input_repo_source = input("Choose OSV REPO SOURCE? [o(rigin)/m(irror)]?\n")
+
+    if s:input_repo_source == 'o' || s:input_repo_source == 'origin'
+        let g:osv_repo_source = 'origin'
+    elseif s:input_repo_source == 'm' || s:input_repo_source == 'mirror'
+        let g:osv_repo_source = 'mirror'
+    else
+        call osv_ultis#msg#err(g:osv_repo_source."is a wrong repo source type: [o(rigin)/m(irror)]! Finish!")
         finish
     endif
 
