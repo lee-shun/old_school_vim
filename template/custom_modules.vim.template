@@ -32,3 +32,6 @@ let g:osv_linter = 'none'
 " possible value: vim-lsp, vim-lsc, lcn, and none
 " Because coc has lsp support, no need to install lsp agian if use coc.
 let g:osv_lsp = 'none'
+
+" possible value: codeium, copilot(TODO) and none
+let g:osv_ai = 'codeium'
