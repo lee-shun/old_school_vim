@@ -74,6 +74,7 @@ let g:osv_file_explorer = 'none'
 let g:osv_complete_engine = 'none'
 let g:osv_linter = 'none'
 let g:osv_lsp = 'none'
+let g:osv_ai = 'none'
 
 " customs
 if !empty(glob($CONF_PATH.'/custom_modules.vim'))
@@ -94,6 +95,7 @@ if g:osv_plug_general == 0
             \ && g:osv_complete_engine == 'none'
             \ && g:osv_linter == 'none'
             \ && g:osv_lsp == 'none'
+            \ && g:osv_ai == 'none'
     let g:osv_use_web_plug = 0
 else
     let g:osv_use_web_plug = 1
@@ -291,6 +293,20 @@ if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsc'
     call osv_ultis#msg#err("For vim-lsc: vim>=8.0 or nvim! Skip!")
     let g:osv_lsp = 'none'
     finish
+endif
+
+" ===
+" === check the ai
+" ===
+if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
+    " check the codeium
+    if g:osv_ai == 'codeium' && !has('nvim-0.6') && !has('patch-9.0.0185')
+        call osv_ultis#msg#warn("codeium preview needs vim >=9.0.0185 or nvim >= 0.6! Skip!")
+        let g:osv_ai = 'none'
+    endif
+else
+    call osv_ultis#msg#warn("Only Linux_x86_64, Windows support ai! Skip!")
+    let g:osv_ai = 'none'
 endif
 
 " ===
