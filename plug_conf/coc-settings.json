@@ -138,6 +138,7 @@
   "coc.source.word.shortcut": "W",
   "clangd.enabled": true,
   "clangd.path": "clangd",
+  "inlayHint.enable": false,
   "java.jdt.ls.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
   "semanticTokens.enable": true,
   "languageserver": {
