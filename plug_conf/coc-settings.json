@@ -162,20 +162,4 @@
       "filetypes": ["lua"]
     }
   },
-  "cSpell.enabled": false,
-  "cSpell.userWords": [
-    "CPSs",
-    "Maxout",
-    "Wyner",
-    "imread",
-    "imshow",
-    "markdownlint",
-    "moveit",
-    "ndarray",
-    "neovim",
-    "nparray",
-    "numpy",
-    "osdk",
-    "sobel"
-  ]
 }
