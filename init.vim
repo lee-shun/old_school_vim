@@ -298,14 +298,14 @@ endif
 " ===
 " === check the ai
 " ===
-if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
+if (g:os_name == 'Linux') || (g:os_name == 'Windows')
     " check the codeium
     if g:osv_ai == 'codeium' && !has('nvim-0.6') && !has('patch-9.0.0185')
         call osv_ultis#msg#warn("codeium preview needs vim >=9.0.0185 or nvim >= 0.6! Skip!")
         let g:osv_ai = 'none'
     endif
 else
-    call osv_ultis#msg#warn("Only Linux_x86_64, Windows support ai! Skip!")
+    call osv_ultis#msg#warn("Only Linux, Windows support ai! Skip!")
     let g:osv_ai = 'none'
 endif
 
