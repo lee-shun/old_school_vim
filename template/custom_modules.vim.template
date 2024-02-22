@@ -34,4 +34,4 @@ let g:osv_linter = 'none'
 let g:osv_lsp = 'none'
 
 " possible value: codeium, copilot(TODO) and none
-let g:osv_ai = 'codeium'
+let g:osv_ai = 'none'
