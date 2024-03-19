@@ -27,4 +27,3 @@ endif
 let s:total_plugins = len(dein#get())
 let footer_string= '🎉 old school '.s:vim .' loaded ' . s:total_plugins . ' plugins 🎊'
 let g:dashboard_custom_footer = [footer_string]
-

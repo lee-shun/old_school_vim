@@ -108,4 +108,14 @@ elseif g:osv_finder == 'clap'
         let s:clap_config.build = 'powershell.exe .\install.ps1'
     endif
     call dein#add('liuchengxu/vim-clap', s:clap_config)
+
+elseif g:osv_finder == 'fuzzyy'
+    let s:fuzzyy_config = {'lazy':1,
+                \'build':'',
+                \'on_cmd':['FuzzyInBuffer','FuzzyColors','FuzzyHelps','FuzzyFiles','FuzzyCommands','FuzzyGrep','FuzzyBuffers','FuzzyHighlights','FuzzyMRUFiles'],
+                \'on_map':'<leader>f',
+                \'hook_source':'source $CONF_PATH/plug_conf/before/fuzzyy_conf.vim',
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/fuzzyy_conf.vim',
+                \}
+    call dein#add('Donaldttt/fuzzyy', s:fuzzyy_config)
 endif
