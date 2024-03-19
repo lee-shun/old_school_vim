@@ -2,7 +2,7 @@
  "Dein reacache_runtime_path" to make the config takes effect.
 
 " set to 1 use the debug mode, with all of the warnings and also some debug plugins
-let g:osv_debug = 0
+let g:osv_debug = 1
 
 " set to 1, osv will check the updates daily.
 let g:osv_daily_update = 0
@@ -12,26 +12,31 @@ let g:osv_daily_update = 0
 let g:osv_repo_source = 'origin'
 
 " some dependence-free plugins
-let g:osv_plug_general = 0
+let g:osv_plug_general = 1
 
 " some python and filetype-based plugins
 let g:osv_plug_advanced = 0
 
-" possible value: coc-lists, fzf, leaderf, ctrlp, clap and none.
+" possible value: ultisnips, vsnip, coc(if use coc) and none.
+let g:osv_snip = 'none'
+
+" possible value: coc-lists, fzf, leaderf, ctrlp, clap, fuzzyy(only for vim 9
+" and above) and none.
 let g:osv_finder = 'none'
 
 " possible value: coc-explorer, fern, defx, vimfiler and none.
 let g:osv_file_explorer = 'none'
 
-" possible value: coc, deoplete, asyncomplete, mucomplete and none.
+" possible value: coc, deoplete, asyncomplete, mucomplete, vimcomplete(only for
+" vim 9 and above) and none.
 let g:osv_complete_engine = 'none'
 
 " possible value: ale and none
 let g:osv_linter = 'none'
 
-" possible value: vim-lsp, vim-lsc, lcn, and none
-" Because coc has lsp support, no need to install lsp agian if use coc.
+" possible value: vim-lsp, vim-lsc, lcn, vim9lsp(only for vim 9 and above) and none
+" NOTE: Because coc has lsp support, no need to install lsp agian if use coc.
 let g:osv_lsp = 'none'
 
-" possible value: codeium, copilot(TODO) and none
+" possible value: codeium and none
 let g:osv_ai = 'none'

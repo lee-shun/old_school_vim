@@ -55,7 +55,7 @@ endif
 " ===
 " === check the base env
 " ===
-if !has('nvim') && v:version < 704
+if !has('nvim') && v:version < 704  " vim 7.4 is binded with ubuntu 16.04
     call osv_ultis#msg#err('OSV needs vim >= 7.4 or nvim! Finish!')
     finish
 endif
@@ -156,6 +156,15 @@ elseif g:osv_finder == 'clap'
     endif
     if !executable('rg')
         call osv_ultis#msg#warn("Need the ripgrep (rg) to run clap!")
+    endif
+elseif g:osv_finder == 'fuzzyy'
+    if !has('patch-9.0.0000')
+        call osv_ultis#msg#err("Need vim >= 9.0 to use fuzzyy. Skip!")
+        let g:osv_finder = 'none'
+        finish
+    endif
+    if !executable('ag') &&  !executable('rg') && !executable('grep')
+        call osv_ultis#msg#warn("Need the ripgrep (rg), or the silver searcher(ag) or grep to ues fuzzyy!")
     endif
 endif
 
