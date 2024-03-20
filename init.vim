@@ -24,10 +24,10 @@ if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
         let g:os_architect = 'x86_64'
-        " set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
-        " set shellcmdflag=-command
-        " set shellquote=\"
-        " set shellxquote=
+    " set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+    " set shellcmdflag=-command
+    " set shellquote=\"
+    " set shellxquote=
     else " not windows, use 'uname' command.
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '')
@@ -206,7 +206,7 @@ if g:osv_file_explorer == 'coc-explorer'
     endif
 elseif g:osv_file_explorer == 'defx'
     if has('nvim-0.4') || v:version > 802 " according to the repo
-        " defx.nvim is ok
+    " defx.nvim is ok
     else
         call osv_ultis#msg#err("Need nvim >= 0.4 or vim >= 8.2 to use defx.nvim. Skip!")
         let g:osv_file_explorer = 'none'
@@ -214,7 +214,7 @@ elseif g:osv_file_explorer == 'defx'
     endif
 elseif g:osv_file_explorer == 'fern'
     if has('nvim') || has('patch-8.1.2269') " according to the repo
-        " fern.vim is ok
+    " fern.vim is ok
     else
         call osv_ultis#msg#err("Need nvim or vim >= 8.1.2269 to use fern.vim. Skip!")
         let g:osv_file_explorer = 'none'
@@ -283,6 +283,12 @@ elseif g:osv_complete_engine == 'mucomplete'
     if v:version < 800
         call osv_ultis#msg#warn("Update vim to nvim or vim > 8.0 to support mucomplete better!")
     endif
+elseif g:osv_complete_engine == 'vimcomplete'
+    if v:version <900
+        call osv_ultis#msg#err("For vimcomplete: vim>=9.0! Skip!")
+        let g:osv_complete_engine = 'none'
+        finish
+    endif
 endif
 
 " ===
@@ -314,6 +320,19 @@ if !has('nvim') && v:version < 800 && g:osv_lsp == 'vim-lsc'
     call osv_ultis#msg#err("For vim-lsc: vim>=8.0 or nvim! Skip!")
     let g:osv_lsp = 'none'
     finish
+endif
+
+if g:osv_lsp == 'vim9lsp'
+    if !has('patch-9.0.0000')
+        call osv_ultis#msg#err("vim9 lsp only supports vim >= 9.0! Skip!")
+        let g:osv_lsp = 'none'
+        finish
+    endif
+    if g:osv_complete_engine != 'none' && g:osv_complete_engine != 'vimcomplete'
+        call osv_ultis#msg#err("vim9 lsp only supports vimcomplete as the complete engine! Skip!")
+        let g:osv_lsp = 'none'
+        finish
+    endif
 endif
 
 " ===
