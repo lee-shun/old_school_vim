@@ -122,7 +122,7 @@ set clipboard^=unnamed,unnamedplus
 " === built-in completion
 " ===
 set complete+=k
-set completeopt=menuone,noselect,noinsert,preview
+set completeopt=menuone,noselect,noinsert
 set dictionary+=$CONF_PATH/dictionary/20k.txt
 
 " ===
