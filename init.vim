@@ -39,7 +39,7 @@ if g:os_name == 'Windows' && has('nvim') " nvim on win
 elseif g:os_name == 'Linux'
     if executable('conda')
         let g:python_host_prog='/usr/bin/python'
-        let g:python3_host_prog='python'
+        let g:python3_host_prog='/usr/bin/python3'
     else
         let g:python_host_prog='/usr/bin/python'
         let g:python3_host_prog='/usr/bin/python3'
@@ -174,12 +174,24 @@ endif
 if g:osv_snip == 'ultisnips'
     if (has('nvim') || v:version >= 800) && has('python3')
     else
-        call osv_ultis#msg#warn("ultisnips need nvim or vim > 8.0 with python3")
+        call osv_ultis#msg#warn("ultisnips needs nvim or vim > 8.0 with python3")
         let g:osv_snip = 'none'
     endif
 elseif g:osv_snip == 'coc'
     if g:osv_complete_engine != 'coc'
         call osv_ultis#msg#warn("coc-sinpet needs the coc.nvim to be used as completion engine. Skip!")
+        let g:osv_snip = 'none'
+    endif
+elseif g:osv_snip == 'vsnip'
+    if !has('patch-8.0.1567') && !has('nvim-0.4.4')
+        call osv_ultis#msg#warn("Need nvim >= 0.4.4 or vim >= 8.0.1567 to use vsnip. Skip!")
+        let g:osv_snip = 'none'
+    endif
+endif
+
+if g:osv_complete_engine == 'coc'
+    if g:osv_snip != 'none' && g:osv_snip != 'coc'
+        call osv_ultis#msg#warn("when use coc.nvim, coc-snipet is recommend. OR there is no any sinpet in the popup menu!")
         let g:osv_snip = 'none'
     endif
 endif

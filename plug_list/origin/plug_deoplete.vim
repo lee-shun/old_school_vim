@@ -40,8 +40,14 @@ let s:deoplete_nvim_config = {'lazy':1,
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/deoplete_conf.vim',
             \'hook_done_update':''}
 
+" snippest
 if dein#tap('ultisnips')
     call add(s:deoplete_nvim_config.depends, 'ultisnips')
+endif
+if g:osv_snip == 'vsnip'
+    call dein#add('phongnh/deoplete-vsnip', {'lazy': 1})
+    call add(s:deoplete_nvim_config.depends, 'deoplete-vsnip')
+    call add(s:deoplete_nvim_config.depends, 'vim-vsnip')
 endif
 
 " lsp
