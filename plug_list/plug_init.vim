@@ -43,11 +43,11 @@ if empty(glob(s:dein_src))
     elseif s:input_repo_source == 'm' || s:input_repo_source == 'mirror'
         let g:osv_repo_source = 'mirror'
     else
-        call osv_ultis#msg#err(g:osv_repo_source."is a wrong repo source type: [o(rigin)/m(irror)]! Finish!")
+        call osv_ultis#msg#err(g:osv_repo_source." is a wrong repo source type: [o(rigin)/m(irror)]! Finish!")
         finish
     endif
 
-    " write the choice into the "custom_modules.vim"
+    " write the choice into the custom_modules.vim
     let s:custom_modules_content = readfile($CONF_PATH."/custom_modules.vim")
     for i in range(len(s:custom_modules_content))
         let ele = split(s:custom_modules_content[i], " = ")
