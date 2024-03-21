@@ -139,7 +139,6 @@ if g:osv_ai != 'none'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ai.vim
 endif
 
-
 call dein#end()
 
 augroup DeinSetup

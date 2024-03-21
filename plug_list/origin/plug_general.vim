@@ -15,11 +15,20 @@ if has('nvim') || v:version > 800 " nvim still need this 2 plugins
                 \})
 endif
 
-if v:version > 800 || has('nvim-0.3')
+if v:version >= 900
+    call dein#add('girishji/autosuggest.vim', {'lazy':1,
+                \'on_event':["CmdlineEnter", "CmdwinEnter"],
+                \'hook_post_source':'AutoSuggestEnable',
+                \})
+elseif v:version > 800 || has('nvim-0.3')
     call dein#add('gelguy/wilder.nvim', {'lazy':1,
                 \'on_event':["CmdlineEnter", "CmdwinEnter"],
                 \'depends':['nvim-yarp', 'vim-hug-neovim-rpc'],
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/wilder_conf.vim',
+                \})
+else
+    call dein#add('vim-scripts/sherlock.vim', {'lazy':1,
+                \'on_event':["CmdlineEnter", "CmdwinEnter"],
                 \})
 endif
 
