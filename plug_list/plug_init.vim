@@ -115,6 +115,10 @@ if g:osv_complete_engine == 'mucomplete'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_mucomplete.vim
 endif
 
+if g:osv_complete_engine == 'vimcomplete'
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vimcomplete.vim
+endif
+
 if g:osv_linter == 'ale'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ale.vim
 endif
