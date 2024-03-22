@@ -273,6 +273,7 @@ elseif g:osv_complete_engine == 'vimcomplete'
     endif
     if g:osv_lsp != 'none' && g:osv_lsp != 'vim9lsp'
         call osv_ultis#msg#err("vimcomplete only supports the vim9lsp as the lsp backend! Skip!")
+        let g:osv_lsp = 'none'
         let g:osv_complete_engine = 'none'
     endif
 endif
@@ -314,6 +315,7 @@ elseif g:osv_lsp == 'vim9lsp'
     if g:osv_complete_engine != 'none' && g:osv_complete_engine != 'vimcomplete'
         call osv_ultis#msg#err("vim9 lsp only supports vimcomplete as the complete engine! Skip!")
         let g:osv_lsp = 'none'
+        let g:osv_complete_engine = 'none'
     endif
 endif
 
