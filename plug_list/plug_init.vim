@@ -43,11 +43,11 @@ if empty(glob(s:dein_src))
     elseif s:input_repo_source == 'm' || s:input_repo_source == 'mirror'
         let g:osv_repo_source = 'mirror'
     else
-        call osv_ultis#msg#err(g:osv_repo_source."is a wrong repo source type: [o(rigin)/m(irror)]! Finish!")
+        call osv_ultis#msg#err(g:osv_repo_source." is a wrong repo source type: [o(rigin)/m(irror)]! Finish!")
         finish
     endif
 
-    " write the choice into the "custom_modules.vim"
+    " write the choice into the custom_modules.vim
     let s:custom_modules_content = readfile($CONF_PATH."/custom_modules.vim")
     for i in range(len(s:custom_modules_content))
         let ele = split(s:custom_modules_content[i], " = ")
@@ -115,6 +115,10 @@ if g:osv_complete_engine == 'mucomplete'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_mucomplete.vim
 endif
 
+if g:osv_complete_engine == 'vimcomplete'
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vimcomplete.vim
+endif
+
 if g:osv_linter == 'ale'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ale.vim
 endif
@@ -131,10 +135,13 @@ if g:osv_lsp == 'vim-lsc'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsc.vim
 endif
 
+if g:osv_lsp == 'vim9lsp'
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vim9lsp.vim
+endif
+
 if g:osv_ai != 'none'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ai.vim
 endif
-
 
 call dein#end()
 
@@ -145,10 +152,10 @@ augroup END
 
 if s:osv_first_setup == 1
     call dein#update()
-    call osv_ultis#msg#info("Install the plugins with dein#update().")
+    call osv_ultis#msg#info("install the plugins with dein#update().")
     if has('nvim') && has('python3')
         execute "UpdateRemotePlugins"
     endif
-    call input("Press any key to restart the osv...")
+    call input("press any key to restart the osv...")
     quit!
 endif

@@ -11,6 +11,7 @@
 - 🌟Stay in original vim keybindings and operations, but add some meaningful keybindings.
 - ⚡Fast startup time using `dein.vim` to lazy load all of the plugins.
 - 🆙 Daily update support.
+- [mirror pluins repository source](https://gitee.com/old_school_vim)  support.
 
 ## <p align="center"> Screen Shots📺 </p>
 
@@ -138,6 +139,15 @@
 
   - **type:** string
   - **possible values:** `vim-lsp`, `lcn`, and `vim-lsc`
+  - **note:**
+    - set to `none` to disable.
+
+- **`g:osv_ai`**
+
+  > choose one backend of the ai engine
+
+  - **type:** string
+  - **possible values:** `codium` and `copilot`
   - **note:**
     - set to `none` to disable.
 
@@ -269,4 +279,4 @@ TODO:
 | `z`     | jump move                                            |
 | `wl`    | disk / drive list                                    |
 
-> Last Modified : 周一 15 5 月 2023 04:06:01 下午
+> Last Modified : 一 04 3月 2024 10:42:44 上午
