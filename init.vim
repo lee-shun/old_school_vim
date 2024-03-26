@@ -82,8 +82,9 @@ if empty(glob($CONF_PATH.'/custom_modules.vim'))
     call osv_ultis#system#exec("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
     call osv_ultis#msg#info("you may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("press any key to continue...")
+else
+    source $CONF_PATH/custom_modules.vim
 endif
-source $CONF_PATH/custom_modules.vim
 
 " check if no web-plugins are used
 if g:osv_plug_general == 0
