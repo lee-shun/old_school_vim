@@ -24,10 +24,10 @@ if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
         let g:os_architect = 'x86_64'
-    " set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
-    " set shellcmdflag=-command
-    " set shellquote=\"
-    " set shellxquote=
+        " set shell=C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe
+        " set shellcmdflag=-command
+        " set shellquote=\"
+        " set shellxquote=
     else " not windows, use 'uname' command.
         let g:os_name = substitute(system('uname'), '\n', '', '')
         let g:os_architect =substitute(system('uname -m'), '\n', '', '')
@@ -77,15 +77,13 @@ let g:osv_lsp = 'none'
 let g:osv_ai = 'none'
 
 " customs
-if !empty(glob($CONF_PATH.'/custom_modules.vim'))
-    source $CONF_PATH/custom_modules.vim
-else
+if empty(glob($CONF_PATH.'/custom_modules.vim'))
     " generate the custom_modules if it doesn't exist.
     call osv_ultis#system#exec("cp -r ".$CONF_PATH."/template/custom_modules.vim.template ".$CONF_PATH."/custom_modules.vim")
     call osv_ultis#msg#info("you may want to define your own modules in ".$CONF_PATH."/custom_modules.vim later on.")
     call input("press any key to continue...")
-    source $CONF_PATH/custom_modules.vim
 endif
+source $CONF_PATH/custom_modules.vim
 
 " check if no web-plugins are used
 if g:osv_plug_general == 0
@@ -200,14 +198,14 @@ if g:osv_file_explorer == 'coc-explorer'
     endif
 elseif g:osv_file_explorer == 'defx'
     if has('nvim-0.4') || v:version > 802 " according to the repo
-    " defx.nvim is ok
+        " defx.nvim is ok
     else
         call osv_ultis#msg#err("defx.nvim needs nvim >= 0.4 or vim >= 8.2. Skip!")
         let g:osv_file_explorer = 'none'
     endif
 elseif g:osv_file_explorer == 'fern'
     if has('nvim') || has('patch-8.1.2269') " according to the repo
-    " fern.vim is ok
+        " fern.vim is ok
     else
         call osv_ultis#msg#err("fern.vim needs nvim or vim >= 8.1.2269. Skip!")
         let g:osv_file_explorer = 'none'
