@@ -45,7 +45,7 @@ elseif g:osv_finder == 'leaderf'
                 \'hook_source':'source $CONF_PATH/plug_conf/before/leaderf_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderf_conf.vim'
                 \}
-    if dein#tap('ultisnips')
+    if g:osv_snip == 'ultisnips'
         call dein#add('skywind3000/Leaderf-snippet', {'lazy':1,
                     \'depends':['ultisnips'],
                     \})
