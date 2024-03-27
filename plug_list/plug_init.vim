@@ -95,6 +95,8 @@ if g:osv_plug_advanced == 1
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_advanced.vim
 endif
 
+source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_snippet.vim
+
 source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_finder.vim
 
 source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_file_explorer.vim
@@ -139,9 +141,7 @@ if g:osv_lsp == 'vim9lsp'
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vim9lsp.vim
 endif
 
-if g:osv_ai != 'none'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ai.vim
-endif
+source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ai.vim
 
 call dein#end()
 

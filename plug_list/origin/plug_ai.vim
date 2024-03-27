@@ -1,3 +1,7 @@
+if g:osv_ai == 'none'
+    finish
+endif
+
 if g:osv_ai == 'codeium'
     call dein#add('Exafunction/codeium.vim', {'lazy':1,
                 \'on_event' :['BufEnter'],
