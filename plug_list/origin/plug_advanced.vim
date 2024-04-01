@@ -9,13 +9,15 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \})
 
 " NOTE: coc has its sematic token, and only ccls supprots this plugin
-if executable('ccls')
-    call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
-                \'on_ft':['cpp', 'c'],
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
-                \})
-else
-    call osv_ultis#msg#warn("vim-lsp-cxx-hl needs the ccls installed! Skip!")
+if g:osv_complete_engine == 'coc' || g:osv_complete_engine == 'vim-lsp'
+    if executable('ccls')
+        call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
+                    \'on_ft':['cpp', 'c'],
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
+                    \})
+    else
+        call osv_ultis#msg#warn("vim-lsp-cxx-hl needs the ccls installed! Skip!")
+    endif
 endif
 
 call dein#add('chxuan/cpp-mode', {'lazy':1,
