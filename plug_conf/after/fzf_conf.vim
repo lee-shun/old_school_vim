@@ -47,6 +47,7 @@ function! s:fzf_messages(bang) abort
 endfunction
 
 command! -bang Messages call <SID>fzf_messages(<bang>0)
+nnoremap <leader>fn :Messages<CR>
 
 function! s:fzf_open_quickfix_item(e) abort
     let line = a:e

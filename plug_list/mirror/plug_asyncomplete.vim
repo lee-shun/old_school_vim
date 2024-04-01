@@ -44,7 +44,7 @@ if g:os_architect != 'aarch64'
 endif
 
 " snip
-if has('python3') && dein#tap('ultisnips')
+if g:osv_snip == 'ultisnips'
     call dein#add('old_school_vim/asyncomplete-ultisnips.vim', {'lazy':1,
                 \})
     call add(s:asyncomplete_conf.depends, 'asyncomplete-ultisnips.vim')

@@ -8,7 +8,7 @@ if has('nvim') && !has('nvim-0.8')
     call dein#add('antoinemadec/FixCursorHold.nvim')
 endif
 
-if has('nvim') || v:version > 800 " nvim still need this 2 plugins
+if has('nvim') || v:version > 800 " nvim still need these 2 plugins
     call dein#add('roxma/vim-hug-neovim-rpc', {'lazy':1})
     call dein#add('roxma/nvim-yarp', {'lazy':1,
                 \'depends':'vim-hug-neovim-rpc'
