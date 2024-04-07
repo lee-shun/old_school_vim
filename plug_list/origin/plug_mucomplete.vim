@@ -1,5 +1,5 @@
 let s:mucomplete_config = {'lazy':1,
-            \'on_event': ['BufNewFile', 'BufReadPre'],
+            \'on_event': ['BufNewFile', 'BufReadPre', 'BufNew', 'BufEnter'],
             \'depends':[],
             \'hook_source':'source $CONF_PATH/plug_conf/before/mucomplete_conf.vim'
             \}

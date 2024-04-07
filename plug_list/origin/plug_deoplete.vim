@@ -35,7 +35,7 @@ endif
 let s:deoplete_nvim_config = {'lazy':1,
             \'rev':s:deoplete_version,
             \'depends':['nvim-yarp','vim-hug-neovim-rpc','deoplete-dictionary'],
-            \'on_event': ['BufNewFile', 'BufReadPre'],
+            \'on_event': ['BufNewFile', 'BufReadPre', 'BufNew', 'BufEnter'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/deoplete_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/deoplete_conf.vim',
             \'hook_done_update':''}

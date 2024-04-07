@@ -15,4 +15,5 @@ var options = {
         filetypesComments: ['c', 'cpp', 'python'],
     },
 }
-autocmd VimEnter * g:VimCompleteOptionsSet(options)
+
+g:VimCompleteOptionsSet(options)

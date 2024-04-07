@@ -22,12 +22,10 @@ if g:osv_snip == 'ultisnips'
                 \})
 elseif g:osv_snip == 'vsnip'
     call dein#add('hrsh7th/vim-vsnip-integ',{'lazy':1,
-                \'on_event':'InsertEnter'
                 \})
     let s:vsnip_conf = {'lazy':1,
                 \'depends':['vim-vsnip-integ', 'friendly-snippets'],
                 \'on_event':'InsertEnter',
-                \'hook_source':'source $CONF_PATH/plug_conf/before/vsnip_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/vsnip_conf.vim',
                 \}
     call dein#add('hrsh7th/vim-vsnip',s:vsnip_conf)

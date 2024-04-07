@@ -1,6 +1,6 @@
 let s:asyncomplete_conf = {'lazy':1,
             \'depends':[],
-            \'on_event': ['BufNewFile', 'BufReadPre'],
+            \'on_event': ['BufNewFile', 'BufReadPre', 'BufNew', 'BufEnter'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/asyncomplete_conf.vim',
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/asyncomplete.vim',
             \'hook_done_update':''}
