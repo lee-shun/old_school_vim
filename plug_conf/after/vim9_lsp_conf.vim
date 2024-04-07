@@ -1,4 +1,14 @@
-call LspOptionsSet(#{
+nmap <buffer> gd <cmd>LspGotoDefinition<CR>
+nmap <buffer> gr <cmd>LspPeekReferences<CR>
+nmap <buffer> gi <cmd>LspGotoImpl<CR>
+nmap <buffer> gt <cmd>LspGotoTypeDef<CR>
+nmap <buffer> <leader>lr <cmd>LspRename<CR>
+nmap <buffer> <leader>la <cmd>LspCodeAction<CR>
+nmap <buffer> gh <cmd>LspHover<CR>
+nmap <buffer> ]d <cmd>LspDiag next<CR>
+nmap <buffer> [d <cmd>LspDiag prev<CR>
+
+let s:lspOpts = #{
             \   aleSupport: v:false,
             \   autoComplete: v:true,
             \   autoHighlight: v:false,
@@ -42,4 +52,24 @@ call LspOptionsSet(#{
             \   customCompletionKinds: v:false,
             \   completionKinds: {},
             \   filterCompletionDuplicates: v:false,
-            \ })
+            \ }
+
+call LspOptionsSet(s:lspOpts)
+
+let s:lspServers = [
+            \#{ name: 'clangd',
+            \   filetype: ['c', 'cpp'],
+            \   path: 'clangd',
+            \   args: ['--background-index']
+            \    },
+            \#{ name: 'pyright',
+            \   filetype: 'python',
+            \   path: 'pyright-langserver',
+            \   args: ['--stdio'],
+            \   workspaceConfig: #{
+            \     python: #{
+            \       pythonPath: '/usr/bin/python3.10'
+            \   }}
+            \ }]
+
+call LspAddServer(s:lspServers)
