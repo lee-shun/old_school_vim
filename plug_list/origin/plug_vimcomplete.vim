@@ -7,4 +7,8 @@ if g:osv_snip == 'vsnip'
     call add(s:vimcomplete_conf.depends, 'vim-vsnip')
 endif
 
+if g:osv_lsp == 'vim9lsp'
+    call add(s:vimcomplete_conf.depends, 'lsp')
+endif
+
 call dein#add('girishji/vimcomplete',s:vimcomplete_conf)
