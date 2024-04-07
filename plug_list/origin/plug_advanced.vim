@@ -9,7 +9,7 @@ call dein#add('liuchengxu/vista.vim', {'lazy':1,
             \})
 
 " NOTE: coc has its sematic token, and only ccls supprots this plugin
-if g:osv_complete_engine == 'coc' || g:osv_complete_engine == 'vim-lsp'
+if g:osv_complete_engine == 'coc' || g:osv_lsp == 'vim-lsp'
     if executable('ccls')
         call dein#add('jackguo380/vim-lsp-cxx-highlight', {'lazy':1,
                     \'on_ft':['cpp', 'c'],
