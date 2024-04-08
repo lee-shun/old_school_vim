@@ -1,5 +1,5 @@
 let s:lcn_config = { 'lazy':1,
-            \'on_event':['BufReadPost', 'BufNewFile'],
+            \'on_event': ['BufNewFile', 'BufReadPre', 'BufNew', 'BufEnter'],
             \'depends':[],
             \'rev':'next',
             \'build':'bash install.sh',

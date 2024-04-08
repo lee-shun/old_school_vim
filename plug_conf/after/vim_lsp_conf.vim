@@ -14,9 +14,12 @@ function! s:on_lsp_buffer_enabled() abort
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 endfunction
 
-" call s:on_lsp_buffer_enabled only for languages that has the server registered.
-autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled() |
-            \ hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled() |
+                \ hi LspCxxHlGroupMemberVariable ctermfg=LightRed guifg=LightRed  cterm=none gui=none
+augroup END
 
 " command! IDE call lsp#enable()
 
