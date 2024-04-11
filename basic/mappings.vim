@@ -31,10 +31,10 @@ nnoremap J mzJ'z
 
 inoremap <expr> <CR> ((pumvisible())?("\<C-y>"):("\<CR>"))
 if g:osv_complete_engine != 'mucomplete'
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+    inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+    inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 endif
-
+texmath
 " ===
 " === quick mapping
 " ===
@@ -309,5 +309,5 @@ vnoremap <silent> # :<C-u>call osv_ultis#search_code#visual_search('', '')<CR>?<
 " === open terminal
 " ===
 if g:osv_plug_general == 0 && exists(':terminal') 
-noremap <F12> :<c-u>term<CR>
+    noremap <F12> :<c-u>term<CR>
 endif

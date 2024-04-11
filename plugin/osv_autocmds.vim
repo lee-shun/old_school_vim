@@ -24,7 +24,6 @@ augroup extra_filetypes_group
     autocmd BufRead,BufNewFile *.msg set filetype=rosmsg
 augroup END
 
-
 " ===
 " === auto setting command
 " ===
