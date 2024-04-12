@@ -1,6 +1,8 @@
 vim9script
+g:vimcomplete_tab_enable = 1
+
 var options = {
-    completor: { shuffleEqualPriority: true },
+    completor: { shuffleEqualPriority: true, noNewlineInCompletionEver: true },
     buffer: { enable: true, priority: 10, urlComplete: true, envComplete: true },
     abbrev: { enable: true, priority: 10 },
     lsp: { enable: true, priority: 10, maxCount: 5 },
