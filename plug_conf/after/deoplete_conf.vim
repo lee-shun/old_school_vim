@@ -1,4 +1,12 @@
 " ===
+" === map for cr
+" ===
+imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function() abort
+    return deoplete#close_popup() . "\<CR>"
+endfunction
+
+" ===
 " === map for TAB
 " ===
 function! s:check_back_space() abort
@@ -15,13 +23,6 @@ inoremap <silent><expr> <S-TAB>
             \ <SID>check_back_space() ? "\<TAB>" :
             \ deoplete#manual_complete()
 
-" ===
-" === map for cr
-" ===
-imap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-    return deoplete#close_popup() . "\<CR>"
-endfunction
 
 " overrall
 call deoplete#custom#option({

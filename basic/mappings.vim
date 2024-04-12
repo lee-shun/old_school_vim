@@ -29,13 +29,6 @@ vnoremap K :m '<-2<CR>gv=gv
 " nnoremap N Nzzzv
 nnoremap J mzJ'z
 
-if g:osv_complete_engine == 'mucomplete' || g:osv_complete_engine == "vimcomplete"
-else
-    inoremap <expr> <CR> pumvisible() ? "\<C-y>":"\<CR>"
-    inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
-endif
-
 " ===
 " === quick mapping
 " ===
