@@ -1,4 +1,5 @@
 let g:mucomplete#enable_auto_at_startup = 1
+
 let g:mucomplete#chains = {
             \ 'default' : ['path', 'incl', 'dict'],
             \ 'vim' : ['path', 'omni', 'cmd', 'incl', 'dict'],
@@ -7,8 +8,6 @@ let g:mucomplete#chains = {
             \ 'python':['path', 'omni', 'dict'],
             \ 'markdown':['path', 'dict'],
             \}
-
-
 
 if g:osv_snip == 'ultisnips'
     let g:mucomplete#chains = {
