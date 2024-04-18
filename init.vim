@@ -34,13 +34,10 @@ if !exists("g:os_name")
     endif
 endif
 
-if g:os_name == 'Windows' && has('nvim') " nvim on win
-    let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-elseif g:os_name == 'Linux'
-    if executable('conda')
-        let g:python_host_prog='/usr/bin/python'
-        let g:python3_host_prog='/usr/bin/python3'
-    else
+if executable('conda')
+    if g:os_name == 'Windows' && has('nvim') " nvim on win
+        let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
+    elseif g:os_name == 'Linux'
         let g:python_host_prog='/usr/bin/python'
         let g:python3_host_prog='/usr/bin/python3'
     endif
