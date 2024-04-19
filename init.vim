@@ -65,8 +65,8 @@ endif
 " === check the base env
 " ===
 if s:osv_use_web_plug
-    if !osv_ultis#check_env#check_version('patch-7.4.0000','nvim')
-        call osv_ultis#msg#warn('OSV needs nvim >= 0.4.0 to use the web plug!')
+    if !osv_ultis#check_env#check_version('patch-7.4.0000','nvim-0.4.0')
+        call osv_ultis#msg#warn('OSV needs vim >= 7.4 or nvim >= 0.4.0 to use the web plug!')
         let s:osv_use_web_plug = 0
         let g:osv_plug_general = 0
         let g:osv_plug_advanced = 0
@@ -128,7 +128,10 @@ source $CONF_PATH/basic/mappings.vim
 " ===
 if s:osv_use_web_plug
     source $CONF_PATH/plug_list/plug_init.vim
+else
+    source $CONF_PATH/local_plug_list/local_plug_init.vim
 endif
+    source $CONF_PATH/local_plug_list/local_plug_init.vim
 
 filetype plugin indent on
 syntax enable
