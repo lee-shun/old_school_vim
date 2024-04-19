@@ -45,14 +45,14 @@ endif
 
 " for popupwin
 if has('nvim')
-    let g:osv_has_popup_win = exists('*nvim_win_set_config') && has('nvim-0.4.2')
+    let g:osv_has_popup_win = has('nvim-0.4.0')
 else
     let g:osv_has_popup_win = has('popup_win')
 endif
 
 " for popup
 if has('nvim')
-    let g:osv_has_popup = exists('*nvim_win_set_config') && has('nvim-0.4.2')
+    let g:osv_has_popup = has('nvim-0.4.0')
 else
     let g:osv_has_popup = exists('*popup_create')
 endif
