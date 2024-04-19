@@ -6,7 +6,7 @@ let g:Lf_IgnoreCurrentBufferName = 1
 let g:Lf_ShortcutF = "<leader>ff"
 
 " popup mode
-if g:has_popup_win
+if g:osv_has_popup_win
     let g:Lf_WindowPosition = 'popup'
     let g:Lf_PreviewInPopup = 1
 endif

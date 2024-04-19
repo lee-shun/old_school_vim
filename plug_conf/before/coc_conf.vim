@@ -26,7 +26,7 @@ let g:coc_global_extensions = [
             \ 'coc-yank',
             \]
 
-if g:has_popup_win == 1
+if g:osv_has_popup_win
     call add(g:coc_global_extensions, 'coc-floaterm')
 endif
 

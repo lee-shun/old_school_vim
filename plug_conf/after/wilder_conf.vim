@@ -28,7 +28,7 @@ if has('python')
                 \ ])
 endif
 
-if g:has_popup_win
+if g:osv_has_popup
     let s:highlighters = [
                 \ wilder#pcre2_highlighter(),
                 \ wilder#basic_highlighter(),

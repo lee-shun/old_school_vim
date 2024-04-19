@@ -1,7 +1,7 @@
 " ===
 " === basic
 " ===
-if g:has_popup_win
+if g:osv_has_popup_win
     let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.9 } }
 else
     if has('nvim') || has('gui_running')
