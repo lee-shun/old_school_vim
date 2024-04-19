@@ -9,16 +9,18 @@ call dein#add('old_school_vim/vista.vim', {'lazy':1,
             \})
 
 " NOTE: coc has its sematic token, and only ccls supprots this plugin
-if executable('ccls')
-    call dein#add('old_school_vim/vim-lsp-cxx-highlight', {'lazy':1,
-                \'on_ft':['cpp', 'c'],
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
-                \})
-else
-    call osv_ultis#msg#warn("vim-lsp-cxx-hl needs the ccls installed! Skip!")
+if g:osv_complete_engine == 'coc' || g:osv_lsp == 'vim-lsp'
+    if executable('ccls')
+        call dein#add('old_school_vim/vim-lsp-cxx-highlight', {'lazy':1,
+                    \'on_ft':['cpp', 'c'],
+                    \'hook_post_source':'source $CONF_PATH/plug_conf/after/vim_lsp_cxx_hl_conf.vim'
+                    \})
+    else
+        call osv_ultis#msg#warn("vim-lsp-cxx-hl needs the ccls installed! Skip!")
+    endif
 endif
 
-call dein#add('duyz1218/cpp-mode', {'lazy':1,
+call dein#add('old_school_vim/cpp-mode', {'lazy':1,
             \'on_ft':['cpp'],
             \})
 
@@ -40,7 +42,7 @@ call dein#add('old_school_vim/vim-markdown', {'lazy':1,
             \})
 
 if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-    if has('nvim') || v:version >= 801
+    if osv_ultis#check_env#check_version('patch-8.1.0000', 'nvim')
         call dein#add('old_school_vim/markdown-preview.nvim', {'lazy':1,
                     \'on_ft' :['markdown'],
                     \'hook_done_update':'call mkdp#util#install_sync()',

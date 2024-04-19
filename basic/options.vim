@@ -49,7 +49,7 @@ set ttimeoutlen=10    " unnoticeable small value
 set updatetime=50
 set conceallevel=0
 set wildmenu
-if !has('nvim') && v:version > 802
+if !has('nvim') && has('patch-8.2.0000')
     set wildoptions=pum
 endif
 set nolazyredraw

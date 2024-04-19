@@ -8,22 +8,31 @@ if has('nvim') && !has('nvim-0.8')
     call dein#add('old_school_vim/FixCursorHold.nvim')
 endif
 
-if has('nvim') || v:version > 800 " nvim still need this 2 plugins
+if osv_ultis#check_env#check_version('patch-8.0.0000', 'nvim')
     call dein#add('old_school_vim/vim-hug-neovim-rpc', {'lazy':1})
     call dein#add('old_school_vim/nvim-yarp', {'lazy':1,
                 \'depends':'vim-hug-neovim-rpc'
                 \})
 endif
 
-if v:version > 800 || has('nvim-0.3')
+if osv_ultis#check_env#check_version('patch-9.0.0000', 'none')
+    call dein#add('old_school_vim/autosuggest.vim', {'lazy':1,
+                \'on_event':["CmdlineEnter", "CmdwinEnter"],
+                \'hook_post_source':'AutoSuggestEnable',
+                \})
+elseif osv_ultis#check_env#check_version('patch-8.0.0000', 'nvim-0.3.0')
     call dein#add('old_school_vim/wilder.nvim', {'lazy':1,
                 \'on_event':["CmdlineEnter", "CmdwinEnter"],
                 \'depends':['nvim-yarp', 'vim-hug-neovim-rpc'],
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/wilder_conf.vim',
                 \})
+else
+    call dein#add('old_school_vim/sherlock.vim', {'lazy':1,
+                \'on_event':["CmdlineEnter", "CmdwinEnter"],
+                \})
 endif
 
-if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' || v:version < 800
+if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' || osv_ultis#check_env#check_version('patch-8.0.0000', 'none')
     call dein#add('old_school_vim/vim-startify', { 'lazy':1,
                 \'on_event':'VimEnter',
                 \'depends':['vim-devicons'],
@@ -40,7 +49,7 @@ endif
 
 call dein#add('old_school_vim/vim-fugitive', {'lazy':1})
 
-if has('nvim') || has('patch-8.0.902')
+if osv_ultis#check_env#check_version('patch-8.0.0902', 'nvim')
     call dein#add('old_school_vim/vim-signify', {'lazy':1,
                 \'on_event': ['BufReadPost'], })
 else
@@ -101,7 +110,7 @@ call dein#add('old_school_vim/vim-commentary', {'lazy':1,
             \'on_map':{'n':'gcc', 'v':'gc'},
             \})
 
-if !has('nvim') && v:version< 802
+if !osv_ultis#check_env#check_version('patch-8.2.0000', 'nvim')
     call dein#add('old_school_vim/auto-pairs', {'lazy':1,
                 \'on_event':['BufReadPost'],
                 \'hook_source':'let g:AutoPairsMapSpace=0'
@@ -183,7 +192,7 @@ call dein#add('old_school_vim/far.vim', {
             \})
 
 " plugins for nvim and vim > 8.0
-if v:version >= 800 || has('nvim')
+if osv_ultis#check_env#check_version('patch-8.0.0000', 'nvim')
     let s:spaceline_conf = {'lazy':1,
                 \'on_event': ['BufNewFile', 'BufReadPost'],
                 \'depends':['vim-signify', 'vim-devicons'],
