@@ -17,7 +17,7 @@ elseif g:osv_finder == 'fzf'
         call osv_ultis#msg#warn("fzf.vim need bat(cat) to run the syntax highlight preview in fzf.vim!")
     endif
 elseif g:osv_finder == 'ctrlp'
-    if v:version < 700 && !has('nvim')
+    if !has('nvim') && v:version < 700
         call osv_ultis#msg#err("ctrlp needs nvim or vim >= 7.0. Skip!")
         let g:osv_finder = 'none'
     endif
@@ -25,7 +25,7 @@ elseif g:osv_finder == 'ctrlp'
         call osv_ultis#msg#warn("ctrlp needs the silver searcher (ag) to run!")
     endif
 elseif g:osv_finder == 'leaderf'
-    if !has('patch-7.4.1126') && !has('nvim')
+    if !has('nvim') && !has('patch-7.4.1126')
         call osv_ultis#msg#err("leaderf needs nvim or vim >= 7.4.1126. Skip!")
         let g:osv_finder = 'none'
     endif
@@ -41,8 +41,13 @@ elseif g:osv_finder == 'clap'
         call osv_ultis#msg#err("do NOT use clap under aarch64. Skip!")
         let g:osv_finder = 'none'
     endif
-    if !has('patch-8.1.2114') && !has('nvim-0.4.2')
-        call osv_ultis#msg#err("ctrlp needs nvim >= 0.4.2 or vim >= 8.1.2114. Skip!")
+    if has('nvim')
+        if !has('nvim-0.4.2')
+            call osv_ultis#msg#err("ctrlp needs nvim >= 0.4.2. Skip!")
+            let g:osv_finder = 'none'
+        endif
+    elseif !has('patch-8.1.2114')
+        call osv_ultis#msg#err("ctrlp needs vim >= 8.1.2114. Skip!")
         let g:osv_finder = 'none'
     endif
     if !executable('rg')

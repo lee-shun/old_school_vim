@@ -19,6 +19,7 @@
 " === env check
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
+let g:osv_is_nvim = has('nvim') ? 1:0
 
 " ===
 " === read the custom_modules.vim
@@ -65,30 +66,34 @@ endif
 " === check the base env
 " ===
 if s:osv_use_web_plug
-    if !has('nvim-0.4.0')
-        call osv_ultis#msg#warn('OSV needs nvim >= 0.4.0 to use the web plug!')
-        let s:osv_use_web_plug = 0
-        let g:osv_plug_general = 0
-        let g:osv_plug_advanced = 0
-        let g:osv_snip = 'none'
-        let g:osv_finder = 'none'
-        let g:osv_file_explorer = 'none'
-        let g:osv_complete_engine = 'none'
-        let g:osv_linter = 'none'
-        let g:osv_lsp = 'none'
-        let g:osv_ai = 'none'
-    elseif v:version < 704  " vim 7.4 is binded with ubuntu 16.04
-        call osv_ultis#msg#warn('OSV needs vim >= 7.4 to use the web plug!')
-        let s:osv_use_web_plug = 0
-        let g:osv_plug_general = 0
-        let g:osv_plug_advanced = 0
-        let g:osv_snip = 'none'
-        let g:osv_finder = 'none'
-        let g:osv_file_explorer = 'none'
-        let g:osv_complete_engine = 'none'
-        let g:osv_linter = 'none'
-        let g:osv_lsp = 'none'
-        let g:osv_ai = 'none'
+    if g:osv_is_nvim
+        if !has('nvim-0.4.0')
+            call osv_ultis#msg#warn('OSV needs nvim >= 0.4.0 to use the web plug!')
+            let s:osv_use_web_plug = 0
+            let g:osv_plug_general = 0
+            let g:osv_plug_advanced = 0
+            let g:osv_snip = 'none'
+            let g:osv_finder = 'none'
+            let g:osv_file_explorer = 'none'
+            let g:osv_complete_engine = 'none'
+            let g:osv_linter = 'none'
+            let g:osv_lsp = 'none'
+            let g:osv_ai = 'none'
+        endif
+    else
+        if v:version < 704  " vim 7.4 is binded with ubuntu 16.04
+            call osv_ultis#msg#warn('OSV needs vim >= 7.4 to use the web plug!')
+            let s:osv_use_web_plug = 0
+            let g:osv_plug_general = 0
+            let g:osv_plug_advanced = 0
+            let g:osv_snip = 'none'
+            let g:osv_finder = 'none'
+            let g:osv_file_explorer = 'none'
+            let g:osv_complete_engine = 'none'
+            let g:osv_linter = 'none'
+            let g:osv_lsp = 'none'
+            let g:osv_ai = 'none'
+        endif
     endif
 endif
 
