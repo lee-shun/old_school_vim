@@ -83,15 +83,15 @@ call dein#begin(s:dein_cache_dir)
 call dein#add(s:dein_src)
 let $OSV_REPO_SOURCE = g:osv_repo_source
 
-if g:osv_debug == 1
+if g:osv_debug
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_debug.vim
 endif
 
-if g:osv_plug_general == 1
+if g:osv_plug_general
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_general.vim
 endif
 
-if g:osv_plug_advanced == 1
+if g:osv_plug_advanced
     source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_advanced.vim
 endif
 
@@ -150,7 +150,7 @@ augroup DeinSetup
     autocmd VimEnter * call dein#call_hook('source') | call dein#call_hook('post_source')
 augroup END
 
-if s:osv_first_setup == 1
+if s:osv_first_setup
     call dein#update()
     call osv_ultis#msg#info("install the plugins with dein#update().")
     if has('nvim') && has('python3')
