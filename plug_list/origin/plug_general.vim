@@ -32,7 +32,7 @@ else
                 \})
 endif
 
-if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' || osv_ultis#check_env#check_version('patch-8.0.0000', 'none')
+if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' || !osv_ultis#check_env#check_version('patch-8.0.0000', 'none')
     call dein#add('mhinz/vim-startify', { 'lazy':1,
                 \'on_event':'VimEnter',
                 \'depends':['vim-devicons'],
