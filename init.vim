@@ -103,7 +103,7 @@ endif
 if has('nvim')
     let g:osv_has_popup_win = has('nvim-0.4.0')
 else
-    let g:osv_has_popup_win = has('popup_win')
+    let g:osv_has_popup_win = has('popupwin')
 endif
 
 " for popup
