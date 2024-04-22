@@ -1,15 +1,24 @@
-" patch-x.x.xxxx, nvim-x.x.x
-fun! osv_ultis#check_env#check_version(vim_ver, nvim_ver)
+" for example: patch-x.x.xxxx
+fun! osv_ultis#check_env#check_vim_patch(vim_patch)
     if has('nvim')
-        if a:nvim_ver == 'none'
-            return 0
-        endif
-        return has(a:nvim_ver)
+        return 0
     else
-        " nvim only
-        if a:vim_ver == 'none'
-            return 1
-        endif
-        return has(a:vim_ver)
+        return has(a:vim_patch)
     endif
+endfun
+
+" for example: 801
+fun! osv_ultis#check_env#check_vim_ver(vim_ver)
+    if has('nvim')
+        return 0
+    endif
+    return v:version >= a:vim_ver
+endfun
+
+" for example: nvim-0.4.1
+fun! osv_ultis#check_env#check_nvim_ver(nvim_ver)
+    if !has('nvim')
+        return 0
+    endif
+    return has(nvim_ver)
 endfun

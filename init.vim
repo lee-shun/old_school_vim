@@ -65,8 +65,8 @@ endif
 " === check the base env
 " ===
 if s:osv_use_web_plug
-    if !osv_ultis#check_env#check_version('patch-7.4.0000','nvim-0.4.0')
-        call osv_ultis#msg#warn('OSV needs vim >= 7.4 or nvim >= 0.4.0 to use the web plug!')
+    if !osv_ultis#check_env#check_vim_ver(704) && !osv_ultis#check_env#check_nvim_ver('nvim')
+        call osv_ultis#msg#warn('OSV needs nvim >= 0.4.0 or vim >= 7.4 to use the web plug!')
         let s:osv_use_web_plug = 0
         let g:osv_plug_general = 0
         let g:osv_plug_advanced = 0
@@ -103,7 +103,7 @@ endif
 if has('nvim')
     let g:osv_has_popup_win = has('nvim-0.4.0')
 else
-    let g:osv_has_popup_win = has('popup_win')
+    let g:osv_has_popup_win = has('popupwin')
 endif
 
 " for popup
