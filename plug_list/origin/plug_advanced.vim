@@ -42,7 +42,7 @@ call dein#add('preservim/vim-markdown', {'lazy':1,
             \})
 
 if (g:os_name == 'Linux' && g:os_architect == 'x86_64') || (g:os_name == 'Windows')
-    if osv_ultis#check_env#check_version('patch-8.1.0000', 'nvim')
+    if osv_ultis#check_env#check_vim_ver(801) || osv_ultis#check_env#check_nvim_ver('nvim')
         call dein#add('iamcco/markdown-preview.nvim', {'lazy':1,
                     \'on_ft' :['markdown'],
                     \'hook_done_update':'call mkdp#util#install_sync()',
