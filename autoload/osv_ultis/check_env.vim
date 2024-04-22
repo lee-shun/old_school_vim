@@ -20,5 +20,5 @@ fun! osv_ultis#check_env#check_nvim_ver(nvim_ver)
     if !has('nvim')
         return 0
     endif
-    return has(nvim_ver)
+    return has(a:nvim_ver)
 endfun
