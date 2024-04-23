@@ -1,3 +1,4 @@
-let &runtimepath.=','.$CONF_PATH."/local_plug_list/simpletree"
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/VimExplorer"
-" let &runtimepath.=','.$CONF_PATH."/local_plug_list/vimExplorer"
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-dirvish"
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-dirvish-dovish"
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-dirvish-git"
