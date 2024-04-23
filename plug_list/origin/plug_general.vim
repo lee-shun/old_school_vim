@@ -32,20 +32,20 @@ else
                 \})
 endif
 
-if g:osv_finder == 'none' || g:osv_finder == 'coc-lists' ||
-            \ !osv_ultis#check_env#check_vim_ver(800)
-    call dein#add('mhinz/vim-startify', { 'lazy':1,
-                \'on_event':'VimEnter',
-                \'depends':['vim-devicons'],
-                \'hook_source':'source $CONF_PATH/plug_conf/before/vim_startify_conf.vim',
-                \})
-else
+if index(['fzf', 'leaderf', 'ctrlp', 'clap'], g:osv_finder) != -1 &&
+            \(osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver('nvim'))
     let s:vim_dashboard_config = { 'lazy':1,
                 \'on_event':'VimEnter',
                 \'depends':['vim-devicons'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/vim_dashboard_conf.vim',
                 \}
     call dein#add('lee-shun/vim-dashboard', s:vim_dashboard_config)
+else
+    call dein#add('mhinz/vim-startify', { 'lazy':1,
+                \'on_event':'VimEnter',
+                \'depends':['vim-devicons'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/vim_startify_conf.vim',
+                \})
 endif
 
 call dein#add('tpope/vim-fugitive', {'lazy':1})
