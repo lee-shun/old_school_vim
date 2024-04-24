@@ -2,6 +2,10 @@
 " === some useful remaps
 " ===
 
+nnoremap tn :<c-u>tabnext<CR>
+nnoremap tp :<c-u>tabprev<CR>
+nnoremap tc :<c-u>tabnew<CR>
+
 " opne new file if no
 " noremap gf :e <cfile><cr>
 
