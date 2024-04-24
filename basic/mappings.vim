@@ -301,11 +301,3 @@ noremap r :<c-u>call osv_ultis#run_code#run_code()<CR>
 " === search
 " ===
 vnoremap <silent> # :<C-u>call osv_ultis#search_code#visual_search('', '')<CR>?<C-R>=@/<CR><CR>
-
-
-" ===
-" === open terminal
-" ===
-if g:osv_plug_general == 0 && exists(':terminal') 
-    noremap <F12> :<c-u>term<CR>
-endif
