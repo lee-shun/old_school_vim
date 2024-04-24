@@ -69,7 +69,6 @@ endfunction
 function! CreateInactiveStatusline()
     if index(s:streamline_spec_filetypes, &ft) >= 0
         let statusline=''
-        let statusline.='  '.&ft
         return statusline
     endif
     let statusline=''
