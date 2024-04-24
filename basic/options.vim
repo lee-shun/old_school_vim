@@ -175,50 +175,25 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.pdf
 " === build-in netrw
 " ===
 "
-if g:osv_file_explorer == 'none'
-    let g:netrw_hide = 1
-    let g:netrw_liststyle = 3
-    let g:netrw_banner = 0
-    let g:netrw_browse_split = 0
-    let g:netrw_winsize = 25
-    let g:netrw_chgwin = 2
-    let g:netrw_list_hide = '.*\.swp$'
-    let g:netrw_localrmdir = 'rm -rf'
+let g:loaded_gzip = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
 
-    noremap <LEADER>t :Lexplore<CR>
+let g:loaded_getscript = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_vimball = 1
+let g:loaded_vimballPlugin = 1
 
-    function! NetrwMapping()
-        nmap <buffer> H u
-        nmap <buffer> <BS> -
-        nmap <buffer> l <CR>
-    endfunction
-    augroup netrw_mapping
-        autocmd!
-        autocmd filetype netrw call NetrwMapping()
-    augroup END
-else " disable all of the buildins
-    let g:loaded_gzip = 1
-    let g:loaded_tar = 1
-    let g:loaded_tarPlugin = 1
-    let g:loaded_zip = 1
-    let g:loaded_zipPlugin = 1
+let g:loaded_2html_plugin = 1
+let g:loaded_logiPat = 1
+let g:loaded_rrhelper = 1
 
-    let g:loaded_getscript = 1
-    let g:loaded_getscriptPlugin = 1
-    let g:loaded_vimball = 1
-    let g:loaded_vimballPlugin = 1
-
-    " let g:loaded_matchit = 1
-    " let g:loaded_matchparen = 1
-    let g:loaded_2html_plugin = 1
-    let g:loaded_logiPat = 1
-    let g:loaded_rrhelper = 1
-
-    let g:loaded_netrw = 1
-    let g:loaded_netrwPlugin = 1
-    let g:loaded_netrwSettings = 1
-    let g:loaded_netrwFileHandlers = 1
-endif
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
 
 " ===
 " === Terminal Behaviors

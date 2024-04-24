@@ -22,7 +22,7 @@ augroup END
 hi WarningColor guibg=#E5C07B guifg=#1E1E1E ctermbg=Yellow ctermfg=Black
 hi ErrorColor guibg=#DF6A63 guifg=#1E1E1E ctermbg=Red ctermfg=Black
 
-let s:streamline_spec_filetypes = ['fern', 'coc-explorer', 'defx', 'vimfiler']
+let s:streamline_spec_filetypes = ['fern', 'coc-explorer', 'defx', 'vimfiler', 'VETreePanel', 'VEFilePanel', 'netrw']
 
 function! CreateStatusline()
     if index(s:streamline_spec_filetypes, &ft) >= 0
