@@ -1,3 +1,4 @@
+nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>fc :CtrlPChange<CR>
 nnoremap <leader>fb :CtrlPBuffer<CR>
 nnoremap <leader>fm :CtrlPMRUFiles<CR>
