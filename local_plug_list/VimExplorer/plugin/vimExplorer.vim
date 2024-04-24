@@ -1290,6 +1290,7 @@ function! s:VETreePanel.show()
         exec VETreeWinNr . " wincmd w"
         setlocal winfixwidth
         setlocal noswapfile
+        setlocal filetype=VETreePanel
         setlocal buftype=nowrite
         setlocal bufhidden=delete
         setlocal nowrap
@@ -1416,6 +1417,7 @@ function! s:VEFilePanel.show()
     endif
     setlocal winfixwidth
     setlocal noswapfile
+    setlocal filetype=VEFilePanel
     setlocal buftype=nowrite
     setlocal bufhidden=delete
     setlocal nowrap
