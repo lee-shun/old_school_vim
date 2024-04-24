@@ -2369,6 +2369,14 @@ function! VENew(path)
     endwhile
 endfunction
 
+function! VEIsOpen()
+    let winName = matchstr(bufname("%"),'_[^_]*$')
+    if has_key(s:VEContainer,winName)
+        return v:true
+    endif
+    return v:false
+endfunction
+
 function! VEDestroy()
     let winName = matchstr(bufname("%"),'_[^_]*$')
     if has_key(s:VEContainer,winName)
@@ -2860,5 +2868,13 @@ endfunction
 command! -nargs=? -complete=file VE    call VENew('<args>')
 command! -nargs=? -complete=file VEC   call VEDestroy()
 
+function! VEToggleFunc(args)
+    if VEIsOpen()
+        call VEDestroy()
+    else
+        call VENew(a:args)
+    endif
+endfunction
+command! -nargs=? -complete=file VEToggle   call VEToggleFunc('<args>')
 
 " vim: set et fdm=marker sts=4 sw=4 tw=78:
