@@ -238,7 +238,7 @@ endif
 "Tree panel hot key bindings.
 let VEConf.treePanelHotkey = {}
 let VEConf.treePanelHotkey.help            = '?'
-let VEConf.treePanelHotkey.toggleNode      = 'l'
+let VEConf.treePanelHotkey.toggleNode      = '<cr>'
 let VEConf.treePanelHotkey.toggleNodeMouse = '<2-LeftMouse>'
 let VEConf.treePanelHotkey.refresh         = 'r'
 let VEConf.treePanelHotkey.favorite        = 'f'
@@ -265,7 +265,7 @@ endif
 let VEConf.filePanelHotkey = {}
 "normal
 let VEConf.filePanelHotkey.help            = '?'
-let VEConf.filePanelHotkey.itemClicked     = '<cr>'
+let VEConf.filePanelHotkey.itemClicked     = 'l'
 let VEConf.filePanelHotkey.itemClickMouse  = '<2-LeftMouse>'
 let VEConf.filePanelHotkey.refresh         = 'r'
 let VEConf.filePanelHotkey.toggleTreePanel = 't'
@@ -281,7 +281,7 @@ let VEConf.filePanelHotkey.gotoPlace       = "'"
 let VEConf.filePanelHotkey.viewMarks       = 'Ml'
 let VEConf.filePanelHotkey.contextMenuN    = '<rightmouse>'
 "Browsing
-let VEConf.filePanelHotkey.toUpperDir      = '<bs>'
+let VEConf.filePanelHotkey.toUpperDir      = 'h'
 let VEConf.filePanelHotkey.gotoForward     = '<c-i>'
 let VEConf.filePanelHotkey.gotoBackward    = '<c-o>'
 let VEConf.filePanelHotkey.favorite        = 'f'
@@ -321,10 +321,10 @@ let VEConf.filePanelHotkey.visualDeleteF   = 'D'
 let VEConf.filePanelHotkey.visualYank      = 'y'
 let VEConf.filePanelHotkey.visualCut       = 'c'
 "User defined hotkeys, see below.
-let VEConf.filePanelHotkey.tabView         = 'e'
-let VEConf.filePanelHotkey.openRenamer     = ';r'
-let VEConf.filePanelHotkey.startShell      = ';c'
-let VEConf.filePanelHotkey.startExplorer   = ';e'
+let VEConf.filePanelHotkey.tabView         = '<cr>'
+let VEConf.filePanelHotkey.openRenamer     = 'xr'
+let VEConf.filePanelHotkey.startShell      = 'xc'
+let VEConf.filePanelHotkey.startExplorer   = 'xe'
 
 if exists("g:VEConf_fileHotkey")
     if type(g:VEConf_fileHotkey) != type({})
@@ -1822,7 +1822,7 @@ endfunction
 
 function! s:VEFilePanel.toggleSelect(direction)
     if a:direction == "up"
-        exec "norm " . "\<up>"
+        exec "norm " . "k"
     endif
     let line = line(".") - 1
     let path = self.displayList[line][1]
@@ -1836,7 +1836,7 @@ function! s:VEFilePanel.toggleSelect(direction)
         call self.drawList()
     endif
     if a:direction == "down"
-        exec "norm " . "\<down>"
+        exec "norm " . "j"
     endif
 endfunction
 
