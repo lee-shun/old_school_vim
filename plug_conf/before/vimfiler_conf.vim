@@ -4,7 +4,6 @@ let g:vimfiler_tree_indentation = 2
 let g:vimfiler_tree_leaf_icon = ""
 let g:vimfiler_tree_opened_icon = ""
 let g:vimfiler_tree_closed_icon = ""
-let g:vimfiler_enable_auto_cd = 1
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_ignore_pattern = []
 let g:vimfiler_no_default_key_mappings = 1

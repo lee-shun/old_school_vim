@@ -80,6 +80,8 @@ if s:osv_use_web_plug
     endif
 endif
 
+let s:osv_use_web_plug = 0
+
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
