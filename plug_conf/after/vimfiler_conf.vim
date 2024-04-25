@@ -16,7 +16,7 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'find':1,
             \ })
 
-nnoremap <silent> <leader>t :<c-u>VimFiler<cr>
+nnoremap <silent> <leader>t :<c-u>VimFilerCurrentDir<cr>
 
 autocmd FileType vimfiler call s:vimfiler_my_settings()
 
