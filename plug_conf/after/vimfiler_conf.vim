@@ -9,14 +9,14 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'status' : 1,
             \ 'safe' : 0,
             \ 'split' : 1,
-            \ 'hidden': 1,
-            \ 'no_quit' : 0,
+            \ 'no_quit' : 1,
+            \ 'force_quit' : 0,
             \ 'force_hide' : 0,
             \ 'auto_cd':0,
-            \ 'find':0,
+            \ 'find':1,
             \ })
 
-nnoremap <silent> <leader>t :<c-u>VimFilerCurrentDir<cr>
+nnoremap <silent> <leader>t :<c-u>VimFiler<cr>
 
 autocmd FileType vimfiler call s:vimfiler_my_settings()
 
