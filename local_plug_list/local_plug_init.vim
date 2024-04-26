@@ -36,3 +36,6 @@ source $CONF_PATH/plug_conf/after/vimfiler_conf.vim
 " git
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-gitgutter"
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-fugitive"
+
+" status line
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/skyline.vim"
