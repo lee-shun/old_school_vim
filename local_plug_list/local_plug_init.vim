@@ -24,7 +24,7 @@ nnoremap <F12> :<c-u>Term<CR>
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/rainbow"
 let g:rainbow_active = 1
 
-" ynak
+" yank
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/hlyank.vim"
 
 " vimfiler
