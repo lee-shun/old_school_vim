@@ -7,3 +7,4 @@ let g:vimfiler_tree_closed_icon = ""
 let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_ignore_pattern = []
 let g:vimfiler_no_default_key_mappings = 1
+let g:vimfiler_force_overwrite_statusline = 0
