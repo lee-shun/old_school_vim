@@ -41,8 +41,8 @@ elseif g:osv_finder == 'clap'
         call osv_ultis#msg#err("do NOT use clap under aarch64. Skip!")
         let g:osv_finder = 'none'
     endif
-    if !osv_ultis#check_env#check_vim_patch('patch-7.4.1126') && !osv_ultis#check_env#check_nvim_ver('nvim-0.4.2')
-        call osv_ultis#msg#err("clap needs vim-7.4.1126 or nvim >= 0.4.2. Skip!")
+    if !osv_ultis#check_env#check_vim_patch('patch-8.1.2114') && !osv_ultis#check_env#check_nvim_ver('nvim-0.4.0')
+        call osv_ultis#msg#err("clap needs vim-8.1.2114 or nvim >= 0.4.0. Skip!")
         let g:osv_finder = 'none'
     endif
     if !executable('rg')

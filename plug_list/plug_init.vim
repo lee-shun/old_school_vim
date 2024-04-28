@@ -38,7 +38,7 @@ if empty(glob(s:dein_src))
 
     let s:input_repo_source = input("Choose OSV REPO SOURCE? [o(rigin)/m(irror)]?\n")
 
-    if s:input_repo_source == 'o' || s:input_repo_source == 'origin'
+    if s:input_repo_source == 'o' || s:input_repo_source == 'origin' || s:input_repo_source == ''
         let g:osv_repo_source = 'origin'
     elseif s:input_repo_source == 'm' || s:input_repo_source == 'mirror'
         let g:osv_repo_source = 'mirror'
