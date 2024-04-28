@@ -20,7 +20,7 @@ if osv_ultis#check_env#check_vim_ver(900)
                 \'on_event':["CmdlineEnter", "CmdwinEnter"],
                 \'hook_post_source':'AutoSuggestEnable',
                 \})
-elseif osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver('nvim-0.3.0')
+elseif osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver('nvim-0.3.0') && has('python3')
     call dein#add('gelguy/wilder.nvim', {'lazy':1,
                 \'on_event':["CmdlineEnter", "CmdwinEnter"],
                 \'depends':['nvim-yarp', 'vim-hug-neovim-rpc'],
