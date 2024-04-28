@@ -80,8 +80,6 @@ if s:osv_use_web_plug
     endif
 endif
 
-let s:osv_use_web_plug = 0
-
 if !exists("g:os_name")
     if has("win64") || has("win32") || has("win16")
         let g:os_name = "Windows"
@@ -133,7 +131,6 @@ if s:osv_use_web_plug
 else
     source $CONF_PATH/local_plug_list/local_plug_init.vim
 endif
-    " source $CONF_PATH/local_plug_list/local_plug_init.vim
 
 filetype plugin indent on
 syntax enable
