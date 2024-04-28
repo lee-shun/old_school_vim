@@ -12,6 +12,9 @@ endif
 let g:mapleader = ' '
 set noautochdir
 set autoread
+if !has('nvim')
+    set backspace=indent,eol,start
+endif
 
 " for gvim and neovim gui, currently dotnvim or neovide
 if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
