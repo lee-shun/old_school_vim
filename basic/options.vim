@@ -202,7 +202,7 @@ let g:loaded_netrwFileHandlers = 1
 " === Terminal Behaviors
 " ===
 if exists(':terminal')
-    tnoremap <Esc> <C-\><C-N>
+    tnoremap <C-N> <C-\><C-N>
     if !has('nvim')
         augroup term_open_settings
             autocmd!
