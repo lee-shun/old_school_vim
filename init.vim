@@ -20,6 +20,39 @@
 " ===
 let $CONF_PATH = split(&runtimepath, ',')[0]
 
+if !exists("g:os_name")
+    if has("win64") || has("win32") || has("win16")
+        let g:os_name = "Windows"
+        let g:os_architect = 'x86_64'
+    else " not windows, use 'uname' command.
+        let g:os_name = substitute(system('uname'), '\n', '', '')
+        let g:os_architect =substitute(system('uname -m'), '\n', '', '')
+    endif
+endif
+
+if executable('conda')
+    if g:os_name == 'Windows' && has('nvim') " nvim on win
+        let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
+    elseif g:os_name == 'Linux'
+        let g:python_host_prog='/usr/bin/python'
+        let g:python3_host_prog='/usr/bin/python3'
+    endif
+endif
+
+" for popupwin
+if has('nvim')
+    let g:osv_has_popup_win = has('nvim-0.4.0')
+else
+    let g:osv_has_popup_win = has('popupwin')
+endif
+
+" for popup
+if has('nvim')
+    let g:osv_has_popup = has('nvim-0.4.0')
+else
+    let g:osv_has_popup = exists('*popup_create')
+endif
+
 " ===
 " === read the custom_modules.vim
 " ===
@@ -80,39 +113,9 @@ if s:osv_use_web_plug
     endif
 endif
 
-if !exists("g:os_name")
-    if has("win64") || has("win32") || has("win16")
-        let g:os_name = "Windows"
-        let g:os_architect = 'x86_64'
-    else " not windows, use 'uname' command.
-        let g:os_name = substitute(system('uname'), '\n', '', '')
-        let g:os_architect =substitute(system('uname -m'), '\n', '', '')
-    endif
-endif
-
-if executable('conda')
-    if g:os_name == 'Windows' && has('nvim') " nvim on win
-        let g:python3_host_prog='C:\ProgramData\Anaconda3\python.exe'
-    elseif g:os_name == 'Linux'
-        let g:python_host_prog='/usr/bin/python'
-        let g:python3_host_prog='/usr/bin/python3'
-    endif
-endif
-
-" for popupwin
-if has('nvim')
-    let g:osv_has_popup_win = has('nvim-0.4.0')
-else
-    let g:osv_has_popup_win = has('popupwin')
-endif
-
-" for popup
-if has('nvim')
-    let g:osv_has_popup = has('nvim-0.4.0')
-else
-    let g:osv_has_popup = exists('*popup_create')
-endif
-
+" ===
+" === check the plugins
+" ===
 if s:osv_use_web_plug
     source $CONF_PATH/plug_list/plug_check.vim
 endif
@@ -124,7 +127,7 @@ source $CONF_PATH/basic/options.vim
 source $CONF_PATH/basic/mappings.vim
 
 " ===
-" === plug
+" === plugins
 " ===
 if s:osv_use_web_plug
     source $CONF_PATH/plug_list/plug_init.vim
