@@ -105,7 +105,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set smarttab
-set expandtab  " 将Tab自动转化成空格(需要输入真正的Tab键时，使用 Ctrl+V + Tab)
+set expandtab  "use Ctrl+V + Tab to input the TAB
 set shiftround
 
 " folding
