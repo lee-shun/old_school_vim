@@ -74,6 +74,11 @@ let s:lspServers = [
             \     python: #{
             \       pythonPath: '/usr/bin/python3.10'
             \   }}
+            \ },
+            \#{name: 'bashls',
+            \   filetype: 'sh',
+            \   path: 'bash-language-server',
+            \   args: ['start']
             \ }]
 
 autocmd User LspSetup call LspAddServer(s:lspServers)
