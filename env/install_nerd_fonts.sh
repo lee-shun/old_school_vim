@@ -17,10 +17,16 @@
 #
 # ------------------------------------------------------------------------------
 
-sudo rm -rf /usr/share/fonts/osv_font
-mkdir -p nerd_fonts
+# 获取当前脚本的绝对路径
+this_script=$(readlink -f "$0")
+# 获取当前脚本的目录
+script_dir=$(dirname "$this_script")
+nerd_fonts_dir=$script_dir/nerd_fonts
 
-cd nerd_fonts
+sudo rm -rf /usr/share/fonts/osv_font
+mkdir -p $nerd_fonts_dir
+
+cd $nerd_fonts_dir
 if [ -f "Hasklig.zip" ];then
     echo "Hasklig.zip is already downloaded!"
 else
@@ -45,6 +51,5 @@ fi
 unzip Hasklig.zip -d osv_font/
 unzip MapleMono-SC-NF.zip -d osv_font/
 sudo mv osv_font /usr/share/fonts/
-cd ..
 
 sudo fc-cache -fv
