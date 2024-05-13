@@ -32,7 +32,7 @@ else
                 \})
 endif
 
-if index(['fzf', 'leaderf', 'ctrlp', 'clap'], g:osv_finder) != -1 &&
+if index(['fzf', 'leaderf', 'ctrlp', 'clap', 'fuzzyy'], g:osv_finder) != -1 &&
             \(osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver('nvim'))
     let s:vim_dashboard_config = { 'lazy':1,
                 \'on_event':'VimEnter',
