@@ -8,15 +8,11 @@
 # @description :
 ######################################################################
 
-# 获取当前脚本的绝对路径
-this_script=$(readlink -f "$0")
-# 获取当前脚本的目录
-script_dir=$(dirname "$this_script")
-
-ccls_build_dir=$script_dir/ccls_build
+CUR_DIR=$(pwd)
+ccls_build_dir=$CUR_DIR/ccls_build
 
 sudo apt update
-sudo apt install -y clang llvm libclang-10-dev
+sudo apt install -y clang llvm libclang-10-dev libncurses5
 
 git clone --depth=1 --recursive https://github.com/MaskRay/ccls $ccls_build_dir
 cd $ccls_build_dir
@@ -31,3 +27,5 @@ cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release \
     -DLLVM_INCLUDE_DIR=/usr/lib/llvm-10/include \
     -DLLVM_BUILD_INCLUDE_DIR=/usr/include/llvm-10/
 cmake --build Release
+
+cd $CUR_DIR
