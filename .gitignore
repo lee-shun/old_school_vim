@@ -3,6 +3,8 @@ plugged/
 pack/
 tmp/
 sessions/
+build/
+Debug/
 
 .ccls-cache/
 .clangd/

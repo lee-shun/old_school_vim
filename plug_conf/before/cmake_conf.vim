@@ -1,9 +1,10 @@
+let cpus = split(system("echo $(($(nproc) -1))"), "\n")[0]
 let g:cmake_command = 'cmake'
 let g:cmake_test_command = 'ctest'
 let g:cmake_default_config = 'Debug'
 let g:cmake_build_dir_location = '.'
-let g:cmake_generate_options = []
-let g:cmake_build_options = ['PCM_PRINT_LEVEL=PCM_DEBUG']
+let g:cmake_generate_options = ['-D PCM_PRINT_LEVEL=PCM_DEBUG']
+let g:cmake_build_options = ['-j '. cpus]
 let g:cmake_native_build_options = []
 let g:cmake_test_options = []
 let g:cmake_console_size = 15
