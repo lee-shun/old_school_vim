@@ -35,8 +35,8 @@ if g:os_name == 'Linux' &&
     if version_float < 3.14
         call osv_ultis#msg#warn("vim-cmake needs the cmake version >= 3.14")
     else
-        call dein#add('cdelledonne/vim-cmake', {'lazy':1,
-                    \ 'on_cmd':['CMakeGenerate', 'CMakeBuild', 'CMakeClean', 'CMakeRun', 'CMakeToggle'],
+        call dein#add('ilyachur/cmake4vim', {'lazy':1,
+                    \ 'on_cmd':['CMake'],
                     \'hook_source':'source $CONF_PATH/plug_conf/before/cmake_conf.vim',
                     \})
     endif

@@ -70,7 +70,7 @@ function! s:fzf_quickfix(bang) abort
     let s:source = 'quickfix'
     let items = s:fzf_get_quickfix()
     if len(items) == 0
-        call OsvWarn('No quickfix items!')
+        call osv_ultis#msg#warn('No quickfix items!')
         return
     endif
     call fzf#run(fzf#wrap('quickfix', {
@@ -88,7 +88,7 @@ function! s:fzf_location_list(bang) abort
     let s:source = 'location_list'
     let items = s:fzf_get_location_list()
     if len(items) == 0
-        call OsvWarn('No location list items!')
+        call osv_ultis#msg#warn('No location list items!')
         return
     endif
     call fzf#run(fzf#wrap('location_list', {
@@ -116,7 +116,7 @@ function! s:fzf_registers(bang) abort
     let s:source = 'registers'
     let items = s:fzf_get_registers()
     if len(items) == 0
-        call OsvWarn('No register items!')
+        call osv_ultis#msg#warn('No register items!')
         return
     endif
     call fzf#run(fzf#wrap('registers', {
@@ -164,7 +164,7 @@ function! s:fzf_jumps(bang) abort
     " Get jumps with filename added
     let tmp_jump = s:get_jumps()
     if(tmp_jump == [])
-        call OsvWarn('Empty jump list!')
+        call osv_ultis#msg#warn('Empty jump list!')
         return
     endif
     let jumps = map(tmp_jump,
@@ -249,7 +249,7 @@ endfunction
 function! s:fzf_templates(bang)
     let template_list = s:get_templates()
     if(template_list == [])
-        call OsvWarn('Empty template list!')
+        call osv_ultis#msg#warn('Empty template list!')
         return
     endif
     call fzf#run(fzf#vim#with_preview(fzf#wrap({
