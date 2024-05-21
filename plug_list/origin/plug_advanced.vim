@@ -24,6 +24,26 @@ call dein#add('chxuan/cpp-mode', {'lazy':1,
             \'on_ft':['cpp'],
             \})
 
+if g:os_name == 'Linux' &&
+            \ osv_ultis#check_env#check_nvim_ver('nvim-0.5') ||
+            \ (!has('nvim') && has('terminal'))
+
+    let cmake_output = system('cmake --version')
+    let cmake_version = matchstr(split(cmake_output, "\n")[0], '\v\d+\.\d+\.\d+')
+    let version_float = str2float(cmake_version)
+
+    if version_float < 3.14
+        call osv_ultis#msg#warn("vim-cmake needs the cmake version >= 3.14")
+    else
+        call dein#add('cdelledonne/vim-cmake', {'lazy':1,
+                    \ 'on_cmd':['CMakeGenerate', 'CMakeBuild', 'CMakeClean', 'CMakeRun', 'CMakeToggle'],
+                    \'hook_source':'source $CONF_PATH/plug_conf/before/cmake_conf.vim',
+                    \})
+    endif
+else
+    call osv_ultis#msg#warn("vim-cmake needs nvim-0.5 or vim with terminal feature!")
+endif
+
 if g:osv_complete_engine != 'coc'
     call dein#add('voldikss/vim-translator', {'lazy':1,
                 \'on_map':{'n':'<leader>s', 'v':'<leader>s'},
