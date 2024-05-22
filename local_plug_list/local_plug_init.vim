@@ -11,14 +11,11 @@ source $CONF_PATH/plug_conf/before/surround.vim
 " auto pairs
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/auto-pairs"
 let g:AutoPairsMapSpace=0
+let g:AutoPairsMapCh=0
 
 " ctrlp
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/ctrlp.vim"
 source $CONF_PATH/plug_conf/after/ctrlp/ctrlp.vim
-
-" term
-let &runtimepath.=','.$CONF_PATH."/local_plug_list/split-term.vim"
-nnoremap <F12> :<c-u>Term<CR>
 
 " rainbow
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/rainbow"
@@ -46,3 +43,8 @@ let g:spaceline_diagnostic_warnsign = ' '
 let g:spaceline_git_branch_icon = ' '
 let g:spaceline_custom_diff_icon =  [' ',' ',' ']
 let g:spaceline_diff_tool = 'git-gutter'
+
+" vim-mucomplete
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-mucomplete"
+source $CONF_PATH/plug_conf/before/mucomplete_conf.vim
+source $CONF_PATH/plug_conf/after/mucomplete_conf.vim
