@@ -11,14 +11,11 @@ source $CONF_PATH/plug_conf/before/surround.vim
 " auto pairs
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/auto-pairs"
 let g:AutoPairsMapSpace=0
+let g:AutoPairsMapCh=0
 
 " ctrlp
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/ctrlp.vim"
 source $CONF_PATH/plug_conf/after/ctrlp/ctrlp.vim
-
-" term
-let &runtimepath.=','.$CONF_PATH."/local_plug_list/split-term.vim"
-nnoremap <F12> :<c-u>Term<CR>
 
 " rainbow
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/rainbow"

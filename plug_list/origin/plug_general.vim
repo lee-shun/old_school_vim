@@ -114,12 +114,12 @@ call dein#add('tpope/vim-commentary', {'lazy':1,
 if !osv_ultis#check_env#check_vim_ver(800) && !osv_ultis#check_env#check_nvim_ver('nvim')
     call dein#add('jiangmiao/auto-pairs', {'lazy':1,
                 \'on_event':['BufReadPost'],
-                \'hook_source':'let g:AutoPairsMapSpace=0'
+                \'hook_source':'let g:AutoPairsMapSpace=0 | let g:AutoPairsMapCh=0'
                 \})
 else " this new auto-pair need neovim or vim 8.2
     call dein#add('LunarWatcher/auto-pairs', {'lazy':1,
                 \'on_event':['BufReadPost'],
-                \'hook_source':'let g:AutoPairsMapSpace=0'
+                \'hook_source':'let g:AutoPairsMapSpace=0 | let g:AutoPairsMapCh=0'
                 \})
 endif
 

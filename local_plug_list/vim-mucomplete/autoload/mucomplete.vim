@@ -35,8 +35,8 @@ endf
 
 if !get(g:, 'mucomplete#no_mappings', get(g:, 'no_plugin_maps', 0))
   if !hasmapto('<plug>(MUcompleteCycFwd)', 'i')
-    inoremap <silent> <plug>(MUcompleteFwdKey) <c-j>
-    call mucomplete#map('imap', '<c-j>', '<plug>(MUcompleteCycFwd)')
+    inoremap <silent> <plug>(MUcompleteFwdKey) <c-l>
+    call mucomplete#map('imap', '<c-l>', '<plug>(MUcompleteCycFwd)')
   endif
   if !hasmapto('<plug>(MUcompleteCycBwd)', 'i')
     inoremap <silent> <plug>(MUcompleteBwdKey) <c-h>
