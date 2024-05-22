@@ -46,3 +46,8 @@ let g:spaceline_diagnostic_warnsign = ' '
 let g:spaceline_git_branch_icon = ' '
 let g:spaceline_custom_diff_icon =  [' ',' ',' ']
 let g:spaceline_diff_tool = 'git-gutter'
+
+" vim-mucomplete
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-mucomplete"
+source $CONF_PATH/plug_conf/before/mucomplete_conf.vim
+source $CONF_PATH/plug_conf/after/mucomplete_conf.vim
