@@ -1,3 +1,4 @@
+let start_t = reltime()
 call dein#add('ryanoasis/vim-devicons', {'lazy':1})
 
 call dein#add('haya14busa/dein-command.vim', {
@@ -208,7 +209,7 @@ if osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver(
 
     " do not enable in under the ssh connetction.
     " only works if fcitx or fcitx5 is available.
-    if g:os_name == 'Linux' && (osv_ultis#system#exec(["echo $SSH_CLIENT"]) is# '')
+    if g:os_name == 'Linux' && empty($SSH_CLIENT) && empty($SSH_TTY)
         if executable('fcitx-remote')
             call dein#add('rlue/vim-barbaric', {'lazy':1,
                         \'on_event':['InsertEnter'],
@@ -222,3 +223,6 @@ if osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver(
         endif
     endif
 endif
+
+" let end_t = reltime(start_t)
+" echo "used: ". reltimefloat(end_t) * 1000 . "ms"
