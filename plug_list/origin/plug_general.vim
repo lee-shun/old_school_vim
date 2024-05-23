@@ -62,11 +62,13 @@ endif
 
 call dein#add('luochen1990/rainbow', {'lazy':1,
             \'on_event':['BufReadPost'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/rainbow_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/rainbow_conf.vim'
+            \})
 
 call dein#add('Yggdroot/indentLine', {'lazy':1,
             \'on_event':['BufReadPost'],
-            \'hook_source':'source $CONF_PATH/plug_conf/before/indentLine_conf.vim'})
+            \'hook_source':'source $CONF_PATH/plug_conf/before/indentLine_conf.vim'
+            \})
 
 call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
             \'on_event':['BufReadPost'],
@@ -74,12 +76,14 @@ call dein#add('bronson/vim-trailing-whitespace', {'lazy':1,
             \})
 
 call dein#add('RRethy/vim-illuminate', {'lazy':1,
-            \'on_event' : ['BufReadPost'] })
+            \'on_event' : ['BufReadPost']
+            \})
 
 if exists(':terminal')
     call dein#add('voldikss/vim-floaterm', {'lazy':1,
                 \'on_event':['BufReadPost'],
-                \'hook_source':'source $CONF_PATH/plug_conf/before/floaterm_conf.vim'})
+                \'hook_source':'source $CONF_PATH/plug_conf/before/floaterm_conf.vim'
+                \})
 endif
 
 call dein#add('chrisbra/Colorizer', {'lazy':1,

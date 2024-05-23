@@ -31,14 +31,16 @@ elseif g:osv_file_explorer == 'fern'
                 \'on_cmd':'Fern',
                 \'depends':['fern-renderer-nerdfont.vim', 'fern-hijack.vim', 'fern-git-status.vim'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/fern_conf.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/fern_conf.vim'})
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/fern_conf.vim'
+                \})
 elseif g:osv_file_explorer == 'vimfiler'
     call dein#add('Shougo/unite.vim', {'lazy':1,
                 \})
     call dein#add('Shougo/vimfiler.vim', {'lazy':1,
                 \'on_map':'<leader>t',
-                \'on_cmd':'VimFiler',
+                \'on_cmd':['VimFiler', 'VimFilerCurrentDir'],
                 \'depends':['unite.vim', 'vim-devicons'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/vimfiler_conf.vim',
-                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimfiler_conf.vim'})
+                \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimfiler_conf.vim'
+                \})
 endif
