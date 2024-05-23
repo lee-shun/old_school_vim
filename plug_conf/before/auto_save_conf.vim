@@ -9,4 +9,3 @@ augroup auto_save_file
   au!
   au FileType fern-replacer let b:auto_save = 0
 augroup END
-
