@@ -58,14 +58,6 @@ call dein#add($CONF_PATH.'/local_plug_list/vim-mucomplete', {'lazy':1,
 
 call dein#end()
 
-augroup DeinSetup
-    autocmd!
-    autocmd VimEnter * call dein#call_hook('source') | call dein#call_hook('post_source')
-augroup END
-
-" rainbow
-let g:rainbow_active = 1
-
 " status line
 let g:spaceline_colorscheme = 'onehalfdark'
 let g:spaceline_seperate_style = 'arrow-fade'
