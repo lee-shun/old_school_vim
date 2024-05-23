@@ -12,7 +12,7 @@ Debug/
 *.zip
 custom_modules.vim
 
-dein/
+dein_cache/
 coc_data/
 .cache/
 

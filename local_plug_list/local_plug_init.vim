@@ -1,7 +1,7 @@
 " dein.vim v1.5
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v1.5"
 
-call dein#begin($CONF_PATH.'/local_plug_list/dein')
+call dein#begin($CONF_PATH.'/local_plug_list/dein_cache')
 
 call dein#add($CONF_PATH.'/local_plug_list/dein.vim_v1.5')
 

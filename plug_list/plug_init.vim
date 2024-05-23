@@ -21,7 +21,7 @@ else " vim
     endif
 endif
 
-let s:dein_cache_dir = $CONF_PATH.'/dein'
+let s:dein_cache_dir = $CONF_PATH.'/dein_cache'
 let s:version_tail = s:osv_dein_version=='master' ? '' : '_'.s:osv_dein_version
 if g:osv_repo_source == 'origin'
     let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
