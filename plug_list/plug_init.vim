@@ -24,10 +24,10 @@ endif
 let s:dein_cache_dir = $CONF_PATH.'/dein_cache'
 let s:version_tail = s:osv_dein_version=='master' ? '' : '_'.s:osv_dein_version
 if g:osv_repo_source == 'origin'
-    let s:dein_src = $CONF_PATH.'/dein/repos/github.com/Shougo/dein.vim' . s:version_tail
+    let s:dein_src = s:dein_cache_dir.'/repos/github.com/Shougo/dein.vim' . s:version_tail
     let g:dein#types#git#default_hub_site = 'github.com'
 elseif g:osv_repo_source == 'mirror'
-    let s:dein_src = $CONF_PATH.'/dein/repos/gitee.com/old_school_vim/dein.vim' . s:version_tail
+    let s:dein_src = s:dein_cache_dir.'/repos/gitee.com/old_school_vim/dein.vim' . s:version_tail
     let g:dein#types#git#default_hub_site = 'gitee.com'
 endif
 
