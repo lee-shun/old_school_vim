@@ -1,30 +1,28 @@
-" vim-plug
-let &runtimepath.=','.$CONF_PATH."/local_plug_list/vim-plug"
+" dein.vim v1.5
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v1.5"
+call dein#begin($CONF_PATH.'/local_plug_list/dein')
 
-call plug#begin($CONF_PATH.'/local_plug_list')
+call dein#add($CONF_PATH.'/local_plug_list/dein.vim_v1.5')
+call dein#add($CONF_PATH.'/local_plug_list/vim-rooter')
+call dein#add($CONF_PATH.'/local_plug_list/vim-commentary')
+call dein#add($CONF_PATH.'/local_plug_list/vim-surround')
+call dein#add($CONF_PATH.'/local_plug_list/auto-pairs')
+call dein#add($CONF_PATH.'/local_plug_list/ctrlp.vim')
+call dein#add($CONF_PATH.'/local_plug_list/rainbow')
+call dein#add($CONF_PATH.'/local_plug_list/hlyank.vim')
+call dein#add($CONF_PATH.'/local_plug_list/unite.vim')
+call dein#add($CONF_PATH.'/local_plug_list/vimfiler.vim')
+call dein#add($CONF_PATH.'/local_plug_list/vim-gitgutter')
+call dein#add($CONF_PATH.'/local_plug_list/vim-fugitive')
+call dein#add($CONF_PATH.'/local_plug_list/spaceline.vim')
+call dein#add($CONF_PATH.'/local_plug_list/vim-mucomplete')
 
-Plug $CONF_PATH.'/local_plug_list/vim-rooter'
+call dein#end()
 
-Plug $CONF_PATH.'/local_plug_list/vim-commentary'
-Plug $CONF_PATH.'/local_plug_list/vim-surround'
-Plug $CONF_PATH.'/local_plug_list/auto-pairs'
-
-Plug $CONF_PATH.'/local_plug_list/ctrlp.vim'
-
-Plug $CONF_PATH.'/local_plug_list/rainbow'
-Plug $CONF_PATH.'/local_plug_list/hlyank.vim'
-
-Plug $CONF_PATH.'/local_plug_list/unite.vim'
-Plug $CONF_PATH.'/local_plug_list/vimfiler.vim'
-
-Plug $CONF_PATH.'/local_plug_list/vim-gitgutter'
-Plug $CONF_PATH.'/local_plug_list/vim-fugitive'
-
-Plug $CONF_PATH.'/local_plug_list/spaceline.vim'
-
-Plug $CONF_PATH.'/local_plug_list/vim-mucomplete'
-
-call plug#end()
+augroup DeinSetup
+    autocmd!
+    autocmd VimEnter * call dein#call_hook('source') | call dein#call_hook('post_source')
+augroup END
 
 " use gsr to..
 source $CONF_PATH/plug_conf/before/surround.vim

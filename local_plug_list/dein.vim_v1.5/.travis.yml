@@ -1,0 +1,15 @@
+language: viml
+
+sudo: false
+dist: trusty
+
+os:
+    - linux
+
+before_script:
+    - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install vim --HEAD; fi
+    - vim --version
+    - git clone https://github.com/thinca/vim-themis
+
+script:
+    - vim-themis/bin/themis --reporter spec

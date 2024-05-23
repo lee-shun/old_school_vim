@@ -57,3 +57,5 @@ function! s:vimfiler_my_settings() abort
     vmap <buffer> J     <Plug>(vimfiler_toggle_mark_selected_lines)
 endfunction
 
+autocmd BufEnter * if (!has('vim_starting') && winnr('$') == 1
+            \ && &filetype ==# 'vimfiler') | quit | endif
