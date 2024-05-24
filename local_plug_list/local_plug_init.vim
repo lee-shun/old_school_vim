@@ -55,10 +55,16 @@ call dein#add($CONF_PATH.'/local_plug_list/vimfiler.vim',{'lazy':1,
             \'hook_post_source':'source $CONF_PATH/plug_conf/after/vimfiler_conf.vim'
             \})
 
-call dein#add($CONF_PATH.'/local_plug_list/vim-gitgutter')
-call dein#add($CONF_PATH.'/local_plug_list/vim-fugitive')
+call dein#add($CONF_PATH.'/local_plug_list/vim-gitgutter', {
+            \})
+call dein#add($CONF_PATH.'/local_plug_list/vim-fugitive', {'lazy':1,
+            \'on_event':['BufReadPost']
+            \})
 
-call dein#add($CONF_PATH.'/local_plug_list/spaceline.vim')
+call dein#add($CONF_PATH.'/local_plug_list/spaceline.vim', {'lazy':1,
+                \'on_event': ['BufNewFile', 'BufReadPost'],
+                \'depends':['vim-gitgutter']
+                \})
 
 call dein#add($CONF_PATH.'/local_plug_list/vim-mucomplete', {'lazy':1,
             \'on_event': ['BufNewFile', 'BufReadPre', 'BufNew', 'BufEnter'],
