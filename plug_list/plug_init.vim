@@ -149,6 +149,11 @@ if dein#load_state(s:dein_cache_dir)
     call dein#save_state()
 endif
 
+augroup DeinSetup
+    autocmd!
+    autocmd VimEnter * call dein#call_hook('source') | call dein#call_hook('post_source')
+augroup END
+
 if s:osv_first_setup
     call dein#update()
     call osv_ultis#msg#info("install the plugins with dein#update().")

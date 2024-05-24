@@ -82,6 +82,11 @@ if dein#load_state(dein_cache_dir)
     call dein#save_state()
 endif
 
+augroup DeinSetup
+    autocmd!
+    autocmd VimEnter * call dein#call_hook('source') | call dein#call_hook('post_source')
+augroup END
+
 " status line
 let g:spaceline_colorscheme = 'onehalfdark'
 let g:spaceline_seperate_style = 'arrow-fade'
