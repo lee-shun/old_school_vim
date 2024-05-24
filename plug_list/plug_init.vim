@@ -77,73 +77,77 @@ if empty(glob(s:dein_src))
 endif
 
 let &runtimepath.=','.s:dein_src
-call dein#begin(s:dein_cache_dir)
 
-" add dein.vim as a local plugin
-call dein#add(s:dein_src)
-let $OSV_REPO_SOURCE = g:osv_repo_source
+if dein#load_state(s:dein_cache_dir)
+    call dein#begin(s:dein_cache_dir)
 
-if g:osv_debug
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_debug.vim
+    " add dein.vim as a local plugin
+    call dein#add(s:dein_src)
+    let $OSV_REPO_SOURCE = g:osv_repo_source
+
+    if g:osv_debug
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_debug.vim
+    endif
+
+    if g:osv_plug_general
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_general.vim
+    endif
+
+    if g:osv_plug_advanced
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_advanced.vim
+    endif
+
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_snippet.vim
+
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_finder.vim
+
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_file_explorer.vim
+
+    if g:osv_complete_engine == 'coc'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_coc.vim
+    endif
+
+    if g:osv_complete_engine == 'deoplete'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_deoplete.vim
+    endif
+
+    if g:osv_complete_engine == 'asyncomplete'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_asyncomplete.vim
+    endif
+
+    if g:osv_complete_engine == 'mucomplete'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_mucomplete.vim
+    endif
+
+    if g:osv_complete_engine == 'vimcomplete'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vimcomplete.vim
+    endif
+
+    if g:osv_linter == 'ale'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ale.vim
+    endif
+
+    if g:osv_lsp == 'vim-lsp'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsp.vim
+    endif
+
+    if g:osv_lsp == 'lcn'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lcn.vim
+    endif
+
+    if g:osv_lsp == 'vim-lsc'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsc.vim
+    endif
+
+    if g:osv_lsp == 'vim9lsp'
+        source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vim9lsp.vim
+    endif
+
+    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ai.vim
+
+    call dein#end()
+    call dein#save_state()
 endif
-
-if g:osv_plug_general
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_general.vim
-endif
-
-if g:osv_plug_advanced
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_advanced.vim
-endif
-
-source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_snippet.vim
-
-source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_finder.vim
-
-source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_file_explorer.vim
-
-if g:osv_complete_engine == 'coc'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_coc.vim
-endif
-
-if g:osv_complete_engine == 'deoplete'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_deoplete.vim
-endif
-
-if g:osv_complete_engine == 'asyncomplete'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_asyncomplete.vim
-endif
-
-if g:osv_complete_engine == 'mucomplete'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_mucomplete.vim
-endif
-
-if g:osv_complete_engine == 'vimcomplete'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vimcomplete.vim
-endif
-
-if g:osv_linter == 'ale'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ale.vim
-endif
-
-if g:osv_lsp == 'vim-lsp'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsp.vim
-endif
-
-if g:osv_lsp == 'lcn'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lcn.vim
-endif
-
-if g:osv_lsp == 'vim-lsc'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_lsc.vim
-endif
-
-if g:osv_lsp == 'vim9lsp'
-    source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_vim9lsp.vim
-endif
-
-source $CONF_PATH/plug_list/$OSV_REPO_SOURCE/plug_ai.vim
-
-call dein#end()
 
 augroup DeinSetup
     autocmd!
