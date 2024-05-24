@@ -15,7 +15,7 @@ call dein#add($CONF_PATH.'/local_plug_list/vim-commentary', {'lazy':1,
             \})
 
 call dein#add($CONF_PATH.'/local_plug_list/vim-auto-save', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_event': ['InsertLeave', 'TextChanged'],
             \'hook_source': 'source $CONF_PATH/plug_conf/before/auto_save_conf.vim'
             \})
 
@@ -58,12 +58,16 @@ call dein#add($CONF_PATH.'/local_plug_list/vimfiler.vim',{'lazy':1,
 call dein#add($CONF_PATH.'/local_plug_list/vim-gitgutter', {
             \})
 call dein#add($CONF_PATH.'/local_plug_list/vim-fugitive', {'lazy':1,
-            \'on_event':['BufReadPost']
+            \'on_event':['BufReadPre']
             \})
 
 call dein#add($CONF_PATH.'/local_plug_list/spaceline.vim', {'lazy':1,
-                \'on_event': ['BufNewFile', 'BufReadPost'],
+                \'on_event': ['BufNewFile', 'BufReadPre'],
                 \'depends':['vim-gitgutter']
+                \})
+
+call dein#add($CONF_PATH.'/local_plug_list/startify', {'lazy':1,
+                \'on_event':'VimEnter',
                 \})
 
 call dein#add($CONF_PATH.'/local_plug_list/vim-mucomplete', {'lazy':1,
