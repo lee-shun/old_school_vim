@@ -99,7 +99,7 @@ call dein#add('junegunn/vim-peekaboo', {'lazy':1,
             \})
 
 call dein#add('airblade/vim-rooter', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_event': ['BufReadPre'],
             \'hook_source':'source $CONF_PATH/plug_conf/before/rooter_conf.vim',
             \})
 
@@ -153,7 +153,7 @@ call dein#add('mg979/vim-visual-multi', {'lazy':1,
             \})
 
 call dein#add('907th/vim-auto-save', {'lazy':1,
-            \'on_event': ['BufReadPost'],
+            \'on_event': ['BufReadPre'],
             \'hook_source': 'source $CONF_PATH/plug_conf/before/auto_save_conf.vim'
             \})
 
@@ -200,7 +200,7 @@ call dein#add('brooth/far.vim', {
 " plugins for nvim and vim > 8.0
 if osv_ultis#check_env#check_vim_ver(800) || osv_ultis#check_env#check_nvim_ver('nvim')
     let s:spaceline_conf = {'lazy':1,
-                \'on_event': ['BufNewFile', 'BufReadPost'],
+                \'on_event': ['BufNewFile', 'BufReadPre'],
                 \'depends':['vim-signify', 'vim-devicons'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/spaceline_conf.vim'}
     if g:osv_complete_engine == 'coc'
