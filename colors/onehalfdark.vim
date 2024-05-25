@@ -224,6 +224,10 @@ if has('nvim')
 endif
 " }
 
+" OSV Log message
+highlight OsvErr guifg=red guibg=gray
+highlight OsvWarn guifg=yellow guibg=gray
+highlight OsvInfo guifg=green guibg=gray
 
 if g:osv_complete_engine == 'coc'
     let g:coc_default_semantic_highlight_groups = 1
