@@ -1,11 +1,12 @@
 " dein.vim v1.5
-let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v1.5"
+" let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v1.5"
+let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v3.1"
 
 let dein_cache_dir=$CONF_PATH.'/local_plug_list/dein_cache'
 if dein#load_state(dein_cache_dir)
     call dein#begin(dein_cache_dir)
 
-    call dein#add($CONF_PATH.'/local_plug_list/dein.vim_v1.5')
+    " call dein#add($CONF_PATH.'/local_plug_list/dein.vim_v1.5')
 
     call dein#add($CONF_PATH.'/local_plug_list/vim-rooter', {'lazy':1,
                 \'on_event': ['BufReadPost'],
@@ -66,10 +67,6 @@ if dein#load_state(dein_cache_dir)
     call dein#add($CONF_PATH.'/local_plug_list/spaceline.vim', {'lazy':1,
                 \'on_event': ['BufNewFile', 'BufReadPre'],
                 \'depends':['vim-gitgutter']
-                \})
-
-    call dein#add($CONF_PATH.'/local_plug_list/startify', {'lazy':1,
-                \'on_event':'VimEnter',
                 \})
 
     call dein#add($CONF_PATH.'/local_plug_list/vim-mucomplete', {'lazy':1,
