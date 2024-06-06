@@ -1,12 +1,42 @@
+<<<<<<< HEAD
+" ===
+" === check the dein version
+" ===
+if has('nvim')
+    if has('nvim-0.5')
+        let s:osv_dein_version = '3.1'
+    elseif has('nvim-0.2')
+        let s:osv_dein_version = '2.2'
+    else
+        let s:osv_dein_version = '1.5'
+    endif
+else " vim
+    if v:version >= 802
+        let s:osv_dein_version = '3.1'
+    elseif v:version >= 800
+        let s:osv_dein_version = '2.2'
+    elseif v:version >= 704
+        let s:osv_dein_version = '1.5'
+    endif
+endif
+
+let s:dein_path = $CONF_PATH."/local_plug_list/dein.vim_v".s:osv_dein_version
+let &runtimepath.=','.s:dein_path
+=======
 " dein.vim v1.5
 " let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v1.5"
 let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v3.1"
+>>>>>>> 976056b4f18be19b071ab27be40d9a244c9297b2
 
 let dein_cache_dir=$CONF_PATH.'/local_plug_list/dein_cache'
 if dein#load_state(dein_cache_dir)
     call dein#begin(dein_cache_dir)
 
+<<<<<<< HEAD
+    call dein#add(s:dein_path)
+=======
     " call dein#add($CONF_PATH.'/local_plug_list/dein.vim_v1.5')
+>>>>>>> 976056b4f18be19b071ab27be40d9a244c9297b2
 
     call dein#add($CONF_PATH.'/local_plug_list/vim-rooter', {'lazy':1,
                 \'on_event': ['BufReadPost'],
