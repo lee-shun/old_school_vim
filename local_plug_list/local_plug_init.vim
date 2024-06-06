@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 " ===
 " === check the dein version
 " ===
@@ -22,21 +21,12 @@ endif
 
 let s:dein_path = $CONF_PATH."/local_plug_list/dein.vim_v".s:osv_dein_version
 let &runtimepath.=','.s:dein_path
-=======
-" dein.vim v1.5
-" let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v1.5"
-let &runtimepath.=','.$CONF_PATH."/local_plug_list/dein.vim_v3.1"
->>>>>>> 976056b4f18be19b071ab27be40d9a244c9297b2
 
 let dein_cache_dir=$CONF_PATH.'/local_plug_list/dein_cache'
 if dein#load_state(dein_cache_dir)
     call dein#begin(dein_cache_dir)
 
-<<<<<<< HEAD
     call dein#add(s:dein_path)
-=======
-    " call dein#add($CONF_PATH.'/local_plug_list/dein.vim_v1.5')
->>>>>>> 976056b4f18be19b071ab27be40d9a244c9297b2
 
     call dein#add($CONF_PATH.'/local_plug_list/vim-rooter', {'lazy':1,
                 \'on_event': ['BufReadPost'],
