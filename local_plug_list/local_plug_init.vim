@@ -19,7 +19,7 @@ else " vim
     endif
 endif
 
-let s:dein_path = $CONF_PATH."/local_plug_list/dein.vim_v".s:osv_dein_version
+let s:dein_path = $CONF_PATH."/local_plug_list/dein.vim/".s:osv_dein_version
 let &runtimepath.=','.s:dein_path
 
 let dein_cache_dir=$CONF_PATH.'/local_plug_list/dein_cache'
