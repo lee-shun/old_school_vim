@@ -74,13 +74,7 @@ function! startscreen#start() abort
   set filetype=startscreen
 
   " Set mappings
-  nnoremap <buffer><nowait><silent> i :enew <bar> startinsert<cr>
-  nnoremap <buffer><nowait><silent> a :enew <bar> startinsert<cr>
-  nnoremap <buffer><nowait><silent> o :enew <bar> startinsert<cr><cr>
-  nnoremap <buffer><nowait><silent> O :enew <bar> startinsert<cr><cr><up>
-  nnoremap <buffer><nowait><silent> p :enew<cr>p
-  nnoremap <buffer><nowait><silent> P :enew<cr>P
   nnoremap <buffer><nowait><silent> q :q<cr>
+  nnoremap <buffer><nowait><silent> <CR> :CtrlPMRUFiles<CR>
 
 endfunction
-
