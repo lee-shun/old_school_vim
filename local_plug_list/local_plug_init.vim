@@ -28,6 +28,8 @@ if dein#load_state(dein_cache_dir)
 
     call dein#add(s:dein_path)
 
+    call dein#add($CONF_PATH.'/local_plug_list/vim-startscreen')
+
     call dein#add($CONF_PATH.'/local_plug_list/vim-rooter', {'lazy':1,
                 \'on_event': ['BufReadPost'],
                 \'hook_source':'source $CONF_PATH/plug_conf/before/rooter_conf.vim',
