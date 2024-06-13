@@ -57,6 +57,7 @@ if dein#load_state(dein_cache_dir)
     call dein#add($CONF_PATH.'/local_plug_list/ctrlp.vim', {'lazy':1,
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':['CtrlP'],
+                \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp/ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/ctrlp.vim '
                 \})
 

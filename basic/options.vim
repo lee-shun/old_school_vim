@@ -18,8 +18,10 @@ endif
 
 " for gvim and neovim gui, currently dotnvim or neovide
 if has('gui_running') || exists('g:gui_dotnvim') || exists('g:neovide')
-    set guifont="Maple Mono SC NF Light:h12"
-    set guifontwide="Maple Mono SC NF Light:h12"
+    " set guifont=Maple_Mono_SC_NF_Light:h12
+    " set guifontwide=Maple_Mono_SC_NF_Light:h12
+    set guifont=Hasklug_Nerd_Font_Propo_Regular:h12
+    set guifontwide=Hasklug_Nerd_Font_Propo_Regular:h12
     set guioptions-=m
     set guioptions-=T
     set guioptions-=L
