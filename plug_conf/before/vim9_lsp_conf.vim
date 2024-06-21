@@ -82,4 +82,3 @@ let s:lspServers = [
             \ }]
 
 autocmd User LspSetup call LspAddServer(s:lspServers)
-
