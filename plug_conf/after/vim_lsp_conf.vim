@@ -1,15 +1,15 @@
 function! s:on_lsp_buffer_enabled() abort
-    " use omnifunc if you are fine with it.
     setlocal omnifunc=lsp#complete
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    " some mappings to use, tweak as you wish.
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>lr <plug>(lsp-rename)
-    nmap <buffer> <leader>la <plug>(lsp-code-action)
-    nmap <buffer> gh <plug>(lsp-hover)
+    call osv_ultis#plug#lsp_map({
+                \ 'gd': '<plug>(lsp-definition)',
+                \ 'gr': '<plug>(lsp-references)',
+                \ 'gi': '<plug>(lsp-implementation)',
+                \ 'gt': '<plug>(lsp-type-definition)',
+                \ '<leader>lr': '<plug>(lsp-rename)',
+                \ '<leader>la': '<plug>(lsp-code-action)',
+                \ 'gh': '<plug>(lsp-hover)',
+                \ })
     nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
     nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
 endfunction

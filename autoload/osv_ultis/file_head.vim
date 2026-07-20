@@ -2,16 +2,24 @@
 " === automaticallly add file head
 " ===
 
-func! s:set_comment()
+function! s:author_name()
+    return exists('g:tmpl_author_name') ? g:tmpl_author_name : 'Shun Li'
+endfunction
+
+function! s:author_email()
+    return exists('g:tmpl_author_email') ? g:tmpl_author_email : '2015097272@qq.com'
+endfunction
+
+function! s:set_comment()
     call setline(1,"/*******************************************************************************")
     call setline(2  , "*")
-    call setline(2  , "*   Copyright (C) ".strftime("%Y")." Concordia NAVlab. All rights reserved.")
+    call setline(2  , "*   Copyright (C) ".strftime("%Y")." ".g:osv_copyright_holder.". All rights reserved.")
     call setline(3  , "*")
     call setline(4  , "*   @Filename: ".expand("%:t"))
     call setline(5  , "*")
-    call setline(6  , "*   @Author: Shun Li")
+    call setline(6  , "*   @Author: ".s:author_name())
     call setline(7  , "*")
-    call setline(8  , "*   @Email: 2015097272@qq.com")
+    call setline(8  , "*   @Email: ".s:author_email())
     call setline(9  , "*")
     call setline(10  , "*   @Date: ".strftime("%Y-%m-%d"))
     call setline(11  , "*")
@@ -27,15 +35,15 @@ func! s:set_comment_sh()
     call setline(3,"")
     call setline(4, "# ------------------------------------------------------------------------------")
     call setline(5 , "#")
-    call setline(6  , "#   Copyright (C) ".strftime("%Y")." Concordia NAVlab. All rights reserved.")
+    call setline(6  , "#   Copyright (C) ".strftime("%Y")." ".g:osv_copyright_holder.". All rights reserved.")
     call setline(7  , "#")
     call setline(8  , "#   @Filename: ".expand("%:t"))
     call setline(9  , "#")
-    call setline(10  , "#   @Author: Shun Li")
+    call setline(10  , "#   @Author: ".s:author_name())
     call setline(11  , "#")
     call setline(12 , "#   @Date: ".strftime("%Y-%m-%d"))
     call setline(13  , "#")
-    call setline(14 , "#   @Email: 2015097272@qq.com")
+    call setline(14 , "#   @Email: ".s:author_email())
     call setline(15 , "#")
     call setline(16 , "#   @Description: ")
     call setline(17 , "#")

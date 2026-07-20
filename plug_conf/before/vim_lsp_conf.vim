@@ -2,10 +2,10 @@
 " === vim-lsp
 " ===
 let g:lsp_auto_enable = 1
-let g:lsp_diagnostics_signs_error = {'text': ''}
-let g:lsp_diagnostics_signs_warning = {'text': ''}
-let g:lsp_diagnostics_signs_information = {'text': ''}
-let g:lsp_diagnostics_signs_hint = {'text': ''}
+let g:lsp_diagnostics_signs_error = {'text': g:osv_sign_error}
+let g:lsp_diagnostics_signs_warning = {'text': g:osv_sign_warning}
+let g:lsp_diagnostics_signs_information = {'text': g:osv_sign_info}
+let g:lsp_diagnostics_signs_hint = {'text': g:osv_sign_hint}
 
 if has('nvim')
     let g:lsp_diagnostics_virtual_text_prefix = "‣ "

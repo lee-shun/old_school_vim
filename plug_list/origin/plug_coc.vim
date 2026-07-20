@@ -1,4 +1,4 @@
-call dein#add('neoclide/coc.nvim', { 'lazy':'1',
+call osv_ultis#plug#add('neoclide/coc.nvim', { 'lazy':'1',
             \'depends':g:osv_snip=='coc-snippets' ? 'vim-snippets' : [],
             \'on_event': ['BufNewFile', 'BufReadPre', 'BufNew', 'BufEnter'],
             \'merged': 0,

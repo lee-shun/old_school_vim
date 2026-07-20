@@ -1,6 +1,6 @@
 inoremap <silent><expr> <TAB>
             \ coc#pum#visible() ? coc#pum#next(1) :
-            \ CheckBackspace() ? "\<Tab>" :
+            \ osv_ultis#completion#check_back_space() ? "\<Tab>" :
             \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
@@ -8,11 +8,6 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
             \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 
 " Use <c-space> to trigger completion.
@@ -25,11 +20,13 @@ endif
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+call osv_ultis#plug#lsp_map({
+            \ 'gd': '<Plug>(coc-definition)',
+            \ 'gr': '<Plug>(coc-references)',
+            \ 'gi': '<Plug>(coc-implementation)',
+            \ 'gy': '<Plug>(coc-type-definition)',
+            \ '<leader>lr': '<Plug>(coc-rename)',
+            \ })
 
 " Use gh to show documentation in preview window.
 nnoremap <silent> gh :call ShowDocumentation()<CR>
@@ -41,9 +38,6 @@ function! ShowDocumentation()
         call feedkeys('K', 'in')
     endif
 endfunction
-
-" Symbol renaming.
-nmap <leader>lr <Plug>(coc-rename)
 
 augroup mygroup
     autocmd!

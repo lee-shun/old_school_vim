@@ -11,11 +11,11 @@ elseif g:osv_finder == 'fzf'
                 \}
 
     if g:os_name == 'Linux'
-        call dein#add('junegunn/fzf', {'lazy':1,
+        call osv_ultis#plug#add('junegunn/fzf', {'lazy':1,
                     \'build': './install --all',
                     \})
     elseif g:os_name == 'Windows'
-        call dein#add('junegunn/fzf', {'lazy':1,
+        call osv_ultis#plug#add('junegunn/fzf', {'lazy':1,
                     \'build': 'powershell.exe .\install.ps1',
                     \})
     endif
@@ -26,14 +26,14 @@ elseif g:osv_finder == 'fzf'
     endif
 
     if g:osv_complete_engine == 'coc'
-        call dein#add('antoinemadec/coc-fzf', {'lazy':1,
+        call osv_ultis#plug#add('antoinemadec/coc-fzf', {'lazy':1,
                     \'rev': 'release',
                     \'hook_post_source':'source $CONF_PATH/plug_conf/after/coc_fzf_conf.vim'
                     \})
         call add(s:fzf_vim_config.depends, 'coc-fzf')
     endif
 
-    call dein#add('junegunn/fzf.vim', s:fzf_vim_config)
+    call osv_ultis#plug#add('junegunn/fzf.vim', s:fzf_vim_config)
 
 elseif g:osv_finder == 'leaderf'
 
@@ -46,32 +46,32 @@ elseif g:osv_finder == 'leaderf'
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/leaderf_conf.vim'
                 \}
     if g:osv_snip == 'ultisnips'
-        call dein#add('skywind3000/Leaderf-snippet', {'lazy':1,
+        call osv_ultis#plug#add('skywind3000/Leaderf-snippet', {'lazy':1,
                     \'depends':['ultisnips'],
                     \})
         call add(s:leaderf_config.depends, 'Leaderf-snippet')
     endif
 
-    call dein#add('Yggdroot/LeaderF', s:leaderf_config)
+    call osv_ultis#plug#add('Yggdroot/LeaderF', s:leaderf_config)
 
 elseif g:osv_finder == 'ctrlp'
 
-    call dein#add('tacahiroy/ctrlp-funky', {'lazy':1,
+    call osv_ultis#plug#add('tacahiroy/ctrlp-funky', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/funky.vim',
                 \})
-    call dein#add('ludovicchabant/vim-ctrlp-autoignore', {'lazy':1,
+    call osv_ultis#plug#add('ludovicchabant/vim-ctrlp-autoignore', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \})
-    call dein#add('lee-shun/ctrlp-location-list', {'lazy':1,
+    call osv_ultis#plug#add('lee-shun/ctrlp-location-list', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/location_list.vim',
                 \})
-    call dein#add('sgur/ctrlp-extensions.vim', {'lazy':1,
+    call osv_ultis#plug#add('sgur/ctrlp-extensions.vim', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/extensions.vim',
                 \})
-    call dein#add('mattn/ctrlp-register', {'lazy':1,
+    call osv_ultis#plug#add('mattn/ctrlp-register', {'lazy':1,
                 \'depends':'ctrlp.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/register.vim',
                 \})
@@ -79,7 +79,7 @@ elseif g:osv_finder == 'ctrlp'
     let g:ctrlp_plugins = ['ctrlp-funky', 'vim-ctrlp-autoignore', 'ctrlp-location-list', 'ctrlp-extensions.vim', 'ctrlp-register',]
 
     if executable('ag')
-        call dein#add('lokikl/vim-ctrlp-ag', {'lazy':1,
+        call osv_ultis#plug#add('lokikl/vim-ctrlp-ag', {'lazy':1,
                     \'depends':'ctrlp.vim',
                     \'hook_source':'source $CONF_PATH/plug_conf/before/ctrlp/ag.vim',
                     \'hook_post_source':'source $CONF_PATH/plug_conf/after/ctrlp/ag.vim',
@@ -87,7 +87,7 @@ elseif g:osv_finder == 'ctrlp'
         call add(g:ctrlp_plugins, 'vim-ctrlp-ag')
     endif
 
-    call dein#add('ctrlpvim/ctrlp.vim', {'lazy':1,
+    call osv_ultis#plug#add('ctrlpvim/ctrlp.vim', {'lazy':1,
                 \'depends':g:ctrlp_plugins,
                 \'on_map':{'n':'<leader>f'},
                 \'on_cmd':['CtrlP'],
@@ -107,7 +107,7 @@ elseif g:osv_finder == 'clap'
     elseif g:os_name == 'Windows'
         let s:clap_config.build = 'powershell.exe .\install.ps1'
     endif
-    call dein#add('liuchengxu/vim-clap', s:clap_config)
+    call osv_ultis#plug#add('liuchengxu/vim-clap', s:clap_config)
 
 elseif g:osv_finder == 'fuzzyy'
     let s:fuzzyy_config = {'lazy':1,
@@ -117,5 +117,5 @@ elseif g:osv_finder == 'fuzzyy'
                 \'hook_source':'source $CONF_PATH/plug_conf/before/fuzzyy_conf.vim',
                 \'hook_post_source':'source $CONF_PATH/plug_conf/after/fuzzyy_conf.vim',
                 \}
-    call dein#add('Donaldttt/fuzzyy', s:fuzzyy_config)
+    call osv_ultis#plug#add('Donaldttt/fuzzyy', s:fuzzyy_config)
 endif

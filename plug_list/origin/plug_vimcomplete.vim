@@ -11,4 +11,4 @@ if g:osv_lsp == 'vim9lsp'
     call add(s:vimcomplete_conf.depends, 'lsp')
 endif
 
-call dein#add('girishji/vimcomplete',s:vimcomplete_conf)
+call osv_ultis#plug#add('girishji/vimcomplete',s:vimcomplete_conf)
